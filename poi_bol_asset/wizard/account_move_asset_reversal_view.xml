@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_account_move_asset_reversal" model="ir.ui.view">
+            <field name="name">account.move.asset.reversal.form</field>
+            <field name="model">account.move.asset.reversal</field>
+            <field name="arch" type="xml">
+                <form string="Reversion Depreciación">
+                    <group col="4">
+                        <field name="move_id" domain="[('id','in',move_ids and move_ids[0] and move_ids[0][2] or False)]"/>
+                        <field name="date"/>
+                        <field name="journal_id"/>
+                        <field name="move_ids" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="Revertir depreciación" name="reverse_moves" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-default" special="cancel"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_view_account_move_asset_reversal" model="ir.actions.act_window">
+            <field name="name">Revertir depreciación</field>
+            <field name="res_model">account.move.asset.reversal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_account_move_asset_reversal"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_view_account_move_asset_reversal"
+        id="menu_action_view_account_move_asset_reversal"
+        parent="poi_bol_asset.menu_action_bol_asset" sequence="5" groups="account.group_account_manager"/>
+    </data>
+</openerp>

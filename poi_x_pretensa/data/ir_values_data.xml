@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="ir_values_company" model="ir.values">
+            <field name="name">company_type</field>
+            <field name="model">res.partner</field>
+            <field name="key">default</field>
+            <field name="key2"></field>
+            <field name="company_id">1</field>
+            <field name="value_unpickle">company</field>
+        </record>
+    </data>
+</openerp>

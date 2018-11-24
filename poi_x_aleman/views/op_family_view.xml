@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--Form View-->
+        <record id="op_family_form_view" model="ir.ui.view">
+            <field name="name">op.family.form.view</field>
+            <field name="model">op.family</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title oe_button_box" name="button_box">
+                            <button string="Cargos" name="..." type="object" icon="fa-money"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="nit"/>
+                                <field name="social_reason"/>
+                            </group>
+                            <group>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Familiares">
+                                <field name="parents_ids" mode="kanban">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="image"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                                    <div class="o_kanban_image">
+                                                        <t t-if="record.image.value">
+                                                            <img t-att-src="kanban_image('op.parent.contact', 'image', record.id.value)"/>
+                                                        </t>
+                                                        <t t-if="!record.image.value">
+                                                            <img t-att-src="_s + &quot;/base/static/src/img/avatar.png&quot;"/>
+                                                        </t>
+                                                    </div>
+                                                    <div class="oe_kanban_details">
+                                                        <h4>
+                                                            <a type="open">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4>
+                                                        <ul>
+                                                            <li t-if="record.relationship_id.raw_value">
+                                                                <field name="relationship_id"/>
+                                                            </li>
+                                                            <li t-if="record.phone.raw_value">
+                                                                <field name="phone"/>
+                                                            </li>
+                                                            <li t-if="record.cellphone.raw_value">
+                                                                <field name="cellphone"/>
+                                                            </li>
+                                                            <li t-if="record.email.raw_value">
+                                                                <field name="email"/>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page string="Hijos/Alumnos">
+                                <field name="childs_ids" mode="kanban">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="image"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                                    <div class="o_kanban_image">
+                                                        <t t-if="record.image.value">
+                                                            <img t-att-src="kanban_image('op.student', 'image', record.id.value)"/>
+                                                        </t>
+                                                        <t t-if="!record.image.value">
+                                                            <img t-att-src="_s + &quot;/base/static/src/img/avatar.png&quot;"/>
+                                                        </t>
+                                                    </div>
+                                                    <div class="oe_kanban_details">
+                                                        <h4>
+                                                            <a type="open">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4>
+                                                        <!--<ul>
+                                                            <li t-if="record.contact_address.raw_value">
+                                                                <field name="contact_address"/>
+                                                            </li>
+                                                            <li t-if="record.phone.raw_value">
+                                                                <field name="phone"/>
+                                                            </li>
+                                                            <li t-if="record.mobile.raw_value">
+                                                                <field name="mobile"/>
+                                                            </li>
+                                                            <li t-if="record.email.raw_value">
+                                                                <a t-attf-href="mailto:#{record.email.value}">
+                                                                    <field name="email"/>
+                                                                </a>
+                                                            </li>
+                                                            <li t-if="record.lang.raw_value">
+                                                                <field name="lang"/>
+                                                            </li>
+                                                        </ul>-->
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="op_family_tree_view" model="ir.ui.view">
+            <field name="name">op.family.tree.view</field>
+            <field name="model">op.family</field>
+            <field name="arch" type="xml">
+                <tree string="op Family">
+                    <field name="name"/>
+                    <field name="nit"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+        <!--Actions-->
+        <record id="action_op_family" model="ir.actions.act_window">
+            <field name="name">Familia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.family</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menu-->
+        <menuitem id="op_family_submenu_family" name="Familia" sequence="1" parent="menu_op_school_family"/>
+        <menuitem id="op_family_submenu_configuration" name="Configuracion" sequence="1"
+                  parent="openeducat_core.menu_op_school_config"/>
+        <menuitem id="action_op_family_menu_family" name="Familia" sequence="1" parent="op_family_submenu_family"
+                  action="action_op_family"/>
+    </data>
+</odoo>

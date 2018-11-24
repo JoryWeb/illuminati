@@ -1,0 +1,141 @@
+.pos .paymentline-input-foreign{
+    font-size: 15px;
+    font-family: Lato;
+    display: block;
+    width: 50%;
+    height:30px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding: 6px 8px;
+    background: white;
+    color: #484848;
+    text-align: right;
+    border-radius: 3px;
+    box-shadow: 0px 2px rgba(143, 143, 143, 0.3) inset;
+}
+.pos .pos-payment-container .foreign_infoline{
+    margin-top:5px;
+    margin-bottom:5px;
+    padding: 0px 8px;
+}
+.pos .currency_value{
+    font-size: 20px;
+    font-family: Lato;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding: 6px 8px;
+    background: white;
+    color: #484848;
+    text-align: right;
+    border-radius: 3px;
+    box-shadow: 0px 2px rgba(143, 143, 143, 0.3) inset;
+}
+.onoffswitch {
+     width: 65px;
+/*     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none; */
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.screen-content .top-content .onoffswitch {
+    font-size: 17px;
+    margin-left: 10%;
+    margin-top: 16px;
+    position: fixed;
+}
+.top-content .lable-foreign {
+    font-size: 15px;
+    margin-left: 22%;
+    margin-top: 23px;
+    position: absolute;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 25px; padding: 0; line-height: 25px;
+    border: 2px solid #CCCCCC; border-radius: 27px;
+    background-color: #CFC0C0;
+    transition: background-color 0.2s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 27px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 42px;
+    border: 2px solid #CCCCCC; border-radius: 27px;
+    transition: all 0.2s ease-in 0s; 
+    height: 25px;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #49E845;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #49E845;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+}
+select#currency_selection {
+width: 230px;
+padding: 5px 0;
+}
+.section_currency > div {
+    float: left;
+    width: 100%;
+}
+.foreign_infoline {
+    float: left;
+    padding: 5px 10px;
+    width: 46%;
+}
+.right-currency {
+    float: left;
+    padding: 5px 10px;
+    width: 46%;
+    background: rgb(215,215,215) none repeat scroll 0 0;
+    margin: 18px 0;
+    text-align: center;
+}
+.right-block {
+    font-weight: 600;
+    font-size: 17px;
+}
+.paymentline-input-foreign.right-block {
+    display: inline-block !important;
+    margin-bottom: 5px !important;
+    margin-top: -20px !important;
+    text-align: left !important;
+    width: 120px !important;
+}
+label#currency_selection_label {
+    float: left;
+    font-weight: 600;
+    margin-bottom: 5px;
+    width: 100%;
+}
+span#foreign_input_label {
+    font-weight: 600;
+    margin: -6px 0 5px;
+    padding: 2px 10px;
+}
+.button.next_rate_update.highlight {
+	font-size: 20px;
+	cursor: pointer;
+	padding: 5px;
+	float: right;
+	margin-right: 12px;
+	margin-bottom: 4px;
+}
+.popup.popup-textinput.rate_update{
+	height: 250px;
+}
+.popup_currency_info{
+	font-weight: normal; 
+	background: rgb(215,215,215) none repeat scroll 0 0;
+}

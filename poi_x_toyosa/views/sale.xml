@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<!-- Inherit Form view -->
+<record id="view_order_form_toyo" model="ir.ui.view">
+  <field name="name">order.toyo.form</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="sale.view_order_form"/>
+  <field name="arch" type="xml">
+    <data>
+      <field name="name" position="after">
+        <field name="amount_total_plus_a_exchange" widget='monetary' options="{'currency_field': 'currency_report_id'}"/>
+      </field>
+      <xpath expr="//form/header/button[1]" position="attributes">
+          <attribute name="attrs">{
+              'invisible':['|', ('invoice_proccess', '=', False), ('invoice_status', '!=', 'to invoice')],
+          }</attribute>
+      </xpath>
+      <xpath expr="//form/header/button[1]" position="after">
+        <button name="action_check_chasis" string="Validar Chasis" type="object" attrs="{'invisible': ['|',('invoice_proccess', '=', True), ('invoice_status', '!=', 'to invoice')]}"/>
+      </xpath>
+
+      <xpath expr="//div[@name='button_box']" position="inside">
+        <button class="oe_stat_button" name="action_view_sales"
+                type="object"
+                icon="fa-file-text-o"
+                attrs="{'invisible': ['|',('order_id', '=', True), ('state', '!=', 'bidding')]}">
+            <field name="sale_count" widget="statinfo" string="Licitacion"/>
+        </button>
+      </xpath>
+      <xpath expr="//button[@name='action_confirm']" position="after">
+        <button name="action_flag_discount" string="Validar Descuento" type="object" attrs="{'invisible': ['|', ('discount_flag', '=', True), ('discount_check', '=', False)]}"/>
+        <button name="action_reserve"  string="Reservar" type="object" attrs="{'invisible': [('reserve_flag', '=', False)]}"/>
+        <button name="action_plate"  string="Tramite de Placas" type="object" attrs="{'invisible': ['|', ('state', '!=', 'sale'), '|', ('plate_id', '>', 0), ('plate_procesing', '=', 'without_plate') ]}" class="btn-primary"  groups="poi_x_toyosa.group_account_invoice_cartera"/>
+      </xpath>
+      <xpath expr="//field[@name='partner_id']" position="attributes">
+          <attribute name="attrs">{
+              'readonly': ['|', ('partner_flag', '=', True), '|', ('state', 'not in', ('draft', 'sent')), ('discount_flag', '=', True)]
+          }</attribute>
+      </xpath>
+      <xpath expr="//field[@name='pricelist_id']" position="attributes">
+          <attribute name="options">
+              {'limit': 10, 'create': false, 'create_edit': false}
+          </attribute>
+          <attribute name="attrs">
+              {'readonly':['|', ('sale_type_id', '=', False), ('discount_flag', '=', True)]}
+          </attribute>
+      </xpath>
+      <field name="validity_date" position="before">
+        <field name="create_date" attrs="{'readonly': 1}"/>
+        <field name="order_date"/>
+      </field>
+      <field name="partner_id" position="after">
+        <field name="order_type_id" widget="selection" attrs="{'readonly':[('discount_flag', '=', True)]}"/>
+        <field name="sale_type_id" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_create': True, 'no_open': True}" attrs="{'readonly':[('discount_flag', '=', True)]}"/>
+      </field>
+      <field name="payment_term_id" position="after">
+        <field name="plate_id" attrs="{'invisible': [('plate_id', '=', False)]}"/>
+
+        <field name="amount_advanced" attrs="{'readonly':[('state', 'not in', ('draft', 'sent'))]}"/>
+        <field name="currency_advance_id"  attrs="{'readonly':[('state', 'not in', ('draft', 'sent'))]}"/>
+        <field name="insurance"/>
+
+        <field name="file_complete" attrs="{'invisible': [('state', '!=', 'sale')]}" groups="poi_x_toyosa.group_account_invoice_cartera"/>
+        <field name="biddings" attrs="{'invisible': [('bidding_sale', '=', False)]}"/>
+        <field name="cuce" attrs="{'invisible': [('bidding_sale', '=', False)]}"/>
+        <field name="bidding_sale" invisible="1"/>
+        <field name="partner_flag" invisible="1"/>
+        <field name="pricelist_flag" invisible="1"/>
+        <field name="dealsheet_flag" invisible="1"/>
+        <field name="chasis_flag" invisible="1"/>
+        <field name="price_flag" invisible="1"/>
+        <field name="discount_flag" invisible="1"/>
+        <field name="reserve_flag" invisible="1"/>
+        <field name="plate_procesing" invisible="1"/>
+        <field name="order_id" invisible="1"/>
+        <field name="invoice_proccess" invisible="1"/>
+        <field name="plate_flag" invisible="1"/>
+        <field name="discount_check" invisible="1"/>
+        <field name="check_chasis_pre" invisible="1"/>
+      </field>
+
+      <xpath  expr="//field[@name='payment_term_id']" position="attributes">
+        <attribute name="attrs">{
+              'readonly': ['|',('state', 'not in', ('draft', 'sent')), ('sale_type_id', '=', False)],
+              'required':[('state', 'in', ('draft'))],
+          }
+        </attribute>
+      </xpath>
+
+      <field name="amount_tax" position="after">
+        <field name="amount_total_untaxed_a" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+        <field name="amount_total_tax_a" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+        <field name="amount_total_a" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+      </field>
+
+      <xpath expr="//field[@name='order_line']" position="attributes">
+        <attribute name="attrs">{
+              'readonly': ['|',('state', 'not in', ('draft', 'sent')), '|',('sale_type_id', '=', False),('discount_flag', '=', True)],
+          }
+        </attribute>
+      </xpath>
+
+      <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="before">
+        <field name="modelo" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+        <!-- <field name="katashiki"/> -->
+      </xpath>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="attributes">
+        <attribute name="invisible">
+            1
+        </attribute>
+      </xpath>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+          <attribute name="options">
+              {'limit': 10, 'create': false, 'create_edit': false}
+          </attribute>
+      </xpath>
+
+      <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="before">
+        <field name="colorexterno" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+        <field name="colorinterno" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+        <field name="edicion" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+        <field name="price_flag" invisible="1"/>
+        <field name="lot_flag" invisible="1"/>
+        <field name="discount_flag" invisible="1"/>
+        <field name="discount_approve" invisible="1"/>
+      </xpath>
+
+      <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+       <attribute name="attrs">{'readonly':[('price_flag','=',False)]}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="attributes">
+       <attribute name="attrs">{'readonly':['|',('discount_flag','=',False), ('discount_approve', '=', True)]}</attribute>
+      </xpath>
+
+      <xpath expr="//form/sheet/notebook/page[2]" position="after">
+        <page string="Dealsheet" name="dealsheet_page" attrs="{'invisible':[('dealsheet_flag', '=', False)]}">
+          <group>
+            <field name="dealsheet_line" widget="one2many_list" nolabel="1">
+              <tree editable="bottom">
+                <field name="name"/>
+                <field name="cost" sum="Total"/>
+                <field name="invoiced_amount" sum="Total"/>
+              </tree>
+            </field>
+          </group>
+        </page>
+      </xpath>
+      <xpath expr="//form/sheet/notebook/page[2]" position="after">
+        <page string="Accesorios" name="dealsheet_page">
+          <field name="lot_id" invisible="1"/>
+          <button name="%(sale_order_extra_wiz_action_form)d" string="Agregar Accesorios" class="btn btn-xs btn-primary" type="action" context="{
+                        'default_lot_id': lot_id,
+                        'default_order_id': id,
+                        }" attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
+          <group>
+            <field name="order_line_a" widget="one2many_list" nolabel="1" attrs="{
+              'readonly': ['|', ('state', 'not in', ['draft', 'sent']), ('sale_type_id', '=', False)]
+              }">
+              <tree editable="bottom">
+                <field name="product_id" string="Producto"/>
+                <field name="lot_id" string="Chasis/Serie"/>
+                <field name="product_uom_qty" string="Cantidad"/>
+                <field name="product_uom" string="Unidad de Medida"/>
+                <field name="price_unit" sum="Total"/>
+                <field name="tax_id" widget="many2many_tags" string="Impuestos"/>
+                <field name="discount" sum="total" groups="poi_support.group_soporte_interno"/>
+                <field name="amount_discounted" sum="total" groups="poi_support.group_soporte_interno"/>
+                <field name="price_total" sum="total"/>
+              </tree>
+            </field>
+            <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+              <field name="amount_total_untaxed_a" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+              <field name="amount_total_tax_a" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+              <field name="amount_total_a" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </group>
+          </group>
+        </page>
+      </xpath>
+      <!-- <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="before">
+        <field name="amount_total_a"/>
+      </xpath> -->
+
+      <xpath expr="//field[@name='client_order_ref']" position="attributes">
+        <attribute name="string">No. File</attribute>
+      </xpath>
+       <xpath expr="//field[@name='client_order_ref']" position="after">
+        <field name="contract_ref"/>
+        <field name="order_id" readonly="1"/>
+      </xpath>
+    </data>
+  </field>
+</record>
+
+<!-- Inherit Form view -->
+<record id="view_order_form_discount_toy" model="ir.ui.view">
+  <field name="name">sale.order.form.discount.toy</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="poi_sale_discounts.view_order_form_discount"/>
+  <field name="arch" type="xml">
+    <xpath expr="//field[@name='order_line']/tree/field[@name='amount_discounted']" position="after">
+      <field name="amount_total_a"/>
+    </xpath>
+  </field>
+</record>
+
+<!-- Inherit Form view -->
+<record id="view_order_form_discount_toyo" model="ir.ui.view">
+  <field name="name">sale.order.form.discount.toy</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="poi_sale_discounts.view_order_form_discount"/>
+  <field name="arch" type="xml">
+    <data>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='amount_discounted']" position="attributes">
+       <attribute name="attrs">{'readonly':['|',('discount_flag','=',False), ('discount_approve', '=', True)]}</attribute>
+      </xpath>
+    </data>
+  </field>
+</record>
+
+<!-- Inherit Form view -->
+<record id="view_order_form_inherit_sale_stock_toy" model="ir.ui.view">
+  <field name="name">sale.order.form.stock.toy</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock"/>
+  <field name="arch" type="xml">
+    <xpath expr="//field[@name='incoterm']" position="attributes">
+        <attribute name="attrs">{
+            'invisible':1,
+        }</attribute>
+    </xpath>
+  </field>
+</record>
+
+<!-- Inherit Form view -->
+<record id="view_order_form_lot_toy" model="ir.ui.view">
+  <field name="name">sale.order.form.lot.toy</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="poi_sale_order_lot_selection.view_order_tree_lot"/>
+  <field name="arch" type="xml">
+    <xpath expr="//field[@name='order_line']/tree/field[@name='lot_id']" position="attributes">
+        <attribute name="groups">
+            stock.group_production_lot
+        </attribute>
+        <attribute name="string">
+            Chasis/Serie
+        </attribute>
+        <attribute name="options">
+            {'limit': 10, 'create': false, 'create_edit': false}
+        </attribute>
+        <attribute name="domain">
+            [('bloqueo_venta', '=', False), ('bloqueo_cif', '=', False), ('state', '=', 'draft')]
+        </attribute>
+    </xpath>
+  </field>
+</record>
+
+
+
+<!-- menus de stock -->
+<!-- <menuitem id="menu_sale_2stock_request" name="Stock" parent="base.menu_base_partner" sequence="5" groups="base.group_sale_manager"/>
+<menuitem
+    action="poi_stock_request.action_stock_request"
+    id="menu_action_request_2sale"
+    name="Solicitud de Stock"
+    parent="menu_sale_2stock_request" sequence="2" groups="base.group_sale_manager"/>
+<menuitem
+    action="poi_stock_request.action_sending_stock"
+    id="menu_action_sending_stock_2sale"
+    name="Envio de Stock"
+    parent="menu_sale_2stock_request" sequence="3" groups="base.group_sale_manager"/>
+<menuitem action="action_poi_stock_reservation_lot_tree"
+            id="menu_product_lot_action"
+            parent="base.menu_sales" sequence="19" />
+
+<menuitem id="menu_sale_host" name="Anfitrion" parent="base.menu_base_partner_host" sequence="1" groups="group_sale_host"/>
+<menuitem
+    action="poi_crm_traffic.open_view_crm_traffic"
+    id="menu_action_sale_crm_traffic_host"
+    parent="menu_sale_host" sequence="2" groups="group_sale_host"/>
+<menuitem
+    action="crm.crm_lead_all_leads"
+    id="menu_action_sale_crm_leads_host"
+    name="Iniciativas"
+    parent="menu_sale_host" sequence="3" groups="group_sale_host"/> -->
+</data>
+</odoo>

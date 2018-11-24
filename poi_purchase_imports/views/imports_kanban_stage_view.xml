@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="poi_purchase_imports_op">
+            <field name="name">Importaciones</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">kanban,tree,graph,pivot,form</field>
+            <field name="help" type="html">
+                <p>
+                    Odoo le ayuda a organizar y establecer los estados de las
+                    importaciones a ser verificadas
+                </p>
+                <p>
+                    Podrá verificar los estados de importaciones y documentos
+                    de compra de una forma dinámica.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="imports_kanban_view">
+            <field name="name">Estados Importacion</field>
+            <field name="model">purchase.order</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="stage_id" class="o_kanban_small_column">
+                    <field name="stage_id"
+                           options='{"group_by_tooltip": {"requirements": "Description", "legend_priority": "Use of stars"}}'/>
+                    <field name="name"/>
+                    <!--<field name="order_id"/>-->
+                    <field name="date_order"/>
+                    <field name="amount_total"/>
+                    <field name="partner_id"/>
+                    <field name="currency_id"/>
+                    <field name="state"/>
+                    <field name="state_color"/>
+                    <field name="stage_id"/>
+                    <templates>
+                        <field name="name"/>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable">
+                                            <li>
+                                                <a type="edit">Editar</a>
+                                            </li>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <li>
+                                                <a type="delete">Borrar</a>
+                                            </li>
+                                        </t>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <div class="text-muted">
+                                        <strong>Proveedor:</strong>
+                                        <span t-if="record.partner_id.value">
+                                            <t t-esc="record.partner_id.value"/>
+                                        </span>
+                                        <br/>
+                                        <strong>Total:</strong>
+                                        <t t-if="record.amount_total.raw_value">
+                                            <field name="amount_total" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}"/>
+                                        </t>
+                                        <br/>
+                                        <strong>Estado:</strong>
+                                        <span t-if="record.state.value">
+                                            <t t-esc="record.state.value"/>
+                                        </span>
+                                    </div>
+                                    <div t-attf-title="#{record.stage_id.value}"
+                                         t-attf-class="codup_status_color_#{record.state_color.raw_value} codup_status"></div>
+                                </div>
+                                <div class="oe_clear"></div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_your_imports" model="ir.actions.server">
+            <field name="name">Situación Importaciones</field>
+            <field name="model_id" ref="poi_purchase_imports.model_purchase_order"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_your_imports()</field>
+            <field eval="True" name="condition"/>
+        </record>
+
+        <record model="ir.actions.act_window" id="poi_purchase_imports_tree_view">
+            <field name="name">Situación Importaciones</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">kanban,tree,graph,pivot,form</field>
+            <field name="context">{'default_tipo_fac':'3', 'importaciones': True}</field>
+            <field name="domain">[('tipo_fac','=','3')]</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'tree', 'view_id': ref('purchase.purchase_order_tree')}),
+                      (0, 0, {'view_mode': 'form', 'view_id': ref('purchase_order_imports')}),
+                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('imports_kanban_view')}),
+                      (0, 0, {'view_mode': 'pivot'}),
+                      (0, 0, {'view_mode': 'graph'})]"/>
+            <field name="help" type="html">
+                <p>
+                    Odoo importaciones
+                </p>
+                <p>
+                    Esta herramienta le ayuda a gestionar los estados de su importación
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_imports_stage_kanban">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="imports_kanban_view"/>
+            <field name="act_window_id" ref="poi_purchase_imports_op"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_imports_stage_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="act_window_id" ref="poi_purchase_imports_op"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_imports_stage_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="purchase_order_imports"/>
+            <field name="act_window_id" ref="poi_purchase_imports_op"/>
+        </record>
+
+        <menuitem id="menu_imports_stage" action="action_your_imports"
+                  parent="poi_purchase_imports.menu_purchase_imports" sequence="20"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_stock_move_update_wizard" model="ir.ui.view">
+            <field name="name">Actualizar Valor Fob</field>
+            <field name="model">update.fob.picking.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Actualizar dato Serie">
+                    <group>
+                        <field name="move_line_id" invisible="1"/>
+                        <field name="currency_id"/>
+                        <field name="price_unit_fob"/>
+                        <field name="price_flete"/>
+                        <field name="price_seguro"/>
+                        <field name="price_unit"/>
+                    </group>
+                    <footer>
+                        <button name="update_line" string="Actualizar" type="object" class="btn-primary"/>
+                        or
+                        <button string="Salir" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_stock_move_update_wizard" model="ir.actions.act_window">
+            <field name="name">Actualizar Precio FOB</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">update.fob.picking.wizard</field>
+            <field name="view_id" ref="view_stock_move_update_wizard"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

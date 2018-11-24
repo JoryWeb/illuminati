@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Sequences for purchase cost distribution -->
+        <record id="seq_poi_stock_armado_sequence" model="ir.sequence">
+            <field name="name">Solicitudes de Armado</field>
+            <field name="code">poi.stock.armado</field>
+            <field name="prefix">SAx</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>

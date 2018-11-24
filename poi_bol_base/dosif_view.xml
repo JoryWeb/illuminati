@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Dosificación -->
+        <menuitem id="menu_finance_local_config" name="Localización" parent="account.menu_finance_configuration" sequence="5"/>
+
+        <record id="local_dosif_view_tree" model="ir.ui.view">
+            <field name="name">poi_bol_base.cc_dosif.tree</field>
+            <field name="model">poi_bol_base.cc_dosif</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Dosificación Facturas">
+                    <field name="name"/>
+                    <field name="nro_orden"/>
+                    <field name="activa"/>
+                    <field name="auto_num" string="Auto Num"/>
+                    <field name="rango_ini"/>
+                    <field name="rango_fin"/>
+                    <field name="fecha_ini"/>
+                    <field name="fecha_fin"/>
+                    <field name="warehouse_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="local_dosif_view_form" model="ir.ui.view">
+            <field name="name">poi_bol_base.cc_dosif.form</field>
+            <field name="model">poi_bol_base.cc_dosif</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dosificación Facturas">
+                    <sheet>
+                        <group colspan="4">
+                            <group>
+                                <field name="name"/>
+                                <field name="activa"/>
+                                <label for="fecha_ini" string="Rango Fechas"/>
+                                <div>
+                                    <field name="fecha_ini" class="oe_inline"/>
+                                    -
+                                    <field name="fecha_fin" class="oe_inline"/>
+                                </div>
+
+                                <field name="warehouse_id" required="1"/>
+                                <field name="applies" widget="radio"/>
+                                <field name="multi_activity"/>
+                                <field name="activity_id"  attrs="{'invisible':[('multi_activity','=',False)]}"/>
+
+                            </group>
+                            <group>
+                                <field name="nro_orden" widget="mask" data-inputmask-alias="integer"/>
+                                <field name="auto_num"/>
+                                <field name="require_taxes"/>
+                                <label for="rango_ini" string="Rango Numeracion"/>
+                                <div>
+                                    <field name="rango_ini" class="oe_inline"/>
+                                    -
+                                    <field name="rango_fin" class="oe_inline"/>
+                                </div>
+                                <field name="company_id"/>
+                            </group>
+                            <newline/>
+                            <separator string="Autorizaciones"/>
+                            <newline/>
+                            <field name="user_ids" colspan="4" nolabel="1">
+                                <tree string="" editable="bottom">
+                                    <field name="user_id"/>
+                                    <field name="user_default"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="local_cc_dosif_action">
+            <field name="name">Datos de Dosificación</field>
+            <field name="res_model">poi_bol_base.cc_dosif</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="local_dosif_view_tree"/>
+            <field name="context">{'display_all': True}</field>
+        </record>
+        <menuitem parent="menu_finance_local_config" id="menu_action_local_cc_dosif_form" action="local_cc_dosif_action" sequence="10"/>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Moneda -->
+    <data noupdate="1">
+        <record id="rate_ufv1" model="res.currency.rate">
+            <field name="rate">2.17281</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-01')" name="name"/>
+        </record>
+        <record id="rate_ufv2" model="res.currency.rate">
+            <field name="rate">2.17303</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-02')" name="name"/>
+        </record>
+        <record id="rate_ufv3" model="res.currency.rate">
+            <field name="rate">2.17325</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-03')" name="name"/>
+        </record>
+        <record id="rate_ufv4" model="res.currency.rate">
+            <field name="rate">2.17347</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-04')" name="name"/>
+        </record>
+        <record id="rate_ufv5" model="res.currency.rate">
+            <field name="rate">2.17369</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-05')" name="name"/>
+        </record>
+        <record id="rate_ufv6" model="res.currency.rate">
+            <field name="rate">2.17391</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-06')" name="name"/>
+        </record>
+        <record id="rate_ufv7" model="res.currency.rate">
+            <field name="rate">2.17413</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-07')" name="name"/>
+        </record>
+        <record id="rate_ufv8" model="res.currency.rate">
+            <field name="rate">2.17435</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-08')" name="name"/>
+        </record>
+        <record id="rate_ufv9" model="res.currency.rate">
+            <field name="rate">2.17457</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-09')" name="name"/>
+        </record>
+        <record id="rate_ufv10" model="res.currency.rate">
+            <field name="rate">2.17479</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-10')" name="name"/>
+        </record>
+        <record id="rate_ufv11" model="res.currency.rate">
+            <field name="rate">2.17502</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-11')" name="name"/>
+        </record>
+        <record id="rate_ufv12" model="res.currency.rate">
+            <field name="rate">2.17525</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-12')" name="name"/>
+        </record>
+        <record id="rate_ufv13" model="res.currency.rate">
+            <field name="rate">2.17548</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-13')" name="name"/>
+        </record>
+        <record id="rate_ufv14" model="res.currency.rate">
+            <field name="rate">2.17571</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-14')" name="name"/>
+        </record>
+        <record id="rate_ufv15" model="res.currency.rate">
+            <field name="rate">2.17594</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-15')" name="name"/>
+        </record>
+        <record id="rate_ufv16" model="res.currency.rate">
+            <field name="rate">2.17617</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-16')" name="name"/>
+        </record>
+        <record id="rate_ufv17" model="res.currency.rate">
+            <field name="rate">2.1764</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-17')" name="name"/>
+        </record>
+        <record id="rate_ufv18" model="res.currency.rate">
+            <field name="rate">2.17663</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-18')" name="name"/>
+        </record>
+        <record id="rate_ufv19" model="res.currency.rate">
+            <field name="rate">2.17686</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-19')" name="name"/>
+        </record>
+        <record id="rate_ufv20" model="res.currency.rate">
+            <field name="rate">2.17709</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-20')" name="name"/>
+        </record>
+        <record id="rate_ufv21" model="res.currency.rate">
+            <field name="rate">2.17732</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-21')" name="name"/>
+        </record>
+        <record id="rate_ufv22" model="res.currency.rate">
+            <field name="rate">2.17755</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-22')" name="name"/>
+        </record>
+        <record id="rate_ufv23" model="res.currency.rate">
+            <field name="rate">2.17778</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-23')" name="name"/>
+        </record>
+        <record id="rate_ufv24" model="res.currency.rate">
+            <field name="rate">2.17801</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-24')" name="name"/>
+        </record>
+        <record id="rate_ufv25" model="res.currency.rate">
+            <field name="rate">2.17824</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-25')" name="name"/>
+        </record>
+        <record id="rate_ufv26" model="res.currency.rate">
+            <field name="rate">2.17847</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-26')" name="name"/>
+        </record>
+        <record id="rate_ufv27" model="res.currency.rate">
+            <field name="rate">2.1787</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-27')" name="name"/>
+        </record>
+        <record id="rate_ufv28" model="res.currency.rate">
+            <field name="rate">2.17893</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-28')" name="name"/>
+        </record>
+        <record id="rate_ufv29" model="res.currency.rate">
+            <field name="rate">2.17916</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-29')" name="name"/>
+        </record>
+        <record id="rate_ufv30" model="res.currency.rate">
+            <field name="rate">2.17939</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-30')" name="name"/>
+        </record>
+        <record id="rate_ufv31" model="res.currency.rate">
+            <field name="rate">2.17962</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-01-31')" name="name"/>
+        </record>
+        <record id="rate_ufv32" model="res.currency.rate">
+            <field name="rate">2.17987</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-01')" name="name"/>
+        </record>
+        <record id="rate_ufv33" model="res.currency.rate">
+            <field name="rate">2.18012</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-02')" name="name"/>
+        </record>
+        <record id="rate_ufv34" model="res.currency.rate">
+            <field name="rate">2.18037</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-03')" name="name"/>
+        </record>
+        <record id="rate_ufv35" model="res.currency.rate">
+            <field name="rate">2.18062</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-04')" name="name"/>
+        </record>
+        <record id="rate_ufv36" model="res.currency.rate">
+            <field name="rate">2.18087</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-05')" name="name"/>
+        </record>
+        <record id="rate_ufv37" model="res.currency.rate">
+            <field name="rate">2.18112</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-06')" name="name"/>
+        </record>
+        <record id="rate_ufv38" model="res.currency.rate">
+            <field name="rate">2.18137</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-07')" name="name"/>
+        </record>
+        <record id="rate_ufv39" model="res.currency.rate">
+            <field name="rate">2.18162</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-08')" name="name"/>
+        </record>
+        <record id="rate_ufv40" model="res.currency.rate">
+            <field name="rate">2.18187</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-09')" name="name"/>
+        </record>
+        <record id="rate_ufv41" model="res.currency.rate">
+            <field name="rate">2.18212</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-10')" name="name"/>
+        </record>
+        <record id="rate_ufv42" model="res.currency.rate">
+            <field name="rate">2.18235</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-11')" name="name"/>
+        </record>
+        <record id="rate_ufv43" model="res.currency.rate">
+            <field name="rate">2.18258</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-12')" name="name"/>
+        </record>
+        <record id="rate_ufv44" model="res.currency.rate">
+            <field name="rate">2.18281</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-13')" name="name"/>
+        </record>
+        <record id="rate_ufv45" model="res.currency.rate">
+            <field name="rate">2.18304</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-14')" name="name"/>
+        </record>
+        <record id="rate_ufv46" model="res.currency.rate">
+            <field name="rate">2.18327</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-15')" name="name"/>
+        </record>
+        <record id="rate_ufv47" model="res.currency.rate">
+            <field name="rate">2.1835</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-16')" name="name"/>
+        </record>
+        <record id="rate_ufv48" model="res.currency.rate">
+            <field name="rate">2.18373</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-17')" name="name"/>
+        </record>
+        <record id="rate_ufv49" model="res.currency.rate">
+            <field name="rate">2.18396</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-18')" name="name"/>
+        </record>
+        <record id="rate_ufv50" model="res.currency.rate">
+            <field name="rate">2.18419</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-19')" name="name"/>
+        </record>
+        <record id="rate_ufv51" model="res.currency.rate">
+            <field name="rate">2.18442</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-20')" name="name"/>
+        </record>
+        <record id="rate_ufv52" model="res.currency.rate">
+            <field name="rate">2.18465</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-21')" name="name"/>
+        </record>
+        <record id="rate_ufv53" model="res.currency.rate">
+            <field name="rate">2.18488</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-22')" name="name"/>
+        </record>
+        <record id="rate_ufv54" model="res.currency.rate">
+            <field name="rate">2.18511</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-23')" name="name"/>
+        </record>
+        <record id="rate_ufv55" model="res.currency.rate">
+            <field name="rate">2.18534</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-24')" name="name"/>
+        </record>
+        <record id="rate_ufv56" model="res.currency.rate">
+            <field name="rate">2.18557</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-25')" name="name"/>
+        </record>
+        <record id="rate_ufv57" model="res.currency.rate">
+            <field name="rate">2.1858</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-26')" name="name"/>
+        </record>
+        <record id="rate_ufv58" model="res.currency.rate">
+            <field name="rate">2.18603</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-27')" name="name"/>
+        </record>
+        <record id="rate_ufv59" model="res.currency.rate">
+            <field name="rate">2.18626</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-02-28')" name="name"/>
+        </record>
+        <record id="rate_ufv60" model="res.currency.rate">
+            <field name="rate">2.18647</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-01')" name="name"/>
+        </record>
+        <record id="rate_ufv61" model="res.currency.rate">
+            <field name="rate">2.18668</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-02')" name="name"/>
+        </record>
+        <record id="rate_ufv62" model="res.currency.rate">
+            <field name="rate">2.18689</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-03')" name="name"/>
+        </record>
+        <record id="rate_ufv63" model="res.currency.rate">
+            <field name="rate">2.1871</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-04')" name="name"/>
+        </record>
+        <record id="rate_ufv64" model="res.currency.rate">
+            <field name="rate">2.18731</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-05')" name="name"/>
+        </record>
+        <record id="rate_ufv65" model="res.currency.rate">
+            <field name="rate">2.18752</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-06')" name="name"/>
+        </record>
+        <record id="rate_ufv66" model="res.currency.rate">
+            <field name="rate">2.18773</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-07')" name="name"/>
+        </record>
+        <record id="rate_ufv67" model="res.currency.rate">
+            <field name="rate">2.18794</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-08')" name="name"/>
+        </record>
+        <record id="rate_ufv68" model="res.currency.rate">
+            <field name="rate">2.18815</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-09')" name="name"/>
+        </record>
+        <record id="rate_ufv69" model="res.currency.rate">
+            <field name="rate">2.18836</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-10')" name="name"/>
+        </record>
+        <record id="rate_ufv70" model="res.currency.rate">
+            <field name="rate">2.18856</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-11')" name="name"/>
+        </record>
+        <record id="rate_ufv71" model="res.currency.rate">
+            <field name="rate">2.18876</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-12')" name="name"/>
+        </record>
+        <record id="rate_ufv72" model="res.currency.rate">
+            <field name="rate">2.18896</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-13')" name="name"/>
+        </record>
+        <record id="rate_ufv73" model="res.currency.rate">
+            <field name="rate">2.18916</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-14')" name="name"/>
+        </record>
+        <record id="rate_ufv74" model="res.currency.rate">
+            <field name="rate">2.18936</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-15')" name="name"/>
+        </record>
+        <record id="rate_ufv75" model="res.currency.rate">
+            <field name="rate">2.18956</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-16')" name="name"/>
+        </record>
+        <record id="rate_ufv76" model="res.currency.rate">
+            <field name="rate">2.18976</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-17')" name="name"/>
+        </record>
+        <record id="rate_ufv77" model="res.currency.rate">
+            <field name="rate">2.18996</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-18')" name="name"/>
+        </record>
+        <record id="rate_ufv78" model="res.currency.rate">
+            <field name="rate">2.19016</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-19')" name="name"/>
+        </record>
+        <record id="rate_ufv79" model="res.currency.rate">
+            <field name="rate">2.19036</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-20')" name="name"/>
+        </record>
+        <record id="rate_ufv80" model="res.currency.rate">
+            <field name="rate">2.19056</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-21')" name="name"/>
+        </record>
+        <record id="rate_ufv81" model="res.currency.rate">
+            <field name="rate">2.19076</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-22')" name="name"/>
+        </record>
+        <record id="rate_ufv82" model="res.currency.rate">
+            <field name="rate">2.19096</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-23')" name="name"/>
+        </record>
+        <record id="rate_ufv83" model="res.currency.rate">
+            <field name="rate">2.19116</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-24')" name="name"/>
+        </record>
+        <record id="rate_ufv84" model="res.currency.rate">
+            <field name="rate">2.19136</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-25')" name="name"/>
+        </record>
+        <record id="rate_ufv85" model="res.currency.rate">
+            <field name="rate">2.19156</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-26')" name="name"/>
+        </record>
+        <record id="rate_ufv86" model="res.currency.rate">
+            <field name="rate">2.19176</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-27')" name="name"/>
+        </record>
+        <record id="rate_ufv87" model="res.currency.rate">
+            <field name="rate">2.19196</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-28')" name="name"/>
+        </record>
+        <record id="rate_ufv88" model="res.currency.rate">
+            <field name="rate">2.19216</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-29')" name="name"/>
+        </record>
+        <record id="rate_ufv89" model="res.currency.rate">
+            <field name="rate">2.19236</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-30')" name="name"/>
+        </record>
+        <record id="rate_ufv90" model="res.currency.rate">
+            <field name="rate">2.19256</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-03-31')" name="name"/>
+        </record>
+        <record id="rate_ufv91" model="res.currency.rate">
+            <field name="rate">2.19277</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-01')" name="name"/>
+        </record>
+        <record id="rate_ufv92" model="res.currency.rate">
+            <field name="rate">2.19298</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-02')" name="name"/>
+        </record>
+        <record id="rate_ufv93" model="res.currency.rate">
+            <field name="rate">2.19319</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-03')" name="name"/>
+        </record>
+        <record id="rate_ufv94" model="res.currency.rate">
+            <field name="rate">2.1934</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-04')" name="name"/>
+        </record>
+        <record id="rate_ufv95" model="res.currency.rate">
+            <field name="rate">2.19361</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-05')" name="name"/>
+        </record>
+        <record id="rate_ufv96" model="res.currency.rate">
+            <field name="rate">2.19382</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-06')" name="name"/>
+        </record>
+        <record id="rate_ufv97" model="res.currency.rate">
+            <field name="rate">2.19403</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-07')" name="name"/>
+        </record>
+        <record id="rate_ufv98" model="res.currency.rate">
+            <field name="rate">2.19424</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-08')" name="name"/>
+        </record>
+        <record id="rate_ufv99" model="res.currency.rate">
+            <field name="rate">2.19445</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-09')" name="name"/>
+        </record>
+        <record id="rate_ufv100" model="res.currency.rate">
+            <field name="rate">2.19466</field>
+            <field name="currency_id" ref="poi_bol_base.res_currency_ufv"/>
+            <field eval="time.strftime('2017-04-10')" name="name"/>
+        </record>
+
+    </data>
+</odoo>

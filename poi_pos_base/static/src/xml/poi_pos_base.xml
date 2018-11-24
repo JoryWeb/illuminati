@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery=".content-row" t-operation="after">
+            <tr class="footer-row">
+                <td class="footer-cell">
+                    <span class="placeholder-SecondaryMenu" />
+                    <div>
+                        <div class="rightpane-footer">
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </t>
+    </t>
+
+</templates>

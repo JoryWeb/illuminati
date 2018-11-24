@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+  <record id="view_product_pricelist_advanced_form" model="ir.ui.view">
+    <field name="name">product.pricelist.advanced.form</field>
+    <field name="model">product.pricelist</field>
+    <field name="inherit_id" ref="product.product_pricelist_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet" position="after">
+          <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+              <field name="message_ids" widget="mail_thread"/>
+          </div>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="view_product_pricelist_item_advanced_tree" model="ir.ui.view">
+    <field name="name">product.pricelist.item.advanced.tree</field>
+    <field name="model">product.pricelist.item</field>
+    <field name="arch" type="xml">
+        <tree editable="bottom" create="0">
+            <field name="currency_id" readonly='1'/>
+            <field name="pricelist_id" readonly='1'/>
+            <field name="applied_on" readonly='1'/>
+            <field name="product_tmpl_id" readonly='1'/>
+            <field name="categ_id" readonly='1'/>
+            <field name="product_id2" readonly='1'/>
+            <field name="compute_price" readonly='1'/>
+            <field name="fixed_price" attrs="{'readonly':[('compute_price', 'in', ('percentage', 'formula'))]}"/>
+            <field name="percent_price" attrs="{'readonly':[('compute_price', 'in', ('fixed', 'formula'))]}"/>
+        </tree>
+    </field>
+  </record>
+
+  <record id="view_product_pricelist_item_advanced_search" model="ir.ui.view">
+    <field name="name">product.pricelist.item.adv.search</field>
+    <field name="model">product.pricelist.item</field>
+    <field name="arch" type="xml">
+      <search string="Items de Lista de Precio">
+        <field name="currency_id"/>
+        <field name="pricelist_id"/>
+        <field name="product_tmpl_id"/>
+        <group expand="0" string="Group By">
+          <filter string="Lista de Precios" domain="[]" context="{'group_by':'pricelist_id'}"/>
+          <filter string="Aplicado en" context="{'group_by':'applied_on'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_product_pricelist_item_advanced" model="ir.actions.act_window">
+    <field name="name">Items</field>
+    <field name="res_model">product.pricelist.item</field>
+    <field name="view_mode">tree</field>
+    <field name="search_view_id" ref="view_product_pricelist_item_advanced_search"/>
+  </record>
+
+  <menuitem id="menu_product_pricelist_item_advanced" parent="sale.product_menu_catalog"
+groups="product.group_sale_pricelist" action="action_product_pricelist_item_advanced" sequence="10"/>
+</data>
+</odoo>

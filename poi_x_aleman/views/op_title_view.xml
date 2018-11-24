@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--Form View-->
+        <record id="op_title_form_view" model="ir.ui.view">
+            <field name="name">op.title.form.view</field>
+            <field name="model">op.title</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="op_title_tree_view" model="ir.ui.view">
+            <field name="name">op.title.tree.view</field>
+            <field name="model">op.title</field>
+            <field name="arch" type="xml">
+                <tree string="Op Title">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!--Actions-->
+        <record id="action_op_title" model="ir.actions.act_window">
+            <field name="name">Titulo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.title</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menu-->
+        <menuitem id="action_op_title_menu_configuration" name="Titulo" sequence="1" parent="op_family_submenu_configuration" action="action_op_title"/>
+    </data>
+</odoo>

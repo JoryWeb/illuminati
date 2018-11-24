@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+       <!-- Vista Arbol Libro Mayor BASE-->
+        <record model="ir.ui.view" id="poi_report_mayor">
+            <field name="name">poi.report.mayor</field>
+            <field name="model">poi.libro.mayor</field>
+            <field name="arch" type="xml">
+                <tree string="Libro Mayor" colors="grey:case_order==0" fonts="italic:case_order==0">
+                    <field name="id" invisible="1"/>
+					<field name="date"/>
+					<field name="period_id_b"/>
+					<field name="journal_id_b"/>
+                    <field name="account_id_b"/>
+					<field name="analytic_id_a"/>
+                    <field name="segment_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="state" invisible="1"/>
+                    <field name="case_order" invisible="1"/>
+					<field name="debit" sum="debit_total" />
+                    <field name="credit" sum="credit_total" />
+                    <field name="saldo"/>
+                    <field name="balance" sum="balance_total"/>
+                    <field name="debit_usd" sum="debit_usd_total" invisible="not context.get('usd',False)" />
+                    <field name="credit_usd" sum="credit_usd_total" invisible="not context.get('usd',False)" />
+                    <field name="saldo_usd" invisible="not context.get('usd',False)"/>
+                    <field name="balance_usd" sum="credit_usd_total" invisible="not context.get('usd',False)" />
+                    <field name="move_id"/>
+                    <button name="launch_form" type="object" string="Ver Apunte contable" icon="STOCK_FIND" attrs="{'invisible': [('id','&lt;=',0)]}"/>
+                    <field name="contra_accounts" invisible="not context.get('contra',False)"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- search  detalle  libro mayor -->
+        <record id="poi_report_detalle_libro_mayor_search" model="ir.ui.view">
+            <field name="name">libro.mayor.search</field>
+            <field name="model">poi.libro.mayor</field>
+            <field name="arch" type="xml">
+                <search string="Libro Mayor">
+
+                    <group string="Filtros">
+                        <filter string="Ver USD" name="ver_usd"
+			                context="{'usd': True}" help="Ver montos también en dólares"/>
+                        <filter string="Ver Contra Cuentas" name="ver_contra"
+			                context="{'contra': True}" help="Ver columna Contra Cuentas"/>
+                        <!--<field name="account_id_a" string="Cuenta Contable"/>
+                        <field name="analytic_id_a" string="Cuenta Analítica"/>
+                        <field name="partner_id" string="Socio/Proveedor"/>-->
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter name="group_account" string="Cuenta" domain="[]" context="{'group_by':'account_id_b'}" invisible="1"/>
+                        <filter name="group_analytic" string="Analítica" domain="[]" context="{'group_by':'analytic_id_a'}" invisible="1"/>
+                        <filter name="group_partner" string="Socio de negocio" domain="[]" context="{'group_by':'partner_id'}" invisible="1"/>
+                        <filter name="group_segment" string="Segmento" domain="[]" context="{'group_by':'segment_id'}" invisible="1"/>
+                        <filter name="group_bank" string="Cuenta Bancaria" domain="[]" context="{'group_by':'bank_account_id'}" invisible="1"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_poi_libro_mayor">
+            <field name="name">Libro Mayor</field>
+            <field name="res_model">poi.libro.mayor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{ "search_default_group_account":1}</field>
+            <field name="view_search_id" ref="poi_account_advanced.poi_report_detalle_libro_mayor_search"/>
+            <field name="view_id"  ref="poi_report_mayor"/>
+        </record>
+
+        <!-- Vista Arbol Libro Mayor partner_acc-->
+        <record model="ir.ui.view" id="poi_report_libro_mayor_partner_acc_search">
+            <field name="name">libro.mayor.partner_acc.search</field>
+            <field name="model">poi.libro.mayor.partner_acc</field>
+            <field name="arch" type="xml">
+                <search string="Libro Mayor">
+                    <group string="Filtros">
+                        <filter string="Ver USD" name="ver_usd"
+			                context="{'usd': True}" help="Ver montos también en dólares"/>
+                        <filter string="Ver Contra Cuentas" name="ver_contra"
+			                context="{'contra': True}" help="Ver columna Contra Cuentas"/>
+                        <!--<field name="account_id_a" string="Cuenta Contable"/>
+                        <field name="analytic_id_a" string="Cuenta Analítica"/>
+                        <field name="partner_id" string="Socio/Proveedor"/>-->
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter name="group_partner" string="Socio de negocio" domain="[]" context="{'group_by':'partner_id'}" invisible="1"/>
+                        <filter name="group_account" string="Cuenta" domain="[]" context="{'group_by':'account_id_b'}" invisible="1"/>
+                        <filter name="group_analytic" string="Analítica" domain="[]" context="{'group_by':'analytic_id_b'}" invisible="1"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="poi_report_mayor_partner_acc">
+            <field name="name">poi.report.mayor.partner_acc</field>
+            <field name="model">poi.libro.mayor.partner_acc</field>
+            <field name="inherit_id" ref="poi_report_mayor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='contra_accounts']" position="after"/>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_poi_libro_mayor_partner_acc">
+            <field name="name">Libro Mayor</field>
+            <field name="res_model">poi.libro.mayor.partner_acc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{ "search_default_group_partner":1}</field>
+            <field name="view_id"  ref="poi_report_mayor_partner_acc"/>
+        </record>
+
+
+        <!-- Asistente Libro Mayor -->
+        <record model="ir.ui.view" id="poi_report_mayor_wizard">
+            <field name="name">poi.report.mayor.wizard</field>
+            <field name="model">poi.libro.mayor.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Asistente Libro Mayor" version="7.0">
+                    <group>
+                        <field name="grouping"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Cuentas">
+                            <group col="4">
+                                <field name="account_ids" colspan="1" widget="many2many_tags"/>
+                                <field name="analytic_ids" colspan="1" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                        <page string="Diarios">
+                            <field name="journal_ids" widget="many2many_tags"/>
+                        </page>
+                        <page string="Segmentos">
+                            <field name="segment_ids"/>
+                        </page>
+                        <page string="Cuentas Bancarias">
+                            <field name="bank_account_ids"/>
+                        </page>
+                    </notebook>
+                    <group>
+                        <field name="balance"/>
+                        <field name="posted"/>
+                        <field name="usd"/>
+                        <field name="contra"/>
+                    </group>
+
+
+                    <newline/>
+                    <separator colspan="4" />
+                    <footer>
+                        <button name="launch_report" type="object" string="Ver Libro" class="oe_highlight"/>
+                        o
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_poi_libro_mayor_wizard">
+            <field name="name">Libro Mayor</field>
+            <field name="res_model">poi.libro.mayor.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id"  ref="poi_report_mayor_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <!--Temp. Sólo para admin(group_system) mientras se testea -->
+        <menuitem id="menu_libro_mayor" parent="account.menu_finance_reports" action="action_poi_libro_mayor_wizard" string="Libro Mayor" sequence="1" groups="account.group_account_manager"/>
+
+    </data>
+</openerp>

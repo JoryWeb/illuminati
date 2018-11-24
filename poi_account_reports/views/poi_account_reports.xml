@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="account_reports_backend" inherit_id="web.assets_backend" active="True">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/poi_account_reports/static/src/js/account_reports_widgets.js"></script>
+                <script type="text/javascript" src="/poi_account_reports/static/src/js/account_reports_backend.js"></script>
+                <link rel="stylesheet" href="/poi_account_reports/static/src/less/account_financial_report.less" />
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

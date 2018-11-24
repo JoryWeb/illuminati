@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+
+        <record id="action_account_report_coa" model="ir.actions.client">
+            <field name="name">Trial Balance</field>
+            <field name="tag">account_report_generic</field>
+            <field name="context" eval="{'url': '/poi_account_reports/output_format/coa/1', 'model': 'account.coa.report'}" />
+        </record>
+
+
+        <menuitem id="menu_action_account_report_coa" name="Trial Balance" action="action_account_report_coa" parent="account_reports_legal_statements_menu"/>
+    </data>
+</odoo>

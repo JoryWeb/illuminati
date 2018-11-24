@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	<record id="view_employee_form_payroll" model="ir.ui.view">
+        <field name="name">hr.employee.form.payroll</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="poi_hr_advanced.view_employee_form_adv"/>
+        <field name="arch" type="xml">
+			<data>
+				 <xpath expr="//field[@name='antiquity']" position="after">
+				 	<field name="saldo_rciva"/>
+				 </xpath>
+			</data>
+        </field>
+    </record>
+</data>
+</odoo>

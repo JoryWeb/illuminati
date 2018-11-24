@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="True">
+
+        <!-- PLANILLA DE SUELDOS -->
+
+		<record id="hr_payroll.hr_rule_basic" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Haber Basico Ganado</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">1</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_bono_a" model="hr.salary.rule">
+            <field name="on_report_1" eval="True"/>
+			<field name="name_1">Bono Antiguedad</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">2</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_other_o"  model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Otros Bonos</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">3</field>
+        </record>
+
+
+
+        <record id="hr_payroll.hr_rule_taxable"  model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Total Ganado</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">4</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_afp" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">A.F.P.</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">5</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_sol" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Aporte Solidario</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">6</field>
+        </record>
+        <!-- <record id="hr_rule_total1" model="hr.salary.rule">
+
+        </record> -->
+
+        <record id="poi_hr_payroll.hr_rule_rciva" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">RcIVA</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">7</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_ade" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Anticipos</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">8</field>
+        </record>
+
+        <!-- <record id="hr_rule_pre" model="hr.salary.rule">
+
+        </record> -->
+
+
+        <!-- <record id="hr_rule_f110" model="hr.salary.rule">
+
+        </record> -->
+
+        <record id="poi_hr_payroll.hr_rule_totald" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Total Descuentos</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">9</field>
+        </record>
+
+
+        <record id="hr_payroll.hr_rule_net" model="hr.salary.rule">
+			<field name="on_report_1" eval="True"/>
+			<field name="name_1">Liquido Pagable</field>
+			<field name="report_id_1" ref="report_payslip_summary"/>
+			<field name="sequence_report_1">10</field>
+        </record>
+
+
+		<!-- rciva report -->
+
+		<record id="poi_hr_payroll.hr_rule_rciva_inf0" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Minimo No Imponible</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">1</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf1" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">IMPTO. 13%</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">2</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf2" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">IVA segun (F-110)</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">3</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf3" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Saldo Mes Antr.</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">4</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf4" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Actual mes Antr.</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">5</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf5" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Saldo Actual</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">6</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf6" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">TOTAL MES ANTERIOR Y ACTUAL</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">7</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf7" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Saldo a Favor del Dependiente</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">8</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf8" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Saldo Utilizado</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">9</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf9" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Impuesto Retenido a Pagar</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">10</field>
+        </record>
+
+        <record id="poi_hr_payroll.hr_rule_rciva_inf10" model="hr.salary.rule">
+			<field name="on_report_2" eval="True"/>
+			<field name="name_2">Saldo A Favor del Siguiente Mes</field>
+			<field name="report_id_2" ref="rciva_payroll_bol"/>
+			<field name="sequence_report_2">11</field>
+        </record>
+
+        <!-- BOLETA DE PAGO -->
+
+        <record id="hr_report_voucher" model="hr.voucher.config">
+            <field name="name">Ingresos</field>
+            <field name="width">6</field>
+            <field name="sequence">0</field>
+        </record>
+
+        <record id="hr_report_voucher_line0" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher"></field>
+            <field name="name">SALARIO GANADO</field>
+            <field name="salary_rules_id" ref="hr_payroll.hr_rule_basic"></field>
+        </record>
+
+        <record id="hr_report_voucher_line1" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher"></field>
+            <field name="name">BONO ANTIGUEDAD</field>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_bono_a"></field>
+        </record>
+
+        <record id="hr_report_voucher_line3" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher"></field>
+            <field name="name">HORAS EXTRAS</field>
+        </record>
+
+        <record id="hr_report_voucher_line4" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher"></field>
+            <field name="name">OTROS</field>
+			<field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_other_o"></field>
+        </record>
+
+        <record id="hr_report_voucher_line5" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher"></field>
+            <field name="name">TOTAL INGRESOS</field>
+            <field name="salary_rules_id" ref="hr_payroll.hr_rule_taxable"></field>
+        </record>
+
+        <record id="hr_report_voucher_line6" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher"></field>
+            <field name="name">LIQUIDO PAGABLE</field>
+            <field name="salary_rules_id" ref="hr_payroll.hr_rule_net"></field>
+        </record>
+
+        <record id="hr_report_voucher_2" model="hr.voucher.config">
+            <field name="name">Egresos</field>
+            <field name="width">6</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="hr_report_voucher2_line0" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher_2"></field>
+            <field name="name">APFs</field>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp"></field>
+        </record>
+
+        <record id="hr_report_voucher2_line1" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher_2"></field>
+            <field name="name">ANS</field>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_sol"></field>
+        </record>
+
+        <record id="hr_report_voucher2_line3" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher_2"></field>
+            <field name="name">RC-IVA</field>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_rciva"></field>
+        </record>
+
+        <record id="hr_report_voucher2_line4" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher_2"></field>
+            <field name="name">ANTICIPOS Y OTROS DSCTOS.</field>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_ade"></field>
+        </record>
+
+        <record id="hr_report_voucher2_line5" model="hr.voucher.config.line">
+            <field name="config_id" ref="hr_report_voucher_2"></field>
+            <field name="name">TOTAL EGRESO</field>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_totald"></field>
+        </record>
+
+
+
+        <!-- REPORTE DE APORTES LABORALES Y PATRONALES -->
+
+		<record id="poi_hr_payroll.afp_futuro" model="hr.afps">
+            <field name="name">AFP FUTURO DE BOLIVIA</field>
+			<field name="sequence">1</field>
+			<field name="on_report" eval="True"></field >
+        </record>
+
+        <record id="hr_report_afp_line_1" model="hr.afps.report.line">
+            <field name="name">AFP LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_0"/>
+            <field name="note">12.21%</field>
+        </record>
+         <record id="hr_report_afp_line_2" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_1"/>
+            <field name="note">0.50%</field>
+        </record>
+         <record id="hr_report_afp_line_3" model="hr.afps.report.line">
+            <field name="name">AFP PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_2"/>
+            <field name="note">1.71%</field>
+        </record>
+         <record id="hr_report_afp_line_4" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_3"/>
+            <field name="note">3.00%</field>
+        </record>
+         <record id="hr_report_afp_line_5" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_4"/>
+            <field name="note">1%</field>
+        </record>
+         <record id="hr_report_afp_line_6" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_5"/>
+            <field name="note">5%</field>
+        </record>
+         <record id="hr_report_afp_line_7" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_6"/>
+            <field name="note">10%</field>
+        </record>
+         <record id="hr_report_afp_line_8" model="hr.afps.report.line">
+            <field name="name">PRO-VIVIENDA PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_futuro"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_7"/>
+            <field name="note">2%</field>
+        </record>
+
+		<record id="poi_hr_payroll.afp_bbva" model="hr.afps">
+            <field name="name">AFP BBVA PREVISION</field>
+			<field name="sequence">2</field>
+			<field name="on_report" eval="True"></field >
+        </record>
+
+
+        <record id="hr_report_afp2_line_1" model="hr.afps.report.line">
+            <field name="name">AFP LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_0"/>
+            <field name="note">12.21%</field>
+        </record>
+         <record id="hr_report_afp2_line_2" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_1"/>
+            <field name="note">0.50%</field>
+        </record>
+         <record id="hr_report_afp2_line_3" model="hr.afps.report.line">
+            <field name="name">AFP PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_2"/>
+            <field name="note">1.71%</field>
+        </record>
+         <record id="hr_report_afp2_line_4" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_3"/>
+            <field name="note">3.00%</field>
+        </record>
+         <record id="hr_report_afp2_line_5" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_4"/>
+            <field name="note">1%</field>
+        </record>
+         <record id="hr_report_afp2_line_6" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_5"/>
+            <field name="note">5%</field>
+        </record>
+         <record id="hr_report_afp2_line_7" model="hr.afps.report.line">
+            <field name="name">APORTE SOLIDARIO LABORAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_6"/>
+            <field name="note">10%</field>
+        </record>
+         <record id="hr_report_afp2_line_8" model="hr.afps.report.line">
+            <field name="name">PRO-VIVIENDA PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_bbva"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_7"/>
+            <field name="note">2%</field>
+        </record>
+
+		<record id="poi_hr_payroll.afp_petrolera" model="hr.afps">
+            <field name="name">CAJA PETROLERA DE SALUD</field>
+			<field name="sequence">3</field>
+			<field name="on_report" eval="True"></field >
+        </record>
+
+        <record id="hr_report_afp3_line_1" model="hr.afps.report.line">
+            <field name="name">APORTE PATRONAL</field>
+            <field name="afp_id" ref="poi_hr_payroll.afp_petrolera"/>
+            <field name="salary_rules_id" ref="poi_hr_payroll.hr_rule_afp_inf_8"/>
+            <field name="note">10%</field>
+        </record>
+
+
+    </data>
+</odoo>

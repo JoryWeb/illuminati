@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="product_supplierinfo_form_view_landi">
+            <field name="name">product.supplierinfo.landi</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="calidad"/>
+                    <field name="disponibilidad"/>
+                    <field name="cumplimiento"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

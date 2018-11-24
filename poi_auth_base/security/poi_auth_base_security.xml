@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    <record model="ir.module.category" id="module_category_authorization">
+        <field name="name">Authorization</field>
+        <field name="sequence">15</field>
+    </record>
+
+    <record id="group_auth_reviewer" model="res.groups">
+        <field name="name">Reviewer</field>
+        <field name="category_id" ref="module_category_authorization"/>
+    </record>
+    <record id="group_auth_authorizer_manager" model="res.groups">
+        <field name="name">Authorizer Manager</field>
+        <field name="category_id" ref="module_category_authorization"/>
+        <field name="implied_ids" eval="[(4, ref('group_auth_reviewer'))]"/>
+    </record>
+    <record id="group_auth_rule_manager" model="res.groups">
+        <field name="name">Rule Manager</field>
+        <field name="category_id" ref="module_category_authorization"/>
+        <field name="implied_ids" eval="[(4, ref('group_auth_authorizer_manager'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</data>
+</openerp>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <menuitem id="menu_account_op_charge_wiz" name="Generacion de Cargos" parent="menu_account_op_root" action="account_op_charge_wiz_action_form" sequence="2"/>
+</data>
+</odoo>

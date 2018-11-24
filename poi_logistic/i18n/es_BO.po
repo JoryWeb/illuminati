@@ -1,0 +1,420 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_logistic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-01 20:02+0000\n"
+"PO-Revision-Date: 2016-06-01 20:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_logistic
+#: model:ir.actions.act_window,help:poi_logistic.product_stock_control_action
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to define maximum and minimum quantities on products\n"
+"              </p><p>\n"
+"                Maximum and minimum are defined to define rules.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Haz clic para definir las cantidades mínimas y máximas en los productos\n"
+"              </p><p>\n"
+"                Los máximos y mínimos están definidos para definir las reglas.\n"
+"              </p>\n"
+"            "
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,c_qty:0
+msgid "Actual Company Qty"
+msgstr "Cant. Actual Compañía"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,cr_qty:0
+msgid "Actual Company Reserved Qty"
+msgstr "Cant. Actual Reservada Compañía"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,qty:0
+msgid "Actual Location Qty."
+msgstr "Cant. Actual Ubicación"
+
+#. module: poi_logistic
+#: model:ir.model,name:poi_logistic.model_product_stock_control
+msgid "Agencies"
+msgstr "Agencias"
+
+#. module: poi_logistic
+#: selection:product.stock.control,margin_calculation:0
+msgid "Automatic"
+msgstr "Automático"
+
+#. module: poi_logistic
+#: field:product.stock.control,automatic_minimum_calculation:0
+msgid "Automatic Minimum Calculation"
+msgstr "Cálculo Mínimo Automático"
+
+#. module: poi_logistic
+#: selection:product.stock.control,automatic_minimum_calculation:0
+msgid "Based on last n months"
+msgstr "Basado en los últimos n meses"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: selection:poi.margin.stock.report,state:0
+msgid "Below Minimal"
+msgstr "Menor al Mínimo"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: selection:poi.margin.stock.report,state:0
+msgid "Below Security Percentage"
+msgstr "Menor al Porcentaje de Seguridad"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,breaking_point:0
+msgid "Breaking Point"
+msgstr "Punto de Quiebre"
+
+#. module: poi_logistic
+#: selection:res.company,analysis_range:0
+msgid "By Week"
+msgstr "Por Semana"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,categ_id:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: poi_logistic
+#: model:ir.model,name:poi_logistic.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,company_id:0
+#: selection:poi.margin.stock.report,type:0
+#: field:poi.product.logistic.categories.report,company_id:0
+#: field:poi.stock.customer.report,company_id:0
+#: field:product.stock.control,company_id:0
+#: selection:product.stock.control,type:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_logistic
+#: model:ir.ui.menu,name:poi_logistic.menu_logistic_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,type:0
+#: field:product.stock.control,type:0
+msgid "Control Type"
+msgstr "Tipo de Control"
+
+#. module: poi_logistic
+#: field:product.stock.control,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_logistic
+#: field:product.stock.control,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_logistic
+#: selection:res.company,analysis_range:0
+msgid "Daily"
+msgstr "Diario"
+
+#. module: poi_logistic
+#: field:poi.stock.customer.report,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_logistic
+#: field:poi.stock.customer.report,date_day:0
+msgid "Day"
+msgstr "Día"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,display_name:0
+#: field:poi.product.logistic.categories.report,display_name:0
+#: field:poi.stock.customer.report,display_name:0
+#: field:product.stock.control,display_name:0
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: view:poi.product.logistic.categories.report:poi_logistic.view_poi_product_logistic_categories_report_search
+#: view:product.stock.control:poi_logistic.product_stock_control_search_view
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: poi_logistic
+#: model:ir.module.category,description:poi_logistic.module_category_logistic
+msgid "Helps you on data analysis."
+msgstr "Este módulo le ayuda en su análisis de datos."
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,id:0
+#: field:poi.product.logistic.categories.report,id:0
+#: field:poi.stock.customer.report,id:0
+#: field:product.stock.control,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,__last_update:0
+#: field:poi.product.logistic.categories.report,__last_update:0
+#: field:poi.stock.customer.report,__last_update:0
+#: field:product.stock.control,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: poi_logistic
+#: field:product.stock.control,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: poi_logistic
+#: field:product.stock.control,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: field:poi.margin.stock.report,location_id:0
+#: selection:poi.margin.stock.report,type:0
+#: field:poi.stock.customer.report,location_id:0
+#: view:product.stock.control:poi_logistic.product_stock_control_search_view
+#: field:product.stock.control,location_id:0
+#: selection:product.stock.control,type:0
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,reserved_qty:0
+msgid "Location Reserved Qty."
+msgstr "Cant. Reservada en Ubicación"
+
+#. module: poi_logistic
+#: model:ir.module.category,name:poi_logistic.module_category_logistic
+#: model:ir.ui.menu,name:poi_logistic.menu_logistic_root
+#: view:product.product:poi_logistic.product_logistic_form_view
+#: view:res.company:poi_logistic.view_company_logistic_form
+msgid "Logistic"
+msgstr "Logística"
+
+#. module: poi_logistic
+#: field:res.company,analysis_range:0
+msgid "Logistic Analysis Range"
+msgstr "Rango de Análisis"
+
+#. module: poi_logistic
+#: field:product.product,control_lines:0
+msgid "Logistic Lines"
+msgstr "Líneas de Logística"
+
+#. module: poi_logistic
+#: model:res.groups,name:poi_logistic.group_logistic_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: poi_logistic
+#: selection:product.stock.control,margin_calculation:0
+msgid "Manual"
+msgstr "Manual"
+
+#. module: poi_logistic
+#: field:product.stock.control,margin_calculation:0
+msgid "Margin Calculation"
+msgstr "Cálculo del Margen"
+
+#. module: poi_logistic
+#: code:addons/poi_logistic/report/margin_stock_report.py:305
+#: model:ir.actions.act_window,name:poi_logistic.action_poi_margin_stock_filtered_report
+#: model:ir.actions.act_window,name:poi_logistic.action_poi_margin_stock_report
+#: model:ir.model,name:poi_logistic.model_poi_margin_stock_report
+#: model:ir.ui.menu,name:poi_logistic.menu_poi_margin_stock_report
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_graph
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_tree
+#, python-format
+msgid "Margin Stock Report"
+msgstr "Reporte de Control de Stock"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,max_qty:0
+#: field:product.stock.control,max_qty:0
+msgid "Max. Quantity"
+msgstr "Cantidad Máxima"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,min_qty:0
+#: field:product.stock.control,min_qty:0
+msgid "Min. Quantity"
+msgstr "Cantidad Mínima"
+
+#. module: poi_logistic
+#: field:poi.stock.customer.report,date_month:0
+msgid "Month"
+msgstr "Mes"
+
+#. module: poi_logistic
+#: selection:res.company,analysis_range:0
+msgid "Monthly"
+msgstr "Mensual"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,name:0
+#: field:product.stock.control,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: selection:poi.margin.stock.report,state:0
+msgid "On Rule"
+msgstr "En Regla"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: selection:poi.margin.stock.report,state:0
+msgid "Out of Stock"
+msgstr "Sin Stock"
+
+#. module: poi_logistic
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: selection:poi.margin.stock.report,state:0
+msgid "Over Maximum"
+msgstr "Sobre el Máximo"
+
+#. module: poi_logistic
+#: view:poi.product.logistic.categories.report:poi_logistic.view_poi_product_logistic_categories_report_search
+msgid "Period"
+msgstr "Periodo"
+
+#. module: poi_logistic
+#: field:product.stock.control,automatic_period:0
+msgid "Period Calculation"
+msgstr "Periodo de Cálculo"
+
+#. module: poi_logistic
+#: field:poi.product.logistic.categories.report,product_period_move:0
+msgid "Period Category"
+msgstr "Categ. Logística del Periodo"
+
+#. module: poi_logistic
+#: help:product.stock.control,security_percentage:0
+msgid "Porcentaje que se introduce en cada Artículo/Almacén para incrementar el número de unidades mínimas a mantener por motivos subjetivos o externos a la aplicación. 10% modificable por el usuario.Mediante esta fórmula, el programa calcula para cada artículo en cada almacén el Stock mínimo ideal para servir al cliente de forma inmediata, pero manteniendo el stock mínimo necesario para ello, con la consiguiente reducción de costes."
+msgstr "Porcentaje que se introduce en cada Artículo/Almacén para incrementar el número de unidades mínimas a mantener por motivos subjetivos o externos a la aplicación. 10% modificable por el usuario.Mediante esta fórmula, el programa calcula para cada artículo en cada almacén el Stock mínimo ideal para servir al cliente de forma inmediata, pero manteniendo el stock mínimo necesario para ello, con la consiguiente reducción de costes."
+
+#. module: poi_logistic
+#: model:ir.model,name:poi_logistic.model_product_product
+#: view:poi.margin.stock.report:poi_logistic.view_poi_margin_stock_report_search
+#: field:poi.margin.stock.report,product_id:0
+#: field:poi.product.logistic.categories.report,product_id:0
+#: field:poi.stock.customer.report,product_id:0
+#: view:product.stock.control:poi_logistic.product_stock_control_search_view
+#: field:product.stock.control,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_logistic
+#: model:ir.actions.act_window,name:poi_logistic.product_stock_control_action
+#: model:ir.ui.menu,name:poi_logistic.menu_product_stock_control
+#: view:product.stock.control:poi_logistic.product_stock_control_form_view
+#: view:product.stock.control:poi_logistic.product_stock_control_tree_view
+msgid "Product Configuration"
+msgstr "Configuración del Producto"
+
+#. module: poi_logistic
+#: model:ir.actions.act_window,name:poi_logistic.action_poi_product_logistic_categories_filtered_report
+#: model:ir.actions.act_window,name:poi_logistic.action_poi_product_logistic_categories_report
+#: model:ir.ui.menu,name:poi_logistic.menu_poi_product_logistic_categories_report
+#: view:poi.product.logistic.categories.report:poi_logistic.view_poi_product_logistic_categories_report_graph
+#: view:poi.product.logistic.categories.report:poi_logistic.view_poi_product_logistic_categories_report_search
+#: view:poi.product.logistic.categories.report:poi_logistic.view_poi_product_logistic_categories_report_tree
+msgid "Product Logistic Categories"
+msgstr "Categorías Logísticas de Productos"
+
+#. module: poi_logistic
+#: model:ir.model,name:poi_logistic.model_poi_product_logistic_categories_report
+msgid "Product Logistic Categories Report"
+msgstr "Reporte de Categorías Logísticas de Productos"
+
+#. module: poi_logistic
+#: field:poi.stock.customer.report,product_qty:0
+msgid "Product Quantity"
+msgstr "Cantidad de Producto"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,product_uom:0
+msgid "Product UoM"
+msgstr "Unidad de Medida"
+
+#. module: poi_logistic
+#: model:ir.actions.act_window,name:poi_logistic.action_logistic_products
+#: model:ir.ui.menu,name:poi_logistic.action_products_logistic
+#: model:ir.ui.menu,name:poi_logistic.menu_logistic_products
+msgid "Products"
+msgstr "Productos"
+
+#. module: poi_logistic
+#: model:ir.ui.menu,name:poi_logistic.menu_logistic_reports
+msgid "Reports"
+msgstr "Informes"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,sec_qty:0
+msgid "Sec. Quantity"
+msgstr "Cant. de Seguridad"
+
+#. module: poi_logistic
+#: field:product.stock.control,security_percentage:0
+msgid "Security (%)"
+msgstr "Márgen de Seguridad (%)"
+
+#. module: poi_logistic
+#: field:poi.margin.stock.report,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_logistic
+#: model:ir.model,name:poi_logistic.model_poi_stock_customer_report
+msgid "Stock Customer Report"
+msgstr "Reporte de Stock en Cliente"
+
+#. module: poi_logistic
+#: view:product.product:poi_logistic.logistic_products_kanban
+msgid "Stock Margin"
+msgstr "Margen de Stock"
+
+#. module: poi_logistic
+#: help:poi.product.logistic.categories.report,product_period_move:0
+msgid "This field is going to categorize based on company logistic range"
+msgstr "El campo irá a categorizar basado en el rango logístico de la compañía"
+
+#. module: poi_logistic
+#: field:product.stock.control,product_uom:0
+msgid "Unit of Measure"
+msgstr "Unidad de Medida"
+
+#. module: poi_logistic
+#: model:res.groups,name:poi_logistic.group_logistic_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: poi_logistic
+#: field:poi.stock.customer.report,date_year:0
+msgid "Year"
+msgstr "Año"
+

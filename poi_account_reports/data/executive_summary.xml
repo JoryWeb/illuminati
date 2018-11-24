@@ -1,0 +1,216 @@
+<odoo>
+    <data>
+        <!--
+            EXECUTIVE SUMMARY
+        -->
+
+        <record id="account_financial_report_executivesummary0" model="account.financial.html.report">
+            <field name="name">Executive Summary</field>
+            <field name="report_type">date_range</field>
+            <field name='parent_id' ref='account_reports_business_statements_menu'/>
+        </record>
+        <record id="account_financial_report_executivesummary_cash0" model="account.financial.html.report.line">
+            <field name="name">CASH</field>
+            <field name="sequence" eval="1"/>
+            <field name="financial_report_id" ref="account_financial_report_executivesummary0"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="account_financial_report_executivesummary_cash_received0" model="account.financial.html.report.line">
+            <field name="name">Cash received</field>
+            <field name="code">CR</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_cash0'/>
+            <field name="domain" eval="[('account_id.user_type_id.type', '=', 'liquidity')]" />
+            <field name="formulas">balance = sum.debit</field>
+            <field name="show_domain">never</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_cash_spent0" model="account.financial.html.report.line">
+            <field name="name">Cash spent</field>
+            <field name="code">CS</field>
+            <field name="sequence" eval="2"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_cash0'/>
+            <field name="domain" eval="[('account_id.user_type_id.type', '=', 'liquidity')]" />
+            <field name="formulas">balance = -sum.credit</field>
+            <field name="show_domain">never</field>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_cash_surplus0" model="account.financial.html.report.line">
+            <field name="name">Cash surplus</field>
+            <field name="sequence" eval="3"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_cash0'/>
+            <field name="formulas">balance = CR.balance + CS.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_closing_bank_balance0" model="account.financial.html.report.line">
+            <field name="name">Closing bank balance</field>
+            <field name="sequence" eval="4"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_cash0'/>
+            <field name="domain" eval="[('account_id.internal_type', '=', 'liquidity')]" />
+            <field name="formulas">balance = sum.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_profitability0" model="account.financial.html.report.line">
+            <field name="name">PROFITABILITY</field>
+            <field name="sequence" eval="2"/>
+            <field name="financial_report_id" ref="account_financial_report_executivesummary0"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="account_financial_report_executivesummary_income0" model="account.financial.html.report.line">
+            <field name="name">Income</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_profitability0'/>
+            <field name="formulas">balance = INC.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_direct_costs0" model="account.financial.html.report.line">
+            <field name="name">Cost of Sales</field>
+            <field name="sequence" eval="2"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_profitability0'/>
+            <field name="formulas">balance = COS.balance</field>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_gross_profit0" model="account.financial.html.report.line">
+            <field name="name">Gross profit</field>
+            <field name="sequence" eval="3"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_profitability0'/>
+            <field name="formulas">balance = GRP.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_expenses0" model="account.financial.html.report.line">
+            <field name="name">Expenses</field>
+            <field name="sequence" eval="4"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_profitability0'/>
+            <field name="formulas">balance = LEX.balance</field>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_profit0" model="account.financial.html.report.line">
+            <field name="name">Profit</field>
+            <field name="sequence" eval="5"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_profitability0'/>
+            <field name="formulas">balance = NEP.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_balancesheet0" model="account.financial.html.report.line">
+            <field name="name">BALANCE SHEET</field>
+            <field name="sequence" eval="3"/>
+            <field name="financial_report_id" ref="account_financial_report_executivesummary0"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="account_financial_report_executivesummary_debtors0" model="account.financial.html.report.line">
+            <field name="name">Debtors</field>
+            <field name="code">DEB</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_balancesheet0'/>
+            <field name="domain" eval="[('account_id.user_type_id.type', '=', 'receivable')]" />
+            <field name="formulas">balance = sum.balance</field>
+            <field name="show_domain">never</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_creditors0" model="account.financial.html.report.line">
+            <field name="name">Creditors</field>
+            <field name="code">CRE</field>
+            <field name="sequence" eval="2"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_balancesheet0'/>
+            <field name="domain" eval="[('account_id.user_type_id.type', '=', 'payable')]" />
+            <field name="formulas">balance = sum.balance</field>
+            <field name="show_domain">never</field>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_net_assets0" model="account.financial.html.report.line">
+            <field name="name">Net assets</field>
+            <field name="sequence" eval="3"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_balancesheet0'/>
+            <field name="formulas">balance = NA.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_performance0" model="account.financial.html.report.line">
+            <field name="name">PERFORMANCE</field>
+            <field name="sequence" eval="4"/>
+            <field name="financial_report_id" ref="account_financial_report_executivesummary0"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="account_financial_report_executivesummary_gpmargin0" model="account.financial.html.report.line">
+            <field name="name">Gross profit margin (gross profit / income)</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_performance0'/>
+            <field name="formulas">balance = GRP.balance / INC.balance</field>
+            <field name="figure_type">percents</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_npmargin0" model="account.financial.html.report.line">
+            <field name="name">Net profit margin (net profit / income)</field>
+            <field name="sequence" eval="2"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_performance0'/>
+            <field name="formulas">balance = NEP.balance / INC.balance</field>
+            <field name="figure_type">percents</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_return_investment0" model="account.financial.html.report.line">
+            <field name="name">Return on investments (net profit / assets)</field>
+            <field name="sequence" eval="3"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_performance0'/>
+            <field name="formulas">balance = NEP.balance / TA.balance</field>
+            <field name="figure_type">percents</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_position0" model="account.financial.html.report.line">
+            <field name="name">POSITION</field>
+            <field name="sequence" eval="5"/>
+            <field name="financial_report_id" ref="account_financial_report_executivesummary0"/>
+            <field name="level" eval="1" />
+        </record>
+        <record id="account_financial_report_executivesummary_avdebt0" model="account.financial.html.report.line">
+            <field name="name">Average debtors days</field>
+            <field name="sequence" eval="1"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_position0'/>
+            <field name="formulas">balance = DEB.balance / INC.balance * NDays</field>
+            <field name="figure_type">no_unit</field>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_avgcre0" model="account.financial.html.report.line">
+            <field name="name">Average creditors days</field>
+            <field name="sequence" eval="2"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_position0'/>
+            <field name="formulas">balance = CRE.balance / INC.balance * NDays</field>
+            <field name="figure_type">no_unit</field>
+            <field name="green_on_positive" eval="False"/>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_st_cash_forecast0" model="account.financial.html.report.line">
+            <field name="name">Short term cash forecast</field>
+            <field name="sequence" eval="3"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_position0'/>
+            <field name="formulas">balance = DEB.balance - CRE.balance</field>
+            <field name="level" eval="2" />
+        </record>
+        <record id="account_financial_report_executivesummary_ca_to_l0" model="account.financial.html.report.line">
+            <field name="name">Current assets to liabilities</field>
+            <field name="sequence" eval="4"/>
+            <field name="parent_id" ref='account_financial_report_executivesummary_position0'/>
+            <field name="formulas">balance = CA.balance / L.balance</field>
+            <field name="figure_type">no_unit</field>
+            <field name="level" eval="2" />
+        </record>
+
+
+
+
+
+
+        <record id="account_financial_report_executivesummary_cash0" model="account.financial.html.report.line">
+            <field name="action_id" ref='action_account_report_cs' />
+        </record>
+        <record id="account_financial_report_executivesummary_profitability0" model="account.financial.html.report.line">
+            <field name="action_id" ref='action_account_report_pnl' />
+        </record>
+        <record id="account_financial_report_executivesummary_balancesheet0" model="account.financial.html.report.line">
+            <field name="action_id" ref='action_account_report_bs' />
+        </record>
+    </data>
+</odoo>

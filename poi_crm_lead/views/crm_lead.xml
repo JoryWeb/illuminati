@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<record id="crm_case_form_view_leads_poi2" model="ir.ui.view">
+    <field name="name">crm.lead.form.poi2</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+    <field name="arch" type="xml">
+        <data>
+
+            <xpath expr="//field[@name='function']" position="attributes">
+              <attribute name="string">
+                  Funcion/Cargo
+              </attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='contact_name']" position="replace">
+
+            </xpath>
+
+            <xpath expr="//div[@class='o_row']" position="replace">
+               <field name='contact_name' attrs="{'invisible':1}"/>
+            </xpath>
+            <field name="email_from" position="before">
+
+                <label for="lastname" string="Apellidos"/>
+                <div class="o_address_format">
+                    <field name='lastname' placeholder="A. Paterno" class="o_address_city" attrs="{'required': 1}"/>
+                    <field name="lastname2" placeholder="A. Materno" class="o_address_city"/>
+                </div>
+                <label for="firstname" string="Nombres"/>
+                <div class="o_address_format">
+                    <field name='firstname' placeholder="Primer Nombre" class="o_address_city" attrs="{'required': 1}"/>
+                    <field name='firstname2' placeholder="Segundo Nombre" class="o_address_city"/>
+                </div>
+                <field name="title" placeholder="Titulo" domain="[]" options='{"no_open": True}'/>
+                <label for="ci" string="Carnet de Identidad"/>
+                <div class="o_address_format">
+                    <field name='ci'  placeholder="CI" nolabel="1"/>
+                    <field name='ci_dept' placeholder="Expedido" class="o_address_state"/>
+                    <field name='extension' placeholder="Extension" class="o_address_zip"/>
+                </div>
+
+            </field>
+            <xpath expr="//div[@class='o_address_format']" position="after">
+                <field name='nit'/>
+                <field name='razon'/>
+
+            </xpath>
+            <field name="user_id" position="after">
+                <field name='warehouse_id'/>
+            </field>
+
+            <xpath expr="//field[@name='user_id']" position="attributes">
+              <attribute name="groups">
+                  sales_team.group_sale_manager
+              </attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="attrs">{
+                    'required':[('email_from', '=', False)],
+                }</attribute>
+            </xpath>
+
+        </data>
+    </field>
+</record>
+
+<record id="crm_case_form_view_oppor_poi" model="ir.ui.view">
+    <field name="name">poi crm oppor poi</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+    <field name="arch" type="xml">
+        <data>
+          <xpath expr="//field[@name='partner_id']" position="attributes">
+            <attribute name="string">
+                Cliente
+            </attribute>
+          </xpath>
+
+          <xpath expr="//field[@name='user_id']" position="attributes">
+            <attribute name="groups">
+                sales_team.group_sale_manager
+            </attribute>
+          </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</odoo>

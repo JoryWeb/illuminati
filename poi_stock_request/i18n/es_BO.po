@@ -1,0 +1,611 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_stock_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-26 16:05+0000\n"
+"PO-Revision-Date: 2017-09-26 16:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_picking_count
+msgid "# Pickings"
+msgstr "# Albaranes"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:284
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copia)"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_picking_id
+msgid "Based on picking"
+msgstr "Basado en albarán"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_request_id
+msgid "Based on request"
+msgstr "Basado en solicitud"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+#: selection:stock.request,state:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_stock_request
+#: selection:stock.request,state:0
+msgid "Completed"
+msgstr "Completado"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_sending_stock_form
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_form
+msgid "Confirm Request"
+msgstr "Confirmar Solicitud"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_create_uid
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_create_uid
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_create_uid
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_create_date
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_create_date
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_create_date
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_request_date_planned
+msgid "Date Planned"
+msgstr "Fecha Planificada"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,help:poi_stock_request.field_stock_request_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el registro."
+
+#. module: poi_stock_request
+#: selection:stock.request,state:0
+msgid "Denied"
+msgstr "Denegado"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_destination
+msgid "Destination"
+msgstr "Destino"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_display_name
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_display_name
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_display_name
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_stock_request
+#: selection:stock.request,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_stock_request
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:343
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:510
+#: code:addons/poi_stock_request/stock.py:550
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:550
+#, python-format
+msgid "Esta solicitando un producto con cantidad 0"
+msgstr "Esta solicitando un producto con cantidad 0"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+msgid "Fill the request lines to create a request to the desired warehouse"
+msgstr "Complete las líneas para crear una solicitud al almacén seleccionado"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_location_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_warehouse_id
+msgid "From"
+msgstr "Desde"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,help:poi_stock_request.field_stock_request_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,help:poi_stock_request.field_stock_request_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: poi_stock_request
+#: model:ir.actions.act_window,help:poi_stock_request.action_sending_stock
+#: model:ir.actions.act_window,help:poi_stock_request.action_stock_request
+msgid "Las solicitudes de stock le permiten generar documentos de transferencia de almacén\n"
+"                basados en rutas de inventario, Ver configuracione de almacén-rutas antes de utilizar\n"
+"                esta opción"
+msgstr "Las solicitudes de stock le permiten generar documentos de transferencia de almacén\n"
+"                basados en rutas de inventario, Ver configuracione de almacén-rutas antes de utilizar\n"
+"                esta opción"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_last_post
+msgid "Last Message Date"
+msgstr "Fecha del último mensaje"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products___last_update
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line___last_update
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request___last_update
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_write_uid
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_write_uid
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_write_uid
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_write_date
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_write_date
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_write_date
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_request_lines
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_lot_id
+msgid "Lote"
+msgstr "Lote"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:78
+#, python-format
+msgid "Moved from %s"
+msgstr "Movido desde %s"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_sending_stock_form
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_form
+msgid "Name..."
+msgstr "Nombre..."
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_notes
+msgid "Notes"
+msgstr "Notas"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,help:poi_stock_request.field_stock_request_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,help:poi_stock_request.field_stock_request_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_origin
+msgid "Origin"
+msgstr "Orígen"
+
+#. module: poi_stock_request
+#: model:mail.message.subtype,name:poi_stock_request.mt_request_sent
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: poi_stock_request
+#: model:mail.message.subtype,name:poi_stock_request.mt_request_partially_sent
+#: selection:stock.request,state:0
+msgid "Partially Sent"
+msgstr "Parcialmente enviado"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_picking_id
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: poi_stock_request
+#: model:res.groups,name:poi_stock_request.group_picking_transfer
+msgid "Picking Transfer"
+msgstr "Transferencia de Albaranes"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_sending_stock_form
+#: model:ir.ui.view,arch_db:poi_stock_request.view_sending_stock_tree
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_form
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_tree
+msgid "Picking Types"
+msgstr "Tipos de Albarán"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_sending_stock_form
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_form
+msgid "Pickings"
+msgstr "Albaranes"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_procurement_order
+msgid "Procurement"
+msgstr "Abastecimiento"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_product_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida del producto"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_sending_stock_form
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_form
+msgid "Products"
+msgstr "Productos"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+msgid "Products To Request"
+msgstr "Productos a Enviar"
+
+#. module: poi_stock_request
+#: model:ir.actions.act_window,help:poi_stock_request.action_sending_stock
+#: model:ir.actions.act_window,help:poi_stock_request.action_stock_request
+msgid "Pulse aquí para crear agregar un nuevo documento"
+msgstr "Pulse aquí para crear agregar un nuevo documento"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_quantity
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_product_uom_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_qty_lost
+msgid "Quantity Lost"
+msgstr "Cantidad Rechazada"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_qty_pending
+msgid "Quantity Pending"
+msgstr "Cantidad Pendiente"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_qty_processed
+msgid "Quantity Processed"
+msgstr "Cantidad Procesada"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+#: selection:stock.request,type:0
+msgid "Request"
+msgstr "Solicitar"
+
+#. module: poi_stock_request
+#: model:mail.message.subtype,description:poi_stock_request.mt_request_sent
+msgid "Request Completed"
+msgstr "Solicitud Completada"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_request_date
+msgid "Request Date"
+msgstr "Fecha de Solicitud"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_description
+msgid "Request Description"
+msgstr "Descripción de solicitud"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+msgid "Request Detail"
+msgstr "Detalle de Solicitud"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:343
+#, python-format
+msgid "Request MUST have lines"
+msgstr "La solicitud DEBE tener líneas"
+
+#. module: poi_stock_request
+#: model:mail.message.subtype,description:poi_stock_request.mt_request_partially_sent
+msgid "Request Partially Completed"
+msgstr "Solicitud Parcialmente COmpletada"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/wizard/request_products.py:97
+#, python-format
+msgid "Request Products"
+msgstr "Solicitar Productos"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_poi_request_products
+msgid "Request Products Wizard"
+msgstr "Asistente de Solicitud de Productos"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_poi_request_products_line
+msgid "Request Products Wizard items"
+msgstr "Items del Asistente de Solicitud de Productos"
+
+#. module: poi_stock_request
+#: model:mail.message.subtype,description:poi_stock_request.mt_request_requested
+msgid "Request Sent"
+msgstr "Solicitud Enviada"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+msgid "Request details"
+msgstr "Detalles de solicitud"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/wizard/request_products.py:87
+#, python-format
+msgid "Request for "
+msgstr "Solicitud para "
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_picking_create_request_form
+msgid "Request from other location"
+msgstr "Solicitar desde otra ubicación"
+
+#. module: poi_stock_request
+#: model:mail.message.subtype,name:poi_stock_request.mt_request_requested
+#: selection:stock.request,state:0
+msgid "Requested"
+msgstr "Solicitado"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_request_lines
+msgid "Requested Lines"
+msgstr "Líneas Solicitadas"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_requestor
+msgid "Requestor"
+msgstr "Solicitante"
+
+#. module: poi_stock_request
+#: selection:stock.request,type:0
+msgid "Sending"
+msgstr "Envío"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:449
+#: model:ir.actions.act_window,name:poi_stock_request.action_sending_stock
+#: model:ir.ui.menu,name:poi_stock_request.menu_action_sending_stock
+#, python-format
+msgid "Sending Stock"
+msgstr "Envío de Stock"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_state
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: poi_stock_request
+#: model:ir.actions.act_window,name:poi_stock_request.action_stock_request_picking_tree
+msgid "Stock Pickings"
+msgstr "Albaranes"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:403
+#: model:ir.actions.act_window,name:poi_stock_request.action_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_picking_request_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_request_id
+#: model:ir.ui.menu,name:poi_stock_request.menu_action_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_filter
+#, python-format
+msgid "Stock Request"
+msgstr "Solicitud de Stock"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_procurement_order_request_line_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_move_request_line_id
+msgid "Stock Request Line"
+msgstr "Línea de Solicitud de Stock"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:800
+#, python-format
+msgid "The chosen quantity for product %s is not compatible with the UoM rounding. It will be automatically converted at confirmation"
+msgstr "La cantidad elegida para el producto %s no es compatibe con el redondeo de la UdM. Será convertida automáticamente al confirmar"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:790
+#, python-format
+msgid "The selected UoM for product %s is not compatible with the UoM set on the product form. \n"
+"Please choose an UoM within the same UoM category."
+msgstr "La Unidad de Medida seleccionada para el producto %s no es compatible con la Unidad de Medida del producto. \n"
+"Por favor elija una Unidad de Medida de la misma categoría."
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_location_dest_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_warehouse_dest_id
+msgid "To"
+msgstr "Hasta"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_picking_create_request_form
+msgid "Transfer to another location"
+msgstr "Transferir a otra ubicación"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_line_product_uom
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_route_id
+msgid "Usar Ruta"
+msgstr "Usar Ruta"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_use_location_dest_id
+#: model:ir.model.fields,field_description:poi_stock_request.field_stock_request_use_location_id
+msgid "Use location id"
+msgstr "Use location id"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_warehouse_id
+msgid "Warehouse to request"
+msgstr "Almacén a Enviar"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:789
+#, python-format
+msgid "Warning: wrong UoM!"
+msgstr "Alerta: UdM erroneo!"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:799
+#, python-format
+msgid "Warning: wrong quantity!"
+msgstr "Alerta: Cantidad erronea!"
+
+#. module: poi_stock_request
+#: model:ir.model.fields,field_description:poi_stock_request.field_poi_request_products_line_request_wizard_id
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:510
+#, python-format
+msgid "You cannot confirm a request without any request line."
+msgstr "Usted no puede confirmar una solicitud sin líneas."
+
+#. module: poi_stock_request
+#: code:addons/poi_stock_request/stock.py:464
+#, python-format
+msgid "You cannot delete a request which is not draft or cancelled."
+msgstr "Usted no puede borrar una solicitud que no está en borrador o cancelada."
+
+#. module: poi_stock_request
+#: model:ir.ui.view,arch_db:poi_stock_request.view_stock_request_products
+msgid "or"
+msgstr "o"
+
+#. module: poi_stock_request
+#: model:ir.model,name:poi_stock_request.model_stock_request_line
+msgid "stock.request.line"
+msgstr "stock.request.line"

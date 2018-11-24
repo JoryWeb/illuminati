@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="poi_auth_document_log_kanban" model="ir.ui.view">
+        <field name="name">poi.auth.document.log.kanban</field>
+        <field name="model">poi.auth.document.log</field>
+        <field name="arch" type="xml">
+            <kanban create="false" edit="false" class="oe_background_grey o_kanban_dashboard">
+                <field name="id"/>
+                <field name="auth_id"/>
+                <field name="user_id"/>
+                <field name="circuit_id"/>
+                <field name="state"/>
+                <field name="auth_state"/>
+                <field name="description"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(0)}">
+                            <t t-value="record.auth_state.raw_value" t-set="auth_state"/>
+                            <div class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title">
+                                    <div class="o_primary">
+                                        <a type="object" name="open_action">
+                                            <field name="name"/>
+                                        </a>
+                                    </div>
+                                    <div class="o_secondary">
+                                        <field name="state"/>
+                                    </div>
+                                </div>
+                                <!--<div class="o_kanban_manage_button_section">
+                                    <a class="o_kanban_manage_toggle_button" href="#">More
+                                        <i class="fa fa-caret-down"/>
+                                    </a>
+                                </div>-->
+                            </div>
+                            <div class="container o_kanban_card_content o_visible">
+                                <div class="row">
+                                    <div class="col-xs-12 o_kanban_primary_left">
+                                        <field name="description"/>
+                                    </div>
+                                    <t t-if="auth_state == 'notified'" t-call="AuthorizationBodyArea"/>
+                                    <t t-if="auth_state == 'to_be_notified'" t-call="AuthorizationToBeNotified"/>
+                                    <div class="clearfix"/>
+                                    <div class="clearfix"/>
+                                    <div class="clearfix"/>
+                                    <div class="col-xs-12 o_kanban_primary_bottom" style="background-color: #e2e2e0;">
+                                         Authorization States: <br/>
+                                         <field name="auth_log"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </t>
+                    <t t-name="AuthorizationBodyArea">
+                        <!-- On the left, display :
+                            - A button corresponding to the bank_statements_source, if it wasn't configured, a button for each of them
+                            - If there are statements to reconcile, a link to reconcile them -->
+                        <div class="col-xs-6 o_kanban_primary_left">
+                            <div class="row">
+
+                                <textarea rows="3" class="auth_message"
+                                          placeholder="Please type your message of approval"></textarea>
+                            </div>
+                        </div>
+                        <!-- On the right, show other common informations/actions -->
+                        <div class="col-xs-6 o_kanban_primary_right">
+                            <button type="object" name="approval_click" class="btn btn-success btn-sm">Approve</button>
+                            <button type="object" name="denial_click" class="btn btn-danger btn-sm">Reject</button>
+                        </div>
+
+
+                    </t>
+                    <t t-name="AuthorizationToBeNotified">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                This document is waiting the approval/denial of other users. You will be notified when
+                                you can approve/deny it.
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="poi_auth_document_log_search" model="ir.ui.view">
+        <field name="name">poi.auth.document.log.search</field>
+        <field name="model">poi.auth.document.log</field>
+        <field name="arch" type="xml">
+            <search string="Authorization Documents">
+                <field name="name"/>
+                <filter string="Approved" domain="[('state','=','approved')]" name="approved_state"/>
+                <filter string="Denied" domain="[('state','=','denied')]" name="denied_state"/>
+                <filter string="Pending" domain="[('state','=','pending')]" name="pending_state"/>
+                <filter string="Cancelled" domain="[('state','=','cancelled')]" name="cancelled_state"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="poi_auth_document_to_authorize_action" model="ir.actions.act_window">
+        <field name="name">Documents to Authorize</field>
+        <field name="res_model">poi.auth.document.log</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form,calendar</field>
+        <field name="view_id" ref="poi_auth_document_log_kanban"/>
+        <field name="search_view_id" ref="poi_auth_document_log_search"/>
+        <field name="domain">[('line_ids.user_id.id','=',uid)]</field>
+        <field name="context">{'search_default_pending_state': 1}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <b>Congratulations!</b>
+                You don't have any document to authorize.
+                Odoo will contact you when an authorization request is assigned to you.
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_poi_auth_document_to_authorize_action" action="poi_auth_document_to_authorize_action"
+              parent="menu_authorization_documents"
+              sequence="2"/>
+
+
+    <record id="poi_auth_document_my_requests_action" model="ir.actions.act_window">
+        <field name="name">My Authorization Requests</field>
+        <field name="res_model">poi.auth.document.log</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_id" ref="poi_auth_document_log_kanban"/>
+        <field name="search_view_id" ref="poi_auth_document_log_search"/>
+        <field name="domain">[('user_id.id','=',uid)]</field>
+        <field name="context">{}</field>
+    </record>
+    <menuitem id="menu_poi_auth_document_my_requests_action" action="poi_auth_document_my_requests_action"
+              parent="menu_authorization_documents"
+              sequence="1"/>
+
+    <!-- LOG DOCUMENTS -->
+    <record id="poi_auth_document_log_tree" model="ir.ui.view">
+        <field name="model">poi.auth.document.log</field>
+        <field name="arch" type="xml">
+            <tree string="Authorization Document Logs" create="false" edit="false">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="auth_id"/>
+                <field name="circuit_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="poi_auth_document_log_calendar" model="ir.ui.view">
+        <field name="name">poi.auth.document.log.calendar</field>
+        <field name="model">poi.auth.document.log</field>
+        <field name="arch" type="xml">
+            <calendar string="Authorization Document Logs" color="state" date_start="start_date">
+                <field name="user_id"/>
+                <field name="model_id"/>
+                <field name="circuit_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="poi_auth_document_log_pivot">
+        <field name="name">poi.auth.document.log.pivot</field>
+        <field name="model">poi.auth.document.log</field>
+        <field name="arch" type="xml">
+            <pivot string="Authorization Document Logs" display_quantity="true">
+                <field name="user_id"/>
+                <field name="state" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="poi_auth_document_log_view" model="ir.ui.view">
+        <field name="name">poi.auth.document.log.form</field>
+        <field name="model">poi.auth.document.log</field>
+        <field eval="4" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Authorization Document Logs">
+                <header>
+                    <button name="approve_document" states="pending" string="Approve" type="object"/>
+                    <button name="deny_document" states="pending" string="Deny" type="object"/>
+                    <button name="action_cancel" states="pending" string="Cancel" type="object"/>
+                    <button name="open_action" states="pending" string="View Document" type="object" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,approved,denied"
+                           statusbar_colors='{"pending":"red","approved":"blue", "denied":"blue"}'/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="auth_id" readonly="1"/>
+                            <field name="user_id" readonly="1"/>
+                            <field name="circuit_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="model_id" readonly="1"/>
+                            <field name="res_id" readonly="1"/>
+                            <field name="start_date" readonly="1"/>
+                            <field name="end_date" readonly="1"/>
+                        </group>
+                    </group>
+                    <field name="line_ids">
+                        <tree create="0">
+                            <field name="user_id"/>
+                            <field name="state"/>
+                            <field name="message"/>
+                            <field name="confirmed_date"/>
+                        </tree>
+                        <form>
+                            <header>
+                                <button name="approve_line" states="notified" string="Approve" type="object"/>
+                                <button name="deny_line" states="notified" string="Deny" type="object"/>
+                                <field name="state" widget="statusbar" statusbar_visible="notified,approved,denied"
+                                       statusbar_colors='{"notified":"red","approved":"blue", "denied":"blue"}'/>
+                            </header>
+                            <sheet>
+                                <group>
+                                    <field name="message" placeholder="Approval/Denial Message"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="poi_auth_document_log_action" model="ir.actions.act_window">
+        <field name="name">Authorization Document Logs</field>
+        <field name="res_model">poi.auth.document.log</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_id" ref="poi_auth_document_log_tree"/>
+    </record>
+
+    <menuitem id="menu_poi_auth_document_log_action" action="poi_auth_document_log_action"
+              parent="menu_authorization_audit"
+              sequence="3"/>
+
+</odoo>

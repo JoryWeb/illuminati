@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_change_landicorp_form_accounting" model="ir.ui.view">
+            <field name="name">Change landicorp for accounting</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="credit" position="attributes">
+                        <attribute name="groups">account.group_account_invoice</attribute>
+                    </field>
+                    <field name="debit" position="attributes">
+                        <attribute name="groups">account.group_account_invoice</attribute>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

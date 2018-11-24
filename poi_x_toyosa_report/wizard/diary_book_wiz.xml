@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_diary_book" model="ir.ui.view">
+        <field name="name">Libro Diario</field>
+        <field name="model">diary.book.wiz</field>
+        <field name="arch" type="xml">
+            <form string="Libro Diario">
+                <group col="1">
+                    <field name="date" />
+                </group>
+                <footer>
+                    <button name="action_view_report" string="Generar" type="object" class="btn-primary"/>
+                    or
+                    <button string="Salir" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="diary_book_action" model="ir.actions.act_window">
+        <field name="name">Libro Diario</field>
+        <field name="res_model">diary.book.wiz</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Libro Diario" action="diary_book_action" id="menu_diary_book" parent="account.menu_finance_reports" sequence="12"/>
+
+  </data>
+</odoo>

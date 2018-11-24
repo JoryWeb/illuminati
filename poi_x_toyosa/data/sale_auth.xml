@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data noupdate="1">
+
+  <record model="poi.auth.circuit" id="percent_min_circuit">
+    <field name="name">Aprobacion del Porcentaje Minimo para Facturacion</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v0_lp">
+    <field name="name">Vehiculos mayor que 2% and menor igual que3% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v1_lp">
+    <field name="name">Vehiculos mayor que 3% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ca0_lp">
+    <field name="name">Camiones mayor que 2% and menor igual que3% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+  <record model="poi.auth.circuit" id="discount_ca1_lp">
+    <field name="name">Camiones mayor que 3% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne0_lp">
+    <field name="name">Neumaticos mayor que 2% and menor igual que4% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne1_lp">
+    <field name="name">Neumaticos mayor que 3% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ya0_lp">
+    <field name="name">Yamaha mayor que 3% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_vv0_lp">
+    <field name="name">Volvo mayor que 0% La Paz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v0_sc">
+    <field name="name">Vehiculos mayor que 2%  and menor igual que 3% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v1_sc">
+    <field name="name">Vehiculos mayor que 3% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ca0_sc">
+    <field name="name">Camiones mayor que 2% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+  <record model="poi.auth.circuit" id="discount_ca1_sc">
+    <field name="name">Camiones mayor que 3% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne0_sc">
+    <field name="name">Neumaticos mayor que 2% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne1_sc">
+    <field name="name">Neumaticos mayor que 3% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ya0_sc">
+    <field name="name">Yamaha mayor que 3% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_vv0_sc">
+    <field name="name">Volvo mayor que 0% Santa Cruz</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v0_cb">
+    <field name="name">Vehiculos mayor que 2% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v1_cb">
+    <field name="name">Vehiculos mayor que 3% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ca0_cb">
+    <field name="name">Camiones mayor que 2% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+  <record model="poi.auth.circuit" id="discount_ca1_cb">
+    <field name="name">Camiones mayor que 3% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne0_cb">
+    <field name="name">Neumaticos mayor que 2% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne1_cb">
+    <field name="name">Neumaticos mayor que 3% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ya0_cb">
+    <field name="name">Yamaha mayor que 3% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_vv0_cb">
+    <field name="name">Volvo mayor que 0% Cochabamba</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v0_or">
+    <field name="name">Vehiculos mayor que 2% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v1_or">
+    <field name="name">Vehiculos mayor que 3% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ca0_or">
+    <field name="name">Camiones mayor que 2% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+  <record model="poi.auth.circuit" id="discount_ca1_or">
+    <field name="name">Camiones mayor que 3% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne0_or">
+    <field name="name">Neumaticos mayor que 2% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne1_or">
+    <field name="name">Neumaticos mayor que 3% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ya0_or">
+    <field name="name">Yamaha mayor que 3% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_vv0_or">
+    <field name="name">Volvo mayor que 0% Oruro</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v0_pt">
+    <field name="name">Vehiculos mayor que 2% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_v1_pt">
+    <field name="name">Vehiculos mayor que 3% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ca0_pt">
+    <field name="name">Camiones mayor que 2% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+  <record model="poi.auth.circuit" id="discount_ca1_pt">
+    <field name="name">Camiones mayor que 3% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne0_pt">
+    <field name="name">Neumaticos mayor que 2% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ne1_pt">
+    <field name="name">Neumaticos mayor que 3% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_ya0_pt">
+    <field name="name">Yamaha mayor que 3% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.circuit" id="discount_vv0_pt">
+    <field name="name">Volvo mayor que 0% Potosi</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount0_LP">
+    <field name="name">Regla de Descuento mayor que 2 y menor igual que al 3 % La Paz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'LP':
+        for line in order.order_line:
+            if line.discount &gt; 2 and line.discount &lt;= 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount1_LP">
+    <field name="name">Regla de Descuento mayor que 3% La Paz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'LP':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount2_LP">
+    <field name="name">Regla de Descuento mayor que 3 y menor igual que al 4% La Paz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'LP':
+        for line in order.order_line:
+            if line.discount &gt; 3 and line.discount &lt;= 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount3_LP">
+    <field name="name">Regla de Descuento mayor que 4% La Paz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'LP':
+        for line in order.order_line:
+            if line.discount &gt; 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount00_LP">
+    <field name="name">Regla de Descuento mayor que 0% La Paz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'LP':
+        for line in order.order_line:
+            if line.discount &gt; 0:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount6_LP">
+    <field name="name">Regla de Descuento mayor que 3% La Paz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'LP':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount0_SC">
+    <field name="name">Regla de Descuento mayor que 2 y menor igual que al 3% Santa Cruz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'SC':
+        for line in order.order_line:
+            if line.discount &gt; 2 and line.discount &lt;= 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount1_SC">
+    <field name="name">Regla de Descuento mayor que 3% Santa Cruz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'SC':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount2_SC">
+    <field name="name">Regla de Descuento mayor que 3 y menor igual que al 4% Santa Cruz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'SC':
+        for line in order.order_line:
+            if line.discount &gt; 3 and line.discount &lt;= 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount3_SC">
+    <field name="name">Regla de Descuento mayor que 4% Santa Cruz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'SC':
+        for line in order.order_line:
+            if line.discount &gt; 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount00_SC">
+    <field name="name">Regla de Descuento mayor que 0% Santa Cruz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'SC':
+        for line in order.order_line:
+            if line.discount &gt; 0:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount6_SC">
+    <field name="name">Regla de Descuento mayor que 3% Santa Cruz</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'SC':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount0_CB">
+    <field name="name">Regla de Descuento mayor que 2 y menor igual que al 3% Cochabamba</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'CB':
+        for line in order.order_line:
+            if line.discount &gt; 2 and line.discount &lt;= 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount1_CB">
+    <field name="name">Regla de Descuento mayor que 3% Cochabamba</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'CB':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount2_CB">
+    <field name="name">Regla de Descuento mayor que 3 y menor igual que al 4% Cochabamba</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'CB':
+        for line in order.order_line:
+            if line.discount &gt; 3 and line.discount &lt;= 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount3_CB">
+    <field name="name">Regla de Descuento mayor que 4% Cochabamba</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'CB':
+        for line in order.order_line:
+            if line.discount &gt; 4:
+                result = True
+                break
+    </field>
+  </record>
+
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount00_CB">
+    <field name="name">Regla de Descuento mayor 0% Cochabamba</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'CB':
+        for line in order.order_line:
+            if line.discount &gt; 0:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount6_CB">
+    <field name="name">Regla de Descuento mayor que 3% Cochabamba</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'CB':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount0_OR">
+    <field name="name">Regla de Descuento mayor que 2 y menor igual que al 3% Oruro</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'OR':
+        for line in order.order_line:
+            if line.discount &gt; 2 and line.discount &lt;= 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount1_OR">
+    <field name="name">Regla de Descuento mayor que 3% Oruro</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'OR':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount2_OR">
+    <field name="name">Regla de Descuento mayor que 3 y menor igual que al 4% Oruro</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'OR':
+        for line in order.order_line:
+            if line.discount &gt; 3 and line.discount &lt;= 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount3_OR">
+    <field name="name">Regla de Descuento mayor que 4% Oruro</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'OR':
+        for line in order.order_line:
+            if line.discount &gt; 4:
+                result = True
+                break
+    </field>
+  </record>
+
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount00_OR">
+    <field name="name">Regla de Descuento mayor que 0% Oruro</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'OR':
+        for line in order.order_line:
+            if line.discount &gt; 0:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount6_OR">
+    <field name="name">Regla de Descuento mayor que 3% Oruro</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'OR':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount0_PT">
+    <field name="name">Regla de Descuento mayor que 2 y menor igual que al 3% Potosi</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'PT':
+        for line in order.order_line:
+            if line.discount &gt; 2 and line.discount &lt;= 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount1_PT">
+    <field name="name">Regla de Descuento mayor que 3% Potosi</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'PT':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount2_PT">
+    <field name="name">Regla de Descuento mayor que 3 y menor igual que al 4% Potosi</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'PT':
+        for line in order.order_line:
+            if line.discount &gt; 3 and line.discount &lt;= 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount3_PT">
+    <field name="name">Regla de Descuento mayor que 4% Potosi</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'PT':
+        for line in order.order_line:
+            if line.discount &gt; 4:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount00_PT">
+    <field name="name">Regla de Descuento mayor que 0% Potosi</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'PT':
+        for line in order.order_line:
+            if line.discount &gt; 0:
+                result = True
+                break
+    </field>
+  </record>
+
+  <record model="poi.auth.auth.python.code" id="python_rule_discount6_PT">
+    <field name="name">Regla de Descuento mayor que 3% Potosi</field>
+    <field name="code">
+for order in object:
+    if order.user_id and order.user_id.partner_id and order.user_id.partner_id.state_id and order.user_id.partner_id.state_id.code == 'PT':
+        for line in order.order_line:
+            if line.discount &gt; 3:
+                result = True
+                break
+    </field>
+  </record>
+
+
+
+
+
+  <!-- rule for pricelist -->
+  <record model="poi.auth.auth.python.code" id="python_rule_pricelist">
+    <field name="name">Lista de Precio Aprobada</field>
+    <field name="code">
+for pricelist in object:
+    if not pricelist.circuit_check and pricelist.pricelist_id.id %(operator)s %(value)s:
+        result = True
+    </field>
+  </record>
+
+  <!-- circuito -->
+
+  <record model="poi.auth.circuit" id="circuit_pricelist">
+    <field name="name">Lista de Precios</field>
+    <field name="type">anyone</field>
+  </record>
+
+  <!-- aut pricelist  -->
+  <record id="auth_pricelist" model="poi.auth.auth">
+    <field name="name">Lista de Precios</field>
+    <field name="code">product.pricelist.update</field>
+    <field name="model_id" ref="poi_x_toyosa.model_product_pricelist_assistant"/>
+    <field name="circuit_id" ref="circuit_pricelist"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Actualizacion de Lista de Precios</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_pricelist">
+    <field name="auth_id" ref="auth_pricelist"/>
+    <field name="circuit_id" ref="circuit_pricelist"/>
+    <field name="description">Debe estar Aprobado para Continuar </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">Regla</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_pricelist">
+    <field name="rule_id" ref="rule_pricelist"/>
+    <field name="python_rule" ref="python_rule_pricelist"/>
+    <field name="operator">equal</field>
+    <field name="value">1</field>
+  </record>
+
+
+<!-- Ordenes de Venta -->
+  <record id="discount_vehiculos" model="poi.auth.auth">
+    <field name="name">Vehiculos</field>
+    <field name="code">sale.order.vehiculos</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="circuit_id" ref="discount_v0_lp"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Ventas</field>
+  </record>
+  <record model="poi.auth.auth.rule" id="rule_discount_0_LP">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v0_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% LP VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve0_LP">
+      <field name="rule_id" ref="rule_discount_0_LP"/>
+      <field name="python_rule" ref="python_rule_discount0_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_1_LP">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v1_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% LP VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve1_LP">
+      <field name="rule_id" ref="rule_discount_1_LP"/>
+      <field name="python_rule" ref="python_rule_discount1_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_0_SC">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v0_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% SC VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve2_SC">
+      <field name="rule_id" ref="rule_discount_0_SC"/>
+      <field name="python_rule" ref="python_rule_discount0_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_1_SC">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v1_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% SC VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve3_SC">
+      <field name="rule_id" ref="rule_discount_1_SC"/>
+      <field name="python_rule" ref="python_rule_discount1_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_0_CB">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v0_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% CB VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve4_CB">
+      <field name="rule_id" ref="rule_discount_0_CB"/>
+      <field name="python_rule" ref="python_rule_discount0_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_1_CB">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v1_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% CB VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve5_CB">
+      <field name="rule_id" ref="rule_discount_1_CB"/>
+      <field name="python_rule" ref="python_rule_discount1_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+  <record model="poi.auth.auth.rule" id="rule_discount_0_OR">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v0_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% OR VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve6_OR">
+      <field name="rule_id" ref="rule_discount_0_OR"/>
+      <field name="python_rule" ref="python_rule_discount0_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_1_OR">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v1_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% OR VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve7_OR">
+      <field name="rule_id" ref="rule_discount_1_OR"/>
+      <field name="python_rule" ref="python_rule_discount1_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_0_PT">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v0_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% PT VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve8_PT">
+      <field name="rule_id" ref="rule_discount_0_PT"/>
+      <field name="python_rule" ref="python_rule_discount0_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_1_PT">
+    <field name="auth_id" ref="discount_vehiculos"/>
+    <field name="circuit_id" ref="discount_v1_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% PT VEHICULOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountve9_PT">
+      <field name="rule_id" ref="rule_discount_1_PT"/>
+      <field name="python_rule" ref="python_rule_discount1_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+  <!-- hino -->
+  <record id="discount_hino" model="poi.auth.auth">
+    <field name="name">Camiones</field>
+    <field name="code">sale.order.hino</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="circuit_id" ref="discount_ca0_lp"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Ventas</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca0_LP">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca0_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% LP CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca0_LP">
+      <field name="rule_id" ref="rule_discount_ca0_LP"/>
+      <field name="python_rule" ref="python_rule_discount0_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca1_LP">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca1_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% LP CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca2_LP">
+      <field name="rule_id" ref="rule_discount_ca1_LP"/>
+      <field name="python_rule" ref="python_rule_discount1_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca0_SC">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca0_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% SC CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca3_SC">
+      <field name="rule_id" ref="rule_discount_ca0_SC"/>
+      <field name="python_rule" ref="python_rule_discount0_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca1_SC">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca1_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% SC CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca4_SC">
+      <field name="rule_id" ref="rule_discount_ca1_SC"/>
+      <field name="python_rule" ref="python_rule_discount1_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca0_CB">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca0_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% CB CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca5_CB">
+      <field name="rule_id" ref="rule_discount_ca0_CB"/>
+      <field name="python_rule" ref="python_rule_discount0_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca1_CB">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca1_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% CB CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca6_CB">
+      <field name="rule_id" ref="rule_discount_ca1_CB"/>
+      <field name="python_rule" ref="python_rule_discount1_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca0_OR">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca0_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% OR CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca7_OR">
+      <field name="rule_id" ref="rule_discount_ca0_OR"/>
+      <field name="python_rule" ref="python_rule_discount0_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca1_OR">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca1_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% OR CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca8_OR">
+      <field name="rule_id" ref="rule_discount_ca1_OR"/>
+      <field name="python_rule" ref="python_rule_discount1_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca0_PT">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca0_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 2% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 2% PT CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountca9_PT">
+      <field name="rule_id" ref="rule_discount_ca0_PT"/>
+      <field name="python_rule" ref="python_rule_discount0_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ca1_PT">
+    <field name="auth_id" ref="discount_hino"/>
+    <field name="circuit_id" ref="discount_ca1_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% PT CAMIONES</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountv0_PT">
+      <field name="rule_id" ref="rule_discount_ca1_PT"/>
+      <field name="python_rule" ref="python_rule_discount1_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <!-- Neumaticos -->
+  <record id="discount_neumaticos" model="poi.auth.auth">
+    <field name="name">Neumaticos</field>
+    <field name="code">sale.order.neumaticos</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="circuit_id" ref="discount_ne0_lp"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Ventas</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne0_LP">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne0_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% LP NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne0_LP">
+      <field name="rule_id" ref="rule_discount_ne0_LP"/>
+      <field name="python_rule" ref="python_rule_discount2_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne1_LP">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne1_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 4% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 4% LP NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne1_LP">
+      <field name="rule_id" ref="rule_discount_ne1_LP"/>
+      <field name="python_rule" ref="python_rule_discount3_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne0_SC">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne0_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% SC NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne2_SC">
+      <field name="rule_id" ref="rule_discount_ne0_SC"/>
+      <field name="python_rule" ref="python_rule_discount2_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne1_SC">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne1_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 4% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 4% SC NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne3_SC">
+      <field name="rule_id" ref="rule_discount_ne1_SC"/>
+      <field name="python_rule" ref="python_rule_discount3_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne0_CB">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne0_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% CB NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne4_CB">
+      <field name="rule_id" ref="rule_discount_ne0_CB"/>
+      <field name="python_rule" ref="python_rule_discount2_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne1_CB">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne1_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 4% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 4% CB NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne5_CB">
+      <field name="rule_id" ref="rule_discount_ne1_CB"/>
+      <field name="python_rule" ref="python_rule_discount3_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne0_OR">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne0_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% OR NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne6_OR">
+      <field name="rule_id" ref="rule_discount_ne0_OR"/>
+      <field name="python_rule" ref="python_rule_discount2_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne1_OR">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne1_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 4% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 4% OR NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne7_OR">
+      <field name="rule_id" ref="rule_discount_ne1_OR"/>
+      <field name="python_rule" ref="python_rule_discount3_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne0_PT">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne0_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% PT NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne8_PT">
+      <field name="rule_id" ref="rule_discount_ne0_PT"/>
+      <field name="python_rule" ref="python_rule_discount2_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ne1_PT">
+    <field name="auth_id" ref="discount_neumaticos"/>
+    <field name="circuit_id" ref="discount_ne1_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 4% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 4% PT NEUMATICOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountne9_PT">
+      <field name="rule_id" ref="rule_discount_ne1_PT"/>
+      <field name="python_rule" ref="python_rule_discount3_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+
+  <!-- yamaha -->
+  <record id="discount_yamaha" model="poi.auth.auth">
+    <field name="name">Yamaha</field>
+    <field name="code">sale.order.yamaha</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="circuit_id" ref="discount_ya0_lp"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Ventas</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ya0_LP">
+    <field name="auth_id" ref="discount_yamaha"/>
+    <field name="circuit_id" ref="discount_ya0_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% LP MOTOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountya0_LP">
+      <field name="rule_id" ref="rule_discount_ya0_LP"/>
+      <field name="python_rule" ref="python_rule_discount6_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ya0_SC">
+    <field name="auth_id" ref="discount_yamaha"/>
+    <field name="circuit_id" ref="discount_ya0_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% SC MOTOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountya1_SC">
+      <field name="rule_id" ref="rule_discount_ya0_SC"/>
+      <field name="python_rule" ref="python_rule_discount6_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ya0_CB">
+    <field name="auth_id" ref="discount_yamaha"/>
+    <field name="circuit_id" ref="discount_ya0_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% CB MOTOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountya2_CB">
+      <field name="rule_id" ref="rule_discount_ya0_CB"/>
+      <field name="python_rule" ref="python_rule_discount6_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ya0_PT">
+    <field name="auth_id" ref="discount_yamaha"/>
+    <field name="circuit_id" ref="discount_ya0_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% PT MOTOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountya3_PT">
+      <field name="rule_id" ref="rule_discount_ya0_PT"/>
+      <field name="python_rule" ref="python_rule_discount6_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_ya0_OR">
+    <field name="auth_id" ref="discount_yamaha"/>
+    <field name="circuit_id" ref="discount_ya0_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 3% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 3% OR MOTOS</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountya4_OR">
+      <field name="rule_id" ref="rule_discount_ya0_OR"/>
+      <field name="python_rule" ref="python_rule_discount6_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+
+
+
+  <!-- Volvo -->
+  <record id="discount_volvo" model="poi.auth.auth">
+    <field name="name">VOLVO</field>
+    <field name="code">sale.order.volvo</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="circuit_id" ref="discount_vv0_lp"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Ventas</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_vv0_LP">
+    <field name="auth_id" ref="discount_volvo"/>
+    <field name="circuit_id" ref="discount_vv0_lp"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 0% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 0% LP VOLVO</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountvv0_LP">
+      <field name="rule_id" ref="rule_discount_vv0_LP"/>
+      <field name="python_rule" ref="python_rule_discount00_LP"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_vv0_SC">
+    <field name="auth_id" ref="discount_volvo"/>
+    <field name="circuit_id" ref="discount_vv0_sc"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 0% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 0% SC VOLVO</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountvv2_SC">
+      <field name="rule_id" ref="rule_discount_vv0_SC"/>
+      <field name="python_rule" ref="python_rule_discount00_SC"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_vv0_CB">
+    <field name="auth_id" ref="discount_volvo"/>
+    <field name="circuit_id" ref="discount_vv0_cb"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 0% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 0% CB VOLVO</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountvv4_CB">
+      <field name="rule_id" ref="rule_discount_vv0_CB"/>
+      <field name="python_rule" ref="python_rule_discount00_CB"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_vv0_OR">
+    <field name="auth_id" ref="discount_volvo"/>
+    <field name="circuit_id" ref="discount_vv0_or"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 0% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 0% OR VOLVO</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountvv6_OR">
+      <field name="rule_id" ref="rule_discount_vv0_OR"/>
+      <field name="python_rule" ref="python_rule_discount00_OR"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+  <record model="poi.auth.auth.rule" id="rule_discount_vv0_PT">
+    <field name="auth_id" ref="discount_volvo"/>
+    <field name="circuit_id" ref="discount_vv0_pt"/>
+    <field name="description">Orden de venta tiene un producto con un descuento mayor o igual al 0% </field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">REGLA >= 0% PT VOLVO</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_discountvv8_PT">
+      <field name="rule_id" ref="rule_discount_vv0_PT"/>
+      <field name="python_rule" ref="python_rule_discount00_PT"/>
+      <field name="operator">greater</field>
+      <field name="value">2</field>
+  </record>
+
+
+  <!-- autoizacion secuencial porcentaje minimo para la validacion de factura -->
+  <record model="poi.auth.auth.python.code" id="python_rule_percent_min">
+    <field name="name">Regla de Aprobacion de Factura</field>
+    <field name="code">
+for invoice in object:
+    amount = 0
+    if invoice.type == 'out_invoice':
+        for pay_lines in invoice.order_id.payment_advanced_ids:
+            amount = amount + pay_lines.currency_id.compute(pay_lines.amount, invoice.currency_id)
+        if not invoice.amount_total == 0:
+            percent = amount * 100 / invoice.amount_total
+        else:
+            percent = 0
+        if percent &lt; invoice.sale_type_id.percent_min:
+            result = True
+    </field>
+  </record>
+  <record id="percent_min_rule" model="poi.auth.auth">
+    <field name="name">Porcentaje minimo para la confirmacion</field>
+    <field name="code">account.invoice.min.advanced</field>
+    <field name="model_id" ref="account.model_account_invoice"/>
+    <field name="circuit_id" ref="percent_min_circuit"/>
+    <field name="generic_message">Message for other users</field>
+    <field name="message">Autorizacion de Factura de Venta</field>
+  </record>
+  <record model="poi.auth.auth.rule" id="rule_percent_min">
+    <field name="auth_id" ref="percent_min_rule"/>
+    <field name="circuit_id" ref="percent_min_circuit"/>
+    <field name="description">El monto depositado es menor al porcentaje minimo requerido para aprobar la factura.</field>
+    <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="sequence">5</field>
+    <field name="user_ids" eval="False"/>
+    <field name="type">advanced</field>
+    <field name="name">Regla</field>
+  </record>
+  <record model="poi.auth.auth.advanced.rule.lines" id="rule_line_percent_min">
+      <field name="rule_id" ref="rule_percent_min"/>
+      <field name="python_rule" ref="python_rule_percent_min"/>
+  </record>
+
+</data>
+</odoo>

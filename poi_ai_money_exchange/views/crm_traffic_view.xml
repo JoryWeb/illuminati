@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="view_crm_traffic_form" model="ir.ui.view">
+    <field name="name">crm.traffic.form</field>
+    <field name="model">crm.traffic</field>
+    <field name="arch" type="xml">
+        <form string="crm_traffic">
+            <header>
+                <button name="action_create_lead" type="object" string="Crear Iniciativa" attrs="{'invisible':['|',('lead_check', '=', True),('state', '!=', 'done')]}"/>
+                <button name="action_confirm" type="object" string="Confirmar" attrs="{'invisible':[('state', '!=', 'draft')]}"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" name="action_view_leads"
+                            type="object"
+                            icon="fa-file-text-o">
+                        <field name="lead_count" widget="statinfo" string=" Iniciativa"/>
+                    </button>
+                </div>
+                <div>
+                  <h1>
+                    <field name='name' nolabel="1"/>
+                  </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name='partner_type_id' widget="selection"/>
+                        <field name='create_date' string="Fecha de Creacion"/>
+                        <field name='lead_check' invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="create_uid" string="Anfitrion" attrs="{'readonly':1}"/>
+                        <field name='user_id2'/>
+                        <field name='warehouse_id'/>
+                        <field name='reason_id' domain="['|', ('type', '=', partner_type_id), ('type', '=', 'both')]"  options="{'limit': 10, 'create': false, 'create_edit': false, 'no_create': True}}"  />
+                    </group>
+                </group>
+               <group>
+                    <field name="tag_ids" widget="many2many_tags" placeholder="Productos Vistos" options="{'limit': 10, 'create': false, 'create_edit': false}" attrs="{'invisible': [('reason_id', '=', False)]}"/>
+               </group>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="view_crm_traffic_tree" model="ir.ui.view">
+    <field name="name">crm.traffic.tree</field>
+    <field name="model">crm.traffic</field>
+    <field name="arch" type="xml">
+        <tree string="crm_traffics">
+            <field name="name"/>
+            <field name="date"/>
+            <field name="reason_id"/>
+            <field name="warehouse_id"/>
+            <field name="user_id2"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_crm_traffic_filter" model="ir.ui.view">
+    <field name="name">crm.traffic.search</field>
+    <field name="model">crm.traffic</field>
+    <field name="arch" type="xml">
+        <search string="crm_traffics">
+            <field name="name"/>
+            <field name="date"/>
+            <field name='reason_id'/>
+            <field name="user_id2" />
+            <field name='lead_id' invisible="1"/>
+            <group expand="0" string="Group By">
+                <filter string="Fecha" domain="[]" context="{'group_by':'date'}"/>
+                <filter string="Motivo de Visita" domain="[]" context="{'group_by':'reason_id'}"/>
+                <filter string="Vendedor" domain="[]" context="{'group_by':'user_id2'}"/>
+            </group>
+        </search>
+     </field>
+</record>
+
+
+<record id="open_view_crm_traffic" model="ir.actions.act_window">
+    <field name="name">Trafico de Clientes</field>
+    <field name="res_model">crm.traffic</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="context">{}</field>
+    <field name="view_id" eval="False"/>
+    <field name="search_view_id" ref="view_crm_traffic_filter"/>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Click en Crear para añadir un Nuevo trafico de Clientes.
+      </p>
+    </field>
+</record>
+
+<menuitem action="open_view_crm_traffic" id="menu_open_view_crm_traffic" sequence="0" parent="base.menu_sales"/>
+
+<record id="traffic_action_from_crm_lead_form" model="ir.actions.act_window">
+    <field name="name">Hojas de Trafico</field>
+    <field name="res_model">crm.traffic</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="view_crm_traffic_filter"/>
+    <!-- <field name="view_id" ref="hr_equipment_view_kanban"/> -->
+    <field name="context">{
+        'search_default_lead_id': [active_id],
+        'default_lead_id': active_id,
+    }</field>
+</record>
+
+<record id="crm_case_form_view_leads2traffic_poi" model="ir.ui.view">
+    <field name="name">New fields for Localization</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//div[@name='button_box']" position="inside">
+               <button name="%(traffic_action_from_crm_lead_form)d"
+                    class="oe_stat_button"
+                    icon="fa-file-text-o"
+                    type="action"
+                    string="Hoja de Trafico">
+                </button>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="crm_traffic_reason_view_form" model="ir.ui.view">
+  <field name="name">crm.traffic.reason.form</field>
+  <field name="model">crm.traffic.reason</field>
+  <field name="arch" type="xml">
+    <form string="Motivos de Visita">
+      <sheet>
+        <group>
+          <group>
+            <field name="name"/>
+            <field name="type"/>
+          </group>
+          <group>
+            <field name="report"/>
+          </group>
+        </group>
+        <group>
+          <field name="tag_ids" widget="many2many_tags"/>
+        </group>
+      </sheet>
+    </form>
+  </field>
+</record>
+
+<record id="crm_traffic_reason_view_tree" model="ir.ui.view">
+  <field name="name">crm.traffic.reason.tree</field>
+  <field name="model">crm.traffic.reason</field>
+  <field name="arch" type="xml">
+    <tree string="Motivos de Visita">
+      <field name="name"/>
+      <field name="report"/>
+    </tree>
+  </field>
+</record>
+
+<record id="crm_traffic_reason_action_form" model="ir.actions.act_window">
+  <field name="name">Motivos de Visita</field>
+  <field name="res_model">crm.traffic.reason</field>
+  <field name="view_mode">tree,form</field>
+  <field name="help" type="html">
+    <p class="oe_view_nocontent_create">
+      Añadir motivos de visita.
+    </p>
+  </field>
+</record>
+
+<menuitem id="menu_crm_traffic_base" parent="base.menu_sale_config" sequence="9" name="Trafico de Clientes"/>
+<menuitem id="menu_crm_traffic_reason" name="Motivos de Visita" parent="menu_crm_traffic_base" action="crm_traffic_reason_action_form" sequence="1"/>
+
+
+</data>
+</openerp>

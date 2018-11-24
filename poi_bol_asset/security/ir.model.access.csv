@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_account_asset_value","name_account_asset_value","model_account_asset_value","account.group_account_manager",1,1,1,0
+"access_asset_depreciation_ufv_wizard","name_asset_depreciation_ufv_wizard","model_asset_depreciation_ufv_wizard","account.group_account_manager",1,1,1,0
+"access_account_move_asset_reversal","name_account_move_asset_reversal","model_account_move_asset_reversal","account.group_account_manager",1,1,1,0
+"access_poi_asset_asset_report","name_poi_asset_asset_report","model_poi_asset_asset_report","account.group_account_manager",1,1,1,0
+"access_poi_kardex_asset_report","name_poi_kardex_asset_report","model_poi_kardex_asset_report","account.group_account_manager",1,1,1,0
+"access_poi_account_asset_ufv_report","name_poi_account_asset_ufv_report","model_poi_account_asset_ufv_report","account.group_account_manager",1,1,1,0

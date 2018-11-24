@@ -1,0 +1,461 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * pos_loyalty
+# 
+# Translators:
+# krnkris, 2015
+# krnkris, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-09 09:22+0000\n"
+"PO-Revision-Date: 2016-06-06 19:55+0000\n"
+"Last-Translator: krnkris\n"
+"Language-Team: Hungarian (http://www.transifex.com/odoo/odoo-9/language/hu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_name
+msgid "An internal identification for the loyalty program configuration"
+msgstr "Egy belső azonosító a hűség program beállításához"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_name
+msgid "An internal identification for this loyalty program rule"
+msgstr "Egy belső azonosító ehhez hűség program szabályhoz"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_name
+msgid "An internal identification for this loyalty reward"
+msgstr "Egy belső azonosító ehhez hűség program jutalmazáshoz"
+
+#. module: pos_loyalty
+#: selection:loyalty.rule,type:0
+msgid "Category"
+msgstr "Kategória"
+
+#. module: pos_loyalty
+#: model:ir.actions.act_window,help:pos_loyalty.action_loyalty_program_form
+msgid "Click to create a Loyalty Program."
+msgstr "Kattintson egy Hűség program létrehozásához."
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_create_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_create_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_create_uid
+msgid "Created by"
+msgstr "Készítette"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_create_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_create_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_create_date
+msgid "Created on"
+msgstr "Létrehozás dátuma"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_cumulative
+msgid "Cumulative"
+msgstr "Halmozódó"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_discount
+#: selection:loyalty.reward,type:0
+msgid "Discount"
+msgstr "Kedvezmény"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_discount_product_id
+msgid "Discount Product"
+msgstr "Termék árengedmény"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_display_name
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_display_name
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_display_name
+msgid "Display Name"
+msgstr "Név megjelenítése"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_type
+msgid "Does this rule affects products, or a category of products ?"
+msgstr "Ez a szabály befolyásolja a termékeket vagy a termékek kategóriáit?"
+
+#. module: pos_loyalty
+#: selection:loyalty.reward,type:0
+msgid "Gift"
+msgstr "Ajándék"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_gift_product_id
+msgid "Gift Product"
+msgstr "Ajándék termék"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_pp_product
+msgid "How many loyalty points are given to the customer by product sold"
+msgstr "Hány hűség pontot kap a vásárló a termék értékesítésekor"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_pp_currency
+msgid "How many loyalty points are given to the customer by sold currency"
+msgstr "Hány hűség pontot kap a vásárló a pénznemben értékesítéskor"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_pp_order
+msgid ""
+"How many loyalty points are given to the customer for each sale or order"
+msgstr "Hány hűség pontot kap a vásárló az egyes vásárlás és megrendelés esetén"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_pp_product
+msgid "How many points the product will earn per product ordered"
+msgstr "Hány ponttal növekszik a termék a termék rendelések esetén"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_pp_currency
+msgid "How many points the product will earn per value sold"
+msgstr "Hány ponttal növekszik a termék az eladott értékek után"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program___last_update
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward___last_update
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule___last_update
+msgid "Last Modified on"
+msgstr "Utolsó frissítés dátuma"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_write_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_write_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_write_uid
+msgid "Last Updated by"
+msgstr "Utoljára frissítve, által"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_write_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_write_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_write_date
+msgid "Last Updated on"
+msgstr "Utoljára frissítve "
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_pos_order_loyalty_points
+#: model:ir.model.fields,field_description:pos_loyalty.field_res_partner_loyalty_points
+msgid "Loyalty Points"
+msgstr "Hűség pontok"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_loyalty_program_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_loyalty_program_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_pos_config_loyalty_id
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+#: model:ir.ui.view,arch_db:pos_loyalty.view_partner_property_form
+#: model:ir.ui.view,arch_db:pos_loyalty.view_pos_config_form
+msgid "Loyalty Program"
+msgstr "Hűség program"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_name
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid "Loyalty Program Name"
+msgstr "Hűség program neve"
+
+#. module: pos_loyalty
+#: model:ir.actions.act_window,name:pos_loyalty.action_loyalty_program_form
+#: model:ir.ui.menu,name:pos_loyalty.menu_loyalty_program
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_tree
+#: model:ir.ui.view,arch_db:pos_loyalty.view_pos_pos_form
+msgid "Loyalty Programs"
+msgstr "Hűség programok"
+
+#. module: pos_loyalty
+#: model:ir.actions.act_window,help:pos_loyalty.action_loyalty_program_form
+msgid ""
+"Loyalty Programs allows you customer to earn points\n"
+"                    and rewards when doing business at your shops."
+msgstr "Hűség programok lehetővé teszik a vásárlók részére a pontok gyűjtését és ponttal jutalmazását az értékesítési helyen kötött üzletek után."
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_reward_form
+msgid "Loyalty Reward"
+msgstr "Hűség jutalom"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_rule_form
+msgid "Loyalty Rule"
+msgstr "Hűség szabály"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_minimum_points
+msgid "Minimum Points"
+msgstr "Minimum pontok"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_name
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_name
+msgid "Name"
+msgstr "Név"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_point_cost
+msgid "Point Cost"
+msgstr "Pontok költsége"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_point_product_id
+msgid "Point Product"
+msgstr "Termék pontja"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_pos_order
+msgid "Point of Sale"
+msgstr "Értékesítési pont"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:6
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:71
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:81
+#, python-format
+msgid "Points"
+msgstr "Pontok"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_rounding
+msgid "Points Rounding"
+msgstr "Pontok kerekítése"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:57
+#, python-format
+msgid "Points Spent"
+msgstr "Beváltott pontok"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:54
+#, python-format
+msgid "Points Won"
+msgstr "Elnyert pontok"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_pp_currency
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_pp_currency
+msgid "Points per currency"
+msgstr "Pénznemenkénti pontok"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_pp_order
+msgid "Points per order"
+msgstr "Megrendelésenkénti pontok"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_pp_product
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_pp_product
+msgid "Points per product"
+msgstr "Termékenkénti pontok"
+
+#. module: pos_loyalty
+#: selection:loyalty.rule,type:0
+msgid "Product"
+msgstr "Termék"
+
+#. module: pos_loyalty
+#: selection:loyalty.reward,type:0
+msgid "Resale"
+msgstr "Viszonteladás"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_reward_form
+msgid "Reward Name"
+msgstr "Jutalmazás neve"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid "Reward the customer with gifts or discounts for loyalty points"
+msgstr "Jutalmazza a vásárlóit ajándékokkal vagy árengedménnyel a hűségpontjaik ellenében."
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:25
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_reward_ids
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+#, python-format
+msgid "Rewards"
+msgstr "Jutalmazások"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_rule_form
+msgid "Rule Name"
+msgstr "Szabály neve"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_rule_ids
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid "Rules"
+msgstr "Szabályok"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid ""
+"Rules change how loyalty points are earned for specific products or "
+"categories"
+msgstr "Szabályok változtatják a hűség pontok gyűjtését egyéni termékekre vagy kategóriákra vonatkozóan"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_category_id
+msgid "Target Category"
+msgstr "Cél kategória"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_product_id
+msgid "Target Product"
+msgstr "Cél termék"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_loyalty_program_id
+msgid "The Loyalty Program this exception belongs to"
+msgstr "Ehhez a kifogáshoz tartozó Hűség Program"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_loyalty_program_id
+msgid "The Loyalty Program this reward belongs to"
+msgstr "Ehhez a jutalomhoz tartozó Hűség Program"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_pos_order_loyalty_points
+msgid "The amount of Loyalty points the customer won or lost with this order"
+msgstr "Ezzel a megrendeléssel elnyert vagy elveszített Hűség pontok száma"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_category_id
+msgid "The category affected by the rule"
+msgstr "A szabály által érintett kategória"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_point_cost
+msgid "The cost of the reward per monetary unit discounted"
+msgstr "A jutalom költsége pénzbeli kedvezmény egységekben"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_discount
+msgid "The discount percentage"
+msgstr "Az árengedmény százaléka"
+
+#. module: pos_loyalty
+#: constraint:loyalty.reward:0
+msgid "The discount product field is mandatory for discount rewards"
+msgstr "A termék kedvezmény mező kötelező a kedvezmény jutalmakhoz"
+
+#. module: pos_loyalty
+#: constraint:loyalty.reward:0
+msgid "The gift product field is mandatory for gift rewards"
+msgstr "Az ajándék termék mező kötelező az ajándék jutalmakhoz"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_rounding
+msgid "The loyalty point amounts are rounded to multiples of this value."
+msgstr "A hűség pont mennyisége ennek ez értéknek a többszörösére kerekített."
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_res_partner_loyalty_points
+msgid "The loyalty points the user won as part of a Loyalty Program"
+msgstr "A hűség pontok száma, melyet a felhasználó, mint a Hűség Program résztvevője, megnyert"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_pos_config_loyalty_id
+msgid "The loyalty program used by this point_of_sale"
+msgstr "Ez a hűség programot használja ez a point_of_sale értékesítési hely kasszája"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_minimum_points
+msgid ""
+"The minimum amount of points the customer must have to qualify for this "
+"reward"
+msgstr "A pontok legkisebb mennyiség, amit a vásárlónak el kell érnie ehhez a jutalomhoz"
+
+#. module: pos_loyalty
+#: constraint:loyalty.reward:0
+msgid "The point product field is mandatory for point resale rewards"
+msgstr "Az pontok száma mező kötelező a viszonteladói jutalom pontokhoz"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_cumulative
+msgid "The points won from this rule will be won in addition to other rules"
+msgstr "Ebből a szabályból elnyert pontok további szabályok nyereményét is elnyerik"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_product_id
+msgid "The product affected by the rule"
+msgstr "A szabály által érintett termék"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_gift_product_id
+msgid "The product given as a reward"
+msgstr "A terméket ajándékként kapja"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_point_product_id
+msgid "The product that represents a point that is sold by the customer"
+msgstr "A termék ami pontot képvisel azt értékesíti a vásárló értékesíti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_discount_product_id
+msgid "The product used to apply discounts"
+msgstr "Termék melyen árengedményeket szokott érvényesíteni"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_type
+msgid "The type of the reward"
+msgstr "Jutalom típusa"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:60
+#, python-format
+msgid "Total Points"
+msgstr "Összes pont"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_type
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_type
+msgid "Type"
+msgstr "Típus"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_loyalty_program
+msgid "loyalty.program"
+msgstr "loyalty.program"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_loyalty_reward
+msgid "loyalty.reward"
+msgstr "loyalty.reward"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_loyalty_rule
+msgid "loyalty.rule"
+msgstr "loyalty.rule"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_pos_config
+msgid "pos.config"
+msgstr "pos.config"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Account-related subtypes for messaging / Chatter -->
+        <record id="mt_request_requested" model="mail.message.subtype">
+            <field name="name">Requested</field>
+            <field name="res_model">stock.request</field>
+            <field name="default" eval="False"/>
+            <field name="description">Request Sent</field>
+        </record>
+        <record id="mt_request_partially_sent" model="mail.message.subtype">
+            <field name="name">Partially Sent</field>
+            <field name="res_model">stock.request</field>
+            <field name="default" eval="False"/>
+            <field name="description">Request Partially Completed</field>
+        </record>
+        <record id="mt_request_sent" model="mail.message.subtype">
+            <field name="name">Paid</field>
+            <field name="res_model">stock.request</field>
+            <field name="default" eval="False"/>
+            <field name="description">Request Completed</field>
+        </record>
+    </data>
+</openerp>

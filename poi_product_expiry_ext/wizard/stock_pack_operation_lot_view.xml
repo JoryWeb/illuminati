@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_stock_pack_operation_expiry">
+            <field name="name">stock.pack.operation.expiry</field>
+            <field name="model">stock.pack.operation</field>
+            <field name="inherit_id" ref="stock.view_pack_operation_lot_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form//field[@name='pack_lot_ids']/tree/field[@name='plus_visible']" position="before">
+                    <field name="use_date" invisible="not context.get('only_create', False)"/>
+                    <field name="life_date" invisible="not context.get('only_create', False)"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

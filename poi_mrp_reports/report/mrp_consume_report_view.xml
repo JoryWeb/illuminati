@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_poi_mrp_consume_report_pivot">
+            <field name="name">poi.mrp.consume.pivot</field>
+            <field name="model">poi.mrp.consume.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Orden de Produccion" disable_linking="True">
+                    <field name="production_id" type="row"/>
+                    <field name="product_id" type="row"/>
+                    <field name="product_qty" type="measure"/>
+                    <field name="qty" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_poi_mrp_consume_report_graph">
+            <field name="name">poi.mrp.consume.graph</field>
+            <field name="model">poi.mrp.consume.report</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase Orders Statistics">
+                    <field name="location_id" type="row"/>
+                    <field name="qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+
+        <record id="view_poi_mrp_consume_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">poi.mrp.consume.report</field>
+            <field name="arch" type="xml">
+                <search string="Reporte MRP">
+                    <field name="production_id"/>
+                    <field name="product_id"/>
+                    <field name="product_insumo_id"/>
+                    <field name="lot_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Orden de Producción" name="group_production_id" context="{'group_by':'production_id'}"/>
+                        <filter string="Ubicación" name="group_location_dest_id" context="{'group_by':'location_dest_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_poi_mrp_consume_report_tree">
+            <field name="name">poi.mrp.consume.report.tree</field>
+            <field name="model">poi.mrp.consume.report</field>
+            <field name="arch" type="xml">
+                <tree string="Reporte MRP Insumos">
+                    <field name="production_id"/>
+                    <field name="product_id"/>
+                    <field name="product_qty"/>
+                    <field name="location_dest_id"/>
+                    <field name="product_insumo_id"/>
+                    <field name="quant_id"/>
+                    <field name="qty" sum="Total"/>
+                    <field name="cost" sum="Total"/>
+                    <field name="lot_id"/>
+                    <field name="location_id"/>
+                    <field name="in_date"/>
+                    <field name="consumed_for"/>
+                    <field name="origen"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_poi_mrp_consume_report_report_all" model="ir.actions.act_window">
+            <field name="name">Reporte Insumos MO</field>
+            <field name="res_model">poi.mrp.consume.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Report de insumos consumidos en ordenes de producción</field>
+        </record>
+
+        <menuitem id="menu_poi_mrp_consume_report" parent="mrp.menu_mrp_planning" sequence="99"
+                  action="action_poi_mrp_consume_report_report_all"/>
+
+    </data>
+</openerp>

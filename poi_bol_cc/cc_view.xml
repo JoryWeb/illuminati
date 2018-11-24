@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="local_llave_view_form" model="ir.ui.view">
+            <field name="name">poi_bol_cc.cc_dosif.form</field>
+            <field name="model">poi_bol_base.cc_dosif</field>
+            <field name="inherit_id" ref="poi_bol_base.local_dosif_view_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='applies']" position="after">
+                    <newline/>
+                    <separator string="Facturación Electrónica"/>
+                    <newline/>
+                    <field name="llave" colspan="2"/>
+                    <field name="leyenda_id" colspan="2"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!-- Leyenda -->
+        <record id="local_leyenda_view_tree" model="ir.ui.view">
+            <field name="name">poi_bol_base.cc_dosif.leyenda.tree</field>
+            <field name="model">poi_bol_base.cc_dosif.leyenda</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Leyendas de Factura" editable="bottom">
+                    <field name="sector_id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="local_leyenda_action">
+            <field name="name">Leyendas</field>
+            <field name="res_model">poi_bol_base.cc_dosif.leyenda</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="local_leyenda_view_tree"/>
+        </record>
+        <menuitem parent="poi_bol_base.menu_finance_local_config" id="menu_action_local_leyenda"
+                  action="local_leyenda_action" sequence="12"/>
+
+
+        <!-- Certificación CC -->
+        <record id="local_certif_view_tree" model="ir.ui.view">
+            <field name="name">poi_bol_cc.cc_certif.tree</field>
+            <field name="model">poi_bol_cc.cc_certif</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Certificación CC" editable="bottom">
+                    <field name="cc_nro" widget="Integer"/>
+                    <field name="cc_nit" widget="Integer"/>
+                    <field name="cc_fec"/>
+                    <field name="cc_tot"/>
+                    <field name="cc_aut" widget="Integer"/>
+                    <field name="cc_dos"/>
+                    <button icon="STOCK_EXECUTE" name="action_cc" string="Generar CC" type="object"/>
+                    <field name="cc_cod" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="local_certif_view_form" model="ir.ui.view">
+            <field name="name">poi_bol_cc.cc_certif.form</field>
+            <field name="model">poi_bol_cc.cc_certif</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dosificación CC">
+                    <field name="cc_nro"/>
+                    <field name="cc_nit"/>
+                    <field name="cc_fec"/>
+                    <field name="cc_tot"/>
+                    <field name="cc_aut"/>
+                    <field name="cc_dos"/>
+                    <field name="cc_cod" readonly="1"/>
+                    <button icon="STOCK_EXECUTE" name="action_cc" string="Generar CC" type="object"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="local_cc_certif_action">
+            <field name="name">Certificación CC</field>
+            <field name="res_model">poi_bol_cc.cc_certif</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="local_certif_view_tree"/>
+        </record>
+        <menuitem parent="poi_bol_base.menu_finance_local_config" id="menu_action_local_cc_cert_form"
+                  action="local_cc_certif_action" sequence="20"/>
+
+    </data>
+</odoo>
+

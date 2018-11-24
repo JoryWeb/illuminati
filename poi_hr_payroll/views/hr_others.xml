@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_others_code_form" model="ir.ui.view">
+            <field name="name">hr_others_code_form</field>
+            <field name="model">hr.others.code</field>
+            <field name="arch" type="xml">
+                <form string="other_inputs" version="7.0">
+                    <sheet string="other_inputs">
+                        <h1>
+                            <label string="Otras Entradas o Descuentos"/>
+                        </h1>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                        </group>
+                        <div class="oe_clear">
+                            <label for="note"/>
+                        </div>
+                        <field name="note"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_others_code_tree" model="ir.ui.view">
+            <field name="name">hr_others_code_tree</field>
+            <field name="model">hr.others.code</field>
+            <field name="arch" type="xml">
+                <tree string="other_inputs">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_other_inputs_code" model="ir.actions.act_window">
+            <field name="name">Codigo Otras Entradas</field>
+            <field name="res_model">hr.others.code</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_hr_others_form" model="ir.ui.view">
+            <field name="name">hr_others_form</field>
+            <field name="model">hr.others</field>
+            <field name="arch" type="xml">
+                <form string="other_inputs" version="8.0">
+                    <header>
+                        <button name="hr_process_other_inputs" states="draft" string="En Cola de Proceso" class="oe_highlight" type="object"/>
+                        <button name="cancel_other_inputs" states="process" string="Cancel" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet string="other_inputs">
+                        <h1>
+                            <label string="Otras Entradas o Descuentos"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name='name'/>
+                                <field name="employee_id"/>
+                                <field name="contract_id" domain="[('employee_id','=',employee_id)]"/>
+                                <field name="company_id"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="code_id"/>
+                                <field name="code"/>
+                                <field name="monto"/>
+                                <field name="date_ref"/>
+                                <field name='payslip_id'/>
+                            </group>
+                        </group>
+                        <div class="oe_clear">
+                            <label for="note"/>
+                        </div>
+                        <field name="note"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_others_tree" model="ir.ui.view">
+            <field name="name">hr_others_tree</field>
+            <field name="model">hr.others</field>
+            <field name="arch" type="xml">
+                <tree string="other_inputs">
+                    <field name="employee_id"/>
+                    <field name="code"/>
+                    <field name="date"/>
+                    <field name="note"/>
+                    <field name="monto"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filter_view_other_inputs">
+            <field name="name">view_other_inputs.filter</field>
+            <field name="model">hr.others</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group string="Agrupadores....">
+                        <field name="employee_id"/>
+                        <!-- <filter string="Periodo" name="group_employee" context="{'group_by': 'period_id'}"/> -->
+                        <filter string="Empleado" name="group_employee" context="{'group_by': 'employee_id'}"/>
+                        <filter string="Categoria" name="group_categ" context="{'group_by': 'code'}"/>
+                        <filter string="Estado" name="group_state" context="{'group_by': 'state'}"/>
+
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_other_inputs" model="ir.actions.act_window">
+            <field name="name">Registro de Otras Entradas</field>
+            <field name="res_model">hr.others</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="filter_view_other_inputs"/>
+            <field name="context">{'search_default_group_employee': 1}</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,979 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_bank
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-16 23:33+0000\n"
+"PO-Revision-Date: 2017-08-16 23:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:449
+#, python-format
+msgid " seconds"
+msgstr " segundos"
+
+#. module: poi_bank
+#: code:addons/poi_bank/bank.py:216
+#, python-format
+msgid "(%s - %s) Check: %s"
+msgstr "(%s - %s) Cheque: %s"
+
+#. module: poi_bank
+#: code:addons/poi_bank/account.py:35
+#, python-format
+msgid "A bank account can only be applied to a bank journal."
+msgstr "Una cuenta de banco únicamente puede ser aplicada a un diario de banco."
+
+#. module: poi_bank
+#: code:addons/poi_bank/account_bank_statement.py:116
+#, python-format
+msgid "A selected move line was already reconciled."
+msgstr "Un movimiento seleccionado ya se encontraba conciliado."
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:74
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:106
+#, python-format
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_form
+msgid "Account Data"
+msgstr "Datos de la Cuenta"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:21
+#, python-format
+msgid "Account Move Line Total:"
+msgstr "Total de Apuntes Contables::"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:42
+#, python-format
+msgid "Account Move Lines"
+msgstr "Apuntes Contables"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_account_number
+msgid "Account Number"
+msgstr "Número de cuenta"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_partner_id
+msgid "Account Owner"
+msgstr "Propietario de Cuenta"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_account_type
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "Account Type"
+msgstr "Tipo de cuenta"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_account_id
+msgid "Accounting Account"
+msgstr "Cuenta Contable"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobantes contables"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_active
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:53
+#, python-format
+msgid "Add to Conciliate Area"
+msgstr "Agregar al área de conciliación"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_transaction_agency
+msgid "Agency"
+msgstr "Agencia"
+
+#. module: poi_bank
+#: selection:account.payment,bank_card_issuer:0
+#: selection:res.bank.card,bank_card_issuer:0
+msgid "American Express"
+msgstr "American Express"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:75
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:107
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_amount
+#, python-format
+msgid "Amount"
+msgstr "Monto"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+msgid "Annul Check"
+msgstr "Anular Cheque"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+#: selection:res.bank.account.check,state:0
+msgid "Annulled"
+msgstr "Anulado"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_balance
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_res_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_bank_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_bank_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_bank_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_bank_id
+#: model:ir.ui.menu,name:poi_bank.menu_bank_account
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "Bank"
+msgstr "Banco"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_bank_account_id
+#: model:ir.model.fields,field_description:poi_bank.field_account_move_line_bank_account_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_bank_account_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_bank_account_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_bank_account_id
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_form
+msgid "Bank Account"
+msgstr "Cuenta bancaria"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+msgid "Bank Account Check"
+msgstr "Cheque de Banco"
+
+#. module: poi_bank
+#: model:ir.actions.act_window,name:poi_bank.action_res_bank_account_form
+#: model:ir.model,name:poi_bank.model_res_bank_account
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_bank_account_ids
+#: model:ir.ui.menu,name:poi_bank.menu_action_res_bank_account_form
+#: model:ir.ui.view,arch_db:poi_bank.view_poi_res_bank_form
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_tree
+msgid "Bank Accounts"
+msgstr "Cuentas de banco"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_bank_card_code
+msgid "Bank Card Code"
+msgstr "Numero de Tarjeta"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_res_bank_card
+msgid "Bank Cards"
+msgstr "Tarjetas de Banco"
+
+#. module: poi_bank
+#: model:ir.actions.act_window,name:poi_bank.action_res_bank_account_check_form
+#: model:ir.ui.menu,name:poi_bank.menu_action_res_bank_account_check_form
+msgid "Bank Checks"
+msgstr "Cheques de Banco"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_bank_reconcile_id
+#: model:ir.model.fields,field_description:poi_bank.field_account_move_line_bank_reconcile_id
+msgid "Bank Reconcile"
+msgstr "Bank Reconcile"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_bank_reconcile_comment
+#: model:ir.model.fields,field_description:poi_bank.field_account_move_line_bank_reconcile_comment
+msgid "Bank Reconcile Comment"
+msgstr "Bank Reconcile Comment"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Extracto bancario"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:18
+#, python-format
+msgid "Bank Statement Line Total:"
+msgstr "Total de Líneas de Extracto Bancario:"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:34
+#, python-format
+msgid "Bank Statement Lines"
+msgstr "Líneas de Extracto Bancario"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconcile.js:26
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:26
+#, python-format
+msgid "Bank Statement Reconciliation"
+msgstr "Conciliación de Extractos Bancarios"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:8
+#, python-format
+msgid "Bank statements are fully reconciled."
+msgstr "Bank statements are fully reconciled."
+
+#. module: poi_bank
+#: model:ir.actions.act_window,name:poi_bank.action_poi_bank_form
+#: model:ir.ui.menu,name:poi_bank.menu_action_poi_bank_form
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_bank_card_id
+msgid "Card"
+msgstr "Tarjeta"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_name
+msgid "Card Code (XXXX-XXXX-XXXX-NNNN)"
+msgstr "Numero de Tarjeta (XXXX-XXXX-XXXX-NNNN)"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_bank_card_issuer
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_bank_card_issuer
+msgid "Card Issuer"
+msgstr "Emisor de Tarjeta"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_bank_card_type
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_bank_card_type
+msgid "Card Type"
+msgstr "Tipo de Tarjeta"
+
+#. module: poi_bank
+#: selection:res.bank.account.check,state:0
+msgid "Cashed"
+msgstr "Cobrado"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_check_number
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+msgid "Check Number"
+msgstr "Número de Cheque"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_checkbook_id
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+msgid "Checkbook"
+msgstr "Chequera"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_name
+msgid "Checkbook Description"
+msgstr "Descripción Chequera"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_account_checkbook_ids
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_form
+msgid "Checkbooks"
+msgstr "Chequeras"
+
+#. module: poi_bank
+#: selection:res.bank.account,account_type:0
+msgid "Checking Account"
+msgstr "Cuenta Corriente"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_check_ids
+msgid "Checks generated"
+msgstr "Cheques Generados"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1314
+#, python-format
+msgid "Choose counterpart"
+msgstr "Seleccionar contraparte"
+
+#. module: poi_bank
+#: model:ir.actions.act_window,help:poi_bank.action_res_bank_account_form
+msgid "Click to create a new bank account."
+msgstr "Haga clic para crear una cuenta bancaria."
+
+#. module: poi_bank
+#: model:ir.actions.act_window,help:poi_bank.action_poi_bank_form
+msgid "Click to create a new bank."
+msgstr "Clic para crear un nuevo banco"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:76
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:108
+#, python-format
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_company_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_company_id
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:453
+#, python-format
+msgid "Congrats, you're all done !"
+msgstr "Congrats, you're all done !"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1311
+#, python-format
+msgid "Create Write-off"
+msgstr "Create Write-off"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_create_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_create_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_create_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_create_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_create_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_create_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_create_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_create_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_bank
+#: selection:account.payment,bank_card_type:0
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_credit
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_credit
+#: selection:res.bank.card,bank_card_type:0
+msgid "Credit"
+msgstr "Haber"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_iban
+msgid "Código IBAN"
+msgstr "Código IBAN"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_poi_res_bank_form
+msgid "Código Swift"
+msgstr "Código Swift"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_code
+msgid "Código banco"
+msgstr "Código banco"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:72
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:104
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_date
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_bank
+#: selection:account.payment,bank_card_type:0
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_debit
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_debit
+#: selection:res.bank.card,bank_card_type:0
+msgid "Debit"
+msgstr "Debe"
+
+#. module: poi_bank
+#: selection:res.bank.account.check,state:0
+msgid "Delivered"
+msgstr "Entregado"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:73
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:105
+#, python-format
+msgid "Desc."
+msgstr "Desc."
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_destination_bank_id
+msgid "Destination Bank"
+msgstr "Banco Destino"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_destination_bank_account_id
+msgid "Destination Bank Account"
+msgstr "Cuenta Bancaria Destino"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_account_bank_payment_invoice_form
+#: model:ir.ui.view,arch_db:poi_bank.view_account_payment_form
+msgid "Destination Data"
+msgstr "Datos del Destino"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_display_name
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_display_name
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_display_name
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_display_name
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+#: selection:res.bank.account.check,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:457
+#, python-format
+msgid "Efficiency at its finest"
+msgstr "Efficiency at its finest"
+
+#. module: poi_bank
+#: code:addons/poi_bank/bank.py:247
+#, python-format
+msgid "El cheque a ser anulado no es el último. No puede ser anulado"
+msgstr "El cheque a ser anulado no es el último. No puede ser anulado"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_end_num
+msgid "End Number"
+msgstr "Numero Final"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_move_line_ids
+msgid "Entry Lines"
+msgstr "Entry Lines"
+
+#. module: poi_bank
+#: code:addons/poi_bank/account_bank_statement.py:108
+#: code:addons/poi_bank/account_bank_statement.py:116
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: poi_bank
+#: code:addons/poi_bank/account_payment.py:95
+#: code:addons/poi_bank/account_payment.py:113
+#, python-format
+msgid "Error. You cannot generate another check unless the check is annulled."
+msgstr "Error. You cannot generate another check unless the check is annulled."
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:464
+#, python-format
+msgid "Fast reconciler"
+msgstr "Fast reconciler"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_account_bank_payment_invoice_form
+#: model:ir.ui.view,arch_db:poi_bank.view_account_payment_form
+msgid "Generate Check"
+msgstr "Generar Cheque"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:8
+#, python-format
+msgid "Good Job!"
+msgstr "Good Job!"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_id
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1316
+#, python-format
+msgid "Keep open"
+msgstr "Mantener Abierto"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile___last_update
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account___last_update
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check___last_update
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook___last_update
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_write_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_write_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_write_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_write_uid
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_write_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_write_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_write_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_write_date
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_card_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_bank
+#: model:ir.model.fields,help:poi_bank.field_account_payment_bank_card_code
+msgid "Last digits of card"
+msgstr "Últimos dígitos de tarjeta"
+
+#. module: poi_bank
+#: model:ir.actions.act_window,help:poi_bank.action_res_bank_account_form
+msgid "Manage bank account records you want to be used in the system."
+msgstr "Manage bank account records you want to be used in the system."
+
+#. module: poi_bank
+#: model:ir.actions.act_window,help:poi_bank.action_poi_bank_form
+msgid "Manage bank records you want to be used in the system."
+msgstr "Gestione los registros bancarios que quiere usar en el sistema."
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+msgid "Mark as Delivered"
+msgstr "Marcar como Entregado"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+msgid "Mark as Signed"
+msgstr "Marcar como Firmado"
+
+#. module: poi_bank
+#: selection:account.payment,bank_card_issuer:0
+#: selection:res.bank.card,bank_card_issuer:0
+msgid "Master Card"
+msgstr "Master Card"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_memo
+msgid "Memo"
+msgstr "Circular"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1822
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1828
+#, python-format
+msgid "Never"
+msgstr "Nunca"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_next_num
+msgid "Next Number"
+msgstr "Próximo número"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "No Balance"
+msgstr "Sin Saldo"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1299
+#, python-format
+msgid "OK"
+msgstr "OK"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:458
+#, python-format
+msgid "Only use the ctrl-enter shortcut to validate reconciliations."
+msgstr "Only use the ctrl-enter shortcut to validate reconciliations."
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1317
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1700
+#, python-format
+msgid "Open balance"
+msgstr "Balance abierto"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_other_payment_data
+msgid "Other Payment Data"
+msgstr "Otros Datos de Pago"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:897
+#, python-format
+msgid "Partner"
+msgstr "Asociado"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_payee
+msgid "Pay to the order of"
+msgstr "Páguese a la orden de"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_account_bank_payment_invoice_form
+#: model:ir.ui.view,arch_db:poi_bank.view_account_payment_form
+msgid "Payment Details"
+msgstr "Detalles de Pago"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: poi_bank
+#: selection:account.payment,bank_card_type:0
+#: selection:res.bank.card,bank_card_type:0
+msgid "Prepaid"
+msgstr "Prepagada"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+msgid "Print Check"
+msgstr "Imprimir Cheque"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+#: selection:res.bank.account.check,state:0
+msgid "Printed"
+msgstr "Impreso"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_analytic_account_id
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:71
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:103
+#, python-format
+msgid "Ref."
+msgstr "Ref."
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: poi_bank
+#: code:addons/poi_bank/account_bank_statement.py:255
+#, python-format
+msgid "Rounding error from currency conversion"
+msgstr "Error de redondeo en la conversión de moneda"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_balance_reconciled
+msgid "Saldo Conciliado"
+msgstr "Saldo Conciliado"
+
+#. module: poi_bank
+#: selection:res.bank.account,account_type:0
+msgid "Savings Account"
+msgstr "Caja de Ahorros"
+
+#. module: poi_bank
+#: model:ir.model.fields,help:poi_bank.field_account_payment_destination_journal_type
+msgid "Select 'Sale' for customer invoices journals. Select 'Purchase' for vendor bills journals. Select 'Cash' or 'Bank' for journals that are used in customer or vendor payments. Select 'General' for miscellaneous operations journals. Select 'Opening/Closing Situation' for entries generated for new fiscal years."
+msgstr "Seleccione 'Ventas' para diarios de facturas de cliente. \n"
+"Seleccione 'Compras' para diarios de facturas de proveedor. \n"
+"Seleccione 'Caja' o 'Banco' para diarios que se usan para pagos de clientes y proveedores. \n"
+"Seleccione 'General' para diarios que contienen operaciones varias. \n"
+"Seleccione 'Balance apertura/cierre' para diarios que contendrán asientos creados en el nuevo ejercicio fiscal."
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:959
+#, python-format
+msgid "Select Partner"
+msgstr "Seleccionar Asociado"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:61
+#, python-format
+msgid "Show more... ("
+msgstr "Mostrar más... ("
+
+#. module: poi_bank
+#: selection:res.bank.account.check,state:0
+msgid "Signed"
+msgstr "Firmado"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_checkbook_start_num
+msgid "Start Number"
+msgstr "Número inicial"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_res_bank_account_check_state
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_reconcile_statement_line_ids
+msgid "Statement Lines"
+msgstr "Statement Lines"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:465
+#, python-format
+msgid "Take on average less than 5 seconds to reconcile a transaction."
+msgstr "Take on average less than 5 seconds to reconcile a transaction."
+
+#. module: poi_bank
+#: code:addons/poi_bank/account_bank_statement.py:108
+#, python-format
+msgid "The bank statement line was already reconciled."
+msgstr "The bank statement line was already reconciled."
+
+#. module: poi_bank
+#: code:addons/poi_bank/bank.py:285
+#, python-format
+msgid "The check '%s' is not in draft state. Please annul it."
+msgstr "El cheque '%s' no está en estado borrador. Por favor anúlelo."
+
+#. module: poi_bank
+#: code:addons/poi_bank/bank.py:166
+#, python-format
+msgid "The check was not generated properly"
+msgstr "El cheque no fue generado correctamente"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:9
+#, python-format
+msgid "This page displays all the bank transactions that are to be reconciled and provides with a neat interface to do so."
+msgstr "This page displays all the bank transactions that are to be reconciled and provides with a neat interface to do so."
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:62
+#, python-format
+msgid "Tip : Hit ctrl-enter to reconcile all balanced items."
+msgstr "Tip : Hit ctrl-enter to reconcile all balanced items."
+
+#. module: poi_bank
+#: code:addons/poi_bank/wizard/reconciliate_bank_statements.py:250
+#, python-format
+msgid "To reconcilate those columns values must match"
+msgstr "Para conciliar los totales de las columnas deben coincidir"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconcile.js:275
+#, python-format
+msgid "Totals must match. You cannot conciliate statements with moves when their sum is not equal."
+msgstr "Los totales deben ser iguales. No puede conciliar líneas de extracto con movimientos si la suma no es igual."
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_transaction_date
+msgid "Transaction Datetime"
+msgstr "Fecha y Hora de Transacción"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_bank_statement_line_transaction_place
+msgid "Transaction Place"
+msgstr "Lugar de la Transacción"
+
+#. module: poi_bank
+#: code:addons/poi_bank/account_payment.py:158
+#, python-format
+msgid "Transfer from %s"
+msgstr "Transfer from %s"
+
+#. module: poi_bank
+#: model:ir.model.fields,field_description:poi_bank.field_account_payment_destination_journal_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_form
+msgid "Validate Check"
+msgstr "Validar Cheque"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.res_bank_account_check_search
+#: selection:res.bank.account.check,state:0
+msgid "Validated"
+msgstr "Validado"
+
+#. module: poi_bank
+#: selection:account.payment,bank_card_issuer:0
+#: selection:res.bank.card,bank_card_issuer:0
+msgid "Visa"
+msgstr "Visa"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1049
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1838
+#, python-format
+msgid "Warning"
+msgstr "Alerta"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:452
+#, python-format
+msgid "Whew, that was fast !"
+msgstr "Whew, that was fast !"
+
+#. module: poi_bank
+#: model:ir.ui.view,arch_db:poi_bank.view_res_bank_account_search
+msgid "With Balance"
+msgstr "Con Saldo"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1051
+#, python-format
+msgid "You are selecting transactions from both a payable and a receivable account.\n"
+"\n"
+"In order to proceed, you first need to deselect the %s transactions."
+msgstr "You are selecting transactions from both a payable and a receivable account.\n"
+"\n"
+"In order to proceed, you first need to deselect the %s transactions."
+
+#. module: poi_bank
+#: code:addons/poi_bank/bank.py:226
+#, python-format
+msgid "You cannot validate a check with a zero or negative amount"
+msgstr "No puede validar un cheque con un monto negativo o cero"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1840
+#, python-format
+msgid "You must choose at least one record."
+msgstr "Debe seleccionar al menos un registro."
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconcile.js:279
+#, python-format
+msgid "You must select some lines to conciliate them"
+msgstr "Debe seleccionar algunas líneas para conciliarlas"
+
+#. module: poi_bank
+#: code:addons/poi_bank/bank.py:185
+#, python-format
+msgid "You've reached the maximum value for this checkbook. Please user another checkbook"
+msgstr "Ha alcanzado el máximo valor para esta chequera. Por favor utilice otra chequera"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_account_bank_statement_reconcile
+msgid "account.bank.statement.reconcile"
+msgstr "account.bank.statement.reconcile"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:92
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:124
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:156
+#, python-format
+msgid "comment"
+msgstr "comentario"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/js/account_bank_statement_reconciliation.js:1051
+#, python-format
+msgid "last"
+msgstr "last"
+
+#. module: poi_bank
+#. openerp-web
+#: code:addons/poi_bank/static/src/xml/account_bank_statement_reconciliation.xml:61
+#, python-format
+msgid "remaining)"
+msgstr "restantes)"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_res_bank_account_check
+msgid "res.bank.account.check"
+msgstr "res.bank.account.check"
+
+#. module: poi_bank
+#: model:ir.model,name:poi_bank.model_res_bank_account_checkbook
+msgid "res.bank.account.checkbook"
+msgstr "res.bank.account.checkbook"
+

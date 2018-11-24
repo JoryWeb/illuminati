@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<record id="view_hr_afps_tree_report" model="ir.ui.view">
+    <field name="name">hr.afps.tree.report</field>
+    <field name="model">hr.afps</field>
+    <field name="type">tree</field>
+    <field name="arch" type="xml">
+        <tree string="Familia del Empleado">
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_hr_afps_form_report" model="ir.ui.view">
+    <field name="name">hr.afps.form.report</field>
+    <field name="model">hr.afps</field>
+    <field name="arch" type="xml">
+        <form string="Adjuntos del Empleado" version="7.0">
+            <sheet string="Adjuntos">
+                <h1>Adjuntos del Empleado</h1>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="on_report" />
+                        <field name="sequence"/>
+
+                    </group>
+                    <group>
+                        <field name="bank_account_id"/>
+                        <field name="note"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Lineas de Reporte">
+                        <group>
+                            <field name="line_ids" widget="one2many">
+                                <tree  string="lineas de configuracion" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="salary_rules_id"/>
+                                    <field name="note"/>
+                                    <field name='sequence'/>
+                                    <field name="group_id" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="action_hr_afps_report" model="ir.actions.act_window">
+    <field name="name">Afps</field>
+    <field name="res_model">hr.afps</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_ids"  eval="[
+                (5, 0, 0),
+                (0, 0, {
+                    'view_mode': 'tree',
+                    'view_id': ref('view_hr_afps_tree_report')
+                }),
+
+                (0, 0, {
+                    'view_mode': 'form',
+                    'view_id': ref('view_hr_afps_form_report')
+                }),
+            ]"/>
+</record>
+
+<menuitem action="action_hr_afps_report" id="menu_hr_afps_report" parent="hr_payroll.menu_hr_payroll_configuration"  string="AFP"/>
+</data>
+</odoo>

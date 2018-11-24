@@ -1,0 +1,234 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <!--Se requiere el menu de incidencias para poder filtrarlo en el reporte -->
+        <record model="ir.ui.view" id="view_stock_lot_incidence">
+            <field name="name">stock.lot.incidence</field>
+            <field name="model">stock.lot.incidence</field>
+            <field name="arch" type="xml">
+                <form string="Incidencias reportadas">
+                    <group>
+                        <field name="name"/>
+                        <field name="tipo"/>
+                        <field name="recordatorio"/>
+                        <!--<field name="cantidad"/>-->
+                        <field name="cantidad_fabrica"/>
+                        <field name="cantidad_revisada"/>
+                        <field name="posicion"/>
+                        <field name="clasificacion"/>
+                        <field name="observaciones"/>
+                        <label for="file"/>
+                        <div>
+                            <field name="file" widget="many2many_binary" string="Archivos Adjuntos" class="oe_inline"/>
+                        </div>
+                        <!--<field name="file" widget="many2many_binary"/>-->
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_stock_lot_incidence_tree" model="ir.ui.view">
+            <field name="name">stock.lot.incidence.tree</field>
+            <field name="model">stock.lot.incidence</field>
+            <field name="arch" type="xml">
+                <tree string="Incidencias Registradas">
+                    <field name="lot_id"/>
+                    <field name="name"/>
+                    <field name="tipo"/>
+                    <field name="recordatorio"/>
+                    <!--<field name="cantidad"/>-->
+                    <field name="cantidad_fabrica"/>
+                    <field name="cantidad_revisada"/>
+                    <field name="posicion"/>
+                    <field name="clasificacion"/>
+                    <field name="observaciones"/>
+                    <button type="object" name="show_images" icon="fa-list-alt"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="stock_lot_incidence_action" model="ir.actions.act_window">
+            <field name="name">Incidencias Chasis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.lot.incidence</field>
+            <field name="view_mode">tree</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Puede revisar las incidencias registradas por los chasis actualmente transferidos en los distintos
+                    almacenes
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_stock_lot_incidence_tree_all">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_stock_lot_incidence_tree"/>
+            <field name="act_window_id" ref="stock_lot_incidence_action"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_stock_lot_incidence_form_all">
+            <field name="sequence" eval="3"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_stock_lot_incidence"/>
+            <field name="act_window_id" ref="stock_lot_incidence_action"/>
+        </record>
+
+        <menuitem action="stock_lot_incidence_action"
+                  id="menu_stock_lot_incidence"
+                  parent="stock.menu_stock_inventory_control" sequence="100"/>
+
+
+        <record model="ir.ui.view" id="view_stock_move_line_operation_tree_toyosa">
+            <field name="name">stock.move.line.toyosa</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+            <field name="arch" type="xml">
+                <!--<xpath expr="/form//field[@name='pack_lot_ids']/tree" position="attributes">
+                    <attribute name="decoration-warning">lot_name!=lot_name_repeat</attribute>
+                </xpath>-->
+                <field name="lot_name" position="after">
+                    <field name="lot_name_in" invisible="not context.get('show_lots_text')"/>
+                    <field name="lot_name_repeat" invisible="not context.get('show_lots_text')"/>
+                    <field name="n_motor" invisible="not context.get('show_lots_text')"/>
+                    <field name="n_llaves" invisible="not context.get('show_lots_text')"/>
+                    <field name="cant_llaves" invisible="not context.get('show_lots_text')"/>
+                    <field name="n_caja" invisible="not context.get('show_lots_text')"/>
+                    <field name="mot_desarmada" invisible="not context.get('show_lots_text')"/>
+                    <field name="incidencia" widget="many2many_tags" invisible="not context.get('show_lots_text')" options="{'no_open': False, 'no_create': False}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_move_fob_form" model="ir.ui.view">
+            <field name="name">stock.move.form.fob</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_stock_move_operations"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="inside">
+                    <group invisible="not context.get('show_lots_text')">
+                        <field name="colorinterno" invisible="context.get('sale_out', False)"/>
+                        <field name="colorexterno" invisible="context.get('sale_out', False)"/>
+                        <field name="edicion" invisible="context.get('sale_out', False)"/>
+                        <field name="price_unit" invisible="context.get('sale_out', False)"/>
+                        <!--<field name="price_unit_fob" invisible="context.get('sale_out', False)"/>-->
+                        <field name="currency_id" invisible="1"/>
+                        <field name="price_unit_fob" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <field name="price_flete" invisible="context.get('sale_out', False)" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <field name="price_seguro" invisible="context.get('sale_out', False)" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <!--<button name="682" string="Costo FOB" type="action" icon="fa-money"
+                                invisible="context.get('sale_out', False)"/>-->
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--
+        <record id="view_picking_form_block" model="ir.ui.view">
+            <field name="name">stock.picking.partner.block</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='force_assign']" position="replace">
+                    <button name="force_assign" states="confirmed,waiting,partially_available" string="Forzar Disponibilidad" type="object" groups="base.group_erp_manager"/>
+                </xpath>
+
+                <field name="partner_id" position="attributes">
+                    <attribute name="attrs">{'invisible': [('picking_type_code', '=', 'internal')], 'readonly':
+                        [('picking_type_code', '=', 'incoming')]}
+                    </attribute>
+                </field>
+                <field name="origin" position="after">
+                    <field name="order_id" invisible="1"/>
+                    <field name="order_check" invisible="1"/>
+                    <field name="analytic_account_id" domain="[('account_type', '=', 'normal')]"
+                           attrs="{'required':[('order_check', '=', True)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.menu" id="stock.menu_stock_sched">
+            <field name="groups_id" eval="[(4, [ref('group_stock_manager_cpd')])]"/>
+        </record>
+        -->
+        <!-- Opciones de lectura escritura Cuadro de Prioridades -->
+        <!--
+        <record model="ir.ui.view" id="view_prioridades_nacionalizacion_inh">
+            <field name="name">poi_x_toyosa.view_prioridades_nacionalizacion</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="poi_x_toyosa.view_prioridades_nacionalizacion"/>
+            <field name="groups_id" eval="[(6, 0, [ref('poi_x_toyosa.group_despachante_usuario') ])]"/>
+            <field name="arch" type="xml">
+                <field name="fecha_comprometida" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="porcentaje_pago" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="write_date" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="product_id" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="create_date" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="state_finanzas" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="state_importaciones" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="state" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="bloqueo_cif" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>
+
+
+        -->
+        <!-- Actualización de ubicaciones -->
+
+        <record model="ir.ui.view" id="view_stock_location_view_inh">
+            <field name="name">stock.location.inh.android</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <group name="localization" position="after">
+                    <group string="Datos Integración"
+                           attrs="{'invisible': [('usage', 'not in', ('internal', 'transit'))]}">
+                        <field name="cod_ubicacion"/>
+                        <field name="cod_localidad"/>
+                        <field name="cod_antiguo"/>
+                        <field name="tipo_localidad"/>
+                        <field name="visible"/>
+                        <field name="salida"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+        <!--
+        <record id="view_picking_form_sum" model="ir.ui.view">
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='pack_operation_product_ids']/tree/field[@name='product_qty']"
+                       position="replace">
+                    <field name="product_qty" readonly="1" attrs="{'required': [('product_id', '!=', False)]}"
+                           sum="Total"/>
+                </xpath>
+                <xpath expr="//field[@name='pack_operation_product_ids']/tree/field[@name='qty_done']"
+                       position="replace">
+                    <field name="qty_done" attrs="{'readonly': [('lots_visible', '=', True)]}" sum="Total"/>
+                </xpath>
+
+            </field>
+        </record>
+        -->
+    </data>
+</odoo>

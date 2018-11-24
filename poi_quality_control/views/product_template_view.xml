@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="product_template_qc_form_view">
+            <field name="name">product.template.qc</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="senasag"/>
+                </field>
+                <group name="group_lots_and_weight" position="before">
+                    <group name="qc" string="Quality control">
+                        <field name="qc_triggers" nolabel="1">
+                            <tree string="Quality control triggers" editable="bottom">
+                                <field name="trigger" widget="selection"/>
+                                <field name="test"/>
+                                <field name="user" />
+                                <field name="partners" widget="many2many_tags" />
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_template_qc_des_form_view">
+            <field name="name">product.template.qc.des</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.view_template_property_form"/>
+            <field name="arch" type="xml">
+                <field name="description_picking" position="after">
+                    <separator string="Instrucciones para conservación" colspan="4"/>
+                    <field name="description_conservation" placeholder="Instrucciones para su conservación Ej. Mantener a temperatura ambiente" nolabel="1" colspan="4"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

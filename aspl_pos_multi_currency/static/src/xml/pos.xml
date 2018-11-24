@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="PosTicket">
+    	<t t-jquery=".receipt-paymentlines" t-operation="before">
+    		<t t-if="order.get_currency_mode() and order.get_amount_currency_with_symbol() and order.get_currency_id()">
+    			<table>
+    				<tr>
+    					<td class="pos-left-align">
+    						Currency Rate
+    					</td>
+    					<td class="pos-right-align">
+    						<t t-esc="widget.pos.dict_curr_list[order.get_currency_id()].rate" />
+    					</td>
+    				</tr>
+    				<tr>
+    					<td class="pos-left-align">
+    						Paid in <t t-esc="widget.pos.dict_curr_list[order.get_currency_id()].name" />
+    					</td>
+    					<td class="pos-right-align">
+    						<t t-esc="order.get_amount_currency_with_symbol()" />
+    					</td>
+    				</tr>
+    			</table>
+    		</t>
+    	</t>
+    	<t t-jquery=".receipt-change" t-operation="after">
+	    	<t t-if="widget.pos.config.enable_multi_currency and order.get_currency_change() and order.get_currency_mode() and order.get_currency_id()">
+    			<table>
+    				<tr>
+    					<td class="pos-left-align">
+    						Change in <t t-esc="widget.pos.dict_curr_list[order.get_currency_id()].name" />:
+    					</td>
+    					<td class="pos-right-align">
+    						<t t-esc="order.get_currency_change()" />
+    					</td>
+    				</tr>
+    			</table>
+    		</t>
+    	</t>
+    </t>
+
+    <t t-name="CurrencyRateUpdatePopup">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput rate_update">
+                <p class="title">Update Rate</p>
+				<div class="popup_currency_info">
+					<t t-if="widget.options and widget.options.currency">
+					Current rate 1 <t t-esc="widget.pos.company.currency_id[1]"/> = <t t-esc="widget.options.currency.rate" /> <t t-esc="widget.options.currency.name" />
+					</t>
+				</div>
+				<div>
+					<t t-if="widget.options and widget.options.currency">
+						<span id="conversion_rate">1 <t t-esc="widget.pos.company.currency_id[1]"/> = 
+							<input placeholder="New Rate" id="new_rate" style="margin: 10px; width: 125px;line-height: 29px;"/>
+							<t t-esc="widget.options.currency.name" />
+						</span>
+					</t>
+				</div>
+                <div class="footer">
+                    <div class="button confirm">
+                        Apply
+                    </div>
+                    <div class="button cancel">
+                        Cancel 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery="div.top-content span.back" t-operation="after">
+	        <t t-if="widget.pos.config.enable_multi_currency">
+        		<span class="onoffswitch">
+				    <div>
+					    <input type="checkbox" name="toggle_multi_currency" class="onoffswitch-checkbox" id="toggle_multi_currency" />
+					    <label class="onoffswitch-label" for="toggle_multi_currency">
+					        <span class="onoffswitch-inner"></span>
+					        <span class="onoffswitch-switch"></span>
+					    </label>
+					</div>
+	        	</span>
+	        	<span class="lable-foreign"> Currency</span>
+	        </t>
+        </t>
+        <t t-jquery=".paymentlines-container" t-operation="before">
+        	<t t-if="widget.pos.config.enable_multi_currency">
+	        	<section class="section_currency">
+	        		<div style="border:solid 1px rgb(215,215,215);"> 
+		        		<div class="foreign_infoline">
+							<label class="left-block" id="currency_selection_label" for="currency_selection">Currency:</label>
+							<t t-set="selected_curr" t-value="widget.get_currency_selection()" />
+							<select class="right-block" id="currency_selection">
+							    <t t-foreach="widget.pos.currency_list" t-as="currencylist">
+							    	<t t-if="selected_curr==currencylist.id">
+								        <option selected="selected" t-att-value="currencylist.id">
+								        	<b><t t-esc="currencylist.name"/></b>
+							        	</option>
+						        	</t>
+						        	<t t-if="selected_curr!=currencylist.id">
+								        <option t-att-value="currencylist.id">
+								        	<b><t t-esc="currencylist.name"/></b>
+							        	</option>
+						        	</t>
+							    </t>
+							</select><br /> <br /> 
+							<span id="receipt_currency_label" style="font-size: 15px;font-weight:600;"/>
+							<input type="checkbox" name="receipt_in_other_curr" id="curr_receipt"/> 
+						</div>
+						<div class="right-currency">
+							<u><label class="right-block">Currency Rate</label></u><br /><br/>
+							<t t-if="widget.pos.config.display_conversion">
+								<span id="conversion_rate" /><br/>
+							</t>
+							<span class="left-block" id="currency_value_label" />
+							<span id="currency_value" class="right-block" />
+						</div>
+						<span class="button next_rate_update highlight" id="btn_rate_update">Update Rate</span>
+						<span id="foreign_input_label" class="left-block" style="font-size: 15px;"/>
+						<input placeholder="Enter Amount" id="curr_input" />
+	        		</div>
+	        	</section>
+	        </t>
+        </t>
+    </t>
+
+	<t t-name="CurrencyReceipt">
+        <receipt align='center' width='40' value-thousands-separator='' >
+            <t t-if='receipt.company.logo'>
+                <img t-att-src='receipt.company.logo' />
+                <br/>
+            </t>
+            <t t-if='!receipt.company.logo'>
+                <h1><t t-esc='receipt.company.name' /></h1>
+                <br/>
+            </t>
+            <div font='b'>
+                <t t-if='receipt.company.contact_address'>
+                    <div><t t-esc='receipt.company.contact_address' /></div>
+                </t>
+                <t t-if='receipt.company.phone'>
+                    <div>Tel:<t t-esc='receipt.company.phone' /></div>
+                </t>
+                <t t-if='receipt.company.vat'>
+                    <div>VAT:<t t-esc='receipt.company.vat' /></div>
+                </t>
+                <t t-if='receipt.company.email'>
+                    <div><t t-esc='receipt.company.email' /></div>
+                </t>
+                <t t-if='receipt.company.website'>
+                    <div><t t-esc='receipt.company.website' /></div>
+                </t>
+                <t t-if='receipt.header_xml'>
+                    <t t-raw='receipt.header_xml' />
+                </t>
+                <t t-if='!receipt.header_xml and receipt.header'>
+                    <div><t t-esc='receipt.header' /></div>
+                </t>
+                <t t-if='receipt.cashier'>
+                    <div class='cashier'>
+                        <div>--------------------------------</div>
+                        <div>Served by <t t-esc='receipt.cashier' /></div>
+                    </div>
+                </t>
+                <t t-if='order.get_currency_id()'>
+                    <div class='orderlines'>
+                        Currency <t t-esc='pos.dict_curr_list[order.get_currency_id()].name' />
+                    </div>
+                </t>
+            </div>
+            <br /><br />
+
+            <!-- Orderlines -->
+
+            <div class='orderlines' line-ratio='0.6'>
+                <t t-foreach='receipt.orderlines' t-as='line'>
+                    <t t-set='simple' t-value='line.discount === 0 and line.unit_name === "Unit(s)" and line.quantity === 1' />
+                    <t t-if='simple'>
+                        <line>
+                            <left><t t-esc='line.product_name_wrapped[0]' /></left>
+                            <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='line.line_amount_currency' /></value></right>
+                        </line>
+                    </t>
+                    <t t-if='!simple'>
+                        <line><left><t t-esc='line.product_name_wrapped[0]' /></left></line>
+                        <t t-if='line.discount !== 0'>
+                            <line indent='1'><left>Discount: <t t-esc='line.discount' />%</left></line>
+                        </t>
+                        <line indent='1'>
+                            <left>
+                                <value t-att-value-decimals='pos.dp["Product Unit of Measure"]' value-autoint='on'>
+                                    <t t-esc='line.quantity' />
+                                </value>
+                                <t t-if='line.unit_name !== "Unit(s)"'>
+                                    <t t-esc='line.unit_name' /> 
+                                </t>
+                                x 
+                                <value t-att-value-decimals='pos.dp["Product Price"]'>
+                                    <t t-esc='line.price' />
+                                </value>
+                            </left>
+                            <right>
+                                <value t-att-value-decimals='pos.currency.decimals'><t t-esc='line.line_amount_currency' /></value>
+                            </right>
+                        </line>
+                    </t>
+                </t>
+            </div>
+
+            <!-- Subtotal -->
+
+            <t t-set='taxincluded' t-value='Math.abs(receipt.subtotal - receipt.total_with_tax) &lt;= 0.000001' />
+            <t t-if='!taxincluded'>
+                <line><right>--------</right></line>
+                <line><left>Subtotal</left><right><value t-att-value-decimals='pos.currency.decimals'><t t-esc="pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),receipt.subtotal)" /></value></right></line>
+                <t t-foreach='receipt.tax_details' t-as='tax'>
+                    <line>
+                        <left><t t-esc='tax.name' /></left>
+                        <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),tax.amount)' /></value></right>
+                    </line>
+                </t>
+            </t>
+
+            <!-- Total -->
+
+            <line><right>--------</right></line>
+            <line class='total' size='double-height'>
+                <left><pre>        TOTAL</pre></left>
+                <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),receipt.total_with_tax)' /></value></right>
+            </line>
+            <br/><br/>
+
+            <br/> 
+
+            <line size='double-height'>
+                <left><pre>        CHANGE</pre></left>
+                <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),receipt.change)' /></value></right>
+            </line>
+            <br/>
+            <!-- Extra Payment Info -->
+
+            <t t-if='receipt.total_discount'>
+                <line>
+                    <left>Discounts</left>
+                    <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),receipt.total_discount)'/></value></right>
+                </line>
+            </t>
+            <t t-if='taxincluded'>
+                <t t-foreach='receipt.tax_details' t-as='tax'>
+                    <line>
+                        <left><t t-esc='tax.name' /></left>
+                        <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),tax.amount)' /></value></right>
+                    </line>
+                </t>
+                <line>
+                    <left>Total Taxes</left>
+                    <right><value t-att-value-decimals='pos.currency.decimals'><t t-esc='pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),receipt.total_tax)'/></value></right>
+                </line>
+            </t>
+
+            <div class='before-footer' />
+
+            <!-- Footer -->
+            <t t-if='receipt.footer_xml'>
+                <t t-raw='receipt.footer_xml' />
+            </t>
+
+            <t t-if='!receipt.footer_xml and receipt.footer'>
+                <br/>
+                <t t-esc='receipt.footer' />
+                <br/>
+                <br/>
+            </t>
+
+            <div class='after-footer' />
+
+            <br/>
+            <div font='b'>
+                <div><t t-esc='receipt.name' /></div>
+                <div><t t-esc='receipt.date.localestring' /></div>
+            </div>
+
+        </receipt>
+    </t>
+
+    <t t-name="CurrencyPosTicket">
+        <div class="pos-sale-ticket">
+            <div class="pos-center-align"><t t-esc="order.formatted_validation_date"/> <t t-esc="order.name"/></div>
+            <br />
+            <t t-esc="widget.pos.company.name"/><br />
+            <div class="receipt-phone">
+                Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
+            </div>
+            <div class="receipt-user">
+                User: <t t-esc="widget.pos.get_cashier().name"/><br />
+            </div>
+            <br />
+            <div class="receipt-user" style="text-align: center;">
+                Currency: <t t-esc="widget.pos.dict_curr_list[order.get_currency_id()].name"/><br />
+            </div>
+            <t t-if="receipt.header">
+                <div style='text-align:center'>
+                    <t t-esc="receipt.header" />
+                </div>
+                <br />
+            </t>
+            <table class='receipt-orderlines'>
+                <colgroup>
+                    <col width='50%' />
+                    <col width='25%' />
+                    <col width='25%' />
+                </colgroup>
+                <tr t-foreach="orderlines" t-as="orderline">
+                    <td>
+                        <t t-esc="orderline.get_product().display_name"/>
+                         <t t-if="orderline.get_discount() > 0">
+                            <div class="pos-disc-font">
+                                With a <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),orderline.get_discount()),widget.pos.dict_curr_list[order.get_currency_id()])"/>% discount
+                            </div>
+                        </t>
+                    </td>
+                    <td class="pos-right-align">
+                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                    </td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),orderline.get_display_price()),widget.pos.dict_curr_list[order.get_currency_id()])"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class='receipt-total'>
+                <tr>
+                    <td>Subtotal:</td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),order.get_total_without_tax()),widget.pos.dict_curr_list[order.get_currency_id()])"/>
+                    </td>
+                </tr>
+                <t t-foreach="order.get_tax_details()" t-as="taxdetail">
+                    <tr>
+                        <td><t t-esc="taxdetail.name" /></td>
+                        <td class="pos-right-align">
+                            <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),taxdetail.amount),widget.pos.dict_curr_list[order.get_currency_id()])"/>
+                        </td>
+                    </tr>
+                </t>
+                <tr>
+                    <t t-if="order.get_total_discount() > 0">
+                        <td>Discount:</td>
+                        <td class="pos-right-align">
+                            <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),order.get_total_discount()),widget.pos.dict_curr_list[order.get_currency_id()])"/>
+                        </td>
+                    </t>
+                </tr>
+                <tr class="emph">
+                    <td>Total:</td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),order.get_total_with_tax()),widget.pos.dict_curr_list[order.get_currency_id()])"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <table class='receipt-change'>
+                <tr><td>Change:</td><td class="pos-right-align">
+                    <t t-esc="widget.pos.gui.screen_instances.payment.format_foreign(widget.pos.gui.screen_instances.payment.convert_currency(order.get_currency_id(),order.get_change()),widget.pos.dict_curr_list[order.get_currency_id()])"/>
+                    </td></tr>
+            </table>
+            <t t-if="receipt.footer">
+                <br />
+                <div style='text-align:center'>
+                    <t t-esc="receipt.footer" />
+                </div>
+            </t>
+        </div>
+    </t>
+
+    <t t-extend="ReceiptScreenWidget">
+    	<t t-jquery=".pos-receipt-container" t-operation="after">
+    		<div class="pos-currency_receipt-container" style="text-align: center;">
+            </div>
+    	</t>
+    </t>
+
+</templates>

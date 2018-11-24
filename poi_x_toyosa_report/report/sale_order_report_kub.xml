@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_sale_order_toyo_kub"
+    string="Cotizacion KUBOTA"
+    model="sale.order"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.sale_order_report_kub"
+    name="poi_x_toyosa_report.sale_order_template_kub"
+    menu="False"
+  />
+
+  <record id="report_sale_order_toyo_kub" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_sale_order_toy"/>
+  </record>
+</data>
+
+<template id="sale_order_template_kub">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+  <div class="header">
+  </div>
+  <div class="article" style="font-size:13px;">
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:15px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-4 text-center">
+            <br/>
+            <t t-call="poi_x_toyosa_report.35years"></t>
+          </div>
+          <div class="col-xs-4 text-center">
+            <h4 style="color:#DB0000;"><strong>TOYOSA S.A.</strong></h4>
+            <p style="padding:0px;margin:0px;"><strong>COTIZACION</strong></p>
+            <p style="padding:0px;margin:0px;"><strong><span t-field="o.name"/></strong></p>
+          </div>
+          <div class="col-xs-4 text-center">
+            <br/>
+            <t t-call="poi_x_toyosa_report.kubota"></t>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12"  style="border-radius:15px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-7">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><strong>Cliente Nombre:</strong></td>
+                  <td><span t-field="o.partner_id.name"></span></td>
+
+                </tr>
+                <tr>
+                  <td><strong>CI/NIT:</strong></td>
+                  <td><span t-esc="(o.partner_id.ci_plus_ext) or (0 != o.partner_id.nit and o.partner_id.nit) or ''"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Direccion:</strong></td>
+                  <td><span t-field="o.partner_id.street"/><span t-field="o.partner_id.street2"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Telefono(s):</strong></td>
+                  <td><span t-field="o.partner_id.phone"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-xs-5">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong></td>
+                  <td><span t-field="o.order_date"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Ciudad:</strong></td>
+                  <td><span t-field="o.warehouse_id.state_id.name"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-12 text-center"  style="background:#B2D9FF;border-radius:15px;">
+            <h4>INFORMACION DEL LA UNIDAD</h4>
+          </div>
+          <div class="col-xs-12">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><strong>Marca:</strong></td>
+                  <td><span t-field="o.lot_id.marca.name"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Producto:</strong></td>
+                  <td><span t-field="o.lot_id.product_id.name"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Código de Modelo:</strong></td>
+                  <td><span t-field="o.lot_id.product_id.default_code"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Año:</strong></td>
+                  <td><span t-esc="(o.lot_id.anio_modelo and int(o.lot_id.anio_modelo.name)) or ' '"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-12 text-center" style="background:#B2D9FF;border-radius:14px;">
+            <h4>INFORMACION DEL PRECIO (Expresado en <span t-field="o.currency_report_id.symbol"/>)</h4>
+          </div>
+          <div class="col-xs-6">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><strong>Precio Unitario de Venta:</strong></td>
+                  <td class="text-right"><span t-field="o.lot_line_id.price_unit_exchange"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Descuento Otorgado:</strong></td>
+                  <td class="text-right"><span t-field="o.discount_amount"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Porcentaje de Descuento(%):</strong></td>
+                  <td class="text-right"><span t-field="o.discount_percent"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Cantidad:</strong></td>
+                  <td class="text-right">1</td>
+                </tr>
+                <tr>
+                  <td><strong>PRECIO FINAL DESCONTADO:</strong></td>
+                  <td class="text-right"><span t-field="o.amount_total_plus_a_exchange"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-6">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>.</td>
+                </tr>
+                <tr>
+                  <td>.</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>Validez Proforma:</strong></td>
+                  <td class="text-right"><span t-field="o.validity_date"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-12 text-center" style="background:#B2D9FF;border-radius:14px;">
+            <h4>DATOS DEL ASESOR COMERCIAL</h4>
+          </div>
+          <div class="col-xs-6">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><span t-field="o.user_id.partner_id.name"/></td>
+                </tr>
+                <tr>
+                  <td><span t-field="o.user_id.partner_id.title.name"/></td>
+                </tr>
+                <tr>
+                  <td><span t-field="o.user_id.partner_id.email"/></td>
+                </tr>
+                <tr>
+                  <td><span t-field="o.warehouse_id.street"/> <span t-field="o.warehouse_id.street2"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-12" style="border-top:3px solid #284BBC; ">
+            <p><strong>Nota:</strong>  Esta proforma está sujeta a:</p>
+            <p>1. La persona titular o a quien se emita la factura, es la que en forma obligatoria debe efectuar la transferencia bancaria, emitir cheque de su cuenta propiao efectúe depósito bancario.</p>
+            <p>2. De los cambios impositivos. Si durante el proceso de compra existiere algún ajuste económico sobre impuestos referentes al rubro por parte del Estado Plurinacional de Bolivia a través de cualquiera de sus reparticiones, el precio de venta acordado con el comprador podrá ser modificado y/o incrementado de manera proporcional a los ajustes impositivos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-4" style="height:60px;">
+            <h4>ORIGINAL CLIENTE</h4>
+          </div>
+          <div class="col-xs-4 text-center" style="border-left:3px solid #284BBC;border-right:3px solid #284BBC;height:60px;">
+            <p>POR TOYOSA</p>
+          </div>
+          <div class="col-xs-4 text-center" style="height:60px;">
+            <p>POR CLIENTE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="page-break-before: always;"></div>
+
+
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4><STRONG>ESPECIFICACIONES  TECNICAS</STRONG></h4>
+          </div>
+
+          <div class="col-xs-12">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <thead>
+                <tr style="background:#B2D9FF;">
+                  <th><strong>MOTOR</strong></th>
+                  <th class="text-right"><strong>DESCRIPCION</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="item_ids" t-as="i">
+                  <t t-if="i.group_id.sequence == 0">
+                  <tr>
+                    <td><strong><span t-esc="i.name"/></strong></td>
+                    <t t-if="i.item_id and i.item_id.id and i.item_id.id in attrib">
+                    <td class="text-right"><span t-esc="i.item_id and i.item_id.id and i.item_id.id in attrib and  attrib[i.item_id.id]"/></td>
+                    </t>
+                    <t t-if="not (i.item_id and i.item_id.id and i.item_id.id in attrib)">
+                    <td class="text-right"><span t-esc="i.default"/></td>
+                    </t>
+                  </tr>
+                  </t>
+                </t>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-12">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <thead>
+                <tr style="background:#B2D9FF;">
+                  <th><strong>PTO</strong></th>
+                  <th class="text-right"><strong>DESCRIPCION</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="item_ids" t-as="i">
+                  <t t-if="i.group_id.sequence == 1">
+                  <tr>
+                    <td><strong><span t-esc="i.name"/></strong></td>
+                    <t t-if="i.item_id and i.item_id.id and i.item_id.id in attrib">
+                    <td class="text-right"><span t-esc="i.item_id and i.item_id.id and i.item_id.id in attrib and  attrib[i.item_id.id]"/></td>
+                    </t>
+                    <t t-if="not (i.item_id and i.item_id.id and i.item_id.id in attrib)">
+                    <td class="text-right"><span t-esc="i.default"/></td>
+                    </t>
+                  </tr>
+                  </t>
+                </t>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-12">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <thead>
+                <tr style="background:#B2D9FF;">
+                  <th><strong>SITEMA DE DESPLAZAMIENTO</strong></th>
+                  <th class="text-right"><strong>DESCRIPCION</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="item_ids" t-as="i">
+                  <t t-if="i.group_id.sequence == 2">
+                  <tr>
+                    <td><strong><span t-esc="i.name"/></strong></td>
+                    <t t-if="i.item_id and i.item_id.id and i.item_id.id in attrib">
+                    <td class="text-right"><span t-esc="i.item_id and i.item_id.id and i.item_id.id in attrib and  attrib[i.item_id.id]"/></td>
+                    </t>
+                    <t t-if="not (i.item_id and i.item_id.id and i.item_id.id in attrib)">
+                    <td class="text-right"><span t-esc="i.default"/></td>
+                    </t>
+                  </tr>
+                  </t>
+                </t>
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="footer" style="font-size:9px;">
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;">
+        <p><strong>OFICINA PRINCIPAL:</strong>  <span t-field="o.company_id.partner_id.street"/>  <span t-field="o.company_id.partner_id.street2"/><br/>
+        <strong>SUCURSALES:</strong><br/>
+        Santa Cruz:  Mall Las Brisas, Av. Cristo Redentor - Av. San Martin esq. Calle 7, Equipetrol - Av. Tres pasos al frente, entre 2do y 3er anillo. <br/>
+        Cochabamba:  Av. America # 1362, Calacala -  Av. Uyuni # 1185, Muyurina - Av. Blanco Galindo  Km 7 1/2, Colcapirhua. <br/>
+        Oruro:  Calle Bolivar # 1050 entre calles Petot y Camacho. <br/>
+        Potosi:  Av. Circunvalación esq. Poleoducto,
+        </p>
+      </div>
+    </div>
+  </div>
+
+</t>
+</t>
+</template>
+
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="search_cuadro_prioridades">
+            <field name="name">Busqueda Cuadro de Prioridades</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <search string="Cuadro Prioridades">
+                    <field name="name" string="Chasis"
+                           filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                    <field name="product_id" string="Master"/>
+                    <group expand="0" string="Agrupar Por">
+                        <filter string="Estado Venta" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Estado Finanzas" domain="[]" context="{'group_by':'state_finanzas'}"/>
+                        <filter string="Estado Importaciones" domain="[]" context="{'group_by':'state_importaciones'}"/>
+                        <filter string="Cuenta Analítica" domain="[]" context="{'group_by':'project_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="view_prioridades_nacionalizacion" model="ir.ui.view">
+            <field name="name">cuadro.prioridades.nacionalizacion.tree</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Cuadro Prioridades Liberación" editable="bottom" decoration-warning="bloqueo_cif==True">
+                    <field name="prioridad" widget="handle"/>
+                    <field name="soat" groups="poi_x_toyosa.group_despachante_usuario"/>
+                    <field name="write_date" string="Fecha Cambio" readonly="1"/>
+                    <field name="fecha_comprometida"/>
+                    <field name="porcentaje_pago"/>
+                    <field name="purchase_price_unit" readonly="1"/>
+                    <field name="purchase_currency_id" readonly="1"/>
+                    <field name="purchase_bank_id" readonly="1"/>
+                    <field name="name" string="Chasis" readonly="1"/>
+                    <button type="object" name="show_lot" icon="fa-list-alt"/>
+                    <field name="marca" readonly="1"/>
+                    <field name="modelo" readonly="1"/>
+                    <field name="product_id" string="Master"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="user_id" readonly="1"/>
+                    <field name="project_id" readonly="1"/>
+                    <!--<field name="observaciones"/>-->
+                    <field name="create_date" string="Fecha Creación Chasis" readonly="1"/>
+                    <field name="state_finanzas"/>
+                    <field name="state_importaciones"/>
+                    <field name="state"/>
+                    <field name="bloqueo_cif"/>
+                    <button type="object" name="action_email_send_nacionalizacion"
+                            string="Solicitud de Nacionalización"
+                            icon="fa-flag"/>
+                    <!--<field name="location_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_prioridades_nacionalizacion" model="ir.actions.act_window">
+            <field name="name">Cuadro Prioridades Liberación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_prioridades_nacionalizacion"/>
+            <field name="search_view_id" ref="search_cuadro_prioridades"/>
+            <field name="context">{}</field>
+            <field name="domain">[('product_id.tracking','=','serial')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cuadro de Prioridades Nacionalizacion
+                </p>
+                <p>
+                    Puede especificar el cuadro de nacionalizacion y establecer prioridades
+                    o bloqueos el usuario debe definir cada estado de chasis ya sea manual o
+                    revisando cada registro de chasis
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_prioridades_nacionalizacion" id="menu_prioridades_nacionalizacion"
+                  parent="poi_purchase_imports.menu_purchase_imports" groups="stock.group_production_lot"
+                  sequence="101"/>
+
+        <menuitem action="action_prioridades_nacionalizacion" id="menu_priority2sale"
+                  parent="sale.menu_sale_report"
+                  groups="sales_team.group_sale_manager" sequence="30"/>
+
+    </data>
+</odoo>

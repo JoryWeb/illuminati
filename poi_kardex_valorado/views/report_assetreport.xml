@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_assetreport">
+            <t t-call="report.html_container">
+                <t t-set="data_report_margin_top" t-value="12"/>
+                <t t-set="data_report_header_spacing" t-value="9"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.internal_layout">
+                        <div class="page">
+                            <h2><span t-esc="res_company.name"/>: Cuadro Depreciación Activos Fijos</h2>
+                            <div class="row mt32">
+                                <div class="col-xs-3">
+                                    <strong>Periodos:</strong>
+                                    <p>
+                                        Inicial: <span t-esc="get_start_period(data)"/>
+                                        <br />
+                                        Final: <span t-esc="get_end_period(data)"/>
+                                    </p>
+                                </div>
+                                <div class="col-xs-3">
+                                    <strong>Año Fiscal:</strong>
+                                    <p t-esc="get_fiscalyear(data)"/>
+                                </div>
+                                <div class="col-xs-3">
+                                    <strong>Empresa:</strong>
+                                    <span t-esc="res_company.name"/>
+                                </div>
+                                <div class="col-xs-3">
+                                    <strong>Usuario:</strong>
+                                    <p t-esc="get_user(data)"/>
+                                </div>
+                            </div>
+
+                            <table class="table table-condensed">
+                                <thead>
+
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="get_asset_asset()" t-as="asset">
+                                        <tr style="font-weight: bold; border: solid 1px #000; border-style: solid none; padding: 10px; background-color: #CCC;">
+                                            <td colspan="3">
+                                                <span t-esc="asset['name']"/>
+                                            </td>
+                                            <td colspan="3">
+                                                Valor de Compra:
+                                            </td>
+                                            <td>
+                                                <p t-esc="'{0:,.2f}'.format(round(get_purchase_value(asset),2))"/>
+                                            </td>
+                                            <td colspan="2">
+                                                Valor Neto:
+                                            </td>
+                                            <td colspan="2">
+                                                <p t-esc="'{0:,.2f}'.format(round(get_value_residual(asset),2))"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="oe_list_header_columns">
+                                            <th data-id="depreciation_date" class="oe_list_header_date oe_sortable"><div>
+                                                Categoría
+                                            </div></th>
+                                            <th data-id="depreciation_date" class="oe_list_header_date oe_sortable"><div>
+                                                Periodo
+                                            </div></th>
+                                            <th data-id="depreciation_date" class="oe_list_header_date oe_sortable"><div>
+                                                Fecha Depreciación
+                                            </div></th>
+                                            <th data-id="ufv_ini" class="oe_list_header_float oe_sortable"><div>
+                                                UFV inicial
+                                            </div></th>
+                                            <th data-id="ufv_fin" class="oe_list_header_float oe_sortable"><div>
+                                                UFV final
+                                            </div></th>
+                                            <th data-id="increment" class="oe_list_header_float oe_sortable"><div>
+                                                AITB
+                                            </div></th>
+                                            <th data-id="valor_actual" class="oe_list_header_float oe_sortable"><div>
+                                                Costo a actualizar
+                                            </div></th>
+                                            <th data-id="deprec_gestion" class="oe_list_header_float oe_sortable"><div>
+                                                Depreciación periodo
+                                            </div></th>
+                                            <th data-id="deprec_acu" class="oe_list_header_float oe_sortable"><div>
+                                                Depreciación Acumulado
+                                            </div></th>
+                                            <th data-id="aitb_acu" class="oe_list_header_float oe_sortable"><div>
+                                                AITB Sobre Deprec Acumulado
+                                            </div></th>
+                                            <th data-id="total_deprec" class="oe_list_header_float oe_sortable sortdown"><div>
+                                                Total Depreciación
+                                            </div></th>
+                                            <!-- 9 lineas -->
+                                        </tr>
+                                        <t t-set="total_aitb" t-value="0"/>
+                                        <t t-set="total_depreciacion" t-value="0"/>
+                                        <t t-set="total_aitb_acu" t-value="0"/>
+                                        <tr t-foreach="lines(asset)" t-as="line">
+                                            <td><span t-esc="line['category_id']"/></td>
+                                            <td><span t-esc="line['periodo']"/></td>
+                                            <td><span t-esc="line['depreciation_date']"/></td>
+                                            <td><span t-esc="line['ufv_ini']"/></td>
+                                            <td><span t-esc="line['ufv_fin']"/></td>
+                                            <td><span t-esc="'{0:,.2f}'.format(round(line['aitb'],2))"/></td>
+                                            <td><span t-esc="'{0:,.2f}'.format(round(line['valor_actual'],2))"/></td>
+                                            <td><span t-esc="'{0:,.2f}'.format(round(line['deprec_gestion'],2))"/></td>
+                                            <td><span t-esc="'{0:,.2f}'.format(round(line['deprec_acu'],2))"/></td>
+                                            <td><span t-esc="'{0:,.2f}'.format(round(line['aitb_acu'],2))"/></td>
+                                            <td><span t-esc="'{0:,.2f}'.format(round(line['total_deprec'],2))"/></td>
+                                            <t t-set="total_aitb" t-value="total_aitb + line['aitb']"/>
+                                            <t t-set="total_depreciacion" t-value="total_depreciacion + line['deprec_gestion']"/>
+                                            <t t-set="total_aitb_acu" t-value="total_aitb_acu + line['aitb_acu']"/>
+                                        </tr>
+                                        <tr>
+                                            <td>Totales</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><strong><span t-esc="'{0:,.2f}'.format(round(total_aitb,2))"/></strong></td>
+                                            <td></td>
+                                            <td><strong><span t-esc="'{0:,.2f}'.format(round(total_depreciacion,2))"/></strong></td>
+                                            <td></td>
+                                            <td><strong><span t-esc="'{0:,.2f}'.format(round(total_aitb_acu,2))"/></strong></td>
+                                            <td></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_hojan"
+    string="Hoja de Negocios"
+    model="sale.order"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.hojan_report"
+    name="poi_x_toyosa_report.hojan_report_template"
+  />
+
+  <record id="report_hojan" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_notae_toy"/>
+  </record>
+</data>
+
+<template id="hojan_report_template">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+  <div class="header">
+
+  </div>
+
+  <div class="article" style="font-size:14px;">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h3><strong>HOJA DE DE NEGOCIOS</strong></h3>
+      </div>
+      <div class="col-xs-5 col-xs-offset-3 text-center">
+
+      </div>
+      <div class="col-xs-3 col-xs-offset-1">
+        <p>FECHA:</p>
+        <p><span t-field="o.order_date"/></p>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <p>CI/NIT:</p>
+            <p>NOMBRE:</p>
+            <p>APELLIDO PATERNO:</p>
+            <p>APELLIDO MATERNO:</p>
+          </div>
+          <div class="col-xs-6">
+            <p>NOMBRE EMPRESA:</p>
+            <p>TIPO DE SOCIEDAD:</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-2">
+              <p>MOVIL:</p>
+              <p>TELEFONO:</p>
+            </div>
+            <div class="col-xs-4">
+
+            </div>
+            <div class="col-xs-6">
+              <p>EMAIL:</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="row">
+
+          <div class="col-xs-2 col-xs-offset-6">
+            <p>Marca</p>
+          </div>
+          <div class="col-xs-2">
+            <p>Modelo</p>
+          </div>
+          <div class="col-xs-2">
+            <p>Año</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">
+            VEHÍCULO ACTUAL
+          </div>
+          <div class="col-xs-1"><p>SI</p></div>
+          <div class="col-xs-1"><p>NO</p></div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <p>VEHÍCULO A ADQUIRIR (0Km):</p>
+          </div>
+          <div class="col-xs-5">
+            <p>PRECIO LISTA:</p>
+            <p>PRECIO VENTA:</p>
+          </div>
+          <div class="col-xs-1">
+            <p>Bs/$us</p>
+            <p>Bs/$us</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">AUTO EN PAGO</div>
+          <div class="col-xs-1 col-xs-offset-1">SI</div>
+          <div class="col-xs-1">NO</div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">SOLICITUD DE CREDITO</div>
+          <div class="col-xs-1 col-xs-offset-1">SI</div>
+          <div class="col-xs-1">NO</div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">
+            <p>MARCA/MODELO</p>
+          </div>
+          <div class="col-xs-3">
+
+          </div>
+          <div class="col-xs-2">
+            <p>AÑO:</p>
+          </div>
+          <div class="col-xs-1">
+
+          </div>
+          <div class="col-xs-1">
+            <p>Km:</p>
+          </div>
+          <div class="col-xs-1">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-4">
+            PRECIO ESPERADO DEL CLIENTE:
+          </div>
+          <div class="col-xs-4">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">BANCARIO:</div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-1 col-xs-offset-1">DONDE:</div>
+          <div class="col-xs-6"></div>
+          <div class="col-xs-3">BANCARIO:</div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-8"></div>
+          <div class="col-xs-3">BANCO ECONÓMICO(0%)</div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-8"></div>
+          <div class="col-xs-3">
+            <p>COUTA INICIAL</p>
+          </div>
+          <div class="col-xs-3"></div>
+          <div class="col-xs-3">
+            <p>INTERES ANUAL</p>
+          </div>
+          <div class="col-xs-3">
+            <p>COUTA MENSUAL</p>
+          </div>
+          <div class="col-xs-3">
+
+          </div>
+          <div class="col-xs-3"></div>
+          <div class="col-xs-3">
+
+          </div>
+          <div class="col-xs-3">
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">
+            <p>SOLICITUD DE SEGURO</p>
+          </div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-1"></div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3">
+            <p>EJECUTIVO DE VENTA:</p>
+          </div>
+          <div class="col-xs-9">
+
+          </div>
+          <div class="col-xs-3">
+            <p>ACCESORIOS OFRECIDOS:</p>
+          </div>
+          <div class="col-xs-9">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <p>DESCUENTO</p>
+          </div>
+          <div class="col-xs-3">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <p>JEFE DE VENTAS o RESPONSABLE DE SUCURSAL:</p>
+        <p>COMENTARIOS:</p>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-5">
+            <p>Probabilidad de compra</p>
+          </div>
+          <div class="col-xs-1 col-xs-offset-1">A</div>
+          <div class="col-xs-1 col-xs-offset-1">B</div>
+          <div class="col-xs-1 col-xs-offset-1">C</div>
+          <div class="col-xs-1"></div>
+          <div class="col-xs-5">
+          </div>
+          <div class="col-xs-1 col-xs-offset-1"><p>Muy Probable</p></div>
+          <div class="col-xs-1 col-xs-offset-1"><p>Probable</p></div>
+          <div class="col-xs-1 col-xs-offset-1"><p>Poco Probable</p></div>
+          <div class="col-xs-1"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</t>
+</t>
+</template>
+
+</odoo>

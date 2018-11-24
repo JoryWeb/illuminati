@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_product_return_form" model="ir.ui.view">
+            <field name="name">product_return_form</field>
+            <field name="model">product.return</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Devoluciones" version="7.0">
+                    <header>
+                        <button name="request_return" states="draft" string="Solicitar" type="object"  groups="poi_warehouse_sale.group_sale_salesman_shop_leads,base.group_sale_manager"/>
+                        <button name="approve_request" states="send" string="Aprobar" class="oe_highlight" type="object" groups="base.group_sale_manager"/>
+                        <button name="process_return" states="confirm" string="Procesado" class="oe_highlight" type="object"  groups="poi_warehouse_sale.group_sale_salesman_shop_leads,base.group_sale_manager"/>
+                        <button name="cancel_return" states="send,confirm" string="Cancel" type="object"  groups="base.group_sale_manager"/>
+                      
+                    <field name="state" widget="statusbar" statusbar_visible="draft,send,done,confirm,cancel"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Formulario de Devoluciones"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="sale_id" on_change="onchange_sale_id(sale_id)" domain="[('state','in',('done', 'progress', 'manual'))]" />
+                                <field name="partner_id"/>
+                                <field name="picking_id" domain="[('sale_id','=',sale_id)]" on_change="onchange_picking_id(picking_id)"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="request_id"/>
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Productos">
+                                <field name="line_ids"  nolabel="1" widget="one2many_list">
+                                    <tree string="Productos" editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="origin_qty"/>
+                                        <field name="product_uom"/>
+                                        <field name="lote"/>
+                                    </tree>
+                                </field>                                
+                            </page>
+                        </notebook>
+                        <div class="oe_clear">
+                            <label for="cause"/>
+                        </div>
+                        <field name="cause"/>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_product_return_tree" model="ir.ui.view">
+            <field name="name">product_return_tree</field>
+            <field name="model">product.return</field>
+            <field name="arch" type="xml">
+                <tree string="Devoluciones">
+                    <field name="sale_id"/>
+                    <field name="partner_id"/>
+                    <field name="picking_id"/>
+                    <field name="request_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_return_search" model="ir.ui.view">
+            <field name="name">product.return.search</field>
+            <field name="model">product.return</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Devoluciones">
+                    <field name="sale_id"/>
+                    <field name="partner_id"/>
+                    <field name="picking_id"/>
+                    <field name="request_id"/>
+                    <field name="state"/>
+                    <group expand="1" string="Agrupado Por..">
+                        <filter string="Cliente" icon="terp-personal" name="partner_id" context="{'group_by':'partner_id'}"/>
+                        <filter string="Estado" icon="terp-personal" name="state" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_product_return">
+            <field name="name">Devoluciones</field>
+            <field name="res_model">product.return</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_product_return_search"/>
+        </record>
+
+        
+        <menuitem action="action_product_return" id="menu_product_return" parent="base.menu_sales" sequence="50" groups="poi_warehouse_sale.group_sale_salesman_shop_leads,base.group_sale_manager"/>
+    </data>
+</openerp>

@@ -1,0 +1,14 @@
+
+
+#. module: base
+#: model:res.groups,name:base.group_system
+msgid "Settings"
+msgstr "Configuración Sistema"
+
+#. module: base
+#: model:ir.module.category,name:base.module_category_financial_management_configuration
+#: model:ir.ui.view,arch_db:base.res_config_view_base
+#: model:ir.ui.view,arch_db:base.view_company_form
+#: model:res.groups,name:base.group_configuration
+msgid "Configuration"
+msgstr "Configuración módulos"

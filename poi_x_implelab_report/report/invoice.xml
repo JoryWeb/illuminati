@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="basic_invoice2" inherit_id="poi_bol_cc.basic_invoice">
+			<xpath expr='//div[@id="first_column_header"]' position="replace">
+      			<div class="col-xs-4 text-center" id="first_column_header">
+						<img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 90px;"/>
+                		<t t-if="o.company_id.nit == '2312147018'">
+                                <p style="font-size:9px;padding:0;margin:0px;">De: Juana Luisa Sanchez Zambrano</p><br/>
+						</t>
+					    <div style="font-size:11px;">
+							<p style="font-size:9px;padding:0;margin:0px;">
+							<span t-field="o.company_id.razon"/><br/>CASA MATRIZ<br/><span t-field="o.company_id.street"/><br/><span t-field="o.company_id.street2"/><br/><span t-field="o.company_id.zip"/> <br/><span t-field="o.company_id.state_id.name"/> - <span t-field="o.company_id.country_id.name"/>
+							<t t-if="o.cc_dos.warehouse_id.branch != '0'">
+							<br/><span t-field="o.cc_dos.warehouse_id.branch"/> <br/><span t-field="o.cc_dos.warehouse_id.street"/><t t-if="o.cc_dos.warehouse_id.street2"> <br/><span t-field="o.cc_dos.warehouse_id.street2"/></t><br/><span t-field="o.cc_dos.warehouse_id.zip"/> <br/>Telefonos <span t-field="o.cc_dos.warehouse_id.phone"/> <br/><span t-field="o.cc_dos.warehouse_id.state_id.name"/> - <span t-field="o.cc_dos.warehouse_id.country_id.name"/>
+							</t>
+							</p>
+                		</div>
+
+					</div>
+			</xpath>
+			<xpath expr='//div[@id="five_row_page"]' position="replace">
+				<div class="col-xs-12">
+					<div class="panel panel-default" style="padding-bottom:0px;margin-bottom:0px;">
+						<table class="table table-condensed" id="invoice_lines_original">
+							<thead>
+								<tr>
+									<th>Descripcion</th>
+									<th>Cantidad</th>
+									<th class="text-right">Precio Unitario</th>
+									<th class="text-right" groups="sale.group_discount_per_so_line">Descuento (%)</th>
+									<th class="text-right">Monto</th>
+								</tr>
+							</thead>
+							<tbody class="invoice_tbody">
+								<tr t-foreach="o.invoice_line_ids" t-as="l">
+									<td><span t-field="l.name"/></td>
+									<td>
+										<span t-field="l.quantity"/>
+										<span t-field="l.uom_id"  groups="product.group_uom"/>
+									</td>
+									<td class="text-right">
+										<span t-field="l.price_unit" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+									</td>
+									<td class="text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+									<td class="text-right">
+										<span t-field="l.price_plus_quantity" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'
+											/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="row" id="invoice_total_orginal">
+							<div class="col-xs-4 pull-right">
+								<t t-set="sum_sin_desc" t-value="o.amount_total + o.sum_desc"/>
+								<table class="table table-condensed">
+									<tr class="border-black">
+										<td><strong>Total Sin Descuento</strong></td>
+										<td class="text-right">
+											<span t-field="o.amount_without_discount" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+										</td>
+									</tr>
+									<tr id="tax_total">
+										<td>Descuento</td>
+										<td class="text-right">
+											<span t-field="o.sum_desc" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-xs-12" style="padding-bottom:0px;margin-bottom:0px;">
+								<table class="table table-condensed" style="padding-bottom:0px;margin-bottom:0px;">
+									<tr>
+										<td><strong>SON :</strong> <span t-esc="o.to_word(o.amount_total)"/> </td>
+
+										<td><strong>Total :</strong></td>
+										<td class="text-right active">
+										 <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+		 	</xpath>
+			<xpath expr='//div[@id="footer_reference"]' position="replace">
+               <div id="footer_reference">
+		        	<div class="row">
+		        		<div class="col-xs-12">
+				            <table class="table table-condensed">
+				                <tbody>
+				                    <tr>
+				                        <td>
+				                            <p style="terp_default_8" t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))"><b>CODIGO DE CONTROL: </b> <span t-field="o.cc_cod"/></p>
+				                            <p class="point_reference" style="terp_default_8" t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))"><b>FECHA LÍMITE DE EMISIÓN: </b> <span t-field="o.cc_dos.fecha_fin"/></p>
+				                            <para t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))">
+				                                <b>&quot;ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS. EL USO ILÍCITO DE ÉSTA SERÁ SANCIONADO DE ACUERDO A LEY&quot;</b>
+				                                <br/><span class="small" t-field="o.cc_dos.leyenda_id.name"/>
+				                            </para>
+				                            <para style="terp_default_Bold_9" t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'draft' or o.state == 'cancel'))">
+				                                &quot;ESTE DOCUMENTO NO TIENE VALIDEZ FISCAL&quot;
+				                            </para>
+				                        </td>
+				                        <td>
+				                           <span t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))" ><img t-att-src="'data:image/png;base64,%s' % o.qr_img" style="height: 4.2cm;"/></span>
+				                        </td>
+				                    </tr>
+				                </tbody>
+				            </table>
+				        </div>
+			        </div>
+                    <!-- septima fila -->
+		            <div class="row">
+		                <div class="col-xs-6">
+	                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+	                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+	                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+	                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+	                        <span t-if="o.type == 'out_refund'">Refund</span>
+	                        <span t-if="o.type == 'in_refund'">Supplier Refund</span>
+	                        <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+	                        <span t-field="o.number"/>
+		                </div>
+		                <div class="col-xs-6">
+		                    <span  t-if="o.origin" class="small">
+		                    Source:<span t-field="o.origin"></span>
+		                    </span>
+		                </div>
+		                <div class="col-xs-12" t-if="o.name">
+		                    <span t-if="o.name" class="small">
+		                        <strong>Description:</strong>
+		                        <span t-field="o.name"/>
+		                    </span>
+		                </div>
+		                <div t-if="o.type == 'out_refund'" class="col-xs-6">
+		                    <span t-if="o.refunds_id.nit" class="small">
+		                        <strong>Factura Original:</strong>
+		                        <span t-field="o.refunds_id.nit"/>
+		                    </span>
+		                </div>
+		                <div t-if="o.type == 'out_refund'" class="col-xs-6">
+		                    <span t-if="o.cc_nro" class="small">
+		                        <strong>Factura rectificativa:</strong>
+		                        <span t-field="o.cc_nro"/>
+		                    </span>
+		                </div>
+
+		            </div>
+			   </div>
+            </xpath>
+		</template>
+	</data>
+</openerp>

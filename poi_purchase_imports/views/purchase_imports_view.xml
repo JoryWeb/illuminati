@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_purchase_cost_control"
+                  name="Importaciones"
+                  parent="base.menu_purchase_root"
+                  sequence="9"/>
+
+        <record id="action_poi_purchase_imports" model="ir.actions.act_window">
+            <field name="name">Purchase cost distributions</field>
+            <field name="res_model">poi.purchase.imports</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a draft purchase expenses distribution.
+                </p>
+                <p>
+                    Use this menu to control the cost of purchases by expense type
+                    such as transport, insurance, freight customs, etc.
+                </p>
+                <p>
+                    You can add one or more receipts which share the same expenses
+                    and update cost price of product.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_poi_purchase_imports"
+                  action="action_poi_purchase_imports"
+                  parent="menu_purchase_cost_control"/>
+
+        <record id="view_poi_purchase_imports_tree" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.tree</field>
+            <field name="model">poi.purchase.imports</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase cost distributions">
+                    <field name="name"/>
+                    <field name="order_id"/>
+                    <field name="date"/>
+                    <field name="total_purchase"/>
+                    <field name="total_expense" string="Total Gastos"/>
+                    <field name="amount_total"/>
+                    <field name="cost_lines"/>
+                    <field name="state"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_poi_purchase_imports_calendar" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.calendar</field>
+            <field name="model">poi.purchase.imports</field>
+            <field name="arch" type="xml">
+                <calendar string="Purchase cost distribution" color="state"
+                          date_start="date">
+                    <field name="name"/>
+                    <field name="total_purchase"/>
+                    <field name="total_expense"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="view_poi_purchase_imports_graph" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.graph</field>
+            <field name="model">poi.purchase.imports</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase cost distribution" type="bar">
+                    <field name="partner_id"/>
+                    <field name="total_purchase" type="measure"/>
+                    <field name="total_expense" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="poi_purchase_imports_pivot">
+            <field name="name">poi.purchase.imports.pivot</field>
+            <field name="model">poi.purchase.imports</field>
+            <field name="arch" type="xml">
+                <pivot string="Carpeta de Importaciones" display_quantity="True">
+                    <field name="partner_id" type="row"/>
+                    <field name="amount_total" type="measure"/>
+                    <field name="total_expense" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Registrar Lineas de Gasto desde los pickings-->
+        <record id="view_expense_lines_tree" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.expense</field>
+            <field name="model">poi.purchase.imports.expense</field>
+            <field name="arch" type="xml">
+                <tree string="Cost distribution expenses" editable="bottom">
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="invoice_id"/>
+                    <field name="state"/>
+                    <field name="currency_id"/>
+                    <field name="expense_line_tax_ids" widget="many2many_tags"/>
+                    <field name="split_method"/>
+                    <field name="quants_id" widget="many2many_tags" domain="[('imports','=',parent.id)]"/>
+                    <field name="pickings_id" widget="many2many_tags" domain="[('imports','=',parent.id)]"/>
+                    <!--<field name="type" invisible="1"/>-->
+                    <field name="split_method"/>
+                    <field name="ref"/>
+                    <field name="product_qty"/>
+                    <field name="expense_amount"/>
+                    <field name="price_subtotal"/>
+                    <field name="imported_lines" invisible="1"/>
+                    <field name="affected_lines" widget="many2many_tags"/>
+                    <field name="invoice_line" options="{'no_create': true, 'create_edit': false}"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="act_expenses_wizard" model="ir.actions.act_window">
+            <field name="name">Asignar Gastos a Pickings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.purchase.imports.expense</field>
+            <field name="view_id" ref="view_expense_lines_tree"/>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="poi_purchase_imports_form" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.form</field>
+            <field name="model">poi.purchase.imports</field>
+            <field name="arch" type="xml">
+                <form string="Purchase cost distribution">
+                    <header>
+                        <!--<button name="%(action_picking_import_wizard)d"
+                                string="Import incoming shipment"
+                                states="draft" type="action"
+                                class="oe_highlight" />-->
+                        <button name="action_calculate"
+                                string="Calcular"
+                                type="object"
+                                class="oe_highlight"
+                                attrs="{'invisible':[('cost_lines','=',[])]}"/>
+                        <button name="action_done"
+                                string="Cerrar Carpeta"
+                                type="object"
+                                confirm="¿Confirma que ya termino de costear todos los productos?"
+                                attrs="{'invisible':[('expense_lines','=',[])]}"
+                                class="oe_highlight"/>
+
+                        <button name="action_done"
+                                string="Finalizar"
+                                type="object"
+                                states="calculated"
+                                confirm="¿Desea finalizar la importación?"
+                                attrs="{'invisible':[('expense_lines','!=',[])]}"
+                                class="oe_highlight"/>
+
+                        <button name="action_draft"
+                                string="Cancel"
+                                states="calculated,error"
+                                type="object"/>
+                        <button name="action_cancel"
+                                string="Cancel"
+                                states="done"
+                                confirm="This will undo the product price update (only if current value matches with the calculated price in this distribution). Do you want to continue?"
+                                type="object"/>
+                        <field name="state"
+                               widget="statusbar"
+                               statusbar_visible="draft,calculated,done"
+                               statusbar_colors='{"error": "red", "done": "blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label string="Carpeta de Importación"/>
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object"
+                                    name="action_view_quant"
+                                    class="oe_stat_button"
+                                    string="Reporte Ubicaciones"
+                                    icon="fa-building-o">
+                            </button>
+                            <button type="object"
+                                    name="action_view_cost"
+                                    class="oe_stat_button"
+                                    string="Reporte de Costos"
+                                    icon="fa-money">
+                            </button>
+                            <button type="object"
+                                    name="action_view_invoice"
+                                    class="oe_stat_button"
+                                    string="Polizas de Importación"
+                                    icon="fa-certificate">
+                            </button>
+                            <button type="object"
+                                    name="action_view_stock_moves"
+                                    class="oe_stat_button"
+                                    string="Movimientos de Stock"
+                                    icon="fa-arrows-h">
+                            </button>
+
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="order_id"/>
+                                <field name="invoice_id"/>
+                                <field name="partner_id"/>
+                                <field name="currency_id" readonly="1" groups="base.group_multi_currency"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="journal_id"/>
+                                <field name="stage_id" widget="selection"/>
+                                <!--<field name="cost_update_type" />-->
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="picking_list" string="Transferencias de Almacén">
+                                <field name="picking_lines">
+                                    <form string="Operaciones de Almacén">
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="picking_id"/>
+                                                <field name="location_id"/>
+                                                <field name="company_id" invisible="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="location_dest_id"/>
+                                                <field name="state"/>
+                                                <field name="company_currency_id" invisible="1"/>
+                                                <field name="total_amount" widget="monetary"
+                                                       options="{'currency_field': 'company_currency_id'}"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                    <tree string="Operaciones de Almacén" editable="bottom"
+                                          decoration-success="state=='done'">
+                                        <field name="name"/>
+                                        <field name="picking_id"/>
+                                        <button name="%(act_quant_lot_wizard)d" string="Lotes/Chasis" type="action"
+                                                class="oe_highlight" icon="fa-bars"
+                                                context="{'picking_id':[picking_id]}"/>
+                                        <field name="location_id"/>
+                                        <field name="company_id"/>
+                                        <field name="location_dest_id"/>
+                                        <button name="%(act_landed_cost_report_wizard)d" string="Costos en Destino"
+                                                type="action" class="oe_highlight" icon="fa-list"
+                                                context="{'picking_id':[picking_id]}"/>
+                                        <field name="state"/>
+                                        <field name="company_currency_id" invisible="1"/>
+                                        <field name="total_amount" widget="monetary"
+                                               options="{'currency_field': 'company_currency_id'}"/>
+                                        <!--<button name="%(act_expenses_wizard)d" string="Registrar Coste" type="action" class="oe_highlight" context="{'picking_id':[picking_id]}"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Expenses">
+                                <button name="%(action_import_invoice_line_wizard)d"
+                                        string="Import invoice line"
+                                        states="draft" type="action"/>
+                                <field name="expense_lines" editable="bottom">
+                                    <form string="Expenses Cost">
+                                        <group>
+                                            <field name="partner_id" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                            <field name="product_id" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                            <field name="name" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                            <field name="date" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                            <!--<field name="currency_id"/>
+                                            <field name="expense_amount"/>-->
+                                            <label for="expense_amount"/>
+                                            <div name="expense_amount_div" class="o_row">
+                                                <field name="expense_amount" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                                <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                            </div>
+                                            <field name="expense_line_tax_ids" widget="many2many_tags" attrs="{'readonly':[('invoice_id','!=',False)]}"/>
+                                            <!--<field name="type"/>-->
+                                            <field name="split_method"/>
+                                            <field name="opcion_gasto" widget="radio"/>
+                                            <field name="quants_id" widget="many2many_tags"
+                                                   domain="[('imports','=',parent.id)]"
+                                                   attrs="{'invisible': [('opcion_gasto','=','picking')]}"/>
+                                            <field name="pickings_id" widget="many2many_tags"
+                                                   domain="[('imports','=',parent.id), ('state','=','done')]"
+                                                   attrs="{'invisible': [('opcion_gasto','=','lote')]}"/>
+                                            <field name="product_qty" invisible="1"/>
+                                            <field name="invoice_id" invisible="1"/>
+                                            <field name="state" invisible="1"/>
+                                            <field name="ref" invisible="1"/>
+                                            <field name="imported_lines" invisible="1"/>
+                                            <field name="affected_lines"
+                                                   attrs="{'readonly': [('invoice_id', '=', False)], 'invisible':[('pickings_id','!=',[])]}"/>
+                                            <field name="invoice_line"
+                                                   options="{'no_create': true, 'create_edit': false}"
+                                                   invisible="1"/>
+                                        </group>
+                                    </form>
+                                    <tree string="Cost distribution expenses"
+                                          decoration-muted="invoice_id!=False and landed_cost_id!=False"
+                                          decoration-success="invoice_id!=False and landed_cost_id==False">
+                                        <button name="create_invoice"
+                                                string="Generar Factura"
+                                                type="object"
+                                                class="btn btn-sm oe_button oe_highlight"
+                                        />
+                                        <button name="apply_landed_cost"
+                                                string="Costear Inventario"
+                                                type="object"
+                                                attrs="{'invisible':[('affected_lines','!=',[])]}"
+                                                class="btn btn-sm oe_button oe_highlight"
+                                        />
+                                        <field name="partner_id"/>
+                                        <field name="product_id"/>
+                                        <field name="product_qty"/>
+                                        <field name="name"/>
+                                        <field name="date"/>
+                                        <field name="invoice_id"/>
+                                        <field name="landed_cost_id"/>
+                                        <field name="state"/>
+                                        <field name="currency_id"/>
+                                        <field name="expense_line_tax_ids" widget="many2many_tags"/>
+                                        <!--<field name="type"/>-->
+                                        <field name="split_method"/>
+                                        <field name="quants_id" widget="many2many_tags"
+                                               domain="[('imports','=',parent.id)]"/>
+                                        <field name="pickings_id" widget="many2many_tags"
+                                               domain="[('imports','=',parent.id), ('state','=','done')]"/>
+                                        <field name="ref"/>
+                                        <field name="expense_amount"/>
+                                        <field name="price_subtotal"/>
+                                        <field name="imported_lines" invisible="1"/>
+                                        <field name="affected_lines" widget="many2many_tags" invisible="1"/>
+                                        <field name="invoice_line" options="{'no_create': true, 'create_edit': false}"
+                                               string="Lineas de factura"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Picking lines">
+                                <field name="cost_lines">
+                                    <tree string="Costs distribution picking lines" create="false">
+                                        <field name="name"/>
+                                        <field name="picking_id"/>
+                                        <field name="company_id"/>
+                                        <field name="move_id" string="Linea de Transferencia"/>
+                                        <field name="product_id" readonly="1"/>
+                                        <field name="product_qty"/>
+                                        <field name="product_price_unit" string="Precio Unitario"/>
+                                        <field name="total_amount"/>
+                                        <field name="expense_amount"/>
+                                        <field name="cost_ratio"/>
+                                        <field name="standard_price_old" string="Costo Previo"/>
+                                        <field name="standard_price_new" string="Costo Nuevo"/>
+                                        <field name="product_price_update" string="Costo Producto"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="total_purchase"
+                                       widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <field name="total_expense"
+                                       widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"/>
+                                <div class="oe_subtotal_footer_separator oe_inline" states="calculated,done">
+                                    <label for="amount_total"/>
+                                </div>
+                                <field name="amount_total"
+                                       nolabel="1" class="oe_subtotal_footer_separator"
+                                       widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </group>
+                        <group name="almac" string="Situaciones Importaciones">
+                            <field name="stage_date" nolabel="1">
+                                <tree string="Situaciones">
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <!--<group>
+                            <field name="total_uom_qty" />
+                            <field name="total_weight" string="Peso Total" />
+                            <field name="total_volume" />
+                        </group>-->
+                        <div class="oe_clear"/>
+                        <field name="note"
+                               class="oe_inline"
+                               placeholder="Cost distribution notes..."/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="poi_purchase_imports_search" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.search</field>
+            <field name="model">poi.purchase.imports</field>
+            <field name="arch" type="xml">
+                <search string="Search purchase costs distributions">
+                    <field name="name"/>
+                    <field name="order_id"/>
+                    <field name="cost_lines"/>
+                    <field name="expense_lines"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_poi_purchase_imports_line_tree" model="ir.ui.view">
+            <field name="model">poi.purchase.imports.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="picking_id"/>
+                    <field name="move_id"/>
+                    <field name="product_id" readonly="1"/>
+                    <field name="product_qty"/>
+                    <field name="product_price_unit"/>
+                    <field name="total_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_poi_purchase_imports_line_form" model="ir.ui.view">
+            <field name="name">poi.purchase.imports.line.form</field>
+            <field name="model">poi.purchase.imports.line</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Cost Line">
+                    <group readonly="1">
+                        <group string="Purchase information">
+                            <field name="partner"/>
+                            <field name="purchase_id"/>
+                            <field name="purchase_line_id"/>
+                        </group>
+                        <group string="Warehouse information">
+                            <field name="picking_id" readonly="1"/>
+                            <field name="move_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Product information">
+                        <group>
+                            <field name="product_id" readonly="1"/>
+                            <field name="product_qty" readonly="1"/>
+                            <field name="product_uos_qty" readonly="1"/>
+                            <field name="product_price_unit" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="product_uom" readonly="1"/>
+                            <field name="product_uos" readonly="1"/>
+                            <field name="product_weight" readonly="1"/>
+                            <field name="product_weight_net" readonly="1"/>
+                            <field name="product_volume" readonly="1"/>
+                            <field name="standard_price_old" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Cost distribution line information">
+                        <group>
+                            <field name="total_amount"/>
+                            <field name="total_volume"/>
+                        </group>
+                        <group>
+                            <field name="total_weight"/>
+                            <field name="total_weight_net"/>
+                        </group>
+                    </group>
+                    <field name="expense_lines" readonly="1">
+                        <tree string="Cost Line Expenses">
+                            <!--<field name="type" />-->
+                            <field name="split_method"/>
+                            <field name="expense_amount" sum="Total Expenses"/>
+                            <field name="cost_ratio" sum="Calculated Cost"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+        <!--
+        <record id="view_poi_purchase_imports_expense_invoice_form" model="ir.ui.view">
+            <field name="model">poi.purchase.imports.expense</field>
+            <field name="arch" type="xml">
+                <tree string="Cost distribution expenses"
+                      options="{'reload_on_button': true}"
+                      editable="bottom"
+                      create="0">
+                    <field name="invoice_line"
+                           options="{'no_create': true, 'create_edit': false}"
+                           domain="[('invoice_id', '=', parent.id)]"
+                    />
+                    <field name="split_method"/>
+                    <field name="calculation_method"/>
+                    <field name="expense_amount"/>
+                    <field name="distribution" readonly="1"/>
+                    <button name="button_duplicate"
+                            string="Duplicate expense"
+                            type="object"
+                            icon="gtk-dnd-multiple"
+                    />
+                </tree>
+            </field>
+        </record>-->
+
+    </data>
+</odoo>

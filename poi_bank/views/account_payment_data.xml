@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <!-- Payment methods -->
+        <!-- Check -->
+        <record id="account_payment_method_check_inbound" model="account.payment.method">
+            <field name="name">Cheque</field>
+            <field name="code">check_inbound</field>
+            <field name="payment_type">inbound</field>
+        </record>
+        <record id="account_payment_method_check_outbound" model="account.payment.method">
+            <field name="name">Cheque</field>
+            <field name="code">check_outbound</field>
+            <field name="payment_type">outbound</field>
+        </record>
+
+        <!-- Card Payment -->
+        <record id="account_payment_method_card_inbound" model="account.payment.method">
+            <field name="name">Tarjeta</field>
+            <field name="code">card_inbound</field>
+            <field name="payment_type">inbound</field>
+        </record>
+        <record id="account_payment_method_card_outbound" model="account.payment.method">
+            <field name="name">Tarjeta</field>
+            <field name="code">card_outbound</field>
+            <field name="payment_type">outbound</field>
+        </record>
+
+        <!-- Transfer Payment -->
+        <record id="account_payment_method_transfer_inbound" model="account.payment.method">
+            <field name="name">Transferencia Bancaria</field>
+            <field name="code">transfer_inbound</field>
+            <field name="payment_type">inbound</field>
+        </record>
+        <record id="account_payment_method_transfer_outbound" model="account.payment.method">
+            <field name="name">Transferencia Bancaria</field>
+            <field name="code">transfer_outbound</field>
+            <field name="payment_type">outbound</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="poi.auth.circuit" id="circuit_sequential_import2">
+            <field name="type">anyone</field>
+            <field name="name">Autorizacion Cualquiera</field>
+        </record>
+
+        <record model="poi.auth.circuit.lines" id="circuit_sequential_import_line2">
+            <field name="user_id" ref="base.user_root"/>
+            <field name="sequence">1</field>
+            <field name="auth_circuit_id" ref="circuit_sequential_import2"/>
+        </record>
+
+    </data>
+</openerp>

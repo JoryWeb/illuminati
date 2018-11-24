@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+				
+		<record model="ir.ui.view" id="wiz_invoice_refund">
+			<field name="name">wizard.invoice_refund</field>
+			<field name="model">wiz.invoice_refund</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Fecha de Busqueda">
+					<group>
+						<field name="cc_nro"/>
+						<field name="cc_aut"/>
+						<field name="nit"/>
+												
+					</group>
+					<group>
+						<field name="invoice_line" nolabel="1" widget="one2many_list">
+	                     	<tree string="Invoice Lines" editable="bottom">
+		                         <field name="product_id" domain="[]" string="Producto"/>
+		                         <field name="quantity"/>
+		                         <field name="price_unit"/>
+		                         <field name="discount"/>
+		                         <!-- field name="price_net"/> -->
+		                         <!-- <field name="invoice_line_tax_id" widget="many2many_tags"
+                                        domain="[('parent_id','=',False)]"/> -->
+		                         <field name="price_subtotal"/>
+	                     	</tree>
+	                 	</field>
+                 	</group>
+                 	<group class="oe_subtotal_footer oe_right">
+                 		<field name="amount_untaxed"/>
+                 		<field name="amount_tax"/>
+                 		<field name="amount_total" class="oe_subtotal_footer_separator"/>
+                 	</group>
+					<footer>
+						<button name="open_table" type="object" string="Agregar Factura" class="oe_highlight"/>
+						<button string="Cancel" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		
+		
+		
+	</data>
+</openerp>

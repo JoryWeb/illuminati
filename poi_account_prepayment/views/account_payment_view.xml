@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- FOR NORMAL PAYMENTS-->
+
+        <record id="account.action_account_payments" model="ir.actions.act_window">
+            <field name="name">Payments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'default_payment_type': 'inbound'}</field>
+            <field name="domain">[('partner_type', '=', 'customer'),('is_prepaid', '=', False)]</field>
+            <field name="view_id" ref="account.view_account_payment_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to register a payment
+                </p><p>
+                  Payments are used to register liquidity movements (send, collect or transfer money).
+                  You can then process those payments by your own means or by using installed facilities.
+                </p>
+            </field>
+        </record>
+
+        <record id="account.action_account_payments_payable" model="ir.actions.act_window">
+            <field name="name">Payments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'default_payment_type': 'outbound'}</field>
+            <field name="domain">[('partner_type', '=', 'supplier'),('is_prepaid', '=', False)]</field>
+            <field name="view_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to register a payment
+                </p><p>
+                  Payments are used to register liquidity movements (send, collect or transfer money).
+                  You can then process those payments by your own means or by using installed facilities.
+                </p>
+            </field>
+        </record>
+
+        <!-- FOR PREPAYMENTS -->
+
+        <record id="action_account_prepayments" model="ir.actions.act_window">
+            <field name="name">Customer Prepayments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'default_payment_type': 'inbound','default_is_prepaid': True}</field>
+            <field name="domain">[('partner_type', '=', 'customer'),('is_prepaid', '=', True)]</field>
+            <field name="view_id" ref="account.view_account_payment_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to register a prepayment
+                </p>
+                <p>
+                    Prepayments are used to register liquidity movements in advance (send or collect money).
+                    You can then process those payments by your own means or by using installed facilities.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_account_prepayments_payable" model="ir.actions.act_window">
+            <field name="name">Vendor Prepayments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'default_payment_type': 'outbound','default_is_prepaid': True}</field>
+            <field name="domain">[('partner_type', '=', 'supplier'),('is_prepaid', '=', True)]</field>
+            <field name="view_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to register a prepayment
+                </p>
+                <p>
+                    Prepayments are used to register liquidity movements (send or collect money).
+                    You can then process those payments by your own means or by using installed facilities.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_account_prepayments" id="menu_action_account_prepayments_receivable"
+                  parent="account.menu_finance_receivables_documents" sequence="20" groups="account.group_account_invoice"/>
+        <menuitem action="action_account_prepayments_payable" id="menu_action_account_prepayments_payable"
+                  parent="account.menu_finance_payables_documents" sequence="20" groups="account.group_account_invoice"/>
+    </data>
+</odoo>

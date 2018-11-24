@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="wizard_hr_payslip">
+			<field name="name">hr_payslip_wiz</field>
+			<field name="model">hr.payslip.wiz</field>
+			<field name="arch" type="xml">
+				<form string="Fecha de Busqueda">
+					<group>
+						<field name='date_from'/>
+						<field name="date_to"/>
+						<field name="only_posted" />
+					</group>
+					<group col="4">
+						<field name="employee_id" colspan="1"  nolabel="1" >
+							<tree>
+								<field name="name" string="Empleados"/>
+								<field name="ci"/>
+							</tree>
+
+						</field>
+
+						<field name="analytic_id" colspan="1"  nolabel="1">
+							<tree>
+								<field name="name" string="Cuentas Analíticas"/>
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button name="open_table" type="object" string="Imprimir" class="oe_highlight"/>
+						<button string="Cancel" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wizard_hr_payslip">
+			<field name="name">Planilla de Sueldos</field>
+			<field name="res_model">hr.payslip.wiz</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="wizard_hr_payslip"/>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem id="menu_hr_payslip" parent="hr_payroll.menu_hr_payroll_root" name="Informes"/>
+        <menuitem action="action_wizard_hr_payslip" id="menu_hr_payslip_summary" parent="menu_hr_payslip"/>
+    </data>
+</odoo>

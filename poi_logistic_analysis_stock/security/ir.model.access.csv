@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+poi_stock_kardex_analysis,poi_stock_kardex_analysis,model_poi_stock_kardex_analysis,poi_logistic.group_logistic_user,1,0,0,0

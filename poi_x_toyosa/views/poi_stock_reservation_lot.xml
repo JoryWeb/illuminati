@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_poi_stock_reservation_lot_form" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.form</field>
+            <field name="model">poi.stock.reservation.lot</field>
+            <field name="arch" type="xml">
+                <form string="Numeros de Serie/Chasis Reservas">
+                    <header>
+                        <button name="%(act_poi_reservation_wizard)d"
+                                string="Extender Reserva" type="action"
+                                states="reserve"
+                                class="oe_highlight" />
+
+                        <button name="%(act_poi_reservation_cancel_wizard)d"
+                                string="Cancelar Reserva" type="action"
+                                states="reserve"
+                                class="oe_highlight" />
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,reserve,invoiced,done" readonly="1" />
+                        <field name="state_finanzas" widget="statusbar" statusbar_visible="sin_warrant,no_liberado,en_tramite,liberado" readonly="1" />
+                        <field name="state_importaciones" widget="statusbar" statusbar_visible="no_nacionalizado,en_tramite,temporal,nacionalizado" readonly="1" />
+                    </header>
+                    <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_traceability" icon="fa-arrow-up" class="oe_stat_button" string="Traceability" type="object" attrs="{'invisible': [('quant_ids','=',[])]}"/>
+                        <button type="object"
+                            name="action_view_lot_log"
+                            string="Reservas"
+                            class="oe_stat_button" icon="fa-archive">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value"><field name="lot_log_count"/></span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. LOT/0001/20121"/>
+                        </h1>
+                    </div>
+                    <group name="main_group">
+                        <group>
+                            <field name="product_id"/>
+                            <field name="ref"/>
+                            <!--<field name="lot_id"/>-->
+                        </group>
+                    </group>
+
+                    <group string="Datos de Vehiculos" name="datos_vehiculos">
+                        <group>
+                            <field name="sale_line_id"/>
+                            <field name="fecha_pago" invisible="1"/>
+                            <field name="fecha_pago_store" invisible="1"/>
+                            <field name="modelo"/>
+                            <field name="marca"/>
+                            <field name="partner_id"/>
+                            <field name="user_id"/>
+                            <field name="project_id"/>
+                            <field name="placa" />
+                            <field name="soat" />
+                            <field name="n_motor" />
+                            <field name="n_produccion" />
+                            <field name="n_llaves" />
+                            <field name="cant_llaves" />
+                            <field name="location_id" />
+                            <field name="mot_desarmada" />
+                            <field name="bloqueo_cif" />
+                            <field name="bloqueo_venta" />
+                        </group>
+                        <group>
+                            <field name="colorinterno" />
+                            <field name="colorexterno" />
+                            <field name="anio_fabricacion" />
+                            <field name="anio_modelo" />
+                            <field name="n_caja" />
+                            <field name="prioridad" />
+                            <field name="precio_venta" />
+                            <field name="descuento" />
+                        </group>
+                        <field name="incidencia" >
+                            <tree string="valores" editable="bottom">
+                                <field name="name"/>
+                                <field name="observaciones"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <notebook>
+                        <page string="Products">
+                            <field name="quant_ids">
+                                <tree string="Stock Moves">
+                                    <field name="name"/>
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="location_id" groups="stock.group_locations"/>
+                                </tree>
+                             </field>
+                        </page>
+                        <page string="Gestión">
+                            <group string="Datos de Reserva" name="datos_reserva">
+                                <group>
+                                    <field name="observaciones" />
+                                    <field name="responsable_reserva" invisible="1"/>
+                                    <field name="titular_reserva" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="tipo_reserva" />
+                                    <field name="fecha_reserva_hasta" />
+                                    <field name="tiempo_reserva" />
+                                </group>
+                            </group>
+
+                            <group string="Datos de Importacion" name="datos_reserva">
+                                <group>
+                                    <field name="life_date" />
+                                </group>
+                                <group>
+                                    <field name="embarque" />
+                                    <field name="caso" />
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="view_poi_stock_reservation_lot_tree" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.tree</field>
+            <field name="model">poi.stock.reservation.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Reservas de Chasis/Lote">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <field name="date_validity"/>
+                    <field name="location_id"/>
+                    <field name="tiempo_reserva"/>
+                    <field name="state"/>
+                    <button name="%(act_poi_reservation_wizard)d"
+                            string="Extender Reserva"
+                            type="action"
+                            icon="terp-locked"
+                            states="reserve"
+                            class="oe_highlight" />
+
+                    <button name="%(act_poi_reservation_cancel_wizard)d"
+                            string="Liberar"
+                            type="action"
+                            icon="gtk-undo"
+                            states="reserve"
+                            class="oe_highlight"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_poi_stock_reservation_lot_tree" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.tree</field>
+            <field name="model">poi.stock.reservation.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Reservas de Chasis/Lote">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <field name="date_validity"/>
+                    <field name="location_id"/>
+                    <field name="tiempo_reserva"/>
+                    <field name="state"/>
+                    <button name="%(act_poi_reservation_wizard)d"
+                            string="Extender Reserva"
+                            type="action"
+                            icon="terp-locked"
+                            states="reserve"
+                            class="oe_highlight" />
+
+                    <button name="%(act_poi_reservation_cancel_wizard)d"
+                            string="Liberar"
+                            type="action"
+                            icon="gtk-undo"
+                            states="reserve"
+                            class="oe_highlight"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_poi_stock_reservation_lot_listado2_tree" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.listado.tree</field>
+            <field name="model">poi.stock.reservation.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Reservas de Chasis/Lote">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="n_produccion"/>
+                    <field name="state"/>
+                    <field name="state_importaciones"/>
+                    <field name="state_finanzas"/>
+                    <field name="bloqueo_cif"/>
+                    <field name="bloqueo_venta"/>
+                    <field name="prioridad"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_poi_stock_reservation_lot_listado_search" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.listado.search</field>
+            <field name="model">poi.stock.reservation.lot</field>
+            <field name="arch" type="xml">
+                <search string="Filtros" version="7.0">
+                    <filter name="state" string="Reservado"
+                        domain="[('state', '=', 'reserve')]"
+                        help="Estado Reservado"/>
+                    <filter name="bloqueo_cif" string="Bloqueo CIF"
+                        domain="[('bloqueo_cif', '=', True)]"
+                        help="Bloqueo CIF."/>
+                    <filter name="bloqueo_venta" string="Bloqueo Venta"
+                        domain="[('bloqueo_venta', '=', True)]"
+                        help="Bloqueado para la venta."/>
+                    <field name="name" />
+                    <field name="product_id" />
+                    <field name="lot_id" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Estado Venta"
+                            name="groupby_state"
+                            domain="[]" context="{'group_by': 'state'}"/>
+                        <filter string="Estado Importaciones"
+                            name="groupby_state_importaciones"
+                            domain="[]" context="{'group_by': 'state_importaciones'}"/>
+                        <filter string="Estado Finanzas"
+                            name="groupby_state_finanzas"
+                            domain="[]" context="{'group_by': 'state_finanzas'}"/>
+                        <filter string="Master" domain="[]"
+                            name="groupby_product"
+                            context="{'group_by': 'product_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_poi_stock_reservation_lot_search" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.search</field>
+            <field name="model">poi.stock.reservation.lot</field>
+            <field name="arch" type="xml">
+                <search string="Stock Reservations" version="7.0">
+                    <filter name="draft" string="Draft"
+                        domain="[('state', '=', 'draft')]"
+                        help="Not already reserved"/>
+                    <filter name="reserved" string="Reserved"
+                        domain="[('state', '=', 'assigned')]"
+                        help="Moves are reserved."/>
+                    <filter name="cancel" string="Released"
+                        domain="[('state', '=', 'cancel')]"
+                        help="Reservations have been released."/>
+                    <field name="name" />
+                    <field name="product_id" />
+                    <field name="lot_id" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Estado Reserva"
+                            name="groupby_state"
+                            domain="[]" context="{'group_by': 'state'}"/>
+                        <filter string="Producto" domain="[]"
+                            name="groupby_product"
+                            context="{'group_by': 'product_id'}"/>
+                        <filter string="Ubicación" domain="[]"
+                            name="groupby_location"
+                            context="{'group_by': 'location_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="action_poi_stock_reservation_lot_tree" model="ir.actions.act_window">
+            <field name="name">Reservas Chasis</field>
+            <field name="res_model">poi.stock.reservation.lot</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_id" ref="view_poi_stock_reservation_lot_tree"/>
+            <field name="search_view_id" ref="view_poi_stock_reservation_lot_search"/>
+            <field name="context">{'search_default_groupby_product': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para Crear un chasis y especificar sus reservas
+                    </p><p>
+                    Con las opciones de chasis usted puede Crear un registro de Chasis
+                    y Asignarle una reserva en función de los parametros establecido
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_poi_stock_reservation_lot_tree"
+            id="menu_poi_stock_reservation_lot"
+            parent="stock.menu_stock_inventory_control"
+            sequence="30"/>
+
+        <record id="action_view_poi_stock_reservation_lot_listado" model="ir.actions.act_window">
+            <field name="name">Listado de Chasis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.stock.reservation.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field eval="False" name="view_id"/>
+            <field name="search_view_id" ref="poi_x_toyosa.view_poi_stock_reservation_lot_listado_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Listado de Chasis y Buscador inteligente
+              </p><p>
+                Listado de Chasis y Buscador inteligente
+              </p><p>
+                Listado de Chasis y Buscador inteligente
+              </p>
+            </field>
+        </record>
+
+        <record id="view_poi_stock_reservation_lot_listado_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poi_x_toyosa.view_poi_stock_reservation_lot_listado2_tree"/>
+            <field name="act_window_id" ref="action_view_poi_stock_reservation_lot_listado"/>
+        </record>
+
+        <menuitem action="action_view_poi_stock_reservation_lot_listado"
+            id="menu_poi_stock_reservation_lot_listado2"
+            parent="stock.menu_stock_inventory_control"
+            sequence="30"/>
+    </data>
+</odoo>

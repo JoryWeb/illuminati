@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_purchase_receipt_form_inh">
+            <field name="name">account.voucher.purchase.form.inh</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_purchase_receipt_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="proveedor" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

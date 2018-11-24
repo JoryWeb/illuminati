@@ -1,0 +1,818 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* poi_payment_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-17 12:22+0000\n"
+"PO-Revision-Date: 2017-08-17 08:24-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_BO\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_account_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_cash_movement
+msgid "Account Cash Movements"
+msgstr "Movimientos de Tesorería"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_expenses_invoice_type
+msgid "Account Expenses Invoice Type"
+msgstr "Tipo de Factura de Gastos"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_payment_request_document
+msgid "Account Payment Request Documents"
+msgstr "Solicitudes de Pago"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_payment_request_type
+msgid "Account Payment Request Types"
+msgstr "Tipos de Solicitudes de Pago"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_payment_request
+#: model:res.groups,name:poi_payment_request.group_payment_request
+msgid "Account Payment Requests"
+msgstr "Solicitudes de Pago"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+msgid "Accounting Info"
+msgstr "Información Contable"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_needaction
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.type,default_mode:0
+msgid "Advanced Request"
+msgstr "Solicitud por Adelantado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_amount
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_amount_applied
+msgid "Amount Applied"
+msgstr "Monto Aplicado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_amount_debt
+msgid "Amount Debt"
+msgstr "Monto Adeudado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_amount_exceeded
+msgid "Amount Exceeded"
+msgstr "Monto Excedido"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_amount_requested
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_amount_requested
+msgid "Amount Requested"
+msgstr "Monto Solicitado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_account_analytic_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_account_analytic_id
+msgid "Analytic account"
+msgstr "Cuenta analítica"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_analytic_account_id
+msgid "Analytic account id"
+msgstr "Cuenta Analítica"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_balance
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_base
+msgid "Base"
+msgstr "Base"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.type,default_mode:0
+msgid "Based on Documents"
+msgstr "Basado en Documentos"
+
+#. module: poi_payment_request
+#: selection:account.payment.request,state:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.act_account_cash_movement_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_movement_count
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Cash Movements"
+msgstr "Movimientos de Tesorería"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,help:poi_payment_request.action_inbound_payment_request
+msgid "Click here to create inbound payment requests"
+msgstr "Haga clic para crear solicitudes de cobro"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,help:poi_payment_request.action_payment_request
+msgid "Click here to create outbound payment requests"
+msgstr "Haga clic para crear solicitudes de pago"
+
+#. module: poi_payment_request
+#: selection:account.payment.request,state:0
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_company_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_company_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_company_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_company_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: poi_payment_request
+#: selection:account.expenses.rendition,state:0
+#: selection:account.payment.request,state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_create_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_create_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_create_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_create_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_create_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_create_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_create_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_create_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_create_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_create_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_create_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_create_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_company_currency_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_currency_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_currency_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_amount_currency_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_tree
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_rendition_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_date_request
+msgid "Date Request"
+msgstr "Fecha"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,help:poi_payment_request.field_account_expenses_rendition_message_last_post
+#: model:ir.model.fields,help:poi_payment_request.field_account_payment_request_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el registro."
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_default_function
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_default_function
+msgid "Default Function"
+msgstr "Función por Defecto"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_display_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_display_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_display_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_display_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_display_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_display_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_document
+msgid "Document"
+msgstr "Documento"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_res_id
+msgid "Document ID"
+msgstr "ID Documento"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_ids
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: poi_payment_request
+#: selection:account.expenses.rendition,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: poi_payment_request
+#: selection:account.expenses.rendition,state:0
+#: selection:account.payment.request,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.action_expenses_rendition
+#: model:ir.model,name:poi_payment_request.model_account_expenses_rendition
+#: model:ir.ui.menu,name:poi_payment_request.menu_action_expenses_rendition
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_tree
+msgid "Expenses Rendition"
+msgstr "Rendición de Gastos"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_expenses_rendition_invoice
+msgid "Expenses Rendition Invoices"
+msgstr "Facturas de Rendición de Gastos"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_fee_number
+msgid "Fee"
+msgstr "Cuota"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_follower_ids
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_channel_ids
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_partner_ids
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_force_analytic_account
+msgid "Force Analytic Account"
+msgstr "Forzar Cuenta Analítica"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_force_notes
+msgid "Force Notes"
+msgstr "Forzar Notas"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_force_po_inv
+msgid "Force PO/Invoices"
+msgstr "Forzar OC/Facturas"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_force_pr
+msgid "Force Purchase Receipt"
+msgstr "Forzar Comprobantes de Compra"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.type,default_function:0
+msgid "Generate Moves"
+msgstr "Genera Movimientos"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.type,default_function:0
+msgid "Generates Payment"
+msgstr "Genera Pagos"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,help:poi_payment_request.field_account_expenses_rendition_tax_sequence
+msgid "Gives the sequence order when displaying a list of invoice tax."
+msgstr "Indica el orden de secuencia cuando se muestra una lista de impuestos de factura."
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,help:poi_payment_request.action_expenses_rendition
+msgid "Haga clic para crear rendiciones de fondos"
+msgstr "Haga clic para crear rendiciones de fondos"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,help:poi_payment_request.field_account_expenses_rendition_message_unread
+#: model:ir.model.fields,help:poi_payment_request.field_account_payment_request_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,help:poi_payment_request.field_account_expenses_rendition_message_needaction
+#: model:ir.model.fields,help:poi_payment_request.field_account_payment_request_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: poi_payment_request
+#: selection:account.payment.request.type,payment_type:0
+msgid "Inbound"
+msgstr "Ingreso"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.action_inbound_payment_request_type
+#: model:ir.ui.menu,name:poi_payment_request.menu_action_inbound_payment_request_type
+msgid "Inbound Payment Request Types"
+msgstr "Tipos de Solicitudes de Cobro"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.action_inbound_payment_request
+#: model:ir.ui.menu,name:poi_payment_request.menu_action_inbound_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_tree
+msgid "Inbound Payment Requests"
+msgstr "Solicitudes de Cobro"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_date_invoice
+msgid "Invoice Date"
+msgstr "Fecha factura"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_invoice_number
+msgid "Invoice Number"
+msgstr "Número de Factura"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_expenses_rendition_tax
+msgid "Invoice Tax"
+msgstr "Impuesto de factura"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_total
+msgid "Invoice Total"
+msgstr "Total Factura"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_invoice_type
+msgid "Invoice Type"
+msgstr "Tipo de Factura"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_rendition_invoice_ids
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_is_follower
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_issued_to_requestor
+msgid "Issued to Requestor"
+msgstr "Girar a nombre de solicitante"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: poi_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_last_post
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_last_post
+msgid "Last Message Date"
+msgstr "Fecha del último mensaje"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type___last_update
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition___last_update
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice___last_update
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax___last_update
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request___last_update
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document___last_update
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_write_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_write_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_write_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_write_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_write_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_write_uid
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_write_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_write_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_write_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_write_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_write_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_write_date
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_manual
+msgid "Manual"
+msgstr "Manual"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_ids
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_default_mode
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_default_mode
+msgid "Mode"
+msgstr "Modo"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_move_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_move_id
+msgid "Move"
+msgstr "Asiento"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_movement_ids
+msgid "Movements"
+msgstr "Movimientos"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_name
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_name
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_type_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_notes
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_notes
+msgid "Notes"
+msgstr "Notas"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+msgid "Notes..."
+msgstr "Notas..."
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_needaction_counter
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,help:poi_payment_request.field_account_expenses_rendition_message_needaction_counter
+#: model:ir.model.fields,help:poi_payment_request.field_account_payment_request_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,help:poi_payment_request.field_account_expenses_rendition_message_unread_counter
+#: model:ir.model.fields,help:poi_payment_request.field_account_payment_request_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.type,payment_type:0
+msgid "Outbound"
+msgstr "Egreso"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.action_outbound_payment_request_type
+#: model:ir.ui.menu,name:poi_payment_request.menu_action_outbound_payment_request_type
+msgid "Outbound Payment Request Types"
+msgstr "Tipos de Solicitudes de Pago"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.action_payment_request
+#: model:ir.ui.menu,name:poi_payment_request.menu_action_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_tree
+msgid "Outbound Payment Requests"
+msgstr "Solicitudes de Pago"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_search
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_pay
+msgid "Pay"
+msgstr "Pagar"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_cash_movement_payment_request_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_payment_request_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_payment_request_id
+msgid "Payment Request"
+msgstr "Solicitud de Pago"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_type_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_type_tree
+msgid "Payment Request Types"
+msgstr "Tipos de Solicitudes de Pago"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_payment_type
+msgid "Payment Type"
+msgstr "Tipo de pago"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.act_account_payment_request
+#: model:ir.model,name:poi_payment_request.model_account_payment
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_payment_count
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_payment_ids
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_form
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: poi_payment_request
+#: model:ir.ui.menu,name:poi_payment_request.poi_account_payment_request_configuration_menu
+msgid "Payments Request"
+msgstr "Solicitudes de Cobro y Pago"
+
+#. module: poi_payment_request
+#: code:addons/poi_payment_request/models/account_expenses_rendition.py:297
+#, python-format
+msgid "Please define a journal."
+msgstr "Por favor defina un diario."
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,help:poi_payment_request.action_inbound_payment_request_type
+msgid "Please make click to create a new type of inbound payment request."
+msgstr "Por favor haga clic para crear un nuevo tipo de método de cobro."
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,help:poi_payment_request.action_outbound_payment_request_type
+msgid "Please make click to create a new type of outbound payment request."
+msgstr "Por favor haga clic para crear un nuevo tipo de solicitud de pago."
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_partner_id
+msgid "Provider"
+msgstr "Proveedor"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.document,type:0
+msgid "Purchase Invoice"
+msgstr "Factura de Compra"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_ids
+msgid "Purchase Invoices"
+msgstr "Facturas de Compra"
+
+#. module: poi_payment_request
+#: selection:account.payment.request.document,type:0
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: poi_payment_request
+#: model:ir.actions.act_window,name:poi_payment_request.action_account_payment_create
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_form
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Create additional payment"
+msgstr "Crear pago adicional"
+
+#. module: poi_payment_request
+#: selection:account.payment.request,state:0
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: poi_payment_request
+#: selection:account.payment.request,state:0
+msgid "Partially paid"
+msgstr "Parcialmente pagada"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_rendition_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_rendition_id
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Rendition"
+msgstr "Rendición"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_request_id
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: poi_payment_request
+#: selection:account.payment.request,state:0
+msgid "Requested"
+msgstr "Solicitado"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_user_id
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_user_id
+msgid "Requestor"
+msgstr "Solicitante"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_journal_id
+msgid "Payment Method"
+msgstr "Método de Pago"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_source_document
+msgid "Source Document"
+msgstr "Documento origen"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_state
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_state
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_search
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_tax_id
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_account_id
+msgid "Tax Account"
+msgstr "Cuenta impuesto"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_name
+msgid "Tax Description"
+msgstr "Descripción impuesto"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_tax_line_ids
+msgid "Tax Lines"
+msgstr "Líneas de impuestos"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_invoice_type_taxes_ids
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_invoice_taxes_ids
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_amount_total
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_document_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_type_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_inbound_payment_request_search
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_search
+msgid "Type Request"
+msgstr "Tipo de Solicitud"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_unread
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: poi_payment_request
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_expenses_rendition_message_unread_counter
+#: model:ir.model.fields,field_description:poi_payment_request.field_account_payment_request_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: poi_payment_request
+#: model:res.groups,comment:poi_payment_request.group_payment_request
+msgid "Usuario puede solicitar Pagos."
+msgstr "Usuario puede solicitar Pagos."
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_expenses_rendition_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: poi_payment_request
+#: model:ir.ui.view,arch_db:poi_payment_request.account_payment_request_form
+msgid "View Document"
+msgstr "Ver Documento"
+
+#. module: poi_payment_request
+#: code:addons/poi_payment_request/models/account_payment_request.py:196
+#, python-format
+msgid "You must fill the Notes field."
+msgstr "Debe llenar el campo de Notas."

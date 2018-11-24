@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_module_translation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-31 16:49+0000\n"
+"PO-Revision-Date: 2015-07-31 16:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_module_translation
+#: view:poi.update.translations:poi_module_translation.wizard_module_update_translations
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_module_translation
+#: field:poi.update.translations,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: poi_module_translation
+#: field:poi.update.translations,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: poi_module_translation
+#: field:poi.update.translations,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_module_translation
+#: field:poi.update.translations,lang:0
+msgid "Language"
+msgstr "Idioma"
+
+#. module: poi_module_translation
+#: field:poi.update.translations,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: poi_module_translation
+#: field:poi.update.translations,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: poi_module_translation
+#: model:ir.model,name:poi_module_translation.model_ir_module_module
+#: field:poi.update.translations,module:0
+msgid "Module"
+msgstr "Módulo"
+
+#. module: poi_module_translation
+#: model:ir.actions.act_window,name:poi_module_translation.action_wizard_module_update_translations
+#: view:poi.update.translations:poi_module_translation.wizard_module_update_translations
+msgid "Synchronize Module Terms"
+msgstr "Sincronizar Términos del Módulo"
+
+#. module: poi_module_translation
+#: view:poi.update.translations:poi_module_translation.wizard_module_update_translations
+msgid "Synchronize Module Translation"
+msgstr "Synchronize Module Translation"
+
+#. module: poi_module_translation
+#: view:poi.update.translations:poi_module_translation.wizard_module_update_translations
+msgid "Update"
+msgstr "Actualizar"
+
+#. module: poi_module_translation
+#: view:ir.module.module:poi_module_translation.module_translation_form
+msgid "Upgrade Translation"
+msgstr "Actualizar Traducción"
+
+#. module: poi_module_translation
+#: view:poi.update.translations:poi_module_translation.wizard_module_update_translations
+msgid "or"
+msgstr "or"
+

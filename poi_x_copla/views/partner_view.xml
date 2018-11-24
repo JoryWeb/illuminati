@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_view_copla">
+            <field name="name">partner.view.copla</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <field name="property_account_position_id" position="after">
+                    <field name="date_limit_invoice"/>
+                </field>
+                <page name="accounting" position="after">
+                    <page string="Otra Información" name="other_info">
+
+                        <group col="2" string="Transportistas">
+                            <group>
+                                <field name="drivers_license"/>
+                                <field name="business_card"/>
+                                <field name="casual_permit"/>
+                            </group>
+                            <group>
+                                <field name="license_expiration"/>
+                                <field name="expiration_trading_card"/>
+                                <field name="expiration_permit_provider"/>
+                            </group>
+                        </group>
+                        <group string="Datos de vehículo" colspan="2">
+                            <field name="fleet_lines_ids" nolabel="1">
+                                <tree string="Datos de vehículo" editable="bottom">
+                                    <field name="fleet_id"/>
+                                    <field name="owner_id"/>
+                                    <field name="driver_id"/>
+                                    <field name="cod_barras"/>
+                                    <field name="capacity"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group col="2" string="Navieras">
+                            <group>
+                                <field name="days_rolear"/>
+                                <field name="m_approximate_day"/>
+                                <field name="days_free_stay"/>
+                                <field name="daily_rate_container"/>
+                            </group>
+                            <group>
+                                <field name="observation1"/>
+                                <field name="observation2"/>
+                                <field name="observation3"/>
+                                <field name="observation4"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+                <group name="purchase" position="inside">
+                    <field name="currency_prov"/>
+                </group>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_picking_form_transport">
+            <field name="name">stock.picking.form.transport</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="location_origin"/>
+                    <field name="reference_client"/>
+                    <field name="loading_order"/>
+                    <field name="expiration_invoice"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

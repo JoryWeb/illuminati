@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="mrp_production_form_view_landi">
+            <field name="name">mrp.production.landi</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <field name="date_planned" position="after">
+                    <field name="batch"/>
+                </field>
+                <xpath expr="/form/sheet/notebook//field[@name='move_lines']/tree/field[@name='product_uom_qty']"
+                       position="after">
+                    <field name="batch"/>
+                    <field name="availability_origin"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="workcenter_line_inh_land_form_view">
+            <field name="name">Workcenter line inh land</field>
+            <field name="model">mrp.production.workcenter.line</field>
+            <field name="inherit_id"
+                   ref="mrp_operations.mrp_production_workcenter_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page/group/*" position="before">
+                    <group string="Fechas reales" colspan="4" col="4">
+                        <field name="date_init_real"/>
+                        <field name="date_stop_real"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="mrp_operations.workcenter_line_calendar" model="ir.ui.view">
+            <field name="name">mrp.production.workcenter.line.calendar</field>
+            <field name="model">mrp.production.workcenter.line</field>
+            <field name="arch" type="xml">
+                <calendar color="product" date_stop="date_finished" date_start="date_start" string="Operaciones">
+                    <field name="code"/>
+                    <field name="production_id"/>
+                    <field name="state"/>
+                </calendar>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_inventory_form_advanced">
+            <field name="name">view.inventory.form.advanced</field>
+            <field name="model">stock.inventory</field>
+            <field name="inherit_id" ref="stock.view_inventory_form" />
+            <field name="arch" type="xml">
+                <button name="action_cancel_inventory" position="after">
+                    <button name="%(action_import_inventory)d"
+                        string="Cargar Fichero"
+                        attrs="{'invisible':['|',('state', '!=',('draft')),('filter', '!=', 'file')]}"
+                        class="oe_highlight" type="action" />
+                    <button name="process_import_lines" string="Lineas para procesar"
+                        attrs="{'invisible':['|',('state', 'in',('draft','done')),('filter', '!=', 'file')]}"
+                        class="oe_highlight" type="object" />
+                </button>
+                <field name="product_id" position="after">
+                    <field name="category_id" attrs="{'invisible': [('filter', 'not in', ('category'))], 'required': [('filter', 'in', ('category'))]}"/>
+                    <field name="barcode"/>
+                </field>
+                <xpath expr="//field[@name='move_ids']"
+                    position="after">
+                    <page string="Linea Importadas"
+                        attrs="{'invisible':[('filter', '!=', 'file')]}">
+                        <field name="processed" invisible="1"/>
+                        <field name="import_lines">
+                            <tree colors="red:fail==True;green:fail==False"
+                                editable="bottom">
+                                <field name="product"/>
+                                <field name="code"/>
+                                <field name="quantity"/>
+                                <field name="location_id" />
+                                <field name="lot" />
+                                <field name="fail" />
+                                <field name="fail_reason" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

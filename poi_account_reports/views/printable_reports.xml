@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+            id="account_asset_report_move"
+            model="account.move"
+            string="Print Assets"
+            report_type="qweb-pdf"
+            name="poi_account_reports.account_asset_report"
+            file="poi_account_reports.account_asset_report"
+        />
+    </data>
+</odoo>

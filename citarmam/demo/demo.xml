@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+
+        <record model="citasrmam.cita">
+            <field name="autor">Franklin D. Roosevelt</field>
+            <field name="cita">Siempre que te pregunten si puedes hacer un trabajo, contesta que sí y ponte enseguida a aprender como se hace.</field>
+            <field name="orden">0</field>
+            <field name="fecha">13/05/2017</field>
+        </record>
+        <record model="citasrmam.cita">
+            <field name="autor">Jim Fox</field>
+            <field name="cita">Mi padre siempre me decía: encuentra un trabajo que te guste y no tendrás que trabajar un solo día de tu vida.</field>
+            <field name="orden">0</field>
+            <field name="fecha">14/05/2017</field>
+        </record>
+        <record model="citasrmam.cita">
+            <field name="autor">John D. Rockfeller</field>
+            <field name="cita">En todo fracaso hay una oportunidad nueva.</field>
+            <field name="orden">1</field>
+            <field name="fecha">14/05/2017</field>
+        </record>
+        <record model="citasrmam.cita">
+            <field name="autor">Anónimo</field>
+            <field name="cita">Dijo el perro al hueso: "Si tú estás duro, yo tengo tiempo".</field>
+            <field name="orden">0</field>
+            <field name="fecha">15/05/2017</field>
+        </record>
+    </data>
+</odoo>

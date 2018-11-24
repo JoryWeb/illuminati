@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_dev_stock_inventory_form" model="ir.ui.view">
+            <field name="name">Stock Inventory</field>
+            <field name="model">dev.stock.inventory</field>
+            <field name="arch" type="xml">
+                <form string="Stock Inventory">
+                    <sheet>
+                        <group >
+                            <group string="Dates">
+                                <field name="start_date" required="1"/>
+                                <field name="end_date" required="1"/>
+                            </group>
+                            <group string="Company">
+                                <field name="company_id"/>
+                            </group>
+                        </group>
+                        <group string="Warehouse / Location">
+                            <group>
+                                <field name="warehouse_ids" widget="many2many_tags"/>
+
+                            </group>
+                            <group>
+                                <field name="location_id"/>
+                            </group>
+                        </group>
+                        <group string="Products / Category">
+                            <group>
+                                <field name="filter_by"/>
+                            </group>
+                            <group>
+                                <field name="is_group_by_category"/>
+                                <field name="is_zero"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="category_id" attrs="{'invisible':[('filter_by','!=','category')],
+                                                              'required':[('filter_by','=','category')]}"/>
+                            <field name="product_ids" widget="many2many_tags"
+                                   attrs="{'invisible':[('filter_by','!=','product')],
+                                           'required':[('filter_by','=','product')]}"/>
+                        </group>
+                        <footer>
+                            <button name="print_pdf" string="PDF" type="object" class="btn-primary"/>
+                            or
+                            <button name="export_stock_ledger" string="Excel" type="object" class="btn-primary"/>
+                            or
+                            <button string="Cancel" class="btn-default" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dev_stock_inventory_info" model="ir.actions.act_window">
+            <field name="name">Stock Inventory Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dev.stock.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem action="action_dev_stock_inventory_info" name="Stock Inventory Report"
+            id="menu_dev_stock_inventory_stock" parent="stock.menu_warehouse_report"/>
+            
+        <record id="view_dev_stock_inventory_excel" model="ir.ui.view">
+            <field name="name">Stock Inventory Report Excel</field>
+            <field name="model">dev.stock.inventory.excel</field>
+            <field name="arch" type="xml">
+                <form string="Stock Ledger Excel">
+                    <group>
+                        <field name="excel_file" readonly="1" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dev_stock_inventory_excel" model="ir.actions.act_window">
+            <field name="name">Stock Inventory Report Excel</field>
+            <field name="res_model">dev.stock.inventory.excel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_dev_stock_inventory_excel"/>
+            <field name="target">new</field>
+        </record>
+</odoo>

@@ -1,0 +1,410 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <!-- Tipo de Reserva -->
+        <record id="view_stock_reserve_type_form" model="ir.ui.view">
+            <field name="name">stock.reserve.type.form</field>
+            <field name="model">stock.reserve.type</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Reserva">
+                    <group string="Tipo de Reserva" name="datos_vehiculos">
+                        <group>
+                            <field name="name"/>
+                            <field name="tiempo_limite"/>
+                            <field name="tiempo_aviso"/>
+                        </group>
+                        <group>
+                            <field name="monto_minimo"/>
+                            <field name="recordatorio"/>
+                        </group>
+                        <field name="descripcion"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_production_lot_toyosa">
+            <field name="name">stock.production.lot.toyosa</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="before">
+                    <header>
+                        <button name="%(act_poi_reservation_wizard)d"
+                                string="Extender Reserva" type="action"
+                                class="oe_highlight"
+                                groups="poi_x_toyosa.group_cartera_reservas"/>
+
+                        <button name="%(act_poi_reservation_cancel_wizard)d"
+                                string="Cancelar Reserva" type="action"
+                                class="oe_highlight"
+                                groups="poi_x_toyosa.group_cartera_reservas"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,reserve,invoiced,done"
+                               readonly="1"/>
+                        <field name="state_finanzas" widget="statusbar"
+                               statusbar_visible="sin_warrant,no_liberado,en_tramite,liberado" readonly="1"/>
+                        <field name="state_importaciones" widget="statusbar"
+                               statusbar_visible="no_nacionalizado,en_tramite,temporal,nacionalizado" readonly="1"/>
+                    </header>
+                </xpath>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button"
+                            name="action_view_incidence"
+                            icon="fa-info-circle"
+                            type="object"
+                            string="Incidencias">
+                    </button>
+
+                    <button type="object"
+                            name="action_view_lot_payment"
+                            string="Pagos"
+                            class="oe_stat_button" icon="fa-money">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="lot_payment_count"/>
+                            </span>
+                        </div>
+                    </button>
+
+                    <button type="object"
+                            name="action_view_lot_log"
+                            string="Reservas"
+                            class="oe_stat_button" icon="fa-archive">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="lot_log_count"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button type="object"
+                            name="action_view_lot_plate"
+                            string="Estado Placas"
+                            class="oe_stat_button" icon="fa-tag">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="lot_plate_count"/>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+                <field name="product_id" position="after">
+                    <field name="n_produccion"/>
+                </field>
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('precio_venta','>',0)]}</attribute>
+                </xpath>
+                <xpath expr="//group[@name='main_group']" position="after">
+                    <group string="Datos de Vehiculos" name="datos_vehiculos">
+                        <group>
+                            <field name="sale_line_id" invisible="1"/>
+                            <field name="modelo"/>
+                            <field name="anio_modelo"/>
+                            <field name="anio_fabricacion"/>
+                            <field name="edicion"/>
+                            <field name="colorinterno"/>
+                            <field name="colorexterno"/>
+                            <field name="location_id"/>
+                            <field name="fecha_pago" invisible="1"/>
+                            <field name="fecha_pago_store" invisible="1"/>
+                            <field name="uso_especial"/>
+                        </group>
+                        <group>
+                            <field name="marca"/>
+                            <field name="n_motor"/>
+                            <field name="n_llaves"/>
+                            <field name="cant_llaves"/>
+                            <field name="mot_desarmada"/>
+                            <field name="n_caja"/>
+                            <field name="project_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Datos de Importacion" name="datos_reserva">
+                        <group>
+                            <field name="embarque"/>
+                            <field name="prioridad_liberacion"/>
+                            <field name="invoice_purchase_id"/>
+                            <field name="invoice_number"/>
+                            <field name="codigo_frv"/>
+                        </group>
+                        <group>
+                            <field name="produccion"/>
+                            <field name="caso"/>
+                            <field name="invoice_id"/>
+                            <field name="imp_pol"/>
+                            <field name="imp_pol_manual" attrs="{'invisible':[('imp_pol','=','')]}"/>
+                            <field name="bank_id"/>
+                        </group>
+                    </group>
+
+                    <group string="Datos de Reserva" name="datos_reserva">
+                        <group>
+                            <field name="observaciones" readonly="1"/>
+                            <field name="responsable_reserva" invisible="1" readonly="1"/>
+                            <field name="titular_reserva" invisible="1" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="tipo_reserva" readonly="1"/>
+                            <field name="fecha_reserva_hasta" readonly="1"/>
+                            <field name="tiempo_reserva" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group string="Datos de Venta" name="datos_reserva">
+                        <group>
+                            <field name="precio_venta"/>
+                            <field name="pagos" invisible="1"/>
+                            <field name="saldo" invisible="1"/>
+                            <field name="porcentaje_pago" invisible="1"/>
+                            <field name="descuento"/>
+                            <field name="placa"/>
+                            <field name="soat"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="user_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="bloqueo_cif" groups="poi_x_toyosa.group_account_invoice_cartera"/>
+                            <field name="bloqueo_venta" groups="poi_x_toyosa.group_account_invoice_cartera"/>
+                            <field name="obs_bloqueo_venta"/>
+                            <field name="contract_ref"/>
+                            <field name="current_adenda"/>
+                        </group>
+                    </group>
+                </xpath>
+                <form position="inside">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_poi_stock_reservation_lot_tree" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.tree</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Reservas de Chasis/Lote">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="n_produccion"/>
+                    <field name="state"/>
+                    <field name="state_finanzas"/>
+                    <field name="state_importaciones"/>
+                    <field name="bloqueo_cif"/>
+                    <field name="bloqueo_venta"/>
+                    <field name="prioridad_liberacion"/>
+                    <field name="colorinterno"/>
+                    <field name="colorexterno"/>
+                    <field name="location_id"/>
+
+                    <button name="%(act_poi_reservation_wizard)d"
+                            string="Extender Reserva"
+                            type="action"
+                            icon="terp-locked"
+                            states="reserve"
+                            class="oe_highlight"
+                            groups="poi_x_toyosa.group_cartera_reservas"/>
+
+                    <button name="%(act_poi_reservation_cancel_wizard)d"
+                            string="Liberar"
+                            type="action"
+                            icon="gtk-undo"
+                            states="reserve"
+                            class="oe_highlight"
+                            groups="poi_x_toyosa.group_cartera_reservas"/>
+                    <field name="anio_modelo"/>
+                    <field name="responsable_reserva"/>
+                    <field name="date_reserve"/>
+                </tree>
+            </field>
+        </record>
+        <!--
+        <record id="view_poi_stock_reservation_lot_search" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.search</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <search string="Filtros Chasis y Lotes" version="7.0">
+                    <filter name="draft" string="Disponibles"
+                            domain="[('state', '=', 'draft')]"
+                            help="Not already reserved"/>
+                    <filter name="draft" string="Bloqueado por CIF"
+                            domain="[('bloqueo_cif', '=', True)]"
+                            help="Not already reserved"/>
+                    <filter name="draft" string="Bloqueado para venta"
+                            domain="[('bloqueo_venta', '=', True)]"
+                            help="Not already reserved"/>
+                    <filter name="count_res" string="Con alguna reserva"
+                            domain="[('lot_log_count','>',1)]" help="Chasis con alguna reserva"/>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="location_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Estado Reserva"
+                                name="groupby_state_lot"
+                                domain="[]" context="{'group_by': 'state'}"/>
+                        <filter string="Estado Finanzas"
+                                name="groupby_state"
+                                domain="[]" context="{'group_by': 'state_finanzas'}"/>
+                        <filter string="Estado Importaciones"
+                                name="groupby_state"
+                                domain="[]" context="{'group_by': 'state_importaciones'}"/>
+                        <filter string="Embarque"
+                                name="groupby_state"
+                                domain="[]" context="{'group_by': 'embarque'}"/>
+                        <filter string="Ubicacion"
+                                name="groupby_location"
+                                domain="[]" context="{'group_by': 'location_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        -->
+        <record id="action_poi_stock_reservation_lot_tree" model="ir.actions.act_window">
+            <field name="name">Lotes y Series Automotriz</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="type">ir.actions.act_window</field>
+            <!--<field name="view_id" ref="view_poi_stock_reservation_lot_tree"/>-->
+            <!--<field name="search_view_id" ref="view_poi_stock_reservation_lot_search"/>-->
+            <field name="context">{'search_default_groupby_state_lot': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para Crear un chasis y especificar sus reservas
+                </p>
+                <p>
+                    Con las opciones de chasis usted puede Crear un registro de Chasis
+                    y Asignarle una reserva en función de los parametros establecido
+                </p>
+            </field>
+        </record>
+
+        <record id="production_lot_toyo_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poi_x_toyosa.view_poi_stock_reservation_lot_tree"/>
+            <field name="act_window_id" ref="action_poi_stock_reservation_lot_tree"/>
+        </record>
+
+        <record id="production_lot_toyo_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock.view_production_lot_form"/>
+            <field name="act_window_id" ref="action_poi_stock_reservation_lot_tree"/>
+        </record>
+
+        <menuitem action="action_poi_stock_reservation_lot_tree"
+                  id="menu_poi_stock_reservation_lot"
+                  parent="stock.menu_stock_inventory_control"
+                  sequence="30"/>
+
+
+        <record id="view_poi_stock_reservation_lot_log_tree" model="ir.ui.view">
+            <field name="name">poi.stock.reservation.lot.log.tree</field>
+            <field name="model">poi.stock.reservation.lot.log</field>
+            <field name="arch" type="xml">
+                <tree string="Reservas de Chasis/Lote">
+                    <field name="lot_id"/>
+                    <field name="observaciones"/>
+                    <field name="tipo_reserva"/>
+                    <field name="fecha_reserva_hasta"/>
+                    <field name="tiempo_reserva"/>
+                    <field name="create_uid" string="Creado por"/>
+                    <field name="create_date" string="Creado el"/>
+                    <!--<field name="titular_reserva"/>-->
+                    <field name="responsable_reserva"/>
+                    <field name="amount"/>
+                    <field name="currency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_poi_stock_reservation_lot_log_tree" model="ir.actions.act_window">
+            <field name="name">Historial de reservas</field>
+            <field name="res_model">poi.stock.reservation.lot.log</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Historial de Reservas
+                </p>
+                <p>
+                    Historial de Reservas Accion
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu de reservas y configuración -->
+
+        <record id="view_stock_reserve_type_form" model="ir.ui.view">
+            <field name="name">stock.reserve.type.form</field>
+            <field name="model">stock.reserve.type</field>
+            <field name="arch" type="xml">
+                <form string="Tipos de reserva">
+                    <sheet>
+                        <group name="main_group_reserve">
+                            <group>
+                                <field name="name"/>
+                                <field name="fecha_reserva"/>
+                                <field name="tiempo_limite"/>
+                                <field name="tiempo_aviso"/>
+                                <field name="monto_minimo"/>
+                                <field name="descripcion"/>
+                                <field name="recordatorio"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_stock_reserve_type_tree" model="ir.ui.view">
+            <field name="name">stock.reserve.type.tree</field>
+            <field name="model">stock.reserve.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de reserva">
+                    <field name="name"/>
+                    <field name="fecha_reserva"/>
+                    <field name="tiempo_limite"/>
+                    <field name="tiempo_aviso"/>
+                    <field name="monto_minimo"/>
+                    <field name="descripcion"/>
+                    <field name="recordatorio"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="search_stock_reserve_type_filter">
+            <field name="name">Tipos Reserva</field>
+            <field name="model">stock.reserve.type</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de reserva">
+                    <field name="name"/>
+                    <field name="recordatorio"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_stock_reserve_type_form" model="ir.actions.act_window">
+            <field name="name">Tipos de reserva</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.reserve.type</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_stock_reserve_type_tree"/>
+            <field name="search_view_id" ref="search_stock_reserve_type_filter"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Clic para agregar nuevos tipos de reserva
+                </p>
+                <p>
+                    Puede utulizar los tipos de reserva para definir responsables de area y confirmar
+                    las unidades existententes
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_stock_reserve_type_form" id="menu_action_stock_reserve_type_form"
+                  parent="stock.menu_stock_inventory_control" groups="stock.group_production_lot"
+                  sequence="102"/>
+
+
+    </data>
+</odoo>

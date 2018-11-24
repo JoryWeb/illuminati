@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="action_poi_stock_armado" model="ir.actions.act_window">
+			<field name="name">Armado de Motocicletas</field>
+			<field name="res_model">poi.stock.armado</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar</field>
+			<field eval="False" name="view_id" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click para crear una solicitud de armado de Motocicletas
+				</p>
+				<p>
+					Puede especificar un ingreso al almacén y especificar el
+					armado de las motocicletas
+				</p>
+				<p>
+					Los productos seleccionado deben estar disponibles en almacén
+				</p>
+			</field>
+		</record>
+
+		<menuitem id="menu_poi_stock_armado"
+                  action="action_poi_stock_armado"
+                  parent="stock.menu_stock_inventory_control"/>
+
+		<record id="view_poi_stock_armado_tree" model="ir.ui.view">
+			<field name="name">poi.stock.armado.tree</field>
+			<field name="model">poi.stock.armado</field>
+			<field name="arch" type="xml">
+				<tree string="Armado de Motocicletas">
+					<field name="name" />
+					<field name="picking_id" />
+					<field name="date" />
+					<field name="company_id"  groups="base.group_multi_company"/>
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_poi_stock_armado_calendar" model="ir.ui.view">
+			<field name="name">poi.stock.armado.calendar</field>
+			<field name="model">poi.stock.armado</field>
+			<field name="arch" type="xml">
+				<calendar string="Armado de Motocicleta" color="state" date_start="date">
+					<field name="name" />
+					<field name="picking_id" />
+				</calendar>
+			</field>
+		</record>
+
+		<record id="poi_stock_armado_form" model="ir.ui.view">
+			<field name="name">poi.stock.armado.form</field>
+			<field name="model">poi.stock.armado</field>
+			<field name="arch" type="xml">
+				<form string="Purchase cost distribution">
+					<header>
+						<button name="action_calculate"
+                                string="Confirmar"
+                                states="draft,error"
+                                type="object"
+                                class="oe_highlight" />
+						<button name="action_done"
+                                string="Actualizar Chasis"
+                                states="confirmed"
+                                type="object"
+                                confirm="Desea Actualizar el costo?"
+                                class="oe_highlight" />
+						<button name="action_cancel"
+                                string="Cancelar"
+                                states="done"
+                                confirm="This will undo the product price update (only if current value matches with the calculated price in this distribution). Do you want to continue?"
+                                type="object" />
+						<field name="state"
+                               widget="statusbar"
+                               statusbar_visible="draft,confirmed,done"
+                               statusbar_colors='{"cancel": "black", "done": "blue"}'/>
+					</header>
+					<sheet>
+						<div class="oe_title">
+							<label string="Solicitud" />
+							<h1>
+								<field name="name" class="oe_inline" readonly="1" />
+							</h1>
+						</div>
+						<group>
+							<group>
+                                <field name="picking_id" />
+							</group>
+							<group>
+								<field name="date" />
+								<field name="company_id" groups="base.group_multi_company"/>
+								<field name="user_id" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Lineas de Chasis" attrs="{'readonly':[('state','in', ('confirmed','done'))]}">
+								<button name="action_select_all"
+                                string="Seleccionar Todos"
+                                states="draft"
+                                type="object" icon="fa-check-square-o" />
+
+								<button name="action_unselect_all"
+                                string="Deseleccionar"
+                                states="draft"
+                                type="object" icon="fa-square-o" />
+
+								<field name="chasis_lines" attrs="{'readonly':[('state','in', ('confirmed','done'))]}">
+									<tree string="Lineas de Chasis Armado" create="false" editable="bottom">
+										<field name="lot_id" />
+										<field name="location_id" />
+										<field name="product_qty" />
+										<field name="armado" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+						<div class="oe_clear" />
+						<field name="note"
+                               class="oe_inline"
+                               placeholder="Notas sobre la solicitud..." />
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="poi_stock_armado_search" model="ir.ui.view">
+			<field name="name">poi.stock.armado.search</field>
+			<field name="model">poi.stock.armado</field>
+			<field name="arch" type="xml">
+                <search string="Search Armado de Motocicletas">
+					<field name="name"/>
+					<field name="user_id"/>
+                </search>
+			</field>
+		</record>
+
+		<record id="view_poi_stock_armado_line_tree" model="ir.ui.view">
+			<field name="model">poi.stock.armado.line</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="lot_id" />
+					<field name="location_id" />
+					<field name="product_qty" />
+					<field name="armado" />
+				</tree>
+			</field>
+		</record>
+	</data>
+</openerp>

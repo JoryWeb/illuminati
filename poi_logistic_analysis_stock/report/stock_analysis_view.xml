@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_poi_stock_kardex_analysis_graph">
+            <field name="name">poi.stock.kardex.analysis.chart</field>
+            <field name="model">poi.stock.kardex.analysis</field>
+            <field name="arch" type="xml">
+                <graph string="Actual Stock Report" type="line">
+                    <field name="product_id" type="row"/>
+                    <field name="string_date" type="col"/>
+                    <field name="stock_to_date" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

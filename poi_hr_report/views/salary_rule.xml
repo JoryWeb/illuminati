@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<record id="hr_salary_rule_form_bol" model="ir.ui.view">
+    <field name="name">hr.salary.rule.form.bol</field>
+    <field name="model">hr.salary.rule</field>
+    <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//form/notebook/page[4]" position="after">
+                <page string="Reportes">
+                    <group>
+                        <group string="Planilla de Sueldos">
+                            <field name="on_report_1" />
+                            <field name="name_1"/>
+                            <field name="sequence_report_1" />
+                            <field name="report_id_1" />
+                        </group>
+                        <group string="Planilla RC-IVA">
+                            <field name="on_report_2" />
+                            <field name="name_2"/>
+                            <field name="sequence_report_2" />
+                            <field name="report_id_2" />
+                        </group>
+                    </group>
+                </page >
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</odoo>

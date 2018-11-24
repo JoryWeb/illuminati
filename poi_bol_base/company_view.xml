@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_company_bol_base_form">
+            <field name="name">res.company.bol_base.inherit</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//page" position="after">
+                    <page string="Localización">
+                        <group col="2" colspan="2">
+                            <field name="razon" colspan="1"/>
+                            <field name="nit" colspan="1"/>
+                            <field name="actividad" colspan="2"/>
+                        </group>
+                        <group col="2" colspan="2">
+                            <field name="multi_activity" colspan="1"/>
+                            <field name="company_activity_ids" nolabel="1"
+                                widget="one2many_list" height="175" attrs="{'invisible':[('multi_activity','=',False)]}">
+                                <tree string="Actividades economicas" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="principal"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group col="2" colspan="2">
+                            <separator string="Proceso" colspan="2"/>
+                            <field name="allow_invoice_direct" colspan="1"/>
+                            <field name="allow_invoice_defer" colspan="1"/>
+                            <field name="direct_stock_post" colspan="1"/>
+                            <separator string="Contabilidad" colspan="2"/>
+                            <field name="fill_second_curr" colspan="1"/>
+                            <field name="handle_inv_tax_data" colspan="1"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                  <field name="currency_id_sec"/>
+	        </xpath>
+            </field>
+        </record>
+		
+    </data>
+</openerp>

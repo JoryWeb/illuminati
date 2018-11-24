@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+  <report
+    id="report_lcv1pdf"
+    string="Libro de Compras"
+    model="poi_bol.lcv.report"
+    report_type="qweb-pdf"
+    file="poi_bol_base.lcv1pdf"
+    name="poi_bol_base.lcv1pdf_template"
+    menu='False'
+  />
+
+  <record id="paperformat_lcv1pdf" model="report.paperformat">
+    <field name="name">Libro de Compras</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Landscape</field>
+    <field name="margin_top">10</field>
+    <field name="margin_bottom">15</field>
+    <field name="margin_left">7</field>
+    <field name="margin_right">7</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">5</field>
+    <field name="dpi">90</field>
+  </record>
+  <record id="report_lcv1pdf" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_bol_base.paperformat_lcv1pdf"/>
+  </record>
+
+
+<template id="lcv1pdf_template">
+<t t-call="report.html_container">
+  <div class="header"></div>
+  <div class="page">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h4><strong>LIBRO DE COMPRAS</strong></h4>
+        <P>Periodo Fiscal: <span t-esc="periodo"/></P>
+      </div> 
+      <div class="col-xs-3 text-right">
+        <p><strong>Nombre o Razon Social:</strong></p>
+        <p><strong>Sucursal:</strong></p>
+      </div>
+      <div class="col-xs-3">
+        <p><span t-esc="razon_social"/></p>
+        <p>0</p>
+      </div>
+      <div class="col-xs-3 text-right">
+        <p><strong>NIT:</strong></p>
+        <p><strong>Dirección:</strong></p>
+      </div>
+      <div class="col-xs-3">
+        <p><span t-esc="nit"/></p>
+        <p><span t-esc="direccion"/></p>
+      </div>
+    </div>
+    <div class="row" style="font-size:9px;">
+      <div class="col-xs-12">
+        <table class="table table-condensed table-bordered">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>FECHA<br/> DE LA<br/> FACTURA<br/> O DUI</th>
+              <th>NIT PROVEEDOR</th>
+              <th style="width:175px; max-width: 175px;">NOMBRE O RAZÓN SOCIAL</th>
+              <th>N° DE FACTURA</th>
+              <th>N° DE DUI</th>
+              <th>N° DE AUTORIZACIÓN</th>
+              <th>IMPORTE<br/>TOTAL<br/>COMPRA</th>
+              <th>IMPORTE<br/>NO<br/>SUJETO<br/>A<br/>CREDITO<br/>FISCAL</th>
+              <th>SUBTOTAL</th>
+              <th>DESCUENTOS</th>
+              <th>IMPORTE BASE</th>
+              <th>CREDITO FISCAL</th>
+              <th>CODIGO DE CONTROL</th>
+              <th>TIPO<br/>DE <br/><span style="position:fixed;">COMPRA</span></th>
+            </tr>
+          </thead>
+          <tbody>
+             <t t-foreach="docs" t-as="o"> 
+              <tr>
+                <td><span t-esc="o_index + 1"/></td>
+                <td><span t-field="o.date_invoice"/></td>
+                <td><span t-field="o.nit"/></td>
+                <td style="width:175px; max-width: 175px;"><span t-field="o.razon"/></td>
+                <td><span t-field="o.cc_nro"/></td>
+                <td><span t-field="o.imp_pol"/></td>
+                <td><span t-field="o.cc_aut"/></td>
+                <td class="text-right"><span t-field="o.importe"/></td>
+                <td class="text-right"><span t-field="o.exento"/></td>
+                <td class="text-right"><span t-field="o.subtotal_c"/></td>
+                <td class="text-right"><span t-field="o.descuento"/></td>
+                <td class="text-right"><span t-field="o.monto_neto"/></td>
+                <td class="text-right"><span t-field="o.monto_iva"/></td>
+                <td class="text-right"><span t-field="o.cc_cod"/></td>
+                <td class="text-right"><span t-field="o.tipo_com_val"/></td>
+              </tr>
+            </t>
+            <tr>
+              <td colspan="6">Usuario: <span t-esc="usuario"/></td>
+              <td class="text-right"><strong>TOTALES:</strong></td>
+              <td class="text-right"><strong><span t-esc="sum_importe"/></strong></td>
+              <td class="text-right"><strong><span t-esc="sum_exento"/></strong></td>
+              <td class="text-right"><strong><span t-esc="sum_subtot_c"/></strong></td>
+              <td class="text-right"><strong><span t-esc="sum_descuento"/></strong></td>
+              <td class="text-right"><strong><span t-esc="sum_monto_neto"/></strong></td>
+              <td class="text-right"><strong><span t-esc="sum_iva"/></strong></td>
+              <td colspan="2">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+ Pagina: <span class="page"/> DE <span class="topage"/>
+        </div>
+      </div>
+  </div>
+</t>
+</template>
+</data>
+</openerp>

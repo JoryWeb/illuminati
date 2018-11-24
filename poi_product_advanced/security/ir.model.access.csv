@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_atributo_product,atributo.product.user,model_atributo_product,base.group_user,1,1,1,1
+access_atributo_nombre,atributo.nombre.user,model_atributo_nombre,base.group_user,1,1,1,1
+access_product_image,product_image,model_product_image,base.group_user,1,1,1,1

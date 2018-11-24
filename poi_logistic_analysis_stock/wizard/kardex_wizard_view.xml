@@ -1,0 +1,55 @@
+<openerp>
+	<data>
+
+        <record id="reporte_kardex_graph_stock_form_wizard" model="ir.ui.view">
+			<field name="name">reporte.kardex.graph.stock.form.wizard</field>
+			<field name="model">poi.report.kardex.wizard</field>
+			<field name="arch" type="xml">
+				<form version="7.0" string="Stock Analysis">
+					<sheet>
+						<group>
+							<field name="product_id"/>
+							<!--<field name="product_categ_id"/>-->
+							<field name="location_id" domain="[('usage','=','internal')]" required="1"/>
+						</group>
+                        <group>
+							<field name="date_from"/>
+							<field name="date_to"/>
+						</group>
+					</sheet>
+					<footer>
+						<button name="view_kardex_graph_stock" type="object" string="View Kardex" class="oe_right"/>
+						<!--<button name="print_kardex" type="object" string="Print Kardex" class="oe_right"/> -->
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="reporte_kardex_graph_stock_form_action" model="ir.actions.act_window">
+	        <field name="name">Stock Analysis</field>
+	        <field name="res_model">poi.report.kardex.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+            <field name="view_id" ref="reporte_kardex_graph_stock_form_wizard"/>
+	        <field name="target">new</field>
+    	</record>
+
+
+		<record id="reporte_kardex_graph_stock_product_form_action" model="ir.actions.act_window">
+	        <field name="name">Stock Analysis</field>
+	        <field name="res_model">poi.report.kardex.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+            <field name="view_id" ref="reporte_kardex_graph_stock_form_wizard"/>
+	        <field name="target">new</field>
+			<field name="context">{
+                    'default_product_id': active_id,}
+            </field>
+    	</record>
+
+
+		<menuitem action="reporte_kardex_graph_stock_form_action" id="menu_reporte_kardex_graph_stock_form" parent="poi_logistic.menu_logistic_reports" sequence="2" groups="poi_logistic.group_logistic_user"/>
+
+	</data>
+</openerp>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Moneda -->
+    <data noupdate="1">
+        <record id="base.2000" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2000</field>
+        </record>
+        <record id="base.2001" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2001</field>
+        </record>
+        <record id="base.2002" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2002</field>
+        </record>
+        <record id="base.2003" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2003</field>
+        </record>
+        <record id="base.2004" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2004</field>
+        </record>
+        <record id="base.2005" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2005</field>
+        </record>
+        <record id="base.2006" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2006</field>
+        </record>
+        <record id="base.2007" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2007</field>
+        </record>
+        <record id="base.2008" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2008</field>
+        </record>
+        <record id="base.2009" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2009</field>
+        </record>
+        <record id="base.2010" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2010</field>
+        </record>
+        <record id="base.2011" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2011</field>
+        </record>
+        <record id="base.2012" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2012</field>
+        </record>
+        <record id="base.2013" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2013</field>
+        </record>
+        <record id="base.2014" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2014</field>
+        </record>
+        <record id="base.2015" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2015</field>
+        </record>
+        <record id="base.2016" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2016</field>
+        </record>
+        <record id="base.2017" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2017</field>
+        </record>
+        <record id="base.2018" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2018</field>
+        </record>
+        <record id="base.2019" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2019</field>
+        </record>
+        <record id="base.2020" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2020</field>
+        </record>
+        <record id="base.2021" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2021</field>
+        </record>
+        <record id="base.2022" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2022</field>
+        </record>
+        <record id="base.2023" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2023</field>
+        </record>
+        <record id="base.2024" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2024</field>
+        </record>
+        <record id="base.2025" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2025</field>
+        </record>
+        <record id="base.2026" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2026</field>
+        </record>
+        <record id="base.2027" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2027</field>
+        </record>
+        <record id="base.2028" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2028</field>
+        </record>
+        <record id="base.2029" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2029</field>
+        </record>
+        <record id="base.2030" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2030</field>
+        </record>
+        <record id="base.2031" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2031</field>
+        </record>
+        <record id="base.2032" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2032</field>
+        </record>
+        <record id="base.2033" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2033</field>
+        </record>
+        <record id="base.2034" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2034</field>
+        </record>
+        <record id="base.2035" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2035</field>
+        </record>
+        <record id="base.2036" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2036</field>
+        </record>
+        <record id="base.2037" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2037</field>
+        </record>
+        <record id="base.2038" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2038</field>
+        </record>
+        <record id="base.2039" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2039</field>
+        </record>
+        <record id="base.2040" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2040</field>
+        </record>
+        <record id="base.2041" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2041</field>
+        </record>
+        <record id="base.2042" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2042</field>
+        </record>
+        <record id="base.2043" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2043</field>
+        </record>
+        <record id="base.2044" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2044</field>
+        </record>
+        <record id="base.2045" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2045</field>
+        </record>
+        <record id="base.2046" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2046</field>
+        </record>
+        <record id="base.2047" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2047</field>
+        </record>
+        <record id="base.2048" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2048</field>
+        </record>
+        <record id="base.2049" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2049</field>
+        </record>
+        <record id="base.2050" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2050</field>
+        </record>
+        <record id="base.2051" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2051</field>
+        </record>
+        <record id="base.2052" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2052</field>
+        </record>
+        <record id="base.2053" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2053</field>
+        </record>
+        <record id="base.2054" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2054</field>
+        </record>
+        <record id="base.2055" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2055</field>
+        </record>
+        <record id="base.2056" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2056</field>
+        </record>
+        <record id="base.2057" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2057</field>
+        </record>
+        <record id="base.2058" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2058</field>
+        </record>
+        <record id="base.2059" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2059</field>
+        </record>
+        <record id="base.2060" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2060</field>
+        </record>
+        <record id="base.2061" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2061</field>
+        </record>
+        <record id="base.2062" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2062</field>
+        </record>
+        <record id="base.2063" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2063</field>
+        </record>
+        <record id="base.2064" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2064</field>
+        </record>
+        <record id="base.2065" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2065</field>
+        </record>
+        <record id="base.2066" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2066</field>
+        </record>
+        <record id="base.2067" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2067</field>
+        </record>
+        <record id="base.2068" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2068</field>
+        </record>
+        <record id="base.2069" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2069</field>
+        </record>
+        <record id="base.2070" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2070</field>
+        </record>
+        <record id="base.2071" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2071</field>
+        </record>
+        <record id="base.2072" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2072</field>
+        </record>
+        <record id="base.2073" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2073</field>
+        </record>
+        <record id="base.2074" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2074</field>
+        </record>
+        <record id="base.2075" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2075</field>
+        </record>
+        <record id="base.2076" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2076</field>
+        </record>
+        <record id="base.2077" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2077</field>
+        </record>
+        <record id="base.2078" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2078</field>
+        </record>
+        <record id="base.2079" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2079</field>
+        </record>
+        <record id="base.2080" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2080</field>
+        </record>
+        <record id="base.2081" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2081</field>
+        </record>
+        <record id="base.2082" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2082</field>
+        </record>
+        <record id="base.2083" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2083</field>
+        </record>
+        <record id="base.2084" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2084</field>
+        </record>
+        <record id="base.2085" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2085</field>
+        </record>
+        <record id="base.2086" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2086</field>
+        </record>
+        <record id="base.2087" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2087</field>
+        </record>
+        <record id="base.2088" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2088</field>
+        </record>
+        <record id="base.2089" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2089</field>
+        </record>
+        <record id="base.2090" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2090</field>
+        </record>
+        <record id="base.2091" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2091</field>
+        </record>
+        <record id="base.2092" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2092</field>
+        </record>
+        <record id="base.2093" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2093</field>
+        </record>
+        <record id="base.2094" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2094</field>
+        </record>
+        <record id="base.2095" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2095</field>
+        </record>
+        <record id="base.2096" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2096</field>
+        </record>
+        <record id="base.2097" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2097</field>
+        </record>
+        <record id="base.2098" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2098</field>
+        </record>
+        <record id="base.2099" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2099</field>
+        </record>
+        <record id="base.2100" model="anio.toyosa">
+            <field name="active" eval="True"/>
+            <field name="name">2100</field>
+        </record>
+
+    </data>
+</odoo>

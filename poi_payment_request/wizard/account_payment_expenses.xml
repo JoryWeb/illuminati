@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="payment_request_expenses_wiz_view_form" model="ir.ui.view">
+    <field name="name">account.payment.expenses.wiz.form</field>
+    <field name="model">account.payment.expenses.wiz</field>
+    <field name="arch" type="xml">
+      <form string="Atributos">
+        <group>
+          <field name="rendition_id"/>
+        </group>
+        <footer>
+          <button name="action_add_items" string="Añadir Accesorio" type="object" class="btn-primary"/>
+          or
+          <button string="Salir" class="oe_link" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="payment_request_expenses_wiz_action_form" model="ir.actions.act_window">
+    <field name="name">Rendiciones</field>
+    <field name="res_model">account.payment.expenses.wiz</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+</data>
+</odoo>

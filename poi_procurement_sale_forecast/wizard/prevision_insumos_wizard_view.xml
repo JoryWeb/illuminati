@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="poi_prevision_insumos_form_wizard" model="ir.ui.view">
+			<field name="name">poi.prevision.insumos.form.wizard</field>
+			<field name="model">poi.prevision.insumos.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Proyeccion de Inventarios">
+					<group>
+						<field name="date_from"/>
+						<field name="date_to"/>
+
+					</group>
+					<footer>
+                        <button name="open_table" type="object" string="Visualizar" class="oe_highlight"/>
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="poi_prevision_insumos_action" model="ir.actions.act_window">
+	        <field name="name">Proyección de Stocks</field>
+	        <field name="res_model">poi.prevision.insumos.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+    	</record>
+		<menuitem action="poi_prevision_insumos_action" id="poi_prevision_insumos_action_menu" parent="stock.menu_warehouse_report" sequence="10"/>
+	</data>
+</openerp>

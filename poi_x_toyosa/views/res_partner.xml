@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<record id="view_partner_toyo" model="ir.ui.view">
+  <field name="name">view.partner.toyo</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="product.view_partner_property_form"/>
+  <field name="arch" type="xml">
+    <data>
+      <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+          <attribute name="attrs">{'invisible': 0}</attribute>
+      </xpath>
+      <xpath expr="//div[@name='parent_pricelists']" position="attributes">
+          <attribute name="attrs">{'invisible': 1}</attribute>
+      </xpath>
+    </data>
+  </field>
+</record>
+
+
+<record id="view_partner_change_attrib" model="ir.ui.view">
+  <field name="name">view.partner.change.attrib.toyo</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="base.view_partner_form"/>
+  <field name="arch" type="xml">
+    <data>
+      <field name="name" position="after">
+        <field name="is_company2" invisible="1"/>
+        <field name="is_wallet" invisible="1"/>
+      </field>
+      <xpath expr="//field[@name='parent_id']" position="attributes">
+          <attribute name="attrs">{
+            'invisible': [('is_company2', '=', True)]}
+          </attribute>
+      </xpath>
+    </data>
+  </field>
+</record>
+
+<record id="view_partner_change_attrib_form_firstname" model="ir.ui.view">
+    <field name="name">view.partner.change.attrib.form.firstname.toyo</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="poi_partner_firstname.view_partner_form_firstname"/>
+    <field name="arch" type="xml">
+        <data>
+
+            <xpath expr="//group[@name='group1']" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('is_company2', '=', True)]
+                }</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lastname']" position="attributes">
+                <attribute name="attrs">{
+                  'readonly':  [('is_wallet', '=', False)],
+                  }</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lastname2']" position="attributes">
+                <attribute name="attrs">{
+                  'readonly':  [('is_wallet', '=', False)],
+                  }</attribute>
+            </xpath>
+            <xpath expr="//field[@name='firstname']" position="attributes">
+                <attribute name="attrs">{
+                  'readonly':  [('is_wallet', '=', False)],
+                  }</attribute>
+            </xpath>
+            <xpath expr="//field[@name='firstname2']" position="attributes">
+                <attribute name="attrs">{
+                  'readonly':  [('is_wallet', '=', False)],
+                  }</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="view_partner_change_attrib_form_accounting" model="ir.ui.view">
+  <field name="name">Change attrib for accounting</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="account.view_partner_property_form"/>
+  <field name="arch" type="xml">
+    <data>
+
+      <xpath expr="//page[@name='accounting']" position="attributes">
+          <attribute name="attrs">{'invisible': 0}</attribute>
+      </xpath>
+      <xpath expr="//page[@name='accounting_disabled']" position="attributes">
+          <attribute name="attrs">{'invisible': 1}</attribute>
+      </xpath>
+
+    </data>
+  </field>
+</record>
+
+<!-- Inherit Form view -->
+<record id="view_partner_form_bo_toyo" model="ir.ui.view">
+  <field name="name">res.partner.form.toyo</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="poi_bol_base.view_partner_form_bo"/>
+  <field name="arch" type="xml">
+    <xpath expr="//field[@name='nit']" position="attributes">
+        <attribute name="attrs">{
+          'invisible': [('is_company2','=', False)],
+          'required': [('is_company2','=', True)],
+          'readonly': [('is_wallet', '=', False)],
+          }
+        </attribute>
+    </xpath>
+    <xpath expr="//field[@name='razon']" position="attributes">
+        <attribute name="attrs">{
+          'readonly':  [('is_wallet', '=', False)]
+          }</attribute>
+    </xpath>
+    <xpath expr="//field[@name='razon_invoice']" position="attributes">
+        <attribute name="attrs">
+          {
+          'invisible': True,
+          'readonly':  [('is_wallet', '=', False)],
+          }</attribute>
+    </xpath>
+    <xpath expr="//field[@name='fundaempresa']" position="attributes">
+        <attribute name="attrs">{'invisible': [('is_company2','=', False)]}</attribute>
+    </xpath>
+    <xpath expr="//label[@for='ci']" position="attributes">
+        <attribute name="attrs">{
+          'invisible': [('is_company2','=', True)]
+        }
+        </attribute>
+    </xpath>
+    <xpath expr="//div[@for='ci_div']" position="attributes">
+        <attribute name="attrs">{'invisible': [('is_company2','=', True)]}</attribute>
+    </xpath>
+    <xpath expr="//div[@for='ci_div']" position="after">
+        <field name="born_date"/>
+    </xpath>
+    <xpath expr="//field[@name='ci']" position="attributes">
+        <attribute name="attrs">{
+          'required': [('is_company2','=', False)],
+          'readonly':  [('is_wallet', '=', False)],
+          }</attribute>
+    </xpath>
+    <xpath expr="//field[@name='ci_dept']" position="attributes">
+        <attribute name="attrs">{
+          'required': [('is_company2','=', False)],
+          'readonly':  [('is_wallet', '=', False)],
+          }</attribute>
+    </xpath>
+    <xpath expr="//field[@name='name']" position="replace">
+        <field name="name" default_focus="1" placeholder="Name"/>
+    </xpath>
+
+  </field>
+</record>
+<!-- Inherit Form view -->
+<record id="view_partner_form_bo_toy" model="ir.ui.view">
+  <field name="name">res.partner.form.name</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="poi_bol_base.view_partner_form_bo"/>
+  <field name="arch" type="xml">
+    <xpath expr="//field[@name='name']" position="attributes">
+      <attribute name="attrs">{
+          'readonly': ['|',('is_company2', '=', False), ('is_wallet', '=', False)],
+          'required': [('is_company2', '=', True)]
+      }</attribute>
+    </xpath>
+  </field>
+</record>
+</data>
+</odoo>

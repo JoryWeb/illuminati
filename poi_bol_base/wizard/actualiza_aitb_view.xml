@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+     <record id="view_actualiza_aitb_generate" model="ir.ui.view">
+         <field name="name">poi_bol_base.actualiza_aitb.form</field>
+         <field name="model">poi_bol_base.actualiza_aitb</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Generar Asiento de ajuste Actualización de valor">
+             	<field name="state" invisible="1"/>
+             	<label string ="Este proceso suma el total de movimientos contables para las Cuentas habilitadas por parametrización y calcula la diferencia según el tipo de cambio de la fecha de transacción." colspan="4" nolabel="1" align="0.0"/>
+                 <field name="case" widget="selection"/>
+                 <field name="journal_id"/>
+                 <separator string="Periodo:" colspan="4"/>
+                 <newline/>
+                 <field name="date_from"/>
+                 <field name="date_to"/>
+
+             	<newline/>
+             	<separator colspan="4" />
+             	<footer>
+             		<button name="action_generate" states="init" string="Generar Asiento" type="object" class="oe_highlight"/>
+                 	<button name="action_generate" states="warning" string="Ignorar y Generar Asiento" type="object" class="oe_highlight"/>
+                    o
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+
+     <record model="ir.ui.view" id="view_actualiza_aitb_tree">
+        <field name="name">poi_bol_base.actualiza_aitb.tree</field>
+        <field name="model">poi_bol_base.actualiza_aitb</field>
+        <field name="arch" type="xml">
+            <tree string="Ajuste">
+                <field name="case"/>
+            </tree>
+        </field>
+     </record>
+
+     <record id="view_actualiza_aitb_search" model="ir.ui.view">
+           <field name="name">poi_bol_base.actualiza_aitb.search</field>
+           <field name="model">poi_bol_base.actualiza_aitb</field>
+           <field name="arch" type="xml">
+               <search string="Ajuste">
+                   <field name="case"/>
+               </search>
+           </field>
+       </record>
+        
+     <record model="ir.actions.act_window" id="bol_actualiza_aitb">
+        <field name="name">Actualización de valor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">poi_bol_base.actualiza_aitb</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_actualiza_aitb_generate"/>
+         <field name="view_search_id" ref="view_actualiza_aitb_search"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem parent="account.menu_finance_entries" id="menu_action_bol_aitb" action="bol_actualiza_aitb" sequence="29"/>
+	
+  </data>
+</openerp>

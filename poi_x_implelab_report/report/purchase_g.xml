@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+  <report
+    id="report_purchase_imp_g"
+    string="Orden de Compra G"
+    model="purchase.order"
+    report_type="qweb-pdf"
+    file="poi_x_implelab_report.purchase_g"
+    name="poi_x_implelab_report.purchase_template_imp_g"
+    menu="True"
+  />
+  <record id="report_purchase_imp_g" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_x_implelab_report.paperformat_purchase_imp"/>
+  </record>
+
+  <!-- <record id="sale.report_sale_order" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_x_implelab_report.paperformat_purchase_imp"/>
+  </record> -->
+</data>
+
+
+<template id="purchase_template_imp_g">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+
+<div class="page" style="font-size:14px;">
+    <div class="row">
+        <div class="col-xs-4" style="border-style:solid;border-color: #ddd;border-width:1px;">
+            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 79px;"/>
+        </div>
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-12 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;">
+                <h3>ORDEN DE COMPRA</h3>
+                </div>
+                <div class="col-xs-6 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;">
+                    <strong>Lugar y Fecha de Transmisión:</strong>
+                </div>
+                <div class="col-xs-6 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;">
+                    La Paz, <span t-field="o.date_order" t-field-options='{"format": "d/M/Y"}'/>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-4 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;">
+                    <strong>DATOS DE CONSIGNATARIO</strong>
+                </div>
+                <div class="col-xs-4 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;">
+                    <strong>N° Orden de Compra</strong>
+                </div>
+                <div class="col-xs-4 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;background-color:#FE9A2E;">
+                    <span t-field="o.partner_ref"/>-G
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-4 text-center" style="border-style:solid;border-color: #ddd;border-width:1px; font-size:10px;">
+                    <p><strong><span t-field="o.company_id.partner_id.name"/><br/><span t-field="o.company_id.partner_id.street"/><br/><span t-field="o.company_id.partner_id.street2"/><br/>Telefono: <span t-field="o.company_id.partner_id.phone"/><br/><t t-if="o.company_id.partner_id.fax"> Fax: <span t-field="o.company_id.partner_id.fax"/><br/></t><span t-field="o.company_id.partner_id.state_id.name"/>-<span t-field="o.company_id.partner_id.country_id.name"/></strong></p>
+                </div>
+                <div class="col-xs-8 text-center" style="border-style:solid;border-color: #ddd;border-width:1px;">
+                 <p>*Mediante la presente formalizamos la solicitud de cotización y agredecemos a Ud. <br/>*Se sirvan enviar el(los) item(s) a continuación detallado(s). <br/>* Deberá incluir la factura original de exportación a nombre de: <span t-field="o.company_id.partner_id.name"/><br/>Con NIT: N° <span t-field="o.company_id.partner_id.nit"/>.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12" style="margin:0px;padding:0px;">
+            <table class="table table-condensed table-bordered" style="margin-bottom:0px;">
+              <thead>
+                <tr>
+                    <td class="text-center" colspan="9" style="background-color:#D8D8D8;"><strong> DETALLES DE LA COMPRA</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Item</strong></td>
+                  <td><strong>Descripcion</strong></td>
+                  <td><strong>Cantidad</strong></td>
+                  <td><strong>Codigo</strong></td>
+                  <!-- <td><strong>REF. CLIENTE</strong></td> -->
+                  <td><strong>LINEA</strong></td>
+                  <td><strong>REF.COTIZACION</strong></td>
+                  <td><strong>UNITARIO <span t-field="o.currency_id.name_on_report"/></strong></td>
+                  <td><strong>SUBTOTAL <span t-field="o.currency_id.name_on_report"/></strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="o.order_line" t-as="l">
+                  <tr>
+                    <td>
+                      <span t-esc="l_index+1"/>
+                    </td>
+                    <td>
+                      <span t-field="l.name"/>
+                    </td>
+                    <td class="text-right">
+                      <span t-field="l.product_qty"/>
+                    </td>
+                    <td class="text-center">
+                        <span t-field="l.product_id.default_code"/>
+                    </td>
+
+                    <!-- <td>
+                        <span t-field="l.ref_partner"/>
+                    </td> -->
+                    <td style="min-width:120px;">
+                        <span t-field="l.brand"/>
+                    </td>
+                    <td>
+                        <span t-field="l.ref_order"/>
+                    </td>
+
+                    <td class="text-right">
+                      <span t-field="l.price_unit"/>
+                    </td>
+                    <td class="text-right">
+                      <span t-field="l.price_total"/>
+                    </td>
+                  </tr>
+                </t>
+                <tr>
+                    <td colspan="6">
+
+                    </td>
+                    <td class="text-right">
+                        <strong>Total <span t-field="o.currency_id.name_on_report"/></strong>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="o.amount_total"/>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12" style="margin:0px;padding:0px;">
+            <table class="table table-condensed table-bordered" style="margin-bottom:0px;padding-bottom:0px;">
+                <thead>
+                    <td class="text-center" colspan="2" style="background-color:#D8D8D8;"><strong>CONDICIONES COMERCIALES DE LA COMPRA</strong></td>
+                </thead>
+                <tbody>
+                   <tr>
+                       <td><strong>CONDICIONES DE PRECIO:</strong></td>
+                       <td style="min-width:600px;">
+                            <!-- <span t-field="o.payment_term_id.name"/> -->
+                        </td>
+                   </tr>
+                   <tr>
+                       <td><strong>PLAZO DE ENTREGA:</strong></td>
+                       <td></td>
+                   </tr>
+                   <tr>
+                       <td><strong>TERMINOS DE PAGO:</strong></td>
+                       <td>
+                            <!-- <span t-field="o.incoterm_id.name"/> -->
+                        </td>
+                   </tr>
+                   <tr>
+                       <td><strong>OBSEVACIONES:</strong></td>
+                       <td>
+                            <!-- <span t-field="o.notes"/> -->
+                        </td>
+                   </tr>
+                   <tr>
+                       <td><strong>FORWARDER INFORMACION <br/>PARA EL ENVIO</strong></td>
+                       <td>
+                               <span t-field="o.forwarder_inf"/>
+                       </td>
+                   </tr>
+               </tbody>
+
+            </table>
+            <table class="table table-condensed table-bordered" style="margin-top:0px;padding-top:0px;">
+                <thead>
+                    <td class="text-center" colspan="2" style="background-color:#D8D8D8;"><strong>ADITIONAL INFORMATION - THERMO FISHER</strong></td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Subsidiary</strong></td>
+                        <td style="min-width:600px;">
+                             Thermo Electron LED GmbH.
+                         </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Address</strong></td>
+                        <td>Postfach 1360 D-63503 Langenselbold. Germany</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contact Name</strong></td>
+                        <td>
+                            Sandra Fechner
+                         </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td style="color:blue;">
+                            sandra.fechner@thermofisher.com
+                         </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Currency of Products</strong></td>
+                        <td>
+                            <span t-field="o.currency_id.name_on_report"/>
+                         </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Specialist Involved for Technical Issues</strong></td>
+                        <td>
+                            Paula Barbosa
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+</t>
+</t>
+</template>
+
+</openerp>

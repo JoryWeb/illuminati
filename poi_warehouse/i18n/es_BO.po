@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_warehouse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-12 22:08+0000\n"
+"PO-Revision-Date: 2017-06-12 22:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Address"
+msgstr "Dirección"
+
+#. module: poi_warehouse
+#: model:ir.ui.menu,name:poi_warehouse.menu_action_res_agency_form
+msgid "Agencias"
+msgstr "Agencias"
+
+#. module: poi_warehouse
+#: model:ir.actions.act_window,name:poi_warehouse.action_res_agency_form
+#: model:ir.model,name:poi_warehouse.model_res_agency
+#: model:ir.ui.view,arch_db:poi_warehouse.view_agency_tree
+msgid "Agencies"
+msgstr "Agencias"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_agency_id
+#: model:ir.ui.view,arch_db:poi_warehouse.view_agency_form
+msgid "Agency"
+msgstr "Agencia"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_ci
+msgid "CI"
+msgstr "CI"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_extension
+msgid "Campo usado para las Extesiones alfanumericas(Casos Duplicados)."
+msgstr "Campo usado para las Extesiones alfanumericas(Casos Duplicados)."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_ci
+msgid "Carnet de Identidad."
+msgstr "Carnet de Identidad."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_partner_type
+msgid "Categoría Socio"
+msgstr "Categoría Socio"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_city
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "City"
+msgstr "Ciudad"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_country_id
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Country"
+msgstr "País"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_order_policy
+msgid "Crear Factura"
+msgstr "Crear Factura"
+
+#. module: poi_warehouse
+#: model:ir.actions.act_window,help:poi_warehouse.action_res_agency_form
+msgid "Create and manage the agencies to group shops."
+msgstr "Crea y administra las agencias para agrupar sucursales."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_analytic_account_id
+msgid "Cuenta Analitica"
+msgstr "Cuenta Analitica"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_ci_dept
+msgid "Dept. CI"
+msgstr "Dept. CI"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_enabled_for_sale
+msgid "Enabled for Sales"
+msgstr "Habilitado para las ventas"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_extension
+msgid "Extensión"
+msgstr "Extensión"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_fax
+msgid "Fax"
+msgstr "Fax"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "General Information"
+msgstr "Información general"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Locations"
+msgstr "Ubicaciones"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_ci_dept
+msgid "Lugar de emision Carnet de Identidad"
+msgstr "Lugar de emision Carnet de Identidad"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_nit
+msgid "NIT"
+msgstr "NIT"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_fundaempresa
+msgid "Numero de Registro en Fundempresa"
+msgstr "Numero de Registro en Fundempresa"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_nit
+msgid "Número de Identificación Tributaria (o CI para facturación)."
+msgstr "Número de Identificación Tributaria (o CI para facturación)."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_order_policy
+msgid "On delivery order: A draft invoice can be created from the delivery order when the products have been delivered. \n"
+"Before delivery: A draft invoice is created from the sales order and must be paid before the products can be delivered."
+msgstr "En la orden de entrega: Se puede crear una factura a partir de la orden de entrega cuando los productos han sido entregados. \n"
+"Antes de la entrega: una factura se crea a partir de la orden de venta y se debe pagar antes de que los productos se pueden entregar."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_other_info
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Picking Types"
+msgstr "Tipos de albarán"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_razon
+msgid "Razón Social"
+msgstr "Razón Social"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_razon
+msgid "Razón Social del cliente/proveedor."
+msgstr "Razón Social del cliente/proveedor."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,help:poi_warehouse.field_res_users_razon_invoice
+msgid "Razón Social para Facturación."
+msgstr "Razón Social para Facturación."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_razon_invoice
+msgid "Razón Social para facturación"
+msgstr "Razón Social para facturación"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_res_users_fundaempresa
+msgid "Registro Fundempresa"
+msgstr "Registro Fundempresa"
+
+#. module: poi_warehouse
+#: model:res.groups,name:poi_warehouse.group_stock_warehouse_manager
+msgid "See only shop types"
+msgstr "Ver solo los almacenes permitidos"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_agency_form
+#: model:ir.ui.view,arch_db:poi_warehouse.view_users_shop_form
+msgid "Shops"
+msgstr "Sucursales"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_state_id
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_street
+msgid "Street"
+msgstr "Calle"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Street..."
+msgstr "Dirección..."
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_street2
+msgid "Street2"
+msgstr "Calle2"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Technical Information"
+msgstr "Información técnica"
+
+#. module: poi_warehouse
+#: model:ir.model,name:poi_warehouse.model_res_users
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_user_ids
+msgid "Users Assigned"
+msgstr "Usuario Asignado"
+
+#. module: poi_warehouse
+#: model:ir.model,name:poi_warehouse.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "Warehouse Configuration"
+msgstr "Configuración del almacén"
+
+#. module: poi_warehouse
+#: model:ir.ui.view,arch_db:poi_warehouse.view_form_stock_inherit
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: poi_warehouse
+#: model:ir.model.fields,field_description:poi_warehouse.field_stock_warehouse_zip
+msgid "Zip"
+msgstr "C.P."

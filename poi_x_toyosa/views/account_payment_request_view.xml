@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <record id="toyosa_account_inbound_payment_request_form" model="ir.ui.view">
+            <field name="name">toyosa.account.payment.request.form</field>
+            <field name="model">account.payment.request</field>
+            <field name="inherit_id" ref="poi_payment_request.account_inbound_payment_request_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="sale_order_id" domain="[('partner_id','=',partner_id),('state','in',['sale','done'])]"/>
+                    <field name="lot_id_displayed" readonly="1"/>
+                    <field name="lot_id" invisible="1"/>
+                    <field name="case"/>
+                    <field name="no_file"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="toyosa_account_payment_request_form" model="ir.ui.view">
+            <field name="name">toyosa.account.payment.request.form</field>
+            <field name="model">account.payment.request</field>
+            <field name="inherit_id" ref="poi_payment_request.account_payment_request_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_approve']" position="attributes">
+                    <attribute name="groups">poi_x_toyosa.group_account_invoice_fin</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_reject']" position="attributes">
+                    <attribute name="groups">poi_x_toyosa.group_account_invoice_fin</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="toyosa_account_payment_request_tree" model="ir.ui.view">
+            <field name="name">toyosa.account.payment.request.tree</field>
+            <field name="model">account.payment.request</field>
+            <field name="inherit_id" ref="poi_payment_request.account_payment_request_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="account_analytic_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="toyosa_account_payment_request_search" model="ir.ui.view">
+         <field name="name">payment.request.search.toyosa</field>
+         <field name="model">account.payment.request</field>
+         <field name="inherit_id" ref="poi_payment_request.account_payment_request_search"/>
+         <field name="arch" type="xml">
+             <xpath expr="//group" position="inside">
+                <filter string="Categoría" domain="[]" context="{'group_by':'analytic_main_tag'}"/>
+                <filter string="Categoría raíz" domain="[]" context="{'group_by':'analytic_main_tag_parent'}"/>
+                  <!--  <field name="category_root" string="Categoría raíz" domain="[('parent_id','=',False)]"/>
+                     <filter string="Categoría" domain="[]" context="{'group_by':'categ_id'}"/>
+                     <filter string="Categoría raíz" domain="[]" context="{'group_by':'category_root'}"/>-->
+             </xpath>
+         </field>
+        </record>
+
+        <record id="view_account_payment_pay_request_form" model="ir.ui.view">
+            <field name="name">account.payment.invoice.form.pay.request</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <field name="no_file"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_payment_pay_request_form" model="ir.ui.view">
+            <field name="name">account.payment.form.pay.request</field>
+            <field name="model">account.payment</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <field name="no_file"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

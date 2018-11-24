@@ -1,0 +1,241 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_pos_gift_card
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-17 18:40+0000\n"
+"PO-Revision-Date: 2017-11-17 18:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_pos_config_iface_giftcard
+msgid "Allow GiftCards"
+msgstr "Permitir Tarjetas de Regalo"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,help:poi_pos_gift_card.field_pos_config_iface_giftcard
+msgid "Allow the cashier to accept giftcards on the whole order."
+msgstr "Permitir al cajero aceptar tarjetas de regalo en toda la orden."
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:32
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:50
+#, python-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:21
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:46
+#, python-format
+msgid "Apply Gift Card"
+msgstr "Aplicar Tarjeta de Regalo"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:35
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:53
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_code
+msgid "Code"
+msgstr "Código"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_pos_gift_card
+#: selection:product.template,gc_expiry_type:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_expiry_date
+msgid "Expiry Date"
+msgstr "Fecha de Expiración"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gc_expiry_type
+msgid "Expiry Type"
+msgstr "Tipo de expiración"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gc_expiry_date
+msgid "Expiry date"
+msgstr "Fecha de expiración"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gc_days_expiry
+msgid "Expiry days"
+msgstr "Días de expiración"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:28
+#, python-format
+msgid "Gift Card"
+msgstr "Tarjeta de Regalo"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gc_amount
+msgid "Gift Card Amount"
+msgstr "Monto de Tarjeta de Regalo"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_ids
+#: model:ir.ui.view,arch_db:poi_pos_gift_card.product_template_form_view_gc
+#: model:ir.ui.view,arch_db:poi_pos_gift_card.view_pos_giftcard_config_form
+msgid "Gift Cards"
+msgstr "Tarjetas de Regalo"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_pos_order_line_giftcard_code
+msgid "GiftCard Code"
+msgstr "Código de Tarjeta de Regalo"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_pos_order_line_giftcard_code_used
+msgid "GiftCard Code Used"
+msgstr "Tarjeta de Regalo Usada"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_pos_config_giftcard_product_id
+msgid "GiftCard Product"
+msgstr "Producto de Tarjeta de Regalo"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:13
+#, python-format
+msgid "GiftCard Used:"
+msgstr "Tarjeta de Regalo Usada:"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:8
+#, python-format
+msgid "GiftCard:"
+msgstr "Tarjeta de Regalo:"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_is_gift_card
+msgid "Is a gift card"
+msgstr "Es una tarjeta de regalo"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_pos_gift_card
+#: model:ir.model,name:poi_pos_gift_card.model_pos_order_line
+msgid "Lines of Point of Sale"
+msgstr "Líneas del Punto de Venta"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_partner_id
+msgid "Partner who acquired"
+msgstr "Cliente que adquirió"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:47
+#, python-format
+msgid "Please insert the code displayed on the gift card."
+msgstr "Por favor ingrese el código mostrado en la tarjeta de regalo."
+
+#. module: poi_pos_gift_card
+#: model:ir.model,name:poi_pos_gift_card.model_product_template
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_template_id
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,field_description:poi_pos_gift_card.field_product_template_gift_card_remaining_amount
+msgid "Remaining Amount"
+msgstr "Monto Restante"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/js/pos_gift_card.js:90
+#, python-format
+msgid "The gift card doesn't have funds."
+msgstr "La tarjeta de regalo no tiene fondos."
+
+#. module: poi_pos_gift_card
+#: model:ir.model.fields,help:poi_pos_gift_card.field_pos_config_giftcard_product_id
+msgid "The product used to model the giftcard"
+msgstr "El producto es usado para modelar la tarjeta de regalo"
+
+#. module: poi_pos_gift_card
+#: selection:product.template,gc_expiry_type:0
+msgid "Time"
+msgstr "Tiempo"
+
+#. module: poi_pos_gift_card
+#: selection:product.template,gc_expiry_type:0
+msgid "Undefined"
+msgstr "Indefinido"
+
+#. module: poi_pos_gift_card
+#. openerp-web
+#: code:addons/poi_pos_gift_card/static/src/xml/poi_pos_gift_card.xml:29
+#, python-format
+msgid "You are going to sell a gift card. Please enter the gift card code below in order to be applied in future sales."
+msgstr "Va a realizar la venta de una tarjeta de regalo. Por favor ingrese el código de la tarjeta de regalo para aplicarlo a futuras ventas."
+
+#. module: poi_pos_gift_card
+#: model:ir.model,name:poi_pos_gift_card.model_pos_config
+msgid "pos.config"
+msgstr "Configuración del TPV"
+
+#. module: poi_pos_gift_card
+#: model:ir.model,name:poi_pos_gift_card.model_product_template_gift_card
+msgid "product.template.gift.card"
+msgstr "product.template.gift.card"
+

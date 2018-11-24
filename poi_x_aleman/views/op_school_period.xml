@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+  <record id="op_school_period_view_tree" model="ir.ui.view">
+    <field name="name">op.school.period.tree</field>
+    <field name="model">op.school.period</field>
+    <field name="arch" type="xml">
+      <tree string="">
+        <field name="year_id"/>
+        <field name="currency_id" />
+        <field name="date_from" />
+        <field name="date_to" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="op_school_period_view_form" model="ir.ui.view">
+    <field name="name">op.school.period.form</field>
+    <field name="model">op.school.period</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <header>
+          <button name="action_open_period" string="Asistente de Apertura" class="oe_highlight" states="draft" type="object"/>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <group>
+            <group>
+              <field name="year_id" />
+              <field name="currency_id" />
+            </group>
+            <group>
+              <field name="date_from" />
+              <field name="date_to" />
+            </group>
+          </group>
+          <notebook>
+            <page string="Cargos Por Pensiones">
+              <group>
+                <group>
+                  <field name="surcharge" />
+                  <field name="day_initial" />
+                </group>
+                <group>
+                  <field name="discount_childs" />
+                </group>
+                <field name="charge_id">
+                  <tree editable="bottom">
+                    <field name="year_id" />
+                    <field name="month_id" />
+                    <field name="auto" />
+                    <field name="date" />
+                    <field name="count_charge" />
+                  </tree>
+                </field>
+              </group>
+
+            </page>
+            <page string="Niveles de Alumnos">
+
+                <field name="nivel_id">
+                  <tree editable="bottom">
+                      <field name="period_id" />
+                      <field name="name" />
+                      <field name="amount_first_fee" />
+                      <field name="amount_regular_fee" />
+                  </tree>
+                </field>
+
+            </page>
+            <page string="Kinder">
+              <group>
+                <field name="visit_cost"/>
+                <field name="first_fee" />
+                <field name="supplies_cost" />
+              </group>
+            </page>
+            <page string="Camara de Industria">
+              <group>
+                <field name="amount_camera"/>
+                <label string="Cargos Automaticos" />
+              </group>
+              <field name="chargeauto_id" editable="bottom" >
+                <tree>
+                  <field name="year_id" />
+                  <field name="month_id" />
+                  <field name="auto" />
+                  <field name="count_charge" />
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="op_school_period_action_form" model="ir.actions.act_window">
+    <field name="name">Gesion Escolar</field>
+    <field name="res_model">op.school.period</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear Gestion Escolar
+      </p>
+      <p>
+        Manejo y Creacion de la Gestion Escolar
+      </p>
+    </field>
+  </record>
+
+</data>
+</odoo>

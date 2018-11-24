@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="bag_vehicles_config_view_form" model="ir.ui.view">
+    <field name="name">bag.vehicles.config.form</field>
+    <field name="model">bag.vehicles.config</field>
+    <field name="arch" type="xml">
+      <form string="Configuracion de Reportes">
+        <sheet>
+          <group>
+            <group>
+              <field name="date"/>
+            </group>
+          </group>
+          <group>
+            <field name="list_ids" widget="one2many_list" nolabel="1">
+              <tree string="Items" editable="bottom">
+                <field name="pricelist_id"/>
+              </tree>
+            </field>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="bag_vehicles_config_view_tree" model="ir.ui.view">
+    <field name="name">bag.vehicles.config.tree</field>
+    <field name="model">bag.vehicles.config</field>
+    <field name="arch" type="xml">
+      <tree string="Configuracion de Reportes">
+        <field name="date"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="bag_vehicles_config_action_form" model="ir.actions.act_window">
+    <field name="name">Configuracion bolsa de vehiculos S/C</field>
+    <field name="res_model">bag.vehicles.config</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear configuracion
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_bag_vehicles_config"  parent="menu_sale_report_config" action="bag_vehicles_config_action_form" sequence="1"/>
+
+</data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="poi_report_kardex_valuation_real_inh" model="ir.ui.view">
+			<field name="name">poi.report.kardex.valuation.real.tree</field>
+			<field name="model">poi.report.kardex.valuation.real</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de movimientos">
+					<field name="date"/>
+                    <field name="warehouse_id"/>
+                    <field name="documento"/>
+                    <field name="product_id"/>
+                    <field name="cantidad"/>
+                    <field name="lot_id"/>
+                    <field name="price_unit"/>
+                    <field name="total_fecha"/>
+                    <field name="monto_en_fecha"/>
+                    <!--<field name="price_unit_date"/>-->
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_poi_report_kardex_valuation_real_search">
+            <field name="name">poi.report.kardex.valuation.search</field>
+            <field name="model">poi.report.kardex.valuation.real</field>
+            <field name="arch" type="xml">
+                <search string="Auditoría">
+                    <field name="documento" string="Documento"/>
+                    <field name="product_id" string="Producto"/>
+                    <field name="lot_id" string="Lote"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Producto" context="{'group_by': 'product_id'}"/>
+                        <filter string="Almacén" context="{'group_by':'warehouse_id'}"/>
+                        <filter string="Documento" context="{'group_by':'documento'}"/>
+                        <filter string="Periodo" context="{'group_by':'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+	</data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+  	<!-- Wizard Followup -->
+     <record id="view_poi_discount_wizard" model="ir.ui.view">
+         <field name="name">poi.discount.wizard.form</field>
+         <field name="model">poi.discount.wizard</field>
+         <field name="arch" type="xml">
+             <form string="Descuento en base a Monto" version="7.0">
+             	<label string="Este asistente permite especificar el monto descontado deseado para el cálculo del porcentaje respectivo." colspan="4" nolabel="1" align="0.0"/>
+             	<group colspan="4" col="4">
+                    <field name="order_id" invisible="1"/>
+                    <field name="monto_real" readonly="1"/>
+                    <field name="monto_descontado"/>
+                </group>
+                <footer>
+		            <button name="action_discount" string="Descontar" type="object" colspan="1" class="oe_highlight"/>
+					o
+		            <button special="cancel" class="oe_link" string="Cancelar" colspan="1"/>
+				</footer>
+            </form>
+         </field>
+     </record>
+
+	
+  </data>
+</openerp>

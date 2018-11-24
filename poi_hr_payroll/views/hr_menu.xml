@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <menuitem id="hr_payroll.menu_department_tree" name="Nominas de Empleado" groups="hr_payroll.group_hr_payroll_user" parent="hr_payroll.menu_hr_payroll_root"/>
+
+  <menuitem action="hr_payroll.action_view_hr_payslip_form" id="menu_payroll_2" parent="hr_payroll.menu_department_tree" groups="hr_payroll.group_hr_payroll_user" sequence="2" name="Nominas"/>
+
+  <menuitem action="action_benefits" id="menu_hr_advance" parent="hr_payroll.menu_department_tree" sequence="3"/>
+
+  <menuitem action="action_loan" id="menu_hr_loan" parent="hr_payroll.menu_department_tree" sequence="4"/>
+
+  <menuitem action="action_form110" id="menu_hr_form110" parent="hr_payroll.menu_department_tree" sequence="5"/>
+
+
+
+  <menuitem id="menu_config_others" name="Configuracion Nominas" parent="hr_payroll.menu_hr_payroll_configuration" sequence="50"/>
+
+
+  <menuitem action="action_advance_config" id="menu_hr_advance_config" parent="menu_config_others" sequence="51"/>
+
+  <menuitem action="action_loan_config" id="menu_hr_loan_config" parent="menu_config_others" sequence="52"/>
+
+  <menuitem action="action_other_inputs_code" id="menu_hr_others_code" parent="menu_config_others" sequence="53"/>
+
+  <menuitem action="action_other_inputs" id="menu_hr_others" parent="menu_config_others" sequence="54"/>
+</data>
+</odoo>

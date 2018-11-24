@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_invoice_bo_cc">
+            <field name="name">account.invoice.form.bo.cc</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="poi_bol_base.account_invoice_bo"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_sin']" position="after">
+                    <group>
+                        <field name="cc_cod" attrs="{'readonly': ['|', ('state','in',['open','paid'])]}"/>
+                        <button icon="fa-qrcode" name="pop_qr" string="Ver QR" type="object"/>
+                        <!-- <button icon="STOCK_EXECUTE" name="action_cc" string="Generar CC" type="object"/>  -->
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_invoice_qr_view">
+            <field name="name">account.invoice.qr.form</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="priority" eval="96"/>
+            <field name="arch" type="xml">
+                <form string="Código QR" version="7.0">
+                    <group>
+                        <h1>
+                            <label string="Factura " class="oe_inline"/>
+                            <field name="number" readonly="1" class="oe_inline"/>
+                        </h1>
+                        <newline/>
+                        <field name="qr_img" readonly="1" widget="image"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

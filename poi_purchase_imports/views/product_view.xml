@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="product_category_imports_form_view">
+        <field name="name">product.category.imports</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="stock_account.view_category_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_stock_account_input_categ_id" position="after">
+                <field name="property_stock_account_import_categ_id" domain="[('deprecated', '=', False)]"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_template_property_import_form" model="ir.ui.view">
+        <field name="name">product.template.imports</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock_account.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_stock_account_input" position="after">
+                <field name="property_stock_account_import"
+                       attrs="{'invisible':[ ('valuation', '!=', 'real_time')]}"
+                       domain="[('deprecated', '=', False)]"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

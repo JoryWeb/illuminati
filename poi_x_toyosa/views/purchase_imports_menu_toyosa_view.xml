@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="poi_purchase_imports_toyosa" model="ir.actions.act_window">
+            <field name="name">Importaciones Automotriz</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="context">{'default_tipo_fac':'3', 'default_type_import':'toyosa'}</field>
+            <field name="domain">[('tipo_fac','=','3'),('type_import','=','toyosa')]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+            <field eval="False" name="view_id"/>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para Crear una Orden de Importaciones
+                </p>
+                <p>
+                    Importatnte verificar que el proveedor tenga definido el campo
+                    'Tipo de Compra'-> Importaciones
+                </p>
+                <p>
+                    Los registros de Tipo de Importacion generan carpetas de importación
+                    o en otra forma pueden ser adjuntadas desde crear carpeta de importaciones
+                </p>
+            </field>
+        </record>
+
+        <record id="poi_purchase_imports_toyosa_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poi_x_toyosa.purchase_order_toyosa_tree"/>
+            <field name="act_window_id" ref="poi_purchase_imports_toyosa"/>
+        </record>
+
+        <record id="poi_purchase_imports_toyosa_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="poi_x_toyosa.purchase_order_form_toyosa"/>
+            <field name="act_window_id" ref="poi_purchase_imports_toyosa"/>
+        </record>
+
+        <menuitem action="poi_purchase_imports_toyosa" id="menu_purchase_toyosa"
+                  parent="poi_purchase_imports.menu_purchase_imports"
+                  sequence="0"/>
+
+        <!-- Actualizar menus nativos de carpeta de importaciones para seperar la lógica de importaciones nativa y toyosa -->
+        <record id="poi_purchase_imports.poi_purchase_imports_importaciones" model="ir.actions.act_window">
+            <field name="name">Orden de Importación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="context">{'default_tipo_fac':'3', 'default_type_import':'normal', 'default_warrant':'sin_warrant'}</field>
+            <field name="domain">[('tipo_fac','=','3'),('type_import','=','normal')]</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para Crear una Orden de Importaciones Generica
+                </p>
+                <p>
+                    Importatnte verificar que el proveedor tenga definido el campo
+                    'Tipo de Compra'-> Importaciones
+                </p>
+                <p>
+                    Los registros de Tipo de Importacion generan carpetas de importación
+                    o en otra forma pueden ser adjuntadas desde crear carpeta de importaciones
+                </p>
+            </field>
+        </record>
+
+        <!-- Corregir los menus de compras normales para que acepte el warrant por defecto -->
+
+        <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+            <field name="domain">[('state','in',('draft','sent','bid','cancel', 'confirmed')),('tipo_fac','!=','3')]</field>
+            <field name="context">{'default_warrant':'sin_warrant'}</field>
+        </record>
+
+        <record id="poi_purchase_imports.poi_purchase_imports_tree_rfq" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="act_window_id" ref="purchase.purchase_rfq"/>
+        </record>
+
+        <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+            <field name="domain">[('state','not in',('draft','sent','bid', 'confirmed')),('tipo_fac','!=','3')]</field>
+            <field name="context">{'default_warrant':'sin_warrant'}</field>
+        </record>
+
+        <record id="poi_purchase_imports.poi_purchase_imports_tree_purchase" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="act_window_id" ref="purchase.purchase_form_action"/>
+        </record>
+
+    </data>
+</odoo>

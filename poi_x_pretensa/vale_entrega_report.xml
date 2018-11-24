@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_delivery_order_pretensa_inherit_stock" model="ir.ui.view">
+            <field name="name">stock.picking.out.form2</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/header//button[@name='do_print_picking']" position="before">
+                	<button name="%(report_picking_list_pretensa)d" string="Imprimir Vale de entrega Pretensa" states="done" class="oe_highlight" type="action"/>
+                    <button name="quitar_reserva" string="Quitar Reserva" type="object"/>
+                </xpath>
+            </field>
+        </record>
+        <!--
+        <record id="view_delivery_order_pretensa_inherit2_stock" model="ir.ui.view">
+            <field name="name">stock.picking.out.form3</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/header//button[@string='Confirm']" position="before">
+                	<button name="%(report_picking_list_pretensa_int)d" string="Imprimir Vale de entrega Pretensa" class="oe_highlight" type="action"/>
+                </xpath>
+            </field>
+        </record>
+        -->
+    </data>
+</openerp>

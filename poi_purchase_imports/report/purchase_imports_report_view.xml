@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_poi_purchase_imports_report_pivot">
+            <field name="name">product.month.pivot</field>
+            <field name="model">poi.purchase.imports.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Purchase Orders Statistics" disable_linking="True">
+                    <field name="orden" type="row"/>
+                    <field name="category" type="row"/>
+                    <field name="invoice_id" type="col"/>
+                    <field name="costo" type="measure"/>
+                    <field name="costo_usd" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_poi_purchase_imports_report_graph">
+            <field name="name">product.month.graph</field>
+            <field name="model">poi.purchase.imports.report</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase Orders Statistics">
+                    <field name="product_cost_id" type="row"/>
+                    <field name="orden" type="col"/>
+                    <field name="costo" type="measure"/>
+                    <field name="costo_usd" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_poi_purchase_imports_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">poi.purchase.imports.report</field>
+            <field name="arch" type="xml">
+                <search string="Purchase Orders">
+                    <field name="orden"/>
+                    <field name="product_cost_id"/>
+                    <field name="country_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Orden" name="group_orden" context="{'group_by':'orden'}"/>
+                        <filter string="Concepto" name="group_category" context="{'group_by':'category'}"/>
+                        <filter string="Producto" name="group_product_cost_id" context="{'group_by':'product_cost_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_poi_purchase_imports_report_report_all" model="ir.actions.act_window">
+            <field name="name">Reporte Importaciones</field>
+            <field name="res_model">poi.purchase.imports.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Análisis de importaciones y gastos</field>
+        </record>
+
+        <menuitem id="base.poi_purchase_report" parent="poi_purchase_imports.menu_purchase_imports" sequence="99"
+            groups="purchase.group_purchase_manager,stock.group_stock_user" action="action_poi_purchase_imports_report_report_all"/>
+
+        <!-- Report Tree -->
+
+        <record model="ir.ui.view" id="view_poi_purchase_imports_report_tree">
+            <field name="name">poi.purchase.imports.report.tree</field>
+            <field name="model">poi.purchase.imports.report</field>
+            <field name="arch" type="xml">
+                <tree string="Reporte Importaciones Lista">
+                    <field name="orden"/>
+                    <field name="category"/>
+                    <field name="proveedor"/>
+                    <field name="invoice_id"/>
+                    <field name="product_cost_id"/>
+                    <!--<field name="order_id"/>-->
+                    <field name="partner_id"/>
+                    <field name="country_id"/>
+                    <!--<field name="product_id"/>-->
+                    <!--<field name="movimiento"/>-->
+                    <field name="product_qty"/>
+                    <field name="price_unit"/>
+                    <field name="price_unit_usd"/>
+                    <field name="total"/>
+                    <field name="total_usd"/>
+                    <field name="costo"/>
+                    <field name="costo_usd"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_poi_purchase_imports_report_all" model="ir.actions.act_window">
+            <field name="name">Reporte Importaciones Lista</field>
+            <field name="res_model">poi.purchase.imports.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="help">Reporte de Importaciones en modo lista</field>
+        </record>
+
+        <menuitem id="base.poi_purchase_report_tree" parent="poi_purchase_imports.menu_purchase_imports" sequence="99"
+            groups="purchase.group_purchase_manager,stock.group_stock_user" action="action_poi_purchase_imports_report_all"/>
+
+    </data>
+</openerp>

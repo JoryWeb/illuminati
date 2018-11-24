@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+        <!-- Vista Cubo -->
+        <record model="ir.ui.view" id="view_poi_product_prices_report_graph">
+            <field name="name">poi.cuadre.account.module.graph</field>
+            <field name="model">poi.cuadre.account.module</field>
+            <field name="arch" type="xml">
+                <graph string="Cuadre Contabilidad-Módulos" type="pivot">
+                    <field name="period_id" type="row"/>
+                    <field name="account_id" type="row"/>
+                    <field name="check" type="row"/>
+                    <field name="type_trans" type="col"/>
+                    <field name="saldo" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <!-- Vista Lista -->
+        <record model="ir.ui.view" id="poi_report_cuadre_account_module_tree">
+            <field name="name">poi.cuadre.account.module.tree</field>
+            <field name="model">poi.cuadre.account.module</field>
+            <field name="arch" type="xml">
+                <tree string="Cuadre Contabilidad-Módulos" colors="red:check!='OK'" fonts="italic:type_trans=='_no_module_'">
+                    <field name="id" invisible="1"/>
+                    <field name="check"/>
+                    <field name="period_id"/>
+					<field name="date_move"/>
+                    <field name="move_id"/>
+                    <button name="launch_move" type="object" string="Ver Asiento Contable" icon="STOCK_FIND" attrs="{'invisible': [('id','&lt;=',0)]}"/>
+                    <field name="name"/>
+					<field name="journal_id" invisible="1"/>
+                    <field name="partner_id" invisible="1"/>
+                    <field name="account_id"/>
+                    <field name="account_type" invisible="1"/>
+                    <field name="debit" sum="debit_total" />
+                    <field name="credit" sum="credit_total" />
+                    <field name="saldo" sum="saldo_total"/>
+                    <field name="reconcile_ref"/>
+                    <field name="state"/>
+                    <field name="type_trans"/>
+                    <field name="date_trans"/>
+                    <field name="name_trans"/>
+                    <field name="invoice_id" invisible="1"/>
+                    <field name="voucher_id" invisible="1"/>
+                    <field name="statement_id" invisible="1"/>
+                    <button name="launch_form" type="object" string="Ver Transacción modular" icon="STOCK_FIND" attrs="{'invisible': [('id','&lt;=',0)]}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- search -->
+        <record id="poi_report_cuadre_modular_search" model="ir.ui.view">
+            <field name="name">poi.cuadre.account.module.search</field>
+            <field name="model">poi.cuadre.account.module</field>
+            <field name="arch" type="xml">
+                <search string="Cuadre Modular">
+                    <field name="period_id"/>
+                    <field name="account_id"/>
+                    <field name="journal_id"/>
+                    <group string="Filtros">
+                    <filter string="xCobrar/Pagar" name="ver_cxcp"
+                        domain="[('account_type','in',('receivable','payable'))]" help="Ver sólo Cuentas por Cobrar/Pagar"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter name="group_check" string="VoBo" domain="[]" context="{'group_by':'check'}"/>
+                        <filter name="group_period" string="Período" domain="[]" context="{'group_by':'period_id'}"/>
+                        <filter name="group_trans" string="Transacción" domain="[]" context="{'group_by':'type_trans'}"/>
+                        <filter name="group_account" string="Cuenta" domain="[]" context="{'group_by':'account_id'}"/>
+                        <filter name="group_state" string="Estado" domain="[]" context="{'group_by':'state'}"/>
+                        <filter name="group_partner" string="Empresa" domain="[]" context="{'group_by':'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Accion -->
+        <record model="ir.actions.act_window" id="action_poi_cuadre_modular">
+            <field name="name">Cuadre Contable-Modular</field>
+            <field name="res_model">poi.cuadre.account.module</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,graph</field>
+            <field name="context">{ "search_default_group_check":1, "search_default_group_period":1, "search_default_group_account":1, "search_default_ver_cxcp":1}</field>
+            <field name="view_id"  ref="poi_report_cuadre_account_module_tree"/>
+        </record>
+
+
+        <menuitem id="menu_cuadre_modular" parent="account.menu_finance_reporting" action="action_poi_cuadre_modular" string="Cuadre Contable-Modular" sequence="50" groups="account.group_account_invoice"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="action_poi_ufv_inventory" model="ir.actions.act_window">
+            <field name="name">Actualización UFV</field>
+            <field name="res_model">poi.ufv.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Clic en Crear para generar un registro de valoración
+                    de inventarios UFV
+                </p>
+                <p>
+                    Puede Utulizar esta opción para valorar el inventario
+                </p>
+                <p>
+                    Aplicado a inventarios
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_poi_ufv_inventory"
+                  action="action_poi_ufv_inventory"
+                  parent="account.menu_finance_entries"/>
+
+        <record id="view_poi_ufv_inventory_tree" model="ir.ui.view">
+            <field name="name">poi.ufv.inventory.tree</field>
+            <field name="model">poi.ufv.inventory</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase cost distributions">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="date"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                    <field name="ufv_inicial"/>
+                    <field name="ufv_final"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="poi_ufv_inventory_form" model="ir.ui.view">
+            <field name="name">poi.ufv.inventory.form</field>
+            <field name="model">poi.ufv.inventory</field>
+            <field name="arch" type="xml">
+                <form string="Purchase cost distribution">
+                    <header>
+                        <button name="apply_ufv_cost"
+                                string="Calcular y Contabilizar"
+                                states="calculated"
+                                type="object"
+                                class="oe_highlight"/>
+                        <button name="action_cancel"
+                                string="Cancelar"
+                                states="calculated"
+                                type="object"
+                                class="oe_highlight"/>
+                        <field name="state"
+                               widget="statusbar"
+                               statusbar_visible="draft,calculated,done"
+                               statusbar_colors='{"cancel": "black", "done": "blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label string="Ufv Actualización"/>
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <!--<div class="oe_button_box" position="inside">
+                            <button class="oe_stat_button"
+                                    name="action_open_report_line"
+                                    icon="fa-signal"
+                                    type="object"
+                                    string="Gráfico">
+                            </button>
+                            <button class="oe_stat_button"
+                                    name="action_open_report_pivot"
+                                    icon="fa-table"
+                                    type="object"
+                                    string="Pivote">
+                            </button>
+                        </div>-->
+                        <group>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="ufv_final"/>
+                                <field name="account_move_id"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="user_id"/>
+                                <field name="journal_id"/>
+                                <field name="product_id" domain="[('landed_cost_ok', '=', True)]"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Inventario">
+                                <button name="import_stock"
+                                        string="Importar Stock"
+                                        type="object"
+                                        icon="fa-file-o"
+                                        states="draft"
+                                />
+                                <field name="product_lines">
+                                    <form string="Stock Actual">
+                                        <group>
+                                            <group>
+                                                <field name="ufv_inicial"/>
+                                                <field name="ufv_final"/>
+                                                <field name="name"/>
+                                                <field name="date_purchase"/>
+                                                <field name="product_id"/>
+                                                <field name="move_id"/>
+                                                <field name="location_id"/>
+                                                <field name="qty"/>
+                                                <field name="method"/>
+                                                <field name="price_unit"/>
+                                                <field name="cost_total"/>
+                                                <field name="price_unit_ufv"/>
+                                                <field name="cost_total_ufv"/>
+                                                <field name="amount_adjustment"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                    <tree string="Lineas de Inventario" editable="bottom">
+                                        <field name="ufv_inicial" invisible="1"/>
+                                        <field name="ufv_final" invisible="1"/>
+                                        <field name="name" invisible="1"/>
+                                        <field name="date_purchase"/>
+                                        <field name="product_id"/>
+                                        <field name="move_id"/>
+                                        <field name="move_line_id" invisible="1"/>
+                                        <field name="location_id"/>
+                                        <field name="qty"/>
+                                        <field name="method" invisible="1"/>
+                                        <field name="price_unit"/>
+                                        <field name="cost_total"/>
+                                        <field name="price_unit_ufv"/>
+                                        <field name="cost_total_ufv"/>
+                                        <field name="amount_adjustment"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <div class="oe_clear"/>
+                        <field name="note"
+                               class="oe_inline"
+                               placeholder="Notas actualización UFV..."/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_poi_ufv_inventory_line_search" model="ir.ui.view">
+            <field name="name">poi.ufv.inventory.line.search</field>
+            <field name="model">poi.ufv.inventory.line</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Busqueda">
+                    <field name="name"/>
+                    <group expand="1" string="Group By...">
+                        <filter string="Usuario" icon="terp-personal" name="user_id" context="{'group_by':'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_poi_ufv_inventory_line_graph" model="ir.ui.view">
+            <field name="name">poi.ufv.inventory.line.graph</field>
+            <field name="model">poi.ufv.inventory.line</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <graph string="Analisis Plan Anual" type="line">
+                    <field name="date_purchase" interval="month" type="row"/>
+                    <field name="cost_total_ufv" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_poi_ufv_inventory_line" model="ir.actions.act_window">
+            <field name="name">Lineas UFV Inventarios</field>
+            <field name="res_model">poi.ufv.inventory.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Clic en crear para definir plan anual
+                </p>
+                <p>
+                    Para Analisis Comercial
+                </p>
+                <p>
+                    Pedidos establecidos para análisis comercial
+                </p>
+            </field>
+        </record>
+
+        <!--<menuitem id="menu_poi_ufv_inventory_line"
+                  action="action_poi_ufv_inventory_line"
+                  parent="account.menu_finance_entries"/>-->
+
+        <record id="action_poi_ufv_inventory_line_graph" model="ir.actions.act_window">
+            <field name="name">Lineas</field>
+            <field name="res_model">poi.ufv.inventory.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_poi_ufv_inventory_line_graph"/>
+            <field name="search_view_id" ref="view_poi_ufv_inventory_line_search"/>
+            <field name="context">{'search_default_group_date_purchase':1,'graph_mode':'line', 'graph_measure':'qty'}
+            </field>
+        </record>
+
+        <!--<menuitem id="menu_poi_ufv_inventory_line_graph"
+                  action="action_poi_ufv_inventory_line_graph"
+                  parent="account.menu_finance_entries"/>-->
+
+
+        <record id="view_poi_ufv_inventory_tree" model="ir.ui.view">
+            <field name="name">poi.ufv.inventory.line.tree</field>
+            <field name="model">poi.ufv.inventory.line</field>
+            <field name="arch" type="xml">
+                <tree string="Pla Anual Lineas">
+                    <field name="ufv_inicial"/>
+                    <field name="ufv_final"/>
+                    <field name="date_purchase"/>
+                    <field name="product_id"/>
+                    <field name="move_id"/>
+                    <field name="move_line_id"/>
+                    <field name="lot_id"/>
+                    <field name="location_id"/>
+                    <field name="qty"/>
+                    <field name="method"/>
+                    <field name="price_unit"/>
+                    <field name="cost_total"/>
+                    <field name="price_unit_ufv"/>
+                    <field name="cost_total_ufv"/>
+                    <field name="amount_adjustment"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_poi_ufv_inventory_line_pivot">
+            <field name="name">poi.ufv.inventory.pivot</field>
+            <field name="model">poi.ufv.inventory.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Actualización UFV">
+                    <field name="product_id" type="row"/>
+                    <field name="date_purchase" interval="month" type="col"/>
+                    <field name="cost_total_ufv" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,1702 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_account_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-30 20:24+0000\n"
+"PO-Revision-Date: 2017-05-30 20:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "$us."
+msgstr "$us."
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:381
+#, python-format
+msgid "%s - %s days ago"
+msgstr "%s - %s días atras"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:85
+#, python-format
+msgid "&times;"
+msgstr "&veces;"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:253
+#, python-format
+msgid "(As of %s)"
+msgstr "(hasta of %s)"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "(Expresado en Bs)"
+msgstr "(Expresado en Bs)"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:254
+#, python-format
+msgid "(From %s <br/> to  %s)"
+msgstr "(Desde %s <br/> hasta  %s)"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:388
+#, python-format
+msgid "(as of %s)"
+msgstr "(hasta of %s)"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "<i>Bs.</i>"
+msgstr "<i>Bs.</i>"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "<i>Hoja : 1</i>"
+msgstr "<i>Hoja : 1</i>"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "<i>Tipo de Cambio :</i>"
+msgstr "<i>Tipo de Cambio :</i>"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_financial_html_report_context
+#: model:ir.model,name:poi_account_reports.model_account_report_context_common
+msgid "A particular context for a financial report"
+msgstr "Contexto particular de reporte financiero"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_context_coa
+msgid "A particular context for the chart of account"
+msgstr "Contexto particular de Plan contable"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_context_general_ledger
+msgid "A particular context for the general ledger"
+msgstr "Contexto particular para el libro mayor"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "APROBADO POR"
+msgstr "APROBADO POR"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_financial_html_report
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_form
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_search
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_tree
+msgid "Account Report"
+msgstr "Informe financiero"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_financial_html_report_line
+msgid "Account Report Line"
+msgstr "Línea de informe de cuentas"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_search
+msgid "Account Report Lines"
+msgstr "Líneas de Reporte"
+
+#. module: poi_account_reports
+#: model:ir.actions.act_window,name:poi_account_reports.action_account_financial_report_line_tree
+#: model:ir.ui.menu,name:poi_account_reports.menu_account_financial_report_line_tree
+msgid "Accounting Report Lines"
+msgstr "Líneas de Reporte Contable"
+
+#. module: poi_account_reports
+#: model:ir.ui.menu,name:poi_account_reports.poi_account_reports_menu
+msgid "Accounting Reports"
+msgstr "Reportes Contables"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:199
+#, python-format
+msgid "Accounts with Movement Only"
+msgstr "Únicamente cuentas con movimiento"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_action_id
+msgid "Action id"
+msgstr "Id de acción"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:198
+#, python-format
+msgid "All Accounts"
+msgstr "Todas las cuentas"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_financial_html_report_xml_export
+msgid "All the xml exports available for the financial reports"
+msgstr "Todos los xml exportables disponibles para informes financieros"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_multi_company
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_multi_company
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_multi_company
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_multi_company
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_multi_company
+msgid "Allow multi-company"
+msgstr "Permitir multi-compañía"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,show_domain:0
+msgid "Always"
+msgstr "Siempre"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_report_type
+msgid "Analysis Periods"
+msgstr "Períodos de análisis"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_analytic_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_analytic_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_analytic_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_analytic_manager_id
+msgid "Analytic Accounts Manager"
+msgstr "Administrador de Cuentas Analíticas"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:219
+#, python-format
+msgid "Analytic Accounts:"
+msgstr "Cuentas Analíticas:"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:253
+#, python-format
+msgid "Analytic Categories:"
+msgstr "Categorías Analíticas:"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_analytic_tag_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_analytic_tag_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_analytic_tag_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_analytic_tag_manager_id
+msgid "Analytic Tags Manager"
+msgstr "Administrador de Etiquetas Analíticas"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_analytic_ids
+msgid "Analytic ids"
+msgstr "Ids Analíticos"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_analytic_tag_ids
+msgid "Analytic tag ids"
+msgstr "Analytic tag ids"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Analítica"
+msgstr "Analítica"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:159
+#: model:ir.ui.view,arch_db:poi_account_reports.report_financial_line
+#, python-format
+msgid "Annotate"
+msgstr "Anotar"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:113
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:143
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:155
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:182
+#, python-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:258
+#, python-format
+msgid "April"
+msgstr "Abril"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,special_date_changer:0
+msgid "At the beginning of the period"
+msgstr "Al principio del período"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:259
+#, python-format
+msgid "August"
+msgstr "Agosto"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_available_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_available_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_available_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_available_analytic_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_available_analytic_ids
+msgid "Available analytic ids"
+msgstr "Ids Analíticas disponibles"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_available_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_available_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_available_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_available_analytic_tag_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_available_analytic_tag_ids
+msgid "Available analytic tag ids"
+msgstr "Available analytic tag ids"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_available_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_available_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_available_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_available_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_available_company_ids
+msgid "Available company ids"
+msgstr "Ids disponibles en la compañía"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_available_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_available_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_available_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_available_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_available_segment_ids
+msgid "Available segment ids"
+msgstr "Ids Segmentos Disponibles"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#, python-format
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report,report_type:0
+msgid "Based on a single date"
+msgstr "Basado en una sóla fecha"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report,report_type:0
+msgid "Based on date ranges"
+msgstr "Basado en rangos de fechas"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report,report_type:0
+msgid "Based on date ranges with 'older' and 'total' columns and last 3 months"
+msgstr "Basado en rangos de fechas, con columnas 'antiguo' y 'total', de los últimos tres meses"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report,report_type:0
+msgid "Bases on date ranges and cash basis method"
+msgstr "Basado en rango de fechas y método de la base del efectivo"
+
+#. module: poi_account_reports
+#: model:ir.ui.menu,name:poi_account_reports.account_reports_business_statements_menu
+msgid "Business Statements"
+msgstr "Declaraciones Comerciales"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "C u e n t a"
+msgstr "C u e n t a"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "COMPROBANTE N°:"
+msgstr "COMPROBANTE N°:"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_coa.py:85
+#, python-format
+msgid "Chart of Account"
+msgstr "Plan contable"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_coa_report
+msgid "Chart of Account Report"
+msgstr "Reporte de Plan de Cuentas"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_children_ids
+msgid "Children"
+msgstr "Hijos"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_form
+msgid "Children Lines"
+msgstr "Líneas Hijas"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_coa.py:63
+#, python-format
+msgid "Class %s"
+msgstr "Clase %s"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:64
+#: model:ir.ui.view,arch_db:poi_account_reports.report_financial_body
+#, python-format
+msgid "Click to add an introductory explanation"
+msgstr "Clic par agregar una explicación introductoria"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_client_action_id
+msgid "Client Action"
+msgstr "Acción cliente"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:86
+#, python-format
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_code
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_search
+msgid "Code"
+msgstr "Código"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_column
+msgid "Column"
+msgstr "Columna"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#, python-format
+msgid "Communication"
+msgstr "Comunicación"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:270
+#, python-format
+msgid "Companies:"
+msgstr "Compañías:"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_company_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_company_ids
+msgid "Company ids"
+msgstr "Ids de Compañía"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_date_filter_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_date_filter_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_date_filter_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_date_filter_cmp
+msgid "Comparison date filter used"
+msgstr "Filtro de comparación de fecha usado"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:120
+#, python-format
+msgid "Comparison:"
+msgstr "Comparación:"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:289
+#, python-format
+msgid "Comparison<br />"
+msgstr "Comparación<br />"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_form
+msgid "Computation"
+msgstr "Cálculo"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Concepto :"
+msgstr "Concepto :"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_form
+msgid "Cosmetics"
+msgstr "Cosmeticos"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_form
+msgid "Create Menu"
+msgstr "Crear menú"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_create_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_create_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_financial_report.py:703
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#: code:addons/poi_account_reports/models/account_report_coa.py:109
+#: code:addons/poi_account_reports/models/account_report_coa.py:111
+#: code:addons/poi_account_reports/models/account_report_coa.py:114
+#, python-format
+msgid "Credit"
+msgstr "Haber"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_currency_id
+#, python-format
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:37
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:84
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:125
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:159
+#, python-format
+msgid "Custom"
+msgstr "Personalizado"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:104
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:174
+#, python-format
+msgid "Date :"
+msgstr "Fecha :"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_date_filter
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_date_filter
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_date_filter
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_date_filter
+msgid "Date filter used"
+msgstr "Filtro de fecha usado"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,help:poi_account_reports.field_account_move_line_next_action_date
+msgid "Date where the next action should be taken for a receivable item. Usually, automatically set when sending reminders through the customer statement."
+msgstr "Fecha cuando la siguiente acción debe ser tomada para un ítem cobrable. Usualmente, se asigna automáticamente cuando se envían recordatorios a través del estado de cuenta del cliente."
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:29
+#, python-format
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Debe"
+msgstr "Debe"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_financial_report.py:703
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#: code:addons/poi_account_reports/models/account_report_coa.py:109
+#: code:addons/poi_account_reports/models/account_report_coa.py:111
+#: code:addons/poi_account_reports/models/account_report_coa.py:114
+#, python-format
+msgid "Debit"
+msgstr "Debe"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:259
+#, python-format
+msgid "December"
+msgstr "Diciembre"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_display_analytic
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_display_analytic
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_display_analytic
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_display_analytic
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_display_analytic
+msgid "Display Analytic Filter"
+msgstr "Mostrar Filtro Analítico"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_display_analytic_tags
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_display_analytic_tags
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_display_analytic_tags
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_display_analytic_tags
+msgid "Display Analytic Tag Filter"
+msgstr "Display Analytic Tag Filter"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_display_analytic_tags
+msgid "Display Analytic Tags"
+msgstr "Display Analytic Tags"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_coa_report_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_xml_export_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_general_ledger_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_display_name
+#: model:ir.model.fields,field_description:poi_account_reports.field_report_poi_account_reports_account_asset_report_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_display_segments
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_display_segments
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_display_segments
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_display_segments
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_display_segments
+msgid "Display Segments Filter"
+msgstr "Mostrar Filtro de Segmentos"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_domain
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:215
+#, python-format
+msgid "Don't follow-up before :"
+msgstr "No enviar seguimiento antes de:"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "ELABORADO POR"
+msgstr "ELABORADO POR"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:7
+#, python-format
+msgid "EXPORT (XLS)"
+msgstr "EXPORT (XLS)"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_cash_basis
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_cash_basis
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_cash_basis
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_cash_basis
+msgid "Enable cash basis columns"
+msgstr "Habilitar columnas de base del efectivo"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_comparison
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_comparison
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_comparison
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_comparison
+msgid "Enable comparison"
+msgstr "Habilitar comparación"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:101
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:172
+#, python-format
+msgid "End Date :"
+msgstr "Fecha Final :"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_date_to
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_date_to
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_date_to
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_date_to
+msgid "End date"
+msgstr "Fecha final"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_date_to_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_date_to_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_date_to_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_date_to_cmp
+msgid "End date for comparison"
+msgstr "Fecha final de comparación"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:55
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:56
+#, python-format
+msgid "End of Last Financial Year"
+msgstr "Fecha de Fin de Año Financiero"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:47
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:48
+#, python-format
+msgid "End of Last Month"
+msgstr "Fecha del último mes"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:51
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:52
+#, python-format
+msgid "End of Last Quarter"
+msgstr "Fecha del último trimestre"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:17
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:192
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_move_line_expected_pay_date
+#, python-format
+msgid "Expected Payment Date"
+msgstr "Fecha esperada de pago"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,help:poi_account_reports.field_account_move_line_expected_pay_date
+msgid "Expected payment date as manually set through the customer statement (e.g: if you had the customer on the phone and want to remember the date he promised he would pay)"
+msgstr "La fecha esperada de pago es asignada manualmente a través de estado de cuenta del cliente(p.e: si usted tiene a un cliente en el teléfono y quiere recordarle la fecha en que él ha prometido que le pagará)"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "FOLIO N°:"
+msgstr "FOLIO N°:"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:258
+#, python-format
+msgid "February"
+msgstr "Febrero"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Fecha : La Paz,"
+msgstr "Fecha : La Paz,"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Fecha realizada:"
+msgstr "Fecha realizada:"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_financial_report_id
+msgid "Financial Report"
+msgstr "Informe financiero"
+
+#. module: poi_account_reports
+#: model:ir.actions.act_window,name:poi_account_reports.action_account_financial_report_tree
+#: model:ir.ui.menu,name:poi_account_reports.menu_account_financial_reports_tree
+msgid "Financial Reports"
+msgstr "Informes financieros"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,figure_type:0
+msgid "Float"
+msgstr "Número flotante"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,show_domain:0
+msgid "Foldable"
+msgstr "Plegable"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_report_footnote
+msgid "Footnote for reports"
+msgstr "Pie de Página para Reportes"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_footnotes
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_footnotes
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_footnotes
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_footnotes
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_footnotes
+msgid "Footnotes"
+msgstr "Píes de Pagina"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_footnotes_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_footnotes_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_footnotes_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_footnotes_manager_id
+msgid "Footnotes Manager"
+msgstr "Administrador de Píes de Página"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,help:poi_account_reports.field_account_financial_html_report_report_type
+msgid "For report like the balance sheet that do not work with date ranges"
+msgstr "Para reportes como el balance general que no trabajan con rangos de fechas"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,special_date_changer:0
+msgid "Force given dates for all accounts and account types"
+msgstr "Forzar fechas para todas las cuentas y tipos de cuenta"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_formulas
+msgid "Formulas"
+msgstr "Fórmulas"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,special_date_changer:0
+msgid "From the beginning"
+msgstr "Desde el inicio"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "G l o s a"
+msgstr "G l o s a"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/models/account_general_ledger.py:240
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:143
+#: model:ir.actions.client,name:poi_account_reports.action_account_general_ledger_force_account
+#: model:ir.actions.client,name:poi_account_reports.action_account_report_general_ledger
+#: model:ir.ui.menu,name:poi_account_reports.menu_action_account_report_general_ledger
+#: model:ir.ui.view,arch_db:poi_account_reports.report_financial_line
+#, python-format
+msgid "General Ledger"
+msgstr "Libro mayor"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_general_ledger
+msgid "General Ledger Report"
+msgstr "Informe del libro mayor"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_groupby
+msgid "Group by"
+msgstr "Agrupar por"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Haber"
+msgstr "Haber"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_hide_if_zero
+msgid "Hide if zero"
+msgstr "Ocultar si es cero"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_coa_report_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_xml_export_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_general_ledger_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_report_poi_account_reports_account_asset_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:213
+#, python-format
+msgid "Include Accounts without Movements"
+msgstr "Incluir Cuentas sin Movimiento"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:209
+#, python-format
+msgid "Include Unposted Entries"
+msgstr "Incluir no asentados"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:212
+#, python-format
+msgid "Include non moved accounts"
+msgstr "Incluir cuentas sin movimiento"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:208
+#, python-format
+msgid "Include unposted entries"
+msgstr "Incluir no asentados"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:212
+#, python-format
+msgid "Initial Balance"
+msgstr "Saldo inicial"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:9
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:226
+#, python-format
+msgid "Insert foot note here"
+msgstr "Insertar Píe de Página aquí"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:195
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:219
+#, python-format
+msgid "Insert note here"
+msgstr "Insertar nota aquí"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_move_line_internal_note
+msgid "Internal Note"
+msgstr "Nota interna"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_green_on_positive
+msgid "Is growth good when positive"
+msgstr "Es buen crecimiento cuando es positivo"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:258
+#, python-format
+msgid "January"
+msgstr "Enero"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_move_line
+msgid "Journal Item"
+msgstr "Journal Item"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:259
+#, python-format
+msgid "July"
+msgstr "Julio"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:258
+#, python-format
+msgid "June"
+msgstr "Junio"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:78
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:79
+#, python-format
+msgid "Last Financial Year"
+msgstr "Último año financiero"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_coa_report___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_xml_export___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_general_ledger___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager___last_update
+#: model:ir.model.fields,field_description:poi_account_reports.field_report_poi_account_reports_account_asset_report___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:32
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:70
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:71
+#, python-format
+msgid "Last Month"
+msgstr "Último Mes"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:33
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:74
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:75
+#, python-format
+msgid "Last Quarter"
+msgstr "Último Trimestre"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_write_uid
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_manager_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_analytic_tag_manager_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnotes_manager_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_multicompany_manager_write_date
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:34
+#, python-format
+msgid "Last Year"
+msgstr "Último Año"
+
+#. module: poi_account_reports
+#: model:ir.ui.menu,name:poi_account_reports.account_reports_legal_statements_menu
+msgid "Legal Statements"
+msgstr "Declaraciones legales"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_level
+msgid "Level"
+msgstr "Nivel"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_search
+msgid "Line Name"
+msgstr "Nombre de Línea"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_ids
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_report_id
+msgid "Linked financial report"
+msgstr "Reporte financiero vinculado"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_form
+msgid "Main Info"
+msgstr "Información principal"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_manager_id
+msgid "Manager id"
+msgstr "ID del Administrador"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:258
+#, python-format
+msgid "March"
+msgstr "Marzo"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:258
+#, python-format
+msgid "May"
+msgstr "Mayo"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_menu_id
+msgid "Menu"
+msgstr "Menú"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_menuitem_created
+msgid "Menu Has Been Created"
+msgstr "El menú ha sido creado"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_parent_id
+msgid "Menu Padre"
+msgstr "Menu Padre"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_multicompany_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_multicompany_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_multicompany_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_multicompany_manager_id
+msgid "Multi-company Manager"
+msgstr "Administrador Multi-compañia"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.report_financial_line
+msgid "Net Audit"
+msgstr "Net Audit"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,show_domain:0
+msgid "Never"
+msgstr "Nunca"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_move_line_next_action_date
+msgid "Next Action Date"
+msgstr "Fecha de la próxima acción"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_next_footnote_number
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_next_footnote_number
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_next_footnote_number
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_next_footnote_number
+msgid "Next footnote number"
+msgstr "Siguiente número de nota"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:130
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:131
+#, python-format
+msgid "No Comparison"
+msgstr "Sin comparación"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,figure_type:0
+msgid "No Unit"
+msgstr "Sin unidad"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:88
+#, python-format
+msgid "No fiscal year was found. Using the current civil year."
+msgstr "No se encontró el año fiscal . Utilizando el actual año civil."
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_financial_report.py:701
+#, python-format
+msgid "Non-issued"
+msgstr "Sin incidencia"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:122
+#, python-format
+msgid "None"
+msgstr "Ninguno"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:194
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:217
+#, python-format
+msgid "Note"
+msgstr "Nota"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,help:poi_account_reports.field_account_move_line_internal_note
+msgid "Note you can set through the customer statement about a receivable journal item"
+msgstr "Note que usted puede fijar un elemento recibible del diario a través del extracto del cliente"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:259
+#, python-format
+msgid "November"
+msgstr "Noviembre"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_number
+msgid "Number"
+msgstr "Número"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_periods_number
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_periods_number
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_periods_number
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_periods_number
+msgid "Number of periods"
+msgstr "Número de periodos"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:139
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:151
+#, python-format
+msgid "Number of periods :"
+msgstr "Número de periodos:"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:259
+#, python-format
+msgid "October"
+msgstr "Octubre"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_financial_report.py:711
+#, python-format
+msgid "Older"
+msgstr "Más Antiguos"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:208
+#, python-format
+msgid "One month"
+msgstr "Un mes"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:202
+#, python-format
+msgid "One week"
+msgstr "Una semana"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,help:poi_account_reports.field_account_financial_html_report_context_report_id
+msgid "Only if financial report"
+msgstr "Sólo si la información financiera"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:189
+#, python-format
+msgid "Options:"
+msgstr "Opciones:"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:6
+#, python-format
+msgid "PRINT PREVIEW"
+msgstr "VISTA PREVIA DE IMPRESIÓN"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "Page:"
+msgstr "Página:"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_parent_id
+msgid "Parent"
+msgstr "Padre"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:266
+#, python-format
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,figure_type:0
+msgid "Percents"
+msgstr "Porcentajes"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:30
+#, python-format
+msgid "Period:"
+msgstr "Período:"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:196
+#, python-format
+msgid "Posted Entries Only"
+msgstr "Solo Movimientos Asentados"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:135
+#, python-format
+msgid "Previous Period"
+msgstr "Periodo Previo"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:123
+#, python-format
+msgid "Previous Periods"
+msgstr "Periodos Previos"
+
+#. module: poi_account_reports
+#: model:ir.actions.report.xml,name:poi_account_reports.account_asset_report_move
+msgid "Print Assets"
+msgstr "Imprimir Comprobante"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:246
+#: code:addons/poi_account_reports/models/account_report_context_common.py:334
+#, python-format
+msgid "Quarter #"
+msgstr "Trimestre #"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "REVISADO POR"
+msgstr "REVISADO POR"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_form
+msgid "Report Line"
+msgstr "Reporte Línea"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_form
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_line_tree
+msgid "Report Lines"
+msgstr "Reporte Líneas"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_search
+msgid "Report Type"
+msgstr "Tipo de informe"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "SON :"
+msgstr "SON :"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:124
+#, python-format
+msgid "Same Last Year"
+msgstr "Mismo Mes Año Pasado"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:147
+#, python-format
+msgid "Same Period Last Year"
+msgstr "Mismo Periodo Año Pasado"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:10
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:72
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:98
+#, python-format
+msgid "Save"
+msgstr "Guardar"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_second_currency_id
+msgid "Second Currency"
+msgstr "Moneda Secundaria"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_name
+msgid "Section Name"
+msgstr "Nombre Sección"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_segment_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_segment_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_segment_manager_id
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_segment_manager_id
+msgid "Segment Accounts Manager"
+msgstr "Administrador de Segmentos"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_segment_ids
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_segment_manager_segment_ids
+msgid "Segment ids"
+msgstr "Segmentos"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:236
+#, python-format
+msgid "Segments:"
+msgstr "Segmentos:"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:259
+#, python-format
+msgid "September"
+msgstr "Septiembre"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_debit_credit
+msgid "Show Credit and Debit Columns"
+msgstr "Mostrar Columnas de Credito y Debito"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_show_domain
+msgid "Show domain"
+msgstr "Mostrar dominio"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_special_date_changer
+msgid "Special date changer"
+msgstr "Cambiador fecha especial"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:90
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:163
+#, python-format
+msgid "Start Date :"
+msgstr "Fecha de Inicio:"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_date_from
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_date_from
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_date_from
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_date_from
+msgid "Start date"
+msgstr "Fecha inicial"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_date_from_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_date_from_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_date_from_cmp
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_date_from_cmp
+msgid "Start date for comparison"
+msgstr "Fecha de inicio para la comparación"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_summary
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_summary
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_summary
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_summary
+msgid "Summary"
+msgstr "Resumen"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "TOTALES: Bs."
+msgstr "TOTALES: Bs."
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_target_id
+msgid "Target id"
+msgstr "ID de destino"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.view_account_financial_report_form
+msgid "Technical Data"
+msgstr "Información Técnica"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_text
+msgid "Text"
+msgstr "Texto"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_financial_report.py:279
+#: code:addons/poi_account_reports/models/account_financial_report.py:451
+#, python-format
+msgid "The principal currency is not set"
+msgstr "La moneda principal no está configurada"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:229
+#, python-format
+msgid "There are more than 80 items in this list, click here to see all of them"
+msgstr "Hay más de 80 artículos en esta lista, haga clic aquí para verlos todos"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:65
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:66
+#, python-format
+msgid "This Financial Year"
+msgstr "Este Año Financiero"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:36
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:61
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:62
+#, python-format
+msgid "This Month"
+msgstr "Este mes"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:35
+#, python-format
+msgid "This Year"
+msgstr "Este año"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:31
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:43
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:44
+#, python-format
+msgid "Today"
+msgstr "Hoy"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_financial_report.py:420
+#: code:addons/poi_account_reports/models/account_financial_report.py:519
+#: code:addons/poi_account_reports/models/account_financial_report.py:711
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_general_ledger.py:220
+#, python-format
+msgid "Total "
+msgstr "Total"
+
+#. module: poi_account_reports
+#: model:ir.actions.client,name:poi_account_reports.action_account_report_coa
+#: model:ir.ui.menu,name:poi_account_reports.menu_action_account_report_coa
+msgid "Trial Balance"
+msgstr "Balance de sumas y saldos"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:211
+#, python-format
+msgid "Two months"
+msgstr "Dos meses"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:205
+#, python-format
+msgid "Two weeks"
+msgstr "Dos semanas"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_line_figure_type
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_footnote_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_unfolded_accounts
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_unfolded_accounts
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_unfolded_lines
+msgid "Unfolded lines"
+msgstr "Líneas desplegadas"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_all_accounts
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_all_accounts
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_all_accounts
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_all_accounts
+msgid "Use all accounts (not only with movement ones)"
+msgstr "Usar todas las cuentas (no únicamente las que tienen movimiento)"
+
+#. module: poi_account_reports
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_coa_all_entries
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_context_general_ledger_all_entries
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_financial_html_report_context_all_entries
+#: model:ir.model.fields,field_description:poi_account_reports.field_account_report_context_common_all_entries
+msgid "Use all entries (not only posted ones)"
+msgstr "Utilice todas las entradas (no solo los publicados)"
+
+#. module: poi_account_reports
+#: selection:account.financial.html.report.line,special_date_changer:0
+msgid "Use given dates"
+msgstr "Utilice fechas dadas"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_move_line.py:54
+#, python-format
+msgid "View Bank Statement"
+msgstr "Ver Extracto Bancario"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_move_line.py:59
+#, python-format
+msgid "View Invoice"
+msgstr "Ver factura"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:155
+#: model:ir.ui.view,arch_db:poi_account_reports.report_financial_line
+#, python-format
+msgid "View Journal Entry"
+msgstr "Ver Asiento Contable"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_move_line.py:60
+#, python-format
+msgid "View Move"
+msgstr "Ver Movimiento"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_move_line.py:56
+#, python-format
+msgid "View Payment"
+msgstr "Ver Pagos"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_financial_line.xml:88
+#, python-format
+msgid "Warning!"
+msgstr "¡Aviso!"
+
+#. module: poi_account_reports
+#. openerp-web
+#: code:addons/poi_account_reports/static/src/xml/account_report_backend.xml:195
+#, python-format
+msgid "With Draft Entries"
+msgstr "Con Movimientos Borrador"
+
+#. module: poi_account_reports
+#: model:ir.ui.view,arch_db:poi_account_reports.account_asset_report_document
+msgid "_______________\n"
+"                                <br/>"
+msgstr "_______________\n"
+"                                <br/>"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:234
+#, python-format
+msgid "get_columns_names not implemented"
+msgstr "get_columns_names no implementado"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/models/account_report_context_common.py:164
+#, python-format
+msgid "get_report_obj not implemented"
+msgstr "get_report_obj no implementado"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_report_analytic_manager
+msgid "manages analytic for reports"
+msgstr "gestiona analíticas para reporte"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_report_analytic_tag_manager
+msgid "manages analytics for reports"
+msgstr "manages analytics for reports"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_report_footnotes_manager
+msgid "manages footnotes"
+msgstr "gestionar notas"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_report_multicompany_manager
+msgid "manages multicompany for reports"
+msgstr "Gestionar reportes para multicompañia"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_account_report_segment_manager
+msgid "manages segments for reports"
+msgstr "gestiona segmentos para reporte"
+
+#. module: poi_account_reports
+#: code:addons/poi_account_reports/report/monto_a_texto_esp.py:133
+#, python-format
+msgid "no translation function found for lang: '%s'"
+msgstr "no translation function found for lang: '%s'"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_report_poi_account_reports_account_asset_report
+msgid "report.poi_account_reports.account_asset_report"
+msgstr "report.poi_account_reports.account_asset_report"
+
+#. module: poi_account_reports
+#: model:ir.model,name:poi_account_reports.model_report_poi_account_reports_reporte_comprobante_traspaso
+msgid "report.poi_account_reports.reporte_comprobante_traspaso"
+msgstr "report.poi_account_reports.reporte_comprobante_traspaso"
+

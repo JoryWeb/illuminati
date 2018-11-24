@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_form_stock_tree_inherit" model="ir.ui.view">
+            <field name="name">stock.warehouse.tree.inherit</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock.view_warehouse_tree"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="replace">
+                        <field name="partner_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_form_stock_inherit" model="ir.ui.view">
+            <field name="name">stock.warehouse.inherit</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock.view_warehouse"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='code']" position="after">
+                        <field name="branch"/>
+                        <field name="agency_id"/>
+                        <field name="analytic_account_id"/>
+                        <field name="enabled_for_sale"/>
+                </xpath>
+                <!--<xpath expr="//field[@name='partner_id']" position="replace">
+                        <field name="partner_id" invisible="1"/>
+                </xpath>-->
+                <xpath expr="//notebook" position="attributes">
+                    <attribute name='groups'></attribute>
+                </xpath>
+                <xpath expr="//notebook/page[1]" position="attributes">
+                    <attribute name='groups'>stock.group_adv_location</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[2]" position="attributes">
+                    <attribute name='groups'>stock.group_adv_location</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[2]/group" position="attributes">
+                    <attribute name='groups'>base.group_no_one</attribute>
+                </xpath>
+                <xpath expr="//notebook/page" position="before">
+
+                    <page string="General Information">
+                        <group>
+                            <group>
+                                <label for="street" string="Address"/>
+                                <div>
+                                    <field name="street" placeholder="Street..."/>
+                                    <field name="street2"/>
+                                    <div>
+                                        <field name="city" placeholder="City" style="width: 40%%"/>
+                                        <field name="state_id" class="oe_no_button" placeholder="State" style="width: 24%%" options='{"no_open": True}'/>
+                                        <field name="zip" placeholder="ZIP" style="width: 34%%"/>
+                                    </div>
+                                    <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}'/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="other_info"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="mobile"/>
+                                <field name="company_id"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Users">
+                        <field name="user_ids"/>
+                    </page>
+
+                </xpath>
+
+
+
+            </field>
+        </record>
+    </data>
+</odoo>

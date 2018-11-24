@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="account_expenses_rendition_invoice_type_form" model="ir.ui.view">
+            <field name="name">account.expenses.invoice.type.form</field>
+            <field name="model">account.expenses.invoice.type</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de factura">
+                    <group>
+                        <field name="name"/>
+                        <field name="account_id"/>
+                        <field name="analytic_account_id"/>
+                        <field name="taxes_ids" widget="many2many_tags"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_expenses_rendition_invoice_type_tree" model="ir.ui.view">
+            <field name="name">account.expenses.invoice.type.tree</field>
+            <field name="model">account.expenses.invoice.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de factura">
+
+                        <field name="name"/>
+                        <field name="account_id"/>
+                        <field name="analytic_account_id"/>
+                        <field name="taxes_ids" widget="many2many_tags"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_expenses_rendition_invoice_type" model="ir.actions.act_window">
+            <field name="name">Rendicion T. Factura</field>
+            <field name="res_model">account.expenses.invoice.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic para crear Tipo de Factura rendiciones
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_expenses_rendition_invoice_type" id="menu_action_expenses_rendition_invoice_type" sequence="17"
+                  parent="account.menu_finance_configuration"/>
+
+
+
+        <record id="account_expenses_rendition_tree" model="ir.ui.view">
+            <field name="name">account.expenses.rendition.tree</field>
+            <field name="model">account.expenses.rendition</field>
+            <field name="arch" type="xml">
+                <tree string="Expenses Rendition">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="payment_request_id"/>
+                    <field name="invoice_total"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="account_expenses_rendition_form" model="ir.ui.view">
+            <field name="name">account.expenses.rendition.form</field>
+            <field name="model">account.expenses.rendition</field>
+            <field name="arch" type="xml">
+                <form string="Expenses Rendition">
+                    <header>
+                        <button name="action_validate" type="object" states="draft" string="Confirmar"/>
+                        <button name="action_draft" type="object" states="confirmed" string="Observado" groups="account.group_account_user,account.group_account_manager"/>
+                        <button name="action_approve" type="object" states="confirmed" string="Approve" groups="account.group_account_user,account.group_account_manager"/>
+                        <button name="action_cancel" type="object" states="done" string="Revertir" confirm="Cancelar una Rendicion generará un Asiento volcado sobre su Asiento ya existente. Desea continuar?" groups="account.group_account_user,account.group_account_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                    </header>
+
+                        <div class="oe_title oe_left">
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <!-- AGREGAR BOTONES DE REDIRECCION -->
+                        <group>
+                            <group>
+                                <field name="user_id" attrs="{'readonly': [('state','!=','draft')]}" options="{'no_create': True}"/>
+                                <field name="payment_request_id" domain="[('user_id','=',user_id),('payment_type','=','outbound'),('default_mode','=','new'), ('check_rendition', '=', False)]" attrs="{'invisible': [('user_id','=',False)], 'readonly': [('state','!=','draft')]}" options="{'no_create': True}"/>
+                                <field name="ref" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="journal_id" attrs="{'readonly': [('state','in',['done','cancel'])]}" options="{'no_create': True}"/>
+                                <field name="account_id" attrs="{'readonly': [('state','in',['done','cancel'])]}" options="{'no_create': True}"/>
+                            </group>
+                            <group>
+                                <field name="rendition_date" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="currency_id" attrs="{'readonly': ['|',('payment_request_id','!=',False),('state','in',['done','cancel'])]}"/>
+                                <field name="amount_requested" widget="monetary" options="{'currency_field': 'currency_id', 'no_create': True}"/>
+                                <field name="invoice_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="amount_debt" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="amount_exceeded" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Documents">
+                                <field name="rendition_invoice_ids">
+                                    <tree editable="bottom">
+                                        <field name="state" invisible="1"/>
+                                        <field name="name"/>
+                                        <field name="invoice_type" attrs="{'readonly': [('state','!=','draft')]}" options="{'no_create': True}"/>
+                                        <field name="date_invoice"/>
+                                        <field name="taxes_ids" widget="many2many_tags" attrs="{'readonly': [('state','!=','draft')]}" options="{'no_create': True}"/>
+                                        <field name="amount" sum="Importe total" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                        <field name="account_id" attrs="{'readonly': [('state','!=','draft')]}" options="{'no_create': True}"/>
+                                        <field name="account_analytic_id" attrs="{'readonly': [('state','!=','draft')]}" options="{'no_create': True}"/>
+                                        <field name="invoice_number"/>
+                                    </tree>
+                                </field>
+                                <field name="invoice_ids" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="notes" placeholder="Notes..." attrs="{'readonly': [('state','!=','draft')]}"/>
+                            </page>
+                            <page string="Accounting Info">
+                                <group>
+                                    <group>
+                                        <div class="oe_inline">
+                                            <field name="tax_line_ids"  attrs="{'readonly': [('state','in',['done','cancel'])]}">
+                                                <tree editable="bottom" string="Taxes">
+                                                    <field name="name"/>
+                                                    <!--Need invisible fields for on_change to create all necessary info -->
+                                                    <field name="tax_id" invisible="1"/>
+                                                    <field name="sequence" invisible="1"/>
+                                                    <field name="manual" invisible="1"/>
+                                                    <field name="account_id" groups="account.group_account_invoice"/>
+                                                    <field name="account_analytic_id" domain="[('account_type', '=', 'normal')]" groups="analytic.group_analytic_accounting"/>
+                                                    <field name="amount" sum="Importe total"/>
+                                                    <field name="currency_id" invisible="1"/>
+                                                </tree>
+                                            </field>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="move_id" readonly="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_expenses_rendition" model="ir.actions.act_window">
+            <field name="name">Expenses Rendition</field>
+            <field name="res_model">account.expenses.rendition</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic para crear rendiciones de fondos
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_expenses_rendition" id="menu_action_expenses_rendition" sequence="16"
+                  parent="account.menu_finance_payables"/>
+    </data>
+</odoo>

@@ -1,0 +1,317 @@
+<odoo>
+    <data>
+
+        <record id="view_event_tree" model="ir.ui.view">
+            <field name="name">sale.event.tree</field>
+            <field name="model">sale.event</field>
+            <field name="arch" type="xml">
+                <tree string="Eventos">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="email"/>
+                    <field name="mobile"/>
+                    <field name="date_event"/>
+                    <field name="date_due"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_event_calendar" model="ir.ui.view">
+            <field name="name">sale.event.calendar</field>
+            <field name="model">sale.event</field>
+            <field name="arch" type="xml">
+                <calendar color="partner_id" date_start="date_event" string="Eventos">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="view_event_kanban" model="ir.ui.view">
+            <field name="name">sale.event.kanban</field>
+            <field name="model">sale.event</field>
+            <field name="arch" type="xml">
+                <kanban string="Eventos" class="o_kanban_mobile">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="email"/>
+                    <field name="mobile"/>
+                    <field name="image"/>
+                    <field name="date_event"/>
+                    <field name="date_due"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_kanban_record" t-attf-style="box-shadow: 0px 0px 1px 1px #868585bd;">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('sale.event', 'image', record.id.value)"/>
+                                </div>
+                                <div  class="oe_kanban_details">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h2><field name="name"/></h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <field name="partner_id"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <field name="date_event"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_event_form" model="ir.ui.view">
+            <field name="name">sale.event.form</field>
+            <field name="model">sale.event</field>
+            <field name="arch" type="xml">
+                <form string="Evento">
+                    <header>
+                        <button name="action_init" type="object" string="Aperturar" states="draft" help="Confirmar lista de productos y reservarlos para empezar a vender."/>
+                        <button name="open_invoice_wizard" type="object" string="Facturar..." states="open" help="Abrir asistente para seleccionar los Productos de la lista a facturarse a un Cliente a especificar."/>
+                        <button name="open_picking_wizard" type="object" string="Entregar..." states="open" help="Abrir asistente para seleccionar los Productos ya vendidos a dar de baja por entrega."/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,closed"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_products"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-gift"
+                                attrs="{'invisible': [('total_lines', '=', 0)]}">
+                                <field name="total_lines" widget="statinfo" string="Regalos"/>
+                            </button>
+                            <button name="action_view_reserv"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-cubes"
+                                attrs="{'invisible': ['|',('picking_rsv_id','=',False),('picking_rsv_state', '=', 'done')]}"
+                                string="Reserva pendiente"
+                                style="color: #ce313d">
+                            </button>
+                            <button name="action_view_invoices"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-dollar"
+                                attrs="{'invisible': [('total_lines', '=', 0)]}">
+                                <field name="total_invs" widget="statinfo" string="Facturas"/>
+                            </button>
+                            <button name="action_view_pickings"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-truck"
+                                attrs="{'invisible': [('total_lines', '=', 0)]}">
+                                <field name="total_picks" widget="statinfo" string="Entregas"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="0"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type_id"/>
+                                <field name="partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+                                <field name="email"/>
+                                <field name="mobile"/>
+                                <field name="date_event"/>
+                                <field name="date_init" readonly="1"/>
+                                <field name="date_due"/>
+                                <field name="organizer_id"/>
+                                <field name="pricelist_id" options="{'no_create': True}"/>
+                                <field name="warehouse_id" options="{'no_create': True}"/>
+                                <field name="picking_rsv_state" invisible="1"/>
+                                <field name="picking_rsv_id" string="Reserva Pendiente" attrs="{'invisible': ['|',('picking_rsv_id','=',False),('picking_rsv_state', '=', 'done')]}"/>
+
+                            </group>
+                            <group>
+                                <field name="image" widget='image' nolabel="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lista de regalos">
+                                <button name="launch_tree_view" type="object" string="Crear en listado" states="draft" help="Asistente para agregar Productos en modo listado para mayor agilidad." class="btn-primary oe_edit_only"/>
+                                <field name="product_lines" mode="kanban"
+                                    attrs="{'readonly': [('state', 'in', ('done','cancel'))]}">
+                                    <kanban class="o_kanban_mobile">
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="subtotal"/>
+                                        <field name="state"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div t-attf-class="oe_kanban_global_click o_kanban_record" t-attf-style="box-shadow: 0px 0px 1px 1px #868585bd;">
+                                                    <div class="o_kanban_image">
+                                                        <img t-att-src="kanban_image('product.product', 'image_medium', record.product_id.raw_value)"/>
+                                                    </div>
+                                                    <div  class="oe_kanban_details">
+                                                        <div class="row">
+                                                            <t t-set="label_color" t-value="'cacaca'"/>
+                                                            <t t-if="record.state.raw_value=='sold'"><t t-set="label_color" t-value="'d46832'"/></t>
+                                                            <t t-if="record.state.raw_value=='free'"><t t-set="label_color" t-value="'5cb85c'"/></t>
+                                                            <div t-attf-class="label" t-attf-style="background-color: ##{label_color};"><t t-esc="record.state.value"/></div>
+                                                            <div class="col-xs-12">
+                                                                <strong><span><t t-esc="record.product_id.value"/></span></strong>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-8 text-muted">
+                                                                <span><t t-esc="record.quantity.value"/></span>
+                                                            </div>
+                                                            <div class="col-xs-4 text-muted">
+                                                                <span class="pull-right text-right"><t t-esc="record.subtotal.value"/></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page string="Contactos">
+                                <field name="contact_ids" widget="many2many_kanban" options="{'not_delete': True}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista alternativa para añadir productos -->
+        <record id="view_event_line_form" model="ir.ui.view">
+            <field name="name">sale.event.line.form</field>
+            <field name="model">sale.event.line</field>
+            <field name="arch" type="xml">
+                <form string="Producto">
+                    <header>
+                        <button name="open_invoice_wizard" type="object" string="Facturar..." states="free" help="Abrir asistente para aplicar el Producto de la lista a facturarse a un Cliente a especificar."/>
+                        <field name="state" widget="statusbar" statusbar_visible="free,sold,delivered"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="product_image" widget="image" nolabel="1" style="max-width: 500px; max-height: 500px;"/>
+                        </group>
+                        <group>
+                            <notebook>
+                                <page string="Info">
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="subtotal" readonly="1"/>
+                                        <field name="product_description" readonly="1"/>
+                                    </group>
+                                </page>
+                                <page string="Docs">
+                                    <group>
+                                        <field name="invoice_id" readonly="1"/>
+                                        <field name="picking_id" readonly="1"/>
+                                    </group>
+                                </page>
+                            </notebook>
+
+                        </group>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="view_event_line_tree" model="ir.ui.view">
+            <field name="name">sale.event.line.tree</field>
+            <field name="model">sale.event.line</field>
+            <field name="arch" type="xml">
+                <tree string="Producto">
+                    <field name="event_id" invisible="1"/>
+                    <field name="product_id"/>
+                    <field name="quantity" sum="total_qty"/>
+                    <field name="subtotal" sum="total_tot"/>
+                    <field name="partner_id"/>
+                    <field name="invoice_id" readonly="1"/>
+                    <field name="picking_id" readonly="1"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_event_line_search" model="ir.ui.view">
+            <field name="name">sale.event.line.search</field>
+            <field name="model">sale.event.line</field>
+            <field name="arch" type="xml">
+                <search string="Producto">
+                    <field name="event_id"/>
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                    <field name="invoice_id"/>
+                    <field name="picking_id"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Vista alternativa para asistente ágil de Añadir productos -->
+        <record id="view_event_form_editabletree" model="ir.ui.view">
+            <field name="name">sale.event.form.editabletree</field>
+            <field name="model">sale.event</field>
+            <field name="arch" type="xml">
+                <form string="Añadir Productos">
+                    <header>
+                        <button name="dummy" type="object" string="Guardar" class="btn-primary"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,close" readonly="1"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+
+                        <field name="product_lines" mode="tree"
+                            attrs="{'readonly': [('state', 'in', ('done','cancel'))]}">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="quantity"/>
+                                <field name="subtotal"/>
+                            </tree>
+                        </field>
+                        <button name="dummy" type="object" string="Guardar" class="btn-primary"/>
+                    </sheet>
+                    <footer>
+                        <button name="dummy" type="object" string="Guardar" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_events" model="ir.actions.act_window">
+            <field name="name">Eventos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,calendar,tree,form,</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Un evento constituye un Listado de regalos que se procesaran como Ventas
+                </p><p>
+                    Este documento centraliza todos los Traspasos y Facturas que se generan a medida que se vende la Lista de regalos
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_events" id="menu_sale_event" parent="base.menu_sales"
+            sequence="32" groups="base.group_sale_salesman,base.group_sale_manager"/>
+    </data>
+</odoo>

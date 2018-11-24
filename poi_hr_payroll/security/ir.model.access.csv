@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_bio,hr.bio,model_hr_bio,hr.group_hr_manager,1,1,1,1
+access_hr_bio_line,hr.bio.line,model_hr_bio_line,hr.group_hr_manager,1,1,1,1
+access_hr_advance,hr.advance,model_hr_advance,hr.group_hr_manager,1,1,1,1
+access_hr_advance_config,hr.advance.config,model_hr_advance_config,hr.group_hr_manager,1,1,1,1
+access_hr_others_code,hr.other_inputs.code,model_hr_others_code,hr.group_hr_manager,1,1,1,1
+access_hr_others,hr.others,model_hr_others,hr.group_hr_manager,1,1,1,1
+access_hr_form110,hr.form110,model_hr_form110,hr.group_hr_manager,1,1,1,1
+access_hr_loan,hr.loan,model_hr_loan,hr.group_hr_manager,1,1,1,1

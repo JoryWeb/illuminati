@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_authorization" name="Authorization" sequence="299" groups="base.group_user"/>
+
+    <menuitem id="menu_authorization_documents" name="Authorization Area" sequence="10" parent="menu_authorization" groups="base.group_user"/>
+
+    <menuitem id="menu_authorization_audit" name="Audit" sequence="90" parent="menu_authorization" groups="poi_auth_base.group_auth_reviewer"/>
+
+    <menuitem id="menu_authorization_configuration" name="Configuration" sequence="100" parent="menu_authorization" groups="poi_auth_base.group_auth_authorizer_manager"/>
+</odoo>

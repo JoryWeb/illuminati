@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_comercial" name="Analisis comercial" parent="" action="" sequence="5" groups="group_analisis_comercial"/>
+        <menuitem id="menu_comercial_mgm" name="Gestion" parent="menu_comercial" action="" sequence="1"/>
+
+            <menuitem action="product.product_template_action" id="menu_action_product_comercial" parent="menu_comercial_mgm" sequence="1" string="Productos"/>
+            <menuitem action="action_poi_stock_reservation_lot_tree" id="menu_action_chasis_comercial" parent="menu_comercial_mgm" sequence="2"/>
+            <menuitem action="account.action_invoice_tree1" id="menu_action_invoice_comercial" parent="menu_comercial_mgm" sequence="3" string="Facturas de Venta"/>
+            <menuitem action="poi_payment_request.action_payment_request" id="menu_action_solicitud_comercial" parent="menu_comercial_mgm" sequence="8" string="Solicitudes de Pago"/>
+
+        <menuitem id="menu_comercial_rep" name="Informes" parent="menu_comercial" action="" sequence="2"/>
+
+            <menuitem action="account.action_account_invoice_report_all" id="menu_action_analisis_facturas_comercial" parent="menu_comercial_rep" sequence="1" string="Analisis de Facturas"/>
+            <menuitem action="action_poi_chasis_inventory_report_report_all" id="menu_action_stock_comercial" parent="menu_comercial_rep" sequence="5"/>
+            <menuitem action="stock.quantsact" id="menu_action_stock_valor_comercial" parent="menu_comercial_rep" sequence="8" name="Informe de stock valorado"/>
+            <menuitem action="action_cuadro_reservas" id="menu_action_reserva_comercial" parent="menu_comercial_rep" sequence="12"/>
+
+        <menuitem id="menu_comercial_conf" name="Configuracion" parent="menu_comercial" action="" sequence="3"/>
+
+            <menuitem action="product.product_pricelist_action2" id="menu_action_tarifas_comercial" parent="menu_comercial_conf" sequence="1" name="Lista de Precios"/>
+
+        <menuitem
+           action="product_pricelist_assistant_action_form" id="menu_product_pricelist_assistant_action_comercial"
+           parent="menu_comercial_conf" sequence="50"/>
+
+
+
+    </data>
+</odoo>

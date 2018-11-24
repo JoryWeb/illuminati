@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <record id="view_sale_order_booking_neu_pivot" model="ir.ui.view">
+         <field name="name">sale.order.booking.neu.pivot</field>
+         <field name="model">sale.order.booking.neu</field>
+         <field name="arch" type="xml">
+             <pivot string="Sales Analysis" disable_linking="True">
+                 <field name="warehouse_id" type="col"/>
+                 <field name="order_date" interval="month" type="row"/>
+                 <field name="state" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+
+    <record id="view_sale_order_booking_neu_graph" model="ir.ui.view">
+         <field name="name">sale.order.booking.neu.graph</field>
+         <field name="model">sale.order.booking.neu</field>
+         <field name="arch" type="xml">
+             <graph string="Sales Analysis">
+                 <field name="order_date" type="row"/>
+                 <field name="state" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+    <record id="sale_order_booking_neu_view_tree" model="ir.ui.view">
+      <field name="name">sale.order.booking.neu.tree</field>
+      <field name="model">sale.order.booking.neu</field>
+      <field name="arch" type="xml">
+        <tree string="Reserva de Neumaticos">
+          <field name="product_id"/>
+          <field name="product_uom_qty"/>
+          <field name="order_date"/>
+          <field name="state"/>
+          <field name="order_id"/>
+          <field name="picking_id"/>
+          <field name="user_id"/>
+          <field name="warehouse_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="view_sale_order_booking_neu_search" model="ir.ui.view">
+        <field name="name">sale.order.booking.neu.search</field>
+        <field name="model">sale.order.booking.neu</field>
+        <field name="arch" type="xml">
+            <search string="Sales Analysis">
+                <field name="order_date"/>
+                <filter string="This Year" name="year" invisible="1" domain="[('order_date','&lt;=', time.strftime('%%Y-12-31')),('order_date','&gt;=',time.strftime('%%Y-01-01'))]"/>
+                <field name="user_id"/>
+                <field name="product_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Vendedor" name="User" context="{'group_by':'user_id'}"/>
+                    <filter name="status" string="Estado" context="{'group_by':'state'}"/>
+                    <separator/>
+                    <filter string="Factura por Mes" context="{'group_by':'order:date:month'}" help="Ordered date of the sales order"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sale_order_booking_neu_report_all" model="ir.actions.act_window">
+        <field name="name">Reserva de Neumaticos</field>
+        <field name="res_model">sale.order.booking.neu</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,pivot,graph</field>
+        <field name="view_id"></field>  <!-- force empty -->
+        <field name="search_view_id" ref="view_sale_order_booking_neu_search"/>
+        <!-- <field name="context">{'search_default_Sales':1, 'group_by_no_leaf':1,'group_by':[]}</field> -->
+    </record>
+
+    <menuitem name="Reserva de Neumaticos" action="action_sale_order_booking_neu_report_all" id="menu_sale_order_booking_neu" parent="sale.menu_sale_report" sequence="12"/>
+
+</data>
+</odoo>

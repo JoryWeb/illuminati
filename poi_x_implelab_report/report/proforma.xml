@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+  <report
+    id="report_sale_order_imp"
+    string="Cotizacion Implelab"
+    model="sale.order"
+    report_type="qweb-pdf"
+    file="poi_x_implelab_report.proforma"
+    name="poi_x_implelab_report.sale_order_template_imp"
+    menu="True"
+  />
+  <record id="paperformat_sale_order_imp" model="report.paperformat">
+    <field name="name">Cotizacion</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">40</field>
+    <field name="margin_bottom">30</field>
+    <field name="margin_left">7</field>
+    <field name="margin_right">7</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">35</field>
+    <field name="dpi">90</field>
+  </record>
+  <record id="report_sale_order_imp" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_x_implelab_report.paperformat_sale_order_imp"/>
+  </record>
+
+  <record id="sale.report_sale_order" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_x_implelab_report.paperformat_sale_order_imp"/>
+  </record>
+</data>
+
+
+<template id="sale_order_template_imp">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+<div class="header">
+    <t t-call="poi_x_implelab_report.img_report"></t>
+    <t t-call="poi_x_implelab_report.imp_water"></t>
+</div>
+  <div class="page" style="font-size:13px;z-index:100px;">
+      <div class="row">
+          <div class="col-xs-8">
+
+          </div>
+          <div class="col-xs-4 text-center">
+              <strong>PROFORMA</strong>
+              <table class="table table-condensed">
+                  <tr>
+                      <th class="text-center">No.</th>
+                      <th class="text-center">Fecha</th>
+                  </tr>
+                  <tbody>
+                      <tr>
+                        <td class="text-center">
+                            <span t-field="o.name"/>
+                        </td>
+                        <td class="text-center">
+                            <span t-field="o.date_order" t-field-options='{"format": "d/M/Y"}'/>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+              <p>Señores <br/> <span t-field="o.partner_id.name"/> <br/> </p>
+              <p t-field="o.destination" />
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+              <strong>Forma de Pago</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.pay_type_id.html"/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+             <strong>Valido Hasta</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.validity_date"/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+             <strong>Tiempo de Entrega</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.delivery_time_id.name"/>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+        <br/>
+          <table class="table table-condensed" style="margin-bottom:0px;">
+            <thead>
+              <tr>
+                <th><strong>Item</strong></th>
+                <th><strong>Codigo</strong></th>
+                <th><strong>Producto</strong></th>
+                <th><strong>Descripcion</strong></th>
+                <th><strong>Cantidad</strong></th>
+                <th class="text-right"><strong>P.U.</strong></th>
+                <th class="text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="o.order_line" t-as="l">
+                <tr>
+                  <td>
+                    <span t-esc="l_index+1"/>
+                  </td>
+                  <td>
+                    <span t-field="l.product_id.default_code"/>
+                  </td>
+                  <td>
+                    <span t-field="l.product_id.name"/>
+                  </td>
+                  <td>
+                    <!-- <span t-field="l.product_id.description_sale"/> -->
+                    <span t-field="l.name"/>
+                  </td>
+                  <td class="text-center">
+                    <span t-field="l.product_uom_qty"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-field="l.unitario_factor"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-field="l.price_total"/>
+                  </td>
+                </tr>
+              </t>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-7">
+            </div>
+            <div class="col-xs-5 text-right">
+              <table class="table table-condensed" style="margin-bottom:0px;">
+                <tbody>
+                    <tr>
+                      <td class="text-right">
+                        Total <span t-field="o.currency_id.name_on_report"/>:
+                      </td>
+                      <td class="text-right">
+                        <span t-field="o.amount_total"/>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+              <strong>Observaciones:</strong>
+              <p>El precio incluye Factura Fiscal y Entrega en sus Instalaciones.</p>
+
+          </div>
+          <div class="col-xs-offset-2">
+              Atentamente,
+          </div>
+      </div>
+    <div class="row">
+        <div class="col-xs-12 text-center" style="margin-top:50px;">
+            <img t-if="o.user_id.partner_id.firm" t-att-src="'data:image/png;base64,%s' % o.user_id.partner_id.firm"/>
+        </div>
+    </div>
+
+  </div>
+  <div class="footer">
+      <div class="row" style="font-size:12px;">
+          <div class="col-xs-6">
+              <p>
+                  <span style="color:orange;">Dirección La Paz:</span> <br />
+            Miraflores, Av. Busch, N°1924 Edificio C y C II, Mezzanine of. 1 <br/>
+            Tel/Fax: 2-243271 · Cel.: 76764659 - 70535140 <br/>
+            <strong>E-mail:</strong> <span style="color:blue;">implelab@gmail.com</span> <strong>Página Web:</strong> <span style="color:blue;"> www.implelab.com</span><br/>
+            <strong>Facebook:</strong> IMPLELAB SRL · <span style="color:orange;">La Paz - Bolivia</span>
+            </p>
+          </div>
+          <div class="col-xs-6 text-right">
+              <p>
+                  <span style="color:orange;">Dirección Santa Cruz:</span> <br />
+            Av. Alemana entre 3er y 4to Anillo calle San Ramón S/N <br/>
+            Tel.Fax.: 3375200 • Cel.: 77506494<br/>
+            <strong>E-mail:</strong> <span style="color:blue;">info@gmail.com</span> <strong>Página Web:</strong> <span style="color:blue;"> www.implelab.com</span><br/>
+            <strong>Facebook:</strong> IMPLELAB SRL · <span style="color:orange;">Santa Cruz - Bolivia</span>
+            </p>
+          </div>
+      </div>
+  </div>
+
+
+</t>
+</t>
+</template>
+
+</openerp>

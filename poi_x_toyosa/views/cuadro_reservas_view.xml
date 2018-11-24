@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        <record model="ir.ui.view" id="search_cuadro_reservas">
+            <field name="name">Busqueda Cuadro Reservas</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <search string="Cuadro Reservas">
+                    <field name="name" string="Chasis" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                    <field name="product_id" string="Master"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Fecha" domain="[]" context="{'group_by':'create_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="view_cuadro_reservas" model="ir.ui.view">
+            <field name="name">cuadro.prioridades.nacionalizacion.tree</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Cuadro Prioridades Liberación" editable="bottom">
+                    <field name="name" string="Chasis" readonly="1"/>
+                    <field name="n_produccion" readonly="1"/>
+                    <field name="marca" readonly="1"/>
+                    <field name="katashiki" readonly="1"/>
+                    <field name="product_id" string="Master" readonly="1"/>
+                    <field name="modelo" readonly="1"/>
+                    <field name="user_id" readonly="1"/>
+                    <field name="project_id" readonly="1"/>
+                    <field name="precio_venta" readonly="1"/>
+                    <field name="partner_id" string="Titular" readonly="1"/>
+                    <field name="observaciones" readonly="1"/>
+                    <field name="date_sale" readonly="1"/>
+                    <field name="state" readonly="1"/>
+                    <field name="create_date" string="Fecha Creación Chasis" readonly="1"/>
+                    <field name="anio_modelo" readonly="1"/>
+                    <field name="location_id" invisible="1"/>
+                    <field name="sucursal" readonly="1"/>
+                    <button name="%(act_poi_reservation_wizard)d"
+                            string="Extender Reserva"
+                            type="action"
+                            icon="terp-locked"
+                            states="reserve"
+                            class="oe_highlight"
+                            groups="poi_x_toyosa.group_cartera_reservas"/>
+                    <button name="%(act_poi_reservation_cancel_wizard)d"
+                            string="Liberar"
+                            type="action"
+                            icon="gtk-undo"
+                            states="reserve"
+                            class="oe_highlight"
+                            groups="poi_x_toyosa.group_cartera_reservas"/>
+                    <field name="responsable_reserva" readonly="1"/>
+                    <field name="date_reserve" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cuadro_reservas" model="ir.actions.act_window">
+            <field name="name">Reservas y disponibilidad</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_cuadro_reservas"/>
+            <field name="search_view_id" ref="search_cuadro_reservas"/>
+            <field name="context">{}</field>
+            <field name="domain">[('product_id.tracking','=','serial')]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Cuadro de Reservas Chasis
+              </p><p>
+                Efectivizar las reservas de chasis creados de forma temporal y ya con
+                la asignación especifica del chasis real
+              </p>
+            </field>
+        </record>
+        <menuitem action="action_cuadro_reservas" id="menu_cuadro_reservas"
+            parent="poi_purchase_imports.menu_purchase_imports" groups="stock.group_production_lot"
+            sequence="102"/>
+
+        <menuitem action="action_cuadro_reservas" id="menu_cuadro_reservas_ventas"
+            parent="base.menu_sale_report" groups="stock.group_production_lot"
+            sequence="102"/>
+
+        <menuitem action="action_cuadro_reservas" id="menu_action_cuadro_reservas_2"
+            parent="menu_informes_reservas" sequence="1"/>
+
+
+	</data>
+</odoo>

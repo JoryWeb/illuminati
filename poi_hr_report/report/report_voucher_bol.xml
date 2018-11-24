@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<report id="report_vocher"
+	string="Boleta de Pago"
+	model="hr.payslip"
+	name="poi_hr_report.report_voucher_bol"
+	report_type="qweb-pdf"
+	file="poi_hr_report.report_voucher_bol"
+	auto="False"
+	menu="True"/>
+
+<record id="paperformat_hr_voucher" model="report.paperformat">
+	<field name="name">Boleta de Pago</field>
+	<field name="default" eval="True"/>
+	<field name="format">A4</field>
+	<field name="page_height">0</field>
+	<field name="page_width">0</field>
+	<field name="orientation">Portrait</field>
+	<field name="margin_top">15</field>
+	<field name="margin_bottom">20</field>
+	<field name="margin_left">7</field>
+	<field name="margin_right">7</field>
+	<field name="header_line" eval="False" />
+	<field name="header_spacing">10</field>
+	<field name="dpi">90</field>
+</record>
+<record id="report_vocher" model="ir.actions.report">
+	<field name="paperformat_id" ref="poi_hr_report.paperformat_hr_voucher"/>
+</record>
+
+<template id="report_voucher_bol">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+<div class="header"></div>
+<div class="article panel panel-default" style="font-size:12px;">
+	<div class="row">
+		<div class="col-xs-4 text-center">
+			<img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="max-height: 45px;"/>
+
+    		<div style="font-size:12px;">
+    			<strong>NIT: <span t-field="o.company_id.nit" /></strong>
+    		</div>
+    		<div style="font-size:12px;">
+				<span t-field="o.company_id.street" /><br/>
+				<span t-field="o.company_id.street2" /> - <span t-field="o.company_id.phone" />
+    			<span t-field="o.company_id.state_id.name"/> - <span t-field="o.company_id.country_id"/>
+    		</div>
+		</div>
+		<div class="col-xs-4">
+			<h2 style="padding-top:40px;" class="text-center">Boleta de Pago</h2>
+			<p class="text-center">(Expresado en Bolivianos)</p>
+		</div>
+		<div class="col-xs-4 text-right">
+			<t t-usertime="%d/%m/%Y %H:%M:%S" /> <br />
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="col-xs-6">
+				<p><strong>NOMBRE:</strong> <span t-field="o.employee_id.name"/></p>
+				<p><strong>CI:</strong> <span t-field="o.employee_id.identification_id"/></p>
+				<p><strong>CARGO:</strong> <span t-field="o.employee_id.job_id.name"/></p>
+				<p><strong>FECHA DE INGRESO:</strong> <span t-field="o.contract_id.date_start"/></p>
+
+			</div>
+			<div class="col-xs-6">
+				<p><strong>SUELDO BASICO:</strong> <span t-field="o.contract_id.wage"/></p>
+				<p><strong>DIAS TRABAJADOS:</strong>  <span t-esc=" sum(l.number_of_days for l in o.worked_days_line_ids) or 0"/></p>
+				<p><strong>MES:</strong> <span t-esc="date(o.date_from)['mes']"/></p>
+			</div>
+	    </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<t t-foreach="config_ids" t-as="c">
+				<div  t-attf-class="col-xs-{{ c.width }}">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h5 class="text-center"><strong><span t-field="c.name"/></strong></h5>
+					</div>
+					<div class="panel-body">
+						<table class="table table-condensed">
+							<tbody>
+								<t t-foreach="c.line_ids" t-as="l">
+								<tr>
+									<td><strong><span t-esc="l.name"/>:</strong> </td>
+									<td class="text-right"><span t-esc="('%.2f' % (employee_payslip_line(o.id, l.salary_rules_id.code)))"/></td>
+								</tr>
+								</t>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+				</div>
+			</t>
+	    </div>
+	</div>
+	<div class="row" style="padding-top:10px;">
+		<div class="col-xs-4 col-xs-offset-4">
+
+			<p class="text-center"><span t-esc="date(o.date_from)['dia_l']"/>, <span t-esc="date(o.date_from)['dia']"/> de <span t-esc="date(o.date_from)['mes']"/> de <span t-esc="date(o.date_from)['year']"/></p>
+		</div>
+	</div>
+	<div class="row" style="padding-top:80px;">
+		<div class="col-xs-3 col-xs-offset-3">
+
+			<h5 class="text-center">___________________<br/>RECIBI CONFORME</h5>
+		</div>
+
+		<div class="col-xs-offset-1 col-xs-3">
+			<h5 class="text-center">___________________<br/>JEFE DPTO. ADM Y FIN</h5>
+		</div>
+	</div>
+</div>
+<div class="footer"></div>
+</t>
+</t>
+</template>
+</data>
+</odoo>

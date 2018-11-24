@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="hr_payslip_form_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">           
+            <xpath expr="//form/sheet/notebook/page[2]" position="after">
+                <page string="RC-IVA">
+                    <group>
+                        <group>
+                            <field name="saldo"/>
+                            <field name="previous_ufv"/>
+                            <field name="current_ufv"/>
+                            <field name="current_saldo"/>
+                            
+                        </group>
+                        <group>
+                            <field name="rciva"/>
+                            <field name="credit_form110"/>
+                            <field name="saldo_next_month"/>
+                            <field name="rciva_current"/>
+                            <field name="spent_credit"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='input_line_ids']" position="replace">
+                <field name="input_line_ids" colspan="4" nolabel="1">
+                    <tree string="Input Data" editable="bottom">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="amount"/>
+                        <field name="contract_id"/>
+                        <field name='date'/>
+                        <field name='freeze'/>
+                        <field name="sequence" invisible="True"/>
+                        <field name='others_id' invisible="True"/>
+                        <field name='advance_id' invisible="True"/>
+                        <field name='loan_line_id' invisible="True"/>
+                    </tree>
+                    <form string="Payslip Line">
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="payslip_id"/>
+                            <field name="sequence"/>
+                            <field name="amount"/>
+                            <field name="contract_id"/>
+                            <field name='date'/>
+                            <field name='others_id' invisible="True"/>
+                            <field name='advance_id' invisible="True"/>
+                            <field name='loan_line_id' invisible="True"/>
+                        </group>
+                    </form>
+                </field>
+            </xpath>
+         
+        </field>
+    </record>
+
+    <record id="hr_salary_rule_list_poi_payroll" model="ir.ui.view">
+        <field name="name">hr.salary.rule.list.poi.payroll</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list"/>
+        <field name="arch" type="xml">           
+            <xpath expr="//field[@name='sequence']" position="replace">
+              <field name='sequence'/>
+            </xpath>
+        </field>
+    </record>
+</data>
+</odoo>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- <record model="ir.ui.menu" id="base.module_category_sales_management">
+            <field eval="[(3, ref('sales_team.group_sale_manager'))]" name="groups_id"/>
+        </record> -->
+
+        <record model="res.groups" id="group_sale_pt">
+            <field name="name">Placas</field>
+            <field name="comment">Acceso a tramite de placas</field>
+        </record>
+
+        <record model="res.groups" id="group_sale_host">
+            <field name="name">Anfitrion</field>
+            <field name="comment">Anfitrion, solo trafico de clientes e iniciativas</field>
+        </record>
+
+        <record id="rule_sale_shop_orders2" model="ir.rule">
+            <field name="name">Sale Shop Crm Traffic</field>
+            <field name="model_id" ref="poi_crm_traffic.model_crm_traffic"/>
+            <field name="groups" eval="[(4, ref('poi_warehouse_sale.group_sale_salesman_shop_leads'))]"/>
+            <field name="domain_force">['|',('warehouse_id','=',user.shop_assigned.id),('warehouse_id','in',[s.id for s
+                in user.shop_ids])]
+            </field>
+        </record>
+
+        <record id="rule_sale_shop_orders3" model="ir.rule">
+            <field name="name">Sale Shop Crm Lead</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="groups" eval="[(4, ref('poi_warehouse_sale.group_sale_salesman_shop_leads'))]"/>
+            <field name="domain_force">['|',('warehouse_id','=',user.shop_assigned.id),('warehouse_id','in',[s.id for s
+                in user.shop_ids])]
+            </field>
+        </record>
+
+        <record id="rule_sale_shop_orders4" model="ir.rule">
+            <field name="name">Sale Shop Plate</field>
+            <field name="model_id" ref="model_plate_plate"/>
+            <field name="groups" eval="[(4, ref('poi_warehouse_sale.group_sale_salesman_shop_leads'))]"/>
+            <field name="domain_force">['|',('warehouse_id','=',user.shop_assigned.id),('warehouse_id','in',[s.id for s
+                in user.shop_ids])]
+            </field>
+        </record>
+
+        <record id="rule_sale_shop_orders5" model="ir.rule">
+            <field name="name">Sale Shop Invoice Analisys</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="groups" eval="[(4, ref('poi_warehouse_sale.group_sale_salesman_shop_leads'))]"/>
+            <field name="domain_force">['|',('warehouse_id','=',user.shop_assigned.id),('warehouse_id','in',[s.id for s
+                in user.shop_ids])]
+            </field>
+        </record>
+
+        <record id="rule_sale_shop_orders2_own" model="ir.rule">
+            <field name="name">Sale own Crm Traffic</field>
+            <field name="model_id" ref="poi_crm_traffic.model_crm_traffic" />
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">['|',('create_uid','=',user.id),('create_uid','=',False)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders3_own" model="ir.rule">
+            <field name="name">Sale own Crm Lead</field>
+            <field name="model_id" ref="crm.model_crm_lead" />
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders4_own" model="ir.rule">
+            <field name="name">Sale own Plate</field>
+            <field name="model_id" ref="model_plate_plate" />
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">['|',('create_uid','=',user.id),'|',('create_uid','=',False), '|',('seller_id', '=', user.id), '|', ('from_contact', '=', user.id), ('to', '=', user.id)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders5_own" model="ir.rule">
+            <field name="name">Sale own Invoice Analisys </field>
+            <field name="model_id" ref="crm.model_crm_lead" />
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        </record>
+
+        <record id="group_sale_salesman_assistant" model="res.groups">
+            <field name="name">Asistente de Ventas</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="comment">Asistente de Ventas Solo Lectura</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="sales_team.group_sale_salesman" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+        </record>
+
+
+        <record model='ir.ui.menu' id='sale.sale_menu_root'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+        </record>
+
+
+        <record id="group_sale_marketing" model="res.groups">
+            <field name="name">Ventas Marketing</field>
+            <field name="comment">Campos de  Marketing Ventas OV</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model='ir.ui.menu' id='utm.menu_link_tracker_root'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_marketing'))]"/>
+        </record>
+        <record model='ir.ui.menu' id='utm.marketing_utm'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_marketing'))]"/>
+        </record>
+        <record model='ir.ui.menu' id='utm.menu_utm_campaign_act'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_marketing'))]"/>
+        </record>
+        <record model='ir.ui.menu' id='utm.menu_utm_medium'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_marketing'))]"/>
+        </record>
+        <record model='ir.ui.menu' id='utm.menu_utm_source'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_marketing'))]"/>
+        </record>
+
+        <record id="group_sale_host" model="res.groups">
+            <field name="name">Anfitrion</field>
+            <field name="comment">Solo Trafico y Iniciativas.</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <menuitem name="Ventas Anfitrion"
+            id="base.menu_base_partner_host"
+            groups="group_sale_host"
+            sequence="6"/>
+
+        <record model='ir.ui.menu' id='base.menu_base_partner_host'>
+           <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_host'))]"/>
+        </record>
+
+        <record id="rule_sale_shop_orders2_own_assist" model="ir.rule">
+            <field name="name">Sale own Crm Traffic</field>
+            <field name="model_id" ref="poi_crm_traffic.model_crm_traffic" />
+            <field name="groups" eval="[(4, ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+            <field name="domain_force">['|',('create_uid','=',user.id),('create_uid','=',False)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders3_own_assist" model="ir.rule">
+            <field name="name">Sale own Crm Lead</field>
+            <field name="model_id" ref="crm.model_crm_lead" />
+            <field name="groups" eval="[(4, ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders4_own_assist" model="ir.rule">
+            <field name="name">Sale own Plate Asistente</field>
+            <field name="model_id" ref="model_plate_plate" />
+            <field name="groups" eval="[(4, ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+            <field name="domain_force">['|',('create_uid','=',user.id),('create_uid','=',False), '|',('seller_id', '=', user.id), '|', ('from_contact', '=', user.id), ('to', '=', user.id)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders5_own_assist" model="ir.rule">
+            <field name="name">Sale own Invoice Analisys </field>
+            <field name="model_id" ref="crm.model_crm_lead" />
+            <field name="groups" eval="[(4, ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        </record>
+
+        <record id="rule_sale_shop_orders5_own_assist" model="ir.rule">
+            <field name="name">Sale own sales orders </field>
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="groups" eval="[(4, ref('poi_x_toyosa.group_sale_salesman_assistant'))]"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        </record>
+
+
+    </data>
+</odoo>

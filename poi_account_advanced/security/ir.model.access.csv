@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_segment_user,account_segment_user,model_account_segment,account.group_account_invoice,1,0,0,0
+access_account_segment_mgr,account_segment_mgr,model_account_segment,account.group_account_manager,1,1,1,1
+access_purchase_segment_user,purchase_segment_user,model_account_segment,purchase.group_purchase_user,1,0,0,0
+access_account_segment_rule_user,account_segment_rule_user,model_account_segment_rule,account.group_account_invoice,1,0,0,0
+access_account_segment_rule_mgr,account_segment_rule_mgr,model_account_segment_rule,account.group_account_manager,1,1,1,1
+access_lm_mgr,account_lm_mgr,model_poi_libro_mayor,account.group_account_manager,1,0,0,0
+access_lm_partner_mgr,account_lm_partner_mgr,model_poi_libro_mayor_partner_acc,account.group_account_manager,1,0,0,0

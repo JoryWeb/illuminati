@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <record id="account_op_charge_generator_view_form" model="ir.ui.view">
+    <field name="name">account.op.charge.generator.form</field>
+    <field name="model">account.op.charge.wiz</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <group>
+          <field name="type" widget="radio"/>
+          <field name="student_id" attrs="{'invisible': [('type', 'in', ['course', 'all'])], 'required':[('type', '=', 'student')]}"/>
+          <field name="course_id" attrs="{'invisible': [('type', 'in', ['student', 'all'])], 'required':[('type', '=', 'course_id')] }"/>
+          <field name="type_charge" />
+          <field name="date" />
+        </group>
+        <footer>
+            <button name="action_generate" string="Generar" type="object" class="btn-primary"/>
+            <button string="Salir" class="oe_link" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="account_op_charge_wiz_action_form" model="ir.actions.act_window">
+    <field name="name">Generacion de Cargos</field>
+    <field name="res_model">account.op.charge.wiz</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Generar Cargo
+      </p>
+      <p>
+        <!-- More details about what a user can do -->
+      </p>
+    </field>
+  </record>
+</data>
+</odoo>

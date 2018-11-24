@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.menu" id="base.menu_sale_config">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+		<menuitem id="base.menu_sale_config" name="Configuration" parent="base.menu_base_partner"
+            sequence="100" groups="poi_support.group_soporte_interno"/>
+
+
+		<record model="ir.ui.menu" id="account.menu_finance_configuration">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <menuitem id="account.menu_finance_configuration" name="Configuration" parent="account.menu_finance" sequence="15" groups="poi_support.group_soporte_interno,base.group_configuration"/>
+
+
+		<record model="ir.ui.menu" id="purchase.menu_purchase_config">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <menuitem id="purchase.menu_purchase_config" name="Configuration" parent="base.menu_purchase_root" sequence="100" groups="poi_support.group_soporte_interno"/>
+
+
+		<record model="ir.ui.menu" id="stock.menu_stock_config_settings">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <menuitem id="stock.menu_stock_config_settings" name="Configuration" parent="stock.menu_stock_root"
+            sequence="100" groups="poi_support.group_soporte_interno"/>
+		
+		<!-- <record model="ir.ui.menu" id="poi_vehicle.menu_maintenance_config">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <menuitem name="Configuration"
+                  id="poi_vehicle.menu_maintenance_config"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_support.group_soporte_interno"
+                  sequence="200"/> -->
+        <record model="ir.ui.menu" id="poi_auth_base.menu_authorization_configuration">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <menuitem id="poi_auth_base.menu_authorization_configuration" name="Configuration" sequence="100" parent="poi_auth_base.menu_authorization" groups="poi_support.group_soporte_interno"/>
+	
+<!-- 
+		 <record model="ir.ui.menu" id="poi_x_toyosa.menu_comercial_conf">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <menuitem id="poi_x_toyosa.menu_comercial_conf" name="Configuracion" parent="poi_x_toyosa.menu_comercial" groups="poi_support.group_soporte_interno" sequence="100"/> -->
+        
+	</data>
+</odoo>

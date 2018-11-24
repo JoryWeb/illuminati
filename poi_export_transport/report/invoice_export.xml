@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_invoice_export"
+    string="Factura de Exportacion"
+    model="account.invoice"
+    report_type="qweb-pdf"
+    file="poi_sale_export.invoice_export"
+    name="poi_sale_export.invoice_export_template"
+    menu="True"
+  />
+
+
+  <record id="paperformat_invoice_export" model="report.paperformat">
+    <field name="name">Factura de Exportaciones</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">45</field>
+    <field name="margin_bottom">5</field>
+    <field name="margin_left">5</field>
+    <field name="margin_right">5</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">40</field>
+    <field name="dpi">90</field>
+  </record>
+
+  <record id="report_invoice_export" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_sale_export.paperformat_invoice_export"/>
+      <field name="attachment_use" eval="False"/>
+  </record>
+
+</data>
+
+
+<template id="invoice_export_template">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+
+<div class="header">
+<div class="row">
+    <div class="col-xs-4 text-center" id="first_column_header">
+        <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 90px;"/>
+        <div style="font-size:11px;">
+            <p style="font-size:9px;padding:0;margin:0px;">CASA MATRIZ<br/><span t-field="o.company_id.street"/><br/><span t-field="o.company_id.street2"/><br/><span t-field="o.company_id.zip"/> <br/><span t-field="o.company_id.state_id.name"/> - <span t-field="o.company_id.country_id.name"/>
+            <!-- <t t-if="o.cc_dos.warehouse_id.branch != '0'">
+            <br/><span t-field="o.cc_dos.warehouse_id.branch"/> <br/><span t-field="o.cc_dos.warehouse_id.street"/><t t-if="o.cc_dos.warehouse_id.street2"> <br/><span t-field="o.cc_dos.warehouse_id.street2"/></t><br/><span t-field="o.cc_dos.warehouse_id.zip"/> <br/>Telefonos <span t-field="o.cc_dos.warehouse_id.phone"/> <br/><span t-field="o.cc_dos.warehouse_id.state_id.name"/> - <span t-field="o.cc_dos.warehouse_id.country_id.name"/>
+            </t> -->
+            </p>
+        </div>
+
+    </div>
+    <div class="col-xs-4 text-center" style="margin-top:10px;" id="second_column_header">
+            <h4><strong>FACTURA COMERCIAL DE EXPORTACION</strong></h4>
+            <h5>SIN DERECHO A CREDITO FISCAL</h5>
+    </div>
+    <div class="col-xs-4 text-center" id="third_column_header" style="padding-top:10px;">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p><strong style="font-size: 14px;">NIT: <span t-field="o.company_id.nit"/></strong><br/>
+                <strong style="font-size: 15px;">Factura N°: <span t-field="o.cc_nro"/></strong><br/>
+                <span class="small">Autorización N°:</span><span class="small" t-field="o.cc_dos.nro_orden"/><br/>
+                <strong>ORIGINAL</strong> <br />
+                <strong style="font-size:9px;" t-field="o.cc_dos.activity_id.name" />
+                </p>
+            </div>
+        </div>
+    </div>
+     <div class="row zero_min_height" id="header_line">
+        <div class="col-xs-12">
+            <div style="border-bottom: 1px solid black;"/>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="page" style="font-size:12px;">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <p><strong>Lugar y Fecha: </strong>  <span t-field="o.company_id.state_id.name"/> <span t-field="o.date_invoice" t-field-options='{"format": "d"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "MMMM"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "y"}'/></p>
+                    <p><strong>Nombre: </strong><span t-field="o.razon"/></p>
+                    <p><strong>Dirección del Importador: </strong><span t-field="o.partner_id.street"/> <span t-field="o.partner_id.street2"/> Telef. <span t-field="o.partner_id.phone"/> <span t-field="o.partner_id.country_id.name"/></p>
+                    <p><strong><span t-field="o.partner_id.country_id.name_code_export"/>: </strong><span t-field="o.partner_id.code_export"/></p>
+                    <!-- <p>
+                        <strong>Pais Origen: </strong><span t-field="o.company_id.country_id.name"/>
+                    </p>
+                    <p>
+                        <strong>Pais Destino: </strong><span t-field="o.partner_id.country_id.name"/>
+                    </p> -->
+                    <p>
+                        <strong>INCOTERM y Puerto Destino: </strong><span t-field="o.incoterms_id.name"/> - <span t-field="o.origin_inc"/>
+                    </p>
+                    <p>
+                        <strong>Moneda de la transaccion Comercial: </strong>Dolar Americano
+                    </p>
+                    <p>
+                        <strong>TIPO DE CAMBIO 1$us: </strong> <span t-esc="round(o.company_id.currency_id.rate,2)"/>
+                    </p>
+                  </div>
+                  <!-- <div class="col-xs-4">
+                    <p><strong>TELEFONO: </strong><span t-field="o.partner_id.phone"></span></p>
+                    <p><strong>NIT: </strong><span t-field="o.nit"/></p>
+                    <p>
+                        <strong><span t-field="o.partner_id.country_id.name_code_export"/>: </strong><span t-field="o.partner_id.code_export"/>
+                    </p>
+                  </div> -->
+                </div>
+            </div>
+            <div class="panel-body" style="min-height:280px;">
+                <table class="table table-condensed" >
+                    <thead>
+                        <tr>
+                            <th colspan="7" class="text-center">DETALLE</th>
+                        </tr>
+                        <tr>
+                            <th>ITEM.</th>
+                            <th>NANDINA</th>
+                            <th>DESCRIPCIÓN</th>
+                            <th>CANTIDAD</th>
+                            <th>UNIDAD DE MEDIDA</th>
+                            <!-- <th>TOTAL DIMENSION</th> -->
+                            <th class="text-right">PRECIO UNITARIO</th>
+                            <th class="text-right">SUBTOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <tr t-foreach="o.invoice_line_ids" t-as="l">
+                            <td>
+                              <span t-esc="l_index+1"/>
+                            </td>
+                            <td>
+                                <span t-field="l.product_id.nandina"></span>
+                            </td>
+                            <td>
+                              <p><span t-field="l.name"></span></p>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="l.quantity"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="l.uom_id.name"/>
+                            </td>
+
+                            <!-- <td class="text-right">
+                                <span t-field="l.total_dimension_display"/>
+                            </td> -->
+                            <td class="text-right">
+                                <span t-field="l.price_unit"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="('%.2f' % l.price_subtotal_with_tax)"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+      <div class="panel panel-default">
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-xs-9">
+                Son:  <span t-esc="to_word(o.amount_total, o.currency_id.name).upper()"/>
+              </div>
+              <div class="col-xs-3 text-right">
+                  <strong>TOTAL $us.</strong> <span t-field="o.amount_total"/>
+              </div>
+              <div class="col-xs-9">
+                Son:  <span t-esc="to_word(o.total_bs).upper()"/>
+              </div>
+              <div class="col-xs-3  text-right">
+                  <strong>TOTAL Bs.</strong> <span t-field="o.total_bs"/> Bs.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+              <div class="panel panel-default">
+                  <div class="panel-body">
+              <table class="table table-condensed">
+                  <tbody class="invoice_tbody" style="font-size:10px;">
+                      <tr>
+                          <td>
+                              PRECIO O VALOR BRUTO
+                          </td>
+                          <td>
+                              <span t-field="o.price_gross"/> $us.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              TRASPORTE HASTA LA FRONTERA
+                          </td>
+                          <td>
+                              <span t-field="o.transporte_local"/> $us.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              SEGURO HASTA LA FRONTERA
+                          </td>
+                          <td>
+                              <span t-field="o.seguro_local"/> $us.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              TRANSPORTE INTERNACIONAL
+                          </td>
+                          <td>
+                              <span t-field="o.transporte_inter"/> $us.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                             SEGURO INTERNACIONAL
+                          </td>
+                          <td>
+                              <span t-field="o.seguro_inter"/> $us.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                             OTROS
+                          </td>
+                          <td>
+                              <span t-field="o.otros"/> $us.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                             TOTAL <span t-field="o.incoterms_id.name"/> - <span t-field="o.origin_inc"/>
+                          </td>
+                          <td>
+                              <span t-field="o.total_cif"/> $us.
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8">
+            <p><strong>Codigo De Control:</strong>  <span t-field="o.cc_cod"/></p>
+            <p><strong>Fecha Limite de emision:</strong><span t-field="o.cc_dos.fecha_fin"/></p>
+          </div>
+          <div class="col-xs-4 text-center">
+            <span t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))" ><img t-att-src="'data:image/png;base64,%s' % o.qr_img" style="height: 4.2cm;"/></span>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <p>
+            <strong>ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS. EL USO ILÍCITO DE ÉSTA SERÁ SANCIONADO DE ACUERDO A LA LEY.</strong><br/><span t-field="o.cc_dos.leyenda_id.name" style="font-size:10px;"/></p>
+          </div>
+        </div>
+
+
+      </div>
+</div>
+</div>
+
+</t>
+</t>
+</template>
+
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="sale_make_payment_view_form" model="ir.ui.view">
+    <field name="name">sale.make.payment.form</field>
+    <field name="model">sale.make.payment</field>
+    <field name="arch" type="xml">
+      <form string="Registro de Pagos Adelantados">
+        <group>
+          <field name="payment_date"/>
+          <field name="journal_id" widget="selection"/>
+          <field name="account_advanced_id" widget="selection"/>
+          <field name="amount"/>
+        </group>
+        <footer>
+            <button name="action_make_payment" string="Registar" type="object" class="btn-primary"/>
+            or
+            <button string="Salir" class="oe_link" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+  <record id="sale_make_payment_action_form" model="ir.actions.act_window">
+    <field name="name">Pago Adelantado</field>
+    <field name="res_model">sale.make.payment</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+</data>
+</odoo>

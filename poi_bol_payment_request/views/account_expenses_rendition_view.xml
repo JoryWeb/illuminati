@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="account_expenses_rendition_bol_form" model="ir.ui.view">
+            <field name="name">account.expenses.rendition.bol.form</field>
+            <field name="model">account.expenses.rendition</field>
+            <field name="inherit_id" ref="poi_payment_request.account_expenses_rendition_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='amount']" position="after">
+                    <button name="action_inverse_tax" type="object" string="Cálculo de monto inverso" attrs="{'invisible': [('taxes_ids','=',False)]}" icon="fa-calculator"/>
+                </xpath>
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='invoice_number']" position="after">
+                    <field name="monto" sum="Total" invisible="1"/>
+                    <field name="descuento" sum="desc total" string="Desc." attrs="{'readonly': [('state','!=','draft')]}"/>
+                    <field name="tipo_com"/>
+                    <field name="partner_id" options="{'no_create': True}"/>
+                    <field name="nit" widget="mask" data-inputmask-alias="integer"/>
+                    <field name="razon"/>
+                    <field name="cc_nro" invisible="1" string="Nr.Fact."/>
+                    <field name="imp_pol" string="Nr.Poliza Import."/>
+                    <field name="cc_aut" widget="mask" data-inputmask-alias="integer"/>
+                    <field name="cc_fecha" invisible="1"/>
+                    <field name="ice" sum="ICE total" attrs="{'readonly': [('state','!=','draft')]}"/>
+                    <field name="exento" sum="Exento total" attrs="{'readonly': [('state','!=','draft')]}"/>
+                    <field name="monto_neto" invisible="1"/>
+                    <field name="monto_iva" invisible="1"/>
+                    <field name="cc_cod" widget="mask" data-inputmask-mask="##-##-##-##"/>
+                </xpath>
+
+            </field>
+        </record>
+        <!--Habilitar edición de ciertos datos de factura de compra a un rol específico (habilitando toda la línea y deshabilitando las que afectan el Asiento ya generado)
+        <record id="account_expenses_rendition_form_account_manager" model="ir.ui.view">
+            <field name="name">account.expenses.rendition.form.account.manager</field>
+            <field name="model">account.expenses.rendition</field>
+            <field name="groups_id" eval="[(6, 0, [ref('account.group_account_manager')])]"/>
+            <field name="inherit_id" ref="poi_payment_request.account_expenses_rendition_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='rendition_invoice_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': 0}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='taxes_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='invoice_type']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='account_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='account_analytic_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='rendition_invoice_ids']/tree/field[@name='amount']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="account_expenses_rendition_bol_form_account_manager" model="ir.ui.view">
+            <field name="name">account.expenses.rendition.bol.form.account.manager</field>
+            <field name="model">account.expenses.rendition</field>
+            <field name="groups_id" eval="[(6, 0, [ref('account.group_account_manager')])]"/>
+            <field name="inherit_id" ref="poi_bol_payment_request.account_expenses_rendition_bol_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='descuento']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='ice']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='exento']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('parent.state','!=','draft')]}</attribute>
+                </xpath>
+            </field>
+        </record>-->
+
+
+
+        <!-- Registrar la Vista SQL en la tabla de Indices, a partir de la cual se construira el query total mediante UNION de Vistas de diferetes modulos -->
+        <!-- <record id="poi_bol_lcv_report_rendition" model="poi_bol.lcv.report.index">
+            <field name="name">poi_bol_lcv_report_rendition</field>
+            <field name="module">poi_bol_payment_request</field>
+            <field name="notes">Parte de Libro de compras correspondiente a las Facturas de compra ingresadas desde modulo de Rendicion</field>
+        </record> -->
+
+         <!-- Llamada a la funcion para reconstruir el reporte LCV en base a cualquier cambio introducido en la instalacion/actualizacion de este modulo
+         <function
+              id="function_rebuild_view_union"
+              model="poi_bol.lcv.report"
+              name="rebuild_view_union"/>
+-->
+    </data>
+</odoo>

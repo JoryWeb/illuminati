@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    
+    <data>
+
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.poi_bol</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="321"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="loc-bolivia" string="Localización Bolivia" data-key="poi_bol_base">
+                        <h2>Localización Bolivia</h2>
+                        <separator string="Configuraciones"/>
+                        <group>
+                            <label for="id" string="Proceso"/>
+                            <div>
+                                <div>
+                                    <field name="allow_invoice_direct" class="oe_inline"/>
+                                    <label for="allow_invoice_direct"/>
+                                </div>
+                                <div>
+                                    <field name="allow_invoice_defer" class="oe_inline"/>
+                                    <label for="allow_invoice_defer"/>
+                                </div>
+                                <div>
+                                    <field name="direct_stock_post" class="oe_inline"/>
+                                    <label for="direct_stock_post"/>
+                                </div>
+                                <div>
+                                    <field name="monto_bancarizacion" class="oe_inline"/>
+                                    <label for="monto_bancarizacion"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="id" string="Contabilidad"/>
+                            <div>
+                                <div>
+                                    <field name="fill_second_curr" class="oe_inline"/>
+                                    <label for="fill_second_curr"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="id" string="Validaciones"/>
+                            <div>
+                                <div>
+                                    <field name="validate_unique_nit" class="oe_inline"/>
+                                    <label for="validate_unique_nit"/>
+                                </div>
+                            </div>
+                        </group>
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+        <record id="poi_bol_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="res_config_settings_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'poi_bol_base'}</field>
+        </record>
+
+
+    </data>
+    
+    <!-- noupdate="1" After installation of the module, open the related menu
+    <data>
+
+        <record id="action_client_bol_conf_menu" model="ir.actions.client">
+            <field name="name">Abrir Configuración Localización</field>
+            <field name="tag">reload</field>
+            <field name="params" eval="{'menu_id': ref('poi_bol_base.menu_bol_config')}"/>
+        </record>
+        <record id="base.open_menu" model="ir.actions.todo">
+            <field name="action_id" ref="action_client_bol_conf_menu"/>
+            <field name="state">open</field>
+        </record>
+    </data>
+     -->
+</openerp>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <menuitem name="Tramite de Placas"
+        id="base.menu_base_plate"
+        groups="group_sale_pt"
+        sequence="7"/>
+    <record model='ir.ui.menu' id='base.menu_base_plate'>
+       <field name="groups_id" eval="[(4,ref('poi_x_toyosa.group_sale_pt'))]"/>
+    </record>
+
+    <menuitem id="menu_base_sale_pt" name="Tramite de Placas" parent="base.menu_base_plate" sequence="1" groups="group_sale_pt"/>
+    <menuitem
+        action="plate_action_form"
+        id="sale_base_plate_pt"
+        parent="menu_base_sale_pt" sequence="2" groups="group_sale_pt"/>
+    <!-- <menuitem
+        action="plate_stage_action_form"
+        id="menu_base_action_sending_stock_2sale"
+        name="Estado"
+        parent="menu_base_sale_pt" sequence="3" groups="group_sale_pt"/> -->
+  </data>
+</odoo>

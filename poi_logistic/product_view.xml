@@ -1,0 +1,90 @@
+<openerp>
+    <data>
+        <record id="product_logistic_form_view" model="ir.ui.view">
+            <field name="name">product.product.logistic.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Logistic" groups="poi_logistic.group_logistic_user">
+                    <field name="control_lines">
+                        <tree>
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="location_id"/>
+                            <field name="company_id"/>
+                            <field name="max_qty"/>
+                            <field name="min_qty"/>
+                            <field name="security_percentage"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            </field>
+        </record>
+
+
+        <!-- PRODUCT MENU -->
+
+        <menuitem name="Products" id="menu_logistic_products" parent="menu_logistic_root" sequence="1"/>
+
+
+        <record id="logistic_products_kanban" model="ir.ui.view">
+            <field name="name">product.product.logistic.kanban</field>
+            <field name="model">product.product</field>
+            <field name="sequence">30</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="image_small"/>
+                    <field name="lst_price"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card">
+                                <div class="oe_kanban_content">
+                                    <a type="open"><img t-att-src="kanban_image('product.template', 'image_small', record.id.value)" class="oe_kanban_image"/></a>
+                                    <div class="oe_kanban_details">
+                                        <h4>
+                                            <a type="open">
+                                                 <span t-if="record.default_code.value">
+                                                     [<field name="default_code"/>]
+                                                  </span>
+                                                 <field name="name"/>
+                                            </a>
+                                        </h4>
+
+                                        <div class="oe_items_list oe_kanban_ellipsis oe_logistic_product_options">
+                                        <div>
+                                            <a name="%(action_poi_margin_stock_filtered_report)d" type="action">Stock Margin</a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+        <record id="action_logistic_products" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="action_logistic_products_kanban" model="ir.actions.act_window.view">
+            <field eval="30" name="sequence"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="logistic_products_kanban"/>
+            <field name="act_window_id" ref="action_logistic_products"/>
+        </record>
+
+
+        <menuitem name="Products" id="action_products_logistic" parent="menu_logistic_products" action="action_logistic_products" sequence="30"/>
+
+    </data>
+</openerp>

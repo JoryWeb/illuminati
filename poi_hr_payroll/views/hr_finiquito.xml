@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_hr_finiquito_form" model="ir.ui.view">
+			<field name="name">hr.finiquito.form</field>
+			<field name="model">hr.finiquito</field>
+			<field name="arch" type="xml">
+				<form string="Finiquito" version="7.0">
+					<header>
+                        <button name="compute_finiquito" states="draft" string="Calcular Finiquito" type="object"/>
+                        <button name="done_finiquito" states="draft" string="Confirmar Finiquito" class="oe_highlight" type="object"/>
+                        <button name="cancel_finiquito" states="done" string="Cancel Finiquito"  type="object"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
+                </header>
+					<sheet string="Finiquito">
+						<h1>
+							<label string="Formulario Finiquito"/>
+						</h1>
+					 	<group>
+					 		<group>
+								<field name="employee_id"/>
+								<field name="contract_id"/>
+								<field name="ouster"/>
+								<field name="dbonus" />
+								<field name="holidays_month"/>
+								<field name="holidays_day"/>
+							</group>
+							<group>
+								<field name="date" />
+								<field name="date_from"/>
+								<field name="date_to"/>
+								<field name="years"/>
+								<field name="months"/>
+								<field name="days"/>
+							</group>
+                    	</group>
+                    	<notebook colspan="4">
+                    		<page string="Liquidacion de la Remuneracion">
+                    			<h4>
+                    				<label string="LIQUIDACION DE LA REMUNERACION PROMEDIO INDEMNIZABLE EN BASE A LOS 3 ULTIMOS MESES"/>
+                    			</h4>
+								<group>
+									<group string="Ultimos 3 Salarios">
+										<field name="payslip_one_id" domain="[('employee_id', '=', employee_id)]"/>
+										<field name="payslip_second_id" domain="[('employee_id', '=', employee_id)]"/>
+										<field name="payslip_third_id" domain="[('employee_id', '=', employee_id)]"/>
+									</group>
+									<group string="Totales">
+										<field name="first_amount"/>
+										<field name="second_amount"/>
+										<field name="third_amount"/>
+									</group>
+								</group>
+								<h4>Otros Conceptos percibidos</h4>
+								<field name="other_ids"  nolabel="1" widget="one2many_list">
+									<tree string="Tiempo de Trabajo" editable="bottom">
+										<field name="name" />
+										<field name="first_amount"/>
+	                                    <field name="second_amount"/>
+	                                    <field name="third_amount"/>
+	                                    <field name="amount_total"/>
+
+	                                </tree>
+	                            </field>
+	                            <group class="oe_subtotal_footer oe_right">
+	                            	<field name="other_amount"/>
+	                            </group>
+
+							</page>
+							<page string="Total Remuneracion ">
+                    			<h4>
+                    				<label string="Beneficios Sociales"/>
+                    			</h4>
+                    			<group class="oe_subtotal_footer oe_right">
+                    				 <field name="ouster_amount"/>
+                    			</group>
+								<group>
+									<group>
+										<field name="years_amount" />
+										<field name="months_amount" />
+										<field name="days_amount" />
+									</group>
+									<group>
+										<field name="months_bonus" />
+										<field name="days_bonus" />
+										<field name="bonus_amount" />
+									</group>
+								</group>
+
+								<field name="benefit_ids"  nolabel="1" widget="one2many_list">
+									<tree string="Tiempo de Trabajo" editable="bottom">
+
+	                                    <field name="code"/>
+	                                    <field name="name"/>
+	                                    <field name="gestion"/>
+	                                    <field name="tiempo"/>
+	                                    <field name="medida"/>
+	                                    <field name="tiempo2"/>
+	                                    <field name="medida2"/>
+	                                    <field name="monto"/>
+
+
+	                                </tree>
+	                            </field>
+								<group class="oe_subtotal_footer oe_right">
+	                            	<field name="amount_benefit"/>
+	                            </group>
+							</page>
+							<page string="Deducciones">
+								<field name="deductions_ids"  nolabel="1" widget="one2many_list">
+									<tree string="Tiempo de Trabajo" editable="bottom">
+
+	                                    <field name="name"/>
+	                                    <field name="amount_total"/>
+
+	                                </tree>
+	                            </field>
+	                            <group class="oe_subtotal_footer oe_right">
+	                            	<field name="amount_deduction"/>
+	                            </group>
+							</page>
+						</notebook>
+						<group class="oe_subtotal_footer oe_right">
+							<field name="amount_total_pay"/>
+						</group>
+						<div class="oe_clear">
+                            <label for="note"/>
+                        </div>
+                        <field name="note"/>
+
+					</sheet>
+
+				</form>
+			</field>
+		</record>
+
+		<record id="view_hr_finiquito_tree" model="ir.ui.view">
+			<field name="name">hr.finiquito.tree</field>
+			<field name="model">hr.finiquito</field>
+
+			<field name="arch" type="xml">
+				<tree string="Finiquito">
+
+						<field name="employee_id"/>
+						<field name="contract_id"/>
+						<field name="state"/>
+
+
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_finiquito" model="ir.actions.act_window">
+			<field name="name">Finiquito</field>
+			<field name="res_model">hr.finiquito</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<!-- <field name="search_view_id" ref="view_hr_finiquito_search"/>
+			<field name="context">{'search_default_group_finiquito': 1}</field> -->
+		</record>
+
+		<menuitem action="action_finiquito" id="menu_hr_finiquito" parent="hr_payroll.menu_hr_payroll_root"/>
+	</data>
+</odoo>

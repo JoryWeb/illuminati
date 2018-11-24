@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data noupdate="1">
+	<record id="ufv_precision" model="decimal.precision">
+		<field name="name">UFV HR</field>
+        <field name="digits">5</field>
+    </record>
+
+	<record id="UF2" model="res.currency">
+	  <field name="name">UF2</field>
+	  <field name="symbol">ufv</field>
+    </record>
+    <record forcecreate="0" id="rateufv2" model="res.currency.rate">
+        <field name="rate">2.23662</field>
+        <field name="date">2017-12-29</field>
+        <field name="currency_id" ref="UF2"/>
+    </record>
+
+    <!-- <record forcecreate="0" id="rateufv1" model="res.currency.rate">
+        <field name="rate">2.21947</field>
+        <field name="date">2017-11-29</field>
+        <field name="currency_id" ref="UF2"/>
+    </record> -->
+
+
+</data>
+</odoo>

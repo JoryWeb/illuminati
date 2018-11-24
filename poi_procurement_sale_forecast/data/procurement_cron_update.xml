@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record forcecreate="True" id="ir_cron_scheduler_procurement_tusequis_action" model="ir.cron">
+            <field name="name">Planificador de Producción</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False" />
+            <field name="model" eval="'procurement.sale.forecast'"/>
+            <field name="function" eval="'_create_procurements'"/>
+            <field name="args">()</field>
+        </record>
+
+    </data>
+</openerp>

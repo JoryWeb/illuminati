@@ -1,0 +1,16 @@
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="wiz_invoice_refund_toyo">
+			<field name="name">wizard.invoice_refund.toy</field>
+			<field name="model">wiz.invoice_refund</field>
+			<field name="inherit_id" ref="poi_bol_base.wiz_invoice_refund"/>
+			<field name="arch" type="xml">
+				<data>
+					 <xpath expr="//field[@name='invoice_line']/tree/field[@name='product_id']" position="after">
+					 	<field name="lot_id"/>
+					 </xpath>
+				</data>
+			</field>
+		</record>
+	</data>
+</odoo>		

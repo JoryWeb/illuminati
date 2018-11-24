@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="rciva_payroll_wiz">
+			<field name="name">rciva_payroll_wiz</field>
+			<field name="model">rciva.payroll.wiz</field>
+			<field name="arch" type="xml">
+				<form string="Fecha de Busqueda">
+					<group>
+						<field name='date_from'/>
+						<field name="date_to"/>
+						<field name="payslip_run"/>
+					</group>
+					<group col="4">
+						<field name="employee_ids" colspan="1"  nolabel="1">
+							<tree>
+								<field name="name" string="Empleados"/>
+								<field name="identification_id"/>
+							</tree>
+
+						</field>
+
+						<field name="analytic_id" colspan="1"  nolabel="1">
+							<tree>
+								<field name="name" string="Cuentas Analíticas"/>
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button name="open_table" type="object" string="Imprimir" class="oe_highlight"/>
+						<button string="Cancel" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_rciva_payroll_wiz">
+			<field name="name">Planilla Rc-IVA</field>
+			<field name="res_model">rciva.payroll.wiz</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="rciva_payroll_wiz"/>
+			<field name="target">new</field>
+		</record>
+
+        <menuitem action="action_rciva_payroll_wiz" id="menu_hr_rciva_payroll_wiz" parent="menu_hr_payslip"/>
+    </data>
+</odoo>

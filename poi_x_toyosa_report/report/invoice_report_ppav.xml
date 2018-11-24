@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_invoice_ppav"
+    string="Factura de Venta de partes y piezas y accesorios de vehiculos"
+    model="account.invoice"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.invoice_report_ppav"
+    name="poi_x_toyosa_report.invoice_template_ppav"
+    menu='False'
+  />
+
+
+  <record id="report_invoice_ppav" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_invoice_toy"/>
+  </record>
+</data>
+
+<template id="invoice_template_ppav">
+  <t t-call="web.html_container">
+  <t t-foreach="docs" t-as="o">
+    <t t-call="poi_x_toyosa_report.invoice_header_toy">
+      <t t-set="other" t-value="True"/>
+    </t>
+    <div class="article" style="font-size:12px;">
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <!-- <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p><strong>Fecha: </strong><span t-field="o.date_invoice" t-field-options='{"format": "d"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "MMMM"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "y"}'/></p>
+                    <p><strong>Señor(a)(es): </strong><span t-field="o.razon"></span></p>
+                    <p><strong>DIRECCION: </strong><span t-field="o.partner_id.street"></span> <span t-field="o.partner_id.street2"></span></p>
+                  </div>
+                  <div class="col-xs-4">
+                    <p><strong>NIT: </strong><span t-field="o.nit"></span></p>
+                    <p><strong>TELEFONO: </strong><span t-field="o.partner_id.phone"></span></p>
+                  </div>
+                </div>
+              </div> -->
+              <div class="panel-body" style="min-height:638px;">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>CANT.</th>
+                            <th>CODIGO</th>
+                            <th>DETALLE</th>
+                            <th class="text-right">UNITARIO</th>
+                            <th class="text-right">TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <tr t-foreach="o.invoice_line_ids" t-as="l">
+                            <td><span t-field="l.quantity"/></td>
+                            <td>
+                                <span t-field="l.product_id.default_code"></span>
+                            </td>
+                            <td>
+                              <p><span t-field="l.name"></span></p>
+                            </td>
+                            <td class="text-right">
+                          <span t-field="l.price_unit"/>
+                        </td>
+                        <td class="text-right">
+                          <span t-field="l.price_subtotal_with_tax2"/>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <t t-if="o.currency_id.name == 'USD'">
+                  <div class="col-xs-4 col-xs-offset-6">
+                    <p>Total $us:</p>
+                    <p>Tipo de Cambio Bs/$us:</p>
+                  </div>
+                  <div class="col-xs-2 text-right" style="padding:0px;maring:0px;">
+                    <p class="text-right"><span t-field="o.amount_total"/></p>
+                    <p class="text-right"><span t-esc="round(1/o.currency_id.rate,2)"/></p>
+                  </div>
+                </t>
+                <!-- <t t-if="o.currency_id.name != 'USD'">
+                  <div class="col-xs-4 col-xs-offset-6">
+                    <p>Total $us:</p>
+                    <p>Tipo de Cambio Bs/$us:</p>
+                  </div>
+                  <div class="col-xs-2 text-right" style="padding:0px;maring:0px;">
+                    <p class="text-right"><span t-field="o.amount_total_usd"/></p>
+                    <p class="text-right"><span t-esc="round(1/usd.rate,2)"/></p>
+                  </div>
+                </t> -->
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  <t t-call="poi_x_toyosa_report.invoice_footer_toy">
+
+  </t>
+  </t>
+  </t>
+</template>
+
+</odoo>

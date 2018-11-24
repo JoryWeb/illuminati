@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+
+  <record id="account_op_charge_type_view_tree" model="ir.ui.view">
+    <field name="name">account.op.charge.type.tree</field>
+    <field name="model">account.op.charge.type</field>
+    <field name="arch" type="xml">
+      <tree string="">
+        <field name="code"/>
+        <field name="name" />
+        <field name="type" />
+      </tree>
+    </field>
+  </record>
+
+
+  <record id="account_op_charge_type_view_form" model="ir.ui.view">
+    <field name="name">account.op.charge.type.form</field>
+    <field name="model">account.op.charge.type</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <sheet>
+          <group>
+            <field name="code"/>
+            <field name="name" />
+            <field name="type" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="account_op_charge_type_action_form" model="ir.actions.act_window">
+    <field name="name">Tipos de Cargo</field>
+    <field name="res_model">account.op.charge.type</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Añadir tipos de Cargo
+      </p>
+      <p>
+        <!-- More details about what a user can do -->
+      </p>
+    </field>
+  </record>
+
+
+  <record id="account_op_charge_view_tree" model="ir.ui.view">
+    <field name="name">account.op.charge.tree</field>
+    <field name="model">account.op.charge</field>
+    <field name="arch" type="xml">
+      <tree string="Cargos">
+        <field name="family_id" />
+        <field name="student_id"/>
+        <field name="type_charge" />
+        <field name="amount" />
+        <field name="state" />
+        <field name="year_id" />
+        <field name="month_id" />
+      </tree>
+    </field>
+  </record>
+
+
+  <record id="account_op_charge_view_form" model="ir.ui.view">
+    <field name="name">account.op.charge.form</field>
+    <field name="model">account.op.charge</field>
+    <field name="arch" type="xml">
+      <form string="Cargos">
+        <header>
+          <button name="action_send" string="Confirmar" class="oe_highlight" states="draft" type="object"/>
+          <button name="action_done" string="Pagar" class="oe_highlight" states="send" type="object"/>
+          <button name="action_cancel" string="Cancelar" class="oe_highlight" states="send,draft" type="object"/>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <group>
+            <group>
+              <field name="type_charge" />
+              <field name="student_id" />
+            </group>
+            <group>
+              <field name="date" />
+              <field name="date_due" />
+              <field name="year_id" />
+              <field name="month_id" />
+              <field name="family_id" />
+              <field name="course_id" />
+              <field name="course_level" />
+            </group>
+          </group>
+          <notebook>
+            <page string="Detalles del Cargo">
+              <group>
+                <group>
+                  <field name="product_id" />
+                  <field name="tax_id" />
+                  <field name="analytic_id" />
+                </group>
+                <group>
+                  <field name="name" />
+                  <field name="amount" />
+                  <field name="priority_id" />
+                </group>
+              </group>
+            </page>
+          </notebook>
+          <group>
+            <group>
+              <field name="invoice_id" />
+              <field name="to_bank" />
+            </group>
+            <group>
+              <field name="payment_id" />
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="account_op_charge_action_form" model="ir.actions.act_window">
+    <field name="name">Cargos</field>
+    <field name="res_model">account.op.charge</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear Nuevos Cargos a los Alumnos
+      </p>
+      <p>
+        <!-- More details about what a user can do -->
+      </p>
+    </field>
+  </record>
+</data>
+</odoo>

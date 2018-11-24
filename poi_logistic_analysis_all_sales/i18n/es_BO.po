@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_logistic_analysis_all_sales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-09 20:30+0000\n"
+"PO-Revision-Date: 2016-05-09 20:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_logistic_analysis_all_sales
+#: view:all.sales.analysis.wizard:poi_logistic_analysis_all_sales.all_sales_analysis_wizard_form
+msgid "All Sales analysis Wizard"
+msgstr "Asistente de Análisis de Todas las Ventas"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,amount_discounted:0
+msgid "Amount Discounted"
+msgstr "Monto Descontado"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,amount_returned:0
+msgid "Amount Returned"
+msgstr "Monto Devuelto"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,amount_sold:0
+msgid "Amount Sold"
+msgstr "Monto Vendido"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,price_unit:0
+msgid "Average Price Unit"
+msgstr "Precio Unitario Promedio"
+
+#. module: poi_logistic_analysis_all_sales
+#: selection:all.sales.analysis.wizard,type:0
+msgid "By Category"
+msgstr "Por Categoría"
+
+#. module: poi_logistic_analysis_all_sales
+#: selection:all.sales.analysis.wizard,type:0
+msgid "By Product"
+msgstr "Por Producto"
+
+#. module: poi_logistic_analysis_all_sales
+#: selection:all.sales.analysis.wizard,type:0
+msgid "By Products"
+msgstr "Por Varios Productos"
+
+#. module: poi_logistic_analysis_all_sales
+#: view:all.sales.analysis.wizard:poi_logistic_analysis_all_sales.all_sales_analysis_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,product_categ_id:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,create_uid:0
+#: field:all.sales.analysis.wizard.lines,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,create_date:0
+#: field:all.sales.analysis.wizard.lines,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,date_order:0
+msgid "Date Order"
+msgstr "Fecha"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,date_order_day:0
+msgid "Day"
+msgstr "Día"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,date_from:0
+msgid "Desde:"
+msgstr "Desde:"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,date_to:0
+msgid "Hasta"
+msgstr "Hasta"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,id:0
+#: field:all.sales.analysis.wizard.lines,id:0
+#: field:product.analysis.sales,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,write_uid:0
+#: field:all.sales.analysis.wizard.lines,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,write_date:0
+#: field:all.sales.analysis.wizard.lines,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,date_order_month:0
+msgid "Month"
+msgstr "Mes"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,num_orders_returned:0
+msgid "Num Orders Returned"
+msgstr "Num Órdenes Devueltas"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,num_orders_sold:0
+msgid "Num Orders Sold"
+msgstr "Num Órdenes Vendidas"
+
+#. module: poi_logistic_analysis_all_sales
+#: model:ir.model,name:poi_logistic_analysis_all_sales.model_all_sales_analysis_wizard
+msgid "POS order analysis Wizard"
+msgstr "Asistente de análisis de Ventas"
+
+#. module: poi_logistic_analysis_all_sales
+#: model:ir.model,name:poi_logistic_analysis_all_sales.model_all_sales_analysis_wizard_lines
+msgid "POS order analysis Wizard Lines"
+msgstr "Líneas de asistente de analisis de Ventas"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,product_id:0
+#: field:all.sales.analysis.wizard.lines,product_id:0
+#: field:product.analysis.sales,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,categ_id:0
+msgid "Product Category"
+msgstr "Categoría de Producto"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,product_ids:0
+msgid "Product ids"
+msgstr "Productos"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,qty_returned:0
+msgid "Qty Returned"
+msgstr "Cantidad Devuelta"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,qty_sold:0
+msgid "Quantity Sold"
+msgstr "Cantidad Vendida"
+
+#. module: poi_logistic_analysis_all_sales
+#: code:addons/poi_logistic_analysis_all_sales/wizard/all_sale_orders_analysis_wizard.py:90
+#: model:ir.actions.act_window,name:poi_logistic_analysis_all_sales.action_product_analysis_sales
+#: model:ir.actions.act_window,name:poi_logistic_analysis_all_sales.all_sales_analysis_wizard_form_action
+#: model:ir.actions.act_window,name:poi_logistic_analysis_all_sales.all_sales_analysis_wizard_form_product_action
+#: model:ir.model,name:poi_logistic_analysis_all_sales.model_product_analysis_sales
+#: model:ir.ui.menu,name:poi_logistic_analysis_all_sales.menu_all_sales_analysis_wizard_form
+#: view:product.analysis.sales:poi_logistic_analysis_all_sales.view_product_analysis_sales_graph
+#: view:product.analysis.sales:poi_logistic_analysis_all_sales.view_product_analysis_sales_search
+#: view:product.analysis.sales:poi_logistic_analysis_all_sales.view_product_analysis_sales_tree
+#: view:product.product:poi_logistic_analysis_all_sales.logistic_products_all_sales_kanban
+#, python-format
+msgid "Sales Analysis"
+msgstr "Análisis de ventas"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,shop_id:0
+#: field:product.analysis.sales,shop_id:0
+msgid "Shop"
+msgstr "Tienda"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_logistic_analysis_all_sales
+#: view:all.sales.analysis.wizard:poi_logistic_analysis_all_sales.all_sales_analysis_wizard_form
+msgid "View Report"
+msgstr "Ver Reporte"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:all.sales.analysis.wizard.lines,wizard_id:0
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: poi_logistic_analysis_all_sales
+#: field:product.analysis.sales,date_order_year:0
+msgid "Year"
+msgstr "Año"
+
+#. module: poi_logistic_analysis_all_sales
+#: view:all.sales.analysis.wizard:poi_logistic_analysis_all_sales.all_sales_analysis_wizard_form
+msgid "or"
+msgstr "ó"
+

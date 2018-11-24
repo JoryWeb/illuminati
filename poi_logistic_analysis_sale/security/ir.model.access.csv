@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_sale_invoice_list,product_sale_invoice_list,model_product_sale_invoice_list,poi_logistic.group_logistic_user,1,0,0,0
+product_date_sold_returned_invoices,product_date_sold_returned_invoices,model_product_date_sold_returned_invoices,poi_logistic.group_logistic_user,1,0,0,0

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    <!-- res.groups -->
+
+
+</data>
+
+<data noupdate="1">
+
+    <!-- ir.rule -->
+    <record id="res_bank_account_rule" model="ir.rule">
+        <field name="name">Bank Account multi-company</field>
+        <field name="model_id" ref="model_res_bank_account"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+
+</data>
+</openerp>

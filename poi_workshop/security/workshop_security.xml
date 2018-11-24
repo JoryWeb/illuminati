@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="group_create_maintenance_request" model="res.groups">
+            <field name="name">Create Maintenance Request</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+        <record id="rule_workshop_order" model="ir.rule">
+            <field name="name">Ordenes de Trabajo Filtro</field>
+            <field name="model_id" ref="poi_workshop.model_workshop_order"/>
+            <field name="groups"
+                   eval="[(4, ref('poi_vehicle.group_mro_user'))]"/>
+            <field name="domain_force">['|',('warehouse_id','=',user.shop_assigned.id),('warehouse_id','in',[s.id for s in user.shop_ids])]</field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+
+        <record id="workshop_request_self_not_draft" model="ir.rule">
+            <field name="name">Not DRAFT self maintenance requests</field>
+            <field ref="model_workshop_request" name="model_id"/>
+            <field name="domain_force">
+                [('state','!=','draft'),'|',('create_uid','=',user.id),('create_uid','=',False)]
+            </field>
+            <field name="groups" eval="[(4, ref('poi_vehicle.group_mro_customer'))]"/>
+        </record>
+        <record id="workshop_request_self_draft" model="ir.rule">
+            <field name="name">DRAFT self maintenance requests</field>
+            <field ref="model_workshop_request" name="model_id"/>
+            <field name="domain_force">[('state','=','draft'),'|',('create_uid','=',user.id),('create_uid','=',False)]
+            </field>
+            <field name="groups" eval="[(4, ref('group_create_maintenance_request'))]"/>
+        </record>
+        <record id="workshop_request_not_draft" model="ir.rule">
+            <field name="name">Not DRAFT maintenance requests</field>
+            <field ref="model_workshop_request" name="model_id"/>
+            <field name="domain_force">[('state','!=','draft')]</field>
+            <field name="groups" eval="[(4, ref('poi_vehicle.group_mro_user'))]"/>
+        </record>
+
+    </data>
+</odoo>

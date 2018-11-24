@@ -1,0 +1,30 @@
+<openerp>
+    <data>
+        <record id="purchase_dimension_order_form" model="ir.ui.view">
+            <field name="name">purchase.dimension.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Replacing because dimension is being added to the calc -->
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="replace">
+                    <field name="product_id"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="replace">
+                    <field name="product_qty"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="replace">
+                    <field name="product_uom" groups="product.group_uom"/>
+                </xpath>
+
+                <!-- Fields added -->
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="after">
+                    <field name="product_dimension"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="after">
+                    <field name="total_dimension"/>
+                    <field name="total_dimension_display"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- ir.cron -->
+        <record id="mreport_view" model="ir.ui.view">
+            <field name="model">m.report</field>
+            <field name="arch" type="xml">
+                <form string="Materialized Views">
+                   <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="cron" />
+                        <field name="maximum_cpu_percentage" />
+                        <field name="retry_interval"/>
+                    </group>
+                    <notebook>
+                    <page string="Information">
+                        <field name="view_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="technical_name"/>
+                                <field name="max_valid_report"/>
+                                <field name="last_refresh"/>
+                            </tree>
+                        </field>
+                    </page>
+                    </notebook>
+                   </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="mreport_view_tree" model="ir.ui.view">
+            <field name="model">m.report</field>
+            <field name="arch" type="xml">
+                <tree string="Materialized Views" colors="grey:(not active)">
+                    <field name="name"/>
+                    <field name="cron"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mreport_act" model="ir.actions.act_window">
+            <field name="name">Materialized Views</field>
+            <field name="res_model">m.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mreport_view_tree"/>
+        </record>
+        <menuitem id="menu_mreport_act" action="mreport_act" parent="base.menu_automation"/>
+
+    </data>
+</openerp>

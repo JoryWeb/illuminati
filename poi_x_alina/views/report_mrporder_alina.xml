@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_mrporder_alina">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="report.internal_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h2>Orden de Producción # : <span t-field="o.name"/></h2>
+
+                    <div class="row mt32 mb32">
+                        <div class="col-xs-3">
+                            <strong>Documento Fuente:</strong><br/>
+                            <span t-field="o.origin"/>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Producto:</strong><br/>
+                            <span t-field="o.product_id.code"/>
+                            <span t-esc="o.product_id.name_get()[0][1]"/>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Cantidad:</strong><br/>
+                            <span t-field="o.product_qty"/>
+                            <span t-field="o.product_uom.name" groups="product.group_uom"/>
+                        </div>
+                    </div>
+
+                    <div class="row mt32 mb32">
+                        <div class="col-xs-3">
+                            <strong>Fecha Programada:</strong><br/>
+                            <span t-field="o.date_planned"/>
+                        </div>
+                        <div class="col-xs-3">
+                            <strong>Fecha Impresión:</strong><br/>
+                            <span t-esc="time.strftime('%Y-%m-%d')"/>
+                        </div>
+                        <div class="col-xs-3" t-if="'sale_ref' in o._columns.keys()">
+                            <strong>Ref. Cliente:</strong><br/>
+                            <span t-esc="'sale_ref' in o._columns.keys() and o.sale_ref"/>
+                        </div>
+                        <div class="col-xs-3" t-if="'sale_name' in o._columns.keys()">
+                            <strong>SO Número:</strong><br/>
+                            <span t-esc="'sale_name' in o._columns.keys() and o.sale_name"/>
+                        </div>
+                    </div>
+
+                    <div t-if="o.workcenter_lines">
+                        <strong>Ordenes de Trabajo</strong>
+                        <table class="table table-condensed">
+                            <tr>
+                                <td class="text-center"><strong>Secuencia</strong></td>
+                                <td class="text-center"><strong>Nombre</strong></td>
+                                <td class="text-center"><strong>Centro de Trabajo</strong></td>
+                                <td class="text-center"><strong>No. de ciclos</strong></td>
+                                <td class="text-center"><strong>No. de horas</strong></td>
+                            </tr>
+                            <tr t-foreach="o.workcenter_lines" t-as="line2">
+                                <td class="text-center"><span t-field="line2.sequence"/></td>
+                                <td class="text-center"><span t-field="line2.name"/></td>
+                                <td class="text-center"><span t-field="line2.workcenter_id.name"/></td>
+                                <td class="text-center"><span t-field="line2.cycle"/></td>
+                                <td class="text-center"><span t-field="line2.hour"/></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <h3 t-if="o.move_lines">Lista de Materiales</h3>
+
+                    <table class="table table-condensed" t-if="o.move_lines or o.move_lines2">
+                        <thead>
+                            <tr>
+                                <th><strong>Producto</strong></th>
+                                <th class="text-right"><strong>Cantidad</strong></th>
+                                <th class="text-center" groups="stock.group_locations">
+                                    <strong>Ubicación materias primas</strong>
+                                </th>
+                                <th class="text-center" groups="stock.group_locations">
+                                    <strong>Destino Producto final</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="o.move_lines">
+                                <tr>
+                                    <td colspan="4"><strong>Productos a consumir</strong></td>
+                                </tr>
+                                <tr t-foreach="o.move_lines" t-as="line">
+                                    <td>
+                                        <span t-field="line.product_id.default_code"/>
+                                        <!--<span t-field="line.product_id.name"/>-->
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.product_uom_qty"/>
+                                        <span t-field="line.product_uom.name" groups="product.group_uom"/>
+                                    </td>
+                                    <td class="text-center" groups="stock.group_locations">
+                                        <span t-field="line.location_id.name"/>
+                                    </td>
+                                    <td class="text-center" groups="stock.group_locations">
+                                        <span t-field="line.location_dest_id.name"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="o.move_lines2">
+                                <tr>
+                                    <td colspan="4"><strong>Productos consumidos</strong></td>
+                                </tr>
+                                <tr t-foreach="o.move_lines2" t-as="line2">
+                                    <td>
+                                        <span t-field="line2.product_id.default_code"/>
+                                        <!--<span t-field="line2.product_id.name"/>-->
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line2.product_uom_qty"/>
+                                        <span t-field="line2.product_uom.name"/>
+                                    </td>
+                                    <td class="text-center" groups="stock.group_locations">
+                                        <span t-field="line2.location_id.name"/>
+                                    </td>
+                                    <td class="text-center" groups="stock.group_locations">
+                                        <span t-field="line2.location_dest_id.name"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>

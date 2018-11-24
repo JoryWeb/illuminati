@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_poi_reservation_wizard" model="ir.ui.view">
+            <field name="name">Extender Reserva de Vehiculos</field>
+            <field name="model">poi.reservation.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Detalle de Extensión de Reserva">
+                    <group col="1">
+                        <field name="tipo_reserva" />
+                        <field name="fecha_reserva_hasta" />
+                        <field name="observaciones" />
+                    </group>
+                    <footer>
+                        <button name="update_reserve" string="Extender" type="object" class="btn-primary"/>
+                        or
+                        <button string="Salir" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_poi_reservation_cancel_wizard" model="ir.ui.view">
+            <field name="name">Cancelar Reserva de Vehículos</field>
+            <field name="model">poi.reservation.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Reserva de Vehículos">
+                    <group col="1">
+                        <field name="tipo_reserva" readonly="1"/>
+                        <field name="fecha_reserva_hasta" readonly="1"/>
+                        <field name="observaciones" string="Motivo Cancelación"/>
+                    </group>
+                    <footer>
+                        <button name="cancel_reserve" string="Cancelar Reserva" type="object" class="btn-primary"/>
+                        or
+                        <button string="Salir" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_poi_reservation_wizard" model="ir.actions.act_window">
+            <field name="name">Acciones de Reserva</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.reservation.wizard</field>
+            <field name="view_id" ref="view_poi_reservation_wizard"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="act_poi_reservation_cancel_wizard" model="ir.actions.act_window">
+            <field name="name">Accion Cancelar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.reservation.wizard</field>
+            <field name="view_id" ref="view_poi_reservation_cancel_wizard"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

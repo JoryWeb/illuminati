@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_wallet_wizard" model="ir.ui.view">
+        <field name="name">Reporte de Cartera</field>
+        <field name="model">wallet.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reporte de Cartera">
+                <group col="1">
+                    <field name="date" />
+                    <!-- <field name="date_cut" /> -->
+                    <field name="warehouse_id"/>
+                    <field name="agency_id"/>
+                    <field name="partner_id"/>
+                </group>
+                <footer>
+                    <button name="action_view_report" string="Ver Reporte" type="object" class="btn-primary"/>
+                    or
+                    <button string="Salir" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wallet_wizard_action" model="ir.actions.act_window">
+        <field name="name">Reporte de Cartera</field>
+        <field name="res_model">wallet.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Reporte de Cartera" action="wallet_wizard_action" id="menu_wallet_wizard" parent="sale.menu_sale_report" sequence="12" />
+
+  </data>
+</odoo>

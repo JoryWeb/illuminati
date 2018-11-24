@@ -1,0 +1,114 @@
+<openerp>
+    <data>
+
+        <record id="poi_bol_bancarizacion_report_ventas_tree" model="ir.ui.view">
+            <field name="name">poi.bol.bancarizacion.report.ventas.tree</field>
+            <field name="model">poi.bol.bancarizacion.report</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree string="Bancarizacion Ventas" create="0" edit="0">
+                    <field name="type" invisible="1"/>
+                    <field name="modalidad"/>
+                    <field name="fecha_doc"/>
+                    <field name="cc_nro"/>
+                    <field name="total_factura"/>
+                    <field name="nro_contrato"/>
+                    <field name="cc_aut"/>
+                    <field name="nit"/>
+                    <field name="razon"/>
+                    <field name="nro_cuenta"/>
+                    <field name="monto_pagado"/>
+                    <field name="monto_total_pagado"/>
+                    <field name="nit_banco"/>
+                    <field name="nro_transaccion"/>
+                    <field name="tipo_doc_pago"/>
+                    <field name="fecha_transaccion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="poi_bol_bancarizacion_report_compras_tree" model="ir.ui.view">
+            <field name="name">poi.bol.bancarizacion.report.compras.tree</field>
+            <field name="model">poi.bol.bancarizacion.report</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree string="Bancarizacion Compras" create="0" edit="0">
+                    <field name="type" invisible="1"/>
+                    <field name="modalidad"/>
+                    <field name="fecha_doc"/>
+                    <field name="tipo_transaccion"/>
+                    <field name="nit"/>
+                    <field name="razon"/>
+                    <field name="cc_nro"/>
+                    <field name="nro_contrato"/>
+                    <field name="total_factura"/>
+                    <field name="cc_aut"/>
+                    <field name="nro_cuenta"/>
+                    <field name="monto_pagado"/>
+                    <field name="monto_total_pagado"/>
+                    <field name="nit_banco"/>
+                    <field name="nro_transaccion"/>
+                    <field name="tipo_doc_pago"/>
+                    <field name="fecha_transaccion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="poi_bol_bancarizacion_report_search" model="ir.ui.view">
+            <field name="name">poi.bol.bancarizacion.report.filter</field>
+            <field name="model">poi.bol.bancarizacion.report</field>
+            <field name="arch" type="xml">
+                <search string="Filtrar Bancarizacion">
+                    <group col="10" colspan="4">
+                        <field name="fecha_doc" select="1" string="Fecha Documento"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Fecha Factura" icon="terp-go-month" domain="[]"
+                                context="{'group_by':'fecha_doc'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="poi_bol_bancarizacion_in_action" model="ir.actions.act_window">
+            <field name="name">Bancarizacion Compras</field>
+            <field name="res_model">poi.bol.bancarizacion.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="poi_bol_bancarizacion_report_search"/>
+            <field name="domain">[('type','=','in')]</field>
+            <field name="context">{'type':'in'}</field>
+        </record>
+        <record id="poi_bol_bancarizacion_in_action_tree" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poi_bol_bancarizacion_report_compras_tree"/>
+            <field name="act_window_id" ref="poi_bol_bancarizacion_in_action"/>
+        </record>
+
+        <record id="poi_bol_bancarizacion_out_action" model="ir.actions.act_window">
+            <field name="name">Bancarizacion Ventas</field>
+            <field name="res_model">poi.bol.bancarizacion.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="poi_bol_bancarizacion_report_search"/>
+            <field name="domain">[('type','=','out')]</field>
+            <field name="context">{'type':'out'}</field>
+        </record>
+        <record id="poi_bol_bancarizacion_out_action_tree" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poi_bol_bancarizacion_report_ventas_tree"/>
+            <field name="act_window_id" ref="poi_bol_bancarizacion_out_action"/>
+        </record>
+
+        <menuitem parent="menu_bol_rep_imp" name="Bancarizacion Compras" action="poi_bol_bancarizacion_in_action"
+                  id="menu_bancarizacion_in" sequence="30"/>
+        <menuitem parent="menu_bol_rep_imp" name="Bancarizacion Ventas" action="poi_bol_bancarizacion_out_action"
+                  id="menu_bancarizacion_out" sequence="40"/>
+
+        <!--<report auto="False" header="False" id="bancarizacion_txt" model="poi.bol.bancarizacion.report" name="bancarizacion_dv" rml="poi_bol_base/report/bancarizacion_dv.rml" string="Exportar Bancarizacion DaVinci" multi="True" report_type="txt"/>-->
+    </data>
+</openerp>

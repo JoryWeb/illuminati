@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+     <record id="view_poi_bol_rendition_tax_inverse" model="ir.ui.view">
+         <field name="name">poi_bol_rendition.tax_inverse.wizard.form</field>
+         <field name="model">poi_bol_rendition.tax_inverse.wizard</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Cálculo precio inverso">
+             	<label string ="Este cálculo precio..." colspan="4" nolabel="1" align="0.0" invisible="1"/>
+
+                 <newline/>
+
+                 <field name="amount"/>
+
+             	<newline/>
+             	<separator colspan="4" />
+             	<footer>
+             		<button name="action_update_price" string="Calcular" type="object" class="oe_highlight"/>
+                    o
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+
+  </data>
+</odoo>

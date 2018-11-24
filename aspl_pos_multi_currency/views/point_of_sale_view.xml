@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="return_view_pos_tree" model="ir.ui.view" >
+        <field name="name">pos.config.form.view.inherit</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+		    <div id="category_reference" position="before">
+	            <div class="col-xs-12 col-md-9 o_setting_box" id="iface_multi_currency">
+	                 <div class="o_setting_left_pane">
+	                     <field name="enable_multi_currency"/>
+	                 </div>
+	                <div class="o_setting_right_pane">
+	                     <label for="enable_multi_currency"/>
+	                     <div class="text-muted" id="multicurr_config">
+	                        Use To MultiCurrency For Payment
+	                     </div>
+	                     <div class="content-group mt16" attrs="{'invisible' : [('enable_multi_currency', '=', False)]}">
+	                         <div class="row mt16">
+	                             <label string="Display Conversion of currencies" for="display_conversion" class="col-md-3 o_light_label"/>
+	                             <field name="display_conversion"/>
+	                         </div>
+	                         <div class="row mt16">
+	                             <label string="Fetch All The Active Currencies" for="fetch_master" class="col-md-3 o_light_label"/>
+	                             <field name="fetch_master"/>
+	                         </div>
+	                         <div class="row mt16" attrs="{'invisible' : [('fetch_master', '=', True)]}">
+	                             <label string="Select currencies" for="pos_currencies" class="col-md-3 o_light_label"/>
+	                             <field name="pos_currencies" widget="many2many_tags"/>
+	                         </div>
+	                     </div>
+	                 </div>
+	            </div>
+	       	</div>
+        </field>
+    </record>
+
+	<record id="order_inherited_form_view1" model="ir.ui.view">
+        <field name="name">pos.order.inherited.view</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="order_currency_id" />
+                <field name="amount_currency" />
+           	</field>
+           	<field name="price_subtotal_incl" position="after">
+                <field name="line_amount_currency"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

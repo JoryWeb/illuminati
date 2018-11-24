@@ -1,0 +1,58 @@
+<openerp>
+    <data>
+        <record id="product_dimension_form_view" model="ir.ui.view">
+            <field name="name">product.dimension.form.view</field>
+            <field name="model">product.dimension</field>
+            <field name="arch" type="xml">
+                <form string="Product Dimensions" version="7.0">
+                    <group col="4" colspan="4">
+                        <field name="metric_type" on_change="onchange_dimensions(metric_type, uom_id, var_x, var_y, var_z)"/>
+                        <field name="uom_id" on_change="onchange_dimensions(metric_type, uom_id, var_x, var_y, var_z)"/>
+                        <newline/>
+                        <field name="var_x" on_change="onchange_dimensions(metric_type, uom_id, var_x, var_y, var_z)" attrs="{'required': [('metric_type','in',('lineal','area','volume'))]}"/>
+                        <field name="var_y" attrs="{'invisible': [('metric_type','in',('lineal'))], 'required': [('metric_type','in',('area','volume'))]}" on_change="onchange_dimensions(metric_type, uom_id, var_x, var_y, var_z)"/>
+                        <field name="var_z" attrs="{'invisible': [('metric_type','in',('lineal','area'))], 'required': [('metric_type','in',('volume'))]}" on_change="onchange_dimensions(metric_type, uom_id, var_x, var_y, var_z)"/>
+                        <newline/>
+                        <label for="total_computed"/>
+                        <div>
+                            <field name="total_computed" class="oe_inline"/>
+                            <field name="uom_total" options='{"no_open": True}' class="oe_inline"/>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_dimension_form_tree" model="ir.ui.view">
+			<field name="name">product.dimension.tree.view</field>
+			<field name="model">product.dimension</field>
+			<field name="arch" type="xml">
+				<tree string="Product Dimensions">
+					<field name="metric_type"/>
+                    <field name="uom_id"/>
+                    <field name="var_x"/>
+                    <field name="var_y"/>
+                    <field name="var_z"/>
+                    <field name="total_computed"/>
+                    <field name="uom_total"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="product_dimension_action">
+            <field name="name">Dimensiones de Productos</field>
+            <field name="res_model">product.dimension</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="product_dimension_form_tree"/>
+        </record>
+
+
+        <menuitem action="product_dimension_action"
+            groups="base.group_sale_manager,purchase.group_purchase_manager,stock.group_stock_manager"
+            id="product_dimension_menu"
+            parent="product.prod_config_main" sequence="13"/>
+
+
+    </data>
+</openerp>

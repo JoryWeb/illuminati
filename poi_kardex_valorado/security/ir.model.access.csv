@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+poi_report_kardex_valorado_lot,"poi_report_kardex_valorado_lot","model_poi_report_kardex_lot","sales_team.group_sale_manager",1,1,1,1
+poi_report_kardex_valorado_lot2,"poi_report_kardex_valorado_lot","model_poi_report_kardex_lot","stock.group_stock_manager",1,1,1,1
+poi_report_kardex_valorado_lot3,"poi_report_kardex_valorado_lot","model_poi_report_kardex_lot","stock.group_stock_user",1,1,1,1
+poi_report_kardex_valuation2,"poi_report_kardex_valuation2","model_poi_report_kardex_valuation","stock.group_stock_manager",1,1,1,1
+poi_report_kardex_valuation3,"poi_report_kardex_valuation3","model_poi_report_kardex_valuation_real","stock.group_stock_manager",1,1,1,1
+poi_report_kardex_valuation_wizard2,"poi_report_kardex_valuation_wizard2","model_poi_report_kardex_valuation_wizard","stock.group_stock_manager",1,1,1,1
+poi_report_kardex_inv_stock_user,"poi_report_kardex_inv stock_user","model_poi_report_kardex_inv","stock.group_stock_user",1,1,1,1
+poi_report_kardex_wizard_stock_user,"poi_report_kardex_wizard stock_user","model_poi_report_kardex_wizard","stock.group_stock_user",1,1,1,1

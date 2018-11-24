@@ -1,0 +1,3 @@
+id,debit_credit,name,report_type
+toyosa_balance_general,FALSE,Balance General,Basado en una sóla fecha
+toyosa_estado_resultados,FALSE,Estado de Resultados,Basado en rangos de fechas

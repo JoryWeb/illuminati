@@ -1,0 +1,101 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_pos_bol_config_form">
+            <field name="name">pos.bol.config.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='posbox_reference']" position="after">
+                    <h2>Localization</h2>
+                    <div class="row mt16 o_settings_container" id="pos_bol_options">
+                        <div class="col-xs-12 col-md-6 o_setting_box" title="Localization">
+                            <div class="o_setting_right_pane">
+                                <label for="dosif_id" string="Dosification"/>
+                                <div class="text-muted">
+                                    Dosification for Invoices
+                                </div>
+                                <div class="content-group mt16">
+                                    <field name="dosif_id"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_pos_order_bol_filter" model="ir.ui.view">
+            <field name="name">pos.order.bol.list.select</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="cc_nro"/>
+                    <field name="nit"/>
+                    <field name="razon"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Dosif" icon="terp-personal" domain="[]" context="{'group_by':'cc_dos'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="pos_order_bol_form_view">
+            <field name="name">pos.order.bol.form</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_pos_order_invoice']" position="replace"/>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="nit" attrs="{'readonly':[('state','!=','draft')]}"/>
+                    <field name="razon" attrs="{'readonly':[('state','!=','draft')]}"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Datos SIN">
+                        <group>
+                            <group>
+                                <field name="cc_dos" attrs="{'readonly': [('state','not in',('draft'))]}"
+                                       widget="selection"/>
+                                <field name="cc_aut" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="cc_nro" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                                <field name="estado_fac"/>
+                            </group>
+                            <group class="other-data">
+                                <field name="cc_cod" readonly="1"/>
+                                <field name="leyenda" readonly="1"/>
+                                <button icon="STOCK_FULLSCREEN" name="pop_qr" string="Ver QR" type="object"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='statement_ids']/tree/field[@name='amount']" position="before">
+                    <field name="card_code"/>
+                    <field name="card_bank_owner"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- VIEW QR -->
+        <record model="ir.ui.view" id="pos_order_qr_view">
+            <field name="name">pos.order.qr.form</field>
+            <field name="model">pos.order</field>
+            <field name="type">form</field>
+            <field name="priority" eval="96"/>
+            <field name="arch" type="xml">
+                <form string="Código QR">
+                    <group>
+                        <h1>
+                            <label string="Factura " class="oe_inline"/>
+                            <field name="cc_nro" readonly="1" class="oe_inline"/>
+                        </h1>
+                        <newline/>
+                        <field name="qr_img" readonly="1" widget="image"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

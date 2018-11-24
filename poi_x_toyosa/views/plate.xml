@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="plate_view_tree" model="ir.ui.view">
+    <field name="name">plate.plate.tree</field>
+    <field name="model">plate.plate</field>
+    <field name="arch" type="xml">
+      <tree string="Tramite de Placas">
+        <field name="name"/>
+        <field name="partner_id"/>
+        <field name="lot_id"/>
+        <field name="state"/>
+        <field name="warehouse_id" invisible="1"/>
+        <field name="create_uid" invisible="1"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="plate_view_form" model="ir.ui.view">
+    <field name="name">plate.plate.form</field>
+    <field name="model">plate.plate</field>
+    <field name="arch" type="xml">
+      <form string="Tramitede Placas">
+        <header>
+          <button name="plate_send" string="Confirmar" class="oe_highlight" states="draft" type="object"/>
+          <button name="plate_done" string="Finalizar" class="oe_highlight" states="send" type="object"/>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+          </group>
+          <group>
+            <group>
+              <field name="from_contact"/>
+              <field name="to"/>
+              <field name="amount"/>
+              <field name="partner_id"/>
+              <field name="lot_id"/>
+              <!-- <field name="year"/> -->
+              <field name="product_id"/>
+              <field name="create_uid" string="Anfitrion" attrs="{'readonly':1}" invisible="1"/>
+              <field name="warehouse_id" invisible="1"/>
+            </group>
+            <group>
+              <field name="order_id"/>
+              <field name="deadline"/>
+              <field name="work_todo"/>
+              <field name="diprove"/>
+              <field name="customer_flag"/>
+              <field name="toyosa_flag"/>
+              <field name="create_date" attrs="{'readonly': 1}"/>
+            </group>
+          </group>
+          <notebook>
+            <page string="Detalles">
+              <group>
+                <field name="detail_id" widget="one2many_list" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}">
+                    <tree string="Lineas" editable="bottom">
+                      <field name="file_delivered"/>
+                      <field name="note"/>
+                    </tree>
+                </field>
+              </group>
+            </page>
+            <page string="Etapas">
+              <group>
+                <field name="stage_id" widget="one2many_list" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}">
+                  <tree string="Lineas" editable="bottom">
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="stage"/>
+                  </tree>
+                </field>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="plate_view_search" model="ir.ui.view">
+    <field name="name">plate.plate.search</field>
+    <field name="model">plate.plate</field>
+    <field name="arch" type="xml">
+      <search string="Tramite de placas">
+        <field name="name"/>
+        <field name="partner_id"/>
+        <field name="lot_id"/>
+        <group expand="0" string="Group By">
+            <filter string="Estado" domain="[]" context="{'group_by':'state'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+
+  <record id="plate_action_form" model="ir.actions.act_window">
+    <field name="name">Tramite de Placas</field>
+    <field name="res_model">plate.plate</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear un nuevo Tramite de Placas
+      </p>
+      <p>
+        El formulario de tranmite de Placas nos permite llevar cabo un seguimiento a las etapas del mismo asi como detalles sobre los documentos entregados.
+      </p>
+    </field>
+  </record>
+
+  <record id="plate_action2_form" model="ir.actions.act_window">
+    <field name="name">Tramite de Placas</field>
+    <field name="res_model">plate.plate</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+
+  <record id="plate_stage_view_tree" model="ir.ui.view">
+    <field name="name">plate.stage.tree</field>
+    <field name="model">plate.stage</field>
+    <field name="arch" type="xml">
+      <tree string="Tramite de Placas" create="false" edit="false" delete="false">
+        <button string="Ver Tramite" icon="fa-eye" name="action_view_plate" type="object"/>
+        <field name="to" string="Responsable"/>
+        <field name="partner_id_c"/>
+        <field name="lot_id"/>
+        <field name="date_start"/>
+        <field name="date_end"/>
+        <field name="stage"/>
+
+      </tree>
+    </field>
+  </record>
+
+  <record id="plate_stage_view_search" model="ir.ui.view">
+    <field name="name">plate.stage.search</field>
+    <field name="model">plate.stage</field>
+    <field name="arch" type="xml">
+      <search string="Tramite de placas">
+        <field name="lot_id"/>
+        <field name="stage"/>
+        <field name="partner_id_c"/>
+        <field name="to"/>
+        <field name="date_start"/>
+        <field name="date_end"/>
+        <group expand="0" string="Group By">
+          <filter string="Etapa" domain="[]" context="{'group_by':'stage'}"/>
+          <filter string="Cliente" context="{'group_by':'partner_id_c'}"/>
+          <filter string="Mes de Inicio" domain="[]" context="{'group_by':'date_start'}"/>
+          <filter string="Mes de Finalizacion" domain="[]" context="{'group_by':'date_end'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="plate_stage_action_form" model="ir.actions.act_window">
+    <field name="name">Tramite de Placas</field>
+    <field name="res_model">plate.stage</field>
+    <field name="view_mode">tree</field>
+    <field name="search_view_id" ref="plate_stage_view_search"/>
+  </record>
+
+  <record id="plate_view_form_wiz" model="ir.ui.view">
+    <field name="name">plate.plate.form.wiz</field>
+    <field name="model">plate.plate</field>
+    <field name="arch" type="xml">
+      <form string="Tramitede Placas">
+        <header>
+          <button name="plate_send" string="Confirmar" class="oe_highlight" states="draft" type="object"/>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+          </group>
+          <group>
+            <group>
+              <field name="from_contact"/>
+              <field name="to"/>
+              <field name="amount"/>
+              <field name="partner_id"/>
+              <field name="lot_id"/>
+              <!-- <field name="year"/> -->
+              <field name="product_id"/>
+              <field name="create_uid" string="Anfitrion" attrs="{'readonly':1}" invisible="1"/>
+              <field name="warehouse_id" invisible="1"/>
+            </group>
+            <group>
+              <field name="order_id"/>
+              <field name="deadline"/>
+              <field name="work_todo"/>
+              <field name="diprove"/>
+              <field name="customer_flag"/>
+              <field name="toyosa_flag"/>
+            </group>
+          </group>
+          <notebook>
+            <page string="Detalles">
+              <group>
+                <field name="detail_id" widget="one2many_list" nolabel="1">
+                    <tree string="Lineas" editable="bottom">
+                      <field name="file_delivered"/>
+                      <field name="note"/>
+                    </tree>
+                </field>
+              </group>
+            </page>
+            <page string="Etapas">
+              <group>
+                <field name="stage_id" widget="one2many_list" nolabel="1">
+                  <tree string="Lineas" editable="bottom">
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="stage"/>
+                    <field name="sequence" invisible="1"/>
+                  </tree>
+                </field>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+  <record id="plate_stage_stage_view_tree" model="ir.ui.view">
+    <field name="name">plate.stage.stage.tree</field>
+    <field name="model">plate.stage.stage</field>
+    <field name="arch" type="xml">
+      <tree string="Etapas">
+        <field name="name"/>
+        <field name="sequence"/>
+        <field name="load_on_create"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="plate_stage_stage_view_form" model="ir.ui.view">
+    <field name="name">plate.stage.stage.form</field>
+    <field name="model">plate.stage.stage</field>
+    <field name="arch" type="xml">
+      <form string="Etapas">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="sequence"/>
+            <field name="load_on_create"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="plate_stage_stage_action_form" model="ir.actions.act_window">
+    <field name="name">Etapas</field>
+    <field name="res_model">plate.stage.stage</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Añadir nueva etapa
+      </p>
+      <p>
+        Añadir nuevas etapas para el tramite de placas.
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_plate"  parent="sale.menu_sale_config" sequence="25" name="Tramite de Placas"/>
+  <menuitem id="menu_plate_plate"  parent="menu_plate" action="plate_action_form" sequence="1"/>
+
+
+  <menuitem id="menu_plate_stage" parent="sale.menu_sale_report" action="plate_stage_action_form" sequence="10"/>
+  <!-- <menuitem id="menu_plate_stage_account" parent="menu_informes_reservas" action="plate_stage_action_form" sequence="19"/> -->
+
+
+  <menuitem id="menu_sale_pt" name="Tramite de Placas" parent="sale.sale_menu_root" sequence="20" groups="group_sale_pt"/>
+
+  <menuitem
+      action="plate_action_form"
+      id="sale_plate_pt"
+      parent="menu_sale_pt" sequence="2" groups="group_sale_pt"/>
+  <menuitem
+      action="plate_stage_action_form"
+      id="menu_action_sending_stock_2sale"
+      name="Estado"
+      parent="menu_sale_pt" sequence="3" groups="group_sale_pt"/>
+
+  <menuitem id="menu_plate_stage_stage"  parent="menu_plate" action="plate_stage_stage_action_form" sequence="2"/>
+</data>
+</odoo>

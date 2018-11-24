@@ -1,0 +1,324 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_procurement_sale_forecast
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-24 22:14+0000\n"
+"PO-Revision-Date: 2017-04-24 22:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.sale_forecast_load_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_product_categ_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_form_view
+msgid "Create Procurements"
+msgstr "Crear Aprovisionamientos"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_create_uid
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_create_uid
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_create_date
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_create_date
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_date
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_date_from
+msgid "Date From"
+msgstr "Fecha de"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_date_to
+msgid "Date To"
+msgstr "Fecha hasta"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_date_from
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_date_from
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_search_view
+msgid "Date from"
+msgstr "Fecha de"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_date_to
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_date_to
+msgid "Date to"
+msgstr "Fecha hasta"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_display_name
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_display_name
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_procurement_sale_forecast
+#: code:addons/poi_procurement_sale_forecast/models/sale.py:48
+#, python-format
+msgid "Error! Date to must be lower than date from."
+msgstr "¡Error! La fecha inicio debe ser menor que la fecha fin."
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_factor
+msgid "Factor"
+msgstr "Factor"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_forecast_id
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_forecast_id
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+msgid "Forecast"
+msgstr "Pronostico"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_forecast_lines
+msgid "Forecast Lines"
+msgstr "Lineas del pronóstico"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_id
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_id
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast___last_update
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line___last_update
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_write_uid
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_write_uid
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_write_date
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_write_date
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_form_view
+msgid "Lines"
+msgstr "Lineas"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.sale_forecast_load_form_view
+msgid "Load"
+msgstr "Cargar"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_form_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.sale_forecast_load_form_view
+msgid "Load Sales"
+msgstr "Cargar Ventas"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.sale_load_forecast_form_view
+msgid "Load to forecast"
+msgstr "Cargar a previsión"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model,name:poi_procurement_sale_forecast.model_make_procurement
+msgid "Make Procurements"
+msgstr "Crear abastecimientos"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_order_partner_id
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_partner_id
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_partner_id
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_search_view
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model,name:poi_procurement_sale_forecast.model_procurement_order
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_procurement_id
+msgid "Procurement"
+msgstr "Abastecimiento"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_procurement_count
+msgid "Procurement Count"
+msgstr "Número de abastecimientos"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_form_view
+msgid "Procurements"
+msgstr "Abastecimientos"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_product_id
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_product_id
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_product_category_id
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+msgid "Product category"
+msgstr "Categoría de producto"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_qty
+msgid "Quantity"
+msgstr "Cantidad Planificada"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_qty_plan
+msgid "Quantity Plan"
+msgstr "Cantidad Prevista"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_sale_id
+msgid "Sale"
+msgstr "Venta"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_form_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_tree_view
+msgid "Sale Forecast"
+msgstr "Previsión de venta"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_form_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_view
+msgid "Sale Forecast Line"
+msgstr "Linea de previsión de venta"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_search_view
+msgid "Sale Forecast Line Search"
+msgstr "Buscar lineas de previsión de ventas"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_search_view
+msgid "Sale Forecast Search"
+msgstr "Buscar previsión de venta"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.actions.act_window,name:poi_procurement_sale_forecast.action_view_stock_sale_forecast_form
+msgid "Sales Forecast"
+msgstr "Previsión de ventas"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.actions.act_window,name:poi_procurement_sale_forecast.action_view_stock_sale_forecast_line_form
+#: model:ir.ui.menu,name:poi_procurement_sale_forecast.menu_stock_sale_forecast_lines
+msgid "Sales Forecast Lines"
+msgstr "Líneas de previsión de ventas"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.menu,name:poi_procurement_sale_forecast.menu_stock_sale_forecast
+#: model:ir.ui.menu,name:poi_procurement_sale_forecast.menu_stock_sale_forecast_all
+msgid "Sales Forecasts"
+msgstr "Previsiones de ventas"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_subtotal
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_sale_forecast_load_product_tmpl_id
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_view
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_view
+msgid "Total Qty"
+msgstr "Cant. total"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_line_unit_price
+msgid "Unit Price"
+msgstr "Precio unidad"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model.fields,field_description:poi_procurement_sale_forecast.field_procurement_sale_forecast_warehouse_id
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.sale_forecast_load_form_view
+msgid "or"
+msgstr "o"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model,name:poi_procurement_sale_forecast.model_procurement_sale_forecast
+msgid "procurement.sale.forecast"
+msgstr "procurement.sale.forecast"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.model,name:poi_procurement_sale_forecast.model_procurement_sale_forecast_line
+msgid "procurement.sale.forecast.line"
+msgstr "procurement.sale.forecast.line"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.actions.act_window,name:poi_procurement_sale_forecast.action_sale_forecast_load_view
+#: model:ir.model,name:poi_procurement_sale_forecast.model_sale_forecast_load
+msgid "sale.forecast.load"
+msgstr "Carga de ventas en prevision"
+
+#. module: poi_procurement_sale_forecast
+#: model:ir.ui.view,arch_db:poi_procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view
+msgid "⇒ Request Procurement"
+msgstr "⇒ Solicitud de aprovisionamiento"

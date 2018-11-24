@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="seq_picking_type_mll_transit" model="ir.sequence">
+            <field name="name">MLL a Transito</field>
+            <field name="code">stock.picking.type</field>
+            <field name="prefix">MLL-TR</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="picking_type_mll_transit" model="stock.picking.type">
+            <field name="sequence_id" ref="seq_picking_type_mll_transit"/>
+            <field name="name">MLL A TRANSITO</field>
+            <field name="warehouse_id">21</field>
+            <field name="code">internal</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id">14</field>
+            <field name="default_location_dest_id">1059</field>
+        </record>
+
+        <record id="seq_picking_type_transit_mll" model="ir.sequence">
+            <field name="name">Transito a MLL</field>
+            <field name="code">stock.picking.type</field>
+            <field name="prefix">TR-MLL</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="picking_type_transit_mll" model="stock.picking.type">
+            <field name="sequence_id" ref="seq_picking_type_transit_mll"/>
+            <field name="name">TRANSITO A MLL</field>
+            <field name="warehouse_id">21</field>
+            <field name="code">internal</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id">1059</field>
+            <field name="default_location_dest_id">14</field>
+        </record>
+
+        <!-- EA6 -->
+        <record id="seq_picking_type_ea6_transit" model="ir.sequence">
+            <field name="name">EA6 a Transito</field>
+            <field name="code">stock.picking.type</field>
+            <field name="prefix">EA6-TR</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="picking_type_ea6_transit" model="stock.picking.type">
+            <field name="sequence_id" ref="seq_picking_type_ea6_transit"/>
+            <field name="name">EA6 A TRANSITO</field>
+            <field name="warehouse_id">13</field>
+            <field name="code">internal</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id">17</field>
+            <field name="default_location_dest_id">1059</field>
+        </record>
+
+        <record id="seq_picking_type_transit_ea6" model="ir.sequence">
+            <field name="name">Transito a EA6</field>
+            <field name="code">stock.picking.type</field>
+            <field name="prefix">TR-EA6</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="picking_type_transit_ea6" model="stock.picking.type">
+            <field name="sequence_id" ref="seq_picking_type_transit_ea6"/>
+            <field name="name">TRANSITO A EA6</field>
+            <field name="warehouse_id">13</field>
+            <field name="code">internal</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id">1059</field>
+            <field name="default_location_dest_id">17</field>
+        </record>
+
+        <!-- Regla Global de MLL a EA6 -->
+
+        <record id="stock_location_path_mll_ea6" model="stock.location.path">
+            <field name="active">1</field>
+            <field name="name">MLL->TRANSITO->EA6</field>
+            <field name="auto">manual</field>
+            <field name="sequence">0</field>
+            <field name="picking_type_id" ref="picking_type_mll_transit"/>
+            <field name="company_id">1</field>
+            <field name="location_from_id">1059</field>
+            <field name="location_dest_id">17</field>
+        </record>
+
+        <!-- Regla Global de EA6 a MILL -->
+
+        <record id="stock_location_path_ea6_mll" model="stock.location.path">
+            <field name="active">1</field>
+            <field name="name">EA6->TRANSITO->MLL</field>
+            <field name="auto">manual</field>
+            <field name="sequence">1</field>
+            <field name="picking_type_id" ref="picking_type_ea6_transit"/>
+            <field name="company_id">1</field>
+            <field name="location_from_id">1059</field>
+            <field name="location_dest_id">14</field>
+        </record>
+
+        <!-- Albaranes de Recuperados -->
+        <record id="seq_picking_type_recu_ea6" model="ir.sequence">
+            <field name="name">RECUPERADOS A EA6</field>
+            <field name="code">stock.picking.type</field>
+            <field name="prefix">REC-EA6</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="picking_type_recu_ea6" model="stock.picking.type">
+            <field name="sequence_id" ref="seq_picking_type_recu_ea6"/>
+            <field name="name">RECUPERADOS A EA6</field>
+            <field name="warehouse_id">7</field>
+            <field name="code">internal</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id">32</field>
+            <field name="default_location_dest_id">17</field>
+        </record>
+
+        <record id="seq_picking_type_ea6_recu" model="ir.sequence">
+            <field name="name">EA6 A RECUPERADO</field>
+            <field name="code">stock.picking.type</field>
+            <field name="prefix">EA6-REC</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="picking_type_ea6_recu" model="stock.picking.type">
+            <field name="sequence_id" ref="seq_picking_type_ea6_recu"/>
+            <field name="return_picking_type_id" ref="picking_type_recu_ea6"/>
+            <field name="name">EA6 A RECUPERADOS</field>
+            <field name="warehouse_id">7</field>
+            <field name="code">internal</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id">17</field>
+            <field name="default_location_dest_id">32</field>
+        </record>
+
+
+    </data>
+</openerp>

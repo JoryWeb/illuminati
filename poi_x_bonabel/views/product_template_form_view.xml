@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_add_view_bonabel" model="ir.ui.view">
+            <field name="name">product.template.common.form.bonabel</field>
+            <!--NOMBRE DEL MODELO PADRE-->
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.view_template_property_form"/>
+            <field name="arch" type="xml">
+                <div name="options" position="before">
+                    <group colspan="4">
+                        <field name="division_nprod"/>
+                        <field name="factory_nprod"/>
+                        <field name="world_nprod"/>
+                    </group>
+                </div>
+                <div name="options" position="inside">
+                    <div>
+                        <field name="gif_card_nprod"/>
+                        <label for="gif_card_nprod"/>
+                    </div>
+                </div>
+                <div name="standard_price_uom" position="after">
+                    <field name="unid_size_nprod"/>
+                    <field name="unid_size_buy_nprod"/>
+                </div>
+                <page name="sales" position="inside">
+                    <group>
+                        <group>
+                            <field name="warrant_prod_sales"/>
+                            <field name="term_prod_cli_sales"/>
+                            <field name="web_cliente_info"/>
+                            <field name="vid_nprod_info"/>
+                        </group>
+                        <group string="Punto de venta">
+                            <div>
+                                <field name="available_pdv_sales"/>
+                                <label for="available_pdv_sales"/>
+                            </div>
+                            <field name="category_pdv_sales"/>
+                            <div>
+                                <field name="for_weight_balance_sales"/>
+                                <label for="for_weight_balance_sales"/>
+                            </div>
+                        </group>
+                        <page name="accounting" position="inside">
+                            <group string="sasasa"></group>
+                        </page>
+                    </group>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_tree_bo" model="ir.ui.view">
+            <field name="name">res.partner.tree.bo</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="razon"/>
+                    <field name="nit"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_form_bo" model="ir.ui.view">
+            <field name="name">res.partner.form.bo</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='name']" position="replace">
+            		<field name="name" default_focus="1" placeholder="Name" on_change="onchange_name(name)"/>
+            	</xpath>
+                <xpath expr="//label[@for='street']" position="before">
+                       <field name="partner_type"/>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+               		<label for="ci" string="CI" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <div for="ci_div" attrs="{'invisible': [('is_company','=', True)]}">
+                      <div class="o_address_format">
+                          <field name='ci'  placeholder="CI" class="o_address_city"/>
+                          <field name='ci_dept' placeholder="Expedido" class="o_address_state"/>
+                          <field name='extension' placeholder="Extension" class="o_address_zip"/>
+                      </div>
+                    </div>
+                    <field name="nit" attrs="{'invisible': [('is_company','=', False)]}"/>
+                    <field name="razon"/>
+                    <field name="razon_invoice" invisible="1"/>
+                    <field name="fundaempresa" attrs="{'invisible': [('is_company','=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_bo" model="ir.ui.view">
+            <field name="name">res.partner.select.bo</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name"
+                       filter_domain="['|','|','|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self),('razon','ilike',self),('razon_invoice','ilike',self)]"/>
+                    <field name="nit"
+                       filter_domain="['|',('nit','ilike',self),('ci','=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="res_partner_type_form_view" model="ir.ui.view">
+            <field name="name">res.partner.type.form.view</field>
+            <field name="model">res.partner.type</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Types" editable="bottom">
+                    <field name="type"/>
+                    <field name="short"/>
+                    <field name="parent_id"/>
+                    <field name="sequence" invisible="1"/>
+                    <field name="for_customer"/>
+                    <field name="for_supplier"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_partner_type_form_act" model="ir.actions.act_window">
+            <field name="name">Partner Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem action="res_partner_type_form_act" id="menu_res_partner_type" name="Tipos socio" sequence="8" parent="contacts.res_partner_menu_config" groups="base.group_no_one"/>
+
+
+    </data>
+</openerp>

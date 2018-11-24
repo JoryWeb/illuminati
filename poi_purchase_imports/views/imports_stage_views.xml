@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="imports_stage_tree">
+            <field name="name">imports.stage.tree</field>
+            <field name="model">imports.stage</field>
+            <field name="arch" type="xml">
+                <tree string="Situaciones" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="state_color"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Stage Form view -->
+        <record id="imports_lead_stage_act" model="ir.actions.act_window">
+            <field name="name">Situaciones</field>
+            <field name="res_model">imports.stage</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="poi_purchase_imports.imports_stage_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Clic para crear nuevas situaciones.
+                </p>
+                <p>
+                    Recordar hacer clic sobre el punto para definir la secuencia.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="imports_lead_stage_act" id="menu_imports_lead_stage_act" name="Situaciones" sequence="100"
+                  parent="poi_purchase_imports.menu_purchase_imports"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_stock_lot_incidence_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">stock.landed.cost.report</field>
+            <field name="arch" type="xml">
+                <search string="Costes en Destino">
+                    <field name="landed_id"/>
+                    <field name="description"/>
+                    <field name="stock_picking_id"/>
+                    <group expand="1" string="Agrupar por">
+                        <filter string="Picking" name="group_picking" context="{'group_by':'stock_picking_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_stock_landed_cost_report_tree">
+            <field name="name">stock.landed.cost.report.tree</field>
+            <field name="model">stock.landed.cost.report</field>
+            <field name="arch" type="xml">
+                <tree string="Reporte de Costes en Destino">
+                    <field name="landed_id"/>
+                    <field name="amount_total"/>
+                    <field name="description"/>
+                    <field name="account_journal_id"/>
+                    <field name="account_move_id"/>
+                    <field name="stock_picking_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_stock_landed_cost_report_all" model="ir.actions.act_window">
+            <field name="name">Reporte Costes en Destino</field>
+            <field name="res_model">stock.landed.cost.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Reporte de Costes en Destino</field>
+        </record>
+        <!--
+        <menuitem id="menu_stock_lot_incidence_report" parent="stock.menu_warehouse_report" sequence="99"
+            groups="purchase.group_purchase_manager" action="action_stock_lot_incidence_report_all"/>
+            -->
+
+    </data>
+</openerp>

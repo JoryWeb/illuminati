@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="view_hr_voucher_config_form" model="ir.ui.view">
+        <field name="name">hr_voucher_config_form</field>
+        <field name="model">hr.voucher.config</field>
+        <field name="arch" type="xml">
+            <form string="other_inputs">
+                <group col="4">
+                    <field name="name"/>
+                    <field name="sequence"/>
+                    <field name="width"/>
+                </group>
+                <notebook>
+                    <page string="Report">
+                        <field name="line_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Invoice Lines" editable="bottom">
+                                 <field name="name"/>
+                                 <field name="salary_rules_id" widget="selection"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_voucher_config_tree" model="ir.ui.view">
+        <field name="name">hr_voucher_config_tree</field>
+        <field name="model">hr.voucher.config</field>
+        <field name="arch" type="xml">
+            <tree string="other_inputs">
+                <field name="name"/>
+                <field name="sequence"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_report_voucher_config" model="ir.actions.act_window">
+        <field name="name">Boleta de Pago</field>
+        <field name="res_model">hr.voucher.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_report_voucher_config" id="menu_hr_voucher_config" parent="hr_payroll.menu_hr_payroll_configuration"/>
+</data>
+</odoo>

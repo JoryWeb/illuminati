@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="sale_order_extra_wiz_view_form" model="ir.ui.view">
+    <field name="name">sale.order.extra.wiz.form</field>
+    <field name="model">sale.order.extra</field>
+    <field name="arch" type="xml">
+      <form string="Atributos">
+        <group>
+          <field name="order_id"/>
+          <field name="product_id"/>
+        </group>
+        <footer>
+          <button name="action_add_items" string="Añadir Accesorio" type="object" class="btn-primary"/>
+          or
+          <button string="Salir" class="oe_link" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_order_extra_wiz_action_form" model="ir.actions.act_window">
+    <field name="name">Accesorios</field>
+    <field name="res_model">sale.order.extra</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+</data>
+</odoo>

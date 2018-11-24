@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_contract_tree_view" model="ir.ui.view">
+            <field name="name">res.partner.contract.tree.view</field>
+            <field name="model">res.partner.contract</field>
+            <field name="arch" type="xml">
+                <tree string="Contracts" create="0" edit="0">
+                    <field name="partner_id"/>
+                    <field name="type"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="contract_number"/>
+                    <field name="contract_amount"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="res_partner_contract_form_view" model="ir.ui.view">
+            <field name="name">res.partner.contract.form.view</field>
+            <field name="model">res.partner.contract</field>
+            <field name="arch" type="xml">
+                <form string="Contract" create="0" edit="0">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,valid,completed"
+                               statusbar_colors='{"expired":"red","valid":"blue"}' readonly="1"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="type"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="contract_number"/>
+                            <field name="contract_amount"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_partner_contract_action" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="res_partner_contract_tree_view"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new contract.
+                </p>
+                <p>
+                    You can assign contracts to your customers here.
+                </p>
+            </field>
+        </record>
+        <!--<menuitem id="menu_partner_contracts" name="Contratos" parent="account.menu_finance" sequence="10" groups="account.group_account_manager"/>
+        <menuitem action="res_partner_contract_action" id="menu_res_partner_contract_action" parent="menu_partner_contracts" sequence="5"/>
+        -->
+
+        <record id="view_partner_contract_assigned_form" model="ir.ui.view">
+            <field name="name">res.partner.contract.assigned.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Contracts">
+                        <field name="contract_ids" create="0" edit="0"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_contract_purchase_tree_view" model="ir.ui.view">
+            <field name="name">res.partner.contract.tree.view</field>
+            <field name="model">res.partner.contract</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase Contracts">
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="contract_number"/>
+                    <field name="contract_amount"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="res_partner_contract_purchase_form_view" model="ir.ui.view">
+            <field name="name">res.partner.contract.form.view</field>
+            <field name="model">res.partner.contract</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Contracts">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,valid,completed"
+                               statusbar_colors='{"expired":"red","valid":"blue"}' readonly="1"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="type" invisible="1"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="contract_number"/>
+                            <field name="contract_amount"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_partner_contract_purchase_action" model="ir.actions.act_window">
+            <field name="name">Purchase Contracts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="res_partner_contract_purchase_tree_view"/>
+            <field name="domain">[('type','=','purchase')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new purchase contract.
+                </p>
+                <p>
+                    You can assign contracts to your customers here.
+                </p>
+            </field>
+        </record>
+        <!--<menuitem id="menu_partner_contracts_purchase" name="Contracts" parent="purchase.menu_procurement_management"
+                  sequence="10"/>
+        <menuitem action="res_partner_contract_purchase_action" id="menu_res_partner_contract_purchase_action"
+                  parent="menu_partner_contracts_purchase" sequence="5"/>-->
+
+    </data>
+</odoo>

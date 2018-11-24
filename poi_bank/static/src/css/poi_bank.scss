@@ -1,0 +1,257 @@
+$actionColWidth: 15px;
+$mainTableBordersPadding: 3px;
+$lightBorder: 1px solid #bbb;
+$accountingBorder: 1px solid #000;
+$initialLineBackground: #f0f0f0;
+// Warning, this value is also specified in the instance.web.account.abstractReconciliation widget
+$aestetic_animation_speed: 300ms;
+
+
+.openerp .oe_bank_statement_reconciliation {
+    // bankStatementReconciliationLine widget
+    .unreconciled_lines_container {
+
+        /* gap between accounting_view and action view */
+        > table > tbody > tr:nth-child(1) > td table {
+            margin-bottom: 10px;
+        }
+
+        /* popover */
+        table.details {
+            td:first-child {
+                padding-right: 10px;
+                font-weight: bold;
+            }
+        }
+
+        /* arrays of move lines */
+        .accounting_view, .match table {
+            width: 100%;
+
+            tr {
+                cursor: pointer;
+            }
+
+            td {
+                padding: 1px 8px;
+                vertical-align: middle;
+            }
+
+            td.cell_action, td.cell_info_popover {
+                width: $actionColWidth;
+                padding: 0;
+            }
+
+            td.cell_action {
+                text-align: left;
+            }
+
+            td.cell_account_code {
+                width: 80px;
+                padding-left: $mainTableBordersPadding;
+            }
+
+            td.cell_due_date {
+                width: 100px;
+            }
+
+            td.cell_label {
+
+            }
+
+            td.cell_debit {
+                text-align: right;
+                width: 15%;
+            }
+
+            td.cell_credit {
+                width: 15%;
+                text-align: right;
+                padding-right: $mainTableBordersPadding;
+            }
+
+            td.cell_info_popover {
+                text-align: right;
+            }
+
+            tr.line_open_balance {
+                color: #bbb;
+            }
+
+            tr .glyphicon:not(.line_info_button) {
+                visibility: hidden;
+                color: #555;
+            }
+
+            tr:hover .glyphicon, tr.active .glyphicon {
+                visibility: visible;
+            }
+
+            tr .do_partial_reconcile_button {
+                color: #f0ad4e;
+                padding-right: 5px;
+            }
+
+            tr .undo_partial_reconcile_button {
+                color: #555;
+                padding-right: 5px;
+            }
+        }
+
+        /* Partie infos */
+        .accounting_view {
+            border-collapse: separate;
+
+            .initial_line > td {
+                border-top: $lightBorder;
+                padding-top: 4px;
+                padding-bottom: 5px;
+                background-color: $initialLineBackground;
+                -webkit-transition-property: background-color;
+                -moz-transition-property: background-color;
+                -ms-transition-property: background-color;
+                transition-property: background-color;
+                -webkit-transition-duration: $aestetic_animation_speed;
+                -moz-transition-duration: $aestetic_animation_speed;
+                -ms-transition-duration: $aestetic_animation_speed;
+                -o-transition-duration: $aestetic_animation_speed;
+                transition-duration: $aestetic_animation_speed;
+
+                &.cell_action, &.cell_info_popover {
+                    border-top: none;
+                    background: white !important;
+                    // Hack pour l'alignement au px près
+                    padding-top: 6px;
+                    padding-bottom: 3px;
+                }
+            }
+
+            caption {
+                text-align: left;
+                height: 26px;
+                margin: 0 $actionColWidth 4px $actionColWidth;
+
+                .partner_name {
+                    font-size: 1.1em;
+                    font-weight: bold;
+                }
+
+                .tip_reconciliation_not_balanced {
+                    float: right;
+                    padding-right: 7px;
+                }
+
+                button {
+                    float: right;
+
+                    &:disabled {
+                        opacity: 0.5;
+                    }
+                }
+
+                > span, > input {
+                    position: relative; top: 7px; /* meh */
+                }
+            }
+
+            // accounting "T"
+            td.cell_credit { border-left: $accountingBorder; }
+        }
+
+
+        /* Match view */
+        .match {
+
+            .match_controls {
+                padding: 0 0 5px ($actionColWidth+$mainTableBordersPadding);
+
+                .filter {
+                    width: 240px;
+                }
+
+                .pager_control_left, .pager_control_right {
+                    display: inline-block;
+                    cursor: pointer;
+                }
+
+                .pager_control_left {
+                    margin-right: 10px;
+                }
+
+                .pager_control_left.disabled, .pager_control_right.disabled {
+                    color: #ddd;
+                    cursor: default;
+                }
+            }
+
+            .show_more {
+                display: inline-block;
+                margin-left: ($actionColWidth+$mainTableBordersPadding);
+                margin-top: 5px;
+            }
+        }
+
+
+        /* Action create */
+        .create {
+            margin: 0 $actionColWidth;
+            border: 1px solid #d5d5d5;
+            border-radius: 5px;
+            padding: 10px;
+
+            .quick_add {
+                margin-bottom: 10px;
+                clear: both;
+
+                &:empty {
+                    display: none;
+                }
+            }
+            .quick_add:empty {
+                display: none;
+            }
+
+            .oe_form > table {
+                width: 49%;
+                height: 26px;
+
+                &:nth-child(2n+1) { float: left; clear: left; }
+                &:nth-child(2n) { float: right; clear: right; }
+
+                th {
+                    font-weight: bold;
+                    line-height: 26px;
+                    padding-right: 8px;
+                    min-width: 100px;
+                    border-right: 1px solid #ddd;
+                    white-space: nowrap;
+                    width: 1%;
+                }
+
+                td {
+                    width: 99%;
+                    padding-left: 8px;
+                }
+
+                input, select {
+                    width: 100%;
+                }
+
+                &.add_line_container {
+                    width: 98%;
+                    float: none;
+                    clear: both;
+                    margin: auto;
+
+                    td {
+                        text-align: center;
+                    }
+
+                    .add_line {
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+    }
+}

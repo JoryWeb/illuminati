@@ -1,0 +1,462 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * pos_loyalty
+# 
+# Translators:
+# Davor Bojkić <bole@dajmi5.com>, 2015
+# Ivica Dimjašević <ivica.dimjasevic@storm.hr>, 2015
+# Karolina Tonković <karolina.tonkovic@storm.hr>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-09 09:22+0000\n"
+"PO-Revision-Date: 2015-11-03 08:54+0000\n"
+"Last-Translator: Davor Bojkić <bole@dajmi5.com>\n"
+"Language-Team: Croatian (http://www.transifex.com/odoo/odoo-9/language/hr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_name
+msgid "An internal identification for the loyalty program configuration"
+msgstr "Interna oznaka konfiguracije programa odanosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_name
+msgid "An internal identification for this loyalty program rule"
+msgstr "Interna oznaka pravila programa odanosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_name
+msgid "An internal identification for this loyalty reward"
+msgstr "Interna oznaka za nagradu odanosti"
+
+#. module: pos_loyalty
+#: selection:loyalty.rule,type:0
+msgid "Category"
+msgstr "Kategorija"
+
+#. module: pos_loyalty
+#: model:ir.actions.act_window,help:pos_loyalty.action_loyalty_program_form
+msgid "Click to create a Loyalty Program."
+msgstr "Kliknite za kreiranje programa odanosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_create_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_create_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_create_uid
+msgid "Created by"
+msgstr "Kreirao"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_create_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_create_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_create_date
+msgid "Created on"
+msgstr "Datum kreiranja"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_cumulative
+msgid "Cumulative"
+msgstr "Kumulativ"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_discount
+#: selection:loyalty.reward,type:0
+msgid "Discount"
+msgstr "Popust"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_discount_product_id
+msgid "Discount Product"
+msgstr "Proizvod popusta"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_display_name
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_display_name
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_type
+msgid "Does this rule affects products, or a category of products ?"
+msgstr "Da li to pravilo utječe na proizvode ili neku kategoriju proizvoda?"
+
+#. module: pos_loyalty
+#: selection:loyalty.reward,type:0
+msgid "Gift"
+msgstr "Poklon"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_gift_product_id
+msgid "Gift Product"
+msgstr "Poklon proizvod"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_pp_product
+msgid "How many loyalty points are given to the customer by product sold"
+msgstr "Koliko bodova odanosti se daje kupcu po prodanom prizvodu"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_pp_currency
+msgid "How many loyalty points are given to the customer by sold currency"
+msgstr "Koliko bodova odanosti se daje kupcu po valuti prodaje"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_pp_order
+msgid ""
+"How many loyalty points are given to the customer for each sale or order"
+msgstr "Koliko bodova odanosti se daje kupcu po svakoj prodaji ili narudžbi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_pp_product
+msgid "How many points the product will earn per product ordered"
+msgstr "Koliko bodova će proizvod zaraditi po narudžbi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_pp_currency
+msgid "How many points the product will earn per value sold"
+msgstr "Koliko bodova će proizvod zaraditi po prodajnoj vrijednosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program___last_update
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward___last_update
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule___last_update
+msgid "Last Modified on"
+msgstr "Zadnja promjena"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_write_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_write_uid
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_write_uid
+msgid "Last Updated by"
+msgstr "Promijenio"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_write_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_write_date
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_write_date
+msgid "Last Updated on"
+msgstr "Vrijeme promjene"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_pos_order_loyalty_points
+#: model:ir.model.fields,field_description:pos_loyalty.field_res_partner_loyalty_points
+msgid "Loyalty Points"
+msgstr "Bodovi odanosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_loyalty_program_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_loyalty_program_id
+#: model:ir.model.fields,field_description:pos_loyalty.field_pos_config_loyalty_id
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+#: model:ir.ui.view,arch_db:pos_loyalty.view_partner_property_form
+#: model:ir.ui.view,arch_db:pos_loyalty.view_pos_config_form
+msgid "Loyalty Program"
+msgstr "Program lojalnosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_name
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid "Loyalty Program Name"
+msgstr "Naziv programa odanosti"
+
+#. module: pos_loyalty
+#: model:ir.actions.act_window,name:pos_loyalty.action_loyalty_program_form
+#: model:ir.ui.menu,name:pos_loyalty.menu_loyalty_program
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_tree
+#: model:ir.ui.view,arch_db:pos_loyalty.view_pos_pos_form
+msgid "Loyalty Programs"
+msgstr "Programi odanosti"
+
+#. module: pos_loyalty
+#: model:ir.actions.act_window,help:pos_loyalty.action_loyalty_program_form
+msgid ""
+"Loyalty Programs allows you customer to earn points\n"
+"                    and rewards when doing business at your shops."
+msgstr "Programi odanosti omogućuju kupcu skupljanje bodova\ni nagrada kada kupuju iz vaših trgovina."
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_reward_form
+msgid "Loyalty Reward"
+msgstr "Nagrada za odanost"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_rule_form
+msgid "Loyalty Rule"
+msgstr "Pravila odanosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_minimum_points
+msgid "Minimum Points"
+msgstr "Minimalni bodovi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_name
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_name
+msgid "Name"
+msgstr "Naziv"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_point_cost
+msgid "Point Cost"
+msgstr "Trošak bodova"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_point_product_id
+msgid "Point Product"
+msgstr "Bodovni proizvod"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_pos_order
+msgid "Point of Sale"
+msgstr "POS blagajna"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:6
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:71
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:81
+#, python-format
+msgid "Points"
+msgstr "Bodovi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_rounding
+msgid "Points Rounding"
+msgstr "Zaokruživanje bodova"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:57
+#, python-format
+msgid "Points Spent"
+msgstr "Utrošeni bodovi"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:54
+#, python-format
+msgid "Points Won"
+msgstr "Osvojeni bodovi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_pp_currency
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_pp_currency
+msgid "Points per currency"
+msgstr "Bodovi po valuti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_pp_order
+msgid "Points per order"
+msgstr "Bodovi po narudžbi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_pp_product
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_pp_product
+msgid "Points per product"
+msgstr "Bodovi po proizvodu"
+
+#. module: pos_loyalty
+#: selection:loyalty.rule,type:0
+msgid "Product"
+msgstr "Proizvod"
+
+#. module: pos_loyalty
+#: selection:loyalty.reward,type:0
+msgid "Resale"
+msgstr "Ponovna prodaja"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_reward_form
+msgid "Reward Name"
+msgstr "Ime nagrade"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid "Reward the customer with gifts or discounts for loyalty points"
+msgstr "Nagradite kupca darovima ili popustom za bodove odanosti"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:25
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_reward_ids
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+#, python-format
+msgid "Rewards"
+msgstr "Nagrade"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_rule_form
+msgid "Rule Name"
+msgstr "Naziv pravila"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_program_rule_ids
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid "Rules"
+msgstr "Pravila"
+
+#. module: pos_loyalty
+#: model:ir.ui.view,arch_db:pos_loyalty.view_loyalty_program_form
+msgid ""
+"Rules change how loyalty points are earned for specific products or "
+"categories"
+msgstr "Pravila mijenjaju kako se bodovi odanosti skupljaju za određeni proizvod ili kategoriju"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_category_id
+msgid "Target Category"
+msgstr "Ciljna kategorija"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_product_id
+msgid "Target Product"
+msgstr "Ciljni proizvod"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_loyalty_program_id
+msgid "The Loyalty Program this exception belongs to"
+msgstr "Program odanosti kao iznimka pripada"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_loyalty_program_id
+msgid "The Loyalty Program this reward belongs to"
+msgstr "Nagrada programa odanosti pripada"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_pos_order_loyalty_points
+msgid "The amount of Loyalty points the customer won or lost with this order"
+msgstr "Iznos bodova odanosti koje je kupac zaradio ili izgubio ovom narudžbom"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_category_id
+msgid "The category affected by the rule"
+msgstr "Kategorija na koju se odnosi pravilo"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_point_cost
+msgid "The cost of the reward per monetary unit discounted"
+msgstr "Trošak nagrade po popustu novčane jedinice"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_discount
+msgid "The discount percentage"
+msgstr "Postotak popusta"
+
+#. module: pos_loyalty
+#: constraint:loyalty.reward:0
+msgid "The discount product field is mandatory for discount rewards"
+msgstr "Polje popust na proizvod je obavezno za popusne nagrade"
+
+#. module: pos_loyalty
+#: constraint:loyalty.reward:0
+msgid "The gift product field is mandatory for gift rewards"
+msgstr "Polje poklon proizvod je obavezno za darovne nagrade"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_program_rounding
+msgid "The loyalty point amounts are rounded to multiples of this value."
+msgstr "Iznosi bodova odanosti su zaokruženi na višekratnik ove vrijednosti."
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_res_partner_loyalty_points
+msgid "The loyalty points the user won as part of a Loyalty Program"
+msgstr "Bodovi odanosti koje je kupac osvojio u programu odanosti"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_pos_config_loyalty_id
+msgid "The loyalty program used by this point_of_sale"
+msgstr "Program odanosti koji koristi ova POS blagajna"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_minimum_points
+msgid ""
+"The minimum amount of points the customer must have to qualify for this "
+"reward"
+msgstr "Minimalan iznos bodova koji kupac mora imati da bi se kvalificirao za ovu nagradu"
+
+#. module: pos_loyalty
+#: constraint:loyalty.reward:0
+msgid "The point product field is mandatory for point resale rewards"
+msgstr "Polje proizvod je obavezno za točku ponovne prodaje"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_cumulative
+msgid "The points won from this rule will be won in addition to other rules"
+msgstr "Bodovi osvojeni od ovog pravila biti će pridodana ostalim pravilima"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_rule_product_id
+msgid "The product affected by the rule"
+msgstr "Proizvod na koji se odnosi pravilo"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_gift_product_id
+msgid "The product given as a reward"
+msgstr "Proizvod dan kao nagrada"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_point_product_id
+msgid "The product that represents a point that is sold by the customer"
+msgstr "Proizvod koji predstavlja bod prodan od strane kupca"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_discount_product_id
+msgid "The product used to apply discounts"
+msgstr "Proizvod se koristi za primjenu popusta"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,help:pos_loyalty.field_loyalty_reward_type
+msgid "The type of the reward"
+msgstr "Vrsta nagrade"
+
+#. module: pos_loyalty
+#. openerp-web
+#: code:addons/pos_loyalty/static/src/xml/loyalty.xml:60
+#, python-format
+msgid "Total Points"
+msgstr "Ukupni bodovi"
+
+#. module: pos_loyalty
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_reward_type
+#: model:ir.model.fields,field_description:pos_loyalty.field_loyalty_rule_type
+msgid "Type"
+msgstr "Tip"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_loyalty_program
+msgid "loyalty.program"
+msgstr "loyalty.program"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_loyalty_reward
+msgid "loyalty.reward"
+msgstr "loyalty.reward"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_loyalty_rule
+msgid "loyalty.rule"
+msgstr "loyalty.rule"
+
+#. module: pos_loyalty
+#: model:ir.model,name:pos_loyalty.model_pos_config
+msgid "pos.config"
+msgstr "pos.config"

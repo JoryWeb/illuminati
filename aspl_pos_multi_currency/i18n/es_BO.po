@@ -1,0 +1,343 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* aspl_pos_multi_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-28 12:55+0000\n"
+"PO-Revision-Date: 2018-06-28 12:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:319
+#, python-format
+msgid "discount"
+msgstr "descuento"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_order_amount_currency
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_order_line_line_amount_currency
+msgid "Amount Currency"
+msgstr "Importe en Moneda"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:61
+#, python-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:237
+#, python-format
+msgid "CHANGE"
+msgstr "CAMBIO"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:64
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:31
+#, python-format
+msgid "Change in"
+msgstr "Cambio en"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:365
+#, python-format
+msgid "Change:"
+msgstr "Cambio:"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:84
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:167
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_config_pos_currencies
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_order_order_currency_id
+#, python-format
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:9
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:112
+#: model:ir.model,name:aspl_pos_multi_currency.model_res_currency_rate
+#, python-format
+msgid "Currency Rate"
+msgstr "Tasa monetaria"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:92
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:299
+#, python-format
+msgid "Currency:"
+msgstr "Moneda:"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:48
+#, python-format
+msgid "Current rate 1"
+msgstr "Actual tasa 1"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:188
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:349
+#, python-format
+msgid "Discount:"
+msgstr "Descuento:"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:245
+#, python-format
+msgid "Discounts"
+msgstr "Descuentos"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.ui.view,arch_db:aspl_pos_multi_currency.return_view_pos_tree
+msgid "Display Conversion of currencies"
+msgstr "Mostrar conversión de monedas"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_config_display_conversion
+msgid "Enable Display Conversion"
+msgstr "Mostrar conversión"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_config_enable_multi_currency
+msgid "Enable MultiCurrency"
+msgstr "Habilitar Multimoneda"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:121
+#, python-format
+msgid "Enter Amount"
+msgstr "Ingresar Monto"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/js/screens.js:159
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model.fields,field_description:aspl_pos_multi_currency.field_pos_config_fetch_master
+msgid "Fetch All Active Currencies"
+msgstr "Obtener todas las monedas activas"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.ui.view,arch_db:aspl_pos_multi_currency.return_view_pos_tree
+msgid "Fetch All The Active Currencies"
+msgstr "Obtener todas las monedas activas"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model,name:aspl_pos_multi_currency.model_pos_order_line
+msgid "Lines of Point of Sale Orders"
+msgstr "Líneas de orden de Punto de Venta"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:55
+#, python-format
+msgid "New Rate"
+msgstr "Nueva Tasa"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/js/screens.js:160
+#, python-format
+msgid "No Payment Line selected !"
+msgstr "No se ha seleccionado ninguna línea de pago"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/js/screens.js:79
+#, python-format
+msgid "Total in "
+msgstr "Total en "
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/js/screens.js:80
+#, python-format
+msgid "Paid in "
+msgstr "Pagado en "
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/js/screens.js:81
+#, python-format
+msgid "Receipt in "
+msgstr "Recibido en "
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/js/screens.js:83
+#, python-format
+msgid "Change in "
+msgstr "Cambio en "
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:17
+#, python-format
+msgid "Paid in"
+msgstr "Pagado en"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:292
+#, python-format
+msgid "Phone:"
+msgstr "Teléfono"
+
+#. module: aspl_pos_multi_currency
+#: code:addons/aspl_pos_multi_currency/models/point_of_sale.py:145
+#, python-format
+msgid "Please define income account for this product: \"%s\" (id:%d)."
+msgstr "Por favor defina la cuenta de ingresos para este producto: \"%s\" (id:%d)."
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model,name:aspl_pos_multi_currency.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Órdenes de Punto de Venta"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.ui.view,arch_db:aspl_pos_multi_currency.return_view_pos_tree
+msgid "Select currencies"
+msgstr "Seleccionar monedas"
+
+#. module: aspl_pos_multi_currency
+#: code:addons/aspl_pos_multi_currency/models/point_of_sale.py:80
+#, python-format
+msgid "Selected orders do not have the same session!"
+msgstr "Órdenes seleccionadas no tienen la misma sesión"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:163
+#, python-format
+msgid "Served by"
+msgstr "Servido por"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:216
+#, python-format
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:334
+#, python-format
+msgid "Subtotal:"
+msgstr "Subtotal:"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:229
+#, python-format
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#. module: aspl_pos_multi_currency
+#: code:addons/aspl_pos_multi_currency/models/point_of_sale.py:174
+#, python-format
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:143
+#, python-format
+msgid "Tel:"
+msgstr "Tel:"
+
+#. module: aspl_pos_multi_currency
+#: code:addons/aspl_pos_multi_currency/models/point_of_sale.py:133
+#, python-format
+msgid "The POS order must have lines when calling this method"
+msgstr "La órden de Pdv debe tener líneas para llamar a este método"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:257
+#, python-format
+msgid "Total Taxes"
+msgstr "Total Impuestos"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:356
+#, python-format
+msgid "Total:"
+msgstr "Total:"
+
+#. module: aspl_pos_multi_currency
+#: code:addons/aspl_pos_multi_currency/models/point_of_sale.py:194
+#, python-format
+msgid "Trade Receivables"
+msgstr "Créditos por ventas"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:46
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:119
+#, python-format
+msgid "Update Rate"
+msgstr "Actualizar Tasa"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.ui.view,arch_db:aspl_pos_multi_currency.return_view_pos_tree
+msgid "Use To MultiCurrency For Payment"
+msgstr "Usar Multimoneda para pagos"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:295
+#, python-format
+msgid "User:"
+msgstr "Usuario:"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:146
+#, python-format
+msgid "VAT:"
+msgstr "VAT:"
+
+#. module: aspl_pos_multi_currency
+#. openerp-web
+#: code:addons/aspl_pos_multi_currency/static/src/xml/pos.xml:318
+#, python-format
+msgid "With a"
+msgstr "Con un"
+
+#. module: aspl_pos_multi_currency
+#: model:ir.model,name:aspl_pos_multi_currency.model_pos_config
+msgid "pos.config"
+msgstr "pos.config"
+
+

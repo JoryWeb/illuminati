@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_sale_order_toyo_rep"
+    string="Cotizacion Repuestos"
+    model="sale.order"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.sale_order_report_rep"
+    name="poi_x_toyosa_report.sale_order_template_rep"
+    menu="False"
+  />
+
+  <record id="report_sale_order_toyo_rep" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_sale_order_toy"/>
+  </record>
+</data>
+
+<template id="sale_order_template_rep">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+  <div class="header">
+  </div>
+  <div class="article" style="font-size:13px;">
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:15px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-4">
+            <h4 style="color:#DB0000;"><strong>TOYOSA S.A.</strong></h4>
+            <h5 style="color:#DB0000;"><strong>Oficina Central</strong></h5>
+            <p><span t-field="o.company_id.partner_id.street"/>  <span t-field="o.company_id.partner_id.street2"/><br/></p>
+          </div>
+          <div class="col-xs-4 text-center">
+
+            <p style="padding:0px;margin:0px;"><strong>COTIZACION</strong></p>
+            <p style="padding:0px;margin:0px;"><strong><span t-field="o.name"/></strong></p>
+            <p style="font-size:11px;">(Expresado en <span t-field="o.currency_report_id.symbol"/>)</p>
+          </div>
+          <div class="col-xs-4 text-center">
+            <br/>
+            <t t-call="poi_x_toyosa_report.35years"></t>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12"  style="border-radius:15px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-7">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><strong>Cliente Nombre:</strong></td>
+                  <td><span t-field="o.partner_id.name"></span></td>
+                </tr>
+                <tr>
+                  <td><strong>Direccion:</strong></td>
+                  <td><span t-field="o.partner_id.street"/><span t-field="o.partner_id.street2"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Telefono:</strong></td>
+                  <td><span t-field="o.partner_id.phone"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-xs-5">
+            <table class="table table-condensed" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong></td>
+                  <td><span t-field="o.order_date"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Ciudad:</strong></td>
+                  <td><span t-field="o.warehouse_id.state_id.name"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Asesor:</strong></td>
+                  <td><span t-field="o.user_id.name"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="table table-condensed" style="margin-bottom:0px;height:300px;">
+              <thead>
+                <tr>
+                  <th><strong>No.</strong></th>
+                  <!-- <th><strong>CODIGO</strong></th> -->
+                  <th><strong>DESCRIPCION</strong></th>
+                  <th><strong>CANT</strong></th>
+                  <th><strong>ENTREGA</strong></th>
+                  <th><strong>PRECIO/UNIT</strong></th>
+                  <th><strong>VALOR/TOTAL</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="o.order_line" t-as="l">
+                  <tr>
+                    <td>
+                      <span t-esc="l_index+1"/>
+                    </td>
+                   <!--  <td>
+                      <span t-esc="l.product_id.default_code"/>
+                    </td> -->
+                    <td>
+                      <span t-field="l.product_id.name"/>
+                    </td>
+                    <td class="text-right">
+                      <span t-field="l.product_uom_qty"/>
+                    </td>
+                    <td>
+                      <span t-field="l.product_id.sale_delay"/>
+                    </td>
+                    <td class="text-right">
+                      <span t-field="l.price_unit_exchange"/>
+                    </td>
+                    <td class="text-right">
+                      <span t-field="l.price_total_exchange"/>
+                    </td>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-7">
+              </div>
+              <div class="col-xs-5 text-right">
+                <table class="table table-condensed" style="margin-bottom:0px;">
+                  <tbody>
+                      <tr>
+                        <td>
+                          Subtotal:
+                        </td>
+                        <td class="text-right">
+                          <span t-field="o.subtotal_exchange"/>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <td>
+                          Descuento:
+                        </td>
+                        <td class="text-right">
+                          <span t-field="o.discount_amount"/>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <td>
+                          Total:
+                        </td>
+                        <td class="text-right">
+                          <span t-field="o.amount_total_plus_a_exchange"/>
+                        </td>
+                      </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12" style="border-top:3px solid #284BBC;">
+            <div class="row">
+              <div class="col-xs-12">
+                <p>NOTA: LA ENTREGA DE LOS REPUESTOS ES PREVIA CONFIRMACION DEL PEDIDO. <br/>EN CASO DE EJECUTAR EL PEDIDO FAVOR MANTENER EL CODIGO DE LA PROFORMA  STOCK LIMITADO </p>
+
+                <p><strong>LOS PRECIOS DE LOS REPUESTOS NO INCLUYEN  LA INSTALACION <br/>CONTACTO <span t-field="o.user_id.partner_id.name" style="color:#B30E0E;"/><br/><span style="color:#089BDA;">
+                TELF.<span  t-field="o.user_id.partner_id.phone"/>  CEL.<span t-field="o.user_id.partner_id.mobile"/> CORREO: <span t-field="o.user_id.partner_id.email"/></span></strong></p>
+              </div>
+              <div class="col-xs-12" t-field="o.note"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;box-shadow: 3px 2px grey;">
+        <div class="row">
+          <div class="col-xs-4" style="height:60px;">
+            <h4>ORIGINAL CLIENTE</h4>
+          </div>
+          <div class="col-xs-4 text-center" style="border-left:3px solid #284BBC;border-right:3px solid #284BBC;height:60px;">
+            <p>POR TOYOSA</p>
+          </div>
+          <div class="col-xs-4 text-center" style="height:60px;">
+            <p>POR CLIENTE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="footer" style="font-size:9px;">
+    <div class="row">
+      <div class="col-xs-12" style="border-radius:14px;border:3px solid #284BBC;margin-bottom:6px;">
+        <p><strong>OFICINA PRINCIPAL:</strong>  <span t-field="o.company_id.partner_id.street"/>  <span t-field="o.company_id.partner_id.street2"/><br/>
+        <strong>SUCURSALES:</strong><br/>
+        Santa Cruz:  Mall Las Brisas, Av. Cristo Redentor - Av. San Martin esq. Calle 7, Equipetrol - Av. Tres pasos al frente, entre 2do y 3er anillo. <br/>
+        Cochabamba:  Av. America # 1362, Calacala -  Av. Uyuni # 1185, Muyurina - Av. Blanco Galindo  Km 7 1/2, Colcapirhua. <br/>
+        Oruro:  Calle Bolivar # 1050 entre calles Petot y Camacho. <br/>
+        Potosi:  Av. Circunvalación esq. Poleoducto,
+        </p>
+      </div>
+    </div>
+  </div>
+
+</t>
+</t>
+</template>
+
+</odoo>

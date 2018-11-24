@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_account_analytic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-06 14:15+0000\n"
+"PO-Revision-Date: 2017-06-06 14:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_account_analytic
+#: model:ir.model,name:poi_account_analytic.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: poi_account_analytic
+#: model:ir.model,name:poi_account_analytic.model_account_analytic_tag_category
+msgid "Analytic Tag Categories"
+msgstr "Categorías de Etiquetas Analíticas"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_name
+msgid "Analytic Tag Category"
+msgstr "Categoría de Etiqueta Analítica"
+
+#. module: poi_account_analytic
+#: model:ir.actions.act_window,name:poi_account_analytic.action_account_analytic_tag_form
+#: model:ir.model,name:poi_account_analytic.model_account_analytic_tag
+#: model:ir.ui.menu,name:poi_account_analytic.menu_account_analytic_tag_form
+#: model:ir.ui.view,arch_db:poi_account_analytic.account_analytic_tag_form
+msgid "Analytic Tags"
+msgstr "Etiquetas analíticas"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_id_5522
+msgid "Category"
+msgstr "Categoría"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_child_ids
+msgid "Childs"
+msgstr "Childs"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_account_full_name
+msgid "Full Name"
+msgstr "Full Name"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_category_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_account_analytic
+#: model:ir.model.fields,field_description:poi_account_analytic.field_account_analytic_tag_parent_id
+msgid "Parent"
+msgstr "Padre"
+
+#. module: poi_account_analytic
+#: model:ir.model,name:poi_account_analytic.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: poi_account_analytic
+#: code:addons/poi_account_analytic/models/account.py:54
+#, python-format
+msgid "There is a recursive error."
+msgstr "Hay un error recursivo."
+

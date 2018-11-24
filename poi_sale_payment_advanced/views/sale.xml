@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+  <record id="sale_make_payment_action_form" model="ir.actions.act_window">
+    <field name="name">Pago Adelantado</field>
+    <field name="res_model">account.payment</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+
+
+  <record id="view_order_payment_advanced_form" model="ir.ui.view">
+    <field name="name">sale.order.payment.advanced.form</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <data>
+        <field name="amount_total" position="after">
+            <field name="payment_count" invisible="1"/>
+            <field name="payments_widget" colspan="2" nolabel="1" widget="payment"/>
+        </field>
+      </data>
+    </field>
+  </record>
+
+</data>
+</odoo>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data >
+
+		<menuitem id="menu_hr_root_cubiertas_report" parent="base.menu_sale_report" name="Reportes de Cubiertas" groups="base.group_sale_manager" sequence="24"/>
+		
+		<record id="view_pret_cubiertas_report_tree" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report.tree</field>
+			<field name="model">pret.cubiertas.report</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Informe de Facturacion e Ingresos Totales">
+					<field name="date"/>
+					<field name="year"/>
+					<field name="partner_id"/>
+					<field name="order_id"/>
+					<field name="picking_id"/>
+					<field name="amount_total" sum="Monto Total"/>
+					<field name="total_metric" sum="M. Total"/>
+					<field name="total_metric_m2" sum="M2. Total"/>
+					<field name="total_metric_m3" sum="M3. Total"/>
+					<button name="so_form" type="object" string="Ver Orden De Venta" icon="STOCK_FIND"/>
+				</tree>	
+			</field>
+		</record>
+
+
+
+		<record id="view_pret_cubiertas_report_search" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report.search</field>
+			<field name="model">pret.cubiertas.report</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Informe de Facturacion e Ingresos Totales">
+					<field name="partner_id"/>
+					<field name="shop_id"/>
+					<!--<field name="estado"/>-->
+					 <group expand="1" string="Group By...">
+					 	 <filter string="Cliente" icon="terp-personal" name="partner" context="{'group_by':'partner_id'}"/>
+						 <filter name="group_anio" string="Año" context="{'group_by':'year'}"/>
+					 	 <filter name="group_mes" string="Mes" context="{'group_by':'month'}"/>
+                         <filter name="group_week" string="Semana" context="{'group_by':'week'}"/>
+                         <filter name="group_shop" string="Sucursal" context="{'group_by':'shop_id'}"/>
+                    </group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_pret_cubiertas_report" model="ir.actions.act_window">
+			<field name="name">Informe De Facturacion e Ingresos Totales</field>
+			<field name="res_model">pret.cubiertas.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree, graph</field>
+			<field name="search_view_id" ref="view_pret_cubiertas_report_search"/>
+			<field name="context">{'search_default_group_anio': 1, 'search_default_group_mes': 1}</field>
+		</record>
+		<menuitem action="action_pret_cubiertas_report" id="menu_pret_cubiertas_report" parent="menu_hr_root_cubiertas_report" sequence="0"/>
+		
+		<!-- Informe de Ventas por Vendedor rep(2) -->
+		<record id="view_pret_cubiertas_report2_tree" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report2.tree</field>
+			<field name="model">pret.cubiertas.report2</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Informe Material Entregado con Guias">
+					<field name="partner_id"/>
+					<field name="order_id"/>
+					<field name="picking_id"/>
+					<field name="direccion"/>
+					<field name="city"/>
+					<field name="user_id"/>
+					<field name="date_done"/>
+					<field name="total_metric" sum="M. Total"/>
+					<field name="total_metric_m2" sum="M2. Total"/>
+					<field name="total_metric_m3" sum ="M3. Total"/>
+					<field name="total_weight" sum="Total Quintales"/>
+					<button name="despacho_form" type="object" string="Ver Albaran de Salida" icon="STOCK_FIND"/>
+				</tree>	
+			</field>
+		</record>
+
+		<record id="view_pret_cubiertas_report2_search" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report2.search</field>
+			<field name="model">pret.cubiertas.report2</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Informe Material Entregado con Guias">
+					<field name="user_id"/>
+					<field name="partner_id"/>
+					<field name="city"/>
+					<field name="order_id"/>
+					 <group expand="1" string="Group By...">
+					 	<filter name="Vendedor" string="Vendedor" context="{'group_by':'user_id'}"/>
+					 	<filter name="ciudad" string="Ciudad" context="{'group_by':'city'}"/>
+					 	<filter name="group_dia" string="Mes" context="{'group_by':'date_month'}"/>
+					 	<filter name="group_dia" string="Dia" context="{'group_by':'date_day'}"/>
+                        <filter name="group_week" string="Semana" context="{'group_by':'date_week'}"/>
+                    </group>
+				</search>
+			</field>
+		</record>
+		
+		<record id="action_pret_cubiertas_report2" model="ir.actions.act_window">
+			<field name="name">Informe Material Entregado con Guias</field>
+			<field name="res_model">pret.cubiertas.report2</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="search_view_id" ref="view_pret_cubiertas_report2_search"/>
+			<field name="context">{'search_default_group_dia': 1}</field>
+		</record>
+		<menuitem action="action_pret_cubiertas_report2" id="menu_pret_cubiertas_report2" parent="menu_hr_root_cubiertas_report" sequence="0"/>
+		
+
+		<!-- Reporte informe de ventas por producto (3) -->
+		<record id="view_pret_cubiertas_report3_tree" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report3.tree</field>
+			<field name="model">pret.cubiertas.report3</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Informe de Ventas Por Producto">
+					<field name="name"/>
+					<field name="quantity" sum="Cantidad Total"/>
+					<field name="price"/>
+					<field name="total_bruto" sum="Total Bruto "/>
+					<field name="taxes" sum="Impuesto Total"/>
+					<field name="total_neto" sum="Total Neto"/>
+				</tree>	
+			</field>
+		</record>
+
+        <record id="view_pret_cubiertas_line_report_graph" model="ir.ui.view">
+            <field name="name">pret.cubiertas.line.report.graph</field>
+            <field name="model">pret.cubiertas.report</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <graph string="Analisis Venta Anual" type="pie">
+                    <field name="month"/>
+                    <field name="amount_total" type='measure'/>
+                </graph>
+            </field>
+        </record>
+
+		 <record id="view_pret_cubiertas_pie_report3_graph" model="ir.ui.view">
+             <field name="name">pret.cubiertas.pie.report3.graph</field>
+             <field name="model">pret.cubiertas.report3</field>
+             <field eval="2" name="priority"/>
+             <field name="arch" type="xml">
+                 <graph string="Porcentaje de ventas de Productos" type="pie">
+                     <field name="name"/>
+                     <field name="quantity" type='measure'/>
+                 </graph>
+             </field>
+         </record>
+
+        <record id="view_pret_cubiertas_bar_report3_graph" model="ir.ui.view">
+            <field name="name">pret.cubiertas.bar.report.graph</field>
+            <field name="model">pret.cubiertas.report3</field>
+            <field name="arch" type="xml">
+                <graph string="Porcentaje de ventas de Productos" type="bar">
+                    <field name="name"/>
+                    <field name="quantity" operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+		<record id="view_pret_cubiertas_report3_search" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report3.search</field>
+			<field name="model">pret.cubiertas.report3</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Informe de Ventas Por Producto">
+					<field name="product_id"/>
+					 <group expand="1" string="Group By...">
+					 	<filter name="categ" string="Mes" context="{'group_by':'date_month'}"/>
+					 	<filter name="categ" string="Producto" context="{'group_by':'product_id'}"/>
+                        <filter name="group_week" string="Semana" context="{'group_by':'date_week'}"/>
+                        <filter name="group_name" string="Producto" context="{'group_by':'name'}"/>
+                     </group>
+				</search>
+			</field>
+		</record>
+		
+		<record id="action_pret_cubiertas_report3" model="ir.actions.act_window">
+			<field name="name">Informe de Ventas Por Producto</field>
+			<field name="res_model">pret.cubiertas.report3</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,graph</field>
+			<field name="search_view_id" ref="view_pret_cubiertas_report3_search"/>
+			<field name="context">{'search_default_categ': 1}</field> 
+		</record>
+		<menuitem action="action_pret_cubiertas_report3" id="menu_pret_cubiertas_report3" parent="menu_hr_root_cubiertas_report" sequence="0"/>
+	
+		
+		<!-- Informe de Ventas por Vendedor rep(4) -->
+		<record id="view_pret_cubiertas_report4_tree" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report4.tree</field>
+			<field name="model">pret.cubiertas.report4</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Informe de Ventas Por Vendedor">
+					<field name="date"/>
+					<field name="user_id"/>
+                    <field name="partner_id"/>
+					<field name="order_id"/>
+					<field name="picking_id"/>
+					<field name="estado"/>
+					<field name="amount_total" sum="Monto Total"/>
+					<field name="discount" sum="Descuento Total"/>
+					<field name="total_metric" sum="M. Total"/>
+					<field name="total_metric_m2" sum="M2. Total"/>
+					<field name="total_metric_m3" sum ="M3. Total"/>
+					<button name="so2_form" type="object" string="Ver Orden De Compra" icon="STOCK_FIND"/>
+				</tree>	
+			</field>
+		</record>
+
+		 <record id="view_pret_cubiertas_pie_report4_graph" model="ir.ui.view">
+            <field name="name">pret.cubiertas.pie.report4.graph</field>
+            <field name="model">pret.cubiertas.report4</field>
+            <field name="arch" type="xml">
+                <graph string="Porcentaje de ventas por Vendedor" type="pie">
+                    <field name="city"/>
+                    <field name="amount_total"  operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+		<record id="view_pret_cubiertas_report4_search" model="ir.ui.view">
+			<field name="name">pret.cubiertas.report4.search</field>
+			<field name="model">pret.cubiertas.report4</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				
+				<search string="Informe de Ventas Por Producto">
+					<field name="user_id"/>
+					<field name="shop_id"/>
+					<field name="city"/>
+					
+					 <group expand="1" string="Group By...">
+					 	<filter name="ciudad" string="Ciudad" context="{'group_by':'city'}"/>
+					 	<filter name="Sucursal" string="Sucursal" context="{'group_by':'shop_id'}"/>
+					 	<filter name="Estado" string="Estado" context="{'group_by':'estado'}"/>
+                        <filter name="Vendedor" string="Mes" context="{'group_by':'date_month'}"/>
+                        <filter name="group_week" string="Semana" context="{'group_by':'date_week'}"/>
+                        <filter name="Vendedor" string="Vendedor" context="{'group_by':'user_id'}"/>
+                        
+                    </group>
+				</search>
+			</field>
+		</record>
+		
+		<record id="action_pret_cubiertas_report4" model="ir.actions.act_window">
+			<field name="name">Informe de Ventas Por Vendedor</field>
+			<field name="res_model">pret.cubiertas.report4</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,graph</field>
+			<field name="search_view_id" ref="view_pret_cubiertas_report4_search"/>
+			<field name="context">{'search_default_Vendedor': 1}</field>
+		</record>
+		<menuitem action="action_pret_cubiertas_report4" id="menu_pret_cubiertas_report4" parent="menu_hr_root_cubiertas_report" sequence="0"/>
+		
+		<!-- dashboard cubiertas -->
+		<record id="action_pret_report_cubiertas" model="ir.actions.act_window">
+            <field name="name">Facturacion de Ingresos Totales</field>
+            <field name="res_model">pret.cubiertas.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report_search"/>
+            <field name="domain">[('date','&lt;=', time.strftime('%Y-%m-%d')),('date','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_partner':1}</field>
+        </record>
+
+
+
+        <record id="action_pret_report_cubiertas_graph2" model="ir.actions.act_window">
+            <field name="name">Ventas Por Producto</field>
+            <field name="res_model">pret.cubiertas.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id"  ref="view_pret_cubiertas_line_report_graph"/>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report_search"/>
+            <field name="context">{'search_default_group_mes':1}</field>
+           
+        </record>
+
+
+       	<record id="action_pret_report_cubiertas2" model="ir.actions.act_window">
+            <field name="name">Material Entregado con Guias</field>
+            <field name="res_model">pret.cubiertas.report2</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report2_search"/>
+            <field name="domain">[('date2','&lt;=', time.strftime('%Y-%m-%d')),('date2','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_dia': 1}</field>
+        </record>
+
+        <record id="action_pret_report_cubiertas3" model="ir.actions.act_window">
+            <field name="name">Informe de Ventas Por Producto</field>
+            <field name="res_model">pret.cubiertas.report3</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report3_search"/>
+            <field name="domain">[('date2','&lt;=', time.strftime('%Y-%m-%d')),('date2','&gt;=',time.strftime('%Y-%m-01'))]</field>
+			<field name="context">{'search_default_categ': 1}</field>
+           
+        </record>
+
+        <record id="action_pret_report_cubiertas_graph" model="ir.actions.act_window">
+            <field name="name">Ventas Anuales</field>
+            <field name="res_model">pret.cubiertas.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id"  ref="view_pret_cubiertas_line_report_graph"/>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report_search"/>
+            <field name="domain">[('date','&lt;=', time.strftime('%Y-%m-%d')),('date','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_mes':1,'graph_mode':'pie', 'graph_measure':'amount_total'}</field>
+        </record>
+
+        <record id="action_pret_report_cubiertas3_graph" model="ir.actions.act_window">
+            <field name="name">Ventas Por Producto</field>
+            <field name="res_model">pret.cubiertas.report3</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id"  ref="view_pret_cubiertas_pie_report3_graph"/>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report3_search"/>
+            <field name="domain">[('date2','&lt;=', time.strftime('%Y-%m-%d')),('date2','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_name':1,'graph_mode':'pie', 'graph_measure':'quantity'}</field>
+        </record>
+		
+		<record id="action_pret_report_cubiertas4" model="ir.actions.act_window">
+            <field name="name">Informe de Ventas Por Vendedor</field>
+            <field name="res_model">pret.cubiertas.report4</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report4_search"/>
+            <field name="domain">[('date2','&lt;=', time.strftime('%Y-%m-%d')),('date2','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_Vendedor': 1}</field>
+           
+        </record>
+
+        <record id="action_pret_report_cubiertas4_graph" model="ir.actions.act_window">
+            <field name="name">Ventas Por Territorio</field>
+            <field name="res_model">pret.cubiertas.report4</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id"  ref="view_pret_cubiertas_pie_report4_graph"/>
+            <field name="search_view_id"  ref="view_pret_cubiertas_report4_search"/>
+            <field name="domain">[('date2','&lt;=', time.strftime('%Y-%m-%d')),('date2','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'graph_mode':'pie'}</field>
+        </record>
+
+
+		<record id="board_pret_cubiertas_form" model="ir.ui.view">
+			<field name="name">pret.cubiertas.board</field>
+			<field name="model">board.board</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Dashboard Cubiertas">
+					<board style="2-1">
+						<column>
+							<action name="%(action_pret_report_cubiertas)d" string="Facturacion de Ingresos Totales por Cliente (Mes en Curso)" creatable="false"/>
+							<action name="%(action_pret_report_cubiertas2)d" string="Material Entregado con Guias (Mes en Curso)" creatable="false"/>
+							<action name="%(action_pret_report_cubiertas3)d" string="Informe de Ventas por Producto (Mes en Curso)" creatable="false"/>
+							<action name="%(action_pret_report_cubiertas4)d" string="Informe de Ventas por Vendedor (Mes en Curso)" creatable="false"/>
+						</column>
+						<column>
+							 <action name="%(action_pret_report_cubiertas3_graph)d" string="Ventas Por Producto (Mes en Curso)"/>
+							 <action name="%(action_pret_report_cubiertas_graph2)d" string="Ventas Anuales"/>
+							 <action name="%(action_pret_report_cubiertas4_graph)d" string="Ventas Por Territoro (Mes en Curso)"/>
+							 
+						</column>
+					</board>
+				</form>
+			</field>
+			
+		</record>
+
+		<record id="pret_cubiertas_board_action" model="ir.actions.act_window">
+			<field name="name">Dashboard Cubiertas</field>
+			<field name="res_model">board.board</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="usage">menu</field>
+			<field name="view_id" ref="board_pret_cubiertas_form"/>
+		</record>
+		<menuitem action="pret_cubiertas_board_action" id="menu_pret_cubiertas_board" parent="base.menu_reporting_dashboard" sequence="15" groups="base.group_sale_manager"/>
+	</data>
+</openerp>

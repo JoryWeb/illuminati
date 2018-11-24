@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_location_form_negative" model="ir.ui.view">
+            <field name="name">stock.location.form.negative</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <field name="putaway_strategy_id" position="after">
+                    <field name="negative_control"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_picking_negative_form" model="ir.ui.view">
+            <field name="name">stock.picking.negative</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="location_dest_id" position="after">
+                    <field name="negative_control" invisible="0"/>
+                </field>
+                <xpath expr="//button[@name='force_assign']" position="replace">
+                    <button name="force_assign" string="Forzar disponibilidad" type="object"
+                            attrs="{'invisible': ['|', ('negative_control', '!=', False), ('state', 'in', ('done', 'cancel', 'draft', 'assigned'))]}"
+                            groups="stock.group_stock_force_availability"
+                    />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

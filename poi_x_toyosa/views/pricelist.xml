@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Inherit Form view -->
+    <record id="product_pricelist_item_toy_form" model="ir.ui.view">
+      <field name="name">product.pricelist.item.toy.form</field>
+      <field name="model">product.pricelist.item</field>
+      <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+      <field name="arch" type="xml">
+        <field name="date_end" position="after">
+          <field name="year_id"/>
+        </field>
+      </field>
+    </record>
+
+    <!-- Inherit Form view -->
+    <record id="product_pricelist_toy_form" model="ir.ui.view">
+      <field name="name">product.pricelist.toy.form</field>
+      <field name="model">product.pricelist</field>
+      <field name="inherit_id" ref="product.product_pricelist_view"/>
+      <field name="arch" type="xml">
+          <xpath expr="//field[@name='item_ids']/tree/field[@name='date_end']" position="after">
+            <field name="year_id"/>
+          </xpath>
+      </field>
+    </record>
+
+    <!-- Asistente de Actulizacion de Precio -->
+    <record id="product_pricelist_assistant_view_tree" model="ir.ui.view">
+      <field name="name">product.pricelist.assistant.tree</field>
+      <field name="model">product.pricelist.assistant</field>
+      <field name="arch" type="xml">
+        <tree string="Asistente de Actuizacion de Precios">
+          <field name="name"/>
+          <field name="date"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="product_pricelist_assistant_view_form" model="ir.ui.view">
+      <field name="name">product.pricelist.assistant.form</field>
+      <field name="model">product.pricelist.assistant</field>
+      <field name="arch" type="xml">
+        <form string="Asistente de Acutulizacion de Precios">
+          <header>
+            <!-- <button name="plate_done" string="Finalizar" class="oe_highlight" states="draft" type="object"/> -->
+            <!-- <button name="action_refresh_price" string="Procesar"  states="draft" type="object"/> -->
+            <button name="action_send_circuit" string="Validar y Confirmar" class="oe_highlight" states="draft" type="object"/>
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="pricelist_id"/>
+                <field name="pricelist_id2"/>
+                <field name="year_id"/>
+                <field name="product_id"/>
+              </group>
+              <group>
+                <field name="compute_price" widget="radio"/>
+                <field name="amount"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Elementos">
+                <group>
+                  <field name="item_ids" widget="one2many_list" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}">
+                    <tree string="Elementos" editable="bottom">
+                      <field name="product_id"/>
+                      <field name="year_id"/>
+                      <field name="current_price"/>
+                      <field name="new_price"/>
+                      <field name="new_price_cif"/>
+                      <field name="item_id" invisible="1"/>
+                    </tree>
+                  </field>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="product_pricelist_assistant_action_form" model="ir.actions.act_window">
+      <field name="name">Actualizacion de Precios</field>
+      <field name="res_model">product.pricelist.assistant</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Añadir Nueva Actualizacion de Precios
+        </p>
+        <p>
+          Asistente de Actulizacion de Precios Fijos
+        </p>
+      </field>
+    </record>
+
+    <menuitem
+           action="product_pricelist_assistant_action_form" id="menu_product_pricelist_assistant_action"
+           parent="sale.product_menu_catalog" sequence="50" groups="product.group_sale_pricelist"/>
+  </data>
+</odoo>

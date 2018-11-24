@@ -1,0 +1,251 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_logistic_analysis_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-12 13:28+0000\n"
+"PO-Revision-Date: 2016-05-12 13:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,amount_discounted:0
+#: field:product.sale.invoice.list,amount_discounted:0
+msgid "Amount Discounted"
+msgstr "Monto Descontado"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,amount_returned:0
+#: field:product.sale.invoice.list,amount_returned:0
+msgid "Amount Returned"
+msgstr "Monto Devuelto"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,amount_sold:0
+#: field:product.sale.invoice.list,amount_sold:0
+msgid "Amount Sold"
+msgstr "Monto Vendido"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,price_unit:0
+#: field:product.sale.invoice.list,price_unit:0
+msgid "Average Price Unit"
+msgstr "Precio Unitario Promedio"
+
+#. module: poi_logistic_analysis_sale
+#: selection:invoices.analysis.wizard,type:0
+msgid "By Category"
+msgstr "Por Categoría"
+
+#. module: poi_logistic_analysis_sale
+#: selection:invoices.analysis.wizard,type:0
+msgid "By Product"
+msgstr "Por Producto"
+
+#. module: poi_logistic_analysis_sale
+#: selection:invoices.analysis.wizard,type:0
+msgid "By Products"
+msgstr "Por Varios Productos"
+
+#. module: poi_logistic_analysis_sale
+#: view:invoices.analysis.wizard:poi_logistic_analysis_sale.invoices_analysis_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,product_categ_id:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.sale.invoice.list,company_id:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,create_uid:0
+#: field:invoices.analysis.wizard.lines,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,create_date:0
+#: field:invoices.analysis.wizard.lines,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,date_invoice:0
+#: field:product.sale.invoice.list,date_invoice:0
+msgid "Date Order"
+msgstr "Fecha"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,date_invoice_day:0
+msgid "Day"
+msgstr "Día"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,date_from:0
+msgid "Desde:"
+msgstr "Desde:"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,date_to:0
+msgid "Hasta"
+msgstr "Hasta"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,id:0
+#: field:invoices.analysis.wizard.lines,id:0
+#: field:product.date.sold.returned.invoices,id:0
+#: field:product.sale.invoice.list,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_logistic_analysis_sale
+#: model:ir.model,name:poi_logistic_analysis_sale.model_invoices_analysis_wizard
+msgid "Invoices analysis Wizard"
+msgstr "Asistente de Análisis de Facturas de Venta"
+
+#. module: poi_logistic_analysis_sale
+#: model:ir.model,name:poi_logistic_analysis_sale.model_invoices_analysis_wizard_lines
+msgid "Invoices analysis Wizard Lines"
+msgstr "Invoices analysis Wizard Lines"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,write_uid:0
+#: field:invoices.analysis.wizard.lines,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,write_date:0
+#: field:invoices.analysis.wizard.lines,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: poi_logistic_analysis_sale
+#: model:ir.model,name:poi_logistic_analysis_sale.model_product_sale_invoice_list
+msgid "List Sale Invoices Report"
+msgstr "Reporte de Facturas de Venta"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,date_invoice_month:0
+msgid "Month"
+msgstr "Mes"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,num_invoices_returned:0
+msgid "Num Orders Returned"
+msgstr "Num de Órdenes Devueltas"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,num_invoices_sold:0
+msgid "Num Orders Sold"
+msgstr "Num de Órdenes Vendidas"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.sale.invoice.list,invoice_id:0
+msgid "POS Order"
+msgstr "Factura"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,product_id:0
+#: field:invoices.analysis.wizard.lines,product_id:0
+#: field:product.date.sold.returned.invoices,product_id:0
+#: field:product.sale.invoice.list,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,categ_id:0
+msgid "Product Category"
+msgstr "Categoría del Producto"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,product_ids:0
+msgid "Product ids"
+msgstr "Productos"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,inv_qty_returned:0
+#: field:product.sale.invoice.list,inv_qty_returned:0
+msgid "Quantity Returned"
+msgstr "Cantidad Devuelta"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,inv_qty_sold:0
+#: field:product.sale.invoice.list,inv_qty_sold:0
+msgid "Quantity Sold"
+msgstr "Cantidad Vendida"
+
+#. module: poi_logistic_analysis_sale
+#: model:ir.model,name:poi_logistic_analysis_sale.model_product_date_sold_returned_invoices
+msgid "Sale Invoice Report"
+msgstr "Reporte de Facturas de Venta"
+
+#. module: poi_logistic_analysis_sale
+#: view:product.sale.invoice.list:poi_logistic_analysis_sale.view_product_sale_invoice_list_search
+#: view:product.sale.invoice.list:poi_logistic_analysis_sale.view_product_sale_invoice_list_tree
+msgid "Sale Invoices"
+msgstr "Facturas de Venta"
+
+#. module: poi_logistic_analysis_sale
+#: code:addons/poi_logistic_analysis_sale/wizard/invoices_analysis_wizard.py:88
+#: model:ir.actions.act_window,name:poi_logistic_analysis_sale.action_product_date_sold_returned_invoices
+#: model:ir.actions.act_window,name:poi_logistic_analysis_sale.invoices_analysis_wizard_form_action
+#: model:ir.actions.act_window,name:poi_logistic_analysis_sale.invoices_analysis_wizard_form_product_action
+#: model:ir.ui.menu,name:poi_logistic_analysis_sale.menu_invoices_analysis_wizard_form
+#: view:product.date.sold.returned.invoices:poi_logistic_analysis_sale.view_product_date_sold_returned_invoices_graph
+#: view:product.date.sold.returned.invoices:poi_logistic_analysis_sale.view_product_date_sold_returned_invoices_search
+#: view:product.date.sold.returned.invoices:poi_logistic_analysis_sale.view_product_date_sold_returned_invoices_tree
+#: view:product.product:poi_logistic_analysis_sale.logistic_products_invoice_sale_kanban
+#, python-format
+msgid "Sale Invoices Analysis"
+msgstr "Análisis de Facturas de Venta"
+
+#. module: poi_logistic_analysis_sale
+#: view:invoices.analysis.wizard:poi_logistic_analysis_sale.invoices_analysis_wizard_form
+msgid "Sale Invoices analysis Wizard"
+msgstr "Asistente de Análisis de Facturas de Venta"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,shop_id:0
+#: field:product.date.sold.returned.invoices,shop_id:0
+#: field:product.sale.invoice.list,shop_id:0
+msgid "Shop"
+msgstr "Tienda"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_logistic_analysis_sale
+#: view:invoices.analysis.wizard:poi_logistic_analysis_sale.invoices_analysis_wizard_form
+msgid "View Report"
+msgstr "Ver Reporte"
+
+#. module: poi_logistic_analysis_sale
+#: field:invoices.analysis.wizard.lines,wizard_id:0
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: poi_logistic_analysis_sale
+#: field:product.date.sold.returned.invoices,date_invoice_year:0
+msgid "Year"
+msgstr "Año"
+
+#. module: poi_logistic_analysis_sale
+#: view:invoices.analysis.wizard:poi_logistic_analysis_sale.invoices_analysis_wizard_form
+msgid "or"
+msgstr "ó"
+

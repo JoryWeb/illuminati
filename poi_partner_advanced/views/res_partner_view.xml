@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_advanced_form" model="ir.ui.view">
+            <field name="name">res.partner.advanced.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="website" position="before">
+                    <field name='partner_recommend_id' attrs="{'invisible': [('is_company','=',True)]}"/>
+                </field>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="personal_information_page"
+                          string="Informacion Personal"
+                          attrs="{'invisible': [('is_company','=',True)]}">
+                        <group name="personal_information_group">
+                            <field name='civil_state' string="Estado Civil"/>
+                        </group>
+                        <field name="family_ids" widget="one2many_list" nolabel="1">
+                          <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="ci"/>
+                            <field name="date_born"/>
+                            <field name="ocupation"/>
+                          </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Efectivo cheque en accont.journal-->
+        <record id="account_journal_pret_form" model="ir.ui.view">
+            <field name="name">account.journal.pret.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sequence_id']" position="after">
+                    <field name="efectivo_cheque" string="Recaudación"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- FIN Efectivo cheque en accont.journal-->
+
+        <record id="account_payment_pret_form" model="ir.ui.view">
+            <field name="name">account.payment.pret.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <field name="efectivo" string="Efectivo" attrs="{'invisible': [('txt_validate','=','0')]}"
+                           on_change="onchange_check_efectivo( cheque, efectivo, context)"/>
+                    <field name="cheque" string="Cheque" attrs="{'invisible': [('txt_validate','=','0')]}"
+                           on_change="onchange_check(journal_id, cheque, efectivo, txt_validate, context)"/>
+                    <field name="txt_validate" invisible="1"/>
+                    <!--<field name="project_id" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>-->
+                    <field name="user_id" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>
+                    <field name="reference" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="note"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_payment_invoice_pret_form_inh">
+            <field name="name">account.payment.voucher.receipt.pret.form.inh</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <field name="efectivo" string="Efectivo" attrs="{'invisible': [('txt_validate','=','0')]}"
+                           on_change="onchange_check_efectivo( cheque, efectivo, context)"/>
+                    <field name="cheque" string="Cheque" attrs="{'invisible': [('txt_validate','=','0')]}"
+                           on_change="onchange_check(journal_id, cheque, efectivo, txt_validate, context)"/>
+                    <field name="txt_validate" invisible="1"/>
+                    <field name="user_id" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>
+                    <field name="reference" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_pretensa_payment_tree" model="ir.ui.view">
+            <field name="name">account.supplier.payment.pretensa.tree</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <field name="amount" position="before">
+                    <field name="amount_consiled" sum="Total"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sale_event_pick_wizard" model="ir.ui.view">
+            <field name="name">sale.event.pick.wizard.form</field>
+            <field name="model">sale.event.pick.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Productos a entregar">
+                    <label string="Este cálculo precio..." colspan="4" nolabel="1" align="0.0" invisible="1"/>
+
+                    <newline/>
+                    <group>
+                        <field name="event_id" readonly="1"/>
+                    </group>
+
+                    <newline/>
+                    <field name="product_lines" readonly="0">
+                        <tree editable="bottom" create="0" edit="1" delete="0">
+                            <field name="checked" readonly="0" string=""/>
+                            <field name="product_id" readonly="1"/>
+                            <field name="quantity" readonly="1" sum="total"/>
+                            <!--<button name="check_line" string="Seleccionar" type="object"
+                                    attrs="{'invisible': [('checked','=',True)]}" icon="fa-square-o" groups="" readonly="False" states="" disable="False" button="True"/>
+                            <button name="uncheck_line" string="Seleccionar" type="object"
+                                    attrs="{'invisible': [('checked','=',False)]}" icon="fa-check-square-o"/>-->
+                        </tree>
+                    </field>
+
+                    <newline/>
+                    <separator colspan="4"/>
+                    <footer>
+                        <button name="create_picking" string="Entregar" type="object" class="oe_highlight"/>
+
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

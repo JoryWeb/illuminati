@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record model="poi.auth.circuit" id="test_circuit_everyone">
+            <field name="type">everyone</field>
+            <field name="name">Autorizacion todos</field>
+        </record>
+
+        <record model="poi.auth.circuit.lines" id="test_circuit_line_everyone">
+            <field name="user_id" ref="base.user_root"/>
+            <field name="sequence">1</field>
+            <field name="auth_circuit_id" ref="test_circuit_everyone"/>
+        </record>
+
+
+        <record model="poi.auth.circuit" id="test_circuit_anyone">
+            <field name="type">anyone</field>
+            <field name="name">Autorizacion cualquiera</field>
+        </record>
+
+        <record model="poi.auth.circuit.lines" id="test_circuit_line_anyone">
+            <field name="user_id" ref="base.user_root"/>
+            <field name="sequence">1</field>
+            <field name="auth_circuit_id" ref="test_circuit_anyone"/>
+        </record>
+
+
+        <record model="poi.auth.circuit" id="test_circuit_sequential">
+            <field name="type">sequential</field>
+            <field name="name">Autorizacion secuencial</field>
+        </record>
+
+        <record model="poi.auth.circuit.lines" id="test_circuit_line_sequential">
+            <field name="user_id" ref="base.user_root"/>
+            <field name="sequence">1</field>
+            <field name="auth_circuit_id" ref="test_circuit_sequential"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_stock_request_products" model="ir.ui.view">
+            <field name="name">Products</field>
+            <field name="model">poi.request.products</field>
+            <field name="arch" type="xml">
+                <form string="Request details" version="7">
+
+                    <group string="Products To Request">
+                        <div class="oe_grey">
+                            Fill the request lines to create a request to the desired warehouse
+                        </div>
+                    </group>
+                    <group>
+                        <field name="warehouse_id" required="True"
+                               options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                    </group>
+                    <group>
+                        <field name="request_lines" nolabel="1">
+                            <tree string="Request Detail" editable="bottom">
+                                <field name="product_id" required="True" context="{'uom':product_uom_id}"
+                                       on_change="product_id_change(product_id,product_uom_id,context)"/>
+                                <field name="product_uom_id" options="{&quot;no_open&quot;: True}"
+                                       groups="product.group_uom"/>
+                                <field name="lot_id"/>
+                                <field name="quantity" required="True"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="do_request" string="Request" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_poi_request_products" model="ir.actions.act_window">
+            <field name="name">Operaciones con Albaranes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.request.products</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_stock_request_products"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

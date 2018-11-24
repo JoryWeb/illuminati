@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<report id="rciva_payroll_bol"
+	string="Planilla RC-IVA"
+	model="hr.payslip"
+	name="poi_hr_report.rciva_payroll"
+	report_type="qweb-pdf"
+	file="poi_hr_report.rciva_payroll"
+	auto="False"
+	menu="False"/>
+
+<record id="paperformat_hr_rciva_payroll" model="report.paperformat">
+	<field name="name">Planilla RC-IVA</field>
+	<field name="default" eval="True"/>
+	<field name="format">A4</field>
+	<field name="page_height">0</field>
+	<field name="page_width">0</field>
+	<field name="orientation">Landscape</field>
+	<field name="margin_top">30</field>
+	<field name="margin_bottom">10</field>
+	<field name="margin_left">5</field>
+	<field name="margin_right">5</field>
+	<field name="header_line" eval="False" />
+	<field name="header_spacing">25</field>
+	<field name="dpi">90</field>
+</record>
+<record id="rciva_payroll_bol" model="ir.actions.report">
+	<field name="paperformat_id" ref="poi_hr_report.paperformat_hr_rciva_payroll"/>
+</record>
+<template id="rciva_payroll">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+        	<div class="header" style="font-size:11px;">
+        		<div class="row">
+        			<div class="col-xs-3">
+        				<img t-if="o.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.logo)" style="max-height: 45px;"/>
+
+	            		<div style="font-size:10px;">
+	            			<span t-field="o.street" /><br/>
+	            			<span t-field="o.street2" /> - <span t-field="o.phone" />
+	            		</div>
+	            		<div style="font-size:10px;">
+	            			<span t-field="o.city"/> - <span t-field="o.country_id"/>
+	            		</div>
+        			</div>
+        			<div class="col-xs-6 text-center">
+        				<h4><strong>PLANILLA DE RETENCION Y DETERMINACION MENSUAL DEL <br /> RC-IVA</strong></h4>
+						<h5>Correspondiente al Mes de <span t-esc="month" /></h5>
+	                    <p>Expresado en Bolivianos</p>
+					</div>
+					<div class="col-xs-3 text-right">
+	                    <t t-usertime="%d/%m/%Y %H:%M:%S" /> <br />
+	                    <span>Hoja:<span class="page"/> de <span class="topage"/></span>
+	                </div>
+
+        		</div>
+        		<!-- <div class="row">
+        			<div class="col-xs-6">
+
+						<p><strong>de:</strong> </p>
+						<p><strong>hasta:</strong></p>
+
+					</div>
+        		</div> -->
+        	</div>
+
+        	<div class="article"  t-attf-style="font-size:{{10}}px;">
+        		<div class="row">
+        			<div class="col-xs-12">
+        				<table class="table table-condensed table-bordered">
+        					<thead>
+        						<tr>
+        							<th>N°</th>
+        							<th class="text-center">COD.</th>
+        							<TH class="text-center">NOMBRES Y APELLIDOS</TH>
+									<t t-foreach="rules.sorted(key=lambda r: r.sequence_report_2)" t-as="r">
+										<th class="text-center"><span t-field="r.name_2"/></th>
+									</t>
+        						</tr>
+        					</thead>
+        					<tbody>
+        						<t t-set="c" t-value="1"/>
+        						<t t-foreach="payslips" t-as="p">
+        						<tr>
+        							<td><span t-esc="c"/></td>
+        							<td>
+        								<span t-esc="p.employee_id.identification_id" />
+        							</td>
+        							<td>
+        								<span t-esc="p.employee_id.name" />
+        							</td>
+									<t t-foreach="p.details_by_salary_rule_category.filtered(lambda x: x.salary_rule_id.on_report_2 == True and x.salary_rule_id.report_id_2 and x.salary_rule_id.report_id_2.report_name == 'poi_hr_report.rciva_payroll').sorted(key=lambda r: r.salary_rule_id.sequence_report_2)" t-as="r">
+
+										<td class="text-right"><span t-field="r.total" /></td>
+									</t>
+								</tr>
+								<t t-set="c" t-value="c + 1"/>
+
+								</t>
+								<tr>
+
+
+        							<td colspan="3" class="text-right"><strong>TOTALES</strong></td>
+									<t t-foreach="rules_t" t-as="r">
+										<td class="text-right"> <strong><span t-esc="('%.2f' % (rules_t[r] or 0.00))"/></strong></td>
+									</t>
+        						</tr>
+        					</tbody>
+        				</table>
+
+        			 </div>
+				</div>
+			</div>
+        </t>
+    </t>
+</template>
+</data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	<record id="employee_reason_left_form_adv" model="ir.ui.view">
+	    <field name="name">employee.reason.left.adv</field>
+	    <field name="model">employee.reason.left</field>
+	    <field name="arch" type="xml">
+	      <form string="Motivo de Desactivacion">
+	        <group>
+	          <field name="black_list"/>
+	          <field name="reason_id"/>
+	        </group>
+	        <footer>
+	            <button name="action_desactive" string="Desactivar" type="object" class="btn-primary"/>
+	            o
+	            <button string="Salir" class="oe_link" special="cancel"/>
+	        </footer>
+	      </form>
+	    </field>
+	</record>
+</data>
+</openerp>

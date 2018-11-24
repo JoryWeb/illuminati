@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_pos_giftcard_config_form">
+            <field name="name">pos.bol.config.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='posbox_reference']" position="after">
+                    <h2>Gift Cards</h2>
+                    <div class="row mt16 o_settings_container" id="pos_bol_options">
+                        <div class="col-xs-12 col-md-6 o_setting_box" title="Gift Cards">
+                            <div class="o_setting_right_pane">
+                                <label for="iface_giftcard"/>
+                                <div class="text-muted">
+                                    Usar tarjetas de regalo para venta y como medio de pago.
+                                </div>
+                                <div class="content-group mt16">
+                                    <field name="iface_giftcard"/>
+                                </div>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="giftcard_product_id"/>
+                                <div class="text-muted">
+                                    Producto a ser usado como tarjeta de regalo en medio de pago.
+                                </div>
+                                <div class="content-group mt16">
+                                    <field name='giftcard_product_id'/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

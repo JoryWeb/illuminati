@@ -1,0 +1,26 @@
+
+{
+    'name': 'Karde Inventarios',
+    'version': '11.0.1',
+    'category': 'Custom',
+    'sequence': 14,
+    'summary': 'Kardex General de Inventarios',
+    'author': 'Poiesis Consulting',
+    'website': 'http://www.poiesisconsulting.com',
+    'depends': ['product', 'account', 'stock'],
+    'data': [
+             'report/report_kardex_lot_view.xml',
+             'report/report_kardex_view.xml',
+             'report/report_kardex_valuation_view.xml',
+             'report/report_kardex_valuation_real_view.xml',
+             'views/report_kardex.xml',
+             'views/product_view.xml',
+             'wizard/report_kardex_lot_wizard_view.xml',
+             'wizard/report_kardex_wizard_view.xml',
+             'wizard/report_kardex_valuation_view.xml',
+             'views/kardex_print_report.xml',
+             'security/ir.model.access.csv'],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}

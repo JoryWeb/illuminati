@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_picking_workshop_wizard" model="ir.ui.view">
+            <field name="name">Picking Workshop</field>
+            <field name="model">picking.workshop</field>
+            <field name="arch" type="xml">
+                <form string="Request Workshop">
+                    <group>
+                        <!--<field name="route_id" domain="[('name', 'ilike', 'taller')]"/>-->
+                        <field name="route_id" domain="[('supplied_wh_id', '=', warehouse_id),('name', 'ilike', 'taller')]"/>
+                        <field name="warehouse_id" invisible="1"/>
+                        <field name="sucursal_id"/>
+                        <!--<field name="user_id"/>-->
+                    </group>
+                    <footer>
+                        <button name="procurement_create" string="Create Picking Workshop" type="object"  class="oe_highlight"  />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_picking_workshop" model="ir.actions.act_window">
+            <field name="name">Picking Workshop Action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">picking.workshop</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</odoo>

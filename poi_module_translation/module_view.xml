@@ -1,0 +1,16 @@
+<openerp>
+    <data>
+
+        <record id="module_translation_form" model="ir.ui.view">
+            <field name="name">ir.module.module.translation.form</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_uninstall']" position="after">
+                    <button name="button_upgrade_translation" states="installed" string="Upgrade Translation" type="object"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

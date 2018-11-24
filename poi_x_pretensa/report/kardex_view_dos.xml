@@ -1,0 +1,25 @@
+<openerp>
+	<data>
+		<record id="poi_report_kardex_dos_pre_tree" model="ir.ui.view">
+			<field name="name">poi.report.kardex.dos.pre.tree</field>
+			<field name="model">poi.report.kardex.valorado.dos.pre</field>
+			<field name="arch" type="xml">
+				<tree string="Kardex">
+					<field name="date"/>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <field name="picking"/>
+                    <field name="origin"/>
+                    <field name="name_mov"/>
+                    <field name="origen"/>
+                    <field name="destino"/>
+                    <field name="cantidad"/>
+                    <field name="precio"/>
+                    <field name="cantidad_en_fecha"/>
+                    <field name="valor_inventario_fecha"/>
+				</tree>
+			</field>
+		</record>
+
+	</data>
+</openerp>

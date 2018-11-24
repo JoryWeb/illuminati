@@ -1,0 +1,341 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="external_cc_footer">
+            <t t-set="company" t-value="o.company_id"/>
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-5" style="width:48%;">
+                        <img t-if="o.company_id.logo_web" t-att-src="'data:image/png;base64,%s' % o.company_id.logo_web" style="max-height: 45px;"/>
+                        <span style="margin-top:20px;" t-field="o.company_id.rml_header1"/>
+                        <div t-field="o.company_id.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                    </div>
+                    <div class="col-xs-4 text-center" style="margin-top:30px; width:26%;">
+                        <p>
+                            <h3>FACTURA ORIGINAL</h3>
+                        </p>
+                    </div>
+                    <div class="col-xs-2 text-center" style="margin-top:20px; width:24%;">
+                        <p><strong style="font-size: 17px;">NIT: <span t-field="o.company_id.nit"/></strong><br/>
+                        <strong style="font-size: 19px;">Factura N°: <span t-field="o.cc_nro"/></strong><br/>
+                        <span class="small">Autorización N°:</span><span class="small" t-field="o.cc_dos.nro_orden"/>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row zero_min_height">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid black;"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <t t-raw="0"/>
+
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline">
+                        <li>Página:</li>
+                        <li><span class="page"/></li>
+                        <li>/</li>
+                        <li><span class="topage"/></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </template>
+
+        <template id="report_ibol_view">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="poi_bol_cc.external_cc_footer">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                       <p><strong>Fecha: </strong><span t-field="o.date_invoice"/></p>
+                                       <div class="row">
+                                           <div class="col-xs-8">
+                                                <p><strong>Señor(es): </strong><span t-field="o.razon"/></p>
+                                           </div>
+                                           <div class="col-xs-4">
+                                               <p><strong>NIT: </strong><span t-field="o.nit"/></p>
+                                           </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div t-if="(o.type == 'out_refund')">
+                        <div class="row" >
+                            <div class="col-xs-12">
+                            <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p class="text-center"><strong>DETALLE DE LA RESCISION O DEVOLUCION DEL SERVICIO</strong></p>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <p class="small">Factura N°:
+                                        <span t-field="o.refunds_id.cc_nro"/></p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p class="small">Autorización N°:
+                                        <span t-field="o.refunds_id.cc_dos.nro_orden"/></p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <p class="small">NIT:
+                                        <span t-field="o.refunds_id.company_id.nit"/></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                   <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Description</th>
+                                                <th>Quantity</th>
+                                                <th class="text-right">Unit Price</th>
+                                                <th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+                                                <th class="text-right">Taxes</th>
+                                                <th class="text-right">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="invoice_tbody">
+                                            <tr t-foreach="o.refunds_id.invoice_line" t-as="l">
+                                                <td><span t-field="l.name"/></td>
+                                                <td>
+                                                    <span t-field="l.quantity"/>
+                                                    <span t-field="l.uos_id"  groups="product.group_uom"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="l.price_unit"/>
+                                                </td>
+                                                <td groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+                                                <td class="text-right">
+                                                    <span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="l.price_subtotal"
+                                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                        <div class="row">
+                        <div class="col-xs-4 pull-right">
+                            <table class="table table-condensed">
+                                <tr class="border-black">
+                                    <td><strong>Total Without Taxes</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.refunds_id.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Taxes</td>
+                                    <td class="text-right">
+                                        <span t-field="o.refunds_id.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right">
+                                         <span t-field="o.refunds_id.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-xs-12">
+                                <table class="table table-condensed">
+                                    <tr>
+                                        <td><strong>SON :</strong> <span t-field="o.refunds_id.literal"/> <span t-field="o.refunds_id.decimal"/></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><strong class="small">Total de la Transaccion Original:</strong></td>
+                                        <td class="text-right active">
+                                         <span t-field="o.refunds_id.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="row" t-if="o.tax_line">
+                        <div class="col-xs-6">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Tax</th>
+                                        <th class="text-right">Base</th>
+                                        <th class="text-right">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.refunds_id.tax_line" t-as="t">
+                                        <td><span t-field="t.name"/></td>
+                                        <td class="text-right">
+                                            <span t-field="t.base"
+                                                t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="t.amount"
+                                                t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                   <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Description</th>
+                                                <th>Quantity</th>
+                                                <th class="text-right">Unit Price</th>
+                                                <th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+                                                <th class="text-right">Taxes</th>
+                                                <th class="text-right">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="invoice_tbody">
+                                            <tr t-foreach="o.invoice_line" t-as="l">
+                                                <td><span t-field="l.name"/></td>
+                                                <td>
+                                                    <span t-field="l.quantity"/>
+                                                    <span t-field="l.uos_id"  groups="product.group_uom"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="l.price_unit"/>
+                                                </td>
+                                                <td groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+                                                <td class="text-right">
+                                                    <span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="l.price_subtotal"
+                                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-xs-4 pull-right">
+                            <table class="table table-condensed">
+                                <tr class="border-black">
+                                    <td><strong>Total Without Taxes</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Taxes</td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right">
+                                         <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-xs-12">
+                                <table class="table table-condensed">
+                                    <tr>
+                                        <td><strong>SON :</strong> <span t-field="o.literal"/> <span t-field="o.decimal"/></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><strong>Total :</strong></td>
+                                        <td class="text-right active">
+                                         <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" t-if="o.tax_line">
+                        <div class="col-xs-6">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Tax</th>
+                                        <th class="text-right">Base</th>
+                                        <th class="text-right">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.tax_line" t-as="t">
+                                        <td><span t-field="t.name"/></td>
+                                        <td class="text-right">
+                                            <span t-field="t.base"
+                                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="t.amount"
+                                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+
+                        <table class="table table-condensed" style="bottom:0;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p style="terp_default_8" t-if="(o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid'))"><b>CODIGO DE CONTROL: </b> <span t-field="o.cc_cod"/></p>
+                                        <p style="terp_default_8" t-if="(o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid'))"><b>FECHA L�~MMITE DE EMISI�~SN: </b> <span t-field="o.cc_dos.fecha_fin"/></p>
+                                        <para t-if="(o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid'))">
+                                            <b>&quot;ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PA�~MS. EL USO IL�~MCITO DE �~ISTA SER�~A SANCIONADO DE ACUERDO A LEY&quot;</b>
+                                            <br/><span class="small" t-field="o.cc_dos.leyenda_id.name"/>
+                                        </para>
+                                        <para style="terp_default_Bold_9" t-if="(o.type == 'out_invoice' and (o.state == 'draft' or o.state == 'cancel'))">
+                                            &quot;ESTE DOCUMENTO NO TIENE VALIDEZ FISCAL&quot;
+                                        </para>
+                                    </td>
+                                    <td>
+                                        <p><img t-att-src="'data:image/png;base64,%s' % o.qr_img" style="height: 4.2cm;"/></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="float:right;position:fixed; color:lightgray;transform: rotate(-90.0deg); -webkit-transform: rotate(-90.0deg); right: -140px; top:400px; width:300px">
+                            <span >Generado por Poiesis Consulting</span>
+                        </div>
+
+
+
+                    </div>
+
+
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+ -->
+
+

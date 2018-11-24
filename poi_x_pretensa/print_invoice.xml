@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Boton imprimir factura-->
+        <record id="view_order_pretensa_inherit_invoice" model="ir.ui.view">
+            <field name="name">poi.account.invoice.print</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/header//button[@name='invoice_print']" position="replace">
+                    <button name="invoice_print_pret" string="Imprimir Factura Pretensa" type="object" attrs="{'invisible':['|',('sent','=',True), ('state', '!=', 'open')]}" class="oe_highlight" groups="base.group_user"/>
+                </xpath>
+                <!--<xpath expr="/form/header//button[@string='Print Invoice']" position="replace">
+                    <button name="invoice_print_pret" string="Imprimir Factura Pretensa" type="object" attrs="{'invisible':['|',('sent','=',False), ('state', '!=', 'open')]}" groups="base.group_user"/>
+                </xpath>-->
+            </field>
+        </record>
+
+        <report id="print_invoice_pret"
+            name="invoice.pretensa.webkit"
+            auto="False"
+            model="account.invoice"
+            file="poi_x_pretensa/report/print_invoice_pret.mako"
+            webkit_header="poi_webkit.base_reports_print_invoice_header"
+            string="Imprimir Factura Pretensa"
+            report_type="webkit"/>
+
+        <!--<report id="print_invoice_pret_copia"
+            name="invoice.pretensacopia.webkit"
+            auto="False"
+            model="account.invoice"
+            file="poi_x_pretensa/report/print_invoice_pret_copia.mako"
+            webkit_header="poi_webkit.base_reports_print_invoice_header"
+            string="Imprimir Factura Pretensa Copia"
+            report_type="webkit"/>-->
+
+
+    </data>
+</openerp>

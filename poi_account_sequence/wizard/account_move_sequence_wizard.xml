@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="account_move_sequence_wizard_form" model="ir.ui.view">
+			<field name="name">account.move.sequence.wizard.form</field>
+			<field name="model">account.move.sequence.wizard</field>
+			<field name="arch" type="xml">
+				<form version="7.0" string="POS order analysis Wizard">
+					<sheet>
+						<group>
+							<field name="only_selected"/>
+						</group>
+						<group>
+							<field name="journal_id" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<field name="partner_id" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<field name="analytic_account_tag_id"  attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<field name="analytic_account_id" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<group>
+								<field name="date_from" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							</group>
+							<group>
+								<field name="date_to" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							</group>
+						</group>
+						<group>
+							<group>
+								<field name="prefix"/>
+								<field name="padding"/>
+								<field name="start_number"/>
+								<field name="suffix"/>
+							</group>
+						</group>
+
+					</sheet>
+					<footer>
+						<button name="apply_sequence" type="object" string="Apply Sequence" class="oe_highlight"/>
+						or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+						<!--<button name="print_kardex" type="object" string="Print Kardex" class="oe_right"/> -->
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<!-- <record id="account_move_sequence_wizard_form_action" model="ir.actions.act_window">
+	        <field name="name">Assign Sequence</field>
+	        <field name="res_model">account.move.sequence.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+    	</record>
+
+		<menuitem
+            action="account_move_sequence_wizard_form_action"
+            icon="STOCK_JUSTIFY_FILL"
+            id="menu_account_move_sequence_wizard_form"
+            parent="account.menu_finance_entries"
+            sequence="100"
+            groups="account.group_account_manager"
+        /> -->
+
+
+		<act_window name="Assign Sequence"
+            res_model="account.move.sequence.wizard"
+            src_model="account.move"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            multi="True"
+            id="act_stock_return_picking"/>
+
+        <record id="account_move_sequence_wizard_form2" model="ir.ui.view">
+			<field name="name">account.move.sequence.wizard.form</field>
+			<field name="model">account.move.sequence.wizard</field>
+			<field name="arch" type="xml">
+				<form version="7.0" string="POS order analysis Wizard">
+					<sheet>
+						<group>
+							<field name="only_selected" invisible="1"/>
+						</group>
+						<group>
+							<field name="journal_id" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<field name="partner_id" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<field name="analytic_account_tag_id"  attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<field name="analytic_account_id" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							<group>
+								<field name="date_from" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							</group>
+							<group>
+								<field name="date_to" attrs="{'invisible': [('only_selected','=',True)]}"/>
+							</group>
+						</group>
+						<group>
+							<group>
+								<field name="prefix"/>
+								<field name="padding"/>
+								<field name="start_number"/>
+								<field name="suffix"/>
+							</group>
+						</group>
+
+					</sheet>
+					<footer>
+						<button name="apply_sequence" type="object" string="Apply Sequence" class="oe_highlight"/>
+						or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+						<!--<button name="print_kardex" type="object" string="Print Kardex" class="oe_right"/> -->
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="account_move_sequence_wizard_form_action2" model="ir.actions.act_window">
+	        <field name="name">Assign Sequence</field>
+	        <field name="res_model">account.move.sequence.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+	        <field name="view_id" ref="account_move_sequence_wizard_form2"/>
+    	</record>
+
+		<menuitem
+            action="account_move_sequence_wizard_form_action2"
+            icon="STOCK_JUSTIFY_FILL"
+            id="menu_account_move_sequence_wizard_form"
+            parent="account.menu_finance_entries"
+            sequence="100"
+            groups="account.group_account_manager"
+        />
+
+	</data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<!-- Inherit Form view -->
+<record id="view_order_form_poi_sra" model="ir.ui.view">
+  <field name="name">sale.order.form.poi.sra</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="sale.view_order_form"/>
+  <field name="arch" type="xml">
+    <field name="client_order_ref" position="after">
+      <field name="currency_report_id"/>
+    </field>
+  </field>
+</record>
+
+
+</data>
+</odoo>

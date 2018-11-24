@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_invoice_cif"
+    string="Factura de Venta de Zona Franca"
+    model="account.invoice"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.invoice_report_cif"
+    name="poi_x_toyosa_report.invoice_template_cif"
+    menu='False'
+  />
+
+
+  <record id="report_invoice_cif" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_invoice_toy"/>
+  </record>
+</data>
+
+<template id="invoice_template_cif">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+  <t t-call="poi_x_toyosa_report.invoice_header_toy">
+    <t t-set="page_title">ZONA FRANCA - SIN DERECHO A</t> 
+    <t t-set="page_sub_title">CREDITO FISCAL</t> 
+    <t t-set="other" t-value="True"/>
+  </t>
+  <div class="article" style="font-size:12px;">
+    <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+           <!--  <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-8">
+                  <p><strong>Fecha: </strong><span t-field="o.date_invoice" t-field-options='{"format": "d"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "MMMM"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "y"}'/></p>
+                  <p><strong>Señor(a)(es): </strong><span t-field="o.razon"></span></p>
+                  <p><strong>DIRECCION: </strong><span t-field="o.partner_id.street"></span> <span t-field="o.partner_id.street2"></span></p>
+                </div>
+                <div class="col-xs-4">
+                  <p><strong>NIT/C.I.: </strong><span t-field="o.nit"/></p>
+                  <p><strong>TELEFONO: </strong><span t-field="o.partner_id.phone"></span></p>
+                </div>
+              </div>
+            </div> -->
+            <div class="panel-body" style="min-height:638px;">
+              <table class="table table-condensed">
+                  <thead>
+                      <tr>
+                          <th>CANTIDAD</th>
+                          <th>CODIGO</th>
+                          <th>DETALLE</th>
+                          <th class="text-right">UNITARIO</th>
+                          <th class="text-right">TOTAL</th>
+                      </tr>
+                  </thead>
+                  <tbody class="invoice_tbody">
+                  <t  t-foreach="o.invoice_line_ids" t-as="l">
+                    <tr>
+                        <td><span t-field="l.quantity"/></td>
+                        <td>
+                          <p>MARCA</p>
+                        </td>
+                        <td><span t-field="l.lot_id.marca.name"/></td>
+                        <td class="text-right">
+                          <span t-field="l.price_unit"/>
+                        </td>
+                        <td class="text-right">
+                          <span t-field="l.price_subtotal_with_tax2"/>
+                        </td>
+                    </tr>
+                    <tr style="border-top:0px solid #FFFFFF;padding:0; margin:0;">
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">TIPO</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-field="l.lot_id.product_id.name"/></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">MOTOR</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-field="l.lot_id.n_motor"/></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">CHASIS</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-field="l.lot_id.name"/></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">COLOR</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-field="l.lot_id.colorexterno.name"/></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">AÑO MODELO</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-esc="(o.lot_id.anio_modelo and int(o.lot_id.anio_modelo.name)) or ' '"/></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">FACTURA DE ORIGEN</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">PARTE DE RECEPCION</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">CODIGO DE RECINTO</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">SINUDEA</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">Uso Especial</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                    </tr>
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;">Año de Fabricacion</td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                    </tr>
+                  </t>
+                  <t t-foreach="item_ids" t-as="i">
+                    <tr>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"></td>
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-esc="i.name"/></td>
+                      <t t-if="i.item_id and i.item_id.id and i.item_id.id in attrib">
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-esc="i.item_id and i.item_id.id and i.item_id.id in attrib and  attrib[i.item_id.id]"/></td>
+                      </t>
+                      <t t-if="not (i.item_id and i.item_id.id and i.item_id.id in attrib)">
+                      <td style="border-top:0px solid #FFFFFF;padding:0; margin:0;"><span t-esc="i.default"/></td>
+                      </t>
+                    </tr>
+                  </t>
+                  </tbody>
+              </table>
+              <t t-if="o.currency_id.name == 'USD'">
+                <div class="col-xs-4 col-xs-offset-6">
+                  <p>Total $us:</p>
+                  <p>Tipo de Cambio Bs/$us:</p>
+                </div>
+                <div class="col-xs-2 text-right" style="padding:0px;maring:0px;">
+                  <p class="text-right"><span t-field="o.amount_total"/></p>
+                  <p class="text-right"><span t-esc="round(1/o.currency_id.rate,2)"/></p>
+                </div>
+              </t>
+              <!-- <t t-if="o.currency_id.name != 'USD'">
+                <div class="col-xs-4 col-xs-offset-6">
+                  <p>Total $us:</p>
+                  <p>Tipo de Cambio Bs/$us:</p>
+                </div>
+                <div class="col-xs-2 text-right" style="padding:0px;maring:0px;">
+                  <p class="text-right"><span t-field="o.amount_total_usd"/></p>
+                  <p class="text-right"><span t-esc="round(1/usd.rate,2)"/></p>
+                </div>
+              </t> -->
+            </div>
+            <!-- <div class="panel-footer">
+              <div class="row">
+                <div class="col-xs-10">
+                  Son:  <span t-esc="to_word(o.amount_total_exchange).upper()"/>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span t-field="o.amount_total_exchange"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-8">
+                  <p><strong>Codigo De Control:</strong> <span t-field="o.cc_cod"/></p>
+                  <p><strong>Fecha Limite de emision:</strong> <span t-field="o.cc_dos.fecha_fin"/></p>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <span t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))" ><img t-att-src="'data:image/png;base64,%s' % o.qr_img" style="height: 4.2cm;"/></span>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <p>
+                  <strong>ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS. EL USO ILÍCITO DE ÉSTA SERÁ SANCIONADO DE ACUERDO A LA LEY.</strong><br/><span t-field="o.cc_dos.leyenda_id.name" style="font-size:10px;"/></p>
+                </div>
+              </div>
+
+            </div> -->
+          </div>
+        </div>
+    </div>
+  </div>
+  <t t-call="poi_x_toyosa_report.invoice_footer_toy">
+
+  </t>
+</t>
+</t>
+</template>
+
+</odoo>

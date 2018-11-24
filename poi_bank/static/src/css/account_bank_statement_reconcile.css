@@ -1,0 +1,38 @@
+.oe_form_bank_statement_reconcile {
+    border-bottom: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.oe_form_bank_statement_reconcile .oe_bank_statement_sheet {
+  background: white;
+  min-height: 330px;
+  padding: 16px;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.oe_form_bank_statement_reconcile .oe_subtitle_table {
+    text-align: center;
+    font-size: 14px;
+}
+
+.oe_form_bank_statement_reconcile .oe_half_table {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.oe_form_bank_statement_reconcile a.btn-primary {
+    color: #FFFFFF !important;
+}
+
+.unreconciled_lines_total{
+    background-color: #FFFFFF !important;
+    z-index: 9999999;
+    padding: 10px 10px 10px 10px;
+}

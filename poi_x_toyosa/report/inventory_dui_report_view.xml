@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_inventory_dui_report_report_pivot">
+            <field name="name">inventory.dui.report.pivot</field>
+            <field name="model">inventory.dui.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Cuadro estadistico" disable_linking="True">
+                    <field name="location_id" type="col"/>
+                    <field name="qty" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_inventory_dui_report_report_graph">
+            <field name="name">inventory.dui.report.graph</field>
+            <field name="model">inventory.dui.report</field>
+            <field name="arch" type="xml">
+                <graph string="Cuadro estadistico Inventarios">
+                    <field name="location_id" type="row"/>
+                    <field name="qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+
+        <record id="view_inventory_dui_report_report_search" model="ir.ui.view">
+            <field name="name">inventory.dui.report.search</field>
+            <field name="model">inventory.dui.report</field>
+            <field name="arch" type="xml">
+                <search string="Purchase Orders">
+                    <field name="reservation_id"/>
+                    <field name="product_uom_id"/>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <group expand='0' string='Filters'>
+                        <filter name='internal_loc' string="Ubicaciones Internas" domain="[('usage','=', 'internal')]"/>
+                        <filter name='transit_loc' string="Ubicaciones Transito" domain="[('usage' ,'=', 'transit')]"/>
+                        <separator/>
+                        <filter name="negative" string="Negativos" domain="[('qty', '&lt;', 0.0)]"/>
+                        <filter name="positive" string="Positivos" domain="[('qty', '&gt;', 0.0)]"/>
+                    </group>
+                    <group expand="1" string="Group By">
+                        <filter string="Producto" name="group_product_id" context="{'group_by':'product_id'}"/>
+                        <filter string="Ubicación" name="group_location_id" context="{'group_by':'location_id'}"/>
+                        <filter string="Lote" name="group_lot_id" context="{'group_by':'lot_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_inventory_dui_report_report_tree">
+            <field name="name">inventory.dui.report.tree</field>
+            <field name="model">inventory.dui.report</field>
+            <field name="arch" type="xml">
+                <tree string="Inventario DUI">
+                    <field name="usage" invisible="1"/>
+                    <field name="product_id"/>
+                    <field name="reservation_id"/>
+                    <field name="in_date"/>
+                    <field name="lot_id"/>
+                    <field name="location_id"/>
+                    <field name="qty" sum="Total Cantidad"/>
+                    <field name="product_uom_id"/>
+                    <field name="invoice_id"/>
+                    <field name="date_factura"/>
+                    <field name="ref_proveedor"/>
+                    <field name="imp_pol"/>
+                    <field name="date_dui"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_inventory_dui_report_all" model="ir.actions.act_window">
+            <field name="name">Inventario DUI</field>
+            <field name="res_model">inventory.dui.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="context">{'search_default_internal_loc': 1}</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Reporte de Stock asigandos a DUI</field>
+        </record>
+
+        <menuitem id="menu_inventory_dui_report" parent="poi_purchase_imports.menu_purchase_imports" sequence="99" action="action_inventory_dui_report_all"/>
+
+    </data>
+</odoo>

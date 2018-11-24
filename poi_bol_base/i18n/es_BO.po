@@ -1,0 +1,3175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_bol_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-05 16:42+0000\n"
+"PO-Revision-Date: 2017-06-05 16:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "1. Cheque de cualquier naturaleza"
+msgstr "1. Cheque de cualquier naturaleza"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "10. Otros"
+msgstr "10. Otros"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "2. Orden de Transferencia"
+msgstr "2. Orden de Transferencia"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "3. Ordenes de transferencia electrónica de fondos"
+msgstr "3. Ordenes de transferencia electrónica de fondos"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "4. Transferencia de fondos"
+msgstr "4. Transferencia de fondos"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "5. Tarjeta de Débito"
+msgstr "5. Tarjeta de Débito"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "6. Tarjeta de Crédito"
+msgstr "6. Tarjeta de Crédito"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "7. Tarjeta Prepagada"
+msgstr "7. Tarjeta Prepagada"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "8. Depósito en cuenta"
+msgstr "8. Depósito en cuenta"
+
+#. module: poi_bol_base
+#: selection:bol.bank.payment.type,payment_document_type:0
+msgid "9. Cartas de Crédito"
+msgstr "9. Cartas de Crédito"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "ADVERTENCIA"
+msgstr "ADVERTENCIA"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_short
+msgid "Abreviación"
+msgstr "Abreviación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_type_short
+msgid "Abreviación corta de la Categoría."
+msgstr "Abreviación corta de la Categoría."
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Abril"
+msgstr "Abril"
+
+#. module: poi_bol_base
+#: model:ir.actions.client,name:poi_bol_base.action_client_bol_conf_menu
+msgid "Abrir Configuración Localización"
+msgstr "Abrir Configuración Localización"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+msgid "Abrir documento"
+msgstr "Abrir documento"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_move
+msgid "Account Entry"
+msgstr "Asiento contable"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_account_type
+msgid "Account Type"
+msgstr "Tipo de cuenta"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_activa
+msgid "Activa"
+msgstr "Activa"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_activity_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_actividad
+msgid "Actividad económica"
+msgstr "Actividad económica"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_company_activity_name
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_actividad
+msgid "Actividad económica según Impuestos Internos."
+msgstr "Actividad económica según Impuestos Internos."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_principal
+msgid "Actividad principal"
+msgstr "Actividad principal"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_company_bol_base_form
+msgid "Actividades economicas"
+msgstr "Actividades economicas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_company_activity_ids
+msgid "Actividades económicas"
+msgstr "Actividades económicas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_asset
+msgid "Activos Fijos"
+msgstr "Activos Fijos"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.bol_actualiza_aitb
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_actualiza_aitb
+#: model:ir.ui.menu,name:poi_bol_base.menu_action_bol_aitb
+msgid "Actualización de valor"
+msgstr "Actualización de valor"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:117
+#, python-format
+msgid "Advertencia"
+msgstr "Advertencia"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Agosto"
+msgstr "Agosto"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_search
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_tree
+msgid "Ajuste"
+msgstr "Ajuste"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_account_type_form
+msgid "Ajustes de actualización"
+msgstr "Ajustes de actualización"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_tax_account_creditnote_id
+msgid "Al usar la funcionalidad de Notas de crédito, esta cuenta sera utilizada para contabilizar la reversión de impuestos de períodos anteriores."
+msgstr "Al usar la funcionalidad de Notas de crédito, esta cuenta sera utilizada para contabilizar la reversión de impuestos de períodos anteriores."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_ice
+msgid "Alicuota ICE"
+msgstr "Alicuota ICE"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_product_product_ice
+msgid "Alicuota específica ICE (Bs./UdM). Aplica para el cálculo de impuestos sobre el Item"
+msgstr "Alicuota específica ICE (Bs./UdM). Aplica para el cálculo de impuestos sobre el Item"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_warehouse_id
+msgid "Almacen"
+msgstr "Almacen"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_nota_wizard_warehouse_id
+msgid "Almacen al cual se hara la Entrada por devolución"
+msgstr "Almacen al cual se hara la Entrada por devolución"
+
+#. module: poi_bol_base
+#: selection:account.invoice,estado_fac:0
+#: selection:account.invoice,estado_fac_display:0
+#: selection:poi_bol.lcv.report,estado_fac:0
+msgid "Anulada"
+msgstr "Anulada"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_applies
+msgid "Aplica"
+msgstr "Aplica"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_account_ajusta_ufv
+msgid "Aplica ajuste UFV"
+msgstr "Aplica ajuste UFV"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_account_ajusta_usd
+msgid "Aplica ajuste USD"
+msgstr "Aplica ajuste USD"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_for_customer
+msgid "Applicable for customers"
+msgstr "Applicable for customers"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_for_supplier
+msgid "Applicable for suppliers"
+msgstr "Applicable for suppliers"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_export_wizard
+msgid "Aquí esta el archivo de exportación generado :"
+msgstr "Aquí esta el archivo de exportación generado :"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.summary,export:0
+msgid "Archivo de texto"
+msgstr "Archivo de texto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_prev_move_id
+msgid "Asiento Anterior"
+msgstr "Asiento Anterior"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_imp_it_prev_move_id
+msgid "Asiento que usa las mismas cuentas. Revisarlo antes de confirmar!"
+msgstr "Asiento que usa las mismas cuentas. Revisarlo antes de confirmar!"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_nota_wizard
+msgid "Asistente Nota de Crédito"
+msgstr "Asistente Nota de Crédito"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.local_dosif_view_tree
+msgid "Auto Num"
+msgstr "Numeración Automática"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_auto_num
+msgid "Auto numera"
+msgstr "Auto numera"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.local_dosif_view_form
+msgid "Autorizaciones"
+msgstr "Autorizaciones"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_year
+msgid "Año"
+msgstr "Año"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_year_invoice
+msgid "Año factura"
+msgstr "Año factura"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "BEN"
+msgstr "BEN"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_res_bank
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_bank
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_bank
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_bank
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_bank
+msgid "Bank"
+msgstr "Banco"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_bank_account_id
+msgid "Bank Account"
+msgstr "Cuenta bancaria"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_bank_account_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_bank_account_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_bank_account_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_bank_account_number
+msgid "Bank Account Number"
+msgstr "Bank Account Number"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.action_bol_bank_payment_type
+#: model:ir.ui.menu,name:poi_bol_base.menu_bol_bank_payment_type
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_bank_payment_type_form
+msgid "Bank Payment Types"
+msgstr "Tipos de pagos de banco"
+
+#. module: poi_bol_base
+#: selection:account.journal,payment_model:0
+#: selection:account.move,payment_model:0
+#: selection:account.payment,payment_model:0
+#: selection:bol.bank.payment.type,payment_model:0
+#: selection:poi_bol.comprobante.wizard,payment_model:0
+msgid "Bank Transfer"
+msgstr "Transferencia bancaria"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.bol_customer_action
+#: model:ir.ui.menu,name:poi_bol_base.bol_customer_action_menu
+msgid "Bol Customers"
+msgstr "Clientes Localización"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Boleto BCP"
+msgstr "Boleto BCP"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "CBA"
+msgstr "CBA"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "CHU"
+msgstr "CHU"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_ci
+#: model:ir.ui.view,arch_db:poi_bol_base.view_partner_form_bo
+msgid "CI"
+msgstr "CI"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "CREDITO FISCAL"
+msgstr "CREDITO FISCAL"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_extension
+msgid "Campo usado para las Extesiones alfanumericas(Casos Duplicados)."
+msgstr "Campo usado para las Extesiones alfanumericas(Casos Duplicados)."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_generate
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_criteria_wizard
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_summary_wizard
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_comprobante_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.poi_bol_nota_wizard_view
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_quantity
+msgid "Cantidad"
+msgstr "Cantidad"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_card_code
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_card_code
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_card_code
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_client_code
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_card_code
+msgid "Card Code"
+msgstr "Últimos Digitos de Tarjeta"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_card_bank_owner
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_card_bank_owner
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_card_bank_owner
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_card_bank_owner
+msgid "Card or Bank Owner"
+msgstr "Titular de Tarjeta/Banco"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_ci
+msgid "Carnet de Identidad."
+msgstr "Carnet de Identidad."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_res_case
+msgid "Case"
+msgstr "Caso"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_res_id
+msgid "Case id"
+msgstr "Caso"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_case
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_spec
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_case
+msgid "Caso"
+msgstr "Caso"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_tax_type_bol
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_tax_template_type_bol
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_tax_type_bol
+msgid "Caso SIN"
+msgstr "Caso SIN"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_caso_aju
+msgid "Caso de Ajuste"
+msgstr "Caso de Ajuste"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:65
+#, python-format
+msgid "Caso de uso de ajusto desconocido!"
+msgstr "Caso de uso de ajusto desconocido!"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_partner_type
+msgid "Categoría Socio"
+msgstr "Categoría Socio"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_export_wizard
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_comprobante_wizard
+msgid "Cerrar"
+msgstr "Cerrar"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_comprobante_wizard
+msgid "Cerrar Comprobante"
+msgstr "Cerrar Comprobante"
+
+#. module: poi_bol_base
+#: selection:account.journal,payment_model:0
+#: selection:account.move,payment_model:0
+#: selection:account.payment,payment_model:0
+#: selection:bol.bank.payment.type,payment_model:0
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_check_id
+#: selection:poi_bol.comprobante.wizard,payment_model:0
+msgid "Check"
+msgstr "Cheque"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_check_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_check_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_check_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_check_number
+msgid "Check Number"
+msgstr "Número de Cheque"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_checkbook_id
+msgid "Checkbook"
+msgstr "Chequera"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_child_id
+msgid "Child Categories"
+msgstr "Categorías hijas"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_comprobante_wizard
+msgid "Cierre Comprobante"
+msgstr "Cierre Comprobante"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.action_invoice_nota_out
+msgid "Click para crear una Nota de crédito."
+msgstr "Click para crear una Nota de crédito."
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.action_bol_bank_payment_type
+msgid "Click to create a payment type."
+msgstr "Click to create a payment type."
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.revert_description_tree_view_action
+msgid "Click to define a new revert description."
+msgstr "Click to define a new revert description."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_client_code
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_client_code
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_client_code
+msgid "Client Code"
+msgstr "Código de Cliente"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Compra"
+msgstr "Compra"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "Configuraciones"
+msgstr "Configuraciones"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.action_bol_configuration
+msgid "Configurar Localización"
+msgstr "Configurar Localización"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "Configurar Localización Bolivia"
+msgstr "Configurar Localización Bolivia"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+#: model:ir.ui.view,arch_db:poi_bol_base.view_company_bol_base_form
+msgid "Contabilidad"
+msgstr "Contabilidad"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_count
+msgid "Conteo"
+msgstr "Conteo"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.account_invoice_bo
+#: model:ir.ui.view,arch_db:poi_bol_base.account_invoice_supplier_bo
+msgid "Control SIN"
+msgstr "Control SIN"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_make_picking
+msgid "Crear Albarán"
+msgstr "Crear Albarán"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.poi_bol_nota_wizard_view
+msgid "Crear Nota"
+msgstr "Crear Nota"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_create_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_create_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_libro_cv_criteria_cc_dos
+msgid "Criterio para filtrar Facturas de una Dosificación específica."
+msgstr "Criterio para filtrar Facturas de una Dosificación específica."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_libro_cv_criteria_shop_id
+msgid "Criterio para filtrar Facturas de una Sucursal específica."
+msgstr "Criterio para filtrar Facturas de una Sucursal específica."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_iva_pol
+msgid "Crédito fiscal IVA según Póliza de Importación. Este valor sera usado como base de cálculo en el Libro de Compras para esta transacción!"
+msgstr "Crédito fiscal IVA según Póliza de Importación. Este valor sera usado como base de cálculo en el Libro de Compras para esta transacción!"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_tocheck_analytic
+msgid "Ctas. Analiticas"
+msgstr "Ctas. Analiticas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_tocheck_account
+msgid "Ctas. Globales"
+msgstr "Ctas. Globales"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_account_id
+#: selection:poi_bol.comprobante.wizard,case:0
+msgid "Cuenta contable"
+msgstr "Cuenta contable"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_comprobante_wizard_account_id
+msgid "Cuenta contable a usar para cerrar el Comprobante de compra."
+msgstr "Cuenta contable a usar para cerrar el Comprobante de compra."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_tax_account_creditnote_id
+msgid "Cuenta de Notas de crédito"
+msgstr "Cuenta de Notas de crédito"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_account_type_account_aju_ufv_id
+msgid "Cuenta de ajuste UFV"
+msgstr "Cuenta de ajuste UFV"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_account_type_account_aju_usd_id
+msgid "Cuenta de ajuste USD"
+msgstr "Cuenta de ajuste USD"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "Tipo de cambio"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_customer_tree
+msgid "Customers"
+msgstr "Clientes"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "CÓDIGO DE CONTROL"
+msgstr "CÓDIGO DE CONTROL"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_old_code
+msgid "Código antíguo"
+msgstr "Código antíguo"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_cc_cod
+msgid "Código control"
+msgstr "Código control"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_cc
+msgid "Código de Control"
+msgstr "Código de Control"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_cc_cod
+msgid "Código de control"
+msgstr "Código de control"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_cc_cod
+msgid "Código de representación única para el SIN. Generación automática para Ventas (versión 7). Introducción manual para Compras."
+msgstr "Código de representación única para el SIN. Generación automática para Ventas (versión 7). Introducción manual para Compras."
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "DES CUENTOS"
+msgstr "DES CUENTOS"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_date_request
+msgid "Date Request"
+msgstr "Fecha"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.local_cc_dosif_action
+#: model:ir.ui.menu,name:poi_bol_base.menu_action_local_cc_dosif_form
+msgid "Datos de Dosificación"
+msgstr "Datos de Dosificación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_line_debit_sec
+msgid "Debe Sec"
+msgstr "Debe Sec"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:98
+#, python-format
+msgid "Debe seleccionar un Método de pago."
+msgstr "Debe seleccionar un Método de pago."
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:105
+#, python-format
+msgid "Debe seleccionar una Cuenta contable."
+msgstr "Debe seleccionar una Cuenta contable."
+
+#. module: poi_bol_base
+#: selection:account.journal,payment_model:0
+#: selection:account.move,payment_model:0
+#: selection:account.payment,payment_model:0
+#: selection:bol.bank.payment.type,payment_model:0
+#: selection:poi_bol.comprobante.wizard,payment_model:0
+msgid "Debit,Credit or Prepaid Card"
+msgstr "Tarjeta de crédito, débito o prepagada"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_payment_account_journal_form
+msgid "Default Payment Options"
+msgstr "Opciones por defecto de Pago"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_imp_it_tax_id
+msgid "Define la tasa a usar y las cuentas con las que se genera el asiento."
+msgstr "Define la tasa a usar y las cuentas con las que se genera el asiento."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_company_activity_principal
+msgid "Definir si es una actividad principal para la impresión de la factura"
+msgstr "Definir si es una actividad principal para la impresión de la factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_multi_activity
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_multi_activity
+msgid "Definir si son multiples actividades para esta compañía"
+msgstr "Definir si son multiples actividades para esta compañía"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_tax_template_type_bol
+#: model:ir.model.fields,help:poi_bol_base.field_account_tax_type_bol
+msgid "Denota manejos particulares de Impuestos Nacionales para presentaciones de Libros CV.\n"
+"                                                                                                - ICE: Impuesto al consumo especifico\n"
+"                                                                                                - IVA: Impuesto al Valor Agregado\n"
+"                                                                                                - EXE: Exentos\n"
+"                                                                                                - Ret: Retenciones"
+msgstr "Denota manejos particulares de Impuestos Nacionales para presentaciones de Libros CV.\n"
+"                                                                                                - ICE: Impuesto al consumo especifico\n"
+"                                                                                                - IVA: Impuesto al Valor Agregado\n"
+"                                                                                                - EXE: Exentos\n"
+"                                                                                                - Ret: Retenciones"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_ci_dept
+msgid "Dept. CI"
+msgstr "Dept. CI"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_export_wizard
+msgid "Descarga Libro"
+msgstr "Descarga Libro"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_file
+msgid "Descargar"
+msgstr "Descargar"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_libro_cv_export
+msgid "Descargar Libro"
+msgstr "Descargar Libro"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "Descuentos"
+msgstr "Descuentos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_sum_desc
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_descuento
+msgid "Descuentos obtenidos"
+msgstr "Descuentos obtenidos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_sum_desc
+msgid "Descuentos, Bonificaciones y Rebajas obtenidas. Es el descuento impositivo de factura que se hace visible en el Libro de Compras."
+msgstr "Descuentos, Bonificaciones y Rebajas obtenidas. Es el descuento impositivo de factura que se hace visible en el Libro de Compras."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_date_from
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_date_from
+msgid "Desde Fecha"
+msgstr "Desde Fecha"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_com:0
+#: selection:poi_bol.lcv.report,tipo_com:0
+msgid "Destino Exportaciones"
+msgstr "Destino Exportaciones"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_journal_id
+msgid "Diario"
+msgstr "Diario"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_journal_id
+msgid "Diario Nota"
+msgstr "Diario Nota"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Diciembre"
+msgstr "Diciembre"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "Dirección:"
+msgstr "Dirección:"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_display_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_cc_dosif
+msgid "Dosificacion Facturas"
+msgstr "Dosificacion Facturas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_dosif_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_cc_dos
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_cc_dos
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Dosificación"
+msgstr "Dosificación"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.local_dosif_view_form
+#: model:ir.ui.view,arch_db:poi_bol_base.local_dosif_view_tree
+msgid "Dosificación Facturas"
+msgstr "Dosificación Facturas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_activa
+msgid "Dosificación activa para facturación."
+msgstr "Dosificación activa para facturación."
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Dui"
+msgstr "Dui"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "DÉBITO FISCAL"
+msgstr "DÉBITO FISCAL"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "ESTADO"
+msgstr "ESTADO"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "EXPORTACIONES Y EXENTAS"
+msgstr "EXPORTACIONES Y EXENTAS"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/imp_it.py:96
+#, python-format
+msgid "El Impuesto seleccionado no aplica. Este proceso sólo funciona con Impuestos de tipo 'Porcentaje'"
+msgstr "El Impuesto seleccionado no aplica. Este proceso sólo funciona con Impuestos de tipo 'Porcentaje'"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_company_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_company_id
+msgid "Empresa"
+msgstr "Empresa"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Enero"
+msgstr "Enero"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:76
+#: code:addons/poi_bol_base/wizard/imp_it.py:94
+#: code:addons/poi_bol_base/wizard/imp_it.py:96
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: poi_bol_base
+#: constraint:res.partner.type:0
+msgid "Error ! You cannot create recursive categories."
+msgstr "Error ! You cannot create recursive categories."
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:73
+#: code:addons/poi_bol_base/wizard/imp_it.py:83
+#: code:addons/poi_bol_base/wizard/imp_it.py:85
+#: code:addons/poi_bol_base/wizard/imp_it.py:87
+#, python-format
+msgid "Error de Configuración"
+msgstr "Error de Configuración"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:188
+#, python-format
+msgid "Error de Datos"
+msgstr "Error de Datos"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:65
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:98
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:105
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:108
+#, python-format
+msgid "Error de Usuario"
+msgstr "Error de Usuario"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:101
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:144
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:162
+#, python-format
+msgid "Error de configuración"
+msgstr "Error de configuración"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:130
+#, python-format
+msgid "Error de usuario"
+msgstr "Error de usuario"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_nota_wizard_journal_id
+msgid "Especifica el Diario a aplicar en la Nota de Crédito. Por defecto, usará el mismo Diario de la Factura base."
+msgstr "Especifica el Diario a aplicar en la Nota de Crédito. Por defecto, usará el mismo Diario de la Factura base."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_actualiza_aitb_journal_id
+msgid "Especifica el Diario bajo el cual se generará el nuevo Asiento."
+msgstr "Especifica el Diario bajo el cual se generará el nuevo Asiento."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_imp_it_mode
+msgid "Especifica el nivel de detalle del cálculo del impuesto. Puede calcular un solo total 'Global', o puede generar el asiento desglosando subtotales 'Por Cuenta Analítica'"
+msgstr "Especifica el nivel de detalle del cálculo del impuesto. Puede calcular un solo total 'Global', o puede generar el asiento desglosando subtotales 'Por Cuenta Analítica'"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_account_type_account_aju_usd_id
+msgid "Especifica la Cuenta contable contra la cual se lleva el valor de ajuste por una actualización Dólar."
+msgstr "Especifica la Cuenta contable contra la cual se lleva el valor de ajuste por una actualización Dólar."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_account_type_account_aju_ufv_id
+msgid "Especifica la Cuenta contable contra la cual se lleva el valor de ajuste por una actualización UFV."
+msgstr "Especifica la Cuenta contable contra la cual se lleva el valor de ajuste por una actualización UFV."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_actualiza_aitb_currency_id
+msgid "Especifica la moneda contra la cual se hara la actualización de valor según diferencias de tipo de cambio entre las fechas provistas."
+msgstr "Especifica la moneda contra la cual se hara la actualización de valor según diferencias de tipo de cambio entre las fechas provistas."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_move_caso_aju
+msgid "Especifica si es un Asiento resultante del proceso de Ajuste por actualización de valor."
+msgstr "Especifica si es un Asiento resultante del proceso de Ajuste por actualización de valor."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_account_ajusta_usd
+msgid "Especifica si esta Cuenta contable esta sujeta al procesamiento masivo de actualización de valor Dólar"
+msgstr "Especifica si esta Cuenta contable esta sujeta al procesamiento masivo de actualización de valor Dólar"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_account_ajusta_ufv
+msgid "Especifica si esta Cuenta contable esta sujeta al procesamiento masivo de actualización de valor UFV"
+msgstr "Especifica si esta Cuenta contable esta sujeta al procesamiento masivo de actualización de valor UFV"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_tax_apply_lcv
+#: model:ir.model.fields,help:poi_bol_base.field_account_tax_template_apply_lcv
+msgid "Especifica si las facturas relacionadas a este impuesto se muestran en el reporte de Libro de Compras y Ventas"
+msgstr "Especifica si las facturas relacionadas a este impuesto se muestran en el reporte de Libro de Compras y Ventas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_spec
+msgid "Especificación"
+msgstr "Especificación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_users_user_default
+msgid "Esta dosificación se usara por defecto para este usuario."
+msgstr "Esta dosificación se usara por defecto para este usuario."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_nota_wizard_make_picking
+msgid "Esta opción creará un Albarán de Entrada por los productos devueltos."
+msgstr "Esta opción creará un Albarán de Entrada por los productos devueltos."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_nota_wizard_date
+msgid "Esta será la fecha de la Nota y se aplicará al Período correspondiente"
+msgstr "Esta será la fecha de la Nota y se aplicará al Período correspondiente"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.action_invoice_lc
+msgid "Esta vista muestra todas las facturas de compra con impuestos. Asegúrese de aplicar los filtros de fechas que apliquen, seleccionar las casillas de las facturas deseadas (o todas) y proceda a generar uno de los reportes de la selección de Impresión superior."
+msgstr "Esta vista muestra todas las facturas de compra con impuestos. Asegúrese de aplicar los filtros de fechas que apliquen, seleccionar las casillas de las facturas deseadas (o todas) y proceda a generar uno de los reportes de la selección de Impresión superior."
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.action_invoice_lv
+msgid "Esta vista muestra todas las facturas de venta con impuestos. Asegúrese de aplicar los filtros de fechas que apliquen, seleccionar las casillas de las facturas deseadas (o todas) y proceda a generar uno de los reportes de la selección de Impresión superior."
+msgstr "Esta vista muestra todas las facturas de venta con impuestos. Asegúrese de aplicar los filtros de fechas que apliquen, seleccionar las casillas de las facturas deseadas (o todas) y proceda a generar uno de los reportes de la selección de Impresión superior."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_state
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Estado"
+msgstr "Estado"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_estado_fac
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_estado_fac_val
+#: model:ir.ui.view,arch_db:poi_bol_base.account_invoice_bo
+msgid "Estado Factura"
+msgstr "Estado Factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_estado_fac
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_invoice_bol_filter
+msgid "Estado SIN"
+msgstr "Estado SIN"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_estado_fac_display
+msgid "Estado SIN Display"
+msgstr "Estado SIN Display"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:130
+#, python-format
+msgid "Este Comprobante ya ha sido procesado. Póngase en contacto con el Gestor Contable para cualquier ajuste antes de su asentamiento."
+msgstr "Este Comprobante ya ha sido procesado. Póngase en contacto con el Gestor Contable para cualquier ajuste antes de su asentamiento."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "Este proceso suma el total creditado en cuentas de Ingreso durante el rango de fechas especificado y genera un asiento contable según la definición del impuesto seleccionado."
+msgstr "Este proceso suma el total creditado en cuentas de Ingreso durante el rango de fechas especificado y genera un asiento contable según la definición del impuesto seleccionado."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_generate
+msgid "Este proceso suma el total de movimientos contables para las Cuentas habilitadas por parametrización y calcula la diferencia según el tipo de cambio de la fecha de transacción."
+msgstr "Este proceso suma el total de movimientos contables para las Cuentas habilitadas por parametrización y calcula la diferencia según el tipo de cambio de la fecha de transacción."
+
+#. module: poi_bol_base
+#: selection:account.invoice.tax,type_bol:0
+#: selection:account.tax,type_bol:0
+#: selection:account.tax.template,type_bol:0
+msgid "Exento"
+msgstr "Exento"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "Exento total"
+msgstr "Exento total"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_partner_form_bo
+msgid "Expedido"
+msgstr "Expedido"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "Exporta total"
+msgstr "Exporta total"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_exporta
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_exporta
+msgid "Exportaciones"
+msgstr "Exportaciones"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_exporta
+msgid "Exportaciones y operaciones Exentas"
+msgstr "Exportaciones y operaciones Exentas"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_export_wizard
+msgid "Exportación Completada"
+msgstr "Exportación Completada"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_summary_wizard
+msgid "Exportar >"
+msgstr "Exportar >"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_partner_form_bo
+msgid "Extension"
+msgstr "Extension"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_extension
+msgid "Extensión"
+msgstr "Extensión"
+
+#. module: poi_bol_base
+#: selection:account.invoice,estado_fac:0
+#: selection:account.invoice,estado_fac_display:0
+#: selection:poi_bol.lcv.report,estado_fac:0
+msgid "Extraviada"
+msgstr "Extraviada"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "FECHA DE LA FACTURA O DUI"
+msgstr "FECHA DE LA FACTURA O DUI"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "FECHA FACTURA"
+msgstr "FECHA FACTURA"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.cc_dosif,applies:0
+msgid "Factura"
+msgstr "Factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_note_from_id
+msgid "Factura de la cual originó esta Nota de Credito"
+msgstr "Factura de la cual originó esta Nota de Credito"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_note_from_id
+msgid "Factura origen de Nota"
+msgstr "Factura origen de Nota"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_refunds_id
+msgid "Factura reintegrada"
+msgstr "Factura reintegrada"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Febrero"
+msgstr "Febrero"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_cc_fecha
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_date
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Fecha Factura"
+msgstr "Fecha Factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_origen_cc_fecha
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_origen_date_invoice
+msgid "Fecha Factura Original"
+msgstr "Fecha Factura Original"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_cc_date
+msgid "Fecha de factura fiscal de Compra según copia física. Usar en caso de requerir especificar una fecha de factura diferente a la fecha de contabilización. En caso de dejar este campo vacío, se usara la fecha de Factura de la cabecera."
+msgstr "Fecha de factura fiscal de Compra según copia física. Usar en caso de requerir especificar una fecha de factura diferente a la fecha de contabilización. En caso de dejar este campo vacío, se usara la fecha de Factura de la cabecera."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_date_invoice
+msgid "Fecha factura"
+msgstr "Fecha factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_cc_date
+msgid "Fecha factura fiscal"
+msgstr "Fecha factura fiscal"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_fecha_fin
+msgid "Fecha final"
+msgstr "Fecha final"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_fecha_fin
+msgid "Fecha final autorizada por el SIN."
+msgstr "Fecha final autorizada por el SIN."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_fecha_ini
+msgid "Fecha inicial"
+msgstr "Fecha inicial"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_fecha_ini
+msgid "Fecha inicial autorizada por el SIN."
+msgstr "Fecha inicial autorizada por el SIN."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_filename
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_name
+msgid "File Name"
+msgstr "Nombre del archivo"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Filtrar Libro"
+msgstr "Filtrar Libro"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_criteria_wizard
+msgid "Filtros opcionales:"
+msgstr "Filtros opcionales:"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_case
+msgid "Forma de Cierre"
+msgstr "Forma de Cierre"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:108
+#, python-format
+msgid "Forma de Cierre no reconocida."
+msgstr "Forma de Cierre no reconocida."
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.summary,export:0
+msgid "Formato impresión PDF"
+msgstr "Formato impresión PDF"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_fill_second_curr
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_fill_second_curr
+msgid "Forzar segunda moneda en Asientos"
+msgstr "Forzar segunda moneda en Asientos"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_generate
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "Generar Asiento"
+msgstr "Generar Asiento"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_generate
+msgid "Generar Asiento de ajuste Actualización de valor"
+msgstr "Generar Asiento de ajuste Actualización de valor"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "Generar Impuesto a las Transacciones"
+msgstr "Generar Impuesto a las Transacciones"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.poi_bol_nota_wizard_view
+msgid "Generar Nota de Crédito"
+msgstr "Generar Nota de Crédito"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_handle_inv_tax_data
+msgid "Gestionar datos impositivos en Facturas"
+msgstr "Gestionar datos impositivos en Facturas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_type_sequence
+msgid "Gives the sequence order when displaying a list of product categories."
+msgstr "Indica el orden de secuencia cuando se muestra una lista de categorías de producto."
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.imp_it,mode:0
+msgid "Global"
+msgstr "Global"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_name
+msgid "Glosa"
+msgstr "Glosa"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_line_credit_sec
+msgid "Haber Sec"
+msgstr "Haber Sec"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_allow_invoice_direct
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_allow_invoice_direct
+msgid "Habilita la opción de contabilizar el Pago directo de una Factura al momento de confirmarla."
+msgstr "Habilita la opción de contabilizar el Pago directo de una Factura al momento de confirmarla."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_date_to
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_date_to
+msgid "Hasta Fecha"
+msgstr "Hasta Fecha"
+
+#. module: poi_bol_base
+#: selection:account.invoice.tax,type_bol:0
+#: selection:account.tax,type_bol:0
+#: selection:account.tax.template,type_bol:0
+msgid "ICE"
+msgstr "ICE"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "ICE total"
+msgstr "ICE total"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_id
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "IMPORTE BASE"
+msgstr "IMPORTE BASE"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "IMPORTE ICE/ IEHD/ TASAS"
+msgstr "IMPORTE ICE/ IEHD/ TASAS"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "IMPORTE NO SUJETO A CREDITO FISCAL"
+msgstr "IMPORTE NO SUJETO A CREDITO FISCAL"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "IMPORTE TOTAL COMPRA"
+msgstr "IMPORTE TOTAL COMPRA"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "IMPORTE TOTAL VENTA"
+msgstr "IMPORTE TOTAL VENTA"
+
+#. module: poi_bol_base
+#: selection:account.invoice.tax,type_bol:0
+#: selection:account.tax,type_bol:0
+#: selection:account.tax.template,type_bol:0
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_monto_iva
+msgid "IVA"
+msgstr "IVA"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_iva_pol
+msgid "IVA Póliza"
+msgstr "IVA Póliza"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "IVA total"
+msgstr "IVA total"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.action_invoice_nota_out
+msgid "Idealmente las Notas de crédito deberían crearse desde la Factura original que la origina."
+msgstr "Idealmente las Notas de crédito deberían crearse desde la Factura original que la origina."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_generate
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "Ignorar y Generar Asiento"
+msgstr "Ignorar y Generar Asiento"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_imp
+msgid "Importaciones"
+msgstr "Importaciones"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Importación"
+msgstr "Importación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_exento
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_exento
+msgid "Importe Exentos"
+msgstr "Importe Exentos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_exento
+msgid "Importe Exentos o Ventas gravadas a tasa cero."
+msgstr "Importe Exentos o Ventas gravadas a tasa cero."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_ice
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_ice
+msgid "Importe ICE"
+msgstr "Importe ICE"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_iva
+msgid "Importe IVA"
+msgstr "Importe IVA"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_importe
+msgid "Importe Total"
+msgstr "Importe Total"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "Importe total"
+msgstr "Importe total"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_lcv_report_importe
+msgid "Importe total antes del descuento."
+msgstr "Importe total antes del descuento."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_tax_id
+msgid "Impuesto"
+msgstr "Impuesto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_tax_bs
+msgid "Impuesto (Bs.)"
+msgstr "Impuesto (Bs.)"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_imp_it
+msgid "Impuesto IT"
+msgstr "Impuesto IT"
+
+#. module: poi_bol_base
+#: model:ir.ui.menu,name:poi_bol_base.menu_action_bol_imp
+msgid "Impuestos"
+msgstr "Impuestos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_con_imp
+msgid "Incluye Impuesto"
+msgstr "Incluye Impuesto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_con_imp
+msgid "Indica la facturas que incluyen impuesto para LCV. Verdadero si tan sólo una línea de la Factura tiene impuesto LCV"
+msgstr "Indica la facturas que incluyen impuesto para LCV. Verdadero si tan sólo una línea de la Factura tiene impuesto LCV"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_asset
+msgid "Instalar módulo de adecuación Contable para la gestión de Activos Fijos según norma vigente en Bolivia"
+msgstr "Instalar módulo de adecuación Contable para la gestión de Activos Fijos según norma vigente en Bolivia"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_imp
+msgid "Instalar módulo de adecuación de Compras para la contabilización de Importaciones según norma vigente en Bolivia"
+msgstr "Instalar módulo de adecuación de Compras para la contabilización de Importaciones según norma vigente en Bolivia"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_pos
+msgid "Instalar módulo de adecuación de Punto de Venta localizado para Bolivia"
+msgstr "Instalar módulo de adecuación de Punto de Venta localizado para Bolivia"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_pay
+msgid "Instalar módulo de adecuación de Recursos Humanos y su cálculo de planillas según norma vigente en Bolivia"
+msgstr "Instalar módulo de adecuación de Recursos Humanos y su cálculo de planillas según norma vigente en Bolivia"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_cc
+msgid "Instalar módulo de adecuación para facturación electronica según norma vigente en Bolivia"
+msgstr "Instalar módulo de adecuación para facturación electronica según norma vigente en Bolivia"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_com:0
+#: selection:poi_bol.lcv.report,tipo_com:0
+msgid "Interno y Exportaciones"
+msgstr "Interno y Exportaciones"
+
+#. module: poi_bol_base
+#: constraint:res.partner:0
+msgid "Invalido. Los campos NIT y CI deben ser únicos"
+msgstr "Invalido. Los campos NIT y CI deben ser únicos"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Invoice Date"
+msgstr "Invoice Date"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Linea de Factura"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_invoice_tax
+msgid "Invoice Tax"
+msgstr "Impuesto de factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_picking_id
+msgid "Items Picking"
+msgstr "Items Picking"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:176
+#: code:addons/poi_bol_base/wizard/imp_it.py:316
+#, python-format
+msgid "Journal Entries"
+msgstr "Entradas de Diario"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_move_line
+msgid "Journal Item"
+msgstr "Journal Item"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Julio"
+msgstr "Julio"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Junio"
+msgstr "Junio"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "LIBRO DE COMPRAS"
+msgstr "LIBRO DE COMPRAS"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "LIBRO DE VENTAS"
+msgstr "LIBRO DE VENTAS"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "LPZ"
+msgstr "LPZ"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_supplier_invoice_number
+msgid "La codificación referencial provista por el Proveedor (No correspode al número de factura impositivo)."
+msgstr "La codificación referencial provista por el Proveedor (No correspode al número de factura impositivo)."
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:76
+#: code:addons/poi_bol_base/wizard/imp_it.py:94
+#, python-format
+msgid "La fecha Desde es mayor que la fecha Hasta!!"
+msgstr "La fecha Desde es mayor que la fecha Hasta!!"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_label
+msgid "Label"
+msgstr "Etiqueta"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_landed_cost_ok
+msgid "Landed Costs"
+msgstr "Costes en destino"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type___last_update
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_write_uid
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_export_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_write_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_revert_description_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_parent_left
+msgid "Left Parent"
+msgstr "Padre izquierdo"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.action_libro_cv_criteria_wizard
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_search
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_tree
+msgid "Libro CV"
+msgstr "Libro CV"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.summary,export:0
+msgid "Libro Excel"
+msgstr "Libro Excel"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.action_invoice_lc
+#: model:ir.actions.report.xml,name:poi_bol_base.report_lcv_1
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+#: selection:poi_bol.lcv.report,spec:0
+#: selection:poi_bol_base.libro_cv.criteria,spec:0
+msgid "Libro de Compras"
+msgstr "Libro de Compras"
+
+#. module: poi_bol_base
+#: selection:poi_bol.lcv.report,spec:0
+msgid "Libro de Compras - Notas C/D"
+msgstr "Libro de Compras - Notas C/D"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_lcv_report
+msgid "Libro de Compras y Ventas"
+msgstr "Libro de Compras y Ventas"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,spec:0
+msgid "Libro de Compras: Notas de Crédito-Débito"
+msgstr "Libro de Compras: Notas de Crédito-Débito"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.action_invoice_lv
+#: model:ir.actions.report.xml,name:poi_bol_base.report_lcv_3
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+#: selection:poi_bol.lcv.report,spec:0
+#: selection:poi_bol_base.libro_cv.criteria,spec:0
+msgid "Libro de Ventas"
+msgstr "Libro de Ventas"
+
+#. module: poi_bol_base
+#: selection:poi_bol.lcv.report,spec:0
+msgid "Libro de Ventas - Notas C/D"
+msgstr "Libro de Ventas - Notas C/D"
+
+#. module: poi_bol_base
+#: selection:poi_bol.lcv.report,spec:0
+msgid "Libro de Ventas - Reintegros"
+msgstr "Libro de Ventas - Reintegros"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,spec:0
+msgid "Libro de Ventas: Notas de Crédito-Débito"
+msgstr "Libro de Ventas: Notas de Crédito-Débito"
+
+#. module: poi_bol_base
+#: model:ir.ui.menu,name:poi_bol_base.menu_libro_cv_criteria_wizard
+msgid "Libros CV"
+msgstr "Libros CV"
+
+#. module: poi_bol_base
+#: model:ir.ui.menu,name:poi_bol_base.menu_finance_local_config
+#: model:ir.ui.view,arch_db:poi_bol_base.view_company_bol_base_form
+msgid "Localización"
+msgstr "Localización"
+
+#. module: poi_bol_base
+#: model:ir.ui.menu,name:poi_bol_base.menu_bol_config
+msgid "Localización Bolivia"
+msgstr "Localización Bolivia"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_direct_stock_post
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_direct_stock_post
+msgid "Los asientos generados por movimientos de almacen serán contabilizados de forma directa."
+msgstr "Los asientos generados por movimientos de almacen serán contabilizados de forma directa."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_ci_dept
+msgid "Lugar de emision Carnet de Identidad"
+msgstr "Lugar de emision Carnet de Identidad"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_libro_cv_summary_line
+msgid "Líneas Resumen preliminar"
+msgstr "Líneas Resumen preliminar"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_tax_manual
+msgid "Manual"
+msgstr "Manual"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_map_analytic
+msgid "Mapeo Analítico"
+msgstr "Mapeo Analítico"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Marzo"
+msgstr "Marzo"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Mayo"
+msgstr "Mayo"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_com:0
+#: selection:poi_bol.lcv.report,tipo_com:0
+msgid "Mercado Interno"
+msgstr "Mercado Interno"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_com:0
+msgid "Mercado Interno NO gravadas"
+msgstr "Mercado Interno NO gravadas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_month
+msgid "Mes"
+msgstr "Mes"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_month_invoice
+msgid "Mes factura"
+msgstr "Mes factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_payment_model
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_payment_model
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_payment_model
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_payment_model
+msgid "Model of fields"
+msgstr "Modelo de campos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_currency_id_sec
+msgid "Moneda Secundaria"
+msgstr "Moneda Secundaria"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_monto
+msgid "Monto"
+msgstr "Monto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_amount_applied
+msgid "Monto Aplicado (Bs.)"
+msgstr "Monto Aplicado (Bs.)"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_origen_monto
+msgid "Monto Original"
+msgstr "Monto Original"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_monto_bancarizacion
+msgid "Monto de bancarizacion"
+msgstr "Monto de bancarizacion"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+msgid "Monto total"
+msgstr "Monto total"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_line_price_subtotal_with_tax
+msgid "Monto total incluyendo impuestos."
+msgstr "Monto total incluyendo impuestos."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_description
+msgid "Motivo"
+msgstr "Motivo"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_multi_activity
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_multi_activity
+msgid "Multiples actividades?"
+msgstr "Multiples actividades?"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_journal_id
+#: selection:poi_bol.comprobante.wizard,case:0
+msgid "Método de pago"
+msgstr "Método de pago"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_comprobante_wizard_journal_id
+msgid "Método de pago para determinar la contra cuenta de pago de compras."
+msgstr "Método de pago para determinar la contra cuenta de pago de compras."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "Módulos Localizados"
+msgstr "Módulos Localizados"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "Módulos instalables"
+msgstr "Módulos instalables"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_nit
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_nit
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_nit
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_bank_nit
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_nit
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_nit
+msgid "NIT"
+msgstr "NIT"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "NIT PROVEEDOR"
+msgstr "NIT PROVEEDOR"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.account_invoice_supplier_bo
+msgid "NIT Proveedor"
+msgstr "NIT Proveedor"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_bank_nit
+msgid "NIT de la entidad financiera."
+msgstr "NIT de la entidad financiera."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_nit
+#: model:ir.model.fields,help:poi_bol_base.field_bol_customer_nit
+msgid "NIT o CI del cliente."
+msgstr "NIT o CI del cliente."
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "NIT/CI CLIENTE"
+msgstr "NIT/CI CLIENTE"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "NIT:"
+msgstr "NIT:"
+
+#. module: poi_bol_base
+#: selection:poi_bol.lcv.report,spec:0
+msgid "NO APLICA"
+msgstr "NO APLICA"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "NOMBRE O RAZÓN SOCIAL"
+msgstr "NOMBRE O RAZÓN SOCIAL"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_name
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_complete_name
+#: model:ir.ui.view,arch_db:poi_bol_base.view_partner_form_bo
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_monto_neto
+msgid "Neto"
+msgstr "Neto"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_form_lcv
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lc
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_tree_lv
+msgid "Neto Sujeto"
+msgstr "Neto Sujeto"
+
+#. module: poi_bol_base
+#: selection:account.invoice.tax,type_bol:0
+#: selection:account.tax,type_bol:0
+#: selection:account.tax.template,type_bol:0
+msgid "Ninguno"
+msgstr "Ninguno"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_mode
+msgid "Nivel detalle"
+msgstr "Nivel detalle"
+
+#. module: poi_bol_base
+#: selection:account.invoice,estado_fac:0
+#: selection:account.invoice,estado_fac_display:0
+#: selection:account.move,caso_aju:0
+msgid "No Aplica"
+msgstr "No Aplica"
+
+#. module: poi_bol_base
+#: selection:account.invoice,estado_fac:0
+#: selection:account.invoice,estado_fac_display:0
+#: selection:poi_bol.lcv.report,estado_fac:0
+msgid "No Utilizada"
+msgstr "No Utilizada"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:117
+#, python-format
+msgid "No encontraron líneas contables actualizables para el rango de fechas especificado."
+msgstr "No encontraron líneas contables actualizables para el rango de fechas especificado."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_no_lines
+msgid "No records"
+msgstr "No records"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:84
+#, python-format
+msgid "No se encontro el Asiento comprobante a cerrar."
+msgstr "No se encontro el Asiento comprobante a cerrar."
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/actualiza_aitb.py:73
+#, python-format
+msgid "No se ha configurado el tipo de cambio para la Moneda provista!"
+msgstr "No se ha configurado el tipo de cambio para la Moneda provista!"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/imp_it.py:87
+#, python-format
+msgid "No se ha configurado la Contra cuenta para el Impuesto seleccionado!"
+msgstr "No se ha configurado la Contra cuenta para el Impuesto seleccionado!"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/imp_it.py:85
+#, python-format
+msgid "No se ha configurado la cuenta Impuestos de facturas del Impuesto seleccionado!"
+msgstr "No se ha configurado la cuenta Impuestos de facturas del Impuesto seleccionado!"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/imp_it.py:83
+#, python-format
+msgid "No se ha configurado un Diario contable para el Impuesto seleccionado!"
+msgstr "No se ha configurado un Diario contable para el Impuesto seleccionado!"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:101
+#, python-format
+msgid "No se ha encontrado la cuenta defecto del Método de pago seleccionado."
+msgstr "No se ha encontrado la cuenta defecto del Método de pago seleccionado."
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:144
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:162
+#, python-format
+msgid "No se ha encontrado la cuenta del Impuesto de compra."
+msgstr "No se ha encontrado la cuenta del Impuesto de compra."
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:188
+#, python-format
+msgid "No se han creado líneas adicionales sobre el asiento."
+msgstr "No se han creado líneas adicionales sobre el asiento."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_name
+msgid "Nombre Serie"
+msgstr "Nombre Serie"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_razon
+#: model:ir.model.fields,help:poi_bol_base.field_bol_customer_razon
+msgid "Nombre o Razón Social para la Factura."
+msgstr "Nombre o Razón Social para la Factura."
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "Nombre o Razón Social:"
+msgstr "Nombre o Razón Social:"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.account_invoice_bo
+msgid "Nota de Crédito"
+msgstr "Nota de Crédito"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.cc_dosif,applies:0
+msgid "Nota de crédito"
+msgstr "Nota de crédito"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Nota de crédito cliente"
+msgstr "Nota de crédito cliente"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Nota de crédito proveedor"
+msgstr "Nota de crédito proveedor"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Nota de débito cliente"
+msgstr "Nota de débito cliente"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Nota de débito proveedor"
+msgstr "Nota de débito proveedor"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.action_invoice_nota_out
+#: model:ir.ui.menu,name:poi_bol_base.menu_action_invoice_nota_out
+msgid "Notas de crédito"
+msgstr "Notas de crédito"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Noviembre"
+msgstr "Noviembre"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_cc_aut
+msgid "Nro. Autorizacion"
+msgstr "Nro. Autorizacion"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_cc_aut
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_cc_aut
+msgid "Nro. Autorización"
+msgstr "Nro. Autorización"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_cc_nro
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_cc_nro
+msgid "Nro. Factura"
+msgstr "Nro. Factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_cc_nro_int
+msgid "Nro. Factura Entero"
+msgstr "Nro. Factura Entero"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_imp_pol
+msgid "Nro. Poliza Import."
+msgstr "Nro. Poliza Import."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_imp_pol
+msgid "Nro. Póliza Importación"
+msgstr "Nro. Póliza Importación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_rango_fin
+msgid "Nro. de rango final"
+msgstr "Nro. de rango final"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_rango_fin
+msgid "Nro. de rango final autorizado por el SIN."
+msgstr "Nro. de rango final autorizado por el SIN."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_rango_ini
+msgid "Nro. de rango inicial"
+msgstr "Nro. de rango inicial"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_rango_ini
+msgid "Nro. de rango inicial autorizado por el SIN."
+msgstr "Nro. de rango inicial autorizado por el SIN."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.account_invoice_bo
+msgid "Nuevos Datos Factura Original"
+msgstr "Nuevos Datos Factura Original"
+
+#. module: poi_bol_base
+#: sql_constraint:cc.dosif.log:0
+msgid "Number MUST BE UNIQUE!"
+msgstr "El número debe ser único!"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/models/dosif.py:271
+#, python-format
+msgid "Number error!"
+msgstr "Number error!"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_auto_num
+msgid "Numeración automatica al crear facturas."
+msgstr "Numeración automatica al crear facturas."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_fundaempresa
+msgid "Numero de Registro en Fundempresa"
+msgstr "Numero de Registro en Fundempresa"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_nro_orden
+msgid "Numero de orden provisto por el SIN."
+msgstr "Numero de orden provisto por el SIN."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_origen_cc_aut
+msgid "N° Autorización Original"
+msgstr "N° Autorización Original"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "N° DE AUTORIZACIÓN"
+msgstr "N° DE AUTORIZACIÓN"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "N° DE DUI"
+msgstr "N° DE DUI"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "N° DE FACTURA"
+msgstr "N° DE FACTURA"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_cc_nro
+msgid "N° Factura"
+msgstr "N° Factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_origen_cc_nro
+msgid "N° Factura Original"
+msgstr "N° Factura Original"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_nit
+msgid "Número de Identificación Tributaria (o CI para facturación)."
+msgstr "Número de Identificación Tributaria (o CI para facturación)."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_nit
+msgid "Número de Identificación Tributaria."
+msgstr "Número de Identificación Tributaria."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_cc_aut
+msgid "Número de autorización."
+msgstr "Número de autorización."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_cc_nro
+msgid "Número de factura."
+msgstr "Número de factura."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_nro_orden
+msgid "Número de orden"
+msgstr "Número de orden"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_imp_pol
+msgid "Número de póliza de importación para Libro de compras. Formato AAAADDDCNNNNNNNN, donde: AAAA=Año, DDD=Código de la Aduana, C=Tipo de Trámite, NNNNNNNN=Número Correlativo"
+msgstr "Número de póliza de importación para Libro de compras. Formato AAAADDDCNNNNNNNN, donde: AAAA=Año, DDD=Código de la Aduana, C=Tipo de Trámite, NNNNNNNN=Número Correlativo"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "ORU"
+msgstr "ORU"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Octubre"
+msgstr "Octubre"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_export
+msgid "Opción de exportación"
+msgstr "Opción de exportación"
+
+#. module: poi_bol_base
+#: selection:account.journal,payment_model:0
+#: selection:account.move,payment_model:0
+#: selection:account.payment,payment_model:0
+#: selection:bol.bank.payment.type,payment_model:0
+#: selection:poi_bol.comprobante.wizard,payment_model:0
+msgid "Other"
+msgstr "Otros"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_other_description
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_other_description
+msgid "Other Desciption"
+msgstr "Otra Descripción"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_other_description
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_other_description
+msgid "Other Description"
+msgstr "Otra Descripción"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "PAGINA:"
+msgstr "PAGINA:"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "PAN"
+msgstr "PAN"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "POT"
+msgstr "POT"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_fill_second_curr
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_fill_second_curr
+msgid "Para Asientos que usen cuentas con segunda moneda se llenará el monto secundario."
+msgstr "Para Asientos que usen cuentas con segunda moneda se llenará el monto secundario."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_parent_id
+msgid "Parent Category"
+msgstr "Categoría padre"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_res_partner_type
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_type_type
+msgid "Partner Type"
+msgstr "Tipo de Partner"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.res_partner_type_form_act
+#: model:ir.ui.menu,name:poi_bol_base.menu_res_partner_type
+#: model:ir.ui.view,arch_db:poi_bol_base.res_partner_type_form_view
+msgid "Partner Types"
+msgstr "Tipos de Partner"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_bank_payment_type_payment_document_type
+msgid "Payment Document Type"
+msgstr "Tipo de Documento de Pago"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_comprobante_wizard
+msgid "Payment Method Additional Info"
+msgstr "Información adicional de Pago"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_payment_type
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_payment_type
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_payment_payment_type
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_payment_type
+msgid "Payment Type"
+msgstr "Tipo de pago"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_payment_model
+msgid "Payment model"
+msgstr "Modelo de Pago"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "Periodo Fiscal:"
+msgstr "Periodo Fiscal:"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_actualiza_aitb_generate
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "Periodo:"
+msgstr "Periodo:"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_allow_invoice_direct
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_allow_invoice_direct
+msgid "Permitir pago directo de Facturas"
+msgstr "Permitir pago directo de Facturas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_tax_manual
+msgid "Permitir y aceptar el valor introducido manualmente en la misma factura como resultado calculado."
+msgstr "Permitir y aceptar el valor introducido manualmente en la misma factura como resultado calculado."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_pay
+msgid "Planillas de RRHH"
+msgstr "Planillas de RRHH"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.imp_it,mode:0
+msgid "Por Cuenta Analítica"
+msgstr "Por Cuenta Analítica"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_user_default
+msgid "Por defecto"
+msgstr "Por defecto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_direct_stock_post
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_direct_stock_post
+msgid "Posteo directo de Inventarios"
+msgstr "Posteo directo de Inventarios"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_line_base_tax
+msgid "Precio base efectivo despues de impuesto. Modificará el campo Precio unitario de manera que después de impuestos iguale el Precio efectivo."
+msgstr "Precio base efectivo despues de impuesto. Modificará el campo Precio unitario de manera que después de impuestos iguale el Precio efectivo."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_line_base_tax
+msgid "Precio efectivo"
+msgstr "Precio efectivo"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+#: model:ir.ui.view,arch_db:poi_bol_base.view_company_bol_base_form
+msgid "Proceso"
+msgstr "Proceso"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_product_id
+#: model:ir.ui.view,arch_db:poi_bol_base.poi_bol_nota_wizard_view
+msgid "Producto"
+msgstr "Producto"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_nota_wizard_line
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_product_ids
+msgid "Productos a creditar"
+msgstr "Productos a creditar"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_module_poi_bol_pos
+msgid "Punto de Venta"
+msgstr "Punto de Venta"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "PÁGINA:"
+msgstr "PÁGINA:"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.local_dosif_view_form
+msgid "Rango Fechas"
+msgstr "Rango Fechas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_range
+msgid "Rango Nr."
+msgstr "Rango Nr."
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.local_dosif_view_form
+msgid "Rango Numeracion"
+msgstr "Rango Numeracion"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_razon
+#: model:ir.model.fields,field_description:poi_bol_base.field_bol_customer_razon
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_razon
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_company_razon
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_razon
+msgid "Razón Social"
+msgstr "Razón Social"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_razon
+msgid "Razón Social de la Empresa."
+msgstr "Razón Social de la Empresa."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_razon
+msgid "Razón Social del cliente/proveedor."
+msgstr "Razón Social del cliente/proveedor."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_partner_razon_invoice
+msgid "Razón Social para Facturación."
+msgstr "Razón Social para Facturación."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_razon_invoice
+msgid "Razón Social para facturación"
+msgstr "Razón Social para facturación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_journal_received_by
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_received_by
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_received_by
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_received_by
+msgid "Received By"
+msgstr "Recibido por"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Recibo de Alquiler"
+msgstr "Recibo de Alquiler"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Rectificación"
+msgstr "Rectificación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_supplier_invoice_number
+msgid "Ref. documento Proveedor"
+msgstr "Ref. documento Proveedor"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_fundaempresa
+msgid "Registro Fundempresa"
+msgstr "Registro Fundempresa"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.bol_imp_it
+#: model:ir.ui.menu,name:poi_bol_base.menu_action_bol_it
+msgid "Registro IT"
+msgstr "Registro IT"
+
+#. module: poi_bol_base
+#: model:ir.ui.menu,name:poi_bol_base.menu_bol_rep_imp
+msgid "Reportes Impositivos"
+msgstr "Reportes Impositivos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_require_taxes
+msgid "Requiere Impuestos"
+msgstr "Requiere Impuestos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_summary_id
+msgid "Resumen"
+msgstr "Resumen"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_libro_cv_summary
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_summary_wizard
+msgid "Resumen preliminar"
+msgstr "Resumen preliminar"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_lines
+msgid "Resumen totalizado"
+msgstr "Resumen totalizado"
+
+#. module: poi_bol_base
+#: selection:account.tax,type_bol:0
+#: selection:account.tax.template,type_bol:0
+msgid "Retención"
+msgstr "Retención"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.revert_description_tree_view
+msgid "Revert Description"
+msgstr "Revert Description"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,name:poi_bol_base.revert_description_tree_view_action
+#: model:ir.ui.menu,name:poi_bol_base.menu_revert_description_tree_view_action
+msgid "Revert Descriptions"
+msgstr "Revert Descriptions"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_parent_right
+msgid "Right Parent"
+msgstr "Padre derecho"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "SCZ"
+msgstr "SCZ"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "SUBTOTAL"
+msgstr "SUBTOTAL"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_imp_it_generate
+msgid "Se ha encontrado un asiento que ha sido generado para el mismo Impuesto después de la Fecha 'Desde' especificada. Revise este asiento contable existente y especifique si desea continuar de todas formas."
+msgstr "Se ha encontrado un asiento que ha sido generado para el mismo Impuesto después de la Fecha 'Desde' especificada. Revise este asiento contable existente y especifique si desea continuar de todas formas."
+
+#. module: poi_bol_base
+#: model:res.groups,name:poi_bol_base.group_product_assets
+msgid "See products on assets"
+msgstr "See products on assets"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_segment_id
+msgid "Segmento"
+msgstr "Segmento"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_currency_id
+msgid "Según Moneda"
+msgstr "Según Moneda"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_libro_cv_criteria
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_criteria_wizard
+msgid "Seleccionar criterios"
+msgstr "Seleccionar criterios"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_imp_it_tocheck_analytic
+msgid "Seleccione esta opcion si desea generar los asientos con cuentas analiticas"
+msgstr "Seleccione esta opcion si desea generar los asientos con cuentas analiticas"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_imp_it_tocheck_account
+msgid "Seleccione esta opcion si desea generar los asientos con cuentas generales"
+msgstr "Seleccione esta opcion si desea generar los asientos con cuentas generales"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.poi_bol_nota_wizard_view
+msgid "Seleccione los Productos sobre los cuales se creara la Nota de Crédito por devolución."
+msgstr "Seleccione los Productos sobre los cuales se creara la Nota de Crédito por devolución."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_payment_journal_type
+msgid "Select 'Sale' for customer invoices journals. Select 'Purchase' for vendor bills journals. Select 'Cash' or 'Bank' for journals that are used in customer or vendor payments. Select 'General' for miscellaneous operations journals. Select 'Opening/Closing Situation' for entries generated for new fiscal years."
+msgstr "Seleccione 'Ventas' para diarios de facturas de cliente. \n"
+"Seleccione 'Compras' para diarios de facturas de proveedor. \n"
+"Seleccione 'Caja' o 'Banco' para diarios que se usan para pagos de clientes y proveedores. \n"
+"Seleccione 'General' para diarios que contienen operaciones varias. \n"
+"Seleccione 'Balance apertura/cierre' para diarios que contendrán asientos creados en el nuevo ejercicio fiscal."
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.libro_cv.criteria,month:0
+msgid "Septiembre"
+msgstr "Septiembre"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_cc_dos
+msgid "Serie de dosificación según parametrización. Asocia Número de autorizacción y Llave de dosificación."
+msgstr "Serie de dosificación según parametrización. Asocia Número de autorizacción y Llave de dosificación."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_base_cc_dosif_name
+msgid "Serie de dosificación."
+msgstr "Serie de dosificación."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_cc_dos
+msgid "Serie dosificación"
+msgstr "Serie dosificación"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_shop_id
+msgid "Shop"
+msgstr "Tienda"
+
+#. module: poi_bol_base
+#: selection:account.journal,payment_model:0
+#: selection:account.move,payment_model:0
+#: selection:account.payment,payment_model:0
+#: selection:bol.bank.payment.type,payment_model:0
+#: selection:poi_bol.comprobante.wizard,payment_model:0
+msgid "Sigma"
+msgstr "Sigma"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_criteria_wizard
+msgid "Siguiente >"
+msgstr "Siguiente >"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Sin Asignar"
+msgstr "Sin Asignar"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_res_company_handle_inv_tax_data
+msgid "Soporta y valida la imputación de datos impositivos destinados a Libros de Compra y Venta."
+msgstr "Soporta y valida la imputación de datos impositivos destinados a Libros de Compra y Venta."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_split_method
+msgid "Split Method"
+msgstr "Método de división"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_subtotal_c
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_subtotal_v
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_lcv_report_subtotal_c
+msgid "Subtotal E = A - B"
+msgstr "Subtotal E = A - B"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_lcv_report_subtotal_v
+msgid "Subtotal E = A - B -C -D"
+msgstr "Subtotal E = A - B -C -D"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_criteria_shop_id
+#: model:ir.ui.view,arch_db:poi_bol_base.view_account_lc_filter
+msgid "Sucursal"
+msgstr "Sucursal"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_warehouse_id
+msgid "Sucursal (Almacen)"
+msgstr "Sucursal (Almacen)"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "Sucursal:"
+msgstr "Sucursal:"
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_com:0
+msgid "Sujetas a proporcionalidad"
+msgstr "Sujetas a proporcionalidad"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+msgid "TIPO DE COMPRA"
+msgstr "TIPO DE COMPRA"
+
+#. module: poi_bol_base
+#: selection:res.partner,ci_dept:0
+msgid "TJA"
+msgstr "TJA"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "TOTALES:"
+msgstr "TOTALES:"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_account_tax_template
+msgid "Templates for Taxes"
+msgstr "Plantilla para los impuestos"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/models/dosif.py:272
+#, python-format
+msgid "There is another invoice with '%s' as authorization number and '%s' as invoice number!"
+msgstr "There is another invoice with '%s' as authorization number and '%s' as invoice number!"
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.action_bol_bank_payment_type
+msgid "These payment types must be configured in a journal where type is bank."
+msgstr "These payment types must be configured in a journal where type is bank."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_lcv_report_spec
+msgid "Tipificación de especificación predeterminada para Libros CV según Impuestos Internos"
+msgstr "Tipificación de especificación predeterminada para Libros CV según Impuestos Internos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_lcv_report_tipo_com
+msgid "Tipificación de facturas de Compra según Impuestos Internos"
+msgstr "Tipificación de facturas de Compra según Impuestos Internos"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_tipo_fac
+msgid "Tipificación de facturas para fines técnicos."
+msgstr "Tipificación de facturas para fines técnicos."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_tipo_com
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_tipo_com
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_tipo_com_val
+msgid "Tipo de Compra"
+msgstr "Tipo de Compra"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_tipo_fac
+msgid "Tipo de Factura"
+msgstr "Tipo de Factura"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_bol_bank_payment_type_payment_document_type
+msgid "Tipo de documento para bancarizacion"
+msgstr "Tipo de documento para bancarizacion"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_line_price_subtotal_with_tax
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_invoice_total_bs
+msgid "Total (Bs.)"
+msgstr "Total (Bs.)"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_voucher_tree
+msgid "Total Applied"
+msgstr "Total Applied"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.invoice_bol_tree
+msgid "Total BOB"
+msgstr "Total BOB"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_base_bimonetario_form
+msgid "Total Debe Sec."
+msgstr "Total Debe Sec."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_exento
+msgid "Total Exento"
+msgstr "Total Exento"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_poi_bol_base_bimonetario_form
+msgid "Total Haber Sec."
+msgstr "Total Haber Sec."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_ice
+msgid "Total ICE"
+msgstr "Total ICE"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_iva
+msgid "Total IVA"
+msgstr "Total IVA"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_monto
+msgid "Total Monto"
+msgstr "Total Monto"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_libro_cv_summary_line_neto
+msgid "Total Neto"
+msgstr "Total Neto"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/pago_comprobante.py:84
+#, python-format
+msgid "Transacción Inválida"
+msgstr "Transacción Inválida"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_transaction_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_transaction_date
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_transaction_date
+msgid "Transaction Date"
+msgstr "Fecha de Transacción"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_move_transaction_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_transaction_number
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_comprobante_wizard_transaction_number
+msgid "Transaction Number"
+msgstr "Número de Transacción"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_payment_journal_type
+#: model:ir.model.fields,field_description:poi_bol_base.field_res_partner_type_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_bol_base
+#: selection:account.move,caso_aju:0
+#: selection:poi_bol_base.actualiza_aitb,case:0
+msgid "UFV"
+msgstr "UFV"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_last_purch_price_init
+msgid "UPC inicial"
+msgstr "UPC inicial"
+
+#. module: poi_bol_base
+#: selection:account.move,caso_aju:0
+#: selection:poi_bol_base.actualiza_aitb,case:0
+msgid "USD"
+msgstr "USD"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_uom_id
+msgid "UdM"
+msgstr "UdM"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_cc_dosif_log_user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: poi_bol_base
+#: model:res.groups,name:poi_bol_base.group_reprint_invoice
+msgid "User is allowed to re-print an invoice or receipt"
+msgstr "User is allowed to re-print an invoice or receipt"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_users_user_id
+msgid "Usuario Autorizado"
+msgstr "Usuario Autorizado"
+
+#. module: poi_bol_base
+#: report:report.lcv.1:0
+#: report:report.lcv.3:0
+msgid "Usuario:"
+msgstr "Usuario:"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_cc_dosif_user_ids
+msgid "Usuarios Autorizados"
+msgstr "Usuarios Autorizados"
+
+#. module: poi_bol_base
+#: report:report.lcv.3:0
+msgid "VENTAS GRAVADAS A TASA CERO"
+msgstr "VENTAS GRAVADAS A TASA CERO"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "Validaciones"
+msgstr "Validaciones"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_config_settings_validate_unique_nit
+msgid "Validar NIT/CI único"
+msgstr "Validar NIT/CI único"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_poi_bol_config_settings_validate_unique_nit
+msgid "Validar que no existan clientes o proveedores con NIT o CI repetidos."
+msgstr "Validar que no existan clientes o proveedores con NIT o CI repetidos."
+
+#. module: poi_bol_base
+#: model:ir.model.fields,help:poi_bol_base.field_account_invoice_tipo_com
+msgid "Valor único del 1 al 5 que representa el destino que se le dará a la compra realizada:\n"
+"                                            1 = Compras para mercado interno con destino a actividades gravadas,\n"
+"                                            2 = Compras para mercado interno con destino a actividades no gravadas,\n"
+"                                            3 = Compras sujetas a proporcionalidad,\n"
+"                                            4 = Compras para exportaciones,\n"
+"                                            5 = Compras tanto para el mercado interno como para exportaciones."
+msgstr "Valor único del 1 al 5 que representa el destino que se le dará a la compra realizada:\n"
+"                                            1 = Compras para mercado interno con destino a actividades gravadas,\n"
+"                                            2 = Compras para mercado interno con destino a actividades no gravadas,\n"
+"                                            3 = Compras sujetas a proporcionalidad,\n"
+"                                            4 = Compras para exportaciones,\n"
+"                                            5 = Compras tanto para el mercado interno como para exportaciones."
+
+#. module: poi_bol_base
+#: selection:account.invoice,tipo_fac:0
+msgid "Venta"
+msgstr "Venta"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_libro_cv_summary_wizard
+msgid "Ver en pantalla"
+msgstr "Ver en pantalla"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_tax_apply_lcv
+#: model:ir.model.fields,field_description:poi_bol_base.field_account_tax_template_apply_lcv
+msgid "Visible en LCV"
+msgstr "Visible en LCV"
+
+#. module: poi_bol_base
+#: selection:account.invoice,estado_fac:0
+#: selection:account.invoice,estado_fac_display:0
+#: selection:poi_bol.lcv.report,estado_fac:0
+msgid "Válida"
+msgstr "Válida"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/wizard/account_invoice_refund.py:49
+#, python-format
+msgid "You cannot use this mode on this invoice."
+msgstr "You cannot use this mode on this invoice."
+
+#. module: poi_bol_base
+#: model:ir.actions.act_window,help:poi_bol_base.revert_description_tree_view_action
+msgid "You must define some revert descriptions."
+msgstr "You must define some revert descriptions."
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_bol_bank_payment_type
+msgid "bol.bank.payment.type"
+msgstr "bol.bank.payment.type"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_bol_customer
+msgid "bol.customer"
+msgstr "bol.customer"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_cc_dosif_log
+msgid "cc.dosif.log"
+msgstr "cc.dosif.log"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_company_activity
+msgid "company.activity"
+msgstr "company.activity"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.actualiza_aitb,state:0
+#: selection:poi_bol_base.imp_it,state:0
+msgid "done"
+msgstr "hecho"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_res_id
+msgid "id interno"
+msgstr "id interno"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.actualiza_aitb,state:0
+#: selection:poi_bol_base.imp_it,state:0
+msgid "init"
+msgstr "inicio"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_ir_actions_report_xml
+msgid "ir.actions.report.xml"
+msgstr "ir.actions.report.xml"
+
+#. module: poi_bol_base
+#: code:addons/poi_bol_base/models/amount_to_text_es.py:150
+#, python-format
+msgid "no translation function found for lang: '%s'"
+msgstr "no translation function found for lang: '%s'"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_lcv_report_res_obj
+msgid "objeto interno"
+msgstr "objeto interno"
+
+#. module: poi_bol_base
+#: model:ir.ui.view,arch_db:poi_bol_base.view_bol_configuration
+msgid "or"
+msgstr "o"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_config_settings
+msgid "poi_bol.config.settings"
+msgstr "poi_bol.config.settings"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_poi_bol_base_cc_dosif_users
+msgid "poi_bol_base.cc_dosif.users"
+msgstr "poi_bol_base.cc_dosif.users"
+
+#. module: poi_bol_base
+#: model:ir.model,name:poi_bol_base.model_revert_description
+msgid "revert.description"
+msgstr "revert.description"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_actualiza_aitb_state
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_base_imp_it_state
+msgid "state"
+msgstr "state"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_poi_bol_nota_wizard_line_wizard_id
+msgid "unknown"
+msgstr "desconocido"
+
+#. module: poi_bol_base
+#: selection:poi_bol_base.actualiza_aitb,state:0
+#: selection:poi_bol_base.imp_it,state:0
+msgid "warning"
+msgstr "alerta"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_company_activity_company_id
+msgid "wizard"
+msgstr "wizard"
+
+#. module: poi_bol_base
+#: model:ir.model.fields,field_description:poi_bol_base.field_product_product_last_purch_price
+msgid "Último precio de Compra"
+msgstr "Último precio de Compra"
+

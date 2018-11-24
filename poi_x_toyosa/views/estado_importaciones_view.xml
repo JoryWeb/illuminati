@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="search_estado_importaciones">
+            <field name="name">Busqueda Estado de Importaciones</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <search string="Estado de Importaciones">
+                    <field name="name" string="Chasis"
+                           filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                    <field name="product_id" string="Master"/>
+                    <filter string="Pago este mes" domain="[('mes', '=', ((context_today()).strftime('%%Y-%%m')))]"/>
+                    <filter string="Día Actual"
+                            domain="[('fecha_pago_store','&#60;', time.strftime('%%Y-%%m-%%d 00:59:59')), ('fecha_pago_store','&#62;=', time.strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Caso" domain="[]" context="{'group_by':'caso'}"/>
+                        <filter string="Vendedor" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Fecha" domain="[]" context="{'group_by':'date_sale'}"/>
+                        <filter string="Regional" domain="[]" context="{'group_by':'project_id'}"/>
+                        <filter string="Sucursal" domain="[]" context="{'group_by':'sucursal'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="view_estado_importaciones" model="ir.ui.view">
+            <field name="name">estado.importaciones.tree</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Cuadro Estado Importaciones" editable="bottom">
+                    <field name="caso" readonly="1"/>
+                    <!--<field name="mes" />-->
+                    <field name="state_finanzas" string="Liberado" readonly="1"/>
+                    <field name="bank_id" readonly="1"/>
+                    <field name="state_importaciones" string="Nacionalizado" readonly="1"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="name" string="Chasis" readonly="1"/>
+                    <field name="colorexterno" readonly="1"/>
+                    <field name="anio_modelo" readonly="1"/>
+                    <field name="n_produccion" readonly="1"/>
+                    <field name="marca" readonly="1"/>
+                    <field name="product_id" string="Master" readonly="1"/>
+                    <field name="category" readonly="1"/>
+                    <field name="user_id" readonly="1"/>
+                    <field name="sucursal" readonly="1"/>
+                    <field name="project_id" readonly="1"/>
+                    <field name="precio_venta" readonly="1"/>
+                    <field name="pagos" readonly="1"/>
+                    <field name="saldo" readonly="1"/>
+                    <field name="fecha_pago" readonly="1"/>
+                    <!--<field name="fecha_pago_store" readonly="1"/>-->
+                    <field name="location_id" readonly="1"/>
+                    <field name="sucursal" invisible="1"/>
+                    <field name="date_sale" invisible="1"/>
+                    <field name="cantidad_venta" invisible="1"/>
+                    <field name="invoice_number" readonly="1"/>
+                    <field name="embarque" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estado_importaciones_inh">
+            <field name="name">poi_x_toyosa.view_estado_importaciones</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="poi_x_toyosa.view_estado_importaciones"/>
+            <field name="groups_id" eval="[(6, 0, [ref('account.group_account_manager') ])]"/>
+            <field name="arch" type="xml">
+                <field name="state_finanzas" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="state_importaciones" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="caso" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="bank_id" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estado_importaciones_pivot">
+            <field name="name">stock.production.lot.report_pivot</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <pivot string="Vista Pivote">
+                    <!--<field name="project_id" type="row"/>-->
+                    <field name="category" type="row"/>
+                    <field name="caso" type="col"/>
+                    <field name="precio_venta" type="measure"/>
+                    <field name="cantidad_venta" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estado_importaciones_graph">
+            <field name="name">stock.production.lot.report_graph</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <graph string="Grafico" type="pie">
+                    <field name="caso"/>
+                    <field name="precio_venta" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_estado_importaciones" model="ir.actions.act_window">
+            <field name="name">Estado de Importaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,graph,form</field>
+            <field name="view_id" ref="view_estado_importaciones"/>
+            <field name="search_view_id" ref="search_estado_importaciones"/>
+            <field name="context">{}</field>
+            <field name="domain">[('product_id.tracking','=','serial')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cuadro de estado de Importaciones según registros de lotes o chasis
+                </p>
+                <p>
+                    Verificar lotes registrados y cuadros de importaciones asignados a los
+                    lotes
+                </p>
+            </field>
+        </record>
+
+        <record id="view_estado_importaciones_albaran" model="ir.ui.view">
+            <field name="name">estado.importaciones.albaran.tree</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Cuadro Estado Importaciones" editable="bottom">
+                    <field name="n_produccion" readonly="1"/>
+                    <field name="name" string="Chasis" readonly="1"/>
+                    <field name="invoice_purchase_id" readonly="1"/>
+                    <field name="invoice_number" readonly="1"/>
+                    <field name="n_motor" readonly="1"/>
+                    <field name="edicion" readonly="1"/>
+                    <field name="colorexterno" readonly="1"/>
+                    <field name="colorinterno" readonly="1"/>
+                    <field name="product_id" string="Master" readonly="1"/>
+                    <field name="modelo" readonly="1"/>
+                    <field name="anio_modelo" readonly="1"/>
+                    <field name="location_id" readonly="1"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="user_id" readonly="1"/>
+                    <field name="sucursal" readonly="1"/>
+                    <field name="state" readonly="1"/>
+                    <field name="state_finanzas" string="Liberado" readonly="1"/>
+                    <field name="state_importaciones" string="Nacionalizado" readonly="1"/>
+                    <field name="embarque" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_estado_importaciones_albaran" model="ir.actions.act_window">
+            <field name="name">Estado de Importaciones Albaran</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,graph,form</field>
+            <field name="view_id" ref="view_estado_importaciones_albaran"/>
+            <field name="search_view_id" ref="search_estado_importaciones"/>
+            <field name="context">{}</field>
+            <field name="domain">[('product_id.tracking','=','serial')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cuadro de estado de Importaciones según registros de lotes o chasis
+                </p>
+                <p>
+                    Verificar lotes registrados y cuadros de importaciones asignados a los
+                    lotes
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_estado_importaciones" id="menu_estado_importaciones"
+                  parent="account.menu_finance_reports" groups="account.group_account_manager"
+                  sequence="102"/>
+
+        <menuitem action="action_estado_importaciones" id="menu_estado_importaciones_compras"
+                  parent="poi_purchase_imports.menu_purchase_imports"
+                  groups="account.group_account_manager,poi_x_toyosa.group_purchase_user_importaciones"
+                  sequence="103"/>
+
+        <menuitem action="action_estado_importaciones" id="menu_estado_importaciones_2"
+                  parent="menu_informes_reservas" sequence="1"/>
+
+        <menuitem action="action_estado_importaciones" id="menu_state_import_2sale"
+                  parent="sale.menu_sale_report" groups="sales_team.group_sale_manager"
+                  sequence="20"/>
+    </data>
+</odoo>

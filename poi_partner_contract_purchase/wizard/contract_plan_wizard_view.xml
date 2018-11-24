@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_contract_plan_wizard" model="ir.ui.view">
+            <field name="name">Enter delivery details</field>
+            <field name="model">contract.plan.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Detalle de recepciones">
+                    <group col="1">
+                        <group>
+                            <field name="base_date"/>
+                            <field name="plan_pagos" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Products">
+                                <field name="item_planned_ids" nolabel="1">
+                                    <tree string="Inventory Details" editable="bottom">
+                                        <field name="plan_id" invisible="1"/>
+                                        <field name="contract_line_id" invisible="1"/>
+                                        <field name="product_id"/>
+                                        <field name="amount" sum="Total"/>
+                                        <field name="product_qty" sum="Total"/>
+                                        <field name="delivery_date"/>
+                                        <field name="day_division"/>
+                                        <field name="amount_division"/>
+                                    </tree>
+                                </field>
+
+                                <button name="do_split_plan" string="Calcular" type="object" class="oe_highlight"/>
+                                <field name="item_ids" nolabel="1">
+                                    <tree string="Plan de pagos" editable="bottom">
+                                        <field name="contract_line_id" invisible="1"/>
+                                        <field name="plan_id" invisible="1"/>
+                                        <field name="product_id"/>
+                                        <field name="product_qty" sum="Total"/>
+                                        <field name="amount" sum="Total"/>
+                                        <field name="delivery_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                    <footer>
+                        <button name="do_detailed_delivery" string="Terminar" type="object" class="oe_highlight"/>
+                        or
+                        <button string="_Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_do_enter_plan_details" model="ir.actions.act_window">
+            <field name="name">Update Product Quantity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">contract.plan.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_contract_plan_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record model="ir.ui.view" id="view_order_export_form">
+        <field name="name">sale.order.export.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="sale_export" invisible="1" />
+                <!-- <field name="total_weight"  attrs="{'invisible': [('sale_export', '!=', True)]}"/> -->
+
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='tax_id']" position="after">
+
+                <field name="weight"/>
+                <field name="total_weight"/>
+                <!-- <field name="dimension_ids" widget="many2many_tags"/> -->
+            </xpath>
+
+
+
+            <xpath expr="//form/sheet/notebook/page[1]" position="after">
+                <page string="Datos de Exportacion" attrs="{'invisible': [('sale_export', '!=', True)]}">
+                    <group>
+                        <group>
+                            <field name="tag_ids" widget="many2many_checkboxes"/>
+                            <field name="other_tag" />
+                        </group>
+                        <group>
+                            <!-- <field name="packing_type" />
+                            <field name="quantity_packs" />
+                            <field name="total_weight_pack" /> -->
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </data>
+        </field>
+    </record>
+
+    <record id="view_order_export_tree" model="ir.ui.view">
+        <field name="name">sale.order.export.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+                <data></data>
+        </field>
+    </record>
+
+
+    <record id="view_sales_order_export_filter" model="ir.ui.view">
+        <field name="name">sale.order.export.list.select</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+                <data></data>
+        </field>
+    </record>
+
+    <record id="action_orders_export" model="ir.actions.act_window">
+        <field name="name">Exportaciones</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_sales_order_export_filter"/>
+        <field name="context">{'show_sale': True, 'default_sale_export': True}</field>
+        <field name="domain">[('sale_export', '=', True)]</field>
+    </record>
+
+    <menuitem action="action_orders_export"
+        id="menu_sale_order" parent="base.menu_sales"
+        sequence="12" groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel')),('sale_export', '!=', True)]</field>
+    </record>
+
+    <record id="sale.action_quotations" model="ir.actions.act_window">
+        <field name="domain">[('state','in',('draft','sent','cancel')),('sale_export', '!=', True)]</field>
+    </record>
+
+
+</data>
+</odoo>

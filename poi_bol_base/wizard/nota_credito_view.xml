@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+     <record id="poi_bol_nota_wizard_view" model="ir.ui.view">
+         <field name="name">poi_bol.nota.wizard.form</field>
+         <field name="model">poi_bol.nota.wizard</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Generar Nota de Crédito">
+             	<label string ="Seleccione los Productos sobre los cuales se creara la Nota de Crédito por devolución." colspan="4" nolabel="1" align="0.0"/>
+                 <newline/>
+                 <group colspan="2">
+                     <group>
+                         <field name="description"/>
+                         <field name="journal_id" widget="selection"/>
+                     </group><group>
+                         <field name="date"/>
+                     </group>
+                 </group>
+                 <field name="product_ids">
+                     <tree editable="bottom">
+                         <field name="product_id" domain="[]" string="Producto"/>
+                         <field name="quantity"/>
+                         <field name="uom_id" groups="product.group_uom"/>
+                     </tree>
+                     <form>
+                         <field name="product_id" domain="[]" string="Producto"/>
+                         <field name="quantity"/>
+                         <field name="uom_id" groups="product.group_uom"/>
+                     </form>
+                 </field>
+                 <group>
+                     <field name="make_picking"/>
+                     <field name="warehouse_id" attrs="{'invisible': [('make_picking','=',False)]}"/>
+                 </group>
+
+             	<newline/>
+             	<newline/>
+             	<separator colspan="4" />
+             	<footer>
+             		<button name="action_make_nota" string="Crear Nota" type="object" class="oe_highlight"/>
+                    o
+                    <button string="Cancelar" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+	
+  </data>
+</openerp>

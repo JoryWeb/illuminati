@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        <record model="ir.ui.view" id="search_bolsa_vehiculos">
+            <field name="name">Bolsa de vehículos</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <search string="Bolsa de Vehículos">
+                    <field name="name" string="Chasis" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                    <field name="product_id" string="Master"/>
+                    <filter string="Pago este mes" domain="[('mes', '=', ((context_today()).strftime('%%Y-%%m')))]"/>
+                    <filter string="Día Actual"  domain="[('fecha_pago_store','&#60;', time.strftime('%%Y-%%m-%%d 00:59:59')), ('fecha_pago_store','&#62;=', time.strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Caso" domain="[]" context="{'group_by':'caso'}"/>
+                        <filter string="Vendedor" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Fecha" domain="[]" context="{'group_by':'date_sale'}"/>
+                        <filter string="Regional" domain="[]" context="{'group_by':'project_id'}"/>
+                        <filter string="Sucursal" domain="[]" context="{'group_by':'sucursal'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="view_bolsa_vehiculos" model="ir.ui.view">
+            <field name="name">bolsa.vehiculos.tree</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <tree string="Bolsa de Vehículos" editable="bottom">
+                    <field name="caso" />
+                    <field name="mes" invisible="1" />
+                    <field name="state_finanzas" string="Libeardo" />
+                    <field name="state_importaciones" string="Nacionalizado" />
+                    <field name="partner_id" string="Cliente" readonly="1"/>
+                    <field name="user_id" readonly="1" />
+                    <field name="name" string="Chasis" readonly="1"/>
+                    <field name="category" readonly="1"/>
+                    <field name="project_id" readonly="1"/>
+                    <field name="marca" readonly="1" />
+                    <field name="product_id" string="Master" readonly="1" />
+                    <field name="colorinterno" readonly="1" />
+                    <field name="colorexterno" readonly="1" />
+                    <field name="precio_venta" readonly="1" sum="Total"/>
+                    <field name="pagos_anterior" readonly="1" sum="Total" />
+                    <field name="saldo_anterior" readonly="1" sum="Total" />
+                    <field name="pagos_mes" readonly="1" sum="Total"/>
+                    <field name="saldo_cobrar" readonly="1" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_bolsa_vehiculos_pivot">
+            <field name="name">bolsa.vehiculos.report_pivot</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <pivot string="Vista Pivote">
+                    <field name="project_id" type="row"/>
+                    <field name="category" type="row"/>
+                    <field name="caso" type="col"/>
+                    <field name="precio_venta" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_bolsa_vehiculos_graph">
+            <field name="name">bolsa.vehiculos.report_graph</field>
+            <field name="model">stock.production.lot</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <graph string="Grafico" type="pie">
+                    <field name="caso"/>
+                    <field name="precio_venta" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_bolsa_vehiculos" model="ir.actions.act_window">
+            <field name="name">Bolsa de Vehículos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph,form</field>
+            <field name="view_id" ref="view_bolsa_vehiculos"/>
+            <field name="search_view_id" ref="search_bolsa_vehiculos"/>
+            <field name="context">{}</field>
+            <field name="domain">[('product_id.tracking','=','serial')]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Bolsa de vehículos
+              </p><p>
+                Reporte de vehículos aplicado según reporte 2016 AGOSTO A3 BOLSA
+              </p>
+            </field>
+        </record>
+        <menuitem action="action_bolsa_vehiculos" id="menu_bolsa_vehiculos"
+            parent="account.menu_finance_reports" groups="account.group_account_manager,sales_team.group_sale_salesman_all_leads"
+            sequence="102"/>
+
+        <menuitem action="action_bolsa_vehiculos" id="menu_action_bolsa_vehiculos_2"
+            parent="menu_informes_reservas" sequence="1"/>
+
+	</data>
+</odoo>

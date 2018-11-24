@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	<record id="act_hr_employee_2_hr_learning" model="ir.actions.act_window">
+        <field name="res_model">hr.learning</field>
+        <field name="view_type">form</field>
+        <field name="name">Exp. y Edu.</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_employee_id': [active_id], 'default_employee_id': active_id}</field>
+    </record>
+
+    <record id="hr_employee_learning_view_form_adv" model="ir.ui.view">
+        <field name="name">hr.employee.learning.view.form.adv</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="%(act_hr_employee_2_hr_learning)d" 
+                        class="oe_stat_button" 
+                        icon="fa-graduation-cap" 
+                        type="action"
+                        groups="base.group_hr_manager">
+                        <field name="learning_count" widget="statinfo" string="Edu. y Exp."/>
+                    </button>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+	<record id="view_hr_learning_tree_adv" model="ir.ui.view">
+		<field name="name">hr.learning.tree</field>
+		<field name="model">hr.learning</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Educacion y Experiencias">
+				<field name="employee_id"/>
+				<field name="date_from"/>
+				<field name="date_to"/>
+                <field name="place"/>
+                <field name="type_id"/>
+		        <field name="internal"/>
+			</tree>	
+		</field>
+	</record>
+
+	<record id="view_hr_learning_form_adv" model="ir.ui.view">
+        <field name="name">hr.learning.form</field>
+        <field name="model">hr.learning</field>
+        <field name="arch" type="xml">
+            <form string="Educacion y Experiencias" version="7.0">
+            	<sheet string="Educacion y Experiencias">
+            		<group>
+            			<group>
+            				<field name="employee_id"/>
+	                        <field name="date_from"/>
+	                        <field name="date_to"/>
+	                       
+            			</group>
+            			<group>
+            				<field name="place"/>
+	                        <field name="type_id"/>
+            				<field name="internal"/>
+            			</group>
+            		</group>
+            		<label for="note"/>
+            		<field name="note"/>
+            	</sheet>
+            </form>
+        </field>
+    </record>
+
+	<record id="view_hr_learning_search_adv" model="ir.ui.view">
+		<field name="name">hr.learning.search</field>
+		<field name="model">hr.learning</field>
+		<field name="type">search</field>
+		<field name="arch" type="xml">
+			
+			<search string="Educacion y Experiencias">
+				<field name="employee_id"/>
+				<field name="place"/>
+                <field name="type_id"/>
+				 <group expand="1" string="Agrupado Por..">
+				 	<filter string="Empleado" icon="terp-personal" name="empleados" context="{'group_by':'employee_id'}"/>
+				 	<filter string="Lugar" icon="terp-personal" name="place" context="{'group_by':'place'}"/>
+				 	<filter string="Categoria" icon="terp-personal" name="type" context="{'group_by':'type_id'}"/>
+                    <filter string="Interno" icon="terp-personal" name="interno" context="{'group_by':'internal'}"/>
+                </group>
+			</search>
+		</field>
+	</record>
+
+	<record id="action_hr_learning_adv" model="ir.actions.act_window">
+		<field name="name">Educacion y Experiencias</field>
+		<field name="res_model">hr.learning</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="search_view_id" ref="view_hr_learning_search_adv"/>
+		<field name="context">{'search_default_empleados': 1}</field>
+	</record>
+	<menuitem action="action_hr_learning_adv" id="menu_hr_learning2" parent="hr.menu_hr_main" sequence="13"/>
+
+</data>
+</odoo>

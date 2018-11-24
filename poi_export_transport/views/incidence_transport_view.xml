@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id='incidence_transport_view_form' model='ir.ui.view'>
+            <field name="name">incidence.transport.form</field>
+            <field name="model">incidence.transport</field>
+            <field name="arch" type="xml">
+                <form string="Odometer Logs">
+                    <sheet>
+                        <group>
+                            <field name="picking_id"/>
+                            <field name="date" class="oe_inline"/>
+                            <field name="type" class="oe_inline"/>
+                            <field name="location_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='incidence_transport_view_tree' model='ir.ui.view'>
+            <field name="name">incidence.transport.tree</field>
+            <field name="model">incidence.transport</field>
+            <field name="arch" type="xml">
+                <tree string="Registro Incidencias" editable="top">
+                    <field name="date"/>
+                    <field name="type"/>
+                    <field name="picking_id"/>
+                    <field name="location_id"/>
+                    <field name="location_dest_id"/>
+                    <field name="fleet_id"/>
+                    <field name="chofer_id"/>
+                    <field name="transportista_id"/>
+                    <field name="total_qty"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='incidence_transport_view_kanban' model='ir.ui.view'>
+            <field name="name">incidence.transport.kanban</field>
+            <field name="model">incidence.transport</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <strong>
+                                        <field name="picking_id"/>
+                                        <span class="pull-right">
+                                            <field name="date"/>
+                                        </span>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <span>
+                                        <field name="chofer_id"/>
+                                    </span>
+                                    <span class="pull-right">
+                                        <field name="total_qty"/>
+                                        kg.
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id='incidence_transport_view_search' model='ir.ui.view'>
+            <field name="name">incidence.transport.search</field>
+            <field name="model">incidence.transport</field>
+            <field name="arch" type="xml">
+                <search string="Vehicles odometers">
+                    <field name="picking_id"/>
+                    <field name="type"/>
+                    <field name="total_qty"/>
+                    <field name="date"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_vehicle" context="{'group_by' : 'picking_id'}" string="Albarán"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="incidence_transport_view_graph" model="ir.ui.view">
+            <field name="name">incidence.transport.graph</field>
+            <field name="model">incidence.transport</field>
+            <field name="arch" type="xml">
+                <graph string="Odometer Values Per Vehicle">
+                    <field name="picking_id" type="row"/>
+                    <field name="total_qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id='incidence_transport_action' model='ir.actions.act_window'>
+            <field name="name">Vehicles Odometer</field>
+            <field name="res_model">incidence.transport</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <field name="context">{"search_default_groupby_vehicle" : True}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new odometer log.
+                </p>
+                <p>
+                    Here you can add various odometer entries for all vehicles.
+                    You can also show odometer value for a particular vehicle using
+                    the search field.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

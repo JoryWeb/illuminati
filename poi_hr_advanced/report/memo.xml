@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<report
+		    id="hr_memo_report"
+		    model="hr.memo"
+		    string="Impresion de Memo"
+		    report_type="qweb-pdf"
+		    name="poi_hr_advanced.memo"
+		    file="poi_hr_advanced.memo"
+
+		/>
+		<template id="memo">
+			<t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="o">
+
+
+
+					<div class="page" style="font-size:15px; font-family: Sans-Serif;  ">
+                        <div style="display: table; width: 100%">
+                             <div style="display: table-row; width: 100%">
+                                 <div style="display: table-cell; width: 100%;  text-align: center;">
+                                    <strong>MEMORANDUM</strong>
+                                </div>
+
+                             </div>
+                        </div>
+
+                        <br/>
+                        <br/>
+                        <div style="display: table; width: 100%">
+                             <div style="display: table-row; width: 100%">
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>A</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>:</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 30%">
+                                    <span t-field="o.employee_id.name" style=""></span><br/>
+                                    <span t-field="o.employee_id.job_id.name" style=""></span> <br/>
+                                    <span t-field="o.employee_id.department_id.name" style=""></span>
+                                </div>
+                             </div>
+                            <br/>
+                            <div style="display: table-row; width: 100%">
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>De</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>:</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 30%">
+                                    <span t-field="o.employee_from.name" style=""></span><br/>
+                                    <span t-field="o.employee_from.job_id.name" style=""></span> <br/>
+                                    <span t-field="o.employee_from.department_id.name" style=""></span>
+                                </div>
+                             </div>
+                            <br/>
+                            <div style="display: table-row; width: 100%">
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>Ref</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>:</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 30%">
+                                    <span t-esc="o.memo_type_id.name" style=""/>
+                                </div>
+                             </div>
+                             <br/>
+                            <div style="display: table-row; width: 100%">
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>Fecha</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 3%">
+                                    <strong>:</strong>
+                                </div>
+
+                                <div style="display: table-cell; width: 30%">
+                                    <span t-esc="o.date" style=""/>
+                                </div>
+                             </div>
+                             <br/>
+                             <br/>
+
+
+                        </div>
+                        <div style="display: table; width: 100%">
+                            <div style="display: table-row; width: 100%">
+
+                                <div style="display: table-cell; width: auto">
+                                   <p><span t-field="o.mensaje" style=""/></p>
+                                </div>
+                             </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div style="display: table; width: 100%">
+                             <div style="display: table-row; width: 100%">
+                                <div style="display: table-cell; width: 33%">
+
+                                </div>
+                                 <div style="display: table-cell; width: 33%; border-top-style: solid; text-align: center;">
+                                    <span t-field="o.employee_id.name" style="text-align: center;"></span><br/>
+                                    <span t-field="o.employee_id.job_id.name" style="text-align: center;"></span> <br/>
+                                    <span t-field="o.employee_id.department_id.name" style="text-align: center;"></span>
+                                </div>
+                                <div style="display: table-cell; width: 33%">
+
+                                </div>
+                             </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <div style="display: table; width: 100%">
+                             <div style="display: table-row; width: 100%">
+                                <div style="display: table-cell; width: 100%">
+                                    <strong>C.C.:</strong>
+                                </div>
+                             </div>
+                             <div style="display: table-row; width: 100%">
+
+                                <div style="display: table-cell; width: 100%">
+                                    <t t-foreach="o.employee_cc_ids" t-as="t">
+                                        <span t-field="t.name" style=""><strong>,</strong> </span>
+                                    </t>
+                                </div>
+
+                             </div>
+                        </div>
+
+
+                    </div><!-- END PAGE -->
+
+
+
+					<div class="footer">
+						<div class="text-center">
+
+			            </div>
+					</div>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>

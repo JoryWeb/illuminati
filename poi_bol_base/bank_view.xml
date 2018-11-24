@@ -1,0 +1,16 @@
+<openerp>
+<data>
+
+	    <record id="view_poi_res_bank_form" model="ir.ui.view">
+            <field name="name">poi.res.bank.form</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='bic']" position="after">
+            		<field name="nit"/>
+            	</xpath>
+            </field>
+        </record>
+
+</data>
+</openerp>

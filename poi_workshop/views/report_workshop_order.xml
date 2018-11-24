@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_workshop_order">
+            <style type="text/css">
+                .table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th,
+                .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td{
+                padding: 0px;
+                }
+            </style>
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <table class="table table-bordered table-condensed" style="padding: 0;">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" colspan="4">
+                                    <span t-field="o.company_id.logo"
+                                          t-field-options='{"widget": "image", "style":"width: 200px; margin-right: 2px; display:inline"}'/>
+                                </td>
+                                <td colspan="7">
+                                    <h2>ORDEN DE TRABAJO&#160;
+                                        <span t-field="o.name"/>
+                                    </h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <i>Cliente:&#160;
+                                        <span t-field="o.partner_id.name"/>
+                                    </i>
+                                </td>
+                                <td>
+                                    <i>Fecha Recepción:</i>
+                                </td>
+                                <td>
+                                    <span t-field="o.create_date"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <i>Dirección</i>&#160;<span t-field="o.partner_id.street"/>&#160;
+                                    <span t-field="o.partner_id.city"/>
+                                </td>
+                                <td>
+                                    <i>Fecha ofrecida:</i>
+                                </td>
+                                <td>
+                                    <span t-field="o.date_planned"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <i>Marca:</i>&#160;
+                                    <span t-field="o.marca.name"/>
+                                </td>
+                                <td colspan="2">
+                                    <i>Modelo:</i>&#160;
+                                    <span t-field="o.modelo.name"/>
+                                </td>
+                                <td colspan="2">
+                                    <i>Placa:</i>&#160;
+                                    <span t-field="o.asset_id.name"/>
+                                </td>
+                                <td colspan="3">
+                                    <i>Telefono:</i>&#160;
+                                    <span t-field="o.partner_id.phone"/>
+                                </td>
+                                <td>
+                                    <i>Nueva fecha entrega</i>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <i>Serial N°</i>
+                                </td>
+                                <td colspan="4">
+                                    <span t-field="o.n_chasis"/>
+                                </td>
+                                <td colspan="3">
+                                    <i>Cel:</i>&#160;
+                                    <span t-field="o.partner_id.mobile"/>
+                                </td>
+                                <td>
+                                    <i>Fecha Entrega</i>
+                                </td>
+                                <td>
+                                    <span t-field="o.date_execution"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"
+                                    style="transform-origin:50% 50%; transform: rotate(90deg);text-align:center; white-space:nowrap; height:80px; width: 80px;">
+                                    Tanque
+                                </td>
+                                <td>A</td>
+                                <td style="padding-left:10px;">E</td>
+                                <td>1/2</td>
+                                <td style="padding-left:10px;">F</td>
+                                <td>
+                                    <i>Año:</i>
+                                </td>
+                                <td>
+                                    <i>Servicio Interno</i>
+                                </td>
+                                <td>
+                                    <i>Motor:</i>
+                                </td>
+                                <td>
+                                    <i>Color:</i>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td style="padding-left:10px;">E</td>
+                                <td>1/2</td>
+                                <td style="padding-left:10px;">F</td>
+                                <td>
+                                    <span t-field="o.asset_id.anio_modelo.name"/>
+                                </td>
+                                <td>&#160;</td>
+                                <td>
+                                    <span t-field="o.asset_id.n_motor"/>
+                                </td>
+                                <td><span t-field="o.asset_id.colorinterno.name"/>/
+                                    <span t-field="o.asset_id.colorexterno.name"/>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <i>Cita con el cliente</i>
+                                </td>
+                                <td>
+                                    <i>SI</i>
+                                </td>
+                                <td>
+                                    <i>NO</i>
+                                </td>
+                                <td colspan="2">
+                                    <i>EMAIL:</i>&#160;
+                                    <span t-field="o.partner_id.email"/>
+                                </td>
+                                <td colspan="2">
+                                    <i>GARANTIA</i>
+                                </td>
+                                <td colspan="2">
+                                    <i>Km/Mlls:</i>&#160;
+                                    <span t-field="o.kilometraje"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered table-condensed">
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" colspan="12">
+                                    <p>
+                                        <i>POST SERVICIO</i>
+                                    </p>
+                                    <p>
+                                        <i>Fecha___/___/20 Hora:</i>
+                                    </p>
+                                </td>
+                                <td rowspan="2">
+                                    <h4>
+                                        <strong>TRABAJOS A REALIZAR</strong>
+                                    </h4>
+                                </td>
+                                <td rowspan="2">X</td>
+                                <td rowspan="2">OK</td>
+                                <td rowspan="2">CTE</td>
+                                <td colspan="2">MANO DE OBRA</td>
+                            </tr>
+                            <tr>
+                                <td>INTERNA</td>
+                                <td>VENTAS</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="width:10px;">Nro.<br/>Tec./Item
+                                </td>
+                                <td rowspan="3" colspan="11" style="text-align: center;">
+                                    <p>
+                                        <h2>
+                                            <strong>TOYOSA</strong>
+                                        </h2>
+                                    </p>
+                                    <h4>
+                                        <strong>Control tiempo</strong>
+                                    </h4>
+                                </td>
+                                <td>1. Servicio Pre-Entrega</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>2. Servicio de Garantía</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>3. Servicio de 1,000 Kms.</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">Día</td>
+                                <td colspan="2">1</td>
+                                <td colspan="2">2</td>
+                                <td colspan="2">4</td>
+                                <td colspan="2">5</td>
+                                <td>Total</td>
+                                <td>4. Servicio de 5,000 Kms.</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>5. Servicio de 10,000 Kms.</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>6. Engrase crucetas-muñones ( ) Bolas ( )</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>7. Cambio Aceite motor ( ) Filtro ( )</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>8. Cambio acite caja ( ) Corona ( )</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>9. Revisar niveles completos</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>10. DIAGNÓSTICO Y REPORTE TÉCNICO</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>11. REVISION DE VIAJE Completa según planilla</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>12. Alineación de ruedas</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>13. Balancéo de Reudas</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>14. Afinación de motor MENOR</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>15. Afinación de motor MAYOR (Valvulas - Compresión)</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>16. Revisión de Frenos</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>17. Amortiguador delantero ( ) Trasero ( )</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>C</td>
+                                <td>T</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td></td>
+                                <td>18. Amortiguador dirección</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td colspan="2">HRS</td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                                <td></td>
+                                <td>19. Muñones Dirección</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Horas mano de Obra Terceros</p>
+                    <table class="table table-bordered table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>FECHA</td>
+                                <td>N° FACTURA</td>
+                                <td>EMPRESA</td>
+                                <td>TRABAJO REALIZADO</td>
+                                <td>COSTO</td>
+                                <td>VENTAS</td>
+                            </tr>
+                            <tr>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>HORAS TOTALES</td>
+                                <td></td>
+                                <td>BS.</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered table-condensed">
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">_</td>
+                                <td colspan="2">RESUMEN</td>
+                                <td>BS. COSTO</td>
+                                <td>VENTA</td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>MANO DE OBRA DIRECTA</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>REPUESTOS ORIGINALES</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5">RECIBI CONFORME CLIENTE</td>
+                                <td>C</td>
+                                <td>REPUESTOS ACCS. PLAZA</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>LUBRICANTES LIQUIDOS</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>E</td>
+                                <td>MATERIALES</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>MATERIALES / CHAPERIO</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td>G</td>
+                                <td>CONTRATISTA</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Gerente de Servicio</td>
+                                <td>H</td>
+                                <td>MANO DE OBRA TERCEROS</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>TOTAL GENERAL</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="invoice_form_inherit_sale_stock_export">
+            <field name="name">account.invoice.form.export2</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="sale_stock.invoice_form_inherit_sale_stock"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="incoterms_id" position="after">
+                    <field name="origin_inc" attrs="{'invisible':[('tipo_fac', '!=', '13')]}"/>
+                </field>
+            </field>
+        </record>
+
+
+
+        <!-- Facturas de Exportación -->
+        <record model="ir.ui.view" id="account_invoice_export">
+            <field name="name">account.invoice.form.export</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <!--<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="replace">
+                    <field name="price_subtotal" invisible="1"/>
+                    <field name="price_subtotal_with_tax"/>
+                </xpath>-->
+                <xpath expr="//field[@name='comment']" position="before">
+                    <field name="tipo_fac" invisible="1" />
+                    <group attrs="{'invisible':[('tipo_fac', '!=', '13')]}">
+                        <separator string="Datos exportación" colspan="4"/>
+                        <group name="group_export">
+                            <field name="price_gross" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                            <field name="transporte_local"/>
+                            <field name="seguro_local" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                            <field name="transporte_inter" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                            <field name="seguro_inter" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                            <field name="otros" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                            <field name="total_cif" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="account_invoice_export_bo">
+            <field name="name">account.invoice.form.export.bo</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="poi_bol_base.account_invoice_bo"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='razon']" position="after">
+                    <field name="country_id" attrs="{'invisible': [('tipo_fac','!=', '13')]}"/>
+                    <!-- <field name="incoterms_id" attrs="{'readonly': [('state','in',['open','paid'])]}"/> -->
+                    <field name="nandina" attrs="{'readonly': [('state','in',['open','paid'])],'invisible':[('tipo_fac', '!=', '13')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='nit']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('tipo_fac','!=', '13')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_nota']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('tipo_fac','!=', '13')]}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="poi_invoice_export_action" model="ir.actions.act_window">
+            <field name="name">Facturas de exportación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.invoice</field>
+            <field name="context" eval="{'default_type': 'out_invoice','default_tipo_fac':'13', 'journal_type': 'sale','default_journal_id': ref('poi_sale_export.export_journal')}"/>
+            <field name="domain">[('tipo_fac','=','13')]</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click para Crear una Factura de Exportación
+              </p><p>
+                Idealmente para generar una Factura de exportación empiece por crear una Orden de exportación.
+              </p><p>
+                La factura de exportación tiene sus propios datos específicos a la exportación y el formato de impresión según norma.
+              </p>
+            </field>
+        </record>
+        <record id="poi_invoice_export_action_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account.invoice_tree"/>
+            <field name="act_window_id" ref="poi_invoice_export_action"/>
+        </record>
+
+        <record id="poi_invoice_export_action_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.invoice_form"/>
+            <field name="act_window_id" ref="poi_invoice_export_action"/>
+        </record>
+
+        <menuitem action="poi_invoice_export_action" id="menu_invoice_export"
+            parent="account.menu_finance_receivables" sequence="2"/>
+
+        <!-- Evitar que las Facturas de venta normal muestren las Facturas de exportación -->
+        <record id="account.action_invoice_tree1" model="ir.actions.act_window">
+            <field name="domain">[('type','in',('out_invoice', 'out_refund')),('tipo_fac','not in',['13'])]</field>
+        </record>
+
+    </data>
+</openerp>

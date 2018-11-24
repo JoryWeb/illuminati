@@ -1,0 +1,7 @@
+access_account_voucher_sale,account.voucher.sale,account_voucher.model_account_voucher,sales_team.group_sale_manager,1,1,1,0
+
+access_account_voucher_line_sale,account.voucher.line.sale,account_voucher.model_account_voucher_line,sales_team.group_sale_manager,1,1,1,0
+
+access_inventory_dui_report,stock_inventory_dui_report,model_inventory_dui_report,poi_x_toyosa.group_purchase_user_importaciones,1,1,1,0
+
+access_inventory_speed_report,stock_inventory_speed_report,model_inventory_speed_report,stock.group_stock_user,1,1,1,1

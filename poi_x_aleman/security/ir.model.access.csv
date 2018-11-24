@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_extra-addons/poi-educat_extra-addons/poi-educat,extra-addons/poi-educat.extra-addons/poi-educat,model_extra-addons/poi-educat_extra-addons/poi-educat,,1,0,0,0

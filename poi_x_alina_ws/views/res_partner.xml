@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <record id="view_partner_form_alina_ws" model="ir.ui.view">
+        <field name="name">res.partner.ws.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+          <data>
+              <field name="category_id" position="after">
+                  <field name="dposid" />
+                  <field name="nit_ext" />
+                  <field name="pricelist_eco_id" />
+              </field>
+          </data>
+      </field>
+      </record>
+  </data>
+</odoo>

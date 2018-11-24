@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_pos_pos_form">
+            <field name="name">pos.order</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='refund']" position="after">
+                    <button name="refund_close" string="Revert Order" type="object"
+                            attrs="{'invisible':[('state','=','draft')]}"/>
+                    <button name="refund_close_open" string="Revert and Create a New Order" type="object"
+                            attrs="{'invisible':[('state','=','draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_session_pos_view_form">
+            <field name="name">pos.session.form.pos.base.view</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <button name="force_close_on_use" type="object" string="Force Close on Use" states="opened"
+                            class="oe_highlight" groups="base.group_erp_manager"/>
+                </xpath>
+                <xpath expr="//field[@name='config_id']" position="before">
+                    <field name="on_use" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

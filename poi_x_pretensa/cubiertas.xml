@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <report id="account_cubiertas_ingreso"
+            name="account.cubiertas.webkit"
+            auto="False"
+            model="sale.order"
+            file="poi_x_pretensa/report/cubiertas.mako"
+            string="Imprimir Oferta"
+            webkit_header="poi_webkit.base_reports_cotizacion_pretensa_header"
+            report_type="webkit"/>
+  
+  </data>
+</openerp>

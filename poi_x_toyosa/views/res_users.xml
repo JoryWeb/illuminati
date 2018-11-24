@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Inherit Form view -->
+    <record id="view_users_form_toy" model="ir.ui.view">
+      <field name="name">res.users.form.toy</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="base.view_users_form"/>
+      <field name="arch" type="xml">
+        <field name="action_id" position="before">
+          <field name="is_wallet"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>

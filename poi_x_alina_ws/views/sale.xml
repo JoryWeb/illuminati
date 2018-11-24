@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="view_order_form_alina_ws" model="ir.ui.view">
+      <field name="name">alina.ws.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <data>
+            <field name="state" position="after">
+                <field name="state_delivery" widget="statusbar" statusbar_visible="0,1,2,3"/>
+            </field>
+            <field name="validity_date" position="after">
+                <field name="order_date"/>
+                <field name="date_delivery"/>
+                <field name="order_ws_id"/>
+            </field>
+        </data>
+    </field>
+    </record>
+</data>
+</odoo>

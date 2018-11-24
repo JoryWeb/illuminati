@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="poi_report_kardex_valuation_form_wizard" model="ir.ui.view">
+			<field name="name">poi.report.kardex.valuation.form.wizard</field>
+			<field name="model">poi.report.kardex.valuation.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Auditoría de Inventarios">
+					<group>
+						<field name="cost_method"/>
+					</group>
+					<group>
+						<field name="product_ids"/>
+						<field name="warehouse_ids"/>
+					</group>
+					<group>
+						<field name="date_from"/>
+						<field name="date_to"/>
+
+					</group>
+					<footer>
+                        <button name="open_table" type="object" string="Kardex de producto" class="oe_highlight"/>
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="poi_report_kardex_form_valuation_action" model="ir.actions.act_window">
+	        <field name="name">Auditoría de Inventarios</field>
+	        <field name="res_model">poi.report.kardex.valuation.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+    	</record>
+		<!-- Por ahora el kardex normal cubre la necesidad de saber el stock -->
+		<!--<menuitem action="poi_report_kardex_form_valuation_action" id="report_kardex_form_valuation_action_menu" parent="kardex_report_lot" sequence="3"/>-->
+	</data>
+</odoo>

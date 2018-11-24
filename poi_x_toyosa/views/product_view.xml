@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_configuraciones_toyosa" name="Config. Toyosa" parent="sale.product_menu_catalog"/>
+    <record id="modelo_toyosa_form" model="ir.ui.view">
+        <field name="name">modelo.toyosa.form</field>
+        <field name="model">modelo.toyosa</field>
+        <field name="arch" type="xml">
+            <form string="Modelo Toyosa">
+                <group>
+                    <field name="image_medium"
+                                   widget="image"
+                                   class="oe_left oe_avatar"
+                                   options='{"size": [100, 100]}'/>
+                    <field name="name"/>
+                    <field name="marca"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="modelo_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Modelos Toyosa</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">modelo.toyosa</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Modelos toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="modelo_toyosa_action"
+            id="menu_modelo_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="13" />
+
+
+    <!-- Katashiki -->
+    <record id="katashiki_form" model="ir.ui.view">
+        <field name="name">katashiki.form</field>
+        <field name="model">katashiki.toyosa</field>
+        <field name="arch" type="xml">
+            <form string="Katashiki">
+                <group>
+                    <field name="name"/>
+                    <field name="modelo"/>
+                    <field name="property_1"/>
+                    <field name="property_2"/>
+                    <field name="property_3"/>
+                    <field name="property_4"/>
+                    <field name="property_5"/>
+                    <field name="property_6"/>
+                    <field name="property_7"/>
+                    <field name="property_8"/>
+                    <field name="property_9"/>
+                    <field name="property_10"/>
+                    <field name="property_11"/>
+                    <field name="property_12"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="katashiki_tree" model="ir.ui.view">
+        <field name="name">katashiki.tree</field>
+        <field name="model">katashiki.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Katashiki">
+                <field name="name"/>
+                <field name="modelo"/>
+                <field name="property_1"/>
+                <field name="property_2"/>
+                <field name="property_3"/>
+                <field name="property_4"/>
+                <field name="property_5"/>
+                <field name="property_6"/>
+                <field name="property_7"/>
+                <field name="property_8"/>
+                <field name="property_9"/>
+                <field name="property_10"/>
+                <field name="property_11"/>
+                <field name="property_12"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="katashiki_action" model="ir.actions.act_window">
+        <field name="name">Código Modelos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">katashiki.toyosa</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir códigos de modelos
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="katashiki_action"
+            id="menu_katashiki_action"
+            parent="menu_configuraciones_toyosa" sequence="13" />
+
+    <!-- Check List Productos -->
+
+    <record id="check_list_toyosa_tree" model="ir.ui.view">
+        <field name="name">check.list.toyosa.tree</field>
+        <field name="model">check.list.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Katashiki" editable="bottom">
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="activo"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="check_list_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Check List Productos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">check.list.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir Checklist Productos
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="check_list_toyosa_action"
+            id="menu_check_list_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="14" />
+
+    <record id="check_list_toyosa_items_tree" model="ir.ui.view">
+        <field name="name">check.list.toyosa.items.tree</field>
+        <field name="model">check.list.toyosa.items</field>
+        <field name="arch" type="xml">
+            <tree string="Katashiki" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="check_list_toyosa_items_action" model="ir.actions.act_window">
+        <field name="name">Check List Items</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">check.list.toyosa.items</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir Checklist Items
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="check_list_toyosa_items_action"
+            id="menu_check_list_toyosa_items_action"
+            parent="menu_configuraciones_toyosa" sequence="15" />
+
+    <!-- Color Interno-->
+
+    <record id="color_interno_tree" model="ir.ui.view">
+        <field name="name">color.interno.tree</field>
+        <field name="model">color.interno</field>
+        <field name="arch" type="xml">
+            <tree string="Color Interno" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="color_interno_action" model="ir.actions.act_window">
+        <field name="name">Colores Internos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">color.interno</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Hacer clic para registrar un color interno
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="color_interno_action"
+            id="menu_color_interno_action"
+            parent="menu_configuraciones_toyosa" sequence="15" />
+
+    <!-- Color Externo -->
+
+    <record id="color_externo_tree" model="ir.ui.view">
+        <field name="name">color.externo.tree</field>
+        <field name="model">color.externo</field>
+        <field name="arch" type="xml">
+            <tree string="Color Externo" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="color_externo_action" model="ir.actions.act_window">
+        <field name="name">Colores Externos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">color.externo</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir colores externos
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="color_externo_action"
+            id="menu_color_externo_action"
+            parent="menu_configuraciones_toyosa" sequence="16" />
+
+    <!-- Atributos Vehiculos -->
+
+    <record id="atributo_toyosa_tree" model="ir.ui.view">
+        <field name="name">atributo.toyosa.tree</field>
+        <field name="model">atributo.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Atributos Vehículos" editable="bottom">
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="atributo_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="atributo_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Atributos Vehiculos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">atributo.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir Checklist Productos
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="atributo_toyosa_action"
+            id="menu_atributo_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="14" />
+
+    <!-- Atributo Neumatico Toyosa -->
+
+    <record id="atributo_lista_neumaticos_toyosa_tree" model="ir.ui.view">
+        <field name="name">atributo.lista.neumaticos.toyosa.tree</field>
+        <field name="model">atributo.lista.neumaticos.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Atributo Lista" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="atributo_lista_neumaticos_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Atributos Neumáticos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">atributo.lista.neumaticos.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir Atributos de Neumáticos
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="atributo_lista_neumaticos_toyosa_action"
+            id="menu_atributo_lista_neumaticos_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="15" />
+
+    <!-- Atributos Nombre Vehiculos -->
+
+    <record id="atributo_nombre_toyosa_tree" model="ir.ui.view">
+        <field name="name">atributo.nombre.toyosa.tree</field>
+        <field name="model">atributo.nombre.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Atributos Nombre Vehículos" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="atributo_nombre_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Atributos Nombre Vehiculos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">atributo.nombre.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Atributo Nombre Toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="atributo_nombre_toyosa_action"
+            id="menu_atributo_nombre_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="15" />
+
+    <!-- Atributos Vehiculos -->
+
+    <record id="atributo_valor_toyosa_tree" model="ir.ui.view">
+        <field name="name">atributo.valor.toyosa.tree</field>
+        <field name="model">atributo.valor.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Atributos Vehículos" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="atributo_valor_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Atributos Valor Vehiculos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">atributo.valor.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir Atributo Valor
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="atributo_valor_toyosa_action"
+            id="menu_atributo_valor_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="14" />
+
+    <!-- Property katashiki -->
+
+    <record id="katashiki_property_tree" model="ir.ui.view">
+        <field name="name">katashiki.property.tree</field>
+        <field name="model">katashiki.property</field>
+        <field name="arch" type="xml">
+            <tree string="Propiedades katashiki" editable="bottom">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="katashiki_property_action" model="ir.actions.act_window">
+        <field name="name">Propiedades Katashiki</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">katashiki.property</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Definir Propiedades Katashiki
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="katashiki_property_action"
+            id="menu_katashiki_property_action"
+            parent="menu_configuraciones_toyosa" sequence="15" />
+
+    <!-- Modelo katashiki -->
+
+    <record id="katashiki_model_tree" model="ir.ui.view">
+        <field name="name">katashiki.model.tree</field>
+        <field name="model">katashiki.model</field>
+        <field name="arch" type="xml">
+            <tree string="Modelo katashiki" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Modelo Neumaticos Toyosaa -->
+
+    <record id="modelo_neumaticos_toyosa_tree" model="ir.ui.view">
+        <field name="name">modelo.neumaticos.toyosa.tree</field>
+        <field name="model">modelo.neumaticos.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Modelo Neumatico" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="modelo_neumaticos_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Modelo Neumatico</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">modelo.neumaticos.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                 modelo neumaticos toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="modelo_neumaticos_toyosa_action"
+            id="menu_modelo_neumaticos_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="18" />
+
+    <!-- Marca Neumaticos Toyosa -->
+
+    <record id="marca_neumaticos_toyosa_tree" model="ir.ui.view">
+        <field name="name">marca.neumaticos.toyosa.tree</field>
+        <field name="model">marca.neumaticos.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Marca Neumaticos" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="marca_neumaticos_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Marca neumaticos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">marca.neumaticos.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Marca neumaticos toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="marca_neumaticos_toyosa_action"
+            id="menu_marca_neumaticos_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="18" />
+
+
+     <!-- Pr Neumaticos Toyosa -->
+
+    <record id="pr_neumaticos_toyosa_tree" model="ir.ui.view">
+        <field name="name">pr.neumaticos.toyosa.tree</field>
+        <field name="model">pr.neumaticos.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Pr Neumaticos" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pr_neumaticos_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Pr Neumaticos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pr.neumaticos.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Pr neumaticos toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="pr_neumaticos_toyosa_action"
+            id="menu_pr_neumaticos_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="18" />
+
+     <!-- Sbu Neumaticos Toyosa -->
+
+    <record id="sbu_neumaticos_toyosa_tree" model="ir.ui.view">
+        <field name="name">sbu.neumaticos.toyosa.tree</field>
+        <field name="model">sbu.neumaticos.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Sbu Neumaticos" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sbu_neumaticos_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Sbu Neumáticos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sbu.neumaticos.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Sbu Neumaticos Toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="pr_neumaticos_toyosa_action"
+            id="menu_pr_neumaticos_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="18" />
+
+     <!-- Uso Neumaticos Toyosa -->
+
+    <record id="uso_neumaticos_toyosa_tree" model="ir.ui.view">
+        <field name="name">uso.neumaticos.toyosa.tree</field>
+        <field name="model">uso.neumaticos.toyosa</field>
+        <field name="arch" type="xml">
+            <tree string="Uso Neumaticos" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="uso_neumaticos_toyosa_action" model="ir.actions.act_window">
+        <field name="name">Uso Neumáticos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">uso.neumaticos.toyosa</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Uso Neumáticos Toyosa
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="uso_neumaticos_toyosa_action"
+            id="menu_uso_neumaticos_toyosa_action"
+            parent="menu_configuraciones_toyosa" sequence="18" />
+
+    <record id="product_template_toyosa1" model="ir.ui.view">
+        <field name="name">product.template.toyosa1</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <!--
+            <field name="categ_id" position="after">
+                <field name="partida"/>
+            </field>
+            -->
+            <field name="barcode" position="after">
+                <field name="old_code"/>
+                <field name="grupo"/>
+            </field>
+            <!--<field name="taxes_id" position="after">
+                <field name="activity_id"/>
+            </field>-->
+            <div name="volume" position="after">
+                <label for="largo" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                <div class="o_row" name="largo" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                    <field name="largo" string="Largo"/>
+                </div>
+                <field name="uom_largo"/>
+                <label for="alto" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                <div class="o_row" name="alto" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                    <field name="alto" string="Alto"/>
+                </div>
+                <field name="uom_alto"/>
+                <label for="ancho" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                <div class="o_row" name="ancho" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                    <field name="ancho" string="Ancho"/>
+                </div>
+                <field name="uom_ancho" class="oe_inline"/>
+            </div>
+
+            <page name="sales" position="inside">
+                <label for="garantia_km"/>
+                <div class="o_row" name="ancho">
+                    <field name="garantia_km" class="oe_inline" style="vertical-align:baseline"/>
+                </div>
+                <label for="garantia_horas"/>
+                <div class="o_row" name="garantia_horas">
+                    <field name="garantia_horas" class="oe_inline" style="vertical-align:baseline"/>
+                </div>
+            </page>
+            <group name="sale" position="after">
+              <group string="Chasis/Serie por Año con Descuento" name="sale_discount">
+              <group>
+                <field name="product_dis_id" widget="one2many_list" nolabel="1">
+                  <tree string="Lineas" editable="bottom">
+                    <field name="year_id"/>
+                    <field name="discount"/>
+                   <!--  <field name="price"/> -->
+                  </tree>
+                </field>
+              </group>
+              </group>
+            </group>
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="automotor" string="Automotor" attrs="{'invisible':[('tracking', 'not in', ['serial','lot'])]}">
+                    <group>
+                        <field name="modelo"/>
+                        <field name="katashiki"/>
+                        <field name="atributo_line">
+                            <tree string="Atributos" editable="bottom">
+                                <field name="name"/>
+                                <field name="atributo_ids"/>
+                            </tree>
+                        </field>
+
+                        <field name="checklist_line">
+                            <tree string="Check List pre Entrega" editable="bottom">
+                                <field name="item_id"/>
+                                <field name="activo"/>
+                                <field name="imp"/>
+                            </tree>
+                        </field>
+                        <field name="n_llaves"/>
+                    </group>
+                </page>
+
+                <page name="accesorios" string="Accesorios">
+                    <group>
+                        <field name="master_padre" widget="many2many_tags"/>
+                        <field name="accessory"/>
+                    </group>
+                </page>
+
+                <page name="neumaticos" string="Neumáticos">
+                    <group>
+                        <field name="modelo_neumatico"/>
+                        <field name="origen_neumatico"/>
+                        <!--<field name="marca_neumatico"/>-->
+                        <field name="pr_neumatico"/>
+                        <field name="sbu_neumatico"/>
+                        <field name="uso_neumatico_e" widget="many2many_tags"/>
+                        <field name="aro_neumatico"/>
+                        <field name="atributo_neumaticos_line">
+                            <tree string="Atributo Neumáticos" editable="bottom">
+                                <field name="atributo"/>
+                                <field name="valor"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="replace"/>
+
+            <xpath expr="//div[@name='options']" position="after">
+                <field name="categ_id" string="Internal Category"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_toyosa1" model="ir.ui.view">
+        <field name="name">product.product.toyosa1</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <div name="volume" position="after">
+                <label for="largo" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                <div class="o_row" name="largo" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                    <field name="largo" string="Largo"/>
+                </div>
+                <field name="uom_largo"/>
+                <label for="alto" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                <div class="o_row" name="alto" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                    <field name="alto" string="Alto"/>
+                </div>
+                <field name="uom_alto"/>
+                <label for="ancho" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                <div class="o_row" name="ancho" attrs="{'invisible':[('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                    <field name="ancho" string="Ancho"/>
+                </div>
+                <field name="uom_ancho" class="oe_inline"/>
+            </div>
+            <page name="sales" position="inside">
+                <label for="garantia_km"/>
+                <div class="o_row" name="ancho">
+                    <field name="garantia_km" class="oe_inline" style="vertical-align:baseline"/>
+                </div>
+                <label for="garantia_horas"/>
+                <div class="o_row" name="garantia_horas">
+                    <field name="garantia_horas" class="oe_inline" style="vertical-align:baseline"/>
+                </div>
+            </page>
+            <group name="sale" position="after">
+              <group string="Chasis/Serie por Año con Descuento" name="sale_discount">
+                <field name="product_dis_id" widget="one2many_list" nolabel="1">
+                  <tree string="Lineas" editable="bottom">
+                    <field name="year_id"/>
+                    <field name="discount"/>
+                    <field name="price"/>
+                  </tree>
+                </field>
+              </group>
+            </group>
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="automotor" string="Automotor" attrs="{'invisible':[('tracking', 'not in', ['serial','lot'])]}">
+                    <group>
+                        <field name="modelo"/>
+                        <field name="katashiki"/>
+                        <field name="atributo_line">
+                            <tree string="Atributos" editable="bottom">
+                                <field name="name"/>
+                                <field name="atributo_ids"/>
+                            </tree>
+                        </field>
+
+                        <field name="checklist_line">
+                            <tree string="Check List pre Entrega" editable="bottom">
+                                <field name="item_id"/>
+                                <field name="activo"/>
+                                <field name="imp"/>
+                            </tree>
+                        </field>
+                        <field name="n_llaves"/>
+                    </group>
+                </page>
+
+                <page name="accesorios" string="Accesorios">
+                    <group>
+                        <field name="master_padre" widget="many2many_tags"/>
+                        <field name="accessory"/>
+                    </group>
+                </page>
+
+                <page name="neumaticos" string="Neumáticos">
+                    <group>
+                        <field name="modelo_neumatico"/>
+                        <field name="origen_neumatico"/>
+                        <!--<field name="marca_neumatico"/>-->
+                        <field name="pr_neumatico"/>
+                        <field name="sbu_neumatico"/>
+                        <field name="uso_neumatico_e" widget="many2many_tags"/>
+                        <field name="atributo_neumaticos_line">
+                            <tree string="Atributo Neumáticos" editable="bottom">
+                                <field name="atributo"/>
+                                <field name="valor"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="replace"/>
+
+            <xpath expr="//div[@name='options']" position="after">
+                <field name="categ_id" string="Internal Category"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Categoría de Productos multiples actividades -->
+    <record model="ir.ui.view" id="product_category_activity_form">
+        <field name="name">product.category.activity.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="account.view_category_property_form" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <group name="account_property" position="after">
+                <field name="activity_id"/>
+            </group>
+            <field name="property_account_expense_categ_id" position="after">
+              <field name="type_product"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Campos adicionales requeridos por Toyosa -->
+    <record id="product_template_tree_toyosa_view" model="ir.ui.view">
+        <field name="name">product.template.tree.toyosa</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="weight" />
+                <field name="volume" />
+                <field name="type" />
+                <field name="active" />
+            </field>
+        </field>
+    </record>
+
+    <!-- Actualizacion del filtro y agrupadores adicionales -->
+    <record id="product_template_search_view_toyosa" model="ir.ui.view">
+         <field name="name">product.template.search.toyosa</field>
+         <field name="model">product.template</field>
+         <field name="inherit_id" ref="product.product_template_search_view"/>
+         <field name="arch" type="xml">
+             <xpath expr="//filter[@name='consumable']" position="after">
+                 <group expand="0" string="Agrupar por...">
+                     <field name="category_root" string="Categoría raíz" domain="[('parent_id','=',False)]"/>
+                     <filter string="Marca" domain="[]" context="{'group_by':'marca'}"/>
+                     <filter string="Modelo" domain="[]" context="{'group_by':'modelo'}"/>
+                     <filter string="Código Modelo" domain="[]" context="{'group_by':'katashiki'}"/>
+                     <filter string="Categoría" domain="[]" context="{'group_by':'categ_id'}"/>
+                     <filter string="Categoría raíz" domain="[]" context="{'group_by':'category_root'}"/>
+                 </group>
+             </xpath>
+         </field>
+    </record>
+
+</odoo>

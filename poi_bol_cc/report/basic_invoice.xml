@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <record id="paperformat_invoice_base" model="report.paperformat">
+            <field name="name">Facturas</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">65</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="account.account_invoices" model="ir.actions.report">
+            <field name="paperformat_id" ref="poi_bol_cc.paperformat_invoice_base"/>
+            <field name="attachment_use" eval="False"/>
+        </record>
+
+        <template id="basic_invoice">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        <div class="col-xs-4 text-center" id="first_column_header">
+                            <img t-if="o.company_id.logo"
+                                 t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)"
+                                 style="max-height: 90px;"/>
+                            <div style="font-size:11px;">
+                                <p style="font-size:9px;padding:0;margin:0px;">
+                                    <span t-field="o.company_id.razon"/>
+                                    <br/>CASA MATRIZ
+                                    <br/>
+                                    <span t-field="o.company_id.street"/>
+                                    <br/>
+                                    <span t-field="o.company_id.street2"/>
+                                    <br/>
+                                    <span t-field="o.company_id.zip"/>
+                                    <br/>
+                                    <span t-field="o.company_id.state_id.name"/>
+                                    -
+                                    <span t-field="o.company_id.country_id.name"/>
+                                    <t t-if="o.cc_dos.warehouse_id.branch != '0'">
+                                        <br/>
+                                        <span t-field="o.cc_dos.warehouse_id.branch"/>
+                                        <br/>
+                                        <span t-field="o.cc_dos.warehouse_id.street"/>
+                                        <t t-if="o.cc_dos.warehouse_id.street2">
+                                            <br/>
+                                            <span t-field="o.cc_dos.warehouse_id.street2"/>
+                                        </t>
+                                        <br/>
+                                        <span t-field="o.cc_dos.warehouse_id.zip"/>
+                                        <br/>Telefonos
+                                        <span t-field="o.cc_dos.warehouse_id.phone"/>
+                                        <br/>
+                                        <span t-field="o.cc_dos.warehouse_id.state_id.name"/>
+                                        -
+                                        <span t-field="o.cc_dos.warehouse_id.country_id.name"/>
+                                    </t>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-4 text-center" style="margin-top:20px;" id="second_column_header">
+                            <p t-if="o.type == 'out_refund'">
+                                <h3>NOTA DE</h3>
+                                <h3>CREDITO-DEBITO</h3>
+                            </p>
+                            <p t-if="o.type != 'out_refund'">
+                                <h3>FACTURA</h3>
+                            </p>
+                        </div>
+                        <div class="col-xs-4 text-center" id="third_column_header" style="padding-top:20px;">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>
+                                        <strong style="font-size: 14px;">NIT:
+                                            <span t-field="o.company_id.nit"/>
+                                        </strong>
+                                        <br/>
+                                        <strong style="font-size: 15px;">Factura N°:
+                                            <span t-field="o.cc_nro"/>
+                                        </strong>
+                                        <br/>
+                                        <span class="small">Autorización N°:</span>
+                                        <span class="small" t-field="o.cc_dos.nro_orden"/>
+                                        <br/>
+                                        <strong>ORIGINAL</strong>
+                                        <br/>
+                                        <t t-if="o.cc_dos.multi_activity">
+                                            <strong style="font-size:9px;" t-field="o.cc_dos.activity_id.name"/>
+                                        </t>
+                                        <t t-if="not o.cc_dos.multi_activity">
+                                            <strong style="font-size:9px;" t-field="o.company_id.actividad"/>
+                                        </t>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row zero_min_height" id="header_line">
+                            <div class="col-xs-12">
+                                <div style="border-bottom: 1px solid black;"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="article" style="font-size:13px;">
+                        <!-- Primera Fila de la Pagina -->
+                        <div class="row" id="first_row_page">
+                            <div class="col-xs-12">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <span>
+                                                    <strong>Fecha:</strong>
+                                                    <span t-field="o.date_invoice"/>
+                                                </span>
+                                                <br/>
+                                                <span>
+                                                    <strong>Señor(es):</strong>
+                                                    <span t-field="o.razon"/>
+                                                </span>
+
+                                            </div>
+                                            <div class="col-xs-5">
+                                                <span>
+                                                    <strong>NIT:</strong>
+                                                    <span t-field="o.nit"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Segunda Fila de la Pagina -->
+
+                        <div class="row" t-if="(o.type == 'out_refund')" id="second_row_page">
+                            <t t-if="o.legacy_id">
+                                <t t-foreach="o.legacy_id" t-as="ir">
+
+                                    <div class="row" t-if="(o.type == 'out_refund')" style="font-size:12px;">
+
+                                        <div class="col-xs-12" style="padding-bottom:0px;margin-bottom:4px;">
+                                            <div class="panel panel-default">
+                                                <div class="panel-header" style="padding:0px;margin:0px;">
+                                                    <p class="text-center">
+                                                        <strong>DATOS DE LA TRANSACCION ORIGINAL</strong>
+                                                    </p>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-xs-4">
+                                                            <p class="small">Factura N°:
+                                                                <span t-field="ir.cc_nro"/>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <p class="small">Autorización N°:
+                                                                <span t-field="ir.cc_aut"/>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-xs-4">
+                                                            <p class="small">NIT:
+                                                                <span t-field="ir.nit"/>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+                            <t t-if="(o.legacy_id == False)">
+                                <div class="row" t-if="(o.type == 'out_refund')" style="font-size:12px;">
+                                    <div class="col-xs-12" style="padding-bottom:0px;margin-bottom:4px;">
+                                        <div class="panel panel-default">
+                                            <div class="panel-header" style="padding:0px;margin:0px;">
+                                                <p class="text-center">
+                                                    <strong>DATOS DE LA TRANSACCION ORIGINAL</strong>
+                                                </p>
+                                            </div>
+
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <p class="small">Factura N°:
+                                                            <span t-field="o.refunds_id.cc_nro"/>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <p class="small">Autorización N°:
+                                                            <span t-field="o.refunds_id.cc_aut"/>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <p class="small">NIT:
+                                                            <span t-field="o.refunds_id.nit"/>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <!-- tercera fila -->
+                        <div class="row" t-if="(o.type == 'out_refund')" id="third_row_page">
+                            <div class="row" t-if="(o.type == 'out_refund')" style="font-size:12px;">
+                                <t t-if="o.legacy_id">
+                                    <t t-foreach="o.legacy_id" t-as="ir2">
+                                        <div class="col-xs-12">
+                                            <div class="panel panel-default">
+
+                                                <table class="table table-condensed">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Descripcion</th>
+                                                            <th>Cantidad</th>
+                                                            <th class="text-right">Precio Unitario</th>
+                                                            <th class="text-right"
+                                                                groups="sale.group_discount_per_so_line">Descuento (%)
+                                                            </th>
+                                                            <th class="text-right">Precio Neto</th>
+                                                            <th class="text-right">Monto</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="invoice_tbody">
+                                                        <tr t-foreach="ir2.invoice_line" t-as="irl">
+                                                            <td>
+                                                                <span t-field="irl.product_id.name_template"/>
+                                                            </td>
+                                                            <td>
+                                                                <span t-esc="int(irl.quantity)"/>
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <span t-field="irl.price_unit"/>
+                                                            </td>
+                                                            <td class="text-right"
+                                                                groups="sale.group_discount_per_so_line">
+                                                                <span t-field="irl.discount"/>
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <span t-if="irl.discount and irl.discount > 0 ">
+                                                                    <span t-esc="irl.price_unit-(irl.price_unit*(irl.discount/100))"/>
+                                                                </span>
+                                                                <span t-if="not irl.discount">
+                                                                    <span t-field="irl.price_unit"
+                                                                    />
+                                                                </span>
+
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <span t-field="irl.price_subtotal"/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="row" id="invoice_total_refund">
+                                                    <div class="col-xs-12">
+                                                        <table class="table table-condensed">
+                                                            <tr>
+                                                                <td>
+                                                                    <strong>SON :</strong>
+                                                                    <span t-esc="o.to_word(ir2.amount_total)"/>
+                                                                </td>
+                                                                <td>
+                                                                    <strong>Total :</strong>
+                                                                </td>
+                                                                <td class="text-right active">
+                                                                    <span t-field="ir2.amount_total"/>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </t>
+
+
+                                <t t-if="(o.legacy_id == False)">
+
+                                    <div class="col-xs-12" style="font-size:12px;">
+                                        <div class="panel panel-default">
+
+                                            <table class="table table-condensed" id="invoice_lines_refund">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Descripcion</th>
+                                                        <th>Cantidad</th>
+                                                        <th class="text-right">Precio Unitario</th>
+                                                        <th class="text-right" groups="sale.group_discount_per_so_line">
+                                                            Descuento (%)
+                                                        </th>
+                                                        <th class="text-right">Precio Neto</th>
+                                                        <th class="text-right">Monto</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="invoice_tbody">
+                                                    <tr t-foreach="o.refunds_id.invoice_line" t-as="l">
+                                                        <td>
+                                                            <span t-field="l.product_id.name_template"/>
+                                                        </td>
+                                                        <td>
+                                                            <span t-esc="int(l.quantity)"/>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <span t-field="l.price_unit"
+                                                                  t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                        </td>
+                                                        <td class="text-right" groups="sale.group_discount_per_so_line">
+                                                            <span t-field="l.discount"/>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <span t-if="l.discount and l.discount > 0 ">
+                                                                <span t-esc="l.price_unit-(l.price_unit*(l.discount/100))"
+                                                                      t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                            </span>
+                                                            <span t-if="not l.discount">
+                                                                <span t-field="l.price_unit"
+                                                                      t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                            </span>
+
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <span t-field="l.price_subtotal_with_tax"
+                                                                  t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row" id="invoice_total_refund">
+                                                <div class="col-xs-12">
+                                                    <table class="table table-condensed">
+                                                        <tr>
+                                                            <td>
+                                                                <strong>SON :</strong>
+                                                                <span t-esc="o.to_word(o.refunds_id.amount_total)"/>
+                                                            </td>
+                                                            <td>
+                                                                <strong>Total :</strong>
+                                                            </td>
+                                                            <td class="text-right active">
+                                                                <span t-field="o.refunds_id.amount_total"
+                                                                      t-field-options='{"widget": "monetary", "display_currency": "o.refunds_id.currency_id"}'/>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </t>
+                            </div>
+                        </div>
+                        <!-- cuarta fila -->
+                        <div class="row" t-if="(o.type == 'out_refund')" id="four_row_page">
+                            <div class="col-xs-12" style="padding-bottom:0px;margin-bottom:4px;">
+                                <div class="panel panel-default" style="padding-bottom:0px;margin-bottom:4px;">
+                                    <div class="panel-header">
+                                        <p class="text-center">
+                                            <strong>DETALLE DE LA RESCISION O DEVOLUCION DEL SERVICIO</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- quinta fila -->
+                        <div class="row" id="five_row_page">
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <table class="table table-condensed" id="invoice_lines_original">
+                                        <thead>
+                                            <tr>
+                                                <th>Descripcion</th>
+                                                <th>Cantidad</th>
+                                                <th class="text-right">Precio Unitario</th>
+                                                <th class="text-right" groups="sale.group_discount_per_so_line">
+                                                    Descuento (%)
+                                                </th>
+                                                <th class="text-right">Monto</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="invoice_tbody">
+                                            <tr t-foreach="o.invoice_line_ids" t-as="l">
+                                                <td>
+                                                    <span t-field="l.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="l.quantity"/>
+                                                    <span t-field="l.uom_id" groups="product.group_uom"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="l.price_unit"
+                                                          t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                </td>
+                                                <td class="text-right" groups="sale.group_discount_per_so_line">
+                                                    <span t-field="l.discount"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="l.price_subtotal_with_tax"
+                                                          t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="row" id="invoice_total_orginal">
+                                        <div class="col-xs-4 pull-right">
+                                            <t t-set="sum_sin_desc" t-value="o.amount_total + o.sum_desc"/>
+                                            <table class="table table-condensed">
+                                                <tr class="border-black">
+                                                    <td>
+                                                        <strong>Total Sin Descuento</strong>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <span t-esc="sum_sin_desc"
+                                                              t-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                    </td>
+                                                </tr>
+                                                <tr id="tax_total">
+                                                    <td>Descuento</td>
+                                                    <td class="text-right">
+                                                        <span t-field="o.sum_desc"
+                                                              t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <table class="table table-condensed">
+                                                <tr>
+                                                    <td>
+                                                        <strong>SON :</strong>
+                                                        <span t-esc="o.to_word(o.amount_total)"/>
+                                                    </td>
+
+                                                    <td>
+                                                        <strong>Total :</strong>
+                                                    </td>
+                                                    <td class="text-right active">
+                                                        <span t-field="o.amount_total"
+                                                              t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- sexta fila -->
+                        <div id="footer_reference">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table class="table table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p style="terp_default_8"
+                                                       t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))">
+                                                        <b>CODIGO DE CONTROL:</b>
+                                                        <span t-field="o.cc_cod"/>
+                                                    </p>
+                                                    <p class="point_reference" style="terp_default_8"
+                                                       t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))">
+                                                        <b>FECHA L�~MMITE DE EMISI�~SN:</b>
+                                                        <span t-field="o.cc_dos.fecha_fin"/>
+                                                    </p>
+                                                    <para t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))">
+                                                        <b>&quot;ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PA�~MS. EL
+                                                            USO IL�~MCITO DE �~ISTA SER�~A SANCIONADO DE ACUERDO A LEY&quot;
+                                                        </b>
+                                                        <br/>
+                                                        <span class="small" t-field="o.cc_dos.leyenda_id.name"/>
+                                                    </para>
+                                                    <para style="terp_default_Bold_9"
+                                                          t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'draft' or o.state == 'cancel'))">
+                                                        &quot;ESTE DOCUMENTO NO TIENE VALIDEZ FISCAL&quot;
+                                                    </para>
+                                                </td>
+                                                <td>
+                                                    <span t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))">
+                                                        <img t-att-src="'data:image/png;base64,%s' % o.qr_img"
+                                                             style="height: 4.2cm;"/>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- septima fila -->
+                            <!-- <div class="row">
+                                <div class="col-xs-6">
+                                <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+                                <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+                                <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                                <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                                <span t-if="o.type == 'out_refund'">Refund</span>
+                                <span t-if="o.type == 'in_refund'">Supplier Refund</span>
+                                <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+                                <span t-field="o.number"/>
+                                </div>
+                                <div class="col-xs-6">
+                                    <span  t-if="o.origin" class="small">
+                                    Source:<span t-field="o.origin"></span>
+                                    </span>
+                                </div>
+                                <div class="col-xs-12" t-if="o.name">
+                                    <span t-if="o.name" class="small">
+                                        <strong>Description:</strong>
+                                        <span t-field="o.name"/>
+                                    </span>
+                                </div>
+                                <div t-if="o.type == 'out_refund'" class="col-xs-6">
+                                    <span t-if="o.refunds_id.nit" class="small">
+                                        <strong>Factura Original:</strong>
+                                        <span t-field="o.refunds_id.nit"/>
+                                    </span>
+                                </div>
+                                <div t-if="o.type == 'out_refund'" class="col-xs-6">
+                                    <span t-if="o.cc_nro" class="small">
+                                        <strong>Factura rectificativa:</strong>
+                                        <span t-field="o.cc_nro"/>
+                                    </span>
+                                </div>
+
+                            </div> -->
+                        </div>
+
+                    </div><!-- END PAGE -->
+
+
+                    <div class="footer">
+                        <div class="text-center" style="border-top: 1px solid black;">
+                            <ul class="list-inline">
+                                <li>Página:</li>
+                                <li>
+                                    <span class="page"/>
+                                </li>
+                                <li>/</li>
+                                <li>
+                                    <span class="topage"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

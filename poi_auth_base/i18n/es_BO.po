@@ -1,0 +1,906 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_auth_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-16 23:45+0000\n"
+"PO-Revision-Date: 2017-08-16 23:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,help:poi_auth_base.poi_auth_document_to_authorize_action
+msgid "<b>Congratulations!</b>\n"
+"                You don't have any document to authorize.\n"
+"                Odoo will contact you when an authorization request is assigned to you."
+msgstr "<b>Felicidades!</b>\n"
+"                No tiene ningún documento para autorizar\n"
+"                Odoo le contactará cuando una solicitud de autorización sea asignada a usted."
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_advanced_line_ids
+msgid "Advanced Rule Lines"
+msgstr "Líneas de Regla Avanzadas"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_extra_data
+msgid "All the extra data must be filled here: context, parameters, date... Any extra data that could be useful to use on approve or reject. Data must be filled in JSON (dict block)"
+msgstr "Todos los datos extra deben ser llenados aquí: contexto, parámetros, fechas, etc.... Los datos deben ser almacenados en JSON (diccionario)"
+
+#. module: poi_auth_base
+#: selection:poi.auth.circuit,type:0
+msgid "Anyone"
+msgstr "Cualquiera"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_view
+msgid "Approval/Denial Message"
+msgstr "Mensaje de Aprobación/Rechazo"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_confirmed_date
+msgid "Approval/Reject Date"
+msgstr "Fecha de Aprobación/Rechazo"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_message
+msgid "Approval/Reject Message"
+msgstr "Mensaje de Aprobación/Rechazo"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/xml/view_auth.xml:26
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_kanban
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_view
+#, python-format
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_search
+#: selection:poi.auth.document.log,auth_state:0
+#: selection:poi.auth.document.log,state:0
+#: selection:poi.auth.document.log.line,state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_auth_assigned
+msgid "Assigned to Auth"
+msgstr "Asignado al Autorizador"
+
+#. module: poi_auth_base
+#: model:ir.ui.menu,name:poi_auth_base.menu_authorization_audit
+msgid "Audit"
+msgstr "Auditoría"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_circuit
+msgid "Auth Circuit"
+msgstr "Circuito de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_auth_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_auth_id
+msgid "Auth ID"
+msgstr "ID Autorización"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_auth_text
+msgid "Auth Text"
+msgstr "Texto de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.module.category,name:poi_auth_base.module_category_authorization
+#: model:ir.ui.menu,name:poi_auth_base.menu_authorization
+msgid "Authorization"
+msgstr "Autorizaciones"
+
+#. module: poi_auth_base
+#: model:ir.ui.menu,name:poi_auth_base.menu_authorization_documents
+msgid "Authorization Area"
+msgstr "Area de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,name:poi_auth_base.poi_auth_circuit_action
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_circuit_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_circuit_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_circuit_id
+#: model:ir.ui.menu,name:poi_auth_base.menu_poi_auth_circuit_action
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_circuit_tree
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_circuit_view
+msgid "Authorization Circuit"
+msgstr "Circuito de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_document_log
+msgid "Authorization Document"
+msgstr "Authorization Document"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,name:poi_auth_base.poi_auth_document_log_action
+#: model:ir.ui.menu,name:poi_auth_base.menu_poi_auth_document_log_action
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_calendar
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_pivot
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_tree
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_view
+msgid "Authorization Document Logs"
+msgstr "Registro de Documentos de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_search
+msgid "Authorization Documents"
+msgstr "Documentos de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_tree
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_view
+msgid "Authorization Rule"
+msgstr "Regla de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,name:poi_auth_base.poi_auth_auth_action
+#: model:ir.ui.menu,name:poi_auth_base.menu_poi_auth_auth_action
+msgid "Authorization Rules"
+msgstr "Reglas de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_kanban
+msgid "Authorization States: <br/>"
+msgstr "Authorization States: <br/>"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/js/auth_base.js:109
+#, python-format
+msgid "Authorization Status"
+msgstr "Authorization Status"
+
+#. module: poi_auth_base
+#: model:res.groups,name:poi_auth_base.group_auth_authorizer_manager
+msgid "Authorizer Manager"
+msgstr "Administrador de Autorizadores"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_search
+#: selection:poi.auth.document.log,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_auth_circuit_id
+msgid "Circuit"
+msgstr "Circuito"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_auth_lines
+msgid "Circuit Lines"
+msgstr "Líneas de Circuito"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_end_date
+msgid "Closing Date"
+msgstr "Fecha de Cierre"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_code
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_code
+msgid "Code"
+msgstr "Código"
+
+#. module: poi_auth_base
+#: model:ir.ui.menu,name:poi_auth_base.menu_authorization_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_create_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_create_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el registro."
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_search
+#: selection:poi.auth.document.log,auth_state:0
+#: selection:poi.auth.document.log,state:0
+#: selection:poi.auth.document.log.line,state:0
+msgid "Denied"
+msgstr "Rechazado"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_view
+msgid "Deny"
+msgstr "Rechazar"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_display_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_log_id
+msgid "Document Log"
+msgstr "Documento de Registro"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,name:poi_auth_base.poi_auth_document_to_authorize_action
+#: model:ir.ui.menu,name:poi_auth_base.menu_poi_auth_document_to_authorize_action
+msgid "Documents to Authorize"
+msgstr "Documentos a Autorizar"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_rules.py:224
+#: code:addons/poi_auth_base/models/auth_rules.py:246
+#: code:addons/poi_auth_base/models/auth_rules.py:268
+#: code:addons/poi_auth_base/models/auth_rules.py:282
+#: code:addons/poi_auth_base/models/auth_rules.py:292
+#: code:addons/poi_auth_base/models/auth_rules.py:302
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: poi_auth_base
+#: selection:poi.auth.circuit,type:0
+msgid "Everyone"
+msgstr "Todos"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "Example: if line.price_unit %(operator)s %(value)s:"
+msgstr "Ejemplo: if line.price_unit %(operator)s %(value)s:"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_extra_data
+msgid "Extra Data"
+msgstr "Datos Adicionales"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_field_id
+msgid "Field"
+msgstr "Campo"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_group_ids
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_view
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_res_id
+msgid "ID of model"
+msgstr "ID de modelo"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_auth_rule_circuit_id
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_circuit_id
+msgid "If this field is not filled header circuit is going to be applied"
+msgstr "Si el campo no es llenado, se aplicará el circuito de la cabecera"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "Instructions"
+msgstr "Instrucciones"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_last_post
+msgid "Last Message Date"
+msgstr "Fecha del último mensaje"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log___last_update
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_write_uid
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_write_date
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_ids
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_auth_log
+msgid "Log"
+msgstr "Log"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_generic_message
+msgid "Message for Other Users"
+msgstr "Mensaje para otros usuarios"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_message
+msgid "Message to Personal Approval"
+msgstr "Mensaje para el personal de aprobación"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_ids
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_view
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_model_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_model_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_model_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_auth_state
+msgid "My Auth State"
+msgstr "Mi Estado de Autorización"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,name:poi_auth_base.poi_auth_document_my_requests_action
+#: model:ir.ui.menu,name:poi_auth_base.menu_poi_auth_document_my_requests_action
+msgid "My Authorization Requests"
+msgstr "Mis Solicitudes de Autorización"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/xml/view_auth.xml:37
+#, python-format
+msgid "NO REQUIERE"
+msgstr "NO REQUIERE"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_python_code_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_name
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_auth_base
+#: selection:poi.auth.document.log,auth_state:0
+#: selection:poi.auth.document.log.line,state:0
+msgid "Not Needed"
+msgstr "No requerido"
+
+#. module: poi_auth_base
+#: selection:poi.auth.document.log,auth_state:0
+#: selection:poi.auth.document.log.line,state:0
+msgid "Notified"
+msgstr "Notificado"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_document_log_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_operator
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_operator
+msgid "Operator"
+msgstr "Operador"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_rules.py:225
+#: code:addons/poi_auth_base/models/auth_rules.py:247
+#: code:addons/poi_auth_base/models/auth_rules.py:269
+#: code:addons/poi_auth_base/models/auth_rules.py:283
+#: code:addons/poi_auth_base/models/auth_rules.py:293
+#: code:addons/poi_auth_base/models/auth_rules.py:303
+#, python-format
+msgid "Operator not supported."
+msgstr "Operador no soportado."
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "Operator: %(operator)s"
+msgstr "Operador: %(operator)s"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "Operators that can be assigned:"
+msgstr "Operadores que pueden ser asignados:"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_search
+#: selection:poi.auth.document.log,state:0
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/xml/view_auth.xml:20
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_kanban
+#, python-format
+msgid "Please type your message of approval"
+msgstr "Por favor escriba el mensaje de aprobación"
+
+#. module: poi_auth_base
+#: model:ir.actions.act_window,name:poi_auth_base.poi_auth_auth_python_code_action
+#: model:ir.ui.menu,name:poi_auth_base.menu_poi_auth_auth_python_code_action
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_tree
+msgid "Predefined Python Codes"
+msgstr "Códigos Python Predefinidos"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_python_rule
+msgid "Python Rule"
+msgstr "Regla de Python"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.rule,type:0
+msgid "Reglas Avanzadas"
+msgstr "Reglas Avanzadas"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.rule,type:0
+msgid "Reglas de Modelo"
+msgstr "Reglas de Modelo"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/xml/view_auth.xml:27
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_kanban
+#, python-format
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_start_date
+msgid "Requesting Date"
+msgstr "Fecha de Solicitud"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_user_id
+msgid "Requesting User"
+msgstr "Usuario Solicitante"
+
+#. module: poi_auth_base
+#: model:res.groups,name:poi_auth_base.group_auth_reviewer
+msgid "Reviewer"
+msgstr "Revisor de Autorizaciones"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_rule_id
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_rule_id
+msgid "Rule"
+msgstr "Regla"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_description
+msgid "Rule Description (will appear to users)"
+msgstr "Rule Description (will appear to users)"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_line_ids
+msgid "Rule Lines"
+msgstr "Líneas de Regla"
+
+#. module: poi_auth_base
+#: model:res.groups,name:poi_auth_base.group_auth_rule_manager
+msgid "Rule Manager"
+msgstr "Administrador de Reglas"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_ids
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_view
+msgid "Rules"
+msgstr "Reglas"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_sequence
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: poi_auth_base
+#: selection:poi.auth.circuit,type:0
+msgid "Sequential"
+msgstr "Sequencial"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_state
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_state
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,help:poi_auth_base.field_poi_auth_auth_code
+msgid "The authorization code will be used for internal calls. Please do not change it"
+msgstr "El código de autorización será utilizado para llamadas internas. Por favor no lo cambie."
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/authorization.py:38
+#, python-format
+msgid "There is an authorization without code to call. Please contact your developer"
+msgstr "Existe una autorización sin código a llamar. Por favor contacte a su desarrollador"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_rules.py:144
+#, python-format
+msgid "There is no document to apply authorization rules"
+msgstr "No hay documentos para aplicar las reglas de autorización"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_kanban
+msgid "This document is waiting the approval/denial of other users. You will be notified when\n"
+"                                you can approve/deny it."
+msgstr "Este documento está esperando la aprobación/rechazo de otros usuarios. Se le notificará cuando\n"
+".                                usted pueda aprobarlo/rechazarlo."
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "This will be the value against your condition will be compared"
+msgstr "Este será el valor contra el cual su condición será comparada"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "To use a python code you must use only these placeholders and assign a variable that will detect if rule applies.\n"
+"                                Variable must be \"result\" and it will be a boolean value (True: rule applies, False: rule not applies)\n"
+"                                If you don't fill this variable, rule will assume that is False.\n"
+"                                You can use only these placeholders to be able to assign them to a specific rule."
+msgstr "Para usar un código python debe usar únicamente estas variables de reemplazo y asignar una variable que detectará si la regla aplica.\n"
+"                                La variable debe ser \"result\" y será de tipo booleano (True: la regla aplica, False: la regla no aplica)\n"
+"                                Si no llena esta variable, la regla asumirá el valor de False.\n"
+"                                Puede usar únicamente estas variables de reemplazo para poder asignarlos a una regla."
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_type
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_document_log_line_user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_circuit_lines_user_id
+msgid "User who needs to approve"
+msgstr "Usuario que necesita aprobar"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_user_ids
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_view
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: poi_auth_base
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_advanced_rule_lines_value
+#: model:ir.model.fields,field_description:poi_auth_base.field_poi_auth_auth_rule_lines_value
+msgid "Value"
+msgstr "Valor"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "Value: %(value)s"
+msgstr "Valor: %(value)s"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/js/auth_debug.js:23
+#: code:addons/poi_auth_base/static/src/xml/view_auth.xml:47
+#, python-format
+msgid "View Authorization Status"
+msgstr "Ver estado de autorización"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_document_log_view
+msgid "View Document"
+msgstr "Ver Documento"
+
+#. module: poi_auth_base
+#: selection:poi.auth.document.log,auth_state:0
+#: selection:poi.auth.document.log.line,state:0
+msgid "Waiting Notification"
+msgstr "Esperando Notificación"
+
+#. module: poi_auth_base
+#. openerp-web
+#: code:addons/poi_auth_base/static/src/xml/view_auth.xml:13
+#, python-format
+msgid "Waiting for Authorization"
+msgstr "Waiting for Authorization"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/authorization.py:41
+#, python-format
+msgid "We can't find %s code. Please contact your developer"
+msgstr "No se puede encontrar el código %s. Por favor contacte al desarrollador"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:135
+#, python-format
+msgid "You already approved/denied the document."
+msgstr "You already approved/denied the document."
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:281
+#, python-format
+msgid "You cannot approve this. This line can be approved only by %s"
+msgstr "No puede aprobar esto. Esta línea solo puede ser aprobada por %s"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:295
+#, python-format
+msgid "You cannot deny this. This line can be denied only by %s"
+msgstr "No puede rechazar esto. Esta línea solo puede ser rechazada por %s"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:301
+#, python-format
+msgid "You must fill the reason before denying the request"
+msgstr "Debe llenar el motivo antes de rechazar el documento"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:283
+#, python-format
+msgid "You still cannot approve this document. You will be notified when you can approve or deny this document"
+msgstr "Usted todavía no puede aprobar el documento. Será notificado cuando pueda aprobar o rechazar el documento"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:297
+#, python-format
+msgid "You still cannot deny this document. You will be notified when you can approve or deny this document"
+msgstr "Usted todavía no puede rechazar el documento. Será notificado cuando pueda aprobar o rechazar el documento"
+
+#. module: poi_auth_base
+#: code:addons/poi_auth_base/models/auth_document.py:133
+#, python-format
+msgid "You will be notified when you can approve/deny the document."
+msgstr "You will be notified when you can approve/deny the document."
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "contains"
+msgstr "contiene"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "contains, does not contain, is equal to, is not equal to, is set, is not set"
+msgstr "contiene, no contiene, es igual a, no es igual a, está establecido, no está establecido"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "does not contain"
+msgstr "no contiene"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "greater or equal than"
+msgstr "mayor o igual a"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "greater than"
+msgstr "mayor a"
+
+#. module: poi_auth_base
+#: model:ir.ui.view,arch_db:poi_auth_base.poi_auth_auth_python_code_form
+msgid "greater than, less than, greater or equal than, less or equal than"
+msgstr "mayor a, menor a, mayor o igual a, menor o igual a"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "is equal to"
+msgstr "es igual a"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "is not equal to"
+msgstr "es diferente a"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "is not set"
+msgstr "no está establecido"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "is set"
+msgstr "está establecido"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "less or equal than"
+msgstr "menor o igual a"
+
+#. module: poi_auth_base
+#: selection:poi.auth.auth.advanced.rule.lines,operator:0
+#: selection:poi.auth.auth.rule.lines,operator:0
+msgid "less than"
+msgstr "menor a"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_auth
+msgid "poi.auth.auth"
+msgstr "poi.auth.auth"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_auth_advanced_rule_lines
+msgid "poi.auth.auth.advanced.rule.lines"
+msgstr "poi.auth.auth.advanced.rule.lines"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_auth_python_code
+msgid "poi.auth.auth.python.code"
+msgstr "poi.auth.auth.python.code"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_auth_rule
+msgid "poi.auth.auth.rule"
+msgstr "poi.auth.auth.rule"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_auth_rule_lines
+msgid "poi.auth.auth.rule.lines"
+msgstr "poi.auth.auth.rule.lines"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_circuit_lines
+msgid "poi.auth.circuit.lines"
+msgstr "poi.auth.circuit.lines"
+
+#. module: poi_auth_base
+#: model:ir.model,name:poi_auth_base.model_poi_auth_document_log_line
+msgid "poi.auth.document.log.line"
+msgstr "poi.auth.document.log.line"
+

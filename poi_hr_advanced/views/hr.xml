@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	<record id="view_employee_form_adv" model="ir.ui.view">
+        <field name="name">hr.employee.form.adv</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//page[@name='public']" position="after">
+                <page string="Datos Familiares">
+                    <field name="family_ids"  nolabel="1" widget="one2many_list">
+                        <tree string="Miembros Familiares" editable="bottom">
+                            <field name="name"/>
+                            <field name="date_born"/>
+                            <field name="age"/>
+                            <field name='occupation_id'/>
+                            <field name="relationship"/>
+                            <field name="code_aseg"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='bank_account_id']" position="after">
+                <field name="afp_id"/>
+                <field name="date_afp"/>
+                <field name="nua"/>
+                <field name="code_aseg"/>
+								<field name="health_box" />
+            </xpath>
+            <xpath expr="//group[@name='active_group']" position="before">
+                <group string="Configuracion Adicional">
+                    <field name='date_entry'/>
+                    <field name='antiquity'/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='birthday']" position="after">
+                <field name="age"/>
+            </xpath>
+            <field name="address_home_id" position="after">
+                <field name="emergency_contact"/>
+                <field name="emergency_phone"/>
+            </field>
+            <field name="user_id" position="after">
+            	<field name="black_list" attrs="{'invisible':[('active', '=', True)]}"/>
+                <field name="reason_id"  attrs="{'invisible':[('active', '=', True)]}"/>
+
+            </field>
+        </field>
+    </record>
+
+    <record id="view_hr_employee_reason_form_adv" model="ir.ui.view">
+        <field name="name">hr_employee_reason_form</field>
+        <field name="model">hr.employee.reason</field>
+        <field name="arch" type="xml">
+            <form string="other_inputs">
+                <group>
+                    <field name="name"/>
+                    <field name="note"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_hr_employee_reason_tree_adv" model="ir.ui.view">
+        <field name="name">hr_employee_reason_tree</field>
+        <field name="model">hr.employee.reason</field>
+        <field name="arch" type="xml">
+            <tree string="other_inputs">
+                <field name="name"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_employee_reason_adv" model="ir.actions.act_window">
+        <field name="name">Tipos de Baja</field>
+        <field name="res_model">hr.employee.reason</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_hr_employee_reason" parent="menu_hr_employee_config_base" action="action_hr_employee_reason_adv" sequence="10"/>
+</data>
+</odoo>

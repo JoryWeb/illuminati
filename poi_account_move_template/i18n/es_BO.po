@@ -1,0 +1,384 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_account_move_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-14 15:45+0000\n"
+"PO-Revision-Date: 2017-06-14 15:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_account_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_account_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: poi_account_move_template
+#: model:ir.model,name:poi_account_move_template.model_account_move_template
+msgid "Account Move Template"
+msgstr "Plantilla de Asientos Contables"
+
+#. module: poi_account_move_template
+#: model:ir.model,name:poi_account_move_template.model_account_move_template_line
+msgid "Account Move Template Line"
+msgstr "Línea de Plantilla de Asientos Contables"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_amount
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_amount_to_apply
+msgid "Amount to apply on percentage"
+msgstr "Monto a aplicar para porcentaje"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: poi_account_move_template
+#: code:addons/poi_account_move_template/wizard/select_template.py:138
+#, python-format
+msgid "At least one amount has to be non-zero!"
+msgstr "Al menos un monto debe ser diferente a cero"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_account_move_template
+#: code:addons/poi_account_move_template/models/account_move_template.py:69
+#, python-format
+msgid "Code \"%s\" refers to non existing line"
+msgstr "El código \"%s\" refiere a una línea no existente"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_account_move_template
+#: selection:account.move.template.line,type:0
+msgid "Computed"
+msgstr "Calculado"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_computed_line_ids
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template
+msgid "Computed Lines"
+msgstr "Líneas Calculadas"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_computed_template_line_tree
+msgid "Computed Move Template Lines"
+msgstr "Líneas de Plantilla Calculadas"
+
+#. module: poi_account_move_template
+#: model:ir.model,name:poi_account_move_template.model_wizard_computed_move_template_line
+msgid "Computed Template Lines"
+msgstr "Líneas de Plantilla Calculadas"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template
+msgid "Create Asset"
+msgstr "Crear Asiento"
+
+#. module: poi_account_move_template
+#: model:ir.actions.act_window,name:poi_account_move_template.action_wizard_select_template_by_move
+#: model:ir.ui.menu,name:poi_account_move_template.menu_action_wizard_select_template
+msgid "Create Move from Template"
+msgstr "Crear asiento desde Plantilla"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_create_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_create_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_create_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_create_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_create_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_create_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_create_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_create_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_account_move_template
+#: selection:account.move.template.line,move_line_type:0
+#: selection:wizard.computed.move.template.line,move_line_type:0
+#: selection:wizard.select.move.template.line,move_line_type:0
+msgid "Credit"
+msgstr "Haber"
+
+#. module: poi_account_move_template
+#: selection:account.move.template.line,move_line_type:0
+#: selection:wizard.computed.move.template.line,move_line_type:0
+#: selection:wizard.select.move.template.line,move_line_type:0
+msgid "Debit"
+msgstr "Debe"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_display_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_display_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_display_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_display_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_fixed_amount
+msgid "Fixed Amount"
+msgstr "Monto Fijo"
+
+#. module: poi_account_move_template
+#: selection:account.move.template.line,type:0
+msgid "Fixed Value"
+msgstr "Monto Fijo"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_has_percentage
+msgid "Has Percentage Line"
+msgstr "Has Percentage Line"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_has_computed_lines
+msgid "Has computed lines"
+msgstr "Has computed lines"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_has_input_lines
+msgid "Has input lines"
+msgstr "Has input lines"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_account_move_template
+#: code:addons/poi_account_move_template/models/account_move_template.py:79
+#, python-format
+msgid "Inconsistency between input lines and filled lines for template %s"
+msgstr "Existe inconsistencia entre las líneas llenadas y las de la plantilla %s"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template
+msgid "Input Lines"
+msgstr "Líneas Imputables"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_form
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_search
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_tree
+msgid "Journal Entry Template"
+msgstr "Journal Entry Template"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_line_form
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_line_tree
+msgid "Journal Entry Template Line"
+msgstr "Journal Entry Template Line"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template___last_update
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line___last_update
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line___last_update
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template___last_update
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_write_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_write_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_write_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_write_uid
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_write_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_write_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_write_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_write_date
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_account_move_template
+#: code:addons/poi_account_move_template/models/account_move_template.py:59
+#, python-format
+msgid "Line %s can't refer to itself"
+msgstr "La línea %s no puede referirse a ella misma"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_ids
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_move_line_type
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_move_line_type
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_move_line_type
+msgid "Move Line Type"
+msgstr "Tipo de Línea"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_template_id
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template
+msgid "Move Template"
+msgstr "Plantilla de Asiento Contable"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template_line
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template_line_tree
+msgid "Move Template Line"
+msgstr "Línea de Plantilla de Asiento Contable"
+
+#. module: poi_account_move_template
+#: model:ir.actions.act_window,name:poi_account_move_template.action_move_template_form
+#: model:ir.ui.menu,name:poi_account_move_template.menu_action_move_template_form
+msgid "Move Templates"
+msgstr "Plantillas de Asiento"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_name
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.wizard_select_template
+msgid "Next"
+msgstr "Siguiente"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_sequence
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_sequence
+msgid "Number"
+msgstr "Número"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_account_move_template
+#: selection:account.move.template.line,type:0
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_percentage_value
+msgid "Percentage Value"
+msgstr "Valor de Porcentaje"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_autopost
+msgid "Post Generated Asset"
+msgstr "Postear Asiento Generado"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_python_code
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_line_form
+msgid "Python Code"
+msgstr "Código Python"
+
+#. module: poi_account_move_template
+#: model:ir.actions.act_window,name:poi_account_move_template.action_wizard_select_template
+msgid "Select Move Template"
+msgstr "Selecciona una Plantilla de Asiento"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_state
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_template_id
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_template_line_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_template_line_id
+msgid "Template Line"
+msgstr "Línea de Plantilla"
+
+#. module: poi_account_move_template
+#: model:ir.model,name:poi_account_move_template.model_wizard_select_move_template_line
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_template_line_ids
+msgid "Template Lines"
+msgstr "Líneas de Plantilla"
+
+#. module: poi_account_move_template
+#: selection:wizard.select.move.template,state:0
+msgid "Template selected"
+msgstr "Template selected"
+
+#. module: poi_account_move_template
+#: sql_constraint:account.move.template.line:0
+msgid "The sequence of the line must be unique per template !"
+msgstr "La secuancia debe ser única por plantilla !"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_account_move_template_line_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: poi_account_move_template
+#: selection:account.move.template.line,type:0
+msgid "User input"
+msgstr "Imputable"
+
+#. module: poi_account_move_template
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_computed_move_template_line_template_id
+#: model:ir.model.fields,field_description:poi_account_move_template.field_wizard_select_move_template_line_template_id
+msgid "Wizard Template"
+msgstr "Wizard Template"
+
+#. module: poi_account_move_template
+#: model:ir.ui.view,arch_db:poi_account_move_template.view_move_template_line_form
+msgid "You use other lines using their sequence number (e.g. 'L(1)' for first line). Examples of code: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + L(3)'"
+msgstr "Puede usar otras líneas (p.e. 'L(1)' para la primera línea). Ejemplos: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + L(3)'"
+
+#. module: poi_account_move_template
+#: model:ir.model,name:poi_account_move_template.model_wizard_select_move_template
+msgid "wizard.select.move.template"
+msgstr "wizard.select.move.template"
+

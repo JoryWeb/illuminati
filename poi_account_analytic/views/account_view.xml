@@ -1,0 +1,65 @@
+<odoo>
+
+    <record id="view_move_analytic_tree" model="ir.ui.view">
+        <field name="name">account.move.analytic.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="analytic_account_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_move_analytic_filter" model="ir.ui.view">
+        <field name="name">account.move.analytic.search</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_move_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <filter string="Categoría" domain="[]" context="{'group_by':'analytic_main_tag'}"/>
+                <filter string="Categoría raíz" domain="[]" context="{'group_by':'analytic_main_tag_parent'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="poi_view_account_analytic_account_search" model="ir.ui.view">
+        <field name="name">account.analytic.account.poi.search</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <filter string="Categoría" domain="[]" context="{'group_by':'main_tag'}"/>
+                <filter string="Categoría raíz" domain="[]" context="{'group_by':'main_tag_parent'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_analytic_tag_form" model="ir.ui.view">
+        <field name="name">account.analytic.tag.form</field>
+        <field name="model">account.analytic.tag</field>
+        <field name="inherit_id" ref="analytic.account_analytic_tag_form_view"/>
+        <field name="arch" type="xml">
+          <data>
+            <field name="name" position="after">
+              <field name="color"/>
+              <field name="parent_id" />
+              <field name="category_id" />
+            </field>
+
+          </data>
+        </field>
+    </record>
+
+    <record id="action_account_analytic_tag_form" model="ir.actions.act_window">
+        <field name="name">Analytic Tags</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.analytic.tag</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--<menuitem action="action_account_analytic_tag_form" id="menu_account_analytic_tag_form"
+              parent="account.menu_analytic_accounting"
+              groups="analytic.group_analytic_accounting" sequence="1"/>-->
+</odoo>

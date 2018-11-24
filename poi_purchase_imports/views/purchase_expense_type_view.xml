@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="action_purchase_expense_type" model="ir.actions.act_window">
+			<field name="name">Tipos de Gastos</field>
+			<field name="res_model">purchase.expense.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field eval="False" name="view_id" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Definir tipos de gastos
+				</p>
+				<p>
+					Use este menu para crear los diferentes tipos de gastos
+					que se llegaran aplicar en una carpeta de importaciones
+				</p>
+				<p>
+					Definir por defecto el gasto y monto a aplicar
+				</p>
+			</field>
+		</record>
+
+		<menuitem id="menu_purchase_expense_type"
+                  action="action_purchase_expense_type"
+                  parent="menu_purchase_cost_control"
+                  sequence="11" />
+
+		<record id="purchase_expense_type_tree" model="ir.ui.view">
+			<field name="name">purchase.expense.type.tree</field>
+			<field name="model">purchase.expense.type</field>
+			<field name="arch" type="xml">
+				<tree string="Purchase expense types" editable="bottom">
+					<field name="name" />
+					<field name="calculation_method" invisible="1"/>
+					<field name="split_method"/>
+					<field name="default_expense" invisible="1"/>
+					<field name="default_amount" />
+					<field name="company_id" groups="base.group_multi_company"/>
+				</tree>
+			</field>
+		</record>
+
+	</data>
+</odoo>

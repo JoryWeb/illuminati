@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="pos_config_view_presale_form">
+            <field name="name">pos.config.presale.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='posbox_reference']" position="after">
+                    <h2>Presale</h2>
+                    <div class="row mt16 o_settings_container" id="presale_options">
+                        <div class="col-xs-12 col-md-6 o_setting_box" title="Presale options">
+                            <div class="o_setting_right_pane">
+                                <label for="pos_group_id" string="Operation Type"/>
+                                <div class="text-muted">
+                                    Group used to Sync POS Orders
+                                </div>
+                                <div class="content-group mt16">
+                                    <field name="pos_group_id"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="iface_presale"/>
+                                <div class="text-muted">
+                                    POS Presale Interface Options
+                                </div>
+                                <div>
+                                    <field name="iface_presale"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="iface_presale_cash_register"/>
+                                <div class="text-muted">
+                                    POS Presale Interface Options
+                                </div>
+                                <div>
+                                    <field name="iface_presale_cash_register"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

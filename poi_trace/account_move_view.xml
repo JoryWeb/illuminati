@@ -1,0 +1,22 @@
+<openerp>
+    <data>
+
+        <record id="view_trace_move_form" model="ir.ui.view">
+            <field name="name">account.trace.move.form</field>
+            <field name="model">account.move</field>
+             <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="after">
+                    <div class="info message oe_hidden" id="notify_assets">
+
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="automove"/>
+                    <field name="fixable_automatic_asset" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

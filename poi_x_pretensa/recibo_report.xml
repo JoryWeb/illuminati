@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--<report id="account_reciborep_egreso"
+              name="account.reciborepegreso.webkit"
+              auto="False"
+              model="account.move"
+              file="poi_x_pretensa/report/recibo_move.mako"
+              webkit_header="poi_webkit.base_reports_recibo_pretensa_header"
+              string="Imprimir Recibo Egreso"
+              report_type="webkit"/>-->
+
+        <report id="account_reciborep_voucher"
+              name="account.recibovoucher.webkit"
+              auto="False"
+              model="account.voucher"
+              file="poi_x_pretensa/report/recibo_move_voucher.mako"
+              webkit_header="poi_webkit.base_reports_recibo_pretensa_header"
+              string="Imprimir Recibo Egreso"
+              report_type="webkit"/>
+
+        <report id="account_reciborep_oficial"
+              name="account.reciborepoficial.webkit"
+              auto="False"
+              model="account.payment"
+              file="poi_x_pretensa/report/recibo_move_oficial.mako"
+              webkit_header="poi_webkit.base_reports_recibo_pretensa_header"
+              string="Imprimir Recibo Oficial (Bs.)"
+              report_type="webkit"/>
+
+        <report id="account_reciborep_oficial_sus"
+              name="account.reciborepoficialsus.webkit"
+              auto="False"
+              model="account.payment"
+              file="poi_x_pretensa/report/recibo_move_oficial_sus.mako"
+              webkit_header="poi_webkit.base_reports_recibo_pretensa_header"
+              string="Imprimir Recibo Oficial ($us.)"
+              report_type="webkit"/>
+
+
+    </data>
+</openerp>
+        

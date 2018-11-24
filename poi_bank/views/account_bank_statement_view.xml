@@ -1,0 +1,91 @@
+<openerp>
+    <data>
+        <record id="view_bank_dc_statement_form" model="ir.ui.view">
+            <field name="name">account.bank.dc.statement.form</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_id']" position="before">
+                    <field name="bank_account_id"/>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='date']" position="after">
+                    <field name="transaction_date"/>
+                    <field name="transaction_place"/>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='amount']" position="before">
+                    <field name="debit"/>
+                    <field name="credit"/>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='bank_account_id']" position="replace">
+                    <field name="bank_account_id" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Bank statement -->
+
+        <record id="account.action_bank_reconcile_bank_statements" model="ir.actions.client">
+            <field name="name">Reconciliation on Bank Statements</field>
+            <field name="tag">poi_bank_statement_reconciliation_view</field>
+            <field name="context">{'statement_ids': [active_id]}</field>
+        </record>
+
+        <record id="account.action_bank_reconcile" model="ir.actions.client">
+            <field name="name">Reconciliation on Bank Statements</field>
+            <field name="res_model">account.bank.statement.line</field>
+            <field name="tag">poi_bank_statement_reconciliation_view</field>
+        </record>
+
+
+
+
+        <!-- Reconciliation menu -->
+        <record id="view_bank_statement_reconcile_tree" model="ir.ui.view">
+            <field name="name">account.bank.statement.reconcile.tree</field>
+            <field name="model">account.bank.statement.reconcile</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Statement Reconcile">
+                    <field name="name"/>
+                    <field name="statement_line_ids"/>
+                    <field name="move_line_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_bank_statement_reconcile_form" model="ir.ui.view">
+            <field name="name">account.bank.statement.reconcile.form</field>
+            <field name="model">account.bank.statement.reconcile</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <form string="Bank Statement Reconcile">
+                <header>
+                    <button name="button_break_reconcile" string="Cancel Statement" type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="statement_line_ids"/>
+                    </group>
+                    <group>
+                        <field name="move_line_ids"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_bank_statement_reconciles_tree" model="ir.actions.act_window">
+            <field name="name">Bank Statement Reconciles</field>
+            <field name="res_model">account.bank.statement.reconcile</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain"></field>
+            <field name="context">{}</field>
+        </record>
+        <menuitem string="Bank Statement Reconciles" action="action_bank_statement_reconciles_tree" id="menu_bank_statement_reconciles_tree" parent="account.menu_finance_bank_and_cash" sequence="10"/>
+    </data>
+</openerp>

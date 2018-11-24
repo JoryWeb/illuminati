@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- Reporte Ventas base -->
+        <record id="view_pret_sales_report_tree" model="ir.ui.view">
+            <field name="name">pret.sales.report.tree</field>
+            <field name="model">pret.sales.report</field>
+            <field name="arch" type="xml">
+                <tree string="Informe Ventas">
+                    <field name="partner_id" invisible="1"/>
+                    <field name="date_order" invisible="1"/>
+                    <field name="name"/>
+                    <field name="shop_id"/>
+                    <field name="date_day" invisible="1"/>
+                    <field name="date_week" invisible="1"/>
+                    <field name="date_month" invisible="1"/>
+                    <field name="estado"/>
+                    <field name="user_id"/>
+                    <field name="field_40"/>
+                    <field name="field_41"/>
+                    <field name="field_44"/>
+                    <!--<field name="field_45"/>
+                    <field name="field_46"/>
+                    <field name="field_50" invisible="1"/>-->
+                    <field name="field_1054"/>
+                    <field name="field_1056"/>
+                    <field name="field_1055"/>
+                    <field name="field_47"/>
+                    <field name="amount_total" sum="Monto Total"/>
+                    <field name="pricelist_total" sum="Precio Total"/>
+                    <field name="difference" sum="Diferencia Total"/>
+                    <button name="launch_form" type="object" string="Ver Orden" icon="STOCK_FIND"/>
+               </tree>
+            </field>
+        </record>
+
+        <record id="view_pret_sales_report_search" model="ir.ui.view">
+            <field name="name">pret.sales.report.search</field>
+            <field name="model">pret.sales.report</field>
+            <field name="arch" type="xml">
+                <search string="Informe Ventas">
+                    <group>
+                        <field name="shop_id"/>
+                        <field name="partner_id"/>
+                        <field name="user_id"/>
+                        <field name="estado"/>
+                        <field name="name" string="Pedido de ventas"/>
+                        <filter name="vendido" string="Vendido x Entregar" domain="[('estado','=','vpe')]"/>
+                        <filter name="vendido" string="Vendido Entregado" domain="[('estado','=','ve')]"/>
+                        <filter name="vendido" string="Pendiente" domain="[('estado','=','pendiente')]"/>
+                        <filter name="vendido" string="Perdida" domain="[('estado','=','perdida')]"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter name="group_mes" string="Mes" context="{'group_by':'date_month'}"/>
+                        <filter name="group_week" string="Semana" context="{'group_by':'date_week'}"/>
+                        <filter name="group_estado" string="Estado" context="{'group_by':'estado'}"/>
+                        <filter name="group_shop" string="Sucursal" context="{'group_by':'shop_id'}"/>
+                        <filter name="group_user" string="Vendedor" context="{'group_by':'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_pret_sales_pie_report_graph" model="ir.ui.view">
+            <field name="name">pret.sales.pie.report.graph</field>
+            <field name="model">pret.sales.report</field>
+            <field name="arch" type="xml">
+                <graph string="Distribución Estado" type="pie">
+                    <field name="estado"/>
+                    <field name="amount_total" operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_pret_sales_bar_report_graph" model="ir.ui.view">
+            <field name="name">pret.sales.bar.report.graph</field>
+            <field name="model">pret.sales.report</field>
+            <field name="arch" type="xml">
+                <graph string="Distribución Estado" type="bar">
+                    <field name="shop_id"/>
+                    <field name="amount_total" operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_pret_sales_report_report" model="ir.actions.act_window">
+            <field name="name">Informe División Ventas</field>
+            <field name="res_model">pret.sales.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,graph</field>
+            <field name="search_view_id"  ref="view_pret_sales_report_search"/>
+        </record>
+
+        <menuitem action="action_pret_sales_report_report" id="menu_pret_sales_report_report" parent="base.menu_sale_report" sequence="0"/>
+
+        <!-- DASHBOARD  -->
+        <record id="view_order_product_graph" model="ir.ui.view">
+             <field name="name">pret.sales.report.graph</field>
+             <field name="model">pret.sales.report</field>
+             <field name="arch" type="xml">
+                 <graph string="Sales Analysis">
+                     <field name="shop_id" type="row"/>
+                     <field name="amount_total" type="measure"/>
+                 </graph>
+             </field>
+        </record>
+
+        <record id="action_pret_resumen_report" model="ir.actions.act_window">
+            <field name="name">Resumen Mes en curso</field>
+            <field name="res_model">pret.sales.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_sales_report_search"/>
+            <field name="domain">[('date_order','&lt;=', time.strftime('%Y-%m-%d')),('date_order','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_estado':1,'group_by':[]}</field>
+        </record>
+
+        <record id="action_pret_detalle_report" model="ir.actions.act_window">
+            <field name="name">Detalle Mes en curso</field>
+            <field name="res_model">pret.sales.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_sales_report_search"/>
+            <field name="domain">[('date_order','&lt;=', time.strftime('%Y-%m-%d')),('date_order','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_shop':1,'search_default_group_user':1,'group_by':[]}</field>
+        </record>
+
+        <record id="action_pret_detalle_ventas_report" model="ir.actions.act_window">
+            <field name="name">Ventas Mes en curso</field>
+            <field name="res_model">pret.sales.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"  ref="view_pret_sales_report_search"/>
+            <field name="domain">['|', ('estado', 'in', ('vpe','ve')),('date_order','&lt;=', time.strftime('%Y-%m-%d')),('date_order','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_shop':1,'search_default_group_user':1,'group_by':[]}</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_pret_sales_pie_report_graph">
+            <field name="name">pret.sales.pie.report.graph</field>
+            <field name="model">pret.sales.report</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <graph type="pie" string="Estados">
+                    <field name="estado"/>
+                    <field name="amount_total" type='measure'/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pret_sales_bar_report_graph">
+            <field name="name">pret.sales.pie.report.graph</field>
+            <field name="model">pret.sales.report</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <graph type="bar" string="Estados">
+                    <field name="shop_id"/>
+                    <field name="amount_total" type='measure'/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pret_sales_pie_report_graph2">
+            <field name="name">pret.sales.pie.report.graph</field>
+            <field name="model">pret.sales.report</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <graph type="pie" string="Estados">
+                    <field name="shop_id"/>
+                    <field name="amount_total" type='measure'/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_pret_resumen_pie" model="ir.actions.act_window">
+            <field name="name">Distribución Estados</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_pret_sales_pie_report_graph"/>
+            <field name="domain">[('date_order','&lt;=', time.strftime('%Y-%m-%d')),('date_order','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_estado':1, 'group_by':[], 'graph_mode':'pie', 'graph_measure':'total_dimension'}</field>
+            <field name="res_model">pret.sales.report</field>
+        </record>
+        <record id="action_pret_resumen_bar" model="ir.actions.act_window">
+            <field name="name">Distribución Sucursales</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_pret_sales_bar_report_graph"/>
+            <field name="domain">[('date_order','&lt;=', time.strftime('%Y-%m-%d')),('date_order','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_shop_id':1, 'group_by':[], 'graph_mode':'bar', 'graph_measure':'amount_total'}</field>
+            <field name="res_model">pret.sales.report</field>
+        </record>
+
+        <record id="action_pret_resumen_pie2" model="ir.actions.act_window">
+            <field name="name">Distribución Sucursales</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_pret_sales_bar_report_graph"/>
+            <field name="domain">['|', ('estado', 'in', ('vpe','ve')),('date_order','&lt;=', time.strftime('%Y-%m-%d')),('date_order','&gt;=',time.strftime('%Y-%m-01'))]</field>
+            <field name="context">{'search_default_group_shop_id':1, 'group_by':[], 'graph_mode':'pie', 'graph_measure':'amount_total'}</field>
+            <field name="res_model">pret.sales.report</field>
+        </record>
+
+        <record id="board_pret_ventas_form" model="ir.ui.view">
+            <field name="name">pret.ventas.board</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Informe Ventas Mes">
+                    <board style="1-1">
+                        <column>
+                            <action name="%(action_pret_resumen_report)d" string="Resumen Mes en curso" creatable="false"/>
+                            <action name="%(action_pret_detalle_report)d" string="Detalle Mes en curso" creatable="false"/>
+                            <action name="%(action_pret_detalle_ventas_report)d" string="Ventas Mes en curso" creatable="false"/>
+                        </column>
+                        <!--<column>
+                            <action name="%(action_pret_resumen_pie)d" string="Distribución Estados"/>
+                            <action name="%(action_pret_resumen_bar)d" string="Distribución Sucursales"/>
+                            <action name="%(action_pret_resumen_pie2)d" string="Ventas por mes Gráfico"/>
+                        </column>-->
+                    </board>
+                </form>
+            </field>
+        </record>
+
+        <record id="pret_ventas_board_action" model="ir.actions.act_window">
+            <field name="name">Ventas Mes</field>
+            <field name="res_model">board.board</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="board_pret_ventas_form"/>
+        </record>
+        <menuitem action="pret_ventas_board_action" id="menu_pret_sales_board" parent="base.menu_reporting_dashboard" sequence="15"/>
+    </data>
+</openerp>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Account Account -->
+        <record model="ir.ui.view" id="view_poi_bol_account_form">
+            <field name="name">account.poi.bol.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='deprecated']" position="after">
+                    <newline/>
+                    <label string="Localización" class="o_horizontal_separator" style="font-size: 20px;"/>
+                    <field name="ajusta_ufv"/>
+                    <field name="account_aju_ufv_id"/>
+                    <field name="ajusta_usd"/>
+                    <field name="account_aju_usd_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Account Account Type Depreciado no se puede manipular en V9 los tipos de cuenta-->
+        <!--<record model="ir.ui.view" id="view_poi_bol_account_type_form">
+            <field name="name">account.type.poi.bol.form</field>
+            <field name="model">account.account.type</field>
+            <field name="inherit_id" ref="account.view_account_type_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <separator string="Ajustes de actualización"/>
+                    <newline/>
+                    <field name="account_aju_ufv_id"/>
+                    <field name="account_aju_usd_id"/>
+                </xpath>
+            </field>
+        </record>-->
+
+        <!-- Account Tax -->
+        <record model="ir.ui.view" id="account_tax_bol_form_view">
+            <field name="name">account.tax.form.bo</field>
+            <field name="model">account.tax</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='refund_account_id']" position="after">
+                    <field name="account_creditnote_id"
+                           domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]"/>
+                    <field name="type_bol" widget="selection"/>
+                    <field name="apply_lcv"/>
+                    <field name="manual"/>
+                </xpath>
+                <xpath expr="//field[@name='price_include']" position="after">
+                    <field name="cost_include"/>
+                    <newline/>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem parent="account.menu_finance_entries" name="Impuestos" id="menu_action_bol_imp" sequence="40"/>
+
+        <!-- BIMONETARIO -->
+
+        <record model="ir.ui.view" id="view_poi_bol_base_bimonetario_form">
+            <field name="name">poi.bol.base.bimonetario.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='credit']" position="after">
+                    <field name="debit_sec" sum="Total Debe Sec."/>
+                    <field name="credit_sec" sum="Total Haber Sec."/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_payment_account_journal_form" model="ir.ui.view">
+            <field name="name">account.payment.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="bank_payment_type" attrs="{'invisible': [('type','not in',('bank','cash'))]}"/>
+                    <field name="payment_model" invisible="0"/>
+                </xpath>
+                <xpath expr="//field[@name='bank_id']" position="after">
+                    <field name="card_code" attrs="{'invisible': [('payment_model','not in',('bank_card'))]}"/>
+                    <field name="card_bank_owner"
+                           attrs="{'invisible': [('payment_model','not in',('bank_card','bank_transfer'))]}"/>
+                    <field name="client_code" attrs="{'invisible': [('payment_model','not in',('sigma',))]}"/>
+                    <field name="other_description" attrs="{'invisible': [('payment_model','not in',('other',))]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_bol_bank_payment_type_form" model="ir.ui.view">
+            <field name="name">bol.bank.payment.type.form</field>
+            <field name="model">bol.bank.payment.type</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Payment Types" editable="bottom">
+                    <field name="name"/>
+                    <field name="payment_model"/>
+                    <field name="payment_document_type"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_bol_bank_payment_type" model="ir.actions.act_window">
+            <field name="name">Bank Payment Types</field>
+            <field name="res_model">bol.bank.payment.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_bol_bank_payment_type_form"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a payment type.
+                </p>
+                <p>
+                    These payment types must be configured in a journal where type is bank.
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_bol_bank_payment_type" id="menu_bol_bank_payment_type" sequence="12"
+                  parent="account.account_management_menu"/>
+
+        <!-- FIX9 -->
+        <record model="ir.ui.view" id="view_poi_bol_voucher_tree">
+            <field name="name">poi.bol.payment.tree</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="amount_applied" sum="Total Applied"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_account_payment_form_inh">
+            <field name="name">view.account.payment.form.inh</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <notebook
+                            attrs="{'invisible': [('payment_model','not in',('check','bank_transfer','sigma','bank_card','other'))]}">
+                        <page string="Detalles de pago" name="detail">
+                            <group attrs="{'invisible': [('payment_type','=','transfer')]}">
+                                <group>
+                                    <field name="bank_payment_type" invisible="1"/>
+                                    <field name="payment_model" invisible="1"/>
+                                    <field name="bank"
+                                           attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','check','bank_transfer'))]}"/>
+                                    <field name="bank_account_number"
+                                           attrs="{'invisible': [('payment_model','not in',('other','bank_transfer'))], 'required': [('payment_model','in',('other','bank_transfer'))]}"/>
+                                    <field name="transaction_number"
+                                           attrs="{'invisible': [('payment_model','not in',('other','bank_transfer'))], 'required': [('payment_model','in',('other','bank_transfer'))]}"/>
+                                    <field name="transaction_date"
+                                           attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','check','bank_transfer'))]}"/>
+                                    <field name="card_code"
+                                           attrs="{'invisible': [('payment_model','not in',('bank_card'))], 'required': [('payment_model','in',('bank_card'))]}"/>
+                                    <field name="card_bank_owner"
+                                           attrs="{'invisible': [('payment_model','not in',('bank_card','bank_transfer','check'))], 'required': [('payment_model','in',('bank_card','bank_transfer','check'))]}"/>
+                                    <field name="client_code"
+                                           attrs="{'invisible': [('payment_model','not in',('sigma',))], 'required': [('payment_model','in',('sigma',))]}"/>
+
+                                </group>
+                                <group>
+                                    <field name="check_number"
+                                           attrs="{'invisible': [('payment_model','not in',('other','check'))], 'required': [('payment_model','in',('other','check'))]}"/>
+                                    <field name="other_description"
+                                           attrs="{'invisible': [('payment_model','not in',('other',))], 'required': [('payment_model','in',('other',))]}"/>
+                                    <!--<field name="received_by" context="{'dialog': True, 'type': context.get('type'), 'partner_id': partner_id}"/>-->
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                <!--Fix para evitar que aparezcan duplicadas las opciones inbound & outbound-->
+                <xpath expr="//field[@name='payment_method_id']" position="attributes">
+                    <attribute name="domain">[('payment_type', '=', payment_type)]</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_payment_invoice_form_inh">
+            <field name="name">account.payment.voucher.receipt.form.inh</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group[2]" position="after">
+                    <notebook
+                            attrs="{'invisible': [('payment_model','not in',('check','bank_transfer','sigma','bank_card','other'))]}">
+                        <page string="Detalles de pago" name="detail">
+                            <group attrs="{'invisible': [('payment_type','=','transfer')]}">
+                                <group>
+                                    <field name="bank_payment_type" invisible="1"/>
+                                    <field name="payment_model" invisible="1"/>
+                                    <field name="bank"
+                                           attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','check','bank_transfer'))]}"/>
+                                    <field name="bank_account_number"
+                                           attrs="{'invisible': [('payment_model','not in',('other','bank_transfer'))], 'required': [('payment_model','in',('other','bank_transfer'))]}"/>
+                                    <field name="transaction_number"
+                                           attrs="{'invisible': [('payment_model','not in',('other','bank_transfer'))], 'required': [('payment_model','in',('other','bank_transfer'))]}"/>
+                                    <field name="transaction_date"
+                                           attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','check','bank_transfer'))]}"/>
+                                    <field name="card_code"
+                                           attrs="{'invisible': [('payment_model','not in',('bank_card'))], 'required': [('payment_model','in',('bank_card'))]}"/>
+                                    <field name="card_bank_owner"
+                                           attrs="{'invisible': [('payment_model','not in',('bank_card','bank_transfer','check'))], 'required': [('payment_model','in',('bank_card','bank_transfer','check'))]}"/>
+                                    <field name="client_code"
+                                           attrs="{'invisible': [('payment_model','not in',('sigma',))], 'required': [('payment_model','in',('sigma',))]}"/>
+
+                                </group>
+                                <group>
+                                    <field name="check_number"
+                                           attrs="{'invisible': [('payment_model','not in',('other','check'))], 'required': [('payment_model','in',('other','check'))]}"/>
+                                    <field name="other_description"
+                                           attrs="{'invisible': [('payment_model','not in',('other',))], 'required': [('payment_model','in',('other',))]}"/>
+                                    <!--<field name="received_by" context="{'dialog': True, 'type': context.get('type'), 'partner_id': partner_id}"/>-->
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

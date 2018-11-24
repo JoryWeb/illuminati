@@ -1,0 +1,717 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_partner_contract_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-23 15:54+0000\n"
+"PO-Revision-Date: 2018-05-23 15:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_partner_contract_purchase
+#: selection:partner.contract.invoice,state:0
+#: selection:res.partner.contract,state:0
+msgid "Borrador"
+msgstr "Borrador"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "Calcular"
+msgstr "Calcular"
+
+#. module: poi_partner_contract_purchase
+#: selection:partner.contract.invoice,state:0
+#: selection:res.partner.contract,state:0
+msgid "Cancelado"
+msgstr "Cancelado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Cancelar Contrato"
+msgstr "Cancelar Contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_product_qty
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_product_qty
+msgid "Cantidad"
+msgstr "Cantidad"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,help:poi_partner_contract_purchase.res_partner_contract_action
+msgid "Click to create a new contract."
+msgstr "Haga click para crear un nuevo contrato."
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,help:poi_partner_contract_purchase.res_partner_contract_purchase_action
+msgid "Click to create a new purchase contract."
+msgstr "Clic para crear un nuevo contrato de compras."
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_company_id
+msgid "Compañia"
+msgstr "Compañia"
+
+#. module: poi_partner_contract_purchase
+#: selection:res.partner.contract,state:0
+msgid "Completado"
+msgstr "Completado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_condi
+msgid "Condiciones"
+msgstr "Condiciones"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Confirmar Contrato"
+msgstr "Confirmar Contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_contract_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_contract_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_contract_id
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.res_partner_contract_form_view
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_contract_amount
+msgid "Contract Amount"
+msgstr "Monto del contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_contract_number
+msgid "Contract Number"
+msgstr "Numero de contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_type
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,name:poi_partner_contract_purchase.action_partner_contract_invoice
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_order_contract_id
+#: model:ir.ui.menu,name:poi_partner_contract_purchase.menu_partner_contract_invoice_pro_mgt
+msgid "Contracto de Compra"
+msgstr "Contracto de Compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.purchase_order_search_contract_inherit
+msgid "Contractos"
+msgstr "Contractos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,name:poi_partner_contract_purchase.res_partner_contract_action
+#: model:ir.ui.menu,name:poi_partner_contract_purchase.menu_partner_contracts_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.res_partner_contract_tree_view
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_assigned_form
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_res_partner_contract
+msgid "Contracts related to Partner"
+msgstr "Contratos relacionados al proveedor"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_contract_id
+msgid "Contrato de Compra"
+msgstr "Contrato de Compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Contrato de compra"
+msgstr "Contrato de compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_tree
+msgid "Contrato de compras"
+msgstr "Contrato de compras"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.purchase_order_form_contract_inherit2
+msgid "Contratos"
+msgstr "Contratos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.purchase_order_form_contract_inherit2
+msgid "Contratos con el proveedor"
+msgstr "Contratos con el proveedor"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_partner_contract_invoice
+msgid "Contratos de Compras y Facturas"
+msgstr "Contratos de Compras y Facturas"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.purchase_order_search_contract_inherit
+msgid "Contratos de compra asignados"
+msgstr "Contratos de compra asignados"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_create_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_create_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_create_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_create_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_create_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_create_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_create_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_create_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_create_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_create_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_create_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,name:poi_partner_contract_purchase.action_move_line_select_by_partner_contract
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Cuentas Generales"
+msgstr "Cuentas Generales"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_date_end
+msgid "Date End"
+msgstr "Fecha Final"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_date_start
+msgid "Date Start"
+msgstr "Fecha Inicial"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Definir Plan de Pagos"
+msgstr "Definir Plan de Pagos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_denom
+msgid "Denominación"
+msgstr "Denominación"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Descripción de contrato"
+msgstr "Descripción de contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "Detalle de recepciones"
+msgstr "Detalle de recepciones"
+
+#. module: poi_partner_contract_purchase
+#: code:addons/poi_partner_contract_purchase/wizard/contract_plan_wizard.py:89
+#, python-format
+msgid "Detalles del plan"
+msgstr "Detalles del plan"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_day_division
+msgid "Dias Intervalo"
+msgstr "Dias Intervalo"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_display_name
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_display_name
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_display_name
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_display_name
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_display_name
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_display_name
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_partner_contract_purchase
+#: selection:res.partner.contract,state:0
+msgid "En Vista"
+msgstr "En Vista"
+
+#. module: poi_partner_contract_purchase
+#: selection:partner.contract.invoice,state:0
+msgid "En proceso"
+msgstr "En proceso"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_state
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Estado"
+msgstr "Estado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,help:poi_partner_contract_purchase.field_purchase_delivery_invoice_state
+msgid "Estado Albarán"
+msgstr "Estado Albarán"
+
+#. module: poi_partner_contract_purchase
+#: selection:res.partner.contract,state:0
+msgid "Expirado"
+msgstr "Expirado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_invoice_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_invoice_id
+msgid "Factura"
+msgstr "Factura"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_delivery_date
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_date_end
+msgid "Fecha Final"
+msgstr "Fecha Final"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_delivery_date
+msgid "Fecha Ingreso Planificado"
+msgstr "Fecha Ingreso Planificado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_date_start
+msgid "Fecha Inicial"
+msgstr "Fecha Inicial"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_date
+msgid "Fecha Planificada"
+msgstr "Fecha Planificada"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_date_done
+msgid "Fecha Recepción"
+msgstr "Fecha Recepción"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,help:poi_partner_contract_purchase.field_partner_contract_invoice_line_date
+#: model:ir.model.fields,help:poi_partner_contract_purchase.field_purchase_delivery_invoice_date_done
+msgid "Fecha Recepción de los productos"
+msgstr "Fecha Recepción de los productos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,help:poi_partner_contract_purchase.field_partner_contract_invoice_date_end
+msgid "Fecha finalización del contracto"
+msgstr "Fecha finalización del contracto"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,help:poi_partner_contract_purchase.field_partner_contract_invoice_date_start
+msgid "Fecha inicial del contrato"
+msgstr "Fecha inicial del contrato"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_base_date
+msgid "Fecha primer pago"
+msgstr "Fecha primer pago"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Final de Mes"
+msgstr "Final de Mes"
+
+#. module: poi_partner_contract_purchase
+#: selection:partner.contract.invoice,state:0
+msgid "Finalizado"
+msgstr "Finalizado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Finalizar"
+msgstr "Finalizar"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Generar Factura"
+msgstr "Generar Factura"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_user_id
+msgid "Gestor contable"
+msgstr "Gestor contable"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_hecta
+msgid "Hectareas"
+msgstr "Hectareas"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Información"
+msgstr "Información"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_picking_id
+msgid "Ingreso"
+msgstr "Ingreso"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "Inventory Details"
+msgstr "Detalles del inventario"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_contract_plan_wizard_items
+msgid "Items para plan de entrega"
+msgstr "Items para plan de entrega"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_contract_plan_wizard_planned
+msgid "Items para plan pagos"
+msgstr "Items para plan pagos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard___last_update
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items___last_update
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned___last_update
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice___last_update
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line___last_update
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice___last_update
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_write_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_write_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_write_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_write_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_write_uid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_write_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_write_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_write_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_write_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_write_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_write_date
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_contract_line_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_order_line_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_contract_line_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_order_line_id
+msgid "Linea de Compra"
+msgstr "Linea de Compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_order_line_id
+msgid "Linea de pedido de compra"
+msgstr "Linea de pedido de compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_mejor
+msgid "Mejoras"
+msgstr "Mejoras"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_amount
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_amount
+msgid "Monto"
+msgstr "Monto"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_amount_inv
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_amount_inv
+msgid "Monto Factura"
+msgstr "Monto Factura"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_amount_division
+msgid "Monto Intervalo"
+msgstr "Monto Intervalo"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_amount_paid
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_amount_paid
+msgid "Monto Pagado"
+msgstr "Monto Pagado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_amount_rest
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_delivery_invoice_amount_rest
+msgid "Monto Restante"
+msgstr "Monto Restante"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "New Call for Bids"
+msgstr "Nuevo convocatoria de ofertas"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_name
+msgid "Nombre del Contracto"
+msgstr "Nombre del Contracto"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Nuevos"
+msgstr "Nuevos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_purchase_order_contract_count
+msgid "N° Contratos"
+msgstr "N° Contratos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_order_id
+msgid "Orden de Compra Base"
+msgstr "Orden de Compra Base"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_purchase_order
+msgid "Orden de compra"
+msgstr "Orden de compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_item_planned_ids
+msgid "Pagos Base"
+msgstr "Pagos Base"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_item_ids
+msgid "Pagos Planificados"
+msgstr "Pagos Planificados"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_plan_pagos
+msgid "Plan Facturación"
+msgstr "Plan Facturación"
+
+#. module: poi_partner_contract_purchase
+#: selection:partner.contract.invoice,plan_pagos:0
+msgid "Plan Fijos Recurrente"
+msgstr "Plan Fijos Recurrente"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_plan_pagos
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_plan_id
+#: selection:partner.contract.invoice,plan_pagos:0
+msgid "Plan de Pagos"
+msgstr "Plan de Pagos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_delivery_invoice_id
+msgid "Plan de entregas y facturas"
+msgstr "Plan de entregas y facturas"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_contract_invoice_id
+msgid "Plan de facturación y pagos"
+msgstr "Plan de facturación y pagos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_plan_id
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "Plan de pagos"
+msgstr "Plan de pagos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,help:poi_partner_contract_purchase.action_partner_contract_invoice
+msgid "Proceso de contrato de compras."
+msgstr "Proceso de contrato de compras."
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_planned_product_id
+msgid "Producto"
+msgstr "Producto"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_form
+msgid "Products"
+msgstr "Productos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_propi
+msgid "Propietario"
+msgstr "Propietario"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_partner_id
+msgid "Proveedor"
+msgstr "Proveedor"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,help:poi_partner_contract_purchase.action_partner_contract_invoice
+msgid "Puede crear contrato de compra asignados a los proveedores\n"
+"                según politicas de contratación:\n"
+"                Servicios, utilizado para contratos de servicio: Ej.\n"
+"                Contrato de Internet, Contrato de Servicio de Cable, Etc.\n"
+"                Compra de Productos, Utilizar las orden de compra para\n"
+"                definir el plan de entrega, si este se asigna a un contrato\n"
+"                de compra esta ventana le servira de resumen de la transacción"
+msgstr "Puede crear contrato de compra asignados a los proveedores\n"
+"                según politicas de contratación:\n"
+"                Servicios, utilizado para contratos de servicio: Ej.\n"
+"                Contrato de Internet, Contrato de Servicio de Cable, Etc.\n"
+"                Compra de Productos, Utilizar las orden de compra para\n"
+"                definir el plan de entrega, si este se asigna a un contrato\n"
+"                de compra esta ventana le servira de resumen de la transacción"
+
+#. module: poi_partner_contract_purchase
+#: selection:res.partner.contract,type:0
+msgid "Purchase"
+msgstr "Purchase"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,name:poi_partner_contract_purchase.res_partner_contract_purchase_action
+#: model:ir.ui.menu,name:poi_partner_contract_purchase.menu_res_partner_contract_purchase_action
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.res_partner_contract_purchase_form_view
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.res_partner_contract_purchase_tree_view
+msgid "Purchase Contracts"
+msgstr "Contrato de compra"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_reference
+msgid "Referencia"
+msgstr "Referencia"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_reference_payment
+msgid "Referencia Pago"
+msgstr "Referencia Pago"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: poi_partner_contract_purchase
+#: selection:res.partner.contract,type:0
+msgid "Sale"
+msgstr "Venta"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Search Call for Bids"
+msgstr "Buscar convocatorias y ofertas"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_contract_plan_wizard_items_product_id
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_line_product_id
+msgid "Servicio"
+msgstr "Servicio"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_state
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_res_partner_contract_state
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_is_banking
+msgid "Sujeto a bancarización"
+msgstr "Sujeto a bancarización"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "Terminar"
+msgstr "Terminar"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model.fields,field_description:poi_partner_contract_purchase.field_partner_contract_invoice_ubica
+msgid "Ubicación"
+msgstr "Ubicación"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Unassigned"
+msgstr "No asignado"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_partner_contract_invoice_filter
+msgid "Unassigned  Requisition"
+msgstr "Unassigned  Requisition"
+
+#. module: poi_partner_contract_purchase
+#: selection:res.partner.contract,state:0
+msgid "Valido"
+msgstr "Valido"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_contract_plan_wizard
+msgid "Wizard Plan de Pagos"
+msgstr "Formulario Plan de Pagos"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.actions.act_window,help:poi_partner_contract_purchase.res_partner_contract_action
+#: model:ir.actions.act_window,help:poi_partner_contract_purchase.res_partner_contract_purchase_action
+msgid "You can assign contracts to your customers here."
+msgstr "Puede asignar contratos a sus clientes aquí."
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.ui.view,arch_db:poi_partner_contract_purchase.view_contract_plan_wizard
+msgid "or"
+msgstr "o"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_partner_contract_invoice_line
+msgid "partner.contract.invoice.line"
+msgstr "partner.contract.invoice.line"
+
+#. module: poi_partner_contract_purchase
+#: model:ir.model,name:poi_partner_contract_purchase.model_purchase_delivery_invoice
+msgid "purchase.delivery.invoice"
+msgstr "purchase.delivery.invoice"

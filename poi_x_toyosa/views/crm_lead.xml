@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<record id="crm_case_form_view_oppor_toy" model="ir.ui.view">
+    <field name="name">New fields for Localization</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+    <field name="arch" type="xml">
+        <data>
+          <field name="title" position="replace">
+            <field name="title" placeholder="Titulo"/>
+          </field>
+
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+              <attribute name="attrs">{
+                  'required': 1,
+              }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='phone']" position="attributes">
+              <attribute name="attrs">{
+                  'required': 1,
+              }</attribute>
+            </xpath>
+            <field name="partner_id" position="before">
+                <field name='so_type_id'/>
+            </field>
+
+            <xpath expr="//div[@class='o_address_format']" position="after">
+                <field name='nit' attrs="{'required':[('ci', '=', False)]}"/>
+                <field name='razon'/>
+
+            </xpath>
+            <field name="mobile" position="before">
+                <label for="ci" string="Carnet de Identidad"/>
+                <div class="o_address_format">
+                    <field name='ci'  placeholder="CI" class="o_address_city" attrs="{'required':[('nit', '=', False)]}"/>
+                    <field name='ci_dept' placeholder="Expedido" class="o_address_state"/>
+                    <field name='extension' placeholder="Extension" class="o_address_zip"/>
+                </div>
+            </field>
+
+            <xpath expr="//page[@name='lead']" position="after">
+               <page name="business_sheet" string="Hoja de Negocios">
+                   <group>
+                       <group string="Vehiculo Actual">
+                           <field name='current_car'/>
+                           <field name='brand'/>
+                           <field name='model'/>
+                           <field name='year'/>
+                       </group>
+                       <group string="Datos Bancarios">
+                           <field name='bank'/>
+                           <field name='bank_name'/>
+                           <field name='direct'/>
+                           <field name='bank_eco'/>
+                           <field name='initial_fee'/>
+                           <field name='deadline'/>
+                           <field name='interest_annual'/>
+                           <field name='monthly_fee'/>
+
+                       </group>
+                       <group string="Producto a Adquirir">
+                           <field name='product_id'/>
+                           <field name='price_list'/>
+                           <field name='price_sale'/>
+                           <field name='car_payment'/>
+                           <field name='credit_application'/>
+                           <field name='brand_model'/>
+                           <field name='year2'/>
+                           <field name='km'/>
+                           <field name='partner_price'/>
+                       </group>
+                       <group string="Varios">
+                          <field name='insurance'/>
+                           <field name='checklist_ids' widget="one2many_list">
+                             <tree editable="bottom">
+                               <field name="item_id"/>
+                               <field name="activo"/>
+                               <field name="imp"/>
+                               <field name="price"/>
+                             </tree>
+                           </field>
+                           <field name='discount'/>
+                           <field name='chief_sale'/>
+                       </group>
+                   </group>
+
+               </page>
+            </xpath>
+
+            <xpath expr="//field[@name='campaign_id']" position="attributes">
+              <attribute name="options">
+                  {'limit': 10, 'create': false, 'create_edit': false}
+              </attribute>
+              <field name="campaign_id" widget="selection"/>
+            </xpath>
+            <xpath expr="//field[@name='medium_id']" position="attributes">
+              <attribute name="options">
+                  {'limit': 10, 'create': false, 'create_edit': false}
+              </attribute>
+            </xpath>
+            <xpath expr="//field[@name='source_id']" position="attributes">
+              <attribute name="options">
+                  {'limit': 10, 'create': false, 'create_edit': false}
+              </attribute>
+            </xpath>
+
+        </data>
+    </field>
+</record>
+
+</data>
+</odoo>

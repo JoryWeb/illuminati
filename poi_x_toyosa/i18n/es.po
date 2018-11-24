@@ -1,0 +1,874 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_imports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-10 20:40+0000\n"
+"PO-Revision-Date: 2017-01-10 20:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_affected_lines
+msgid "Affected lines"
+msgstr "Lineas Afectadas"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_total_amount
+msgid "Amount line"
+msgstr "Monto en linea"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Are you sure that you want to update product prices?"
+msgstr "¿Está seguro/a de que desea actualizar los precios de los productos?"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "By amount of the line"
+msgstr "Por importe de la línea"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "By product price"
+msgstr "Por el precio del producto"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "By product quantity"
+msgstr "Por la cantidad del producto"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "By product volume"
+msgstr "Por volumen de producto"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "By product weight"
+msgstr "Por el peso del producto"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "By product weight net"
+msgstr "Por el peso neto del producto"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Calculate"
+msgstr "Calcular"
+
+#. module: purchase_imports
+#: selection:purchase.imports,state:0
+msgid "Calculated"
+msgstr "Calculada"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Calculated Cost"
+msgstr "Coste calculado"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_calculation_method
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_calculation_method
+msgid "Calculation method"
+msgstr "Metodo de Calculo"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.import_invoice_line_wizard_view
+#: model:ir.ui.view,arch_db:purchase_imports.picking_import_wizard_view
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+#: selection:purchase.imports,state:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: purchase_imports
+#: model:ir.actions.act_window,help:purchase_imports.action_purchase_imports
+msgid "Click to create a draft purchase expenses distribution."
+msgstr "Haga clic para crear un borrador de distribución de gastos de compra."
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_company_id
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_company_id
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_company_id
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_company_id
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Cost Line Expenses"
+msgstr "Gastos de la línea de coste"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_cost_update_type
+msgid "Cost Update Type"
+msgstr "Tipo de costeo"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_amount
+msgid "Cost amount"
+msgstr "Costo"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Cost distribution"
+msgstr "Nombre"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_expense_invoice_form
+msgid "Cost distribution expenses"
+msgstr "Gastos de la distribución de costes"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Cost distribution line information"
+msgstr "Información de la línea de la distribución de costes"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Cost distribution notes..."
+msgstr "Notas de la distribución de costes..."
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_note
+msgid "Cost documentation"
+msgstr "Documentación de Costos"
+
+#. module: purchase_imports
+#: code:addons/purchase_imports/models/purchase_cost_distribution.py:282
+#: code:addons/purchase_imports/models/purchase_imports.py:282
+#, python-format
+msgid "Cost update cannot be undone because there has been a later update. Restore correct price and try again."
+msgstr "La actualización de coste no puede deshacerse porque ha habido una actualización posterior. Restaure el precio correcto y pruebe otra vez."
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Costs distribution picking lines"
+msgstr "Líneas de albaranes de la distribución de costes"
+
+#. module: purchase_imports
+#: model:ir.ui.menu,name:purchase_imports.menu_purchase_cost_control
+msgid "Costs distributions"
+msgstr "Distribuciones de costes"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_create_uid
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_create_uid
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_create_uid
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_create_date
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_create_date
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_create_date
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_date
+msgid "Date"
+msgstr "Fecha Apertura"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_default_expense
+msgid "Default Expense"
+msgstr "Gastos por defecto"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_default_amount
+msgid "Default amount"
+msgstr "Monto por defecto"
+
+#. module: purchase_imports
+#: selection:purchase.imports,cost_update_type:0
+msgid "Direct Update"
+msgstr "Actualización directa"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_display_name
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_display_name
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_display_name
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_display_name
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_display_name
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_display_name
+msgid "Display name"
+msgstr "Nombre mostrado"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_distribution_expense
+msgid "Distribution expense"
+msgstr "Distribución de gastos"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_cost_lines
+msgid "Distribution lines"
+msgstr "Distribución de lineas"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_name
+msgid "Distribution number"
+msgstr "Distribución de números"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_note
+msgid "Documentation for this order"
+msgstr "Documentación por este pedido"
+
+#. module: purchase_imports
+#: selection:purchase.imports,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: purchase_imports
+#: selection:purchase.imports,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_expense_invoice_form
+msgid "Duplicate expense"
+msgstr "Duplicar gasto"
+
+#. module: purchase_imports
+#: selection:purchase.expense.type,calculation_method:0
+msgid "Equally to all lines"
+msgstr "Igual para todas las líneas"
+
+#. module: purchase_imports
+#: selection:purchase.imports,state:0
+msgid "Error"
+msgstr "Error"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_expense_amount
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_expense_amount
+msgid "Expense amount"
+msgstr "Cantidad de gastos"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_expense_type
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_type
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_type
+msgid "Expense type"
+msgstr "Tipo de Gasto"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_lines
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Expenses"
+msgstr "Costos de Importación"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_lines
+msgid "Expenses distribution lines"
+msgstr "Lineas de distribución de gastos"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_weight
+msgid "Gross weight"
+msgstr "Peso Bruto"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_id
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_id
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_id
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_id
+msgid "ID"
+msgstr "ID"
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_expense_type_default_amount
+msgid "If set, this amount is put in the expense line when you select this expense type"
+msgstr "If set, this amount is put in the expense line when you select this expense type"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.import_invoice_line_wizard_view
+#: model:ir.ui.view,arch_db:purchase_imports.picking_import_wizard_view
+msgid "Import"
+msgstr "Importar"
+
+#. module: purchase_imports
+#: model:ir.actions.act_window,name:purchase_imports.action_picking_import_wizard
+#: model:ir.model,name:purchase_imports.model_picking_import_wizard
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Import incoming shipment"
+msgstr "Importar envío entrante"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Import invoice line"
+msgstr "Importar línea de factura"
+
+#. module: purchase_imports
+#: model:ir.actions.act_window,name:purchase_imports.action_import_invoice_line_wizard
+#: model:ir.model,name:purchase_imports.model_import_invoice_line_wizard
+msgid "Import supplier invoice line"
+msgstr "Importar línea de factura de proveedor"
+
+#. module: purchase_imports
+#: model:ir.model,name:purchase_imports.model_purchase_imports
+msgid "Importación de productos"
+msgstr "Importación de productos"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_imported_lines
+msgid "Imported lines"
+msgstr "Imported lines"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_pickings
+msgid "Incoming shipments"
+msgstr "Incoming shipments"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_invoice
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_invoice_line
+msgid "Invoice line"
+msgstr "Linea de Factura"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard___last_update
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard___last_update
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type___last_update
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports___last_update
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense___last_update
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line___last_update
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_write_uid
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_write_uid
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_write_uid
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_write_date
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_write_date
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_write_date
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_total_weight_net
+msgid "Line net weight"
+msgstr "Line net weight"
+
+#. module: purchase_imports
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_total_volume
+msgid "Line volume"
+msgstr "Line volume"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_total_weight
+msgid "Line weight"
+msgstr "Line weight"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_expense_type_name
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_weight_net
+msgid "Net weight"
+msgstr "Net weight"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_standard_price_new
+msgid "New cost"
+msgstr "New cost"
+
+#. module: purchase_imports
+#: code:addons/purchase_imports/models/purchase_cost_distribution.py:191
+#: code:addons/purchase_imports/models/purchase_imports.py:191
+#, python-format
+msgid "No valid distribution type."
+msgstr "Tipo de distribución no válida."
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_picking_id
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_move_id
+msgid "Picking line"
+msgstr "Picking line"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Picking lines"
+msgstr "Líneas de albarán"
+
+#. module: purchase_imports
+#: code:addons/purchase_imports/models/purchase_cost_distribution.py:212
+#: code:addons/purchase_imports/models/purchase_imports.py:212
+#, python-format
+msgid "Please enter an amount for all the expenses"
+msgstr "Introduzca un importe para todos los gastos"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_prev_pickings
+msgid "Prev pickings"
+msgstr "Prev pickings"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_standard_price_old
+msgid "Previous cost"
+msgstr "Previous cost"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_uos
+msgid "Product UoS"
+msgstr "Product UoS"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Product information"
+msgstr "Información de producto"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Purchase Cost Line"
+msgstr "Línea de coste de compra"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_calendar
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_graph
+msgid "Purchase cost distribution"
+msgstr "Distribución de costes de compras"
+
+#. module: purchase_imports
+#: model:ir.model,name:purchase_imports.model_purchase_imports_line
+msgid "Purchase cost distribution Line"
+msgstr "Línea de distribución de costes de compras"
+
+#. module: purchase_imports
+#: model:ir.model,name:purchase_imports.model_purchase_imports_expense
+msgid "Purchase cost distribution expense"
+msgstr "Gasto de distribución de costes de compras"
+
+#. module: purchase_imports
+#: model:ir.model,name:purchase_imports.model_purchase_imports_line_expense
+msgid "Purchase cost distribution line expense"
+msgstr "Gastos de la línea de distribución de costes de compras"
+
+#. module: purchase_imports
+#: model:ir.actions.act_window,name:purchase_imports.action_purchase_imports
+#: model:ir.ui.menu,name:purchase_imports.menu_purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_tree
+msgid "Purchase cost distributions"
+msgstr "Carpeta de Importaciones"
+
+#. module: purchase_imports
+#: model:ir.model,name:purchase_imports.model_purchase_expense_type
+msgid "Purchase cost type"
+msgstr "Tipo de coste de compras"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Purchase information"
+msgstr "Información de compra"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_purchase_id
+msgid "Purchase order"
+msgstr "Purchase order"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_purchase_line_id
+msgid "Purchase order line"
+msgstr "Purchase order line"
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_expense_affected_lines
+msgid "Put here specific lines that this expense is going to be distributed across. Leave it blank to use all imported lines."
+msgstr "Put here specific lines that this expense is going to be distributed across. Leave it blank to use all imported lines."
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_uos_qty
+msgid "Quantity (UoS)"
+msgstr "Quantity (UoS)"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Recalculate"
+msgstr "Recalcular"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_search
+msgid "Search purchase costs distributions"
+msgstr "Buscar distribuciones de costes de compra"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.picking_import_wizard_view
+msgid "Select incoming shipment wizard"
+msgstr "Asistente para seleccionar envío entrante"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.import_invoice_line_wizard_view
+msgid "Select supplier invoice line wizard"
+msgstr "Asistente para seleccionar la línea de factura de proveedor"
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_expense_type_default_expense
+msgid "Specify if the expense will be automatically added in a purchase cost distribution."
+msgstr "Specify if the expense will be automatically added in a purchase cost distribution."
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_import_invoice_line_wizard_supplier
+#: model:ir.model.fields,field_description:purchase_imports.field_picking_import_wizard_supplier
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_partner
+msgid "Supplier"
+msgstr "Supplier"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_expense_invoice_line
+msgid "Supplier invoice line"
+msgstr "Supplier invoice line"
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_product_price_unit
+msgid "Technical field used to record the product cost set by the user during a picking confirmation (when costing method used is 'average price' or 'real'). Value given in company currency and in product uom."
+msgstr "Campo técnico usado para guardar el coste de producto establecido por el usuario durante la confirmación del albarán (Cuando el método de coste usado es 'precio medio' o 'real'). Valor dado en la moneda de la compañía y en la UdM del producto."
+
+#. module: purchase_imports
+#: code:addons/purchase_imports/models/purchase_cost_distribution.py:197
+#: code:addons/purchase_imports/models/purchase_imports.py:197
+#, python-format
+msgid "The cost for the line '%s' can't be distributed because the calculation method doesn't provide valid data"
+msgstr "El coste para la línea '%s' no puede ser distribuido porque el método de cálculo no provee datos válidos"
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_product_weight
+msgid "The gross weight in Kg."
+msgstr "The gross weight in Kg."
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_total_weight
+msgid "The line gross weight in Kg."
+msgstr "The line gross weight in Kg."
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_total_weight_net
+msgid "The line net weight in Kg."
+msgstr "The line net weight in Kg."
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_total_volume
+msgid "The line volume in m3."
+msgstr "The line volume in m3."
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_product_weight_net
+msgid "The net weight in Kg."
+msgstr "The net weight in Kg."
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_product_volume
+msgid "The volume in m3."
+msgstr "El volumen en m3."
+
+#. module: purchase_imports
+#: code:addons/purchase_imports/models/purchase_cost_distribution.py:216
+#: code:addons/purchase_imports/models/purchase_imports.py:216
+#, python-format
+msgid "There is no picking lines in the distribution"
+msgstr "No hay líneas de albarán en la distribución"
+
+#. module: purchase_imports
+#: model:ir.model.fields,help:purchase_imports.field_purchase_imports_line_product_uos_qty
+msgid "This is the quantity of products from an inventory point of view. For moves in the state 'done', this is the quantity of products that were actually moved. For other moves, this is the quantity of product that is planned to be moved. Lowering this quantity does not generate a backorder. Changing this quantity on assigned moves affects the product reservation, and should be done with care."
+msgstr "Ésta es la cantidad de productos desde un punto de vista de inventario. Para movimientos en el estado 'Realizado', ésta es la cantidad de productos que se movieron realmente. Para otros movimiento, ésta es la cantidad de producto que está planeado mover. Disminuyendo esta cantidad no se genera un pedido en espera. Cambiando esta cantidad en movimientos asignados, afecta la reserva de producto, y debe ser realizado con cuidado."
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "This will undo the product price update (only if current value matches with the calculated price in this distribution). Do you want to continue?"
+msgstr "Esto deshará la actualización del precio del producto (sólo si el valor actual coincide con el precio calculado en esta distribución). ¿Quiere continuar?"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_amount_total
+msgid "Total"
+msgstr "Total"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Total Expenses"
+msgstr "Gastos totales"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_expense
+msgid "Total expenses"
+msgstr "Total expenses"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_weight
+msgid "Total gross weight"
+msgstr "Total gross weight"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_weight_net
+msgid "Total net weight"
+msgstr "Total net weight"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_price_unit
+msgid "Total price unit"
+msgstr "Total price unit"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_purchase
+msgid "Total purchase"
+msgstr "Total de Compra"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_uom_qty
+msgid "Total quantity"
+msgstr "Cantidad Total"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_total_volume
+msgid "Total volume"
+msgstr "Volumen Total"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_cost_ratio
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_expense_cost_ratio
+msgid "Unit cost"
+msgstr "Costo Unitario"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_uom
+msgid "Unit of measure"
+msgstr "Unit of measure"
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_price_unit
+msgid "Unit price"
+msgstr "Unit price"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.purchase_imports_form
+msgid "Update Cost"
+msgstr "Actualizar coste"
+
+#. module: purchase_imports
+#: model:ir.actions.act_window,help:purchase_imports.action_purchase_imports
+msgid "Use this menu to control the cost of purchases by expense type\n"
+"					such as transport, insurance, freight customs, etc."
+msgstr "Use this menu to control the cost of purchases by expense type\n"
+"					such as transport, insurance, freight customs, etc."
+
+#. module: purchase_imports
+#: model:ir.model.fields,field_description:purchase_imports.field_purchase_imports_line_product_volume
+msgid "Volume"
+msgstr "Volumen"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.view_purchase_imports_line_form
+msgid "Warehouse information"
+msgstr "Información de almacén"
+
+#. module: purchase_imports
+#: model:ir.actions.act_window,help:purchase_imports.action_purchase_imports
+msgid "You can add one or more receipts which share the same expenses\n"
+"					and update cost price of product."
+msgstr "You can add one or more receipts which share the same expenses\n"
+"					and update cost price of product."
+
+#. module: purchase_imports
+#: code:addons/purchase_imports/models/purchase_cost_distribution.py:130
+#: code:addons/purchase_imports/models/purchase_imports.py:130
+#, python-format
+msgid "You can't delete a confirmed cost distribution"
+msgstr "No puede eliminar una distribución de costes confirmada"
+
+#. module: purchase_imports
+#: model:ir.ui.view,arch_db:purchase_imports.import_invoice_line_wizard_view
+#: model:ir.ui.view,arch_db:purchase_imports.picking_import_wizard_view
+msgid "or"
+msgstr "o"
+
+#. module: stock
+#: sql_constraint:stock.production.lot:0
+msgid "The combination of serial number and product must be unique !"
+msgstr "¡La combinación de número de serie y producto debe ser única!"
+
+#. module: product
+#: selection:product.pricelist.item,compute_price:0
+msgid "Fix Price"
+msgstr "Precio Fijo"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_partner_title
+#: model:ir.model.fields,field_description:base.field_res_users_title
+#: model:ir.ui.menu,name:base.menu_title
+#, python-format
+msgid "title"
+msgstr "Titulo"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_partner_phone
+#: model:ir.model.fields,field_description:base.field_res_users_phone
+#: model:ir.ui.menu,name:base.menu_phone
+#, python-format
+msgid "phone"
+msgstr "Telefono"
+
+#. module: sales_team
+#. openerp-web
+#: code:addons/sales_team/static/src/xml/sales_team_dashboard.xml:214
+#, python-format
+msgid "Great sales journeys start with a clean pipeline."
+msgstr "Todo proceso de ventas tiene que iniciar por un flujo de ventas limpio! "
+#. module: utm
+#: model:ir.actions.act_window,name:utm.utm_source_action
+#: model:ir.model.fields,field_description:utm.field_utm_mixin_source_id
+#: model:ir.ui.menu,name:utm.menu_utm_source
+#: model:ir.ui.view,arch_db:utm.utm_source_view_tree
+#: model:ir.ui.view,arch_db:utm.utm_source_view_tree
+msgid "Sources"
+msgstr "Fuentes"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/chatter.js:216
+#, python-format
+msgid "No follower"
+msgstr "Sin seguidores"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:602
+#, python-format
+msgid "Measures"
+msgstr "Medidas"
+
+#. module: crm
+#: model:ir.model.fields,field_description:crm.field_crm_lead_title
+#: model:ir.ui.view,arch_db:crm.crm_case_form_view_leads
+#: model:ir.ui.view,arch_db:crm.crm_case_form_view_oppor
+msgid "Title"
+msgstr "Titulo"
+
+#. module: crm
+#: model:ir.ui.view,arch_db:crm.crm_case_form_view_leads
+#: model:ir.ui.view,arch_db:crm.crm_case_form_view_oppor
+msgid "Title"
+msgstr "Titulo"
+
+#. module: crm
+#: model:ir.ui.view,arch_db:crm.crm_case_form_view_leads
+msgid "Describe the lead..."
+msgstr "Describa la iniciativa..."
+
+#. module: utm
+#: model:ir.actions.act_window,name:utm.utm_source_action
+#: model:ir.model.fields,field_description:utm.field_utm_mixin_source_id
+#: model:ir.ui.menu,name:utm.menu_utm_source
+#: model:ir.ui.view,arch_db:utm.utm_medium_view_tree
+#: model:ir.ui.view,arch_db:utm.utm_source_view_tree
+msgid "Source"
+msgstr "Fuentes"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_res_partner_property_account_receivable_id
+msgid "Account Receivable"
+msgstr "Anticipo Clientes"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_res_partner_property_account_payable_id
+msgid "Account Payable"
+msgstr "Anticipo proveedores"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:product.product_template_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_product_comercial
+msgid "Products"
+msgstr "Productos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:account.action_invoice_tree1
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_invoice_comercial
+msgid "Customer Invoices"
+msgstr "Facturas de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_payment_request.action_payment_request
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_solicitud_comercial
+msgid "Outbound Payment Requests"
+msgstr "Solicitudes de Pago"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_payment_request.action_payment_request
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_solicitud_comercial
+msgid "Outbound Payment Requests"
+msgstr "Solicitudes de Pago"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:account.action_account_invoice_report_all
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_analisis_facturas_comercial
+msgid "Invoices Analysis"
+msgstr "Analisis de Facturas"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_analytic_line_analytic_amount_currency
+#: model:ir.ui.view,arch_db:account.view_account_analytic_line_filter_inherit_account
+msgid "Amount Currency"
+msgstr "Monto de Dinero"

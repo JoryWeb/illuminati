@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record forcecreate="True" id="metric" model="decimal.precision">
+            <field name="name">Metric</field>
+            <field name="digits">2</field>
+        </record>
+        <record forcecreate="True" id="totalmetric" model="decimal.precision">
+            <field name="name">TotalMetric</field>
+            <field name="digits">2</field>
+        </record>
+    </data>
+</openerp>

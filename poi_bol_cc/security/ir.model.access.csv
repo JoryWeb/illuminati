@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_poi_bol_base_cc_dosif_sector","cc_dosif_sector","model_poi_bol_base_cc_dosif_sector","account.group_account_invoice",1,0,0,0
+"access_poi_bol_base_cc_dosif_sector_mng","cc_dosif_sector_mng","model_poi_bol_base_cc_dosif_sector","account.group_account_manager",1,1,1,1
+"access_poi_bol_base_cc_dosif_leyenda","cc_dosif_leyenda","model_poi_bol_base_cc_dosif_leyenda","account.group_account_invoice",1,0,0,0
+"access_poi_bol_base_cc_dosif_leyenda_mng","cc_dosif_leyenda_mng","model_poi_bol_base_cc_dosif_leyenda","account.group_account_manager",1,1,1,1
+access_poi_bol_cc_cc_certif_mng,cc_certif_mng,model_poi_bol_cc_cc_certif,account.group_account_manager,1,1,1,1
+

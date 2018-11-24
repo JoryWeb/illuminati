@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="partida_arancelaria_tree" model="ir.ui.view">
+            <field name="name">partida.arancelaria.tree</field>
+            <field name="model">partida.arancelaria</field>
+            <field name="arch" type="xml">
+                <tree string="Partida Arancelaria" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="partida_arancelaria_action" model="ir.actions.act_window">
+            <field name="name">Partidas Arancelarias</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">partida.arancelaria</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Definir Partidas Arancelarias
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="partida_arancelaria_action"
+                  id="menu_partida_arancelaria_action"
+                  parent="sale.menu_product_template_action" sequence="16"/>
+
+
+        <record id="product_template_partida" model="ir.ui.view">
+            <field name="name">product.template.partida</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="partida"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="product_product_partida" model="ir.ui.view">
+            <field name="name">product.product.partida</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="partida"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_product_form_purch_price">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="uom_id" position="before">
+                    <field name="last_purch_price" readonly="1"/>
+                </field>
+                <field name="barcode" position="after">
+                    <field name="old_code"/>
+                </field>
+                <field name="supplier_taxes_id" position="after">
+                    <field name="ice"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

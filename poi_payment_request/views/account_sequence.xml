@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.sequence" id="seq_payment_request">
+            <field name="name">Payment Request</field>
+            <field name="code">payment.request</field>
+            <field name="padding" eval="6"/>
+            <field name="prefix">PFR/</field>
+        </record>
+
+        <record model="ir.sequence" id="seq_payment_request_inbound">
+            <field name="name">Payment Request Inbound</field>
+            <field name="code">payment.request.inbound</field>
+            <field name="padding" eval="6"/>
+            <field name="prefix">PFR/</field>
+        </record>
+
+        <record model="ir.sequence" id="seq_expenses_rendition">
+            <field name="name">Expenses Rendition</field>
+            <field name="code">expenses.rendition</field>
+            <field name="padding" eval="6"/>
+            <field name="prefix">AER/</field>
+        </record>
+    </data>
+</odoo>

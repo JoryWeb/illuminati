@@ -1,0 +1,26 @@
+<openerp>
+	<data>
+		
+		<record id="view_bol_customer_tree" model="ir.ui.view">
+			<field name="name">view.bol.customer.form</field>
+			<field name="model">bol.customer</field>
+			<field name="arch" type="xml">
+				<tree string="Customers" editable="bottom">
+					<field name="nit"/>
+					<field name="razon"/>
+				</tree>
+			</field>
+		</record>
+		 
+		<record model="ir.actions.act_window" id="bol_customer_action">
+        <field name="name">Bol Customers</field>
+        <field name="res_model">bol.customer</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_bol_customer_tree"/>
+    </record>
+		
+		<menuitem parent="menu_finance_local_config" id="bol_customer_action_menu" action="bol_customer_action" sequence="13"/>
+
+	</data>
+</openerp>

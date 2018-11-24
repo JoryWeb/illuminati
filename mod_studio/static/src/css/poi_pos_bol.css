@@ -1,0 +1,33 @@
+.line-separator {
+    height: 1px;
+    background: #717171;
+    border-bottom: 1px solid #313030;
+}
+
+.line-cleaner {
+    height: 0px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+#customer_razon {
+    text-transform: uppercase;
+}
+
+img.qr_img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.qr_img_invoice {
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

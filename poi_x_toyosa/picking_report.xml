@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            string="Operacion Picking Checklist"
+            id="action_report_picking_checklist"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="poi_x_toyosa.report_picking_toyosa"
+            file="poi_x_toyosa.report_picking_toyosa"
+        />
+    </data>
+</odoo>

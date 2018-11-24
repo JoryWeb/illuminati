@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_traffic,crm.traffic,model_crm_traffic,sales_team.group_sale_manager,1,1,1,0
+access_crm_traffic_reason,crm.traffic.reason,model_crm_traffic_reason,sales_team.group_sale_manager,1,1,1,0
+access_crm_traffic_tag,crm.traffic.tag,model_crm_traffic_tag,sales_team.group_sale_manager,1,1,1,0
+
+
+access_crm_traffic2,crm.traffic,model_crm_traffic,sales_team.group_sale_salesman,1,1,1,0
+access_crm_traffic_reason2,crm.traffic.reason,model_crm_traffic_reason,sales_team.group_sale_salesman,1,1,1,0
+access_crm_traffic_tag2,crm.traffic.tag,model_crm_traffic_tag,sales_team.group_sale_salesman,1,1,1,0

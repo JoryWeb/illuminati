@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<!-- Moneda -->
+	<data noupdate="1">
+
+        <record id="base.BOB" model="res.currency">
+            <field eval="1" name="base"/>
+        </record>
+		<record id="rate_bob" model="res.currency.rate" >
+			<field name="rate">1.0</field>
+			<field name="currency_id" ref="base.BOB" />
+      		<field eval="time.strftime('%Y-01-01')" name="name"/>			
+		</record>
+		<record id="rate_usd" model="res.currency.rate" >
+			<field name="rate">0.14367816091954</field>
+			<field name="currency_id" ref="base.USD" />
+      		<field eval="time.strftime('2018-01-01')" name="name"/>
+		</record>
+        <record id="base.rateEUR" model="res.currency.rate" >
+			<field name="rate">0.125015554</field>
+      		<field eval="time.strftime('2015-09-18')" name="name"/>
+		</record>
+
+        <record id="res_currency_ufv" model="res.currency">
+			<field name="name">UFV</field>
+			<field eval="0.01" name="rounding"/>
+			<field name="symbol">UFV</field>
+			<field eval="1" name="active"/>
+			<field eval="0" name="base"/>
+			<field name="position">after</field>
+			<field eval="4" name="accuracy"/>
+			<field name="company_id" ref="base.main_company"/>
+		</record>
+        <record id="rate_ufv" model="res.currency.rate" >
+			<field name="rate">0.4470072862187654</field>
+			<field name="currency_id" ref="res_currency_ufv" />
+      		<field eval="time.strftime('2018-01-01')" name="name"/>
+		</record>
+
+		<record id="base.main_company" model="res.company">
+			<field name="name">Su Empresa</field>
+            <field name="rml_footer1">Web: www.suempresa.bo - Telf: +591-2-1234567</field>
+            <field name="currency_id" ref="base.BOB"/>
+            <field name="country_id" ref="base.bo"/>
+        </record>
+        
+        <record id="product.list0" model="product.pricelist">
+        	<field name="currency_id" ref="base.BOB"/>
+        </record>
+
+		
+        <!-- 
+        <record id="lang_es_bo" model="res.lang">
+            <field name="code">es_BO</field>
+            <field name="name">Español</field>
+            <field name="translatable">True</field>
+        </record>
+
+        <function name="install_lang" model="res.lang"/>
+        
+        <record id="lang_es_bo" model="res.lang">
+        	<field name="code">es_BO</field>
+        	<field name="name">Español BO</field>
+            <field name="date_format">%d/%m/%Y</field>
+            <field name="date_format">%H:%M</field>
+        </record>
+        ó
+        -->
+        
+        <record model="base.language.install" id="install_es_BO">
+	        <field name="lang">es_BO</field>
+	        <field name="state">done</field>
+	        <field name="overwrite" eval="1"/>
+	    </record>
+	
+	    <function model="base.language.install" name="lang_install"
+	         eval="[[ref('install_es_BO')]]"/>
+         
+	</data>
+	
+	
+<!-- Ciudades -->
+	
+	<data noupdate="1">
+		
+		<!--<delete model="res.country.state" search="[('code','in',('AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','MD','MA','MI','MN','MS','MO','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'))]" />-->
+		<!--<delete model="res.country.state" search="[('country_id','=','235')]" />   -->
+        <function model="res.partner" name="write">
+            <function model="res.partner" name="search" eval="[[]]"/>
+            <value eval="{'state_id': False}"/>
+        </function>
+		<function model="res.country.state" name="unlink">
+            <function model="res.country.state" name="search" eval="[[('country_id', '=', 235)]]"/>
+        </function>
+
+		<record model="res.country.state" id="BOLP">
+			<field name="name">La Paz</field>
+			<field name="code">LP</field>
+			<field name="country_id" ref="base.bo"/>
+			<!--field search="[('code','=','BO')]" model="res.country" name="country_id"/-->
+		</record>
+		<record model="res.country.state" id="BOCB">
+			<field name="name">Cochabamba</field>
+			<field name="code">CB</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOSC">
+			<field name="name">Santa Cruz</field>
+			<field name="code">SC</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOCH">
+			<field name="name">Chuquisaca</field>
+			<field name="code">CH</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOPD">
+			<field name="name">Pando</field>
+			<field name="code">PD</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOBN">
+			<field name="name">Beni</field>
+			<field name="code">BN</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOTJ">
+			<field name="name">Tarija</field>
+			<field name="code">TJ</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOOR">
+			<field name="name">Oruro</field>
+			<field name="code">OR</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+		<record model="res.country.state" id="BOPT">
+			<field name="name">Potosí</field>
+			<field name="code">PT</field>
+			<field name="country_id" ref="base.bo"/>
+		</record>
+
+	</data>
+
+
+</openerp>

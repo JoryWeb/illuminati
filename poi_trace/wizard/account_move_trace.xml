@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_move_trace_wizard_form">
+            <field name="name">account_move_trace_wizard</field>
+            <field name="model">account.move.trace.wizard</field>
+            <field name="arch" type="xml">
+                <form string="View Origin">
+                    <separator string="Do you want to see the origin of this asset?" colspan="4" />
+                    <field name="lines" edit="0" create="0" delete="0">
+                        <tree edit="0" editable="bottom" create="0" delete="0">
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="view_account_move_origin" string="View Origin" type="object" class="oe_highlight"/>
+                         or
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            name="View Origin"
+            res_model="account.move.trace.wizard"
+            src_model="account.move"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_account_move_trace_wizard" />
+    </data>
+</odoo>

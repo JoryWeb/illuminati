@@ -1,0 +1,49 @@
+<openerp>
+    <data>
+        <record id="view_agency_form" model="ir.ui.view">
+            <field name="name">res.agency.form</field>
+            <field name="model">res.agency</field>
+            <field name="arch" type="xml">
+                <form string="Agency">
+                  <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="parent_id"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Shops">
+                            <!--<field name="shop_ids"/>-->
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_agency_tree" model="ir.ui.view">
+            <field name="name">res.agency.tree</field>
+            <field name="model">res.agency</field>
+            <field name="arch" type="xml">
+                <tree string="Agencies">
+                    <field name="complete_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_res_agency_form" model="ir.actions.act_window">
+            <field name="name">Agencies</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.agency</field>
+            <field name="view_type">form</field>
+            <field name="context">{'display_all': True}</field>
+            <field name="help">Create and manage the agencies to group shops.</field>
+        </record>
+
+        <menuitem action="action_res_agency_form" id="menu_action_res_agency_form" name="Agencias" parent="stock.menu_warehouse_config" sequence="6"/>
+
+    </data>
+</openerp>

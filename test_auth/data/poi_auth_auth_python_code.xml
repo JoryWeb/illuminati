@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record model="poi.auth.auth.python.code" id="test_python_sale_price_unit">
+            <field name="code">
+for order in object:
+  for line in order.order_line:
+    if line.price_unit %(operator)s %(value)s:
+      result = True
+            </field>
+            <field name="name">Precio unitario de ventas</field>
+        </record>
+        <record model="poi.auth.auth.python.code" id="test_python_purchase_standard_price">
+            <field name="code">
+for order in object:
+  for line in order.order_line:
+    if line.price_unit &gt; line.product_id.standard_price:
+      result = True
+            </field>
+            <field name="name">Precio unitario es mayor del costo de compra</field>
+        </record>
+    </data>
+</odoo>

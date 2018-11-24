@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="Talleres"
+                  id="base.menu_vehicle_root"
+                  groups="poi_vehicle.group_mro_customer"
+                  sequence="80"/>
+
+        <!-- Vehicle menu -->
+        <menuitem name="Registros"
+                  id="menu_maintenance_vehicles"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_vehicle.group_mro_customer"
+                  sequence="9"/>
+
+        <!-- Vehicle Tree View  -->
+        <record id="poi_vehicle_tree_view" model="ir.ui.view">
+            <field name="name">poi.vehicle.tree</field>
+            <field name="model">poi.vehicle</field>
+            <field name="arch" type="xml">
+                <tree string="Vehicle">
+                    <field name="name"/>
+                    <field name="vendor_id"/>
+                    <field name="chasis_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vehicle Form View  -->
+        <record id="poi_vehicle_form_view" model="ir.ui.view">
+            <field name="name">poi.vehicle.form</field>
+            <field name="model">poi.vehicle</field>
+            <field name="arch" type="xml">
+                <form string="Vehicle">
+                    <header>
+                        <field name="maintenance_state_id" widget="statusbar" clickable="True"
+                               groups="poi_vehicle.group_mro_user"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                        </div>
+                        <field name="image_medium" widget="image" class="oe_avatar oe_left"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <field name="category_ids" widget="many2many_tags" placeholder="Tags..."/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="vendor_id"/>
+                                <field name="chasis_id"
+                                       options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="texto"/>
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="info" string="Info">
+                                <group string="Datos de Vehículo">
+                                    <group>
+                                        <field name="n_chasis"/>
+                                        <field name="modelo"/>
+                                        <field name="anio_modelo"
+                                               options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                        <field name="anio_fabricacion"/>
+                                        <field name="edicion"/>
+                                        <field name="colorinterno"
+                                               options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                        <field name="colorexterno"
+                                               options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                    </group>
+                                    <group>
+                                        <field name="marca"/>
+                                        <field name="n_motor"/>
+                                        <field name="n_llaves"/>
+                                        <field name="cant_llaves"/>
+                                        <field name="criticality"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vehicle Kanban View  -->
+        <record model="ir.ui.view" id="poi_vehicle_kanban_view">
+            <field name="name">Vehicle Kanban</field>
+            <field name="model">poi.vehicle</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <field name="image_small"/>
+                    <field name="maintenance_state_id"/>
+                    <field name="maintenance_state_color"/>
+                    <field name="user_id"/>
+                    <field name="vendor_id"/>
+                    <field name="criticality"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <t t-if="record.image_small.raw_value">
+                                        <img t-att-src="kanban_image('poi.vehicle', 'image_small', record.id.raw_value)"/>
+                                    </t>
+                                    <div t-attf-title="#{record.maintenance_state_id.value}"
+                                         t-attf-class="codup_status_color_#{record.maintenance_state_color.raw_value} codup_status"></div>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="open">
+                                            <field name="name"/>
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                        <li>
+                                            <strong>Model:</strong>
+                                            <field name="modelo"></field>
+                                        </li>
+                                        <li>
+                                            <strong>Chasis:</strong>
+                                            <field name="chasis_id"></field>
+                                        </li>
+                                        <li>
+                                            <strong>Dueño Actual:</strong>
+                                            <field name="vendor_id"></field>
+                                        </li>
+                                        <li class="codup_kanban_info">
+                                            <!--<a t-if="record.criticality.raw_value == 0"
+                                               t-attf-title="#{record.criticality.value}" class="codup_attention_off">
+                                                <span class="fa fa-exclamation-triangle"/>
+                                            </a>
+                                            <a t-if="record.criticality.raw_value gt 0"
+                                               t-attf-title="#{record.criticality.value}" class="codup_attention_on">
+                                                <span class="fa fa-exclamation-triangle"/>
+                                            </a>
+                                            <a t-if="record.criticality.raw_value lte 1"
+                                               t-attf-title="#{record.criticality.value}" class="codup_attention_off">
+                                                <span class="fa fa-exclamation-triangle"/>
+                                            </a>
+                                            <a t-if="record.criticality.raw_value gt 1"
+                                               t-attf-title="#{record.criticality.value}" class="codup_attention_on">
+                                                <span class="fa fa-exclamation-triangle"/>
+                                            </a>
+                                            <a t-if="record.criticality.raw_value lte 2"
+                                               t-attf-title="#{record.criticality.value}" class="codup_attention_off">
+                                                <span class="fa fa-exclamation-triangle"/>
+                                            </a>
+                                            <a t-if="record.criticality.raw_value gt 2"
+                                               t-attf-title="#{record.criticality.value}" class="codup_attention_on">
+                                                <span class="fa fa-exclamation-triangle"/>
+                                            </a>-->
+                                            <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)"
+                                                 t-att-title="record.user_id.value" width="30" height="30"
+                                                 class="oe_kanban_avatar"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Vehicle Search  -->
+        <record model="ir.ui.view" id="poi_vehicle_search">
+            <field name="name">Vehicle Search</field>
+            <field name="model">poi.vehicle</field>
+            <field name="arch" type="xml">
+                <search string="Vehicle Search">
+                    <field name="name"/>
+                    <field name="texto"/>
+                    <field name="vendor_id"/>
+                    <field name="colorinterno"/>
+                    <field name="colorexterno"/>
+                    <field name="edicion"/>
+                    <field name="category_ids"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_name"
+                                string="Name"
+                                context="{'group_by': 'name'}"
+                        />
+                        <filter name="group_user"
+                                string="Owner"
+                                context="{'group_by': 'vendor_id'}"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_vehicles" model="ir.actions.act_window">
+            <field name="name">Vehicle</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.vehicle</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_poi_vehicle_kanban_view">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="poi_vehicle_kanban_view"/>
+            <field name="act_window_id" ref="action_vehicles"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_poi_vehicle_tree_view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="poi_vehicle_tree_view"/>
+            <field name="act_window_id" ref="action_vehicles"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_poi_vehicle_form_view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="poi_vehicle_form_view"/>
+            <field name="act_window_id" ref="action_vehicles"/>
+        </record>
+
+        <!-- Vehicle item -->
+        <menuitem name="Vehicle"
+                  action="action_vehicles"
+                  id="menu_maintenance_poi_vehicle_vehicles"
+                  parent="menu_maintenance_vehicles"
+                  groups="poi_vehicle.group_mro_customer"
+                  sequence="100"/>
+
+        <!-- Management Vehicle Kanban View  -->
+        <record model="ir.ui.view" id="management_poi_vehicle_kanban_view">
+            <field name="name">Manage states Vehicle Kanban</field>
+            <field name="model">poi.vehicle</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="maintenance_state_id" create="false" delete="false">
+                    <field name="maintenance_state_id"/>
+                    <field name="maintenance_state_color"/>
+                    <field name="user_id"/>
+                    <field name="criticality"/>
+                    <field name="image_small"/>
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="codup_kanban_left">
+                                    <a type="open">
+                                        <img t-att-src="kanban_image('poi.vehicle', 'image_small', record.id.raw_value)"
+                                             class="oe_kanban_image"/>
+                                    </a>
+                                    <div t-attf-title="#{record.maintenance_state_id.value}"
+                                         t-attf-class="codup_status_color_#{record.maintenance_state_color.raw_value} codup_status"></div>
+                                </div>
+                                <div class="codup_kanban_details">
+                                    <h4>
+                                        <a type="open">
+                                            <field name="name"/>
+                                        </a>
+                                    </h4>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <strong>Model:</strong>
+                                            </td>
+                                            <td>
+                                                <field name="modelo"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Chasis:</strong>
+                                            </td>
+                                            <td>
+                                                <field name="chasis_id"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Dueño Actual:</strong>
+                                            </td>
+                                            <td>
+                                                <field name="vendor_id"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)"
+                                                     t-att-title="record.user_id.value" width="30" height="30"
+                                                     class="oe_kanban_avatar"/>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_management_vehicles" model="ir.actions.act_window">
+            <field name="name">Manage states</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.vehicle</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_management_poi_vehicle_kanban_view">
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="management_poi_vehicle_kanban_view"/>
+            <field name="act_window_id" ref="action_management_vehicles"/>
+        </record>
+
+        <!-- Management Vehicle item -->
+        <menuitem name="Manage states"
+                  action="action_management_vehicles"
+                  id="menu_maintenance_poi_vehicle_management"
+                  parent="menu_maintenance_vehicles"
+                  groups="poi_vehicle.group_mro_user"
+                  sequence="100"/>
+
+        <!-- Report menu -->
+        <menuitem name="Reports"
+                  id="menu_maintenance_report"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_vehicle.group_mro_customer"
+                  sequence="30"/>
+
+        <!-- Configuration menu -->
+        <record model="ir.ui.menu" id="poi_vehicle.menu_maintenance_config">
+            <field name="name">Configuration</field>
+            <field eval="[(6,0,[ref('base.group_system')])]" name="groups_id"/>
+        </record>
+        <!--<menuitem name="Configuration"
+                  id="poi_vehicle.menu_maintenance_config"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_support.group_soporte_interno"
+                  sequence="200"/>-->
+        <menuitem name="Configuration"
+                  id="menu_maintenance_config"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_vehicle.group_mro_manager"
+                  sequence="200"/>
+
+        <!-- Vehicle State Form View  -->
+        <record id="vehicle_state_form_view" model="ir.ui.view">
+            <field name="name">vehicle.state.form</field>
+            <field name="model">vehicle.state</field>
+            <field name="arch" type="xml">
+                <form string="State" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="state_color"/>
+                                <field name="team"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vehicle State Kanban View  -->
+        <record model="ir.ui.view" id="vehicle_state_kanban_view">
+            <field name="name">Vehicle State Kanban</field>
+            <field name="model">vehicle.state</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="team">
+                    <field name="name"/>
+                    <field name="team"/>
+                    <field name="state_color"/>
+                    <field name="sequence" widget="handle"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card codup_kanban_status oe_kanban_global_click">
+                                <h4>
+                                    <a name="change_color" string="Change color" type="object">
+                                        <span t-attf-class="codup_status_color_#{record.state_color.raw_value} codup_status"></span>
+                                    </a>
+                                    <field name="name"/>
+                                </h4>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_vehicle_state" model="ir.actions.act_window">
+            <field name="name">Vehicle States</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vehicle.state</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!-- Vehicle state item -->
+        <menuitem name="Vehicle States"
+                  action="action_vehicle_state"
+                  id="menu_vehicle_state"
+                  parent="menu_maintenance_config"
+                  groups="poi_vehicle.group_mro_manager"
+                  sequence="100"/>
+
+        <!-- Vehicle Tags Tree View -->
+        <record id="vehicle_category_tree_view" model="ir.ui.view">
+            <field name="name">vehicle.category.tree</field>
+            <field name="model">vehicle.category</field>
+            <field name="arch" type="xml">
+                <tree string="Vehicle Tags" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_vehicle_category" model="ir.actions.act_window">
+            <field name="name">Vehicle Tags</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vehicle.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!-- Vehicle Tags item -->
+        <menuitem name="Vehicle Tags"
+                  action="action_vehicle_category"
+                  id="menu_vehicle_category"
+                  parent="menu_maintenance_config"
+                  groups="poi_vehicle.group_mro_manager"
+                  sequence="100"/>
+
+        <!-- Historial de Dueños -->
+        <!-- Vehicle Tree View  -->
+        <record id="poi_vehicle_history_tree_view" model="ir.ui.view">
+            <field name="name">poi.vehicle.history.tree</field>
+            <field name="model">poi.vehicle.history</field>
+            <field name="arch" type="xml">
+                <tree string="History">
+                    <field name="asset_id"/>
+                    <field name="partner_id"/>
+                    <field name="date_history"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="menu_partner_vehicle_form" parent="menu_maintenance_vehicles" action="base.action_partner_form"
+                  sequence="3" name="Clientes"/>
+
+    </data>
+</odoo>

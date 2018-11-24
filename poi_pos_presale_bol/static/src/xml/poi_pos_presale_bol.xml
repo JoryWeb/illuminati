@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="OrderButtonWidget">
+        <t t-jquery="div.order_data" t-operation="append">
+            <p>NIT: <t t-esc='widget.order.nit'/></p>
+            <p>Razon: <t t-esc='widget.order.razon'/></p>
+            <p>Total: <t t-esc='widget.order.amount_total'/></p>
+        </t>
+    </t>
+
+</templates>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_production_form_view_negative" model="ir.ui.view">
+            <field name="name">mrp.production.form.view.negative</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+            <field name="arch" type="xml">
+                <field name="location_dest_id" position="after">
+                    <field name="negative_control" invisible="0"/>
+                </field>
+                <xpath expr="//button[@name='force_production']" position="replace">
+                    <button name="force_production" string="Forzar disponibilidad" type="object"
+                            attrs="{'invisible': ['|', ('negative_control', '!=', False), ('state', 'in', ('done', 'cancel', 'draft', 'assigned'))]}"
+                            groups="stock.group_stock_force_availability"
+                    />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

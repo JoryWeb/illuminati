@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="op_student_form_view_inherit" model="ir.ui.view">
+            <field name="name">op.student.form.view.inherit</field>
+            <field name="model">op.student</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_student_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form/sheet/div[2]" position="replace">
+                        <div class="oe_title">
+                            <h5>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;">
+                                            <label string="Codigo de Estudiante"/>
+                                        </td>
+                                        <td style="padding-right:10px;">
+                                            <field name="student_code"/>
+                                        </td>
+                                        <td style="padding-right:10px;">
+                                            <label string="Codigo de Familia"/>
+                                        </td>
+                                        <td style="padding-right:10px;">
+                                            <field name="family_code"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </h5>
+                            <h3>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;">
+                                            <field name="last_name" placeholder="Primer Apellido" required="1"/>
+                                        </td>
+                                        <td style="padding-right:10px">
+                                            <field name="last_name2" placeholder="Segundo Apellido"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right:10px;">
+                                            <field name="name" required="1" placeholder="Primer Nombre"/>
+                                        </td>
+                                        <td style="padding-right:10px;">
+                                            <field name="middle_name" placeholder="Segundo Nombre"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <field name="full_name"/>
+                            </h3>
+                        </div>
+                    </xpath>
+                    <xpath expr="//form/sheet/notebook[1]" position="replace">
+                        <notebook>
+                            <page string="Informacion Personal">
+                                <group>
+                                    <group string="Datos Generales">
+                                        <field name="gender"/>
+                                        <field name="first_nationality"/>
+                                        <field name="second_nationality"/>
+                                        <field name="third_nationality"/>
+                                        <field name="lang"/>
+                                        <field name="religion"/>
+                                    </group>
+                                    <group string="Datos de Identificacion">
+                                        <label for="street" string="CI"/>
+                                        <div class="o_address_format">
+                                            <field name="ci" placeholder="CI" class="o_address_city"/>
+                                            <field name="issued_ci" placeholder="Exp" class="o_address_city"/>
+                                            <field name="extension_ci" class="o_address_city" placeholder="Ext"/>
+                                            <!--<field name="zip" placeholder="ZIP" class="o_address_zip"/>-->
+                                        </div>
+                                        <field name="passport"/>
+                                        <field name="foreign_id"/>
+                                    </group>
+                                    <group string="Datos de Edad">
+                                        <field name="birth_date"/>
+                                        <field name="age"/>
+                                    </group>
+                                    <group string="Datos de Contacto">
+                                        <field name="phone"/>
+                                        <field name="cellphone"/>
+                                        <field name="email"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Familia">
+                                <group>
+                                    <div>
+                                        <field name="family">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="relationship_id"/>
+                                            </tree>
+                                        </field>
+                                    </div>
+                                </group>
+                            </page>
+                            <page string="Educacion">
+                                <group>
+                                    <group>
+                                        <field name="class_id"/>
+                                        <field name="course_id"/>
+                                        <field name="course_level"/>
+                                        <field name="rude"/>
+                                    </group>
+                                    <group>
+                                        <field name="son_level"/>
+                                        <field name="high_date"/>
+                                        <field name="low_date"/>
+                                        <field name="kinder"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Pagos y Descuentos">
+                                <group>
+                                    <group string="Detalle de beca/descuentos">
+                                        <field name="type_scholarship_id"/>
+                                        <field name="discount"/>
+                                        <field name="total_discount"/>
+                                        <field name="first_pension_applies"/>
+                                        <field name="regular_pension_applies"/>
+                                    </group>
+                                    <group string="Detalles de Pago">
+                                        <field name="payment_responsable"/>
+                                        <field name="first_pension"/>
+                                        <field name="regular_pension"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

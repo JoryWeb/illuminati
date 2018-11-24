@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Authorization Rules -->
+
+    <record id="poi_auth_auth_view" model="ir.ui.view">
+        <field name="model">poi.auth.auth</field>
+        <field eval="5" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Authorization Rule">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="model_id"/>
+                        <field name="circuit_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Messages">
+
+                            <label for="message"/>
+                            <field name="message"/>
+                            <label for="generic_message"/>
+                            <field name="generic_message"/>
+                        </page>
+                        <page string="Rules">
+                            <field name="rule_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="sequence"/>
+                                    <field name="circuit_id"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="sequence"/>
+                                        </group>
+                                        <group>
+                                            <field name="circuit_id"/>
+                                            <field name="model_id"/>
+                                        </group>
+                                        <field name="description"/>
+                                    </group>
+                                    <notebook>
+                                        <page string="Rules">
+                                            <group>
+                                                <field name="type"/>
+                                            </group>
+                                            <field name="line_ids" attrs="{'invisible': [('type','!=','rules')]}">
+                                                <tree editable="bottom">
+                                                    <field name="model_id"/>
+                                                    <field name="field_id"/>
+                                                    <field name="operator"/>
+                                                    <field name="value"/>
+                                                </tree>
+                                            </field>
+                                            <field name="advanced_line_ids"
+                                                   attrs="{'invisible': [('type','!=','advanced')]}">
+                                                <tree editable="bottom">
+                                                    <field name="python_rule"/>
+                                                    <field name="operator"/>
+                                                    <field name="value"/>
+                                                </tree>
+                                            </field>
+
+                                        </page>
+                                        <page string="Groups">
+                                            <field name="group_ids" widget="many2many_tags"/>
+                                        </page>
+                                        <page string="Users">
+                                            <field name="user_ids" widget="many2many_checkboxes"/>
+                                        </page>
+                                    </notebook>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="poi_auth_auth_tree" model="ir.ui.view">
+        <field name="model">poi.auth.auth</field>
+        <field name="arch" type="xml">
+            <tree string="Authorization Rule">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="poi_auth_auth_action" model="ir.actions.act_window">
+        <field name="name">Authorization Rules</field>
+        <field name="res_model">poi.auth.auth</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="poi_auth_auth_tree"/>
+    </record>
+
+    <menuitem id="menu_poi_auth_auth_action" action="poi_auth_auth_action" parent="menu_authorization_configuration"
+              sequence="2"/>
+
+    <record id="poi_auth_auth_python_code_form" model="ir.ui.view">
+        <field name="model">poi.auth.auth.python.code</field>
+        <field name="arch" type="xml">
+            <form string="Predefined Python Codes">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                    <group col="2" string="Instructions">
+                        <group colspan="2">
+                            <div>
+                                To use a python code you must use only these placeholders and assign a variable that will detect if rule applies.
+                                Variable must be "result" and it will be a boolean value (True: rule applies, False: rule not applies)
+                                If you don't fill this variable, rule will assume that is False.
+                                You can use only these placeholders to be able to assign them to a specific rule.
+                            </div>
+                        </group>
+                        <group>
+                            <label colspan="2" string="Operator: %%(operator)s"/>
+                            <label colspan="2" string="Operators that can be assigned:"/>
+                            <label colspan="2" string="contains, does not contain, is equal to, is not equal to, is set, is not set"/>
+                            <label colspan="2" string="greater than, less than, greater or equal than, less or equal than"/>
+                        </group>
+                        <group>
+                            <label colspan="2" string="Value: %%(value)s"/>
+                            <label colspan="2" string="This will be the value against your condition will be compared"/>
+                            <label colspan="2" string="Example: if line.price_unit %%(operator)s %%(value)s:"/>
+                        </group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="poi_auth_auth_python_code_tree" model="ir.ui.view">
+        <field name="model">poi.auth.auth.python.code</field>
+        <field name="arch" type="xml">
+            <tree string="Predefined Python Codes">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="poi_auth_auth_python_code_action" model="ir.actions.act_window">
+        <field name="name">Predefined Python Codes</field>
+        <field name="res_model">poi.auth.auth.python.code</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="poi_auth_auth_python_code_tree"/>
+    </record>
+
+    <menuitem id="menu_poi_auth_auth_python_code_action" action="poi_auth_auth_python_code_action"
+              parent="menu_authorization_configuration"
+              sequence="3"/>
+</odoo>

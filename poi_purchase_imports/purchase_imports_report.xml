@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            string="Calculo Peso y Volumen"
+            id="action_report_purchase_order" 
+            model="purchase.order" 
+            report_type="qweb-pdf"
+            name="poi_purchase_imports.report_purchaseimports"
+            file="poi_purchase_imports.report_purchaseimports"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="poi_auth_circuit_view" model="ir.ui.view">
+        <field name="model">poi.auth.circuit</field>
+        <field eval="4" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Authorization Circuit">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+
+                    </group>
+                    <field name="auth_lines">
+                        <tree editable="bottom">
+                            <field name="sequence"/>
+                            <field name="user_id"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="poi_auth_circuit_tree" model="ir.ui.view">
+        <field name="model">poi.auth.circuit</field>
+        <field name="arch" type="xml">
+            <tree string="Authorization Circuit">
+                <field name="name"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="poi_auth_circuit_action" model="ir.actions.act_window">
+        <field name="name">Authorization Circuit</field>
+        <field name="res_model">poi.auth.circuit</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="poi_auth_circuit_tree"/>
+    </record>
+
+    <menuitem id="menu_poi_auth_circuit_action" action="poi_auth_circuit_action"
+              parent="menu_authorization_configuration"
+              sequence="1"/>
+</odoo>

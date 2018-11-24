@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="sale_contract_view_tree" model="ir.ui.view">
+    <field name="name">sale.contract.tree</field>
+    <field name="model">sale.contract</field>
+    <field name="arch" type="xml">
+      <tree string="Contratos">
+        <field name="name"/>
+        <field name="report_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_contract_view_form" model="ir.ui.view">
+    <field name="name">sale.contract.form</field>
+    <field name="model">sale.contract</field>
+    <field name="arch" type="xml">
+      <form string="Contratos">
+        <sheet>
+          <group>
+            <group>
+                <field name="name"/>
+            </group>
+            <group>
+                <field name="report_id"/>
+            </group>
+          </group>
+          <group>
+            <field name="clause"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_contract_view_search" model="ir.ui.view">
+    <field name="name">sale.contract.search</field>
+    <field name="model">sale.contract</field>
+    <field name="arch" type="xml">
+      <search string="Contratos">
+        <field name="name"/>
+      </search>
+    </field>
+  </record>
+
+  <record id="sale_contract_action_form" model="ir.actions.act_window">
+    <field name="name">Contratos de Venta</field>
+    <field name="res_model">sale.contract</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear Contrato de Venta
+      </p>
+      <p>
+        Cree diferentes Contratos de Venta
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_sale_contract" parent="sale.menu_sale_config" action="sale_contract_action_form" sequence="24"/>
+
+
+</data>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record id="view_account_payment_analytic_form" model="ir.ui.view">
+            <field name="name">account.payment.analytic.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <field name="cashier_id" groups="account.group_account_manager"
+                           attrs="{'invisible': [('payment_type','!=','transfer')], 'readonly': [('state', '!=', 'draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_move_cashier_form" model="ir.ui.view">
+            <field name="name">account.move.cashier.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_maturity']" position="after">
+                    <field name="cashier_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

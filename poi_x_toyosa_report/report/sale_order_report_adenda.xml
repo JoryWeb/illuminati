@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_sale_adenda"
+    string="Adenda"
+    model="sale.order"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.sale_order_report_adenda"
+    name="poi_x_toyosa_report.sale_template_adenda"
+  />
+
+
+  <!-- <record id="report_sale_adenda" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_invoice_toy"/>
+  </record> -->
+</data>
+
+<template id="sale_template_adenda">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+  <div class="header">
+
+  </div>
+  <div class="article" style="font-size:15px;">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 style="color:red;margin-left:35px;"><strong>CONTRATO PRIVADO</strong></h3><br/>
+      </div>
+
+      <div class="col-xs-12">
+        <p>
+          Conste por el presente Documento Privado una <strong>ADENDA DE CONTRATO DE VENTA DE VEHICULO</strong>, que podrá ser
+          elevado a categoría de Instrumento público, por el simple reconocimiento de firmas y rubricas ante Notario de Fe Pública,
+          que se suscribe al tenor de las siguientes cláusulas: <br/><br/>
+          <strong>PRIMERA.- (PARTES CONTRATANTES)</strong> Son partes contratantes:<br/><br/>
+          <strong>1.1. TOYOSA S.A.</strong> empresa inscrita en el Registro de Comercio de la Fundación para el Desarrollo Empresarial
+          (FUNDEMPRESA) bajo la matricula Nº 13129, con NIT 1030029024, representada por el suscribiente al pie del presente
+          contrato, en adelante denominada simplemente <strong>TOYOSA S.A.</strong><br/><br/>
+          <strong>1.2. <span t-esc="o.partner_id.name.upper()"/></strong> mayor de edad, hábil por derecho, con Cedula de Identida <strong><span t-field="o.partner_id.ci_plus_ext"/></strong> NIT
+          <strong><span t-esc="o.partner_id.nit or o.partner_id.ci_plus_ext"/></strong>, denominado en lo sucesivo EL CLIENTE. <br/><br/>
+          <strong>SEGUNDA.- (ANTECEDENTES).- TOYOSA S.A. y EL CLIENTE,</strong> suscribieron el <strong>Contrato de Venta
+          de Vehículo Nº <span t-esc="o.lot_id.contract_ref.split('-')[0]"/></strong> de fecha <strong><span t-esc="o.lot_id.contract_ref.split('-')[1]"/></strong> por la adquisición del vehículo <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(o.order_id.lot_id.marca and o.order_id.lot_id.marca.name)  or '--'"/></strong>
+          Modelo <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(o.order_id.lot_id.modelo and o.order_id.lot_id.modelo.name) or '----'"/></strong> Año <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(o.order_id.lot_id.anio_modelo and o.order_id.lot_id.anio_modelo.name) or '----'"/></strong> Nº Chassis <strong style="margin-left:20px;margin-right:20px;"><span t-esc="o.order_id.lot_id.name"/></strong>
+          Color <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(o.order_id.lot_id.colorexterno and o.order_id.lot_id.colorexterno.name) or '---'"/></strong> Precio <strong  style="margin-left:20px;margin-right:20px;"><span t-field="ov_origin.amount_total_plus_a"/></strong>, el cual fue debidamente firmado por ambas partes. <br/><br/>
+          <strong>TERCERA.- (OBJETO).</strong> Las partes, sin que medie dolo, presión, error o cualquier otro vicio del consentimiento, por así
+          convenir a sus intereses, acuerdan modificar las siguientes condiciones consignadas en el Contrato de Venta de Vehículo <strong style="margin-right:20px;"><span t-esc="o.lot_id.contract_ref.split('-')[0]"/></strong>
+          en fecha <strong style="margin-left:20px;margin-right:20px;"><span t-esc="o.lot_id.contract_ref.split('-')[1]"/></strong> por las siguientes: <br/><br/>
+          Vehículo <strong style="margin-right:20px;"><span t-esc="(lot_id.marca and lot_id.marca.name)  or '--'"/></strong> Modelo <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(lot_id.modelo and lot_id.modelo.name) or '----'"/></strong> Año <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(lot_id.anio_modelo and lot_id.anio_modelo.name) or '----'"/></strong> Chassis Nro. <strong style="margin-left:20px;margin-right:20px;"><span t-esc="lot_id.name"/></strong><br/><br/>
+          Motor Nro. <strong style="margin-right:20px;"><span t-esc="lot_id.n_motor"/></strong> Color <strong style="margin-left:20px;margin-right:20px;"><span t-esc="(lot_id.colorexterno and lot_id.colorexterno.name) or '---'"/></strong> Precio <strong  style="margin-left:20px;margin-right:20px;"><span t-field="o.amount_total_plus_a"/></strong> aclarándose que las demás
+          características técnicas y accesorios del vehículo antes descrito se mantienen firmes y subsistentes. <br/><br/>
+          <strong>CUARTA.- (RATIFICACION).</strong> Las partes contratantes reconocen que todas las cláusulas del contrato de venta de
+          vehículo Nº <strong><span t-esc="o.lot_id.contract_ref.split('-')[0]"/></strong> de fecha <strong><span t-esc="o.lot_id.contract_ref.split('-')[1]"/></strong> , con excepción de la(s) modificación(es) realizada(s) por el presente
+          documento, se encuentran firmes y subsistentes, surtiendo todos los efectos de Ley. <br/><br/>
+          <strong>(CONFORMIDAD).</strong> Las partes intervinientes en señal de conformidad y para su fiel y estricto cumplimiento firman la
+          presente <strong>ADENDA DE CONTRATO DE VENTA DE VEHICULO</strong> en dos (2) ejemplares de un mismo tenor y validez a <strong><span t-esc="today"></span></strong>
+          <br/><br/><br/><br/>
+        </p>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-4 text-center">
+
+            <p>............................................</p>
+            <p>FIRMA CLIENTE</p>
+          </div>
+          <div class="col-xs-4 text-center">
+            <p>............................................</p>
+            <p>V° B° GERENCIA</p>
+          </div>
+          <div class="col-xs-4 text-center">
+            <p>............................................</p>
+            <p>EJECUTIVO DE VENTAS</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</t>
+</t>
+</template>
+
+</odoo>

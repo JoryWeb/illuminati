@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_purchase_delivery_product_wizard" model="ir.ui.view">
+            <field name="name">Enter delivery details</field>
+            <field name="model">purchase.delivery.product.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Detalle de recepciones">
+                    <group col="1">
+                        <group>
+                            <field name="base_date"/>
+                        </group>
+                        <notebook>
+                            <page string="Products">
+                                <field name="item_planned_ids" nolabel="1">
+                                    <tree string="Inventory Details" editable="bottom">
+                                        <field name="delivery_id" invisible="1"/>
+                                        <field name="purchase_line_id"/>
+                                        <field name="product_id"/>
+                                        <field name="product_qty" sum="Total"/>
+                                        <field name="delivery_date"/>
+                                        <field name="day_division"/>
+                                        <field name="qty_division"/>
+                                    </tree>
+                                </field>
+                                <button name="do_split_delivery" string="Calcular" type="object" class="oe_highlight"/>
+                                <field name="item_ids" nolabel="1">
+                                    <tree string="Inventory Details" editable="bottom">
+                                        <field name="purchase_line_id"/>
+                                        <field name="delivery_id" invisible="1"/>
+                                        <field name="product_id"/>
+                                        <field name="product_qty" sum="Total"/>
+                                        <field name="delivery_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                    <footer>
+                        <button name="do_detailed_delivery" string="Terminar" type="object" class="oe_highlight"/>
+                        or
+                        <button string="_Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_do_enter_delivery_details" model="ir.actions.act_window">
+            <field name="name">Pplan de entregas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.delivery.product.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_purchase_delivery_product_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

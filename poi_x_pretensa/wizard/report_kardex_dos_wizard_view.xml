@@ -1,0 +1,60 @@
+<openerp>
+	<data>
+		<menuitem
+        id="poiesis_reports_kv_menu"
+        name="Kardex Pretensa"
+        sequence="3"
+        parent="stock.menu_warehouse_report"/>
+
+		<menuitem
+        id="kardex_report_lot"
+        name="Kardex de Productos"
+        sequence="90"
+        parent="base.menu_base_partner"/>
+
+		<record id="reporte_kardex_dos_pre_form_wizard" model="ir.ui.view">
+			<field name="name">reporte.kardex.dos.form.wizard.pre</field>
+			<field name="model">reporte.kardex.dos.wizard.pre</field>
+			<field name="arch" type="xml">
+				<form version="8.0" string="Reporte Kardex">
+					<group>
+						<field name="product_id"/>
+						<field name="location_id" domain="[('usage','=','internal')]"/>
+						<field name="lot_id" domain="[('product_id', '=', product_id)]"
+                                    context="{'default_product_id':product_id}"/>
+					</group>
+					<group>
+						<field name="date_from"/>
+						<field name="date_to"/>
+					</group>
+					<footer>
+                        <button name="open_table" type="object" string="Kardex de producto" class="oe_highlight" groups="base.group_sale_manager,stock.group_stock_manager"/>
+						<button string="Imprimir Kardex" name="print_kardex_product_report"
+								groups="base.group_sale_salesman,stock.group_stock_user" type="object" class="oe_highlight"/>
+                        <button string="Imprimir Kardex Valorado" name="print_kardex_valorado_product_report"
+								type="object" class="oe_highlight"
+								groups="base.group_sale_manager,stock.group_stock_manager"/>
+						or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="reporte_kardex_dos_pre_form_action" model="ir.actions.act_window">
+	        <field name="name">Kardex Pretensa</field>
+	        <field name="res_model">reporte.kardex.dos.wizard.pre</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+    	</record>
+
+    	<menuitem action="reporte_kardex_dos_pre_form_action" id="reporte_kardex_form_action_menu" parent="poiesis_reports_kv_menu" sequence="10"/>
+
+		<menuitem action="reporte_kardex_dos_pre_form_action" id="reporte_kardex_form_action_menu2" parent="kardex_report_lot" sequence="10"/>
+
+		<menuitem action="reporte_kardex_dos_pre_form_action" id="reporte_kardex_form_action_menu3" parent="stock.menu_stock_inventory_control" sequence="10"/>
+
+	</data>
+</openerp>

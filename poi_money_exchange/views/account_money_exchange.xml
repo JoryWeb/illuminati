@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="account_money_exchange_tree" model="ir.ui.view">
+    <field name="name">account.money.exchange.tree</field>
+    <field name="model">account.money.exchange</field>
+    <field name="arch" type="xml">
+      <tree string="Cambio de Moneda">
+        <field name="date"/>
+        <field name="cashier_id"/>
+        <field name="amount_destiny"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="account_money_exchange_form" model="ir.ui.view">
+    <field name="name">account.money.exchange.form</field>
+    <field name="model">account.money.exchange</field>
+    <field name="arch" type="xml">
+      <form string="Cambio de Moneda">
+        <header>
+          <button name="exchange_done" string="Validar" class="oe_highlight" states="draft" type="object"/>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <div class="oe_button_box" name="button_box">
+            <field name="move_id" invisible="1"/>
+            <button class="oe_stat_button" name="button_view_move"
+                    string="Ver Asiento" type="object"
+                    attrs="{'invisible':[('state','=','draft')]}" icon="fa-bars"/>
+          </div>
+          <group>
+            <group>
+              <field name="account_destiny_id" domain="[('internal_type', 'in', ['liquidity']), ('deprecated', '=', False)]"/>
+              <field name="amount_destiny"/>
+              <field name="account_origin_id"/>
+              <field name="tc"/>
+              <field name="amount_origin"/>
+              <field name="account_tc_id"/>
+            </group>
+            <group>
+              <field name="date"/>
+              <field name="journal_id"/>
+              <field name="analytic_id" required="1"/>
+              <field name="cashier_id"/>
+              <field name="ref"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="account_money_exchange_search" model="ir.ui.view">
+    <field name="name">account.money.exchange.search</field>
+    <field name="model">account.money.exchange</field>
+    <field name="arch" type="xml">
+      <search string="Cambio de Moneda">
+        <field name="date"/>
+        <field name="cashier_id"/>
+        <field name="state"/>
+        <group expand="0" string="Group By">
+            <filter string="Estado" domain="[]" context="{'group_by':'state'}"/>
+            <filter string="Cajero" domain="[]" context="{'group_by':'cashier_id'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+
+  <record id="account_money_exchange_action_form" model="ir.actions.act_window">
+    <field name="name">Cambio de Moneda Efectivo</field>
+    <field name="res_model">account.money.exchange</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear un nuevo Cambio de Moneda
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_cash_exchange"  parent="account.menu_finance_receivables" action="account_money_exchange_action_form" sequence="22"/>
+
+  
+</data>
+</odoo>

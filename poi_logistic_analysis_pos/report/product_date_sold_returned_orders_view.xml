@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_product_date_sold_returned_orders_tree">
+            <field name="name">product.date.sold.returned.orders.tree</field>
+            <field name="model">product.date.sold.returned.orders</field>
+            <field name="arch" type="xml">
+                <tree string="POS Sale Analysis">
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_product_date_sold_returned_orders_graph">
+            <field name="name">product.date.sold.returned.orders.graph</field>
+            <field name="model">product.date.sold.returned.orders</field>
+            <field name="arch" type="xml">
+                <graph string="POS Sale Analysis" type="line">
+                    <field name="product_id" type="row"/>
+                    <field name="date_order" type="col" interval="month"/>
+                    <field name="shop_id" type="col"/>
+                    <field name="pos_qty_sold" type="measure"/>
+                    <field name="pos_qty_returned" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+
+    <record id="view_product_date_sold_returned_orders_search" model="ir.ui.view">
+        <field name="name">product.date.sold.returned.orders.search</field>
+        <field name="model">product.date.sold.returned.orders</field>
+        <field name="arch" type="xml">
+            <search string="POS Sale Analysis">
+                <field name="product_id"/>
+                <field name="shop_id"/>
+                <field name="categ_id" filter_domain="[('categ_id', 'child_of', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_product_date_sold_returned_orders" model="ir.actions.act_window">
+        <field name="name">POS Sale Analysis</field>
+        <field name="res_model">product.date.sold.returned.orders</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">chart</field>
+        <field name="view_id" ref="view_product_date_sold_returned_orders_tree"/>
+        <field name="help"></field>
+    </record>
+
+
+
+
+    </data>
+</openerp>

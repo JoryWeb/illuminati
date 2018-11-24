@@ -1,0 +1,70 @@
+<openerp>
+	<data>
+
+		<record id="invoices_analysis_wizard_form" model="ir.ui.view">
+			<field name="name">invoices.analysis.wizard.form</field>
+			<field name="model">invoices.analysis.wizard</field>
+			<field name="arch" type="xml">
+				<form version="7.0" string="Sale Invoices analysis Wizard">
+					<sheet>
+						<group>
+							<field name="shop_id"/>
+							<field name="partner_id"/>
+							<field name="user_id"/>
+						</group>
+						<group>
+							<group>
+								<field name="date_from"/>
+							</group>
+							<group>
+								<field name="date_to"/>
+							</group>
+						</group>
+						<group>
+							<field name="type" widget="radio"/>
+						</group>
+                        <group>
+							<field name="product_id" attrs="{'invisible': [('type', '!=', 'by_product')]}"/>
+							<field name="product_ids" attrs="{'invisible': [('type', '!=', 'by_products')]}">
+								<tree editable="bottom">
+									<field name="product_id"/>
+								</tree>
+							</field>
+							<field name="product_categ_id" attrs="{'invisible': [('type', '!=', 'by_category')]}"/>
+						</group>
+					</sheet>
+					<footer>
+						<button name="view_report" type="object" string="View Report" class="oe_highlight"/>
+						or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+						<!--<button name="print_kardex" type="object" string="Print Kardex" class="oe_right"/> -->
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="invoices_analysis_wizard_form_action" model="ir.actions.act_window">
+	        <field name="name">Sale Invoices Analysis</field>
+	        <field name="res_model">invoices.analysis.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+    	</record>
+
+
+		<record id="invoices_analysis_wizard_form_product_action" model="ir.actions.act_window">
+	        <field name="name">Sale Invoices Analysis</field>
+	        <field name="res_model">invoices.analysis.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+			<field name="context">{
+                    'default_product_id': active_id,
+				'default_type': 'by_product',}
+            </field>
+    	</record>
+
+		<menuitem action="invoices_analysis_wizard_form_action" id="menu_invoices_analysis_wizard_form" parent="poi_logistic.menu_logistic_reports" sequence="2" groups="poi_logistic.group_logistic_user"/>
+	</data>
+</openerp>

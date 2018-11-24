@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	  <menuitem action="hr.open_view_employee_list_my" id="hr.menu_open_view_employee_list_my" sequence="1" parent="hr.menu_hr_main" string="Empleados"/>
+
+	<!-- menu de empleados en configuracion -->
+	  <menuitem id="menu_hr_employee_config_base" parent="hr.menu_human_resources_configuration" name="Empleados"/>
+</data>
+</odoo>

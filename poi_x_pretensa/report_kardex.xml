@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_kardex_pre">
+            <t t-call="report.html_container">
+                <t t-set="data_report_margin_top" t-value="12"/>
+                <t t-set="data_report_header_spacing" t-value="9"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+                <t t-set="data_orientation" t-value="Landscape"/>
+                <t t-call="report.internal_layout">
+                    <t t-set="data_orientation" t-value="Landscape"/>
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <img t-if="res_company.logo" t-att-src="'data:image/png;base64,%s' % res_company.logo"
+                                     style="max-height: 110px;"/>
+                            </div>
+                            <div class="col-xs-4 col-xs-offset-3 text-center">
+                                <h1>Tarjeta de Existencias</h1>
+                            </div>
+                            <div class="col-xs-2 col-xs-offset-2 text-left">
+                                <h5>
+                                    <strong>Nit:</strong>
+                                    <span t-esc="res_company.nit"/>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row mt32">
+                            <div class="col-xs-3">
+                                <strong>Articulo:</strong>
+                                <span t-esc="producto()"/>
+                                <br/>
+                                <strong>Código de Item:</strong>
+                                <span t-esc="default_code()"/>
+                                <br/>
+                                <strong>Lote:</strong>
+                                <span t-esc="lote()"/>
+                            </div>
+                            <div class="col-xs-3">
+
+                            </div>
+                            <div class="col-xs-3">
+
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Nro. de Documento</th>
+                                    <th class="text-left">Tip. Movimiento</th>
+                                    <th class="text-left">Fecha</th>
+                                    <th class="text-left">Código</th>
+                                    <th class="text-left">Detalle</th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-left">Almacén</th>
+                                    <th class="text-left">Entrada</th>
+                                    <th class="text-left">Salida</th>
+                                    <th class="text-left">Saldo Pza.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="lines()" t-as="line">
+                                    <td>
+                                        <span t-esc="line['picking']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['tipo']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['date']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['codigo']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['name_mov']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['lote']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="location()"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['cantidad_entrada'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['cantidad_salida'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['cantidad_en_fecha'])"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <strong>Totales:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(total_entrada())"/>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(total_salida())"/>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(diferencia())"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_kardex_valorado_pre">
+            <t t-call="report.html_container">
+                <t t-set="data_report_margin_top" t-value="12"/>
+                <t t-set="data_report_header_spacing" t-value="9"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+                <t t-set="data_orientation" t-value="Landscape"/>
+                <t t-call="report.internal_layout">
+                    <t t-set="data_orientation" t-value="Landscape"/>
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <img t-if="res_company.logo" t-att-src="'data:image/png;base64,%s' % res_company.logo"
+                                     style="max-height: 110px;"/>
+                            </div>
+                            <div class="col-xs-4 col-xs-offset-3 text-center">
+                                <h1>Targeta de Existencias</h1>
+                            </div>
+                            <div class="col-xs-2 col-xs-offset-2 text-left">
+                                <h5>
+                                    <strong>Nit:</strong>
+                                    <span t-esc="res_company.nit"/>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row mt32">
+                            <div class="col-xs-3">
+                                <strong>Articulo:</strong>
+                                <span t-esc="producto()"/>
+                                <br/>
+                                <strong>Código de Item:</strong>
+                                <span t-esc="default_code()"/>
+                                <br/>
+                                <strong>Lote:</strong>
+                                <span t-esc="lote()"/>
+                            </div>
+                            <div class="col-xs-3">
+
+                            </div>
+                            <div class="col-xs-3">
+
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Nro. de Documento</th>
+                                    <th class="text-left">Tip. Movimiento</th>
+                                    <th class="text-left">Fecha</th>
+                                    <th class="text-left">Código</th>
+                                    <th class="text-left">Detalle</th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-left">Almacén</th>
+                                    <th class="text-left">Entrada</th>
+                                    <th class="text-left">Salida</th>
+                                    <th class="text-left">Saldo Pza.</th>
+                                    <th class="text-left">Precio Unitario</th>
+                                    <th class="text-left">Valor Entrada</th>
+                                    <th class="text-left">Valor Salida</th>
+                                    <th class="text-left">Valor Inventario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="lines()" t-as="line">
+                                    <td>
+                                        <span t-esc="line['picking']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['tipo']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['date']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['codigo']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['name_mov']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['lote']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="location()"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['cantidad_entrada'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['cantidad_salida'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['cantidad_en_fecha'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['precio'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['monto_entrada'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['monto_salida'])"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="formatLang(line['valor_inventario_fecha'])"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <strong>Totales:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(total_entrada())"/>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(total_salida())"/>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(diferencia())"/>
+                                        </strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(total_monto_entrada())"/>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(total_monto_salida())"/>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <span t-esc="formatLang(diferencia_monto())"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

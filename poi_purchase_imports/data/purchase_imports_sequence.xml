@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Sequences for purchase cost distribution -->
+        <record id="seq_poi_purchase_imports" model="ir.sequence">
+            <field name="name">Carpeta de importaciones</field>
+            <field name="code">poi.purchase.imports</field>
+            <field name="prefix">CIx</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>

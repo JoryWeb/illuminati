@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<record model="ir.ui.view" id="citasrmam.list_citas_tree">
+<field name="name">Listado</field>
+<field name="model">citasrmam.cita</field>
+<field name="arch" type="xml">
+<tree>
+<field name="autor"/>
+<field name="cita"/>
+<field name="orden"/>
+<field name="fecha"/>
+</tree>
+</field>
+</record>
+
+
+    <record model="ir.ui.view" id="citasrmam.list_citas_form">
+      <field name="name">Listado</field>
+      <field name="model">citasrmam.cita</field>
+      <field name="arch" type="xml">
+        <form string="Listado de Citas">
+          <sheet>
+            <div class="oe_title">
+              <label for="cita" class="oe_edit_only" string="Cita">Texto de la Cita</label>
+              <h1><field name="cita"/></h1>
+            </div>
+            <separator string="Atributos de la cita" colspan="2"/>
+            <group colspan="2" col="2">
+              <field name="autor"/>
+              <field name="orden"/>
+              <field name="fecha"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="citasrmam.action_window">
+      <field name="name">Ventana de Citas</field>
+      <field name="res_model">citasrmam.cita</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="convalidaciones.action_server">
+      <field name="name">convalidaciones server</field>
+      <field name="model_id" ref="model_convalidaciones_convalidaciones"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Citas" id="citasrmam.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Citas" id="citasrmam.citas" parent="citasrmam.menu_root"/>
+     
+    <!-- actions -->
+
+    <menuitem name="Lista" id="citasrmam.citas_list" parent="citasrmam.citas"
+              action="citasrmam.action_window"/>
+
+  </data>
+</odoo>

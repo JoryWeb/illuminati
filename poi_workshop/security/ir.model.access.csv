@@ -1,0 +1,46 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workshop_order_manager,mro.order manager,model_workshop_order,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_order_inventory,workshop.order inventory,model_workshop_order,stock.group_stock_user,1,1,1,0
+access_workshop_order_parts_line_manager,mro.order.parts.line manager,model_workshop_order_parts_line,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_workorder,access_workshop_workorder,model_workshop_workorder,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_task_manager,mro.task manager,model_workshop_task,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_task_parts_line_manager,mro.task.parts.line manager,model_workshop_task_parts_line,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_order_dates_manager,workshop.order.dates manager,model_workshop_order_dates,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_order_service_line_manager,workshop.order.service.line manager,model_workshop_order_service_line,poi_vehicle.group_mro_manager,1,1,1,1
+access_product_product_mro_manager,product.product mro_manager,product.model_product_product,poi_vehicle.group_mro_manager,1,1,1,1
+access_product_template_mro_manager,product.template mro_manager,product.model_product_template,poi_vehicle.group_mro_manager,1,1,1,1
+access_stock_move_mro_manager,stock.move mro_manager,stock.model_stock_move,poi_vehicle.group_mro_manager,1,1,1,0
+access_stock_picking_mro_manager,stock.picking mro_manager,stock.model_stock_picking,poi_vehicle.group_mro_manager,1,1,1,1
+access_res_partner_workshop_manager,res.partner workshop_manager,base.model_res_partner,poi_vehicle.group_mro_manager,1,1,1,1
+access_account_move_line_workshop_manager,account.move.line workshop_manager,account.model_account_move_line,poi_vehicle.group_mro_manager,1,1,1,0
+access_workshop_type_manager,workshop.type workshop_manager,model_workshop_type,poi_vehicle.group_mro_manager,1,1,1,1
+access_workshop_order_user,mro.order user,model_workshop_order,poi_vehicle.group_mro_user,1,1,1,1
+access_workshop_order_parts_line_user,mro.order.parts.line user,model_workshop_order_parts_line,poi_vehicle.group_mro_user,1,1,1,1
+access_workshop_workorder,access_workshop_workorder,model_workshop_workorder,poi_vehicle.group_mro_user,1,1,1,1
+access_workshop_task_user,mro.task user,model_workshop_task,poi_vehicle.group_mro_user,1,0,0,0
+access_workshop_task_parts_line_user,mro.task.parts.line user,model_workshop_task_parts_line,poi_vehicle.group_mro_user,1,1,1,0
+access_workshop_order_dates_user,workshop.order.dates user,model_workshop_order_dates,poi_vehicle.group_mro_user,1,1,1,0
+access_workshop_order_service_line_user,workshop.order.service.line user,model_workshop_order_service_line,poi_vehicle.group_mro_user,1,1,1,0
+access_product_product_mro_user,product.product mro_user,product.model_product_product,poi_vehicle.group_mro_user,1,1,1,0
+access_product_template_mro_user,product.template mro_user,product.model_product_template,poi_vehicle.group_mro_user,1,1,1,0
+access_stock_move_mro_user,stock.move mro_user,stock.model_stock_move,poi_vehicle.group_mro_user,1,1,1,0
+access_stock_picking_mro_user,stock.picking mro_user,stock.model_stock_picking,poi_vehicle.group_mro_user,1,1,1,1
+access_res_partner_workshop_user,res.partner workshop_user,base.model_res_partner,poi_vehicle.group_mro_user,1,1,1,0
+access_account_move_line_workshop_user,account.move.line workshop_user,account.model_account_move_line,poi_vehicle.group_mro_user,1,1,1,0
+access_workshop_type_user,workshop.type workshop_user,model_workshop_type,poi_vehicle.group_mro_user,1,1,1,0
+access_poi_vehicle_sale_salesman,poi.vehicle sale_salesman,model_poi_vehicle,sales_team.group_sale_salesman_all_leads,1,1,1,0
+access_workshop_order_sale_salesman,workshop.order sale_salesman,model_workshop_order,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_workshop_order_parts_line_sale_salesman,workshop.order.parts.line sale_salesman,model_workshop_order_parts_line,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_poi_vehicle_history_sale_salesman,poi.vehicle.history sale_salesman,poi_vehicle.model_poi_vehicle_history,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_poi_workshop_inventory_salesman,poi.workshop-inventory sale_salesman,poi_workshop.model_poi_workshop_inventory,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_poi_workshop_inventory_list_salesman,poi.workshop-inventory_list sale_salesman,poi_workshop.model_poi_workshop_inventory_list,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_poi_workshop_inventory_salesman2,poi.workshop-inventory sale_salesman2,poi_workshop.model_poi_workshop_inventory,poi_vehicle.group_mro_user,1,1,0,0
+access_poi_workshop_inventory_list_salesman2,poi.workshop-inventory_list sale_salesman2,poi_workshop.model_poi_workshop_inventory_list,poi_vehicle.group_mro_user,1,1,1,1
+access_purchase_order_workshop,purchase.order sale_salesman,purchase.model_purchase_order,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_purchase_order_line_workshop,purchase.order.line sale_salesman,purchase.model_purchase_order_line,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_workshop_task_group,workshop.task.group sale_salesman,model_workshop_task_group,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_workshop_task_group,workshop.task.group.line sale_salesman,model_workshop_task_group_line,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_workshop_group_mro_user,workshop.task.group group_mro_user,model_workshop_task_group,poi_vehicle.group_mro_user,1,1,1,1
+access_workshop_group_mro_user_line,workshop.task.group.line group_mro_user,model_workshop_task_group_line,poi_vehicle.group_mro_user,1,1,1,1
+access_workshop_stop_reason,workshop.workshop_stop_reason group_mro_user,model_workshop_stop_reason,poi_vehicle.group_mro_user,1,1,1,1
+access_workshop_stock_production_lot,workshop.stock_production_lot group_mro_user,stock.model_stock_production_lot,poi_vehicle.group_mro_user,1,0,0,0

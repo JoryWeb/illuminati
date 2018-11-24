@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.sequence" id="seq_stock_request_in">
+            <field name="name">Solicitud de stock recepción</field>
+            <field name="code">stock.request.in</field>
+            <field name="prefix">REQ-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record model="ir.sequence" id="seq_stock_request_out">
+            <field name="name">Solicitud de stock envío</field>
+            <field name="code">stock.request.out</field>
+            <field name="prefix">SND-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

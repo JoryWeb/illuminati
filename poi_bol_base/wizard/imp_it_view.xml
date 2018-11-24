@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+     <record id="view_imp_it_generate" model="ir.ui.view">
+         <field name="name">poi_bol_base.imp_it.form</field>
+         <field name="model">poi_bol_base.imp_it</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Generar Impuesto a las Transacciones">
+             	<field name="state" invisible="1"/>
+             	<label string ="Este proceso suma el total creditado en cuentas de Ingreso durante el rango de fechas especificado y genera un asiento contable según la definición del impuesto seleccionado." colspan="4" nolabel="1" align="0.0"/>
+                 <field name="tax_id" domain="[('parent_id','=',False)]" widget="selection"/>
+                 <separator string="Periodo:" colspan="4"/>
+                 <newline/>
+                 <field name="date_from" on_change="onchange_date_from(date_from, tax_id)"/>
+                 <field name="date_to"/>
+                 <newline/>
+
+                <group>
+                    <field name="mode" widget="radio"/>
+                </group>
+                 
+                <div style="background-color: #F98C8C; padding: 0px 20px; border-radius: 7px">
+                    <group colspan="4" col="6" states="warning">
+                        <separator string="ADVERTENCIA" colspan="4"/>
+                        <label string ="Se ha encontrado un asiento que ha sido generado para el mismo Impuesto después de la Fecha 'Desde' especificada. Revise este asiento contable existente y especifique si desea continuar de todas formas." colspan="4" nolabel="1" align="0.0"/>
+                        <newline/>
+                        <button icon="STOCK_DIALOG_WARNING" string="" attrs="{'readonly': [('state','=','warning')]}"/>
+                        <field name="prev_move_id" readonly="1"/>
+                        <button icon="STOCK_DIALOG_WARNING" string="" attrs="{'readonly': [('state','=','warning')]}" class="oe_inline oe_right"/>
+                    </group>
+                    <newline/>
+                </div>
+
+             	<newline/>
+             	<separator colspan="4" />
+             	<footer>
+             		<button name="action_generate" states="init" string="Generar Asiento" type="object" class="oe_highlight"/>
+                 	<button name="action_generate" states="warning" string="Ignorar y Generar Asiento" type="object" class="oe_highlight"/>
+                    o
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+        
+     <record model="ir.actions.act_window" id="bol_imp_it">
+        <field name="name">Registro IT</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">poi_bol_base.imp_it</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_imp_it_generate"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem parent="poi_bol_base.menu_action_bol_imp" id="menu_action_bol_it" action="bol_imp_it" sequence="10"/>
+	
+  </data>
+</openerp>

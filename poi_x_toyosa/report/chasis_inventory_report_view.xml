@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_poi_chasis_inventory_report_pivot">
+            <field name="name">poi.chasis.inventory.pivot</field>
+            <field name="model">poi.chasis.inventory.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Purchase Orders Statistics" disable_linking="True">
+                    <field name="product_id" type="row"/>
+                    <field name="lot_id" type="row"/>
+                    <field name="categ_id" type="row"/>
+                    <field name="location_id" type="col"/>
+                    <field name="total" type="measure"/>
+                    <field name="qty" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_poi_chasis_inventory_report_graph">
+            <field name="name">poi.chasis.inventory.graph</field>
+            <field name="model">poi.chasis.inventory.report</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase Orders Statistics">
+                    <field name="location_id" type="row"/>
+                    <field name="qty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+
+        <record id="view_poi_chasis_inventory_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">poi.chasis.inventory.report</field>
+            <field name="arch" type="xml">
+                <search string="Purchase Orders">
+                    <field name="categ_id"/>
+                    <field name="modelo"/>
+                    <field name="katashiki"/>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Categoría" name="group_categoria" context="{'group_by':'categ_id'}"/>
+                        <filter string="Master" name="group_product_id" context="{'group_by':'product_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_poi_chasis_inventory_report_tree">
+            <field name="name">poi.chasis.inventory.report.tree</field>
+            <field name="model">poi.chasis.inventory.report</field>
+            <field name="arch" type="xml">
+                <tree string="Inventario de Chasis">
+                    <field name="categ_id"/>
+                    <field name="modelo"/>
+                    <field name="katashiki"/>
+                    <field name="product_id"/>
+                    <field name="colorinterno"/>
+                    <field name="colorexterno"/>
+                    <field name="lot_id"/>
+                    <field name="location_id"/>
+                    <field name="qty" sum="Total"/>
+                    <field name="total" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_poi_chasis_inventory_report_report_all" model="ir.actions.act_window">
+            <field name="name">Inventario Valorado</field>
+            <field name="res_model">poi.chasis.inventory.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Informe de Inventario exclusivo de Chasis</field>
+        </record>
+        <!-- Por ahora el valorado de odoo es el que aplica -->
+        <!--
+        <menuitem id="menu_poi_chasis_inventory_report" parent="stock.menu_warehouse_report" sequence="99"
+            groups="purchase.group_purchase_manager" action="action_poi_chasis_inventory_report_report_all"/>-->
+
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="reservas_tren_tree" model="ir.ui.view">
+			<field name="name">reservas.tren.tree</field>
+			<field name="model">reservas.tren</field>
+			<field name="arch" type="xml">
+				<tree string="Rerpotes reserva de tren">
+					<field name="picking_id"/>
+                    <field name="ubicacion_origen"/>
+                    <field name="name"/>
+                    <field name="total" sum="Total"/>
+				</tree>
+			</field>
+		</record>
+
+	</data>
+</odoo>

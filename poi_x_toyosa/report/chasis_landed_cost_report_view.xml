@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_poi_chasis_landed_cost_report_pivot">
+            <field name="name">poi.chasis.landed.cost.pivot</field>
+            <field name="model">poi.chasis.landed.cost.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Costos de chasis" disable_linking="True">
+                    <field name="order_id" type="row"/>
+                    <field name="lot_id" type="row"/>
+                    <field name="name" type="col"/>
+                    <field name="price_unit" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_poi_chasis_landed_cost_report_graph">
+            <field name="name">poi.chasis.landed.cost.graph</field>
+            <field name="model">poi.chasis.landed.cost.report</field>
+            <field name="arch" type="xml">
+                <graph string="Costos de Chasis">
+                    <field name="order_id" type="row"/>
+                    <field name="price_unit" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <record id="view_poi_chasis_landed_cost_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">poi.chasis.landed.cost.report</field>
+            <field name="arch" type="xml">
+                <search string="Filtro Chasis">
+                    <field name="lot_id"/>
+                    <field name="order_id"/>
+                    <field name="date"/>
+                    <field name="move_id"/>
+                    <field name="origin"/>
+                    <field name="name"/>
+                    <field name="metodo"/>
+                    <field name="valoracion"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Serie/Chasis" name="group_serie" context="{'group_by':'lot_id'}"/>
+                        <filter string="Orden de Importación" name="group_order_id" context="{'group_by':'order_id'}"/>
+                        <filter string="Metodo Distribución" name="group_metodo" context="{'group_by':'metodo'}"/>
+                        <filter string="Costo FOB" name="group_valoracion" context="{'group_by':'valoracion'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_poi_chasis_landed_cost_report_tree">
+            <field name="name">poi.chasis.landed.cost.report.tree</field>
+            <field name="model">poi.chasis.landed.cost.report</field>
+            <field name="arch" type="xml">
+                <tree string="Costos Chasis">
+                    <field name="order_id"/>
+                    <field name="bank_id"/>
+                    <field name="n_prestamo"/>
+                    <field name="lot_id"/>
+                    <field name="date"/>
+                    <field name="move_id"/>
+                    <field name="price_unit" sum="Total Bs."/>
+                    <field name="price_unit_usd" sum="Total Usd."/>
+                    <field name="origin"/>
+                    <field name="name"/>
+                    <field name="metodo"/>
+                    <field name="valoracion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_poi_chasis_landed_cost_report_report_all" model="ir.actions.act_window">
+            <field name="name">Costos Chasis Importaciones</field>
+            <field name="res_model">poi.chasis.landed.cost.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Informe de Chasis y costes de Importaciones</field>
+        </record>
+
+        <menuitem id="menu_poi_chasis_landed_cost_report" parent="poi_purchase_imports.menu_purchase_imports" sequence="100"
+            groups="purchase.group_purchase_manager" action="action_poi_chasis_landed_cost_report_report_all"/>
+
+    </data>
+</odoo>

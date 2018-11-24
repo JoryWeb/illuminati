@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_report_general_ledger_account_view" model="ir.ui.view">
+        <field name="name">General Ledger</field>
+        <field name="model">account.report.general.ledger</field>
+        <field name="inherit_id" ref="account.account_report_general_ledger_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='initial_balance']" position="after">
+                    <field name="account_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    <newline/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="account_report_balance_account_view" model="ir.ui.view">
+        <field name="name">Trial Balance Account</field>
+        <field name="model">account.balance.report</field>
+        <field name="inherit_id" ref="account.account_report_balance_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='display_account']" position="after">
+                    <field name="account_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    <newline/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>

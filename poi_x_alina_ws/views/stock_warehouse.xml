@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="view_warehouse_alina_ws" model="ir.ui.view">
+      <field name="name">stock.warehouse.ws.form</field>
+      <field name="model">stock.warehouse</field>
+      <field name="inherit_id" ref="stock.view_warehouse"/>
+      <field name="arch" type="xml">
+        <data>
+            <field name="code" position="after">
+                <field name="type"/>
+            </field>
+        </data>
+    </field>
+    </record>
+</data>
+</odoo>

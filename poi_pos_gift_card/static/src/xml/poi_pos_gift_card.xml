@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="Orderline">
+        <t t-jquery=".info-list" t-operation="append">
+            <t t-if="line.get_giftcard_code()">
+                <li class="info orderline-giftcard">
+                    <i class='fa fa-tag'/>GiftCard: <t t-esc="line.get_giftcard_code()" />
+                </li>
+            </t>
+            <t t-if="line.get_giftcard_code_used()">
+                <li class="info orderline-giftcard">
+                    <i class='fa fa-tag'/>GiftCard Used: <t t-esc="line.get_giftcard_code_used()" />
+                </li>
+            </t>
+        </t>
+    </t>
+
+    <t t-name="GiftCardPaymentButton">
+        <div class='control-button js_apply_gift_card'>
+            <i class='fa fa-star' /> Apply Gift Card
+        </div>
+    </t>
+
+    <t t-name="GiftCardPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput">
+                <p class="title">Gift Card</p>
+                <p>You are going to sell a gift card. Please enter the gift card code below in order to be applied in future sales.</p>
+                <input class="giftcard_code" type='text'/>
+                <div class="footer">
+                    <div class="button confirm-giftcard">
+                        Apply
+                    </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+     <t t-name="GiftCardPaymentPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput">
+                <p class="title">Apply Gift Card</p>
+                <p>Please insert the code displayed on the gift card.</p>
+                <input class="giftcard_code" type='text'/>
+                <div class="footer">
+                    <div class="button confirm-giftcardpayment">
+                        Apply
+                    </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+
+</templates>

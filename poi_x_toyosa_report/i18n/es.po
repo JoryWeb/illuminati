@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_x_toyosa_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-16 23:45+0000\n"
+"PO-Revision-Date: 2017-08-16 23:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_product_qty
+msgid "Product Quantity"
+msgstr "Cantidad del Producto"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_uom_name
+msgid "Reference Unit of Measure"
+msgstr "Unidad de medida de referencia"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_payment_term_id
+msgid "Payment Term"
+msgstr "Terminos de Pago"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_payment_fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Posicion Fiscal"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_categ_id
+msgid "Product Category"
+msgstr "Categoria de Producto"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_partner_id
+msgid "Partner"
+msgstr "Cliente"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_commercial_partner_id
+msgid "Partner Company"
+msgstr "Compañia de la Empresa"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_user_id
+msgid "Salesperson"
+msgstr "Vendendor"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_price_total
+msgid "Total Without Tax"
+msgstr "Total Base"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_user_currency_price_total
+msgid "Total Without Tax"
+msgstr "Total sin Impuestos 2"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_price_average
+msgid "Average Price"
+msgstr "Precio Promedio"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_currency_rate
+msgid "Currency Rate"
+msgstr "Tipo de Cambio"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_nbr
+msgid "# of Lines"
+msgstr "# de Lineas"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_type
+msgid "type"
+msgstr "Tipo de Factura"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_state
+msgid "Invoice Status"
+msgstr "Estado de Factura"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_date_due
+msgid "Due Date"
+msgstr "Fecha de Vencimiento"
+
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_account_line_id
+msgid "Account Line"
+msgstr "Linea de Asiento"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_partner_bank_id
+msgid "Bank Account"
+msgstr "Cuenta Bancaria"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_residual
+msgid "Total Residual"
+msgstr "Total Residual"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_country_id
+msgid "Country of the Partner Company"
+msgstr "Pais de la Compañia de la Empresa"
+
+#. module: poi_x_toyosa_report
+#: model:ir.model.fields,field_description:poi_x_toyosa_report.field_account_invoice_analysis_lot_team_id
+msgid "Sales Team"
+msgstr "Equipo de Venta"

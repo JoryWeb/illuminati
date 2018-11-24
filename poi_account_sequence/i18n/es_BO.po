@@ -1,0 +1,157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_account_sequence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-05 19:35+0000\n"
+"PO-Revision-Date: 2017-06-05 19:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_account_sequence
+#: model:ir.model,name:poi_account_sequence.model_account_move
+msgid "Account Entry"
+msgstr "Asiento contable"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_analytic_account_id
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_analytic_account_tag_id
+msgid "Analytic Account Tag"
+msgstr "Categoría analítica"
+
+#. module: poi_account_sequence
+#: model:ir.ui.view,arch_db:poi_account_sequence.account_move_sequence_wizard_form
+msgid "Apply Sequence"
+msgstr "Aplicar Secuencia"
+
+#. module: poi_account_sequence
+#: code:addons/poi_account_sequence/wizard/account_move_sequence_wizard.py:87
+#, python-format
+msgid "Asientos Contables"
+msgstr "Asientos Contables"
+
+#. module: poi_account_sequence
+#: model:ir.actions.act_window,name:poi_account_sequence.account_move_sequence_wizard_form_action
+#: model:ir.actions.act_window,name:poi_account_sequence.act_stock_return_picking
+#: model:ir.ui.menu,name:poi_account_sequence.menu_account_move_sequence_wizard_form
+msgid "Assign Sequence"
+msgstr "Asignar Secuencia"
+
+#. module: poi_account_sequence
+#: model:ir.ui.view,arch_db:poi_account_sequence.account_move_sequence_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_date_from
+msgid "Date From"
+msgstr "Desde"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_date_to
+msgid "Date To"
+msgstr "Hasta"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_folio
+#: model:ir.ui.view,arch_db:poi_account_sequence.view_account_move_folio_filter
+msgid "Folio"
+msgstr "Folio"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_only_selected
+msgid "Only Selected"
+msgstr "Solo seleccionados"
+
+#. module: poi_account_sequence
+#: model:ir.ui.view,arch_db:poi_account_sequence.account_move_sequence_wizard_form
+msgid "POS order analysis Wizard"
+msgstr "Asistente"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_padding
+msgid "Padding"
+msgstr "Relleno"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_prefix
+msgid "Prefix"
+msgstr "Prefijo"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_start_number
+msgid "Start Number"
+msgstr "Número inicial"
+
+#. module: poi_account_sequence
+#: model:ir.model.fields,field_description:poi_account_sequence.field_account_move_sequence_wizard_suffix
+msgid "Suffix"
+msgstr "Sufijo"
+
+#. module: poi_account_sequence
+#: model:ir.model,name:poi_account_sequence.model_account_move_sequence_wizard
+msgid "Wizard Alternative Name on Moves"
+msgstr "Asistente de Nombres Alternativos en Asientos"
+
+#. module: poi_account_sequence
+#: model:ir.ui.view,arch_db:poi_account_sequence.account_move_sequence_wizard_form
+msgid "or"
+msgstr "o"
+

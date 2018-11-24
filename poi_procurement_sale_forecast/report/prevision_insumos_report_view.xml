@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_poi_prevision_insumos_report_pivot">
+            <field name="name">poi.prevision.insumos.pivot</field>
+            <field name="model">poi.prevision.insumos.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Orden de Produccion" disable_linking="True">
+                    <field name="product_id" type="row"/>
+                    <field name="cant_planificada" type="measure"/>
+                    <field name="cant_prevista" type="measure"/>
+                    <field name="cant_solicitada" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_poi_prevision_insumos_report_graph">
+            <field name="name">poi.prevision.insumos.graph</field>
+            <field name="model">poi.prevision.insumos.report</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase Orders Statistics">
+                    <field name="product_id" type="row"/>
+                    <field name="cant_planificada" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+
+        <record id="view_poi_prevision_insumos_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">poi.prevision.insumos.report</field>
+            <field name="arch" type="xml">
+                <search string="Reporte MRP">
+                    <field name="product_id"/>
+                    <field name="date"/>
+                    <field name="location_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Ubicación" name="group_location_id" context="{'group_by':'location_id'}"/>
+                        <filter string="Producto" name="group_product_id" context="{'group_by':'product_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_poi_prevision_insumos_report_tree">
+            <field name="name">poi.prevision.insumos.report.tree</field>
+            <field name="model">poi.prevision.insumos.report</field>
+            <field name="arch" type="xml">
+                <tree string="Proyeccion Stock">
+                    <field name="product_id"/>
+                    <field name="location_id"/>
+                    <field name="date"/>
+                    <field name="uom_id"/>
+                    <field name="stock_actual"/>
+                    <field name="cant_max"/>
+                    <field name="cant_min"/>
+                    <field name="cant_planificada"/>
+                    <field name="cant_prevista"/>
+                    <field name="cant_solicitada"/>
+                    <field name="stock_futuro"/>
+                    <field name="ultimo_stock"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_poi_prevision_insumos_report_all" model="ir.actions.act_window">
+            <field name="name">Proyección de Stock</field>
+            <field name="res_model">poi.prevision.insumos.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="view_id"></field>
+            <field name="help">Reporte de Proyección de Stocks</field>
+        </record>
+
+        <menuitem id="menu_poi_prevision_insumos_report" parent="poi_procurement_sale_forecast.menu_stock_purchase_forecast" sequence="1"
+                  action="action_poi_prevision_insumos_report_all"/>
+
+        <menuitem id="menu_poi_prevision_insumos_report_ventas" parent="poi_procurement_sale_forecast.menu_stock_sale_forecast" sequence="1"
+                  action="action_poi_prevision_insumos_report_all"/>
+
+    </data>
+</openerp>

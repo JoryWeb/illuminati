@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_pos_orders_list,product_pos_orders_list,model_product_pos_orders_list,poi_logistic.group_logistic_user,1,0,0,0
+product_date_sold_returned_orders,product_date_sold_returned_orders,model_product_date_sold_returned_orders,poi_logistic.group_logistic_user,1,0,0,0

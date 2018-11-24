@@ -1,0 +1,279 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* poi_trace
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-16 23:42+0000\n"
+"PO-Revision-Date: 2017-08-16 19:43-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_BO\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:111
+#, python-format
+msgid " (reverted)"
+msgstr " (reversión)"
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:36
+#: code:addons/poi_trace/static/src/js/poi_trace.js:98
+#, python-format
+msgid "Account Entries Generated"
+msgstr "Asientos Contables Generados"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_move
+msgid "Account Entry"
+msgstr "Asiento contable"
+
+#. module: poi_trace
+#: code:addons/poi_trace/wizard/account_move_trace.py:84
+#, python-format
+msgid "Account Move Origin"
+msgstr "Orígen de Asientos Contables"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_move_revert_wizard
+msgid "Account Move Revert wizard"
+msgstr "Asistente de Reversión de Asientos COntables"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_move_trace_wizard
+msgid "Account Move Trace wizard"
+msgstr "Asistente de Rastreo de Asientos Contables"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_move_trace_wizard_line
+msgid "Account Move Trace wizard line"
+msgstr "Línea de Account Move trace"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_automove
+msgid "Automove"
+msgstr "Movimiento Automático"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: poi_trace
+#: model:ir.ui.view,arch_db:poi_trace.account_move_trace_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_create_date
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_display_name
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_trace
+#: model:ir.ui.view,arch_db:poi_trace.account_move_trace_wizard_form
+msgid "Do you want to see the origin of this asset?"
+msgstr "Desea ver el orígen de los asientos contables?"
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:69
+#: code:addons/poi_trace/wizard/account_move_trace.py:76
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_fixable_automatic_asset
+msgid "Fixable Automatic Asset"
+msgstr "Asiento automático editable"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_id
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:59
+#: code:addons/poi_trace/static/src/js/poi_trace.js:116
+#, python-format
+msgid "Journal Items Generated"
+msgstr "Apuntes Contables Generados"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard___last_update
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_write_uid
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_write_date
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_lines
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_trace
+#: model:ir.model,name:poi_trace.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_src
+msgid "Source"
+msgstr "Origen"
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:149
+#, python-format
+msgid "This is an automatic move. Please post this asset."
+msgstr "Este es un asiento contable automático. Por favor asiente el mismo."
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:152
+#, python-format
+msgid "This is an automatic move. You cannot make changes here."
+msgstr "Este es un asiento contable automático. No puede realizar cambios aquí."
+
+#. module: poi_trace
+#: model:ir.model.fields,help:poi_trace.field_account_move_fixable_automatic_asset
+msgid "This is going to be enabled if the asset needs to be modified."
+msgstr "Este campo deberá ser habilitado si el asiento necesita ser modificado"
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:78
+#: code:addons/poi_trace/account_move.py:148
+#: code:addons/poi_trace/account_move.py:165
+#, python-format
+msgid "User Error!"
+msgstr "Errór de Usuario!"
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:19
+#: code:addons/poi_trace/static/src/js/poi_trace.js:85
+#, python-format
+msgid "View Generated Assets"
+msgstr "Ver Asientos Generados"
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:21
+#: code:addons/poi_trace/static/src/js/poi_trace.js:87
+#, python-format
+msgid "View Generated Journal Items"
+msgstr "Ver Apuntes Generados"
+
+#. module: poi_trace
+#: model:ir.actions.act_window,name:poi_trace.action_account_move_trace_wizard
+#: model:ir.ui.view,arch_db:poi_trace.account_move_trace_wizard_form
+msgid "View Origin"
+msgstr "Ver Orígen"
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:47
+#: code:addons/poi_trace/static/src/js/poi_trace.js:70
+#, python-format
+msgid "Warning"
+msgstr "Alerta"
+
+#. module: poi_trace
+#: model:ir.model.fields,field_description:poi_trace.field_account_move_trace_wizard_line_wizard_id
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:79
+#, python-format
+msgid "You cannot delete an automatic entry \"%s\"."
+msgstr "Usted no puede eliminar un asiento automático \"%s\"."
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:149
+#, python-format
+msgid "You cannot delete any line of an automatic entry \"%s\"."
+msgstr "Usted no puede borrar ninguna línea de un asiento automático \"%s\"."
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:166
+#, python-format
+msgid "You cannot edit any line of an automatic entry \"%s\"."
+msgstr "Usted no puede editar ninguna línea de un asiento automático \"%s\"."
+
+#. module: poi_trace
+#: code:addons/poi_trace/account_move.py:69
+#, python-format
+msgid ""
+"You cannot modify an automatic entry.\n"
+"Otherwise you can revert it."
+msgstr ""
+"Usted no puede modificar un asiento automático.\n"
+"Usted únicamente puede revertir el mismo."
+
+#. module: poi_trace
+#. openerp-web
+#: code:addons/poi_trace/static/src/js/poi_trace.js:47
+#: code:addons/poi_trace/static/src/js/poi_trace.js:70
+#, python-format
+msgid "You must select at least one record."
+msgstr "Debe seleccionar al menos un registro."
+
+#. module: poi_trace
+#: code:addons/poi_trace/wizard/account_move_trace.py:76
+#, python-format
+msgid "You only can see grouped sources from the same model!!!"
+msgstr "Solo puede ver el origen de asientos agrupados que correspondan al mismo modelo!!!"
+
+#. module: poi_trace
+#: model:ir.ui.view,arch_db:poi_trace.account_move_trace_wizard_form
+msgid "or"
+msgstr "o"

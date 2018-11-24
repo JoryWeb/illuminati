@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_vehicle_asset_workshop_buttons_from" model="ir.ui.view">
+            <field name="name">poi.vehicle.workshop.button.inherit</field>
+            <field name="model">poi.vehicle</field>
+            <field name="inherit_id" ref="poi_vehicle.poi_vehicle_form_view"/>
+            <field name="groups_id" eval="[(4, ref('poi_vehicle.group_mro_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button class="oe_inline oe_stat_button" name="action_view_maintenance" type="object"
+                            icon="fa-wrench">
+                        <field string="Ordenes de Trabajo" name="workshop_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_inline oe_stat_button" name="action_view_historial" type="object"
+                            icon="fa-clock-o" string="Historial de Dueños">
+                    </button>
+                    <button class="oe_inline oe_stat_button" name="action_view_prev_maintenance" type="object"
+                            icon="fa-truck">
+                        <field string="Trabajos Previstos" name="workshop_prev_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_inline oe_stat_button" name="action_view_kilomentraje" type="object"
+                            icon="fa-dashboard" string="Kilometraje">
+                    </button>
+                </xpath>
+                <field name="chasis_id" position="before">
+                    <field name="maintenance_date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_vehicle_tree_workshop" model="ir.ui.view">
+            <field name="name">asset tree view workshop</field>
+            <field name="model">poi.vehicle</field>
+            <field name="inherit_id" ref="poi_vehicle.poi_vehicle_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="vendor_id" position="after">
+                    <field name="maintenance_state_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_vehicle_search_workshop" model="ir.ui.view">
+            <field name="name">asset search view workshop</field>
+            <field name="model">poi.vehicle</field>
+            <field name="inherit_id" ref="poi_vehicle.poi_vehicle_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='group_user']" position="after">
+                    <filter name="group_maintenance_state"
+                            string="Status"
+                            context="{'group_by': 'maintenance_state_id'}"
+                    />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

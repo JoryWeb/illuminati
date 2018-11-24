@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="hr_health_box_view_tree" model="ir.ui.view">
+  <field name="name">hr.health.box.tree</field>
+  <field name="model">hr.health.box</field>
+  <field name="arch" type="xml">
+    <tree string="cajas de salud">
+      <field name="name"/>
+    </tree>
+  </field>
+</record>
+<record id="hr_health_box_view_form" model="ir.ui.view">
+  <field name="name">hr.health.box.form</field>
+  <field name="model">hr.health.box</field>
+  <field name="arch" type="xml">
+    <form string="">
+      <sheet>
+        <group>
+          <field name="name"/>
+        </group>
+      </sheet>
+    </form>
+  </field>
+</record>
+<record id="hr_health_box_action_form" model="ir.actions.act_window">
+  <field name="name">Cajas de salud</field>
+  <field name="res_model">hr.health.box</field>
+  <field name="view_mode">tree,form</field>
+  <field name="help" type="html">
+    <p class="oe_view_nocontent_create">
+      Añadir Cajas de Salud
+    </p>
+    <p>
+      Configuracion de Cajas de Salud
+    </p>
+  </field>
+</record>
+<menuitem id="menu_hr_health_box" parent="menu_hr_employee_config_base" action="hr_health_box_action_form" sequence="10"/>
+</odoo>

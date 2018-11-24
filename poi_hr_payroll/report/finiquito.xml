@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<report
+	id="hr_finiquito_report"
+	model="hr.finiquito"
+	string="Impresion de Finiquito"
+	report_type="qweb-pdf"
+	name="poi_hr_payroll.finiquito_template"
+	file="poi_hr_payroll.finiquito"
+
+/>
+<record id="paperformat_hr_finiquito" model="report.paperformat">
+	<field name="name">Boleta de Pago</field>
+	<field name="default" eval="True"/>
+	<field name="format">A4</field>
+	<field name="page_height">0</field>
+	<field name="page_width">0</field>
+	<field name="orientation">Portrait</field>
+	<field name="margin_top">10</field>
+	<field name="margin_bottom">10</field>
+	<field name="margin_left">5</field>
+	<field name="margin_right">5</field>
+	<field name="header_line" eval="False" />
+	<field name="header_spacing">5</field>
+	<field name="dpi">90</field>
+</record>
+<record id="hr_finiquito_report" model="ir.actions.report">
+	<field name="paperformat_id" ref="poi_hr_payroll.paperformat_hr_finiquito"/>
+</record>
+<template id="finiquito_template">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+<div class="page" style="font-size:13px;">
+<div class="row">
+<div class="col-xs-12">
+<div class="panel panel-default">
+<div class="row">
+	<div class="col-xs-4 text-center">
+		<t t-call="poi_hr_payroll.escudo"></t>
+		<p><strong>ESTADO PLURINACIONAL DE<br/>BOLIVIA</strong></p>
+	</div>
+	<div class="col-xs-4 text-center">
+		<h3 style="padding-top:30px;"><strong>FINIQUITO</strong></h3>
+	</div>
+	<div class="col-xs-4 text-center">
+		<t t-call="poi_hr_payroll.mintra"></t>
+		<p><strong>MINISTERIO DE TRABAJO,<br/>EMPLEO Y PREVISIÓN SOCIAL</strong></p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<td><strong>I. DATOS GENERALES</strong></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<div class="col-xs-12">
+		<p><strong>Razón social o nombre de la empresa:</strong> <span t-field="o.company_id.razon" /></p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>Rama de actividad econ.:</strong> <span t-field="o.company_id.actividad" /></p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>Domicilio:</strong> <span t-field="o.company_id.street" /> <span t-field="o.company_id.street2" /></p>
+	</div>
+	<div class="col-xs-12">
+		<p><strong>Nombre del trabajador:</strong> <span t-field="o.employee_id.name" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Estado Civil: </strong><span t-field="o.employee_id.marital" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Edad: </strong><span t-field="o.employee_id.age" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Domicilio: </strong><span t-field="o.employee_id.address_home_id.street" /> <span t-field="o.employee_id.address_home_id.street2" /></p>
+	</div>
+	<div class="col-xs-12">
+		<p><strong>Profesión u ocupación: </strong><span t-field="o.employee_id.job_id.name" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>C.I.: </strong><span t-field="o.employee_id.address_home_id.ci" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Fech. Ingreso: </strong><span t-field="o.date_from" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Fech. retiro: </strong><span t-field="o.date_to" /></p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>Motivo de retiro: </strong><span t-field="o.note" /></p>
+	</div>
+	<div class="col-xs-6">
+		<p><strong>Remuneración mensual Bs. </strong><span t-field="o.contract_id.wage" /></p>
+	</div>
+	<div class="col-xs-4">
+		<p><strong>Tiempo de servicio: </strong><span t-field="o.years" />  <strong>Años</strong></p>
+	</div>
+	<div class="col-xs-4">
+		<p><span t-field="o.months" /> <strong>Meses y</strong></p>
+	</div>
+	<div class="col-xs-4">
+		<p><span t-field="o.days" /> <strong>Dias </strong></p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<td><strong>II. LIQUIDACION DE LA REMUNERACION PROMEDIO INDEMNIZABLE EN BASE A LOS 3 ULTIMOS MESES</strong></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-condensed table-bordered">
+			<tbody>
+				<tr>
+					<td colspan="2"><strong>A) Meses Remuneracion Mensual:</strong></td>
+
+					<td class="text-center"><span t-field="o.payslip_one_id.date_from" t-field-options='{"format": "MMMM"}'/>-<span t-field="o.payslip_one_id.date_from" t-field-options='{"format": "d"}'/>
+					</td>
+					<td class="text-center"><span t-field="o.payslip_second_id.date_from" t-field-options='{"format": "MMMM"}'/>-<span t-field="o.payslip_second_id.date_from" t-field-options='{"format": "d"}'/></td>
+					<td class="text-center"><span t-field="o.payslip_third_id.date_from" t-field-options='{"format": "MMMM"}'/>-<span t-field="o.payslip_third_id.date_from" t-field-options='{"format": "d"}'/></td>
+					<td class="text-center"><strong>Totales Bs.:</strong></td>
+				</tr>
+				<tr>
+
+					<td colspan="2"></td>
+					<td class="text-right"><span t-field="o.payslip_one_id.line_ids.filtered(lambda x: x.code == 'NET').total"/></td>
+					<td class="text-right"><span t-field="o.payslip_second_id.line_ids.filtered(lambda x: x.code == 'NET').total"/></td>
+					<td class="text-right"><span t-field="o.payslip_third_id.line_ids.filtered(lambda x: x.code == 'NET').total"/></td>
+					<t t-set="t1" t-value="o.payslip_one_id.line_ids.filtered(lambda x: x.code == 'NET').total + o.payslip_second_id.line_ids.filtered(lambda x: x.code == 'NET').total + o.payslip_third_id.line_ids.filtered(lambda x: x.code == 'NET').total"/>
+					<td class="text-right"><span t-esc="'{0:,.2f}'.format(t1)"/></td>
+				</tr>
+				<tr>
+					<td colspan="6"><strong>B) Otros conceptos percibidos en el mes:</strong></td>
+				</tr>
+				<t t-set="t3" t-value="0"/>
+				<t t-as="ot" t-foreach="o.other_ids">
+				<tr>
+
+					<td colspan="2"></td>
+					<td class="text-right"><span t-field="ot.first_amount"/></td>
+					<td class="text-right"><span t-field="ot.second_amount"/></td>
+					<td class="text-right"><span t-field="ot.third_amount"/></td>
+					<t t-set="t2" t-value="ot.first_amount + ot.second_amount + ot.third_amount"/>
+					<td class="text-right"><span t-esc="'{0:,.2f}'.format(t2)"/></td>
+					<t t-set="t3" t-value="t3+t2"/>
+				</tr>
+				<t t-if="ot_last">
+					<tr>
+
+						<td colspan="2"></td>
+						<td class="text-right"></td>
+						<td class="text-right"></td>
+						<td class="text-right"></td>
+						<td class="text-right"></td>
+
+					</tr>
+					<tr>
+						<td colspan="5"><strong>Total Bs.:</strong></td>
+						<td class="text-right"><span t-esc="'{0:,.2f}'.format(t3)"/></td>
+					</tr>
+				</t>
+				</t>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<td><strong>III. TOTAL REMUNERACIÓN PROMEDIO INDEMNIZABLE (A+B) DIVIDIDO ENTRE 3:</strong></td>
+					<td class="text-right"><strong><span t-field="o.other_amount"/></strong></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<div class="col-xs-10">
+		<p><strong>C) Desahucio tres meses (En caso de retiro forzoso):</strong></p>
+	</div>
+	<div class="col-xs-2 text-right">
+		<t t-if="o.ouster">
+			<strong><span t-field="o.ouster_amount"/></strong>
+		</t>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-4">
+		<p><strong>D) Indemnización por tiempo de trabajo: </strong></p>
+	</div>
+	<div class="col-xs-8">
+		<table style="margin-bottom:0px;" class="table table-condensed">
+			<tbody>
+				<tr>
+					<td><strong></strong></td>
+					<td></td>
+					<td class="text-right"><strong>De</strong></td>
+					<td class="text-center"><span t-field="o.years"/></td>
+					<td><strong>Años</strong></td>
+					<td class="text-right"><span t-field="o.years_amount"/></td>
+					<td><strong></strong></td>
+					<td><strong></strong></td>
+				</tr>
+				<tr>
+					<td><strong></strong></td>
+					<td></td>
+					<td class="text-right"><strong>De</strong></td>
+					<td class="text-center"><span t-field="o.months"/></td>
+					<td><strong>Meses</strong></td>
+					<td class="text-right"><span t-field="o.months_amount"/></td>
+					<td><strong></strong></td>
+					<td><strong></strong></td>
+				</tr>
+				<tr>
+					<td><strong></strong></td>
+					<td></td>
+					<td class="text-right"><strong>De</strong></td>
+					<td class="text-center"><span t-field="o.days"/></td>
+					<td><strong>Dias</strong></td>
+					<td class="text-right"><span t-field="o.days_amount"/></td>
+					<t t-set="t4" t-value="o.years_amount + o.months_amount + o.days_amount"/>
+					<td><strong></strong></td>
+					<td class="text-right"><strong><span t-esc="'{0:,.2f}'.format(t4)"/></strong></td>
+				</tr>
+				<tr>
+					<td><strong>Aguinaldo</strong></td>
+					<td></td>
+					<td class="text-right"><strong>De</strong></td>
+					<td class="text-center"><span t-field="o.months_bonus"/></td>
+					<td><strong>Meses y</strong></td>
+					<td class="text-right"><span t-field="o.days_bonus"/></td>
+					<td><strong>Dias</strong></td>
+					<td class="text-right"><strong><span t-field="o.bonus_amount"/></strong></td>
+				</tr>
+				<t t-if="o.dbonus">
+					<tr>
+						<td><strong>D. Aguinaldo</strong></td>
+						<td></td>
+						<td class="text-right"><strong>De</strong></td>
+						<td class="text-center"><span t-field="o.months_bonus"/></td>
+						<td><strong>Meses y</strong></td>
+						<td class="text-right"><span t-field="o.days_bonus"/></td>
+						<td><strong>Dias</strong></td>
+						<td class="text-right"><strong><span t-field="o.bonus_amount"/></strong></td>
+					</tr>
+				</t>
+				<t t-as="b" t-foreach="o.benefit_ids">
+					<tr>
+						<td><strong><span t-field="b.code"/></strong></td>
+						<td><span t-field="b.name"/></td>
+						<td class="text-right"><strong><span t-field="b.gestion"/></strong></td>
+						<td class="text-center"><span t-field="b.tiempo"/></td>
+						<td><strong><span t-field="b.medida"/></strong></td>
+						<td class="text-right"><span t-field="b.tiempo2"/></td>
+						<td><strong><span t-field="b.medida2"/></strong></td>
+						<td class="text-right"><strong><span t-field="b.monto"/></strong></td>
+					</tr>
+				</t>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<td><strong>IV. TOTAL DE BENEFICIOS SOCIALES: C+D:</strong></td>
+					<td class="text-right"><span t-field="o.amount_benefit"/></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<div class="col-xs-12">
+		<p><strong>E) Deducciones:</strong></p>
+	</div>
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-condensed">
+			<tbody>
+			<t t-as="d" t-foreach="o.deductions_ids">
+				<tr>
+					<td><span t-field="d.name"/></td>
+					<td class="text-right"><span t-field="d.amount_total"/></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<t t-if="d_last">
+					<tr>
+						<td></td>
+						<td></td>
+						<td class="text-right">Total Bs.</td>
+						<td class="text-right"><strong><span t-field="o.amount_deduction"/></strong></td>
+
+
+					</tr>
+				</t>
+			</t>
+
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<table style="margin-bottom:0px;" class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<td><strong>V. IMPORTE LIQUIDO A PAGAR C+D-E=</strong></td>
+					<td class="text-right"><strong>Total Bs.</strong></td>
+					<td class="text-right"><strong t-field="o.amount_total_pay"/></td>
+				</tr>
+
+			</thead>
+		</table>
+	</div>
+</div>
+</div>
+<div style="page-break-before: always;"></div>
+
+
+<div class="row" style="padding-top:200px;font-size:14px;">
+	<div class="col-xs-12">
+		<p>Forma de pago: Efectivo ( ) Cheque ( ) N°</p>
+	</div>
+	<div class="col-xs-12">
+		<p>Importe de la suma cancelada: <strong t-esc="to_word(o.amount_total_pay).upper()"/></p>
+	</div>
+	<div class="col-xs-12">
+		<p>YO: <strong t-field="o.employee_id.name"/></p>
+		<p>Mayor de edad, con C.I. Nº <strong t-field="o.employee_id.address_home_id.ci"/> declaro que en la fecha recibo a mi entera satisfacción,el importe de Bs. <strong t-field="o.amount_total_pay"/> por concepto de la liquidación de mi quinquenio, de conformidad con la Ley General del Trabajo, su Decreto Reglamentario y disposiciones conexas. </p>
+	</div>
+	<div class=" col-xs-2-offset col-xs-8 text-center" style="padding-top:20px;">
+		<p>Lugar y Fecha: <span t-field="o.company_id.state_id.name" />, <span t-field="o.date" t-field-options='{"format": "d"}'/> de <span t-field="o.date" t-field-options='{"format": "MMMM"}'/> de <span t-field="o.date" t-field-options='{"format": "y"}'/> </p>
+	</div>
+
+	<div class="col-xs-6 text-center" style="padding-top:70px;">___________________</div>
+	<div class="col-xs-6 text-center" style="padding-top:70px;">___________________</div>
+	<div class="col-xs-6 text-center">Interesado</div>
+	<div class="col-xs-6 text-center">Gerente General</div>
+	<div class="col-xs-6 text-center" style="padding-top:70px;">___________________</div>
+	<div class="col-xs-6 text-center" style="padding-top:70px;">___________________</div>
+	<div class="col-xs-6 text-center">V°B° Ministerio de Trabajo</div>
+	<div class="col-xs-6 text-center">Sello</div>
+
+</div>
+<div class="row" style="font-size:14px;">
+	<div class="col-xs-12 text-center">
+		<strong>INSTRUCCIONES</strong>
+	</div>
+	<div class="col-xs-12" style="padding-top:30px;">
+		<p>1. En todos los casos en los cuales proceda el pago de beneficios sociales y que no estén comprendidos en el despido por las causales en el Art. 16 de la Ley General del Trabajo y el Art. 9 de su Reglamento, el Finiquito de contrato se suscribirá en el presente FORMULARIO LP - A.</p>
+	</div>
+	<div class="col-xs-12">
+		<p>2. Los señores Directores, Jefes Departamentales e Inspectores Regionales, son los únicos funcionarios facultados para revisar y refrendar todo Finiquito de contrato de Trabajo, con cuya intervención alcanzará la correspondiente eficacia jurídica, en aplicación del Art. 22 de la Ley General del Trabajo. La interveción de cualquier otro funcionario del Ministerio de Trabajo y Desarrollo Laboral carecerá de toda validez legal.</p>
+	</div>
+	<div class="col-xs-12">
+		<p>3. Las partes intervinientes en la suscripción del presente FINIQUITO, deberán acreditar su identidad personal con los documentos sañalados por ley. <br/> Este Formulario no constituye Ley entre partes por su carácter esencialmente revisable, por lo tanto las cifras contenidas no causan estado ni revisten el sello de cosa juzgada.</p>
+	</div>
+</div>
+
+</div>
+</div>
+</div>
+</t>
+</t>
+</template>
+</data>
+</odoo>

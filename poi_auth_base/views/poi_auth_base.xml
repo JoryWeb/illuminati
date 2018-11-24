@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" inherit_id="web.assets_backend" name="Authorization Base">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/poi_auth_base/static/src/css/poi_auth_base.css"/>
+                <script type="text/javascript" src="/poi_auth_base/static/src/js/auth_base.js"></script>
+                <!-- <script type="text/javascript" src="/poi_auth_base/static/src/js/auth_debug.js"></script> -->
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_sale_contract_toyo"
+    string="Contrato de Venta"
+    model="sale.order"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.sale_contract_report_toy"
+    name="poi_x_toyosa_report.sale_contract_template_toy"
+  />
+  <record id="paperformat_contract_toy" model="report.paperformat">
+    <field name="name">CONTRATO de VENTA</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">24</field>
+    <field name="margin_bottom">22</field>
+    <field name="margin_left">4</field>
+    <field name="margin_right">4</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">12</field>
+    <field name="dpi">90</field>
+  </record>
+  <record id="report_sale_contract_toyo" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_contract_toy"/>
+  </record>
+
+</data>
+
+<template id="sale_contract_template_toy">
+<t t-call="web.html_container">
+<t t-foreach="docs" t-as="o">
+  <div class="header">
+  </div>
+  <div class="article" style="font-size:11px;">
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-12">
+        <h4 style="color:red;">CONTRATO DE VENTA</h4>
+      </div>
+      <div class="col-xs-6">
+        <p><strong>Nro. <span t-field="lot_id.contract_ref"></span> <span t-field="o.analytic_account_id.name"></span></strong></p>
+        <p><strong>No. File:</strong> <span t-esc="o.client_order_ref"/></p>
+      </div>
+      <div class="col-xs-3"><strong>CIUDAD: <span t-field="o.warehouse_id.state_id.name"></span></strong></div>
+      <div class="col-xs-3">
+        <p>
+          <strong>FECHA: <span t-field="o.order_date" /></strong>
+        </p>
+        <p>
+          <strong>ESTADO (OV): <span t-field="o.state" /></strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-12" style="border-top: 2px solid black;">
+        <h5 style="color:red;">Datos Personales del Cliente</h5>
+      </div>
+      <div class="col-xs-7">
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Nombre Completo:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-field="o.partner_id.name"/></td>
+            </tr>
+            <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>C.I.:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="o.partner_id.ci_plus_ext"/></td>
+            </tr>
+            <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Dirección:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-field="o.partner_id.street"/> <span t-field="o.partner_id.street2"/> </td>
+            </tr>
+            <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Telefono:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-field="o.partner_id.phone"/></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-5">
+        <p><strong>NIT: </strong> <span t-esc="o.partner_id.nit"></span></p>
+        <p style="margin-top:60px;"><strong>Email:</strong> <span t-esc="o.partner_id.email"></span></p>
+        <strong>Celular: </strong> <span t-esc="o.partner_id.mobile or '.'"></span>
+      </div>
+    </div>
+
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-12" style="border-top: 2px solid black;">
+        <h5 style="color:red;">Descripcion del Vehiculo</h5>
+      </div>
+      <div class="col-xs-12">
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Modelo:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="(lot_id.modelo and lot_id.modelo.name) or '.'"/></td>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Año:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="(o.lot_id.anio_modelo and int(o.lot_id.anio_modelo.name)) or ' '"/></td>
+               <td style="border-top:0px solid #FFFFFF;"></td>
+              <td style="border-top:0px solid #FFFFFF;"></td>
+            </tr>
+             <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Chasis:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="lot_id.name"/></td>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Motor:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="lot_id.n_motor or '.'"/></td>
+               <td style="border-top:0px solid #FFFFFF;"></td>
+              <td style="border-top:0px solid #FFFFFF;"></td>
+            </tr>
+             <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Color:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="(lot_id.colorexterno and lot_id.colorexterno.name) or '.'"/></td>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Marca:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="(lot_id.marca and lot_id.marca.name) or '.'"/></td>
+               <td style="border-top:0px solid #FFFFFF;"></td>
+              <td style="border-top:0px solid #FFFFFF;"></td>
+            </tr>
+             <tr>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Otros:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="(lot_id.marca and lot_id.marca.name) or '.'"/></td>
+              <td style="border-top:0px solid #FFFFFF;"><strong>Master:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="lot_id.product_id.default_code"/> - <span t-esc="lot_id.product_id.name"/></td>
+               <td style="border-top:0px solid #FFFFFF;"><strong><span t-esc="name_i"/>:</strong></td>
+              <td style="border-top:0px solid #FFFFFF;"><span t-esc="valor_i"/></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-12" style="border-top: 2px solid black;">
+        <h5 style="color:red;">CONDICIONES Y OPCIONES DE VENTA</h5>
+      </div>
+      <div class="col-xs-2">
+        <p><strong>Moneda:</strong></p>
+      </div>
+      <div class="col-xs-2">
+        <p><span t-esc="moneda"></span></p>
+      </div>
+      <div class="col-xs-3">
+        <p><strong>Forma de Pago:</strong> <span t-field="o.payment_term_id.name"></span></p>
+
+      </div>
+      <div class="col-xs-5">
+        <p><strong>Ubicacion:</strong> <span t-field="o.warehouse_id.name"></span></p>
+      </div>
+      <div class="col-xs-2">
+
+        <p><strong>Monto Total:</strong></p>
+        <p><strong>Cuota Inicial:</strong></p>
+        <p><strong>Saldo:</strong></p>
+        <p><strong>Seguro:</strong></p>
+      </div>
+      <div class="col-xs-2">
+
+        <p><span t-field="o.amount_total_plus_a"></span></p>
+        <p>
+          <t t-if="o.currency_advance_id">
+          <span t-esc="('%.2f' % o.currency_advance_id.compute(o.amount_advanced, o.pricelist_id.currency_id))"></span>
+          </t>
+          <t t-if="not o.currency_advance_id">
+            0.00
+          </t>
+      </p>
+        <p>
+          <t t-if="o.currency_advance_id">
+          <span t-esc="('%.2f' % (o.amount_total_plus_a - o.currency_advance_id.compute(o.amount_advanced, o.pricelist_id.currency_id)))"></span>
+          </t>
+          <t t-if="not o.currency_advance_id">
+            0.00
+          </t>
+        </p>
+        <p><span t-esc="(o.insurance and 'SI') or 'NO'"></span></p>
+      </div>
+      <div class="col-xs-5">
+
+        <p><strong><span t-esc="to_word(o.amount_total_plus_a, o.pricelist_id.currency_id.name).replace('Bolivianos', '').replace('Dólares', '').replace('BOLIVIANOS', '').replace('DÓLARES', '')"></span></strong></p>
+        <p>
+          <strong>
+          <t t-if="o.currency_advance_id">
+            <span t-esc="to_word(o.currency_advance_id.compute(o.amount_advanced, o.pricelist_id.currency_id), o.pricelist_id.currency_id.name).replace('Bolivianos', '').replace('Dólares', '').replace('BOLIVIANOS', '').replace('DÓLARES', '')"></span>
+          </t>
+          <t t-if="not o.currency_advance_id">
+            Cero 00/100
+          </t>
+          </strong>
+        </p>
+        <p><strong>
+        <t t-if="o.currency_advance_id">
+          <span t-esc="to_word(o.amount_total_plus_a - o.currency_advance_id.compute(o.amount_advanced, o.pricelist_id.currency_id), o.pricelist_id.currency_id.name).replace('Bolivianos', '').replace('Dólares', '').replace('BOLIVIANOS', '').replace('DÓLARES', '')"></span>
+        </t>
+        <t t-if="not o.currency_advance_id">
+          Cero 00/100
+        </t>
+        </strong>
+        </p>
+        <p><strong>Venta Cif Zona Franca: <span t-esc="(o.sale_type_id.sale_cif and 'SI') or 'NO'"></span></strong></p>
+      </div>
+      <div class="col-xs-3">
+
+        <p><strong><span t-esc="moneda"></span></strong></p>
+        <p><strong><span t-esc="moneda"></span></strong></p>
+        <p><strong><span t-esc="moneda"></span></strong></p>
+        <p></p>
+      </div>
+
+    </div>
+
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-12" style="border-top: 2px solid black;">
+        <p style="color:red;">Opcionales Contemplados en el Precio:</p>
+      </div>
+    <div class="col-xs-12">
+      <t t-foreach="lot_id.product_id.checklist_line" t-as="l">
+        <t t-if="l.activo">
+          <p><span t-field="l.item_id.name"></span></p>
+        </t>
+      </t>
+      <t t-foreach="o.order_line_a" t-as="lines">
+        <t t-if="lines.product_id.accessory">
+          <p style="padding:0px;margin:0px;"><span t-field="lines.name"></span></p>
+        </t>
+      </t>
+    </div>
+
+    </div>
+
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-12">
+        <p style="color:red;">Observaciones: <br /> </p>
+        <p><span t-field="o.note" /></p>
+      </div>
+    <div class="col-xs-12">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+
+    </div>
+
+
+    <div class="row" style="padding-bottom:6px;">
+      <div class="col-xs-4 text-center">
+        <p>..............................................</p>
+        <p>FIRMA CLIENTE</p>
+      </div>
+      <div class="col-xs-4 text-center">
+        <p>..............................................</p>
+        <p>VºBº GERENCIA</p>
+      </div>
+      <div class="col-xs-4 text-center">
+        <p>..............................................</p>
+        <p>EJECUTIVO DE VENTAS</p>
+      </div>
+      <div class="col-xs-12">
+        <p><strong>NOTA IMPORTANTE.- SEÑOR CLIENTE, TOYOSA S.A. LE INFORMA QUE NINGUN EMPLEADO DE TOYOSA S.A.
+ESTA AUTORIZADO A RECIBIR DINERO EN EFECTIVO DE NUESTROS CLIENTES. TODO PAGO DEBE SER
+REALIZADO EN NUESTRAS CAJAS O POR MEDIO DE TRANSFERENCIAS BANCARIAS. ASIMISMO, POR TODA
+TRANSACCION EXIJA EL COMPROBANTE OFICIAL DE PAGO.</strong></p>
+      </div>
+
+
+    </div>
+
+
+
+
+
+    <div style="page-break-before: always;"></div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div t-field="o.sale_type_id.contract_type_id.clause"></div>
+      </div>
+    </div>
+
+  </div>
+</t>
+</t>
+</template>
+
+</odoo>

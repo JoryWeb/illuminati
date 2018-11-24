@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+     <record id="view_libro_cv_criteria_wizard" model="ir.ui.view">
+         <field name="name">poi_bol_base.libro_cv.criteria.form</field>
+         <field name="model">poi_bol_base.libro_cv.criteria</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Seleccionar criterios">
+             	<label string ="." colspan="4" nolabel="1" align="0.0"/>
+                 <group>
+                    <field name="spec" widget="radio"/>
+                </group>
+
+                 <group>
+                     <field name="month"/>
+                     <field name="year" widget="char"/>
+                 </group>
+                 <group>
+                     <separator string="Filtros opcionales"/>
+                     <newline/>
+                     <field name="shop_id" domain="[('enabled_for_sale','=',1)]"/>
+                     <field name="cc_dos" context="{'display_all': 1}"/>
+                </group>
+
+             	<newline/>
+             	<separator colspan="4" />
+             	<footer>
+             		<button name="action_next" string="Siguiente > " type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+
+
+      <record model="ir.ui.view" id="view_libro_cv_tree">
+        <field name="name">poi_bol_base.libro_cv.criteria.tree</field>
+        <field name="model">poi_bol_base.libro_cv.criteria</field>
+        <field name="arch" type="xml">
+            <tree string="Libro CV">
+                <field name="spec"/>
+            </tree>
+        </field>
+     </record>
+
+     <record id="view_libro_cv_search" model="ir.ui.view">
+           <field name="name">poi_bol_base.libro_cv.criteria.search</field>
+           <field name="model">poi_bol_base.libro_cv.criteria</field>
+           <field name="arch" type="xml">
+               <search string="Libro CV">
+                   <field name="spec"/>
+               </search>
+           </field>
+       </record>
+
+
+     <record model="ir.actions.act_window" id="action_libro_cv_criteria_wizard">
+        <field name="name">Libro CV</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">poi_bol_base.libro_cv.criteria</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_libro_cv_criteria_wizard"/>
+        <field name="view_search_id" ref="view_libro_cv_search"/>
+        <field name="target">new</field>
+     </record>
+
+     <menuitem parent="menu_bol_rep_imp" name="Libros CV" action="action_libro_cv_criteria_wizard" id="menu_libro_cv_criteria_wizard" sequence="10"/>
+
+
+      <!-- Wizard 2/3  -->
+      <record id="view_libro_cv_summary_wizard" model="ir.ui.view">
+         <field name="name">poi_bol_base.libro_cv.summary.form</field>
+         <field name="model">poi_bol_base.libro_cv.summary</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Resumen preliminar">
+             	<label string ="." colspan="4" nolabel="1" align="0.0"/>
+                 <field name="no_lines" invisible="1"/>
+                 <field name="lines" readonly="1">
+                     <tree colors="red:count == 0" fonts="italic:count==0; bold:count>0">
+                         <field name="label" required="1"  readonly="0" string=" "/>
+                         <field name="count"/>
+                         <field name="range"/>
+                         <field name="monto"/>
+                         <field name="ice"/>
+                         <field name="exento"/>
+                         <field name="neto"/>
+                         <field name="iva"/>
+                     </tree>
+                 </field>
+                 <group>
+                    <field name="export" widget="radio"/>
+                </group>
+
+
+
+             	<newline/>
+             	<separator colspan="4" />
+             	<footer>
+             		<button name="action_next" string="Exportar >" type="object" class="oe_highlight"/>
+                 	<button name="action_screen_view" string="Ver en pantalla" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+
+      <!-- Wizard 3/3  -->
+      <record id="view_libro_cv_export_wizard" model="ir.ui.view">
+         <field name="name">poi_bol_base.libro_cv.export.form</field>
+         <field name="model">poi_bol_base.libro_cv.export</field>
+         <field name="type">form</field>
+         <field name="arch" type="xml">
+             <form string="Descarga Libro">
+                <h2>Exportación Completada</h2>
+                 <field name="name" readonly="1" invisible="1"/>
+                <p>Aquí esta el archivo de exportación generado : <field name="file" readonly="1" filename="name"/></p>
+
+                <newline/>
+             	<separator colspan="4" />
+             	<footer>
+                    <button string="Cerrar" special="cancel" type="object"/>
+                </footer>
+            </form>
+         </field>
+     </record>
+
+  </data>
+</openerp>

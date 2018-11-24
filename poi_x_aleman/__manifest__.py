@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Poi Education',
+    'version': '11.0.1.0.0',
+    'category': 'Education',
+    "sequence": 3,
+    'summary': 'Manage TimeTables',
+    'complexity': "easy",
+    'author': 'Tech Receptives',
+    'website': 'http://www.poiesisconsulting.org',
+    'depends': ['openeducat_core', 'account', 'openeducat_erp'],
+    'data': [
+        # 'security/ir.model.access.csv',
+        'views/account_charge.xml',
+        'views/op_school_period.xml',
+        'views/menu.xml',
+        
+        'views/op_blood_group_view.xml',
+        'views/op_class_view.xml',
+        'views/op_course_view.xml',
+        'views/op_family_view.xml',
+        'views/op_family_tag_view.xml',
+        'views/op_matter_view.xml',
+        'views/op_medical_file_view.xml',
+        'views/op_parent_view.xml',
+        'views/op_profession_view.xml',
+        'views/op_relationship_view.xml',
+        'views/op_religion_view.xml',
+        'views/op_sport_view.xml',
+        'views/op_student_view.xml',
+        'views/op_teacher_classification_view.xml',
+        'views/op_teacher_view.xml',
+        'views/op_title_view.xml',
+        'views/op_type_scholarship_view.xml',
+
+        # wizard
+        'wizard/account_charge_generator.xml',
+        'wizard/menu_wiz.xml',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+}

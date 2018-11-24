@@ -1,0 +1,16 @@
+<openerp>
+    <data>
+        <record id="logistic_products_stock_kanban" model="ir.ui.view">
+            <field name="name">product.product.logistic.pos.kanban</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="poi_logistic.logistic_products_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_items_list oe_kanban_ellipsis oe_logistic_product_options']" position="inside">
+                    <div>
+                        <a name="%(reporte_kardex_graph_stock_product_form_action)d" type="action">Stock Analysis</a>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

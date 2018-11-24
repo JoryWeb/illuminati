@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            string="Orden Producción ALINA"
+            id="action_report_production_order_alina"
+            model="mrp.production" 
+            name="poi_x_alina.report_mrporder_alina"
+            file="poi_x_alina.report_mrporder_alina"
+            report_type="qweb-pdf"
+        />
+    </data>
+</openerp>

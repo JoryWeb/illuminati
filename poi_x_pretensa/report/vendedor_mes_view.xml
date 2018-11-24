@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- Reporte Ventas base -->
+        <record id="view_pret_vendedor_report_tree" model="ir.ui.view">
+            <field name="name">pret.vendedor.report.tree</field>
+            <field name="model">pret.vendedor.report</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Informe Vendedor por mes">
+                    <field name="partner_id" invisible="1"/>
+                    <field name="date_order" invisible="1"/>
+                    <field name="shop_id" invisible="1"/>
+                    <field name="date_year" invisible="1"/>
+                    <field name="date_day" invisible="1"/>
+                    <field name="date_week" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="user_id"/>
+                    <field name="ene_m" sum="mes"/>
+                    <field name="ene_p"/>
+                    <field name="feb_m" sum="mes"/>
+                    <field name="feb_p" />
+                    <field name="mar_m" sum="mes"/>
+                    <field name="mar_p" />
+                    <field name="abr_m" sum="mes"/>
+                    <field name="abr_p" />
+                    <field name="may_m" sum="mes"/>
+                    <field name="may_p" />
+                    <field name="jun_m" sum="mes"/>
+                    <field name="jun_p" />
+                    <field name="jul_m" sum="mes"/>
+                    <field name="jul_p" />
+                    <field name="ago_m" sum="mes"/>
+                    <field name="ago_p" />
+                    <field name="sep_m" sum="mes"/>
+                    <field name="sep_p" />
+                    <field name="oct_m" sum="mes"/>
+                    <field name="oct_p" />
+                    <field name="nov_m" sum="mes"/>
+                    <field name="nov_p" />
+                    <field name="dec_m" sum="mes"/>
+                    <field name="dec_p" />
+                    <field name="total" sum="Monto Total"/>
+               </tree>
+            </field>
+        </record>
+
+        <record id="view_pret_vendedor_report_search" model="ir.ui.view">
+            <field name="name">pret.vendedor.report.search</field>
+            <field name="model">pret.vendedor.report</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Informe Ventas">
+                    <group>
+                        <field name="shop_id"/>
+                        <field name="partner_id"/>
+                        <field name="user_id"/>
+                        <field name="state"/>
+                        <filter name="filter_vendido" string="Vendido" domain="[('state','=', 'done')]"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter name="group_year" string="Año" context="{'group_by':'date_year'}"/>
+                        <filter name="group_week" string="Semana" context="{'group_by':'date_week'}"/>
+                        <filter name="group_shop" string="Sucursal" context="{'group_by':'shop_id'}"/>
+                        <filter name="group_user" string="Vendedor" context="{'group_by':'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_pret_vendedor_report_graph" model="ir.ui.view">
+            <field name="name">pret.vendedor.bar.report.graph</field>
+            <field name="model">pret.vendedor.report</field>
+            <field name="arch" type="xml">
+                <graph string="Distribución Vendedores" type="bar">
+                    <field name="user_id"/>
+                    <field name="total" operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_pret_vendedor_report" model="ir.actions.act_window">
+            <field name="name">Informe Vendedor por mes</field>
+            <field name="res_model">pret.vendedor.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,graph</field>
+            <field name="search_view_id"  ref="view_pret_vendedor_report_search"/>
+            <field name="domain"></field>
+            <field name="context">{'search_default_group_year':1,'search_default_group_user':1,'search_default_filter_vendido':1,'group_by':[]}</field>
+        </record>
+
+        <menuitem action="action_pret_vendedor_report" id="menu_pret_vendedor_report" parent="base.menu_sale_report" sequence="0"/>
+
+    </data>
+</openerp>

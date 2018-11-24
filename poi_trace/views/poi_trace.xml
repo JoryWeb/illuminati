@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="poi_trace assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/poi_trace/static/src/js/poi_trace.js"></script>
+            <link rel="stylesheet" href="/poi_trace/static/src/css/poi_trace.css"/>
+        </xpath>
+    </template>
+
+    <record id="poi_payment_cancel_form_inherit" model="ir.ui.view">
+        <field name="name">payment.cancel.form.inherit.poi</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account_cancel.payment_cancel_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='cancel']" position="replace">
+                <button name="cancel" attrs="{'invisible': [('state', 'in', ('draft','cancel'))]}" string="Cancel"
+                        type="object"
+                        confirm="Cancelar un Pago generará un Asiento volcado sobre su Asiento ya existente. Desea continuar?"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

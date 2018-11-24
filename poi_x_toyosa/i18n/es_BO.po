@@ -1,0 +1,4288 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_x_toyosa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-22 22:13+0000\n"
+"PO-Revision-Date: 2018-06-22 22:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_nbr
+msgid "# de Linea"
+msgstr "# de Linea"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_descuento
+msgid "% Descuento"
+msgstr "% Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<span><strong>Dirección Almacén:</strong></span>"
+msgstr "<span><strong>Dirección Almacén:</strong></span>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<span><strong>Dirección Cliente:</strong></span>"
+msgstr "<span><strong>Dirección Cliente:</strong></span>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<span><strong>Dirección Proveedor:</strong></span>"
+msgstr "<span><strong>Dirección Proveedor:</strong></span>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<span><strong>Dirección de entrega:</strong></span>"
+msgstr "<span><strong>Dirección de entrega:</strong></span>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<span>Lote/Chasis:</span>"
+msgstr "<span>Lote/Chasis:</span>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Cantidad</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>CheckList</strong>"
+msgstr "<strong>CheckList</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Código de Barras</strong>"
+msgstr "<strong>Código de Barras</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Destino</strong>"
+msgstr "<strong>Destino</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Estado</strong>"
+msgstr "<strong>Estado</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Fecha Programada</strong>"
+msgstr "<strong>Fecha Programada</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Fecha comprometida</strong>"
+msgstr "<strong>Fecha comprometida</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Origen</strong>"
+msgstr "<strong>Origen</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Pedido(Origen)</strong>"
+msgstr "<strong>Pedido(Origen)</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>Producto</strong>"
+msgstr "<strong>Producto</strong>"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "<strong>____</strong>"
+msgstr "<strong>____</strong>"
+
+#. module: poi_x_toyosa
+#: selection:sale.type,booking:0
+msgid "A partir de la Aprobacion del Descuento."
+msgstr "A partir de la Aprobacion del Descuento."
+
+#. module: poi_x_toyosa
+#: selection:sale.type,booking:0
+msgid "A partir de la confirmacion de la Venta."
+msgstr "A partir de la confirmacion de la Venta."
+
+#. module: poi_x_toyosa
+#: selection:sale.type,booking:0
+msgid "A partir del Primer Adelanto se Habilita el boton de Reserva."
+msgstr "A partir del Primer Adelanto se Habilita el boton de Reserva."
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "ALMACEN"
+msgstr "ALMACEN"
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "ALMACEN PDS"
+msgstr "ALMACEN PDS"
+
+#. module: poi_x_toyosa
+#: model:res.groups,comment:poi_x_toyosa.group_sale_pt
+msgid "Acceso a tramite de placas"
+msgstr "Acceso a tramite de placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_accessory
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_accessory
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_accesory
+msgid "Accesorio"
+msgstr "Accesorio"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_order_line_a
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Accesorios"
+msgstr "Accesorios"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.act_poi_reservation_cancel_wizard
+msgid "Accion Cancelar"
+msgstr "Accion Cancelar"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.act_poi_reservation_wizard
+msgid "Acciones de Reserva"
+msgstr "Acciones de Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_category_activity_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_activity_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_activity_id
+msgid "Actividad Economica permitida"
+msgstr "Actividad Economica permitida"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_product_category_activity_id
+#: model:ir.model.fields,help:poi_x_toyosa.field_product_product_activity_id
+#: model:ir.model.fields,help:poi_x_toyosa.field_product_template_activity_id
+msgid "Actividad Economica permitida al momento de facturar los productos"
+msgstr "Actividad Economica permitida al momento de facturar los productos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_activity_id
+msgid "Actividad económica"
+msgstr "Actividad económica"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_active
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "Activo"
+msgstr "Activo"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_move_update_wizard
+msgid "Actualizar"
+msgstr "Actualizar"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Actualizar ED"
+msgstr "Actualizar ED"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_poi_purchase_line_update_wizard
+#: model:ir.model,name:poi_x_toyosa.model_update_fob_picking_wizard
+msgid "Actualizar Orden"
+msgstr "Actualizar Orden"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.act_stock_move_update_wizard
+msgid "Actualizar Precio FOB"
+msgstr "Actualizar Precio FOB"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_move_update_wizard
+msgid "Actualizar dato Serie"
+msgstr "Actualizar dato Serie"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_current_adenda
+msgid "Adenda Actual"
+msgstr "Adenda Actual"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_file
+msgid "Adjuntar Imagen"
+msgstr "Adjuntar Imagen"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+msgid "Agrupar Por"
+msgstr "Agrupar Por"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence_report_search
+msgid "Agrupar por"
+msgstr "Agrupar por"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_search_view_toyosa
+msgid "Agrupar por..."
+msgstr "Agrupar por..."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_invoice_type
+msgid "Al Crear la Factura se lo hara a travez de uno de estos dos metodos. El primero es una facturacion normal donde se muestran todos los productos. El segundo Facturacion de Automotores crea la factura Agrupando todo en una sola linea."
+msgstr "Al Crear la Factura se lo hara a travez de uno de estos dos metodos. El primero es una facturacion normal donde se muestran todos los productos. El segundo Facturacion de Automotores crea la factura Agrupando todo en una sola linea."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_chasis_flag
+msgid "Al estar marcado el campo chasis siempre sera requerido para poder crear la cotizacion."
+msgstr "Al estar marcado el campo chasis siempre sera requerido para poder crear la cotizacion."
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/sale.py:941
+#: code:addons/poi_x_toyosa/models/sale.py:948
+#, python-format
+msgid "Alerta"
+msgstr "Alerta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_warehouse_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_picking_type_id
+msgid "Almacén"
+msgstr "Almacén"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_alto
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_alto
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Alto"
+msgstr "Alto"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "An administrator can set up default Terms and conditions in your Company settings."
+msgstr "An administrator can set up default Terms and conditions in your Company settings."
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_analisis_comercial
+msgid "Analisis Comercial"
+msgstr "Analisis Comercial"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_ancho
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_ancho
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Ancho"
+msgstr "Ancho"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_sale_host
+msgid "Anfitrion"
+msgstr "Anfitrion"
+
+#. module: poi_x_toyosa
+#: model:res.groups,comment:poi_x_toyosa.group_sale_host
+msgid "Anfitrion, solo trafico de clientes e iniciativas"
+msgstr "Anfitrion, solo trafico de clientes e iniciativas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_activo
+msgid "Aplica"
+msgstr "Aplica"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Approve Order"
+msgstr "Aprobar pedido"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence
+msgid "Archivos Adjuntos"
+msgstr "Archivos Adjuntos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_mot_desarmada
+msgid "Armado"
+msgstr "Armado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_aro_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_aro_neumatico
+msgid "Aro"
+msgstr "Aro"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_sale_salesman_assistant
+msgid "Asistente de Ventas"
+msgstr "Asistente de Ventas"
+
+#. module: poi_x_toyosa
+#: model:res.groups,comment:poi_x_toyosa.group_sale_salesman_assistant
+msgid "Asistente de Ventas Solo Lectura"
+msgstr "Asistente de Ventas Solo Lectura"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_atributo
+msgid "Atributo"
+msgstr "Atributo"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.atributo_lista_neumaticos_toyosa_tree
+msgid "Atributo Lista"
+msgstr "Atributo Lista"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_atributo_neumaticos_line
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_atributo_neumaticos_line
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Atributo Neumáticos"
+msgstr "Atributo Neumáticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.atributo_nombre_toyosa_action
+msgid "Atributo Nombre Toyosa"
+msgstr "Atributo Nombre Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_atributo_line
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_atributo_line
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Atributos"
+msgstr "Atributos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.atributo_lista_neumaticos_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_atributo_lista_neumaticos_toyosa_action
+msgid "Atributos Neumáticos"
+msgstr "Atributos Neumáticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.atributo_nombre_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_atributo_nombre_toyosa_action
+msgid "Atributos Nombre Vehiculos"
+msgstr "Atributos Nombre Vehiculos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.atributo_nombre_toyosa_tree
+msgid "Atributos Nombre Vehículos"
+msgstr "Atributos Nombre Vehículos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.atributo_valor_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_atributo_valor_toyosa_action
+msgid "Atributos Valor Vehiculos"
+msgstr "Atributos Valor Vehiculos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.atributo_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_atributo_toyosa_action
+msgid "Atributos Vehiculos"
+msgstr "Atributos Vehiculos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.atributo_toyosa_tree
+#: model:ir.ui.view,arch_db:poi_x_toyosa.atributo_valor_toyosa_tree
+msgid "Atributos Vehículos"
+msgstr "Atributos Vehículos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_auth_locked
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_auth_locked
+msgid "Authorization Locked"
+msgstr "Autorización Bloqueada"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Automotor"
+msgstr "Automotor"
+
+#. module: poi_x_toyosa
+#: selection:product.category,type_product:0
+msgid "Automovil"
+msgstr "Automovil"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_year_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_edicion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_edicion
+msgid "Año"
+msgstr "Año"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_anio_fabricacion
+msgid "Año Fabricación"
+msgstr "Año Fabricación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_anio
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_anio_modelo
+msgid "Año Modelo"
+msgstr "Año Modelo"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_backorder_confirmation
+msgid "Backorder Confirmation"
+msgstr "Confirmación de entrega parcial"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_bank_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_bank_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_bank_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_purchase_bank_id
+msgid "Banco"
+msgstr "Banco"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_barco
+msgid "Barco"
+msgstr "Barco"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_untaxed_a
+msgid "Base Imponible Accesorios"
+msgstr "Base Imponible Accesorios"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_edit_nit
+msgid "Bloquear Edicion de Nit"
+msgstr "Bloquear Edicion de Nit"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_edit_razon
+msgid "Bloquear Edicion de Razon"
+msgstr "Bloquear Edicion de Razon"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_bloqueo_venta
+msgid "Bloqueo para la Venta"
+msgstr "Bloqueo para la Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_bloqueo_cif
+msgid "Bloqueo por Venta CIF"
+msgstr "Bloqueo por Venta CIF"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_bolsa_vehiculos
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_bolsa_vehiculos_2
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+msgid "Bolsa de Vehículos"
+msgstr "Bolsa de Vehículos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_bolsa_vehiculos
+msgid "Bolsa de vehículos"
+msgstr "Bolsa de vehículos"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_stock_manager_cpd
+msgid "CPD"
+msgstr "CPD"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_account_invoice_skip_order
+msgid "Campo flag para omitir la validación de forzar OVs para cada factura. No visible en interfaz de usuario. En principio pensado para cargas masivas."
+msgstr "Campo flag para omitir la validación de forzar OVs para cada factura. No visible en interfaz de usuario. En principio pensado para cargas masivas."
+
+#. module: poi_x_toyosa
+#: model:res.groups,comment:poi_x_toyosa.group_sale_marketing
+msgid "Campos de  Marketing Ventas OV"
+msgstr "Campos de  Marketing Ventas OV"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_cancel_wizard
+msgid "Cancel Reserva de Vehículos"
+msgstr "Cancel Reserva de Vehículos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_cancel_wizard
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Cancelar Reserva"
+msgstr "Cancelar Reserva"
+
+#. module: poi_x_toyosa
+#: selection:purchase.report.toyosa,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_cant_llaves
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_cant_llaves
+msgid "Cant. Llaves"
+msgstr "Cant. Llaves"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_qty
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_quantity
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_cantidad_venta
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "Cantidad"
+msgstr "Cantidad"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_cantidad_fabrica
+msgid "Cantidad Fábrica"
+msgstr "Cantidad Fábrica"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_cantidad_revisada
+msgid "Cantidad Revisada"
+msgstr "Cantidad Revisada"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_cantidad
+msgid "Cantidad de Daños"
+msgstr "Cantidad de Daños"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_account_invoice_cartera
+msgid "Cartera"
+msgstr "Cartera"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_caso
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Caso"
+msgstr "Caso"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_category_id
+msgid "Categoria de Producto"
+msgstr "Categoria de Producto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_categ_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_category
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_search_view_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_search
+msgid "Categoría"
+msgstr "Categoría"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_category_root
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_category_root
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_search_view_toyosa
+msgid "Categoría raíz"
+msgstr "Categoría raíz"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_lot_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_lot_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_albaran
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_prioridades_nacionalizacion
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence_report_search
+msgid "Chasis"
+msgstr "Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_chasis_flag
+msgid "Chasis Flag"
+msgstr "Chasis Flag"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_poi_chasis_inventory_report
+msgid "Chasis Inventario Reporte"
+msgstr "Chasis Inventario Reporte"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_chasis_flag
+msgid "Chasis Requerido"
+msgstr "Chasis Requerido"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_lot_id
+msgid "Chasis/Lote"
+msgstr "Chasis/Lote"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Chasis/Serie por Año con Descuento"
+msgstr "Chasis/Serie por Año con Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_checklist_line
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_checklist_line
+msgid "Check List"
+msgstr "Check List"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.check_list_toyosa_items_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_check_list_toyosa_items_action
+msgid "Check List Items"
+msgstr "Check List Items"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.check_list_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_check_list_toyosa_action
+msgid "Check List Productos"
+msgstr "Check List Productos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Check List pre Entrega"
+msgstr "Check List pre Entrega"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "CheckList"
+msgstr "CheckList"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_discount_check
+msgid "Circuito de Autoriacion de Descuento"
+msgstr "Circuito de Autoriacion de Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_auth_id
+msgid "Circuito de Autorizacion"
+msgstr "Circuito de Autorizacion"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_country_id
+msgid "Ciudad Proveedor"
+msgstr "Ciudad Proveedor"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_clasificacion
+msgid "Clasificación"
+msgstr "Clasificación"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_stock_reserve_type_form
+msgid "Clic para agregar nuevos tipos de reserva"
+msgstr "Clic para agregar nuevos tipos de reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_poi_stock_reservation_lot_tree
+msgid "Click para Crear un chasis y especificar sus reservas"
+msgstr "Click para Crear un chasis y especificar sus reservas"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.poi_purchase_imports_toyosa
+msgid "Click para Crear una Orden de Importaciones"
+msgstr "Click para Crear una Orden de Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_partner_id_client
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_partner_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_partner_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_res_partner_user_cod_cargo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_res_users_user_cod_cargo
+msgid "Codigo Cargo"
+msgstr "Codigo Cargo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_res_partner_user_cod_localidad
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_res_users_user_cod_localidad
+msgid "Codigo Localidad"
+msgstr "Codigo Localidad"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_codigobarras
+msgid "Codigo de Barras"
+msgstr "Codigo de Barras"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_colorexterno
+msgid "Color Ext"
+msgstr "Color Ext"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_colorexterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_colorexterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_colorexterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_colorexterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_colorexterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_colorexterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_colorexterno
+#: model:ir.ui.view,arch_db:poi_x_toyosa.color_externo_tree
+msgid "Color Externo"
+msgstr "Color Externo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_colorinterno
+msgid "Color Int"
+msgstr "Color Int"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_colorinterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_colorinterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_colorinterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_colorinterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_colorinterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_colorinterno
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_colorinterno
+#: model:ir.ui.view,arch_db:poi_x_toyosa.color_interno_tree
+msgid "Color Interno"
+msgstr "Color Interno"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.color_externo_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_color_externo_action
+msgid "Colores Externos"
+msgstr "Colores Externos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.color_interno_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_color_interno_action
+msgid "Colores Internos"
+msgstr "Colores Internos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_company_id
+msgid "Compañia"
+msgstr "Compañia"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_insurance
+msgid "Con Seguro"
+msgstr "Con Seguro"
+
+#. module: poi_x_toyosa
+#: selection:purchase.order,warrant:0
+#: selection:stock.production.lot,state_finanzas:0
+msgid "Con Warrant"
+msgstr "Con Warrant"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_poi_stock_reservation_lot_tree
+msgid "Con las opciones de chasis usted puede Crear un registro de Chasis\n"
+"                    y Asignarle una reserva en función de los parametros establecido"
+msgstr "Con las opciones de chasis usted puede Crear un registro de Chasis\n"
+"                    y Asignarle una reserva en función de los parametros establecido"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_configuraciones_toyosa
+msgid "Config. Toyosa"
+msgstr "Config. Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Confirm Order"
+msgstr "Confirmar pedido"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_confirm_sale
+msgid "Confirmar Venta"
+msgstr "Confirmar Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_partner_flag
+msgid "Contacto por Defecto"
+msgstr "Contacto por Defecto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_lot_log_count
+msgid "Contador de Logs"
+msgstr "Contador de Logs"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_lot_payment_count
+msgid "Contador de Pagos"
+msgstr "Contador de Pagos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_lot_plate_count
+msgid "Contador de Placas"
+msgstr "Contador de Placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_contract_ref
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_contract_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_contract_ref
+msgid "Contrato"
+msgstr "Contrato"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_contract_ref2
+msgid "Contrato2"
+msgstr "Contrato2"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_copia
+msgid "Copia N#"
+msgstr "Copia N#"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_n_correlativo
+msgid "Correlativo producción"
+msgstr "Correlativo producción"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_cost
+msgid "Costo"
+msgstr "Costo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_price_unit
+msgid "Costo Bs."
+msgstr "Costo Bs."
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_search
+msgid "Costo FOB"
+msgstr "Costo FOB"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_price_flete
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_price_flete
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_price_flete
+msgid "Costo Flete"
+msgstr "Costo Flete"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_price_seguro
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_price_seguro
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_price_seguro
+msgid "Costo Seguro"
+msgstr "Costo Seguro"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_price_unit_usd
+msgid "Costo USD."
+msgstr "Costo USD."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_price_unit_fob
+msgid "Costo Unidad"
+msgstr "Costo Unidad"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_poi_chasis_landed_cost_report_price_unit
+msgid "Costo de compra Bs."
+msgstr "Costo de compra Bs."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_poi_chasis_landed_cost_report_price_unit_usd
+msgid "Costo de compra o Dolares"
+msgstr "Costo de compra o Dolares"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_tree
+msgid "Costos Chasis"
+msgstr "Costos Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_poi_chasis_landed_cost_report_report_all
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_poi_chasis_landed_cost_report
+msgid "Costos Chasis Importaciones"
+msgstr "Costos Chasis Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_graph
+msgid "Costos de Chasis"
+msgstr "Costos de Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_pivot
+msgid "Costos de chasis"
+msgstr "Costos de chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_order_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_order_id
+msgid "Cotizacion"
+msgstr "Cotizacion"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_order_id
+msgid "Cotizacion de Venta"
+msgstr "Cotizacion de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_stock_reservation_lot_log_tree
+msgid "Creado el"
+msgstr "Creado el"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_stock_reservation_lot_log_tree
+msgid "Creado por"
+msgstr "Creado por"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_serieschasis
+msgid "Crear chasis"
+msgstr "Crear chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_create_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_create_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_account_invoice_refund
+msgid "Credit Note"
+msgstr "Rectificativa"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_albaran
+msgid "Cuadro Estado Importaciones"
+msgstr "Cuadro Estado Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+msgid "Cuadro Prioridades"
+msgstr "Cuadro Prioridades"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_prioridades_nacionalizacion
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_prioridades_nacionalizacion
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_prioridades_nacionalizacion_despachante
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_priority2sale
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_prioridades_nacionalizacion
+msgid "Cuadro Prioridades Liberación"
+msgstr "Cuadro Prioridades Liberación"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_prioridades_nacionalizacion
+msgid "Cuadro de Prioridades Nacionalizacion"
+msgstr "Cuadro de Prioridades Nacionalizacion"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_estado_importaciones
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_estado_importaciones_albaran
+msgid "Cuadro de estado de Importaciones según registros de lotes o chasis"
+msgstr "Cuadro de estado de Importaciones según registros de lotes o chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_plate_procesing
+msgid "Cuando se realiza el tramite de placas."
+msgstr "Cuando se realiza el tramite de placas."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_analytic_account_id
+msgid "Cuenta Analitica"
+msgstr "Cuenta Analitica"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_account_analytic_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_project_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+msgid "Cuenta Analítica"
+msgstr "Cuenta Analítica"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/account_invoice.py:142
+#, python-format
+msgid "Cuenta analítica sin asignar en una linea de la factura de compra"
+msgstr "Cuenta analítica sin asignar en una linea de la factura de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_code
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_name
+msgid "Código"
+msgstr "Código"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_location_cod_antiguo
+msgid "Código Antíguo"
+msgstr "Código Antíguo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_codigo_frv
+msgid "Código FRV"
+msgstr "Código FRV"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_n_llaves
+msgid "Código Llave"
+msgstr "Código Llave"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_katashiki
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_katashiki
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_search_view_toyosa
+msgid "Código Modelo"
+msgstr "Código Modelo"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.katashiki_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_katashiki_action
+msgid "Código Modelos"
+msgstr "Código Modelos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_location_cod_ubicacion
+msgid "Código Ubicación"
+msgstr "Código Ubicación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_location_cod_localidad
+msgid "Código de Localidad"
+msgstr "Código de Localidad"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_katashiki
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_katashiki
+msgid "Código de Modelo"
+msgstr "Código de Modelo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_katashiki
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_katashiki
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_katashiki
+msgid "Código modelo"
+msgstr "Código modelo"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "DELANTERA DERECHA"
+msgstr "DELANTERA DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "DELANTERA IZQUIERDA"
+msgstr "DELANTERA IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "DELANTERA MEDIA DERECHA"
+msgstr "DELANTERA MEDIA DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "DELANTERA MEDIA IZQUIERDA"
+msgstr "DELANTERA MEDIA IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,clasificacion:0
+msgid "DESABOLLADO MAYOR"
+msgstr "DESABOLLADO MAYOR"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,clasificacion:0
+msgid "DESABOLLADO MENOR"
+msgstr "DESABOLLADO MENOR"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_purchase_report_toyosa_date
+msgid "Date on which this document has been created"
+msgstr "Fecha en el que fue creado este documento."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_sucursal
+msgid "Dato de la sucursal donde el chasis ha sido reservado para la venta"
+msgstr "Dato de la sucursal donde el chasis ha sido reservado para la venta"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_location_view_inh
+msgid "Datos Integración"
+msgstr "Datos Integración"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Datos de Importacion"
+msgstr "Datos de Importacion"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Datos de Reserva"
+msgstr "Datos de Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Datos de Vehiculos"
+msgstr "Datos de Vehiculos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Datos de Venta"
+msgstr "Datos de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_dealsheet
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_line
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_dealsheet_flag
+msgid "Dealsheet"
+msgstr "Dealsheet"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_flag
+msgid "Dealsheet Flag"
+msgstr "Oferta bandera"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.atributo_valor_toyosa_action
+msgid "Definir Atributo Valor"
+msgstr "Definir Atributo Valor"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.atributo_lista_neumaticos_toyosa_action
+msgid "Definir Atributos de Neumáticos"
+msgstr "Definir Atributos de Neumáticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.check_list_toyosa_items_action
+msgid "Definir Checklist Items"
+msgstr "Definir Checklist Items"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.atributo_toyosa_action
+#: model:ir.actions.act_window,help:poi_x_toyosa.check_list_toyosa_action
+msgid "Definir Checklist Productos"
+msgstr "Definir Checklist Productos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.katashiki_property_action
+msgid "Definir Propiedades Katashiki"
+msgstr "Definir Propiedades Katashiki"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.color_externo_action
+msgid "Definir colores externos"
+msgstr "Definir colores externos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.katashiki_action
+msgid "Definir códigos de modelos"
+msgstr "Definir códigos de modelos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_active
+msgid "Dertermina si el tipo de Venta esta activo en el sistema"
+msgstr "Dertermina si el tipo de Venta esta activo en el sistema"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_name
+msgid "Descripcion"
+msgstr "Descripcion"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_descripcion
+msgid "Descripción"
+msgstr "Descripción"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_discount_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_discount
+msgid "Descuento"
+msgstr "Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_discount_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_discount_approve
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_discount_approve
+msgid "Descuento Aprobado"
+msgstr "Descuento Aprobado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_edit_discount
+msgid "Descuento Editable"
+msgstr "Descuento Editable"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_discount_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_discount_flag
+msgid "Descuento editable"
+msgstr "Descuento editable"
+
+#. module: poi_x_toyosa
+#: model:ir.module.category,name:poi_x_toyosa.module_category_despachante
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_daspachante
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_daspachante_usuario
+msgid "Despachante"
+msgstr "Despachante"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_wizard
+msgid "Detalle de Extensión de Reserva"
+msgstr "Detalle de Extensión de Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_sale_cif
+msgid "Determina si la venta es en zona Franca"
+msgstr "Determina si la venta es en zona Franca"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_delay
+msgid "Dias de Valides"
+msgstr "Dias de Valides"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_delay_pass
+msgid "Dias para entregar"
+msgstr "Dias para entregar"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_display_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,state:0
+msgid "Disponible"
+msgstr "Disponible"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_order_line_id
+msgid "Divisa de compra"
+msgstr "Divisa de compra"
+
+#. module: poi_x_toyosa
+#: selection:purchase.report.toyosa,state:0
+msgid "Done"
+msgstr "Hecho"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_cc_dos_lock
+msgid "Dosicacion Cerrada"
+msgstr "Dosificacion Cerrada"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cc_dos_flag
+msgid "Dosificacion por Defecto"
+msgstr "Dosificacion por Defecto"
+
+#. module: poi_x_toyosa
+#: selection:purchase.report.toyosa,state:0
+msgid "Draft RFQ"
+msgstr "Draft RFQ"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Día Actual"
+msgstr "Día Actual"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_edicion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_edicion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_edicion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_edicion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_edicion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_edicion
+msgid "ED"
+msgstr "ED"
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "EXPOSICIÓN"
+msgstr "EXPOSICIÓN"
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "EXTERIOR"
+msgstr "EXTERIOR"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_edit_discount
+msgid "Editar Descuento"
+msgstr "Editar Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_price_flag
+msgid "Editar Precio"
+msgstr "Editar Precio"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_serieschasis_editar
+msgid "Editar chasis"
+msgstr "Editar chasis"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/sale.py:949
+#, python-format
+msgid "El Chasis No tiene Año para comprobar su Descuento."
+msgstr "El Chasis No tiene Año para comprobar su Descuento."
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/sale.py:942
+#, python-format
+msgid "El Chasis no puede llevar Descuento."
+msgstr "El Chasis no puede llevar Descuento."
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/sale.py:521
+#, python-format
+msgid "El cliente seleccionado no tiene NIT o CI"
+msgstr "El cliente seleccionado no tiene NIT o CI"
+
+#. module: poi_x_toyosa
+#: sql_constraint:color.externo:0
+#: sql_constraint:color.interno:0
+msgid "El color ya existe !"
+msgstr "El color ya existe !"
+
+#. module: poi_x_toyosa
+#: sql_constraint:atributo.lista.neumaticos.toyosa:0
+#: sql_constraint:atributo.neumaticos.toyosa:0
+#: sql_constraint:atributo.nombre.toyosa:0
+#: sql_constraint:marca.neumaticos.toyosa:0
+#: sql_constraint:marca.toyosa:0
+#: sql_constraint:modelo.neumaticos.toyosa:0
+#: sql_constraint:modelo.repuestos.toyosa:0
+#: sql_constraint:pr.neumaticos.toyosa:0
+#: sql_constraint:sbu.neumaticos.toyosa:0
+#: sql_constraint:uso.neumaticos.toyosa:0
+msgid "El nombre ya existe !"
+msgstr "El nombre ya existe !"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_move_line.py:93
+#, python-format
+msgid "El numero de chasis \"%s\" no esta igual que el repetido"
+msgstr "El numero de chasis \"%s\" no esta igual que el repetido"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/account_invoice.py:154
+#, python-format
+msgid "El producto %s no pertence a la actividad económica que esta tratando de validar"
+msgstr "El producto %s no pertence a la actividad económica que esta tratando de validar"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_bidding_sale
+msgid "El tipo de Venta es de licitaciones."
+msgstr "El tipo de Venta es de licitaciones."
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_serieschasis_eliminar
+msgid "Eliminar chasis"
+msgstr "Eliminar chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_embarque
+msgid "Embarque"
+msgstr "Embarque"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,state_importaciones:0
+msgid "En Tramite"
+msgstr "En Tramite"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,state_finanzas:0
+msgid "En Trámite"
+msgstr "En Trámite"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_booking
+msgid "En que momento se lleva a cabo la reserva del chasis."
+msgstr "En que momento se lleva a cabo la reserva del chasis."
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_stock_manager_encargado
+msgid "Encargado Almacenes"
+msgstr "Encargado Almacenes"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,caso:0
+msgid "Entra y Sale"
+msgstr "Entra y Sale"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_discount_flag
+msgid "Entrar al circuito de Autorización"
+msgstr "Entrar al circuito de Autorización"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_flag
+#: selection:stock.production.lot,state:0
+msgid "Entregado"
+msgstr "Entregado"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Entregas & Facturas"
+msgstr "Entregas & Facturas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_poi_stock_reservation_lot_log_amount
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_amount
+msgid "Es requerido definir un monto adelantado por el cliente para poder reservar el chasis"
+msgstr "Es requerido definir un monto adelantado por el cliente para poder reservar el chasis"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,caso:0
+msgid "Especial"
+msgstr "Especial"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_state
+msgid "Estado"
+msgstr "Estado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_state_finanzas
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+msgid "Estado Finanzas"
+msgstr "Estado Finanzas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_state_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+msgid "Estado Importaciones"
+msgstr "Estado Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Estado Placas"
+msgstr "Estado Placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_state
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+msgid "Estado Venta"
+msgstr "Estado Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_estado_importaciones
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_estado_importaciones
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_estado_importaciones_2
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_estado_importaciones_compras
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_state_import_2sale
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Estado de Importaciones"
+msgstr "Estado de Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_estado_importaciones_albaran
+msgid "Estado de Importaciones Albaran"
+msgstr "Estado de Importaciones Albaran"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_plate_procesing
+msgid "Estado de Placas"
+msgstr "Estado de Placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_product_product_grupo
+#: model:ir.model.fields,help:poi_x_toyosa.field_product_template_grupo
+msgid "Este campo es utilizado para agrupar los repuestos TOYOTA de acuerdo al área y función que cumplen"
+msgstr "Este campo es utilizado para agrupar los repuestos TOYOTA de acuerdo al área y función que cumplen"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_order_amount_total_plus_a
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_order_amount_total_plus_a_exchange
+msgid "Este monto es de uso solamente informativo y  representa el total de los accesorios + el costo del Vehiculo."
+msgstr "Este monto es de uso solamente informativo y  representa el total de los accesorios + el costo del Vehiculo."
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_wizard
+msgid "Extender"
+msgstr "Extender"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_stock_reservation_lot_tree
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Extender Reserva"
+msgstr "Extender Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_extra
+msgid "Extra Accsesorios para La orden de Venta"
+msgstr "Extra Accsesorios para La orden de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_invoice_id
+msgid "Factura DUI"
+msgstr "Factura DUI"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_invoice_purchase_id
+msgid "Factura de Compra/Importación"
+msgstr "Factura de Compra/Importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_invoice_purchase_id
+msgid "Factura de compra o importaciones asignado a esta serie o chasis"
+msgstr "Factura de compra o importaciones asignado a esta serie o chasis"
+
+#. module: poi_x_toyosa
+#: selection:sale.type,invoice_type:0
+msgid "Facturacion Normal"
+msgstr "Facturacion Normal"
+
+#. module: poi_x_toyosa
+#: selection:sale.type,invoice_type:0
+msgid "Facturacion de Automotores"
+msgstr "Facturacion de Automotores"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_invoice_2sale
+msgid "Facturación"
+msgstr "Facturación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_invoiced_amount
+#: selection:stock.production.lot,state:0
+msgid "Facturado"
+msgstr "Facturado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_invoice_proccess
+msgid "Facturar"
+msgstr "Facturar"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_invoice_tree1_2sale
+msgid "Facturas de Cliente"
+msgstr "Facturas de Cliente"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_invoice_imports_importaciones_toyosa
+msgid "Facturas de Importación"
+msgstr "Facturas de Importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_order_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_date_sale
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_prioridades_nacionalizacion
+msgid "Fecha Cambio"
+msgstr "Fecha Cambio"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_fecha_comprometida
+msgid "Fecha Comprometida"
+msgstr "Fecha Comprometida"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_prioridades_nacionalizacion
+msgid "Fecha Creación Chasis"
+msgstr "Fecha Creación Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_fecha_pago
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_fecha_pago_store
+msgid "Fecha Pago"
+msgstr "Fecha Pago"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_date
+msgid "Fecha Pedido"
+msgstr "Fecha Pedido"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_date_reserve
+msgid "Fecha Registro de Reserva"
+msgstr "Fecha Registro de Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_fecha_reserva_hasta
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_fecha_reserva_hasta
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_fecha_reserva_hasta
+msgid "Fecha Reserva hasta"
+msgstr "Fecha Reserva hasta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_fecha_cr
+msgid "Fecha creación"
+msgstr "Fecha creación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_date_approve
+msgid "Fecha de Aprobación"
+msgstr "Fecha de Aprobación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_fecha_cambio
+msgid "Fecha de Cambio"
+msgstr "Fecha de Cambio"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_fecha_llegada
+msgid "Fecha de llegada"
+msgstr "Fecha de llegada"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_fecha_produccion
+msgid "Fecha de producción"
+msgstr "Fecha de producción"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_fecha_salida
+msgid "Fecha de salida"
+msgstr "Fecha de salida"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_picking_form_landed_cost_inh
+msgid "Fecha estimada de arribo"
+msgstr "Fecha estimada de arribo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_fecha_reserva
+msgid "Fecha reserva hasta"
+msgstr "Fecha reserva hasta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_date_neumatico
+msgid "Fecha vencimiento"
+msgstr "Fecha vencimiento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_file_complete
+msgid "File Completo"
+msgstr "File Completo"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_search
+msgid "Filtro Chasis"
+msgstr "Filtro Chasis"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_account_invoice_fin
+msgid "Finanzas"
+msgstr "Finanzas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_garantia_km
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_garantia_km
+msgid "Garantía en Kilometros"
+msgstr "Garantía en Kilometros"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_garantia_horas
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_garantia_horas
+msgid "Garantía por Horas"
+msgstr "Garantía por Horas"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos_graph
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_graph
+msgid "Grafico"
+msgstr "Grafico"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_search
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_grupo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_grupo
+msgid "Grupo"
+msgstr "Grupo"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.color_interno_action
+msgid "Hacer clic para registrar un color interno"
+msgstr "Hacer clic para registrar un color interno"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_date_to
+msgid "Hasta"
+msgstr "Hasta"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_poi_stock_reservation_lot_log_tree
+msgid "Historial de Reservas"
+msgstr "Historial de Reservas"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_poi_stock_reservation_lot_log_tree
+msgid "Historial de Reservas Accion"
+msgstr "Historial de Reservas Accion"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_poi_stock_reservation_lot_log_tree
+msgid "Historial de reservas"
+msgstr "Historial de reservas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_image
+msgid "Imagen"
+msgstr "Imagen"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock.py:142
+#, python-format
+msgid "Imagenes Incidencia"
+msgstr "Imagenes Incidencia"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_purchase_user_importaciones
+#: model:res.groups,name:poi_x_toyosa.group_stock_user_importaciones
+msgid "Importaciones"
+msgstr "Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.poi_purchase_imports_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_purchase_toyosa
+msgid "Importaciones Automotriz"
+msgstr "Importaciones Automotriz"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_imp
+msgid "Importado"
+msgstr "Importado"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.poi_purchase_imports_toyosa
+msgid "Importatnte verificar que el proveedor tenga definido el campo\n"
+"                    'Tipo de Compra'-&gt; Importaciones"
+msgstr "Importante verificar que el proveedor tenga definido el campo\n"
+"                    'Tipo de Compra'-&gt; Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_print_order
+msgid "Impresion de Cotización"
+msgstr "Impresion de Cotización"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_print_invoice
+msgid "Impresion de Factura"
+msgstr "Impresion de Factura"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "Incidencia"
+msgstr "Incidencia"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_incidencia
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_incidencia
+msgid "Incidencia registrada"
+msgstr "Incidencia registrada"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_picking_form_landed_cost_inh
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Incidencias"
+msgstr "Incidencias"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.stock_lot_incidence_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_stock_lot_incidence
+msgid "Incidencias Chasis"
+msgstr "Incidencias Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence_tree
+msgid "Incidencias Registradas"
+msgstr "Incidencias Registradas"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence
+msgid "Incidencias reportadas"
+msgstr "Incidencias reportadas"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Incoming Shipments"
+msgstr "Albaranes de entrada"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_poi_chasis_landed_cost_report_report_all
+msgid "Informe de Chasis y costes de Importaciones"
+msgstr "Informe de Chasis y costes de Importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_poi_chasis_inventory_report_report_all
+msgid "Informe de Inventario exclusivo de Chasis"
+msgstr "Informe de Inventario exclusivo de Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_informes_reservas
+msgid "Informes Cartera"
+msgstr "Informes Cartera"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_partner_form_inh
+msgid "Integración"
+msgstr "Integración"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,state_importaciones:0
+msgid "Internación Temporal"
+msgstr "Internación Temporal"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Internal Category"
+msgstr "Internal Category"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_poi_chasis_inventory_report_report_all
+msgid "Inventario Valorado"
+msgstr "Inventario Valorado"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_tree
+msgid "Inventario de Chasis"
+msgstr "Inventario de Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Invoices and Incoming Shipments"
+msgstr "Facturas y recepciones"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_item_id
+msgid "Items"
+msgstr "Items"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/wizard/report_kardex_chasis_wizard.py:46
+#, python-format
+msgid "Kardex Chasis Resumen"
+msgstr "Kardex Chasis Resumen"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.check_list_toyosa_items_tree
+#: model:ir.ui.view,arch_db:poi_x_toyosa.check_list_toyosa_tree
+#: model:ir.ui.view,arch_db:poi_x_toyosa.katashiki_form
+#: model:ir.ui.view,arch_db:poi_x_toyosa.katashiki_tree
+msgid "Katashiki"
+msgstr "Katashiki"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_largo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_largo
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Largo"
+msgstr "Largo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard___last_update
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_write_uid
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_anio_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_externo_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_color_interno_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_dealsheet_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_write_date
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+msgid "Libeardo"
+msgstr "Libeardo"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_albaran
+#: selection:stock.production.lot,state_finanzas:0
+msgid "Liberado"
+msgstr "Liberado"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_stock_reservation_lot_tree
+msgid "Liberar"
+msgstr "Liberar"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_bidding_sale
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_bidding_sale
+msgid "Licitacion"
+msgstr "Licitacion"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_sales_ids
+msgid "Licitaciones"
+msgstr "Licitaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_sale_line_id
+msgid "Linea Pedido de Venta"
+msgstr "Linea Pedido de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_order_line_id
+msgid "Linea Pedido de compra"
+msgstr "Linea Pedido de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_lot_line_id
+msgid "Linea de Pedido"
+msgstr "Linea de Pedido"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_order_line_id
+msgid "Linea de orden"
+msgstr "Linea de orden"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Lineas"
+msgstr "Lineas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_pricelist_flag
+msgid "Lista de precio Por defecto"
+msgstr "Lista de precio Por defecto"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Lock"
+msgstr "Bloquear"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock.py:462
+#: sql_constraint:stock.production.lot:0
+#, python-format
+msgid "Los numeros de chasis solo puede contener caracteres validos [A-Z0-9]"
+msgstr "Los numeros de chasis solo puede contener caracteres validos [A-Z0-9]"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.poi_purchase_imports_toyosa
+msgid "Los registros de Tipo de Importacion generan carpetas de importación\n"
+"                    o en otra forma pueden ser adjuntadas desde crear carpeta de importaciones"
+msgstr "Los registros de Tipo de Importacion generan carpetas de importación\n"
+"                    o en otra forma pueden ser adjuntadas desde crear carpeta de importaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_lot_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "Lote"
+msgstr "Lote"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_lot_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_lot_flag
+msgid "Lote requerrido?"
+msgstr "Lote requerrido?"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Lote/Chasis"
+msgstr "Lote/Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_lot_id
+msgid "Lote/chasis"
+msgstr "Lote/chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_poi_stock_reservation_lot_tree
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_poi_stock_reservation_lot
+msgid "Lotes y Series Automotriz"
+msgstr "Lotes y Series Automotriz"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_date_sale
+msgid "Manually set the expiration date of your quotation (offer), or it will set the date automatically based on the template if online quotation is installed."
+msgstr "Indique manualmente la fecha de caducidad de su presupuesto (oferta), o se cargará la fecha automáticamente en función de la plantilla."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_marca
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_marca
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_marca_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_marca
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_marca_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_marca
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_marca
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_search_view_toyosa
+msgid "Marca"
+msgstr "Marca"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.marca_neumaticos_toyosa_tree
+msgid "Marca Neumaticos"
+msgstr "Marca Neumaticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.marca_neumaticos_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_marca_neumaticos_toyosa_action
+msgid "Marca neumaticos"
+msgstr "Marca neumaticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.marca_neumaticos_toyosa_action
+msgid "Marca neumaticos toyosa"
+msgstr "Marca neumaticos toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_cuadro_prioridades
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_albaran
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_search
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_prioridades_nacionalizacion
+msgid "Master"
+msgstr "Master"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_master_padre
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_master_padre
+msgid "Master Asociados"
+msgstr "Master Asociados"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_image_medium
+msgid "Medium-sized image"
+msgstr "Imagen de tamaño mediano"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_modelo_toyosa_image_medium
+msgid "Medium-sized image of the product. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr "Imagen mediana del producto. Se redimensionará automáticamente a 128x128ppx, preservando el ratio de aspecto, sólo cuando la imagen exceda uno de esos tamaños. Este campo se usa en las vistas de formulario y en algunas vistas kanban."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_mes
+msgid "Mes"
+msgstr "Mes"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_search
+msgid "Metodo Distribución"
+msgstr "Metodo Distribución"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_modelo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_modelo
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_search_view_toyosa
+msgid "Modelo"
+msgstr "Modelo"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.modelo_neumaticos_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_modelo_neumaticos_toyosa_action
+#: model:ir.ui.view,arch_db:poi_x_toyosa.modelo_neumaticos_toyosa_tree
+msgid "Modelo Neumatico"
+msgstr "Modelo Neumatico"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_modelo_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_modelo_neumatico
+msgid "Modelo Neumáticos"
+msgstr "Modelo Neumáticos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.modelo_toyosa_form
+msgid "Modelo Toyosa"
+msgstr "Modelo Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.katashiki_model_tree
+msgid "Modelo katashiki"
+msgstr "Modelo katashiki"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.modelo_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_modelo_toyosa_action
+msgid "Modelos Toyosa"
+msgstr "Modelos Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.modelo_toyosa_action
+msgid "Modelos toyosa"
+msgstr "Modelos toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_currency_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_currency_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_currency_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_currency_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_currency_id
+msgid "Moneda"
+msgstr "Moneda"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_purchase_currency_id
+msgid "Moneda Compra"
+msgstr "Moneda Compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_currency_advance_id
+msgid "Moneda Ref."
+msgstr "Moneda Ref."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_amount
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_amount
+msgid "Monto Adelantado"
+msgstr "Monto Adelantado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_amount_min
+msgid "Monto Minimo para la Reserva"
+msgstr "Monto Minimo para la Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_monto_minimo
+msgid "Monto Mínimo Permitido"
+msgstr "Monto Mínimo Permitido"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_a
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_a_exchange
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_subtotal_exchange
+msgid "Monto Total Accesorios"
+msgstr "Monto Total Accesorios"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_residual_pay
+msgid "Monto Total-Cuota Inicial"
+msgstr "Monto Total-Cuota Inicial"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_discount_amount
+msgid "Monto del Descuento"
+msgstr "Monto del Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_name
+msgid "Motivo"
+msgstr "Motivo"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_cancel_wizard
+msgid "Motivo Cancelación"
+msgstr "Motivo Cancelación"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/sale.py:648
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cancel_wiz_reason_id
+#, python-format
+msgid "Motivo de Cancelacion"
+msgstr "Motivo de Cancelacion"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_cancel
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_cancel_wiz
+msgid "Motivos de cancelacion de Ordenes de Venta"
+msgstr "Motivos de cancelacion de Ordenes de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_mot_desarmada
+msgid "Motocicleta Desarmada"
+msgstr "Motocicleta Desarmada"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_move_int_id
+msgid "Move Id"
+msgstr "Move Id"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_move_id
+msgid "Movimiento"
+msgstr "Movimiento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_move_line_id
+msgid "Movimiento de Existencia"
+msgstr "Movimiento de Existencia"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,caso:0
+msgid "Multa"
+msgstr "Multa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_metodo
+msgid "Método Ditribución"
+msgstr "Método Ditribución"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_warrant
+msgid "Método de financiamento"
+msgstr "Método de financiamento"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_albaran
+#: selection:stock.production.lot,state_importaciones:0
+msgid "Nacionalizado"
+msgstr "Nacionalizado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_lista_neumaticos_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_neumaticos_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_neumaticos_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_pr_neumaticos_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sbu_neumaticos_toyosa_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_x_toyosa
+#: selection:product.category,type_product:0
+msgid "Neumaticos"
+msgstr "Neumaticos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_product_toyosa1
+#: model:ir.ui.view,arch_db:poi_x_toyosa.product_template_toyosa1
+msgid "Neumáticos"
+msgstr "Neumáticos"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,state_importaciones:0
+msgid "No Nacionalizado"
+msgstr "No Nacionalizado"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_picking.py:531
+#, python-format
+msgid "No ha digitado el número de chasis para el lote \"%s\""
+msgstr "No ha digitado el número de chasis para el lote \"%s\""
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_move_line.py:45
+#, python-format
+msgid "No puede usar el mismo número de serie dos veces. Corrija los números de serie codificados"
+msgstr "No puede usar el mismo número de serie dos veces. Corrija los números de serie codificados"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_move_line.py:50
+#, python-format
+msgid "No puede usar el mismo número de serie dos veces. Por favor, corrija los números de serie codificados."
+msgstr "No puede usar el mismo número de serie dos veces. Por favor, corrija los números de serie codificados."
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "No tiene ningún producto reservado para esta movimiento de almacén. Haga clic en el botón 'Reservar'\n"
+"                                Para comprobar los productos"
+msgstr "No tiene ningún producto reservado para esta movimiento de almacén. Haga clic en el botón 'Reservar'\n"
+"                                Para comprobar los productos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_nombre_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_valor_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_items_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_model_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_property_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_marca_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_repuestos_toyosa_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_type_name
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_name
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_uso_neumaticos_toyosa_name
+msgid "Nombre de Uso"
+msgstr "Nombre de Uso"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_nombre_embarque
+msgid "Nombre de embarque"
+msgstr "Nombre de embarque"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_lot_name_chasis
+msgid "Nombre/Chasis"
+msgstr "Nombre/Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_invoice_nota_out
+msgid "Notas de crédito"
+msgstr "Notas de crédito"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Notes"
+msgstr "Notas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_imp_pol
+msgid "Nro. Póliza Importación"
+msgstr "Nro. Póliza Importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_imp_pol_manual
+msgid "Nro. Póliza Manual"
+msgstr "Nro. Póliza Manual"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_cuce
+msgid "Nro. de Cuce"
+msgstr "Nro. de Cuce"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_biddings
+msgid "Nro. de Licitacion"
+msgstr "Nro. de Licitacion"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/plate.py:12
+#, python-format
+msgid "Nuevo"
+msgstr "Nuevo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_n_caja
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_n_caja
+msgid "N° Caja"
+msgstr "N° Caja"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_lot_name_in
+msgid "N° Chasis"
+msgstr "N° Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_embarque
+msgid "N° Embarque"
+msgstr "N° Embarque"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_invoice_number
+msgid "N° Factura Compra/Importación"
+msgstr "N° Factura Compra/Importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_n_llaves
+msgid "N° Llave"
+msgstr "N° Llave"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_n_motor
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_n_motor
+msgid "N° Motor"
+msgstr "N° Motor"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_n_produccion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_n_produccion
+msgid "N° Producción"
+msgstr "N° Producción"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_tiempo_limite
+msgid "N° de Dias Permitidos"
+msgstr "N° de Dias Permitidos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_tiempo_aviso
+msgid "N° de Dias de Aviso"
+msgstr "N° de Dias de Aviso"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_invoice_number
+msgid "N° de Factura de compra o importaciones asignado a esta serie o chasis"
+msgstr "N° de Factura de compra o importaciones asignado a esta serie o chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_n_guia
+msgid "N° de Guia"
+msgstr "N° de Guia"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_n_prestamo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_n_prestamo
+msgid "N° de Prestamo"
+msgstr "N° de Prestamo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_n_llaves
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_n_llaves
+msgid "N° de llaves"
+msgstr "N° de llaves"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_n_produccion
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_n_produccion
+msgid "Número de Producción"
+msgstr "Número de Producción"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_n_embarque
+msgid "Número de embarque"
+msgstr "Número de embarque"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_n_produccion
+msgid "Número de producción"
+msgstr "Número de producción"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_imp_pol
+msgid "Número de póliza de importación para Libro de compras. Formato AAAADDDCNNNNNNNN, donde: AAAA=Año, DDD=Código de la Aduana, C=Tipo de Trámite, NNNNNNNN=Número Correlativo"
+msgstr "Número de póliza de importación para Libro de compras. Formato AAAADDDCNNNNNNNN, donde: AAAA=Año, DDD=Código de la Aduana, C=Tipo de Trámite, NNNNNNNN=Número Correlativo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_observaciones
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report_observaciones
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "Observaciones"
+msgstr "Observaciones"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_obs_bloqueo_venta
+msgid "Observaciones de bloqueo"
+msgstr "Observaciones de bloqueo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_observaciones
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_observaciones
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_observaciones
+msgid "Observaciones de reserva"
+msgstr "Observaciones de reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_skip_order
+msgid "Omitir Orden"
+msgstr "Omitir Orden"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_cartera_reservas
+msgid "Operaciones con reservas"
+msgstr "Operaciones con reservas"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock.py:345
+#, python-format
+msgid "Operador %s no permito para el valor %s, puede hacer clic sobre la flecha -> para ver las resultados y seleccionar uno especifico"
+msgstr "Operador %s no permito para el valor %s, puede hacer clic sobre la flecha -> para ver las resultados y seleccionar uno especifico"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_order_id
+msgid "Orden de Compra"
+msgstr "Orden de Compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_order_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_search
+msgid "Orden de Importación"
+msgstr "Orden de Importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_order_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_order_id
+msgid "Orden de Venta"
+msgstr "Orden de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_purchase_order
+msgid "Orden de compra"
+msgstr "Orden de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_purchase_report_toyosa
+msgid "Ordenes de Compra Toyosa"
+msgstr "Ordenes de Compra Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_origin
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_origen_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_origen_neumatico
+msgid "Origen"
+msgstr "Origen"
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "PDS"
+msgstr "PDS"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,clasificacion:0
+msgid "PINCELADO"
+msgstr "PINCELADO"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,clasificacion:0
+msgid "PINTADO PARCIAL"
+msgstr "PINTADO PARCIAL"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,clasificacion:0
+msgid "PINTADO PIEZA COMPLETA"
+msgstr "PINTADO PIEZA COMPLETA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "PUERTA DELANTERA DERECHA"
+msgstr "PUERTA DELANTERA DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "PUERTA DELANTERA IZQUIERDA"
+msgstr "PUERTA DELANTERA IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "PUERTA TRASERA DERECHA"
+msgstr "PUERTA TRASERA DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "PUERTA TRASERA IZQUIERDA"
+msgstr "PUERTA TRASERA IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,clasificacion:0
+msgid "PULIDO"
+msgstr "PULIDO"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_move_line
+msgid "Packing Operation"
+msgstr "Operación de empaquetado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_pagos_anterior
+msgid "Pago Anterior"
+msgstr "Pago Anterior"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_advanced
+msgid "Pago Inicial Ref."
+msgstr "Pago Inicial Ref."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_pagos_mes
+msgid "Pago Mes Actual"
+msgstr "Pago Mes Actual"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_pay_invoice
+msgid "Pago al 100%, Para la entrega del albaran"
+msgstr "Pago al 100%, Para la entrega del albaran"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_pay_invoice
+msgid "Pago del 100%"
+msgstr "Pago del 100%"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Pago este mes"
+msgstr "Pago este mes"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_pagos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Pagos"
+msgstr "Pagos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_purchase_line_update_wizard_partida
+msgid "Partida Arancelaria"
+msgstr "Partida Arancelaria"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_country_id
+msgid "País de Procedencia"
+msgstr "País de Procedencia"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_edit_discount
+msgid "Permite la edición del Campo 'Descuento'."
+msgstr "Permite la edición del Campo 'Descuento'."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_placa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_placa
+msgid "Placa"
+msgstr "Placa"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_sale_pt
+msgid "Placas"
+msgstr "Placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_product_tmpl_id
+msgid "Plantilla Producto"
+msgstr "Plantilla Producto"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_picking.py:518
+#, python-format
+msgid "Por favor verifique el chasis \"%s\" No coinciden o no a registrado los chasis"
+msgstr "Por favor verifique el chasis \"%s\" No coinciden o no a registrado los chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_percent_min
+msgid "Porcentaje Minimo"
+msgstr "Porcentaje Minimo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_discount_percent
+msgid "Porcentaje de Descuento"
+msgstr "Porcentaje de Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_porcentaje_pago
+msgid "Porcentaje de Pago"
+msgstr "Porcentaje de Pago"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_percent_min
+msgid "Porcentaje minimo adelantado para la validacion de la factura."
+msgstr "Porcentaje minimo adelantado para la validacion de la factura."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_fiscal_position_id
+msgid "Posición Fiscal"
+msgstr "Posición Fiscal"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_posicion
+msgid "Posición Incidencia"
+msgstr "Posición Incidencia"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_pr_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_pr_neumatico
+msgid "Pr"
+msgstr "Pr"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.pr_neumaticos_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_pr_neumaticos_toyosa_action
+#: model:ir.ui.view,arch_db:poi_x_toyosa.pr_neumaticos_toyosa_tree
+msgid "Pr Neumaticos"
+msgstr "Pr Neumaticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.pr_neumaticos_toyosa_action
+msgid "Pr neumaticos toyosa"
+msgstr "Pr neumaticos toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_price
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_price
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_price_unit
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_price_unit
+msgid "Precio"
+msgstr "Precio"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_purchase_price_unit
+msgid "Precio Compra"
+msgstr "Precio Compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_negociation
+msgid "Precio Compra Estandar"
+msgstr "Precio Compra Estandar"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_price_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_price_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_edit_price
+msgid "Precio Editable"
+msgstr "Precio Editable"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_price_total
+msgid "Precio Total"
+msgstr "Precio Total"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_price_unit_fob
+msgid "Precio Unidad"
+msgstr "Precio Unidad"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_update_fob_picking_wizard_price_unit
+msgid "Precio Unidad Compra"
+msgstr "Precio Unidad Compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_price_unit
+msgid "Precio Unitario"
+msgstr "Precio Unitario"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_price_unit_a
+msgid "Precio Unitario Total Accesorios"
+msgstr "Precio Unitario Total Accesorios"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_precio_venta
+msgid "Precio Venta"
+msgstr "Precio Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_purchase_price_unit
+msgid "Precio de Compra"
+msgstr "Precio de Compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_price_fabrica
+msgid "Precio fabrica"
+msgstr "Precio fabrica"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_price_average
+msgid "Precio promedio"
+msgstr "Precio promedio"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_price_total
+msgid "Precio total"
+msgstr "Precio total"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_price_subtotal_with_tax2
+msgid "Precio total con Impuestos"
+msgstr "Precio total con Impuestos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_line_price_transporte
+msgid "Precio transporte y seguro"
+msgstr "Precio transporte y seguro"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Print RFQ"
+msgstr "Imprimir SdP"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_prioridad_liberacion
+msgid "Prioridad Liberación"
+msgstr "Prioridad Liberación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_prioridad
+msgid "Prioridad de Liberación"
+msgstr "Prioridad de Liberación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_produccion
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_invoice_toyosa
+msgid "Producción"
+msgstr "Producción"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_product_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_product_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_check_list_toyosa_product_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_product_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_product_tmpl_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_product_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_extra_product_id
+msgid "Producto"
+msgstr "Producto"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/product.py:224
+#, python-format
+msgid "Producto %s con referencia %s ya existe!"
+msgstr "Producto %s con referencia %s ya existe!"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/product.py:219
+#, python-format
+msgid "Producto %s ya existe!"
+msgstr "Producto %s ya existe!"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Productos"
+msgstr "Productos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_product_dis_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_product_dis_id
+msgid "Productos Validos Para el Descuento"
+msgstr "Productos Validos Para el Descuento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_1
+msgid "Propiedad 1"
+msgstr "Propiedad 1"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_10
+msgid "Propiedad 10"
+msgstr "Propiedad 10"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_11
+msgid "Propiedad 11"
+msgstr "Propiedad 11"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_12
+msgid "Propiedad 12"
+msgstr "Propiedad 12"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_2
+msgid "Propiedad 2"
+msgstr "Propiedad 2"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_3
+msgid "Propiedad 3"
+msgstr "Propiedad 3"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_4
+msgid "Propiedad 4"
+msgstr "Propiedad 4"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_5
+msgid "Propiedad 5"
+msgstr "Propiedad 5"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_6
+msgid "Propiedad 6"
+msgstr "Propiedad 6"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_7
+msgid "Propiedad 7"
+msgstr "Propiedad 7"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_8
+msgid "Propiedad 8"
+msgstr "Propiedad 8"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_katashiki_toyosa_property_9
+msgid "Propiedad 9"
+msgstr "Propiedad 9"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.katashiki_property_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_katashiki_property_action
+msgid "Propiedades Katashiki"
+msgstr "Propiedades Katashiki"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.katashiki_property_tree
+msgid "Propiedades katashiki"
+msgstr "Propiedades katashiki"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_partner_id
+msgid "Proveedor"
+msgstr "Proveedor"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_prioridades_nacionalizacion
+msgid "Puede especificar el cuadro de nacionalizacion y establecer prioridades\n"
+"                    o bloqueos el usuario debe definir cada estado de chasis ya sea manual o\n"
+"                    revisando cada registro de chasis"
+msgstr "Puede especificar el cuadro de nacionalizacion y establecer prioridades\n"
+"                    o bloqueos el usuario debe definir cada estado de chasis ya sea manual o\n"
+"                    revisando cada registro de chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.stock_lot_incidence_action
+msgid "Puede revisar las incidencias registradas por los chasis actualmente transferidos en los distintos\n"
+"                    almacenes"
+msgstr "Puede revisar las incidencias registradas por los chasis actualmente transferidos en los distintos\n"
+"                    almacenes"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_stock_reserve_type_form
+msgid "Puede utulizar los tipos de reserva para definir responsables de area y confirmar\n"
+"                    las unidades existententes"
+msgstr "Puede utulizar los tipos de reserva para definir responsables de area y confirmar\n"
+"                    las unidades existententes"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_toyosa_tree
+#: selection:purchase.report.toyosa,state:0
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_purchase_order_line
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Purchase Order Line"
+msgstr "Línea de pedido de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Purchase Order Lines"
+msgstr "Líneas de pedido de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_search
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence_report_search
+msgid "Purchase Orders"
+msgstr "Pedidos de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_graph
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_pivot
+msgid "Purchase Orders Statistics"
+msgstr "Estadísticas de pedidos de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_location_path
+msgid "Pushed Flow"
+msgstr "Flujo empujado"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_invoice_imports_dui_despachante
+msgid "Póliza de importación"
+msgstr "Póliza de importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order
+msgid "Quotation"
+msgstr "Pedido de venta"
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "RECINTO"
+msgstr "RECINTO"
+
+#. module: poi_x_toyosa
+#: selection:purchase.report.toyosa,state:0
+msgid "RFQ Sent"
+msgstr "RFQ Sent"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Re-Send RFQ by Email"
+msgstr "Reenviar SdP por correo electrónico"
+
+#. module: poi_x_toyosa
+#: selection:sale.order,plate_procesing:0
+#: selection:sale.type,plate_procesing:0
+msgid "Realizar al Validar la Factura."
+msgstr "Realizar al Validar la Factura."
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Receive Products"
+msgstr "Recibir productos"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "Recordatorio"
+msgstr "Recordatorio"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_toyosa_tree
+msgid "Referencia"
+msgstr "Referencia"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Regional"
+msgstr "Regional"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_move_line_lot_name_repeat
+msgid "Repetir N° Chasis"
+msgstr "Repetir N° Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_recordatorio
+msgid "Reportado por"
+msgstr "Reportado por"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_poi_chasis_landed_cost_report
+msgid "Reporte de Costos por chasis"
+msgstr "Reporte de Costos por chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_stock_lot_incidence_report_all
+#: model:ir.model,name:poi_x_toyosa.model_stock_lot_incidence_report
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_lot_incidence_report_tree
+msgid "Reporte de Incidencias"
+msgstr "Reporte de Incidencias"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_stock_lot_incidence_report_all
+msgid "Reporte de Incidencias Generadas"
+msgstr "Reporte de Incidencias Generadas"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_poi_report_kardex_chasis_wizard
+msgid "Reporte de Kardex de Inventarios"
+msgstr "Reporte de Kardex de Inventarios"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_bolsa_vehiculos
+msgid "Reporte de vehículos aplicado según reporte 2016 AGOSTO A3 BOLSA"
+msgstr "Reporte de vehículos aplicado según reporte 2016 AGOSTO A3 BOLSA"
+
+#. module: poi_x_toyosa
+#: selection:product.category,type_product:0
+msgid "Repuesto"
+msgstr "Repuesto"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Request for Quotation"
+msgstr "Solicitud de presupuesto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_booking
+msgid "Reserva"
+msgstr "Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_production_lot
+msgid "Reserva de Lotes"
+msgstr "Reserva de Lotes"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_reserve_flag
+msgid "Reserva?"
+msgstr "Reserva?"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,state:0
+msgid "Reservado"
+msgstr "Reservado"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_poi_reservation_wizard
+msgid "Reservar producto"
+msgstr "Reservar producto"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_production_lot_toyosa
+msgid "Reservas"
+msgstr "Reservas"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_stock_reservation_lot_log_tree
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_stock_reservation_lot_tree
+msgid "Reservas de Chasis/Lote"
+msgstr "Reservas de Chasis/Lote"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/poi_stock_reservation_lot.py:297
+#, python-format
+msgid "Reservation Move"
+msgstr "Reservation Move"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_user_id
+msgid "Responsable"
+msgstr "Responsable"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_commercial_partner_id
+msgid "Responsable Comercial"
+msgstr "Responsable Comercial"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_responsable_reserva
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_responsable_reserva
+msgid "Responsable de Reserva"
+msgstr "Responsable de Reserva"
+
+#. module: poi_x_toyosa
+#: model:res.groups,comment:poi_x_toyosa.group_analisis_comercial
+msgid "Rol de gestion comercial en Toyosa."
+msgstr "Rol de gestion comercial en Toyosa."
+
+#. module: poi_x_toyosa
+#: selection:stock.location,tipo_localidad:0
+msgid "SHOW ROOM"
+msgstr "SHOW ROOM"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_soat
+msgid "SOAT"
+msgstr "SOAT"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_saldo
+msgid "Saldo"
+msgstr "Saldo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_saldo_anterior
+msgid "Saldo Anterior"
+msgstr "Saldo Anterior"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_saldo_cobrar
+msgid "Saldo por Cobrar"
+msgstr "Saldo por Cobrar"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Ventas. Anticipo pago factura"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de ventas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_location_salida
+msgid "Salida en Lector"
+msgstr "Salida en Lector"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_cancel_wizard
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_wizard
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_move_update_wizard
+msgid "Salir"
+msgstr "Salir"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_sbu_neumatico
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_sbu_neumatico
+msgid "Sbu"
+msgstr "Sbu"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.sbu_neumaticos_toyosa_tree
+msgid "Sbu Neumaticos"
+msgstr "Sbu Neumaticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.sbu_neumaticos_toyosa_action
+msgid "Sbu Neumaticos Toyosa"
+msgstr "Sbu Neumaticos Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.sbu_neumaticos_toyosa_action
+msgid "Sbu Neumáticos"
+msgstr "Sbu Neumáticos"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_dealsheet_flag
+msgid "Se agregara el dealsheet a la cotizacion"
+msgstr "Se agregara el dealsheet a la cotizacion"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/poi_stock_reservation_lot.py:104
+#, python-format
+msgid "Search operator %s not implemented for value %s"
+msgstr "Search operator %s not implemented for value %s"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_segmento
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_segmento
+msgid "Segmento"
+msgstr "Segmento"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_stock_production_lot_category
+msgid "Select category for the current product"
+msgstr "Seleccione la categoría para el producto actual."
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Send PO by Email"
+msgstr "Enviar PC por correo electrónico"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Send RFQ by Email"
+msgstr "Enviar SdP por correo electrónico"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock.py:675
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_lot_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report_stock_production_lot_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_search
+#, python-format
+msgid "Serie/Chasis"
+msgstr "Serie/Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_picking_form_landed_cost_inh
+msgid "Series"
+msgstr "Series"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Set date to all order lines"
+msgstr "Asignar fecha a todas las lineas del pedido de compra"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Set to Draft"
+msgstr "Cambiar a borrador"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Shipment"
+msgstr "Envío"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_check_chasis
+msgid "Si esta marcado se realizara la comprabacion del chasis en caso contrario se omitira."
+msgstr "Si esta marcado se realizara la comprabacion del chasis en caso contrario se omitira."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_check_chasis_pre
+msgid "Si esta marcado se realizara la comprabacion del chasis para hacer la correspondiente facturacion desde la orden de venta."
+msgstr "Si esta marcado se realizara la comprabacion del chasis para hacer la correspondiente facturacion desde la orden de venta."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_discount_discount
+msgid "Sin Descuento"
+msgstr "Sin Descuento"
+
+#. module: poi_x_toyosa
+#: selection:sale.type,booking:0
+msgid "Sin Reserva."
+msgstr "Sin Reserva."
+
+#. module: poi_x_toyosa
+#: selection:purchase.order,warrant:0
+#: selection:stock.production.lot,state_finanzas:0
+msgid "Sin Warrant"
+msgstr "Sin Warrant"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_toyosa_tree
+msgid "Sin impuesto"
+msgstr "Sin impuesto"
+
+#. module: poi_x_toyosa
+#: selection:sale.order,plate_procesing:0
+#: selection:sale.type,plate_procesing:0
+msgid "Sin tramite."
+msgstr "Sin tramite."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_modelo_toyosa_image_small
+msgid "Small-sized image"
+msgstr "Imagen de tamaño pequeño"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_modelo_toyosa_image_small
+msgid "Small-sized image of the product. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Imagen pequeña del producto. Se redimensiona automáticamente a 64x64px, preservando el ratio de aspecto. Use este campo siempre que se requiera una imagen pequeña."
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock.py:652
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_prioridades_nacionalizacion
+#, python-format
+msgid "Solicitud de Nacionalización"
+msgstr "Solicitud de Nacionalización"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock.py:617
+#, python-format
+msgid "Solicitud de Placas"
+msgstr "Solicitud de Placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Sucursal"
+msgstr "Sucursal"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_sucursal
+msgid "Sucursal de Reserva"
+msgstr "Sucursal de Reserva"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TECHO DELANTERO DERECHA"
+msgstr "TECHO DELANTERO DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TECHO DELANTERO IZQUIERDA"
+msgstr "TECHO DELANTERO IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TECHO TRASERO DERECHA"
+msgstr "TECHO TRASERO DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TECHO TRASERO IZQUIERDA"
+msgstr "TECHO TRASERO IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TRASERA DERECHA"
+msgstr "TRASERA DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TRASERA IZQUIERDA"
+msgstr "TRASERA IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TRASERA MEDIO DERECHA"
+msgstr "TRASERA MEDIO DERECHA"
+
+#. module: poi_x_toyosa
+#: selection:stock.lot.incidence,posicion:0
+msgid "TRASERA MEDIO IZQUIERDA"
+msgstr "TRASERA MEDIO IZQUIERDA"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_pricelist_insurance_id
+msgid "Tarifa de Venta Con Seguro"
+msgstr "Tarifa de Venta Con Seguro"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_pricelist_id
+msgid "Tarifa de Venta Sin Seguro"
+msgstr "Tarifa de Venta Sin Seguro"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_print_order
+msgid "Template(reporte) de la Cotización a imprimir"
+msgstr "Template(reporte) de la Cotización a imprimir"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_sale_type_print_invoice
+msgid "Template(reporte) de la Factura a imprimir."
+msgstr "Template(reporte) de la Factura a imprimir."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_paymemt_term_ids
+msgid "Terminos de Pago"
+msgstr "Terminos de Pago"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "This changes the scheduled date of all order lines to the given date"
+msgstr "Actualiza la fecha programada de todas las lineas del pedido a esta fecha."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_modelo_toyosa_image
+msgid "This field holds the image used as image for the product, limited to 1024x1024px."
+msgstr "Este campo contiene la imagen usada para el producto, limitada a 1024x1024px."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_tiempo_reserva
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_tiempo_reserva
+msgid "Tiempo de reserva"
+msgstr "Tiempo de reserva"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/poi_stock_reservation_lot.py:251
+#, python-format
+msgid "Tiempo de reserva superado, puede volver a generar otra OV para reservar la unidad seleccionada"
+msgstr "Tiempo de reserva superado, puede volver a generar otra OV para reservar la unidad seleccionada"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,help:poi_x_toyosa.field_account_invoice_line_tipo_fac
+msgid "Tipificación de facturas para fines técnicos."
+msgstr "Tipificación de facturas para fines técnicos."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_tipo
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_tipo_fac
+msgid "Tipo Factura"
+msgstr "Tipo Factura"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_location_tipo_localidad
+msgid "Tipo Ubicación Toyosa"
+msgstr "Tipo Ubicación Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_order_type_id
+msgid "Tipo de Cotizacion"
+msgstr "Tipo de Cotizacion"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_invoice_type
+msgid "Tipo de Facturacion"
+msgstr "Tipo de Facturacion"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_report_tipo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_lot_incidence_tipo
+msgid "Tipo de Incidencia"
+msgstr "Tipo de Incidencia"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_category_type_product
+msgid "Tipo de Producto"
+msgstr "Tipo de Producto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_line_reserve_type
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_booking_type_id
+msgid "Tipo de Reserva"
+msgstr "Tipo de Reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_sale_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_sale_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_sale_type_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_sale_type_id
+msgid "Tipo de Venta"
+msgstr "Tipo de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_reservation_wizard_tipo_reserva
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_tipo_reserva
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_tipo_reserva
+msgid "Tipo de reserva"
+msgstr "Tipo de reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_type
+msgid "Tipos de Cotizacion para Toyosa"
+msgstr "Tipos de Cotizacion para Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_type_sale_type_ids
+msgid "Tipos de Venta"
+msgstr "Tipos de Venta"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_type
+msgid "Tipos de Venta para Toyosa"
+msgstr "Tipos de Venta para Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.action_stock_reserve_type_form
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_action_stock_reserve_type_form
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_stock_reserve_type_filter
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_reserve_type_form
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_reserve_type_tree
+msgid "Tipos de reserva"
+msgstr "Tipos de reserva"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_stock_reservation_lot_log_titular_reserva
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_titular_reserva
+msgid "Titular de Reserva"
+msgstr "Titular de Reserva"
+
+#. module: poi_x_toyosa
+#: selection:purchase.report.toyosa,state:0
+msgid "To Approve"
+msgstr "To Approve"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_total
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_inventory_report_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_a_amount_total_a
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_line_amount_total_a
+msgid "Total Accesorios"
+msgstr "Total Accesorios"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_tree
+msgid "Total Bs."
+msgstr "Total Bs."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_tax_a
+msgid "Total Impuestos Accesorios"
+msgstr "Total Impuestos Accesorios"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_plus_a
+msgid "Total Parcial"
+msgstr "Total Parcial"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_amount_total_plus_a_exchange
+msgid "Total Parcial cambio"
+msgstr "Total Parcial cambio"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_toyosa_tree
+msgid "Total Untaxed amount"
+msgstr "Total de importe base"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_chasis_landed_cost_report_tree
+msgid "Total Usd."
+msgstr "Total Usd."
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_toyosa_tree
+msgid "Total amount"
+msgstr "Importe total"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_plate_id
+msgid "Tramite de Placa"
+msgstr "Tramite de Placa"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/sale.py:362
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_plate_flag
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_plate_procesing
+#, python-format
+msgid "Tramite de Placas"
+msgstr "Tramite de Placas"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_picking.py:457
+#, python-format
+msgid "Transferencia restante <em>%s</em> <b>Cancelado</b>."
+msgstr "Transferencia restante <em>%s</em> <b>Cancelado</b>."
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_picking_transportista
+msgid "Transportista"
+msgstr "Transportista"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_order_type_import
+msgid "Type Import"
+msgstr "Tipo de Importación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_inventory_report_location_id
+msgid "Ubicación"
+msgstr "Ubicación"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_location_id
+msgid "Ubicación Actual"
+msgstr "Ubicación Actual"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/account_invoice.py:144
+#, python-format
+msgid "Una o varias lineas de la factura no tiene asignado el impuesto"
+msgstr "Una o varias lineas de la factura no tiene asignado el impuesto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_uom_alto
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_uom_ancho
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_uom_largo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_uom_peso
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_uom_volumen
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_uom_alto
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_uom_ancho
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_uom_largo
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_uom_peso
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_uom_volumen
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_product_uom
+msgid "Unidad de Medida"
+msgstr "Unidad de Medida"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Unlock"
+msgstr "Desbloquear"
+
+#. module: poi_x_toyosa
+#: selection:stock.production.lot,caso:0
+msgid "Usados"
+msgstr "Usados"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_product_uso_neumatico_e
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_product_template_uso_neumatico_e
+msgid "Uso"
+msgstr "Uso"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_uso_especial
+msgid "Uso Especial"
+msgstr "Uso Especial"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.uso_neumaticos_toyosa_tree
+msgid "Uso Neumaticos"
+msgstr "Uso Neumaticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,name:poi_x_toyosa.uso_neumaticos_toyosa_action
+#: model:ir.ui.menu,name:poi_x_toyosa.menu_uso_neumaticos_toyosa_action
+msgid "Uso Neumáticos"
+msgstr "Uso Neumáticos"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.uso_neumaticos_toyosa_action
+msgid "Uso Neumáticos Toyosa"
+msgstr "Uso Neumáticos Toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosainh
+msgid "Usted está a punto de confirmar la Orden de Compra y/o Importación, Desea\n"
+"                        Continuar?"
+msgstr "Usted está a punto de confirmar la Orden de Compra y/o Importación, Desea\n"
+"                        Continuar?"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_despachante_usuario
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_res_partner_user_cod_barras
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_res_users_user_cod_barras
+msgid "Usuario código barras"
+msgstr "Usuario código barras"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_reserve_type_recordatorio
+msgid "Usuario de Recordatorio"
+msgstr "Usuario de Recordatorio"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.report_picking_toyosa
+msgid "VAT:"
+msgstr "CIF/NIF:"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.invoice_form_toyo
+msgid "Validar"
+msgstr "Validar"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_check_chasis
+msgid "Validar Chasis"
+msgstr "Validar Chasis"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_check_chasis_pre
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_check_chasis_pre
+msgid "Validar Chasis pre-facturacion"
+msgstr "Validar Chasis pre-facturacion"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.invoice_form_toyo
+msgid "Validate"
+msgstr "Validar"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_neumaticos_toyosa_valor
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_atributo_toyosa_atributo_ids
+msgid "Valor"
+msgstr "Valor"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_purchase_report_toyosa_price_standard
+msgid "Valor Producto"
+msgstr "Valor Producto"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_chasis_landed_cost_report_valoracion
+msgid "Valoración"
+msgstr "Valoración"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_car_released
+msgid "Vehiculo Liberado"
+msgstr "Vehiculo Liberado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_nationalized_car
+msgid "Vehiculo Nacionalizado"
+msgstr "Vehiculo Nacionalizado"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_production_lot_user_id
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_bolsa_vehiculos
+#: model:ir.ui.view,arch_db:poi_x_toyosa.search_estado_importaciones
+msgid "Vendedor"
+msgstr "Vendedor"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.purchase_order_form_toyosa
+msgid "Vendor Bills"
+msgstr "Facturas de proveedor"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_type_sale_cif
+msgid "Venta Cif Zona Franca"
+msgstr "Venta Cif Zona Franca"
+
+#. module: poi_x_toyosa
+#: model:res.groups,name:poi_x_toyosa.group_sale_marketing
+msgid "Ventas Marketing"
+msgstr "Ventas Marketing"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_sale_count
+msgid "Ventas Registradas"
+msgstr "Ventas Registradas"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_poi_report_kardex_chasis_wizard_ufv_value
+msgid "Ver actualización UFV"
+msgstr "Ver actualización UFV"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_estado_importaciones
+#: model:ir.actions.act_window,help:poi_x_toyosa.action_estado_importaciones_albaran
+msgid "Verificar lotes registrados y cuadros de importaciones asignados a los\n"
+"                    lotes"
+msgstr "Verificar lotes registrados y cuadros de importaciones asignados a los\n"
+"                    lotes"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_stock_location_visible
+msgid "Visible en Lector"
+msgstr "Visible en Lector"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_bolsa_vehiculos_pivot
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_estado_importaciones_pivot
+msgid "Vista Pivote"
+msgstr "Vista Pivote"
+
+#. module: poi_x_toyosa
+#: code:addons/poi_x_toyosa/models/stock_move_line.py:54
+#, python-format
+msgid "Warning"
+msgstr "Warning"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_anio_toyosa
+msgid "anio.toyosa"
+msgstr "anio.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_atributo_lista_neumaticos_toyosa
+msgid "atributo.lista.neumaticos.toyosa"
+msgstr "atributo.lista.neumaticos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_atributo_neumaticos_toyosa
+msgid "atributo.neumaticos.toyosa"
+msgstr "atributo.neumaticos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_atributo_nombre_toyosa
+msgid "atributo.nombre.toyosa"
+msgstr "atributo.nombre.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_atributo_toyosa
+msgid "atributo.toyosa"
+msgstr "atributo.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_atributo_valor_toyosa
+msgid "atributo.valor.toyosa"
+msgstr "atributo.valor.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_check_list_toyosa
+msgid "check.list.toyosa"
+msgstr "check.list.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_check_list_toyosa_items
+msgid "check.list.toyosa.items"
+msgstr "check.list.toyosa.items"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_color_externo
+msgid "color.externo"
+msgstr "color.externo"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_color_interno
+msgid "color.interno"
+msgstr "color.interno"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_katashiki_model
+msgid "katashiki.model"
+msgstr "katashiki.model"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_katashiki_property
+msgid "katashiki.property"
+msgstr "katashiki.property"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_katashiki_toyosa
+msgid "katashiki.toyosa"
+msgstr "katashiki.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_lot_id
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_sale_order_lot_id
+msgid "lote"
+msgstr "lote"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_marca_neumaticos_toyosa
+msgid "marca.neumaticos.toyosa"
+msgstr "marca.neumaticos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_marca_toyosa
+msgid "marca.toyosa"
+msgstr "marca.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.actions.act_window,help:poi_x_toyosa.modelo_neumaticos_toyosa_action
+msgid "modelo neumaticos toyosa"
+msgstr "modelo neumaticos toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_modelo_neumaticos_toyosa
+msgid "modelo.neumaticos.toyosa"
+msgstr "modelo.neumaticos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_modelo_repuestos_toyosa
+msgid "modelo.repuestos.toyosa"
+msgstr "modelo.repuestos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_modelo_toyosa
+msgid "modelo.toyosa"
+msgstr "modelo.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_nit_flag
+msgid "nit check"
+msgstr "nit check"
+
+#. module: poi_x_toyosa
+#: selection:purchase.order,type_import:0
+msgid "normal"
+msgstr "normal"
+
+#. module: poi_x_toyosa
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_cancel_wizard
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_poi_reservation_wizard
+#: model:ir.ui.view,arch_db:poi_x_toyosa.view_stock_move_update_wizard
+msgid "or"
+msgstr "o"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_poi_stock_reservation_lot_log
+msgid "poi.stock.reservation.lot.log"
+msgstr "poi.stock.reservation.lot.log"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_pr_neumaticos_toyosa
+msgid "pr.neumaticos.toyosa"
+msgstr "pr.neumaticos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_product_template_discount
+msgid "product.template.discount"
+msgstr "product.template.discount"
+
+#. module: poi_x_toyosa
+#: model:ir.model.fields,field_description:poi_x_toyosa.field_account_invoice_razon_flag
+msgid "razon flag"
+msgstr "razon flag"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sale_order_line_a
+msgid "sale.order.line.a"
+msgstr "sale.order.line.a"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_sbu_neumaticos_toyosa
+msgid "sbu.neumaticos.toyosa"
+msgstr "sbu.neumaticos.toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_lot_incidence
+msgid "stock.lot.incidence"
+msgstr "stock.lot.incidence"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_lot_incidence_type
+msgid "stock.lot.incidence.type"
+msgstr "stock.lot.incidence.type"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_request
+msgid "stock.request"
+msgstr "stock.request"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_stock_reserve_type
+msgid "stock.reserve.type"
+msgstr "stock.reserve.type"
+
+#. module: poi_x_toyosa
+#: selection:purchase.order,type_import:0
+msgid "toyosa"
+msgstr "toyosa"
+
+#. module: poi_x_toyosa
+#: model:ir.model,name:poi_x_toyosa.model_uso_neumaticos_toyosa
+msgid "uso.neumaticos.toyosa"
+msgstr "uso.neumaticos.toyosa"

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <data>
+                <template id="report_account_invoice_base_bol" inherit_id="account.report_invoice_with_payments">
+                        <xpath expr='//t/t' position="replace">
+          <t name="base" t-if="report == 'invoice'" t-call="poi_bol_cc.basic_invoice" />
+
+                        </xpath>
+    </template>
+  </data>
+</odoo>
+

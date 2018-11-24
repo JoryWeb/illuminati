@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--Form View-->
+        <record id="op_medical_file_form_view" model="ir.ui.view">
+            <field name="name">op.medical.file.form.view</field>
+            <field name="model">op.medical.file</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="A. Datos Personales" col="4">
+                            <field name="student_id"/>
+                            <field name="student_family_code"/>
+                        </group>
+
+                        <group string="B. Contactos de Emergencia">
+
+                        </group>
+
+                        <group string="C. Cobertura Medica">
+                            <group string="Seguro">
+                                <field name="private_insurance"/>
+                                <field name="insurance_name"/>
+                                <field name="insurance_phone"/>
+                            </group>
+                            <group>
+                                <group string="Seguro">
+                                    <field name="medical_center"/>
+                                    <field name="phone_medical_center"/>
+                                </group>
+                                <group string="Medico">
+                                    <field name="family_doctor"/>
+                                    <field name="phone_doctor"/>
+                                </group>
+                            </group>
+                        </group>
+
+                        <group string="D. Antecendentes de interes">
+                            <field name="operations"/>
+                            <field name="fractures"/>
+                            <field name="coagulation_problems"/>
+                            <field name="blood_group_id"/>
+                        </group>
+                        <group string="Vacunas">
+
+                        </group>
+                        <group string="Alergias">
+
+                        </group>
+                        <group string="Medicacion">
+                            <field name="contraindicated_medications"/>
+                        </group>
+                        <group string="E. Deportes que no puede practicar">
+                            <field name="sport_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="op_medical_file_tree_view" model="ir.ui.view">
+            <field name="name">op.medical.file.tree.view</field>
+            <field name="model">op.medical.file</field>
+            <field name="arch" type="xml">
+                <tree string="Op Medical File">
+                    <field name="student_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--Actions-->
+        <record id="action_op_medical_file" model="ir.actions.act_window">
+            <field name="name">Ficha Medica</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.medical.file</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menu-->
+        <menuitem id="action_op_medical_file_menu_health" name="Ficha Medica" sequence="1" parent="submenu_op_health_health" action="action_op_medical_file"/>
+    </data>
+</odoo>

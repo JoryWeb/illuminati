@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<template id="report_account_invoice_base_toy" inherit_id="poi_bol_cc.report_account_invoice_base_bol">
+			<xpath expr='//t[@name="base"]' position="before">
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_toy'" t-call="poi_x_toyosa_report.invoice_template_toy" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_ppav'" t-call="poi_x_toyosa_report.invoice_template_ppav" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_oae'" t-call="poi_x_toyosa_report.invoice_template_oae" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_neu'" t-call="poi_x_toyosa_report.invoice_template_neu" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_mrva'" t-call="poi_x_toyosa_report.invoice_template_mrva" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_mot'" t-call="poi_x_toyosa_report.invoice_template_mot" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_maq'" t-call="poi_x_toyosa_report.invoice_template_maq" />
+
+          <t t-if="report == 'poi_x_toyosa_report.invoice_template_cif'" t-call="poi_x_toyosa_report.invoice_template_cif" />
+
+		 	</xpath>
+    </template>
+  </data>
+</odoo>

@@ -1,0 +1,29 @@
+.pos .screen .footer-row {
+    border:none;
+    width:100%;
+    height:0px;
+}
+
+.pos .screen .footer-cell{
+    border:none;
+    width:100%;
+    height:0px;
+}
+
+.pos .screen .footer-cell .footer-content{
+    height: 100%;
+    padding: 10px;
+}
+
+.pos .screen .footer-cell .footer-content input{
+    height: 25px;
+    font-size: 23px;
+}
+
+.pos .rightpane-footer {
+    padding: 0;
+    height: 48px;
+    border-bottom: 1px solid #c7c7c7;
+    background: #d3d3d3;
+    text-align: center;
+}

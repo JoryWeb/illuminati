@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem id="kardex_report_lot" name="Auditoría de Inventarios" sequence="90" parent="stock.menu_warehouse_report"/>
+		<record id="poi_report_kardex_lot_form_wizard" model="ir.ui.view">
+			<field name="name">poi.report.kardex.lot.form.wizard</field>
+			<field name="model">poi.report.kardex.lot.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Reporte Kardex">
+					<group>
+						<field name="product_id"/>
+						<field name="location_id" domain="[('usage','=','internal')]"/>
+						<field name="lot_id" domain="[('product_id', '=', product_id)]" context="{'default_product_id':product_id}"/>
+					</group>
+					<group>
+						<field name="date_from"/>
+						<field name="date_to"/>
+					</group>
+					<footer>
+                        <button name="open_table" type="object" string="Kardex de producto" class="oe_highlight"/>
+						<button string="Imprimir Kardex" name="print_kardex_product_report" type="object" class="oe_highlight"/>
+                        <button string="Imprimir Kardex Valorado" name="print_kardex_valorado_product_report" type="object" class="oe_highlight" />
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="poi_report_kardex_lot_form_action" model="ir.actions.act_window">
+	        <field name="name">Kardex Inventarios Lotes</field>
+	        <field name="res_model">poi.report.kardex.lot.wizard</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form</field>
+	        <field name="target">new</field>
+    	</record>
+		<!--<menuitem action="poi_report_kardex_lot_form_action" id="report_kardex_form_lot_action_menu" parent="kardex_report_lot" sequence="2"/>-->
+	</data>
+</odoo>

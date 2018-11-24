@@ -1,0 +1,3 @@
+- !function {model: check.list.toyosa, name: _install_poi_x_toyosa_checklist}
+
+- !function {model: sale.order, name: _install_sale}

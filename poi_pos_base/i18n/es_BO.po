@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_pos_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 12:56+0000\n"
+"PO-Revision-Date: 2017-11-24 12:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_pos_base
+#: code:addons/poi_pos_base/models/point_of_sale.py:123
+#: code:addons/poi_pos_base/models/point_of_sale.py:148
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: poi_pos_base
+#. openerp-web
+#: code:addons/poi_pos_base/static/src/js/poi_pos_base.js:27
+#: code:addons/poi_pos_base/static/src/js/poi_pos_base.js:39
+#, python-format
+msgid "Error: We could not connect to server"
+msgstr "Error: No se pudo conectar al servidor"
+
+#. module: poi_pos_base
+#: model:ir.ui.view,arch_db:poi_pos_base.view_pos_session_pos_view_form
+msgid "Force Close on Use"
+msgstr "Forzar Cierre de Sesión en Uso"
+
+#. module: poi_pos_base
+#: model:ir.model.fields,field_description:poi_pos_base.field_pos_session_on_use
+msgid "On Use"
+msgstr "En Uso (Sesión Abierta)"
+
+#. module: poi_pos_base
+#: code:addons/poi_pos_base/models/point_of_sale.py:174
+#: code:addons/poi_pos_base/models/point_of_sale.py:194
+#: code:addons/poi_pos_base/models/point_of_sale.py:216
+#, python-format
+msgid "Return Products"
+msgstr "Devolver Productos"
+
+#. module: poi_pos_base
+#: model:ir.ui.view,arch_db:poi_pos_base.view_pos_pos_form
+msgid "Revert Order"
+msgstr "Anular Orden"
+
+#. module: poi_pos_base
+#: model:ir.ui.view,arch_db:poi_pos_base.view_pos_pos_form
+msgid "Revert and Create a New Order"
+msgstr "Anular y Crear nueva orden"
+
+#. module: poi_pos_base
+#: code:addons/poi_pos_base/models/point_of_sale.py:58
+#: code:addons/poi_pos_base/models/point_of_sale.py:94
+#: code:addons/poi_pos_base/models/point_of_sale.py:148
+#, python-format
+msgid "To return product(s), you need to open a session that will be used to register the refund."
+msgstr "Para devolver productos, necesita abrir una sesión para la devolución."
+
+#. module: poi_pos_base
+#: code:addons/poi_pos_base/models/point_of_sale.py:123
+#, python-format
+msgid "You cannot use reopen or close option on refund orders."
+msgstr "No puede usar reabrir o cerrar en órdenes de devolución."
+
+#. module: poi_pos_base
+#. openerp-web
+#: code:addons/poi_pos_base/static/src/js/poi_pos_base.js:28
+#: code:addons/poi_pos_base/static/src/js/poi_pos_base.js:40
+#, python-format
+msgid "Your Internet connection is probably down."
+msgstr "Su conexión de Internet probablemente está caida."
+
+#. module: poi_pos_base
+#: model:ir.model,name:poi_pos_base.model_pos_session
+msgid "pos.session"
+msgstr "Sesión TPV"
+
+#. module: poi_pos_base
+#: model:ir.model,name:poi_pos_base.model_pos_order
+msgid "pos_order"
+msgstr "pos_order"
+

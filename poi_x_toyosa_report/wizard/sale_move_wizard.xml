@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_sale_move_wizard" model="ir.ui.view">
+        <field name="name">Movimiento de Ventas</field>
+        <field name="model">sale.move.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reporte de Cartera">
+                <group col="1">
+                  <field name="date_from"/>
+                  <field name="date_to"/>
+                  <!-- <field name="date_cut"/> -->
+                </group>
+                <footer>
+                    <button name="action_view_report" string="Ver Reporte" type="object" class="btn-primary"/>
+                    or
+                    <button string="Salir" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_move_wizard_action" model="ir.actions.act_window">
+        <field name="name">Movimiento de Ventas</field>
+        <field name="res_model">sale.move.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Movimiento de Ventas" action="sale_move_wizard_action" id="menu_sale_move_wizard" parent="sale.menu_sale_report" sequence="12" groups="poi_x_toyosa.group_account_invoice_cartera"/>
+
+  </data>
+</odoo>

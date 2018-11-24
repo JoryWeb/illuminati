@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+        Sequences for movements
+        -->
+        <record model="ir.sequence" id="seq_account_cash_movement">
+            <field name="name">Account Cash Movement</field>
+            <field name="code">account.cash.movement</field>
+            <field name="padding" eval="6"/>
+            <field name="prefix">CM/</field>
+        </record>
+
+    </data>
+</openerp>
+

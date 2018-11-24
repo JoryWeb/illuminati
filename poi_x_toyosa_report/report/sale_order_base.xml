@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<template id="report_sale_order_base_toyo" inherit_id="sale.report_saleorder">
+			<xpath expr='//t/t' position="replace">
+          <t t-if="report == 'poi_x_toyosa_report.sale_order_template_toy'" t-call="poi_x_toyosa_report.sale_order_template_toy" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_yam'" t-call="poi_x_toyosa_report.sale_order_template_yam" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_volvo'" t-call="poi_x_toyosa_report.sale_order_template_volvo" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_unic'" t-call="poi_x_toyosa_report.sale_order_template_unic" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_rep'" t-call="poi_x_toyosa_report.sale_order_template_rep" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_neu'" t-call="poi_x_toyosa_report.sale_order_template_neu" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_kub'" t-call="poi_x_toyosa_report.sale_order_template_kub" />
+
+					<t t-if="report == 'poi_x_toyosa_report.sale_order_template_hino'" t-call="poi_x_toyosa_report.sale_order_template_hino" />
+
+					<t t-if="report == 'report.sale.report_saleorder'">
+						<t t-foreach="docs" t-as="doc">
+		            <t t-call="sale.report_saleorder_document" t-lang="doc.partner_id.lang"/>
+		        </t>
+					</t>
+
+		 	</xpath>
+    </template>
+  </data>
+</odoo>

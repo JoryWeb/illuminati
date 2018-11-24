@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data noupdate="1">
+    <record id="liquido_exports" model="sale.order.export.tag">
+        <field name="name">Liquido</field>
+    </record>
+    <record id="fragil_exports" model="sale.order.export.tag">
+        <field name="name">Fragil</field>
+    </record>
+    <record id="solido_exports" model="sale.order.export.tag">
+        <field name="name">Solido</field>
+    </record>
+    <record id="peligroso_exports" model="sale.order.export.tag">
+        <field name="name">Peligroso</field>
+    </record>
+    <!-- Sequences for exportaciones -->
+    <record id="seq_purchase_order_imports" model="ir.sequence">
+        <field name="name">Secuencia Exportaciones</field>
+        <field name="code">sale.order.exports</field>
+        <field name="prefix">OEXP</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</data>
+</odoo>

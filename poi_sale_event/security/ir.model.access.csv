@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_event,access_sale_event,model_sale_event,base.group_sale_salesman,1,1,1,0
+access_sale_event_type,access_sale_event_type,model_sale_event_type,base.group_sale_salesman,1,1,1,0
+access_sale_event_line,access_sale_event_line,model_sale_event_line,base.group_sale_salesman,1,1,1,0
+access_sale_event_mgr,access_sale_event_mgr,model_sale_event,base.group_sale_manager,1,1,1,1
+access_sale_event_type_mgr,access_sale_event_type_mgr,model_sale_event_type,base.group_sale_manager,1,1,1,1
+access_sale_event_line_mgr,access_sale_event_line_mgr,model_sale_event_line,base.group_sale_manager,1,1,1,1

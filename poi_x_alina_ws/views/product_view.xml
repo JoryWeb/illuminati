@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_alina_ws" model="ir.ui.view">
+        <field name="name">product.template.alina_ws</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="details" string="Detalles">
+                    <group>
+                        <group>
+                            <field name="class_id" />
+                            <field name="type_id" />
+                            <field name="stype_id" />
+                            <field name="model_id" />
+                        </group>
+                        <group>
+                            <field name="smodel_id" />
+                            <field name="container_id" />
+                            <field name="activity_id" />
+                            <field name="min_sale_quantity" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_product_alina_ws" model="ir.ui.view">
+        <field name="name">product.product.alina_ws</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="details" string="Detalles">
+                    <group>
+                        <group>
+                            <field name="class_id" />
+                            <field name="type_id" />
+                            <field name="stype_id" />
+                            <field name="model_id" />
+                        </group>
+                        <group>
+                            <field name="smodel_id" />
+                            <field name="container_id" />
+                            <field name="activity_id" />
+                            <field name="min_sale_quantity" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

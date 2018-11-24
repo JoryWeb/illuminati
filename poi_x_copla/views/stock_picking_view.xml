@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_picking_form_export_copla">
+            <!--LA RUTA COMO NOMBRE UNICO-->
+            <field name="name">stock.picking.form.export.copla</field>
+            <!--DEL MODELO PADRE-->
+            <field name="model">stock.picking</field>
+            <!--NOMBRE DEL MODULO+ID DE VIEW-->
+            <field name="inherit_id" ref="poi_export_sale.view_picking_form_export"/>
+            <field name="arch" type="xml">
+                <group name="register_weight" position="after">
+                    <group string="Registro de calidad" name="">
+                        <field name="bo"/>
+                        <field name="ho"/>
+                        <field name="dry_base"/>
+                        <field name="sampling_date"/>
+                        <field name="date_analisys"/>
+                    </group>
+                    <group>
+                        <field name="priority_type_alv"/>
+                    </group>
+                </group>
+                <page name="extra" position="inside">
+                    <group>
+                        <group>
+                            <field name="send_metod_trasp"/>
+                        </group>
+                        <group>
+                            <field name="priority_trasp"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="extra" position="after">
+                    <page string="Transporte" name="transport_alv_form">
+                        <group>
+                            <group>
+                                <field name="type_transp" colspan="4"/>
+                                <field name="cellar"/>
+                                <field name="date_send_cellar_trasp"/>
+                                <field name="cant_coat_cellar_trasp"/>
+                            </group>
+                            <group>
+                                <field name="shipment_trasp"/>
+                                <field name="reference_trasp"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Documentos" name="documents_alv_form">
+                        <group>
+                            <group>
+                                <field name="carga_manifest" colspan="4"/>
+                                <field name="formlol_sealed"/>
+                            </group>
+                            <group>
+                                <field name="inter_rail_transport"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>

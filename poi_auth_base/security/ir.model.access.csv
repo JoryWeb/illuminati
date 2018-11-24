@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_poi_auth_auth_advanced_rule_lines,access_poi_auth_auth_advanced_rule_lines,model_poi_auth_auth_advanced_rule_lines,base.group_user,1,1,1,1
+access_poi_auth_auth_python_code,access_poi_auth_auth_python_code,model_poi_auth_auth_python_code,base.group_user,1,1,1,1
+access_poi_auth_auth_rule_lines,access_poi_auth_auth_rule_lines,model_poi_auth_auth_rule_lines,base.group_user,1,1,1,1
+access_poi_auth_auth_rule,access_poi_auth_auth_rule,model_poi_auth_auth_rule,base.group_user,1,1,1,1
+access_poi_auth_auth,access_poi_auth_auth,model_poi_auth_auth,base.group_user,1,1,1,1
+access_poi_auth_circuit_lines,access_poi_auth_circuit_lines,model_poi_auth_circuit_lines,base.group_user,1,1,1,1
+access_poi_auth_circuit,access_poi_auth_circuit,model_poi_auth_circuit,base.group_user,1,1,1,1
+access_poi_auth_document_log,access_poi_auth_document_log,model_poi_auth_document_log,base.group_user,1,1,1,1
+access_poi_auth_document_log_line,access_poi_auth_document_log_line,model_poi_auth_document_log_line,base.group_user,1,1,1,1

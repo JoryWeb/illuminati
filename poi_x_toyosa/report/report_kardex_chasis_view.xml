@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="poi_report_kardex_chasis_tree" model="ir.ui.view">
+			<field name="name">poi.report.kardex.chasis.tree</field>
+			<field name="model">poi.report.kardex.chasis</field>
+			<field name="arch" type="xml">
+				<tree string="Kardex de Chasis">
+					<field name="categ_id"/>
+                    <field name="modelo"/>
+                    <field name="katashiki"/>
+                    <field name="product_id"/>
+                    <field name="colorinterno"/>
+                    <field name="colorexterno"/>
+                    <field name="lot_id"/>
+                    <field name="location_id"/>
+                    <field name="qty"/>
+                    <field name="total"/>
+                    <field name="incremento_ufv"/>
+                    <field name="subtotal"/>
+                    <field name="costo_fin"/>
+                    <field name="rentabilidad"/>
+				</tree>
+			</field>
+		</record>
+		
+	</data>
+</odoo>

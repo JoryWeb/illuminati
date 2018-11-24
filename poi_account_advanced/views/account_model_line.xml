@@ -1,0 +1,33 @@
+<openerp>
+<data>
+        <record model="ir.ui.view" id="view_account_model_amount_form">
+            <field name="name">account.model.amount</field>
+            <field name="model">account.model</field>
+            <field name="inherit_id" ref="account.view_model_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="before">
+                    <group col="4">
+                        <field name="porcentage_base"/>
+                    </group>
+                </xpath>
+                <xpath expr="//form/button[@string='Create entries']" position="before">
+                    <group>
+                        <field name="monto" attrs="{'invisible': [('porcentage_base','=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+         </record>
+
+        <record id="view_model_line_segment" model="ir.ui.view">
+           <field name="name">account.model.line.segment</field>
+           <field name="model">account.model.line</field>
+           <field name="inherit_id" ref="account.view_model_line_tree"/>
+           <field name="arch" type="xml">
+               <xpath expr="//tree/field[@name='analytic_account_id']" position="after">
+                   <field name="segment_id"/>
+               </xpath>
+           </field>
+        </record>
+
+</data>
+</openerp>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Add "Asset Category" to supplier invoices -->
+        <record model="ir.ui.view" id="view_invoice_toyosa">
+            <field name="name">account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                  <attribute name="attrs">{
+                      'invisible': 0,
+                  }</attribute>
+
+                </xpath>
+                <field name="reference" position="replace">
+                    <field name="reference" attrs="{'required':[('state','in',('draft')),('type','=','in_invoice')]}"/>
+                    <field name="tipo_fac" invisible="1"/>
+                </field>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='name']" position="after">
+                    <field name="colorinterno" invisible="not context.get('importaciones', False)"/>
+                    <field name="colorexterno" invisible="not context.get('importaciones', False)"/>
+                    <field name="edicion" invisible="not context.get('importaciones', False)"/>
+                    <field name="move_int_id" invisible="1"/>
+                </xpath>
+
+                <!--<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']"
+                       position="replace">
+                    <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                           domain="[('company_id', '=', parent.company_id), ('account_type', '=', 'normal')]"
+                           attrs="{'required': [('name', '!=', '')]}"/>
+                </xpath>-->
+
+                <xpath expr="//form/sheet/notebook/page[2]/group" position="after">
+                    <group string="Producción" attrs="{'invisible': [('tipo_fac','!=','3')]}">
+                        <group>
+                            <field name="n_produccion"/>
+                            <field name="fecha_produccion"/>
+                        </group>
+                        <group>
+                            <field name="fecha_salida"/>
+                            <field name="fecha_llegada"/>
+                        </group>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <menuitem action="poi_purchase_imports.poi_invoice_imports_importaciones"
+                  id="menu_invoice_imports_importaciones_toyosa"
+                  parent="purchase.menu_purchase_control" groups="poi_x_toyosa.group_purchase_user_importaciones"
+                  sequence="2"/>
+
+        <menuitem id="menu_daspachante" name="Despachante" groups="group_despachante_usuario" sequence="50"/>
+        <menuitem id="menu_daspachante_usuario" name="Despachante" parent="menu_daspachante" sequence="50"/>
+        <!-- Dui para Despachante -->
+        <menuitem action="poi_purchase_imports.poi_invoice_imports_dui" id="menu_invoice_imports_dui_despachante"
+                  parent="menu_daspachante_usuario" sequence="1"/>
+
+        <menuitem action="poi_x_toyosa.action_prioridades_nacionalizacion"
+                  id="menu_prioridades_nacionalizacion_despachante"
+                  parent="menu_daspachante_usuario" sequence="2"/>
+
+        <!--
+        <record id="invoice_supplier_form_inh3" model="ir.ui.view">
+            <field name="name">invoice.supplier.form.inh.3</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="poi_purchase_imports.invoice_supplier_form_inh2"/>
+            <field name="arch" type="xml">
+                <button name="action_create_imports" position="attributes">
+                    <attribute name='groups'>poi_x_toyosa.group_purchase_user_importaciones</attribute>
+                </button>
+            </field>
+        </record>
+        -->
+        <!-- Filtrar Actividad económica por padre -->
+        <record model="ir.ui.view" id="view_invoice_form_activity">
+            <field name="name">account.invoice.form.activity</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='product_id']"
+                           position="attributes">
+                        <attribute name="domain">[('product_tmpl_id.categ_id.activity_id','in',[parent.activity_id])]
+                        </attribute>
+                    </xpath>
+                    <field name="date_due" position="before">
+                        <field name="activity_id"/>
+                    </field>
+
+                    <field name="partner_id" position="after">
+                        <field name="sale_type_id"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <!-- Factura de Venta -->
+
+        <!-- Inherit Form view -->
+        <record id="invoice_form_toyo" model="ir.ui.view">
+            <field name="name">account.invoice.form.toyo</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_invoice_open']" position="replace">
+                  <button name="action_invoice_open" invisible="1" string="Validate" class="oe_highlight" groups="base.group_user"/>
+                </xpath>
+                <xpath expr="//button[@name='action_invoice_open']" position="before">
+                  <button name="action_invoice_open" states="draft" string="Validar" class="oe_highlight" groups="base.group_user" type="object"/>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='name']" position="after">
+                    <field name="lot_id"/>
+                    <field name="reserve_type"/>
+                </xpath>
+
+                <xpath expr="//field[@name='cc_dos']" position="replace">
+                    <field name="cc_dos_lock" invisible="1"/>
+                    <field name="cc_dos"
+                           attrs="{'readonly': ['|', ('state','not in',['draft']), ('cc_dos_lock', '=', True)]}"  options="{'no_create': True, 'no_open': True, 'create_edit': False}"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']"
+                       position="replace">
+                  <field name="account_analytic_id" groups="analytic.group_analytic_accounting" required="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form view -->
+        <record id="account_invoice_bo_toyo" model="ir.ui.view">
+            <field name="name">account.invoice.form.base.toyo</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="poi_bol_base.account_invoice_bo"/>
+            <field name="arch" type="xml">
+              <data>
+                <xpath expr="//field[@name='nit']" position="replace">
+                    <field name="nit_flag" invisible="1"/>
+                    <field name="razon_flag" invisible="1"/>
+                    <field name="nit" attrs="{'readonly':['|', ('nit_flag', '=', True), ('state', 'in', ['open', 'paid'])]}"/>
+                </xpath>
+                <xpath expr="//field[@name='razon']" position="replace">
+                  <field name="razon" attrs="{'readonly':['|', ('razon_flag', '=', True), ('state', 'in', ['open', 'paid'])]}"/>
+                </xpath>
+              </data>
+            </field>
+        </record>
+
+        <menuitem id="menu_informes_reservas" name="Informes Cartera"
+                  parent="account.menu_finance"
+                  groups="group_account_invoice_cartera"
+                  sequence="6"/>
+
+        <!-- Menus en ventas -->
+        <menuitem id="menu_invoice_2sale"
+                  name="Facturación" parent="sale.sale_menu_root" sequence="4" groups="sales_team.group_sale_manager"/>
+        <menuitem action="account.action_invoice_tree1"
+                  id="menu_action_invoice_tree1_2sale" parent="menu_invoice_2sale" name="Facturas de Cliente"
+                  sequence="1"
+                  groups="sales_team.group_sale_manager"/>
+        <!--<menuitem id="menu_action_sale_receipt_toyo"
+                  action="account_voucher.action_sale_receipt"
+                  parent="menu_invoice_2sale"
+                  name="Recibos de Venta"
+                  sequence="10"
+                  groups="sales_team.group_sale_manager"/>-->
+        <menuitem action="poi_bol_base.action_invoice_nota_out"
+                  id="menu_action_invoice_nota_out" sequence="11" parent="menu_invoice_2sale"
+                  groups="sales_team.group_sale_manager"/>
+        <!--<menuitem action="poi_payment_request.action_inbound_payment_request"
+                  id="menu_action_inbound_payment_request_2sale"
+                  sequence="15"
+                  name="Solicitudes de Cobro"
+                  parent="menu_invoice_2sale"
+                  groups="sales_team.group_sale_manager"/>
+        <menuitem action="poi_account_prepayment.action_account_prepayments"
+                  id="menu_action_account_prepayments_receivable_2sale"
+                  name="Pagos Adelantados"
+                  parent="menu_invoice_2sale" sequence="20" groups="sales_team.group_sale_manager"/>-->
+
+
+    </data>
+</odoo>

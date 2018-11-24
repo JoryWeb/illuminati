@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<!-- Inherit Form view -->
+<record id="view_order_form_implelab" model="ir.ui.view">
+  <field name="name">order.implelab.form</field>
+  <field name="model">sale.order</field>
+  <field name="inherit_id" ref="sale.view_order_form"/>
+  <field name="arch" type="xml">
+    <data>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='tax_id']" position="after">
+        <field name="mer2"/>
+        <field name="factor2"/>
+        <field name="subtotal"/>
+        <field name="unitario_factor"/>
+       <!-- <field name="subtotal_2"/>-->
+      </xpath>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='qty_delivered']" position="replace">
+        <field name="qty_delivered" invisible="1"/>
+      </xpath>
+      <xpath expr="//field[@name='order_line']/tree/field[@name='qty_invoiced']" position="replace">
+        <field name="qty_invoiced" invisible="1"/>
+      </xpath>
+    </data>
+  </field>
+</record>
+</data>
+</odoo>
+

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <!-- Codigo impuestos -->
+    <data noupdate="1">
+
+        <record id="tag_bo_01" model="account.account.tag">
+            <field name="name">Impuesto a las Utilidades de la Empresa IUE (25%)</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_02" model="account.account.tag">
+            <field name="name">Impuesto a las Transacciones IT (3%)</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_03" model="account.account.tag">
+            <field name="name">Impuesto a las Transacciones IT (3%)</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_04" model="account.account.tag">
+            <field name="name">Impuesto al Valor Agregado (IVA) Total a Pagar</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_05" model="account.account.tag">
+            <field name="name">Impuesto Cobrado</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_06" model="account.account.tag">
+            <field name="name">Impuesto Cobrado Fuera de Ámbito</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_07" model="account.account.tag">
+            <field name="name">Impuesto Cobrado de Exonerados al IVA</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_08" model="account.account.tag">
+            <field name="name">Impuesto Cobrado IVA</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_09" model="account.account.tag">
+            <field name="name">Impuesto Pagado</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_10" model="account.account.tag">
+            <field name="name">Impuesto Pagado Fuera de Ámbito</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_11" model="account.account.tag">
+            <field name="name">Impuesto Pagado de Exonerados al IVA</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_12" model="account.account.tag">
+            <field name="name">Impuesto Pagado IVA</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_13" model="account.account.tag">
+            <field name="name">Base Imponible</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_14" model="account.account.tag">
+            <field name="name">Base Imponible - Compras</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_15" model="account.account.tag">
+            <field name="name">Compras Gravadas Fuera de Ámbito</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_16" model="account.account.tag">
+            <field name="name">Compras NO Gravadas (Exoneradas)</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_17" model="account.account.tag">
+            <field name="name">Compras Gravadas con IVA</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_18" model="account.account.tag">
+            <field name="name">Base Imponible - Ventas</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_19" model="account.account.tag">
+            <field name="name">Ventas Gravadas Fuera de Ámbito</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_20" model="account.account.tag">
+            <field name="name">Ventas NO Gravadas (Exoneradas)</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <record id="tag_bo_21" model="account.account.tag">
+            <field name="name">Impuesto al Valor Agregado con IVA</field>
+            <field name="applicability">taxes</field>
+        </record>
+
+        <!-- Account Tax Group -->
+        <record id="tax_group_iva_13" model="account.tax.group">
+            <field name="name">IVA 13%</field>
+        </record>
+
+        <record id="tax_group_it_3" model="account.tax.group">
+            <field name="name">IT 3%</field>
+        </record>
+
+        <record id="tax_group_ret" model="account.tax.group">
+            <field name="name">RETENCIÓN 15.5%</field>
+        </record>
+
+        <record id="tax_group_exe" model="account.tax.group">
+            <field name="name">EXENTO</field>
+        </record>
+
+        <!-- Impuestos -->
+        <record id="ITAX_21" model="account.tax.template">
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">IVA 13% Venta</field>
+            <field name="amount">13</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="include_base_amount">1</field>
+            <field name="refund_account_id" ref="231"/>
+            <field name="account_id" ref="231"/>
+            <field name="tag_ids" eval="[(6,0,[ref('tag_bo_08'),ref('tag_bo_21') ])]"/>
+            <field name="tax_group_id" ref="tax_group_iva_13"/>
+            <!-- localización bol -->
+            <field eval="1" name="apply_lcv"/>
+            <field name="type_bol">iva</field>
+        </record>
+
+        <record id="OTAX_21" model="account.tax.template">
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">IVA 13% Compra</field>
+            <field name="amount">13</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="include_base_amount">1</field>
+            <field name="refund_account_id" ref="231"/>
+            <field name="account_id" ref="231"/>
+            <field name="tag_ids" eval="[(6,0,[ref('tag_bo_12'), ref('tag_bo_17')])]"/>
+            <field name="tax_group_id" ref="tax_group_iva_13"/>
+            <!-- localización bol -->
+            <field eval="1" name="apply_lcv"/>
+            <field name="type_bol">iva</field>
+        </record>
+
+        <record id="ITAX_03" model="account.tax.template">
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">IT 3%</field>
+            <field name="amount">3</field>
+            <field name="amount_type">percent</field>
+            <field name="price_include" eval="True"/>
+            <field name="type_tax_use">sale</field>
+            <field name="refund_account_id" ref="232"/>
+            <field name="account_id" ref="232"/>
+            <field name="tag_ids" eval="[(6,0,[ref('tag_bo_03'), ref('tag_bo_21')])]"/>
+            <field name="tax_group_id" ref="tax_group_it_3"/>
+        </record>
+
+        <record id="RET_SS" model="account.tax.template">
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">Retención Servicios</field>
+            <field name="amount_type">group</field>
+            <field name="amount">0</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="tax_group_ret"/>
+            <field eval="0" name="apply_lcv"/>
+        </record>
+        <record id="RET_SS_1" model="account.tax.template">
+            <field name="parent_id" ref="RET_SS"/>
+            <field eval="1" name="sequence"/>
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">RET-IUES</field>
+            <field name="amount">-12.5</field>
+            <field name="amount_type">percent</field>
+            <field name="price_include" eval="False"/>
+            <field name="type_tax_use">none</field>
+            <field name="refund_account_id" ref="235"/>
+            <field name="account_id" ref="235"/>
+            <field name="tax_group_id" ref="tax_group_ret"/>
+        </record>
+        <record id="RET_SS_2" model="account.tax.template">
+            <field name="parent_id" ref="RET_SS"/>
+            <field eval="2" name="sequence"/>
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">RET-IT</field>
+            <field name="amount">-3</field>
+            <field name="amount_type">percent</field>
+            <field name="price_include" eval="False"/>
+            <field name="type_tax_use">none</field>
+            <field name="refund_account_id" ref="234"/>
+            <field name="account_id" ref="234"/>
+            <field name="tax_group_id" ref="tax_group_ret"/>
+        </record>
+
+        <record id="IVA_GAS" model="account.tax.template">
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">IVA CF Gasolina</field>
+            <field name="amount_type">group</field>
+            <field name="amount">0</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="tax_group_iva_13"/>
+            <field eval="1" name="apply_lcv"/>
+        </record>
+        <record id="IVA_GAS_1" model="account.tax.template">
+            <field name="parent_id" ref="IVA_GAS"/>
+            <field eval="1" name="sequence"/>
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">IEHD-IVA</field>
+            <field name="amount">0</field>
+            <field name="python_compute">
+            result = price_unit * quantity * 0.70 * 0.13</field>
+            <field name="python_applicable">
+            result = True</field>
+            <field name="amount_type">code</field>
+            <field name="price_include" eval="True"/>
+            <field name="include_base_amount" eval="True"/>
+            <field name="type_tax_use">none</field>
+            <field name="refund_account_id" ref="231"/>
+            <field name="account_id" ref="231"/>
+            <field name="tax_group_id" ref="tax_group_iva_13"/>
+            <field name="type_bol">iva</field>
+        </record>
+        <record id="IVA_GAS_2" model="account.tax.template">
+            <field name="parent_id" ref="IVA_GAS"/>
+            <field eval="2" name="sequence"/>
+            <field name="chart_template_id" ref="bo_chart_template"/>
+            <field name="name">IEHD-EXE</field>
+            <field name="amount">30</field>
+            <field name="amount_type">percent</field>
+            <field name="price_include" eval="True"/>
+            <field name="cost_include" eval="True"/>
+            <field name="include_base_amount" eval="True"/>
+            <field name="type_tax_use">none</field>
+            <field name="tax_group_id" ref="tax_group_exe"/>
+            <field name="type_bol">exe</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_product_price_history
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-24 20:04+0000\n"
+"PO-Revision-Date: 2017-05-24 20:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_product_price_history
+#: model:ir.ui.view,arch_db:poi_product_price_history.view_product_price_history_filter
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_product_price_history
+#: model:ir.ui.view,arch_db:poi_product_price_history.view_product_price_history_filter
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_product_price_history
+#: model:ir.ui.view,arch_db:poi_product_price_history.view_product_price_history_filter
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: poi_product_price_history
+#: model:ir.ui.view,arch_db:poi_product_price_history.view_product_price_history_from_product
+msgid "Historic Prices"
+msgstr "Histórico de Precios"
+
+#. module: poi_product_price_history
+#: model:ir.model.fields,field_description:poi_product_price_history.field_product_price_history_res_id
+msgid "Origen"
+msgstr "Origen"
+
+#. module: poi_product_price_history
+#: model:ir.model.fields,field_description:poi_product_price_history.field_product_price_history_origin
+msgid "Origin de revaloriacion"
+msgstr "Origen de revalorización"
+
+#. module: poi_product_price_history
+#: model:ir.ui.view,arch_db:poi_product_price_history.product_template_price_history_form_view
+msgid "Price history"
+msgstr "Historial de precios"
+
+#. module: poi_product_price_history
+#: model:ir.actions.act_window,name:poi_product_price_history.action_product_price_history
+#: model:ir.ui.menu,name:poi_product_price_history.menu_product_price_history
+msgid "Price history by product"
+msgstr "Histórico de precios por Producto"
+
+#. module: poi_product_price_history
+#: model:ir.actions.act_window,name:poi_product_price_history.action_price_history
+msgid "Prices History"
+msgstr "Historial de precios"
+
+#. module: poi_product_price_history
+#: model:ir.model,name:poi_product_price_history.model_product_product
+#: model:ir.ui.view,arch_db:poi_product_price_history.view_product_price_history_filter
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_product_price_history
+#: model:ir.model,name:poi_product_price_history.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_product_price_history
+#: model:ir.ui.view,arch_db:poi_product_price_history.view_product_price_history_filter
+msgid "Search Prices History"
+msgstr "Buscar Precios Historicos"
+
+#. module: poi_product_price_history
+#: model:ir.model,name:poi_product_price_history.model_product_price_history
+msgid "product.price.history"
+msgstr "product.price.history"

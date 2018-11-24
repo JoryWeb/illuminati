@@ -1,0 +1,29 @@
+<openerp>
+    <data>
+        <record id="sale_order_dimension_form" model="ir.ui.view">
+            <field name="name">sale.order.dimension.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                    <field name="product_dimension" context="{'product_dimension':product_dimension}"/>
+                    <field name="lot_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="after">
+                    <field name="total_dimension" invisible="1"/>
+                    <field name="total_dimension_display"/>
+                </xpath>
+                <!--form-->
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="before">
+                    <field name="product_dimension" context="{'product_dimension':product_dimension}"/>
+                    <field name="lot_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="after">
+                    <field name="total_dimension" invisible="1"/>
+                    <field name="total_dimension_display"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

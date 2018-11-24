@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	<record id="view_hr_afps_tree_adv" model="ir.ui.view">
+            <field name="name">hr.afps.tree.adv</field>
+            <field name="model">hr.afps</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Familia del Empleado">
+                    <field name="name"/>
+                    <!-- <field name="bank_id"/> -->
+                    <field name="bank_account_id"/>
+                    <field name="note"/>
+                </tree> 
+            </field>
+        </record>
+
+        <record id="view_hr_afps_form_adv" model="ir.ui.view">
+            <field name="name">hr.afps.form.adv</field>
+            <field name="model">hr.afps</field>
+            <field name="arch" type="xml">
+                <form string="Adjuntos del Empleado" version="7.0">
+                    <sheet string="Adjuntos">
+                        <h1>Adjuntos del Empleado</h1>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <!-- <field name="bank_id"/> -->
+                                
+                            </group>
+                            <group>
+                                <field name="bank_account_id"/>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_hr_afps_adv" model="ir.actions.act_window">
+            <field name="name">Afps</field>
+            <field name="res_model">hr.afps</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="action_hr_afps_adv" id="menu_hr_afps" parent="menu_hr_employee_config_base" sequence="2"/>
+</data>
+</odoo>

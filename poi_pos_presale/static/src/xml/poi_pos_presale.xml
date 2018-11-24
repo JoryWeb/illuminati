@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderSelectorScreenWidget">
+        <div class='orderselector-screen screen'>
+            <div class="top-content">
+                <span class='button back'>
+                    <i class='fa fa-angle-double-left'></i>
+                    Back
+                </span>
+                <span class='button update-orders' style="right: 10px;">
+                        <i class='fa fa-refresh'></i>
+                        Refresh Orders
+                    </span>
+                <h1>Select Orders</h1>
+            </div>
+            <div class='full-content'>
+                <div class="db-orders">
+                    <p>Orders available</p>
+                    <div class='order-list'>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="OrderSelectorPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput" style="width: 90%; height: 90%">
+                <p class="title">Order Selector</p>
+                <p>Click on any order to open it.</p>
+                <div class="db-orders">
+                    <div class='order-list'>
+
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="button update-orders">
+                        Update Orders
+                    </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="OrderButtonWidget">
+        <span class="order-selector-button select-order">
+            <div t-att-order-id="widget.order.id">
+                <div class="order_data">
+                    <h1><t t-esc='widget.order.id'/></h1>
+                </div>
+            </div>
+        </span>
+    </t>
+
+
+    <t t-name="OrderSelectorButtonWidget">
+        <div class="header-button">
+            Select Orders
+        </div>
+    </t>
+
+    <t t-name="SendToPresaleButton">
+        <div class='control-button js_send_to_presale'>
+            <i class='fa fa-star' /> Send to Presale
+        </div>
+    </t>
+
+</templates>

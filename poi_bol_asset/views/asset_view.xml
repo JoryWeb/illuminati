@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem parent="account.menu_finance_entries" name="Depreciación Activos" id="menu_action_bol_asset" sequence="112"/>
+        <record model="ir.ui.view" id="view_account_asset_bol_form">
+            <field name="name">account.asset.asset.bol.form</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']" position="replace">
+                    <div class="oe_left" style="width: 500px;">
+                        <field name="image" widget="image" class="oe_avatar oe_left"/>
+                        <div class="oe_title" style="width: 390px;">
+                            <label class="oe_edit_only" for="name" string="Product Name"/>
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='code']" position="after" nolabel="1">
+                    <field name="serial"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="account_analytic_id"/>
+                    <field name="assign_id"/>
+                    <field name="location_id"/>
+                    <!--<button name="see_log" type="object" string="Ver histórico" icon="terp-calendar" context="{'active_id': id}"/>-->
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <!--<button class="oe_stat_button" name="see_log" type="object" icon="fa-list"
+                            context="{'active_id': id}">
+                        <field string="Transacciones" name="hist_count" widget="statinfo"/>
+                    </button>-->
+                    <button class="oe_stat_button" name="view_depreciation" type="object" icon="fa-list"
+                            string="Depreciaciones"/>
+                </xpath>
+                <xpath expr="//field[@name='method_number']" position="after" nolabel="1">
+                    <field name="n_depre_actual"/>
+                    <field name="n_depre_restante"/>
+                </xpath>
+                <xpath expr="//field[@name='depreciation_line_ids']" position="replace" nolabel="1">
+                    <field name="depreciation_ufv_ids" mode="tree" options="{'reload_whole_on_button': true}">
+                        <tree string="Lineas Depreciadas" create="false">
+                            <field name="date_accounting"/>
+                            <field name="move_id"/>
+                            <field name="amount_inc_act" sum="Total"/>
+                            <field name="amount_dep_per" sum="Total"/>
+                            <field name="amount_dep_act" sum="Total"/>
+                        </tree>
+                        <form string="Linea depreciada">
+                            <group>
+                                <group>
+                                    <field name="date_accounting"/>
+                                    <field name="move_id"/>
+                                    <field name="amount_inc_act"/>
+                                    <field name="amount_dep_per"/>
+                                    <field name="amount_dep_act"/>
+                                </group>
+                            </group>
+                        </form>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_asset_bol_search">
+            <field name="name">account.asset.asset.bol.search</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="account_analytic_id"/>
+                    <field name="assign_id"/>
+                    <field name="location_id"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="before">
+                    <group expand="0" string="Group By">
+                        <filter string="Categoría" icon="terp-partner" domain="[]"
+                                context="{'group_by':'category_id'}"/>
+                        <filter string="Analítica" icon="terp-partner" domain="[]"
+                                context="{'group_by':'account_analytic_id'}"/>
+                        <filter string="Asignado" icon="terp-partner" domain="[]" context="{'group_by':'assign_id'}"/>
+                        <filter string="Ubicación" icon="terp-go-month" domain="[]"
+                                context="{'group_by':'location_id'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!-- History Log -->
+        <record id="view_asset_history_tree" model="ir.ui.view">
+            <field name="name">account.asset.history.tree</field>
+            <field name="model">account.asset.history</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Historia">
+                    <field name="asset_id"/>
+                    <field name="date"/>
+                    <field name="assign_id"/>
+                    <field name="location_id"/>
+                    <field name="create_uid" string="Establecido por"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_asset_history_search" model="ir.ui.view">
+            <field name="name">account.asset.history.search</field>
+            <field name="model">account.asset.history</field>
+            <field eval="0" name="priority"/>
+            <field name="arch" type="xml">
+                <search string="Historia">
+                    <field name="asset_id"/>
+                    <field name="date"/>
+                    <field name="assign_id"/>
+                    <field name="location_id"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Activo" name="group_asset_id" icon="terp-folder-violet" domain="[]"
+                                context="{'group_by':'asset_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_asset_history" model="ir.actions.act_window">
+            <field name="name">Historia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.asset.history</field>
+            <field name="view_id" ref="view_asset_history_tree"/>
+            <field name="search_view_id" ref="view_asset_history_search"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_asset_category_form_inh">
+            <field name="name">account.asset.category.form.inh</field>
+            <field name="model">account.asset.category</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_category_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form//field[@name='journal_id']" position="after">
+                    <field name="account_aitb_asset_id"/>
+                    <field name="account_aitb_asset_util_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Asset Value -->
+        <record id="view_asset_value_search" model="ir.ui.view">
+            <field name="name">account.asset.value.search</field>
+            <field name="model">account.asset.value</field>
+            <field eval="0" name="priority"/>
+            <field name="arch" type="xml">
+                <search string="Valores">
+                    <field name="asset_id"/>
+                    <field name="move_id"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Fecha Transaccion" icon="terp-folder-violet" domain="[]"
+                                context="{'group_by':'date_trans'}"/>
+                        <filter string="Periodo Contable" icon="terp-folder-violet" domain="[]"
+                                context="{'group_by':'date_accounting'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_asset_value_tree" model="ir.ui.view">
+            <field name="name">account.asset.value.tree</field>
+            <field name="model">account.asset.value</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Valoración Activos">
+                    <field name="asset_id"/>
+                    <field name="date_trans"/>
+                    <field name="date_accounting"/>
+                    <field name="move_id"/>
+                    <field name="amount_inc_act"/>
+                    <field name="amount_dep_per"/>
+                    <field name="amount_dep_act"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_asset_value" model="ir.actions.act_window">
+            <field name="name">Cuadro Depreciación</field>
+            <field name="res_model">account.asset.value</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_asset_value_tree"/>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem action="action_asset_value"
+                  id="menu_asset_value"
+                  parent="poi_bol_asset.menu_action_bol_asset" sequence="2" groups="account.group_account_manager"/>
+
+
+    </data>
+</odoo>

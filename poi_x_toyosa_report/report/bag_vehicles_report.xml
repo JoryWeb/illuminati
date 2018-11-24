@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="bag_vehicles_report_view_tree" model="ir.ui.view">
+      <field name="name">bag.vehicles.report.tree</field>
+      <field name="model">bag.vehicles.report</field>
+      <field name="arch" type="xml">
+        <tree string="Bolsa de Vehiculos Liberados" create="0">
+          <field name="released"/>
+          <field name="nationalized"/>
+          <field name="lot_id"/>
+          <field name="product_id"/>
+          <field name="year_id"/>
+          <field name="colorexterno"/>
+          <field name="price" sum="total"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="bag_vehicles_report_view_search" model="ir.ui.view">
+      <field name="name">bag.vehicles.report.search</field>
+      <field name="model">bag.vehicles.report</field>
+      <field name="arch" type="xml">
+        <search string="Reporte de Cartera">
+          <field name="year_id"/>
+          <field name="product_id"/>
+          <field name="lot_id"/>
+          <field name="released"/>
+          <field name="nationalized"/>
+          <group expand="0" string="Filter By">
+            <filter string="Liberados y Nacionalizados" domain="[('released', '=', 'liberado'), ('nationalized', '=', 'nacionalizado')]"/>
+            <filter string="Solo Liberados" domain="[('released', '=', 'liberado'), ('nationalized', '!=', 'nacionalizado')]"/>
+            <filter string="Solo Nacionalizados" domain="[('released', '!=', 'liberado'), ('nationalized', '=', 'nacionalizado')]"/>
+          </group>
+          <group expand="0" string="Group By">
+            <filter string="Master" domain="[]" context="{'group_by':'product_id'}"/>
+            <filter string="Año" domain="[]" context="{'group_by':'year_id'}"/>
+            <filter string="Color" domain="[]" context="{'group_by':'colorexterno'}"/>
+            <filter string="Liberados" domain="[]" context="{'group_by':'released'}"/>
+            <filter string="Nacionalizados" domain="[]" context="{'group_by':'nationalized'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <record id="bag_vehicles_report_action_tree" model="ir.actions.act_window">
+      <field name="name">Reporte de Cartera</field>
+      <field name="res_model">bag.vehicles.report</field>
+      <field name="view_mode">tree</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Bolsa de Vehiculos
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="Bolsa de Vehiculos S/C" action="bag_vehicles_report_action_tree" id="menu_bag_vehicles_wizard" parent="sale.menu_sale_report" sequence="12" groups="poi_x_toyosa.group_account_invoice_cartera"/>
+
+  </data>
+</odoo>

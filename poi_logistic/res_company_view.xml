@@ -1,0 +1,18 @@
+<openerp>
+    <data>
+        <record id="view_company_logistic_form" model="ir.ui.view">
+            <field name="name">res.company.logistic.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Logistic" groups="poi_logistic.group_logistic_manager">
+                        <group>
+                            <field name="analysis_range"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

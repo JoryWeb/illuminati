@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_pm_config_settings" model="ir.ui.view">
+            <field name="name">Processmaker settings</field>
+            <field name="model">pm.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure Website" class="oe_form_configuration">
+                        <header>
+                            <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                            <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                        </header>
+                        <div>
+                            <group string="Processmaker Server">
+                                <field name="pm_host" placeholder="http://localhost:8080"/>
+                                <field name="pm_token"/>
+                                <field name="pm_secret"/>
+                            </group>
+
+                        </div>
+                    </form>
+            </field>
+        </record>
+
+        <record id="action_pm_configuration" model="ir.actions.act_window">
+            <field name="name">Processmaker Settings</field>
+            <field name="res_model">pm.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_pm_configuration" sequence="215" name="PM Settings"
+            groups="base.group_configuration" parent="module_pm"/>
+        <menuitem id="menu_pm_global_configuration" parent="menu_pm_configuration"
+            sequence="100" action="action_pm_configuration" name="Configuration"/>
+
+        <record model="ir.actions.client" id="action_pm_admin">
+            <field name="name">Admin</field>
+            <field name="tag">pm_link</field>
+            <field name="params">{'suffix': '/setup/main'}</field>
+        </record>
+        <menuitem id="menu_pm_admin" parent="menu_pm_configuration" sequence="3" action="action_pm_admin"/>
+
+        <record model="ir.actions.client" id="action_pm_steps">
+            <field name="name">Odoo Steps</field>
+            <field name="tag">pm_link</field>
+            <field name="params">{'suffix': '/odooStep/sc_main'}</field>
+        </record>
+        <menuitem id="menu_pm_steps" parent="menu_pm_configuration" sequence="4" action="action_pm_steps"/>
+
+    </data>
+</openerp>

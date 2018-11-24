@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!-- ...................................BASE COTIZACION PRETENSA.......................................... -->
+        <record id="base_reports_cotizacion_pretensa_header" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+
+    </head>
+    <body style="border:0; margin: 0;">
+
+<table style="border-top: 1px solid black; width: 100%">
+    <thead>
+        <tr>
+            <td style="text-align:left; font-size:8px; width: 42%" valign="top" rowspan="5">
+               %for order in objects:
+                <img src="data:image/png;base64,${order.product_type.img_footer}"  width="202" height="60" />
+               %endfor
+            </td>
+            <td style="text-align:left; font-size:8px;  width: 4%" valign="top">&nbsp;</td>
+            <td style="text-align:right; font-size:8px;  width: 62%" valign="top" colspan="3"><b>${nombre_tienda}:</b> ${planta_industrial}</td>
+
+        </tr>
+
+        <tr>
+            <td style="text-align:left; font-size:8px;  width: 4%" valign="top">&nbsp;</td>
+            <td style="text-align:right;font-size:8px; width: 62%" colspan="3">Tel: ${telefono} - Fax: ${fax}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left; font-size:8px;  width: 4%" valign="top">&nbsp;</td>
+            <td style="text-align:left; font-size:8px;  width: 5%" valign="top" rowspan="2">
+           %for order in objects:
+            <img src="data:image/png;base64,${order.product_type.img_sociales}"  width="45" height="23" />
+           %endfor
+           </td>
+           <td style="text-align:left; font-size:8px;  width: 4%" rowspan="2">@pretensa</td>
+            <td style="text-align:right;font-size:8px; width: 62%" colspan="1">&nbsp;${mail_sucursal}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left; font-size:8px;  width: 4%" valign="top">&nbsp;</td>
+            <td style="text-align:right;font-size:8px; width: 62%" colspan="1">www.pretensa.com</td>
+        </tr>
+
+         <tr>
+            <td style="text-align:left;font-size:8px; width: 62%" colspan="4">Los Primeros con Calidad Certificada</td>
+        </tr>
+    </thead>
+
+</table>
+    </body>
+</html>
+]]>
+            </field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header" style="border-bottom: 0px solid black; width: 100%">
+            <tr>
+                <td align="right">${helper.embed_logo_by_name('pretensa_logo') | safe}</td>
+                <td style="text-align:right"> </td>
+            </tr>
+        </table>
+
+        ${_debug or ''|safe}
+
+    </body>
+</html>
+]]>
+            </field>
+            <field eval="35.0" name="margin_top"/>
+            <field eval="25.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+.header {
+    margin-left: 0px;
+    text-align: left;
+    width: 300px;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic_table{
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+
+.basic_table th {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.basic_table td {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.list_table {
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.list_table td {
+    border-color: gray;
+    border-top: 1px solid gray;
+    text-align: left;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+
+.list_table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px
+    padding-left: 3px
+}
+
+.list_table thead {
+    display: table-header-group;
+}
+
+.address table {
+    font-size: 11px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.address .shipping {
+
+}
+
+.address .invoice {
+    margin-top: 10px;
+}
+
+.address .recipient {
+    margin-right: 120px;
+    float: right;
+}
+
+table .address_title {
+    font-weight: bold;
+}
+
+.address td.name {
+    font-weight: bold;
+}
+
+td.amount, th.amount {
+    text-align: right;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tr.line .note {
+    border-style: none;
+    font-size: 9px;
+    padding-left: 10px;
+}
+
+tr.line {
+    margin-bottom: 10px;
+}
+
+]]>
+            </field>
+            <field name="name">Base Reports Cotizacion Pretensa</field>
+        </record>
+
+
+        <!-- ...................................BASE ARQUEO KARLOVY.......................................... -->
+
+        <record id="base_reports_arqueo_header" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+       
+    </head>
+    <body style="border:0; margin: 0;">
+        
+<table style="border-top: 1px solid black; width: 100%">
+            
+           <tr>
+              <td style="text-align:center;font-size:8;">
+C. Claudio Aliaga N.1162 Zona San Miguel - Tel: 591-2-2799838 - La Paz Bolivia
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-size:8;">
+
+</td>
+</tr>
+<tr>
+              <td style="text-align:center;font-size:8;"></td>
+           </tr>
+<tr>
+              <td style="text-align:center;font-size:8;">www.galeriakarlovyvary.com/</td>
+           </tr>
+  
+        </table>
+    </body>
+</html>
+]]></field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header" style="border-bottom: 0px solid black; width: 100%">
+            <tr>
+                <td align="right"></td>
+                <td style="text-align:right"> </td>
+            </tr>
+            
+            
+        </table> ${_debug or ''|safe} </body>
+</html>
+]]>
+            </field>
+            <field eval="35.0" name="margin_top"/>
+            <field eval="20.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+.header {
+    margin-left: 0px;
+    text-align: left;
+    width: 300px;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic_table{
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+
+.basic_table th {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.basic_table td {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.list_table {
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.list_table td {
+    border-color: gray;
+    border-top: 1px solid gray;
+    text-align: left;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+
+.list_table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px
+    padding-left: 3px
+}
+
+.list_table thead {
+    display: table-header-group;
+}
+
+.address table {
+    font-size: 11px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.address .shipping {
+
+}
+
+.address .invoice {
+    margin-top: 10px;
+}
+
+.address .recipient {
+    margin-right: 120px;
+    float: right;
+}
+
+table .address_title {
+    font-weight: bold;
+}
+
+.address td.name {
+    font-weight: bold;
+}
+
+td.amount, th.amount {
+    text-align: right;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tr.line .note {
+    border-style: none;
+    font-size: 9px;
+    padding-left: 10px;
+}
+
+tr.line {
+    margin-bottom: 10px;
+}
+
+]]>
+            </field>
+            <field name="name">Base Reports Arqueo</field>
+        </record>
+
+        <!-- ...................................Base cabecera y pie Impresion Factura.......................................... -->
+
+        <record id="base_reports_print_invoice_header" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+
+    </head>
+    <body style="margin-top: 0px; margin-bottom: 0px">
+
+    </body>
+</html>
+
+]]></field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+
+<html>
+    <head>
+     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+         <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css"> ${css} </style>
+    </head>
+    <body style="margin-top: 0px; margin-bottom: 0px" onload="subst()">
+    </body>
+</html>
+]]>
+            </field>
+            <field eval="5.0" name="margin_top"/>
+            <field eval="10.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+.header {
+    margin-left: 0px;
+    text-align: left;
+    width: 300px;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic_table{
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+
+.basic_table th {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.basic_table td {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.list_table {
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.list_table td {
+    border-color: gray;
+    border-top: 1px solid gray;
+    text-align: left;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+
+.list_table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px
+    padding-left: 3px
+}
+
+.list_table thead {
+    display: table-header-group;
+}
+
+.address table {
+    font-size: 11px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.address .shipping {
+
+}
+
+.address .invoice {
+    margin-top: 10px;
+}
+
+.address .recipient {
+    margin-right: 120px;
+    float: right;
+}
+
+table .address_title {
+    font-weight: bold;
+}
+
+.address td.name {
+    font-weight: bold;
+}
+
+td.amount, th.amount {
+    text-align: right;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tr.line .note {
+    border-style: none;
+    font-size: 9px;
+    padding-left: 10px;
+}
+
+tr.line {
+    margin-bottom: 10px;
+}
+
+]]>
+            </field>
+            <field name="name">Base cabecera y pie Impresion Factura</field>
+        </record>
+
+        <!-- ...................................Base cabecera y pie Impresion Factura Copia......................................... -->
+
+        <record id="base_reports_print_invoicecopia_header" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+
+    </head>
+    <body style="margin-top: 0px; margin-bottom: 0px">
+%for order in objects:
+
+    <table width="100%" style="border-spacing: 0px; WIDTH: 200mm;style="margin-top: 0px; margin-bottom: 0px"">
+       <tr>
+           <td style="text-align:left; font-size:14px;  border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;border-bottom: 1px solid black;border-right: 1px solid black;border-left: 1px solid black;border-top: 1px solid black;" width="70%" colspan="3">
+
+               <table  width="100%" style="border-collapse: collapse">
+                    <tr>
+                        <td width="33%">
+                        &nbsp;
+                        </td>
+
+                        <td colspan="4" style="border-right: 1px solid black;">
+                        &nbsp;
+                        </td>
+                        <td width="9.9%" style="font-size:11px;">
+                        Total:
+                        </td>
+                        <td style="text-align:right;font-size:11px;" width="10%">
+                        ${total_line_3 or 0}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid black" width="33%">
+                        &nbsp;
+                        </td>
+
+                        <td colspan="4" style="border-right: 1px solid black;border-bottom: 1px solid black">
+                        &nbsp;
+                        </td>
+                        <td  width="9.9%" style="font-size:10px;">
+                        Descuento Bs:
+                        </td>
+                        <td style="text-align:right;font-size:11px;" width="10%">
+                        ${discount_bs or 0}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid black;border-bottom: 1px solid black;font-size:11px;" width="33%">
+                        Recibí Conforme:
+                        </td>
+
+                        <td colspan="4" style="border-right: 1px solid black;border-bottom: 1px solid black;font-size:11px;">
+                        Copia Sin Derecho A Credito Fiscal
+                        </td>
+                        <td style="border-bottom: 1px solid black;font-size:11px;" width="9.9%">
+                        Total c/Desc.:
+                        </td>
+                        <td style="border-bottom: 1px solid black; text-align:right;font-size:11px;" width="10%">
+                        ${amount_total or 0}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid black; border-bottom: 1px solid black;font-size:11px;">
+                        Firma:
+                        </td>
+
+                        <td colspan="4" style="border-right: 1px solid black;font-size:11px;">
+                        Son Bolivianos:
+                        </td>
+
+                        <td colspan="2" rowspan="4" style="text-align:center;">
+                        <img src="data:image/png;base64,${order.qr_img}"  width="80px" height="80px" />
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid black; border-bottom: 1px solid black;font-size:11px;">
+                        Fecha (d/m/a):
+                        </td>
+                        <td colspan="4" rowspan="2" style="text-align:center;border-right: 1px solid black;border-bottom: 1px solid black;font-size:11px;">
+                        ${literal}&nbsp;&nbsp;&nbsp;&nbsp;${centavos} / 100 Bolivianos
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-bottom: 1px solid black;font-size:11px;">
+                        Codigo de control:&nbsp;&nbsp;${order.cc_cod or ''}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid black;font-size:11px;">
+                        Feche limite de emision:&nbsp;&nbsp;${order.cc_dos.fecha_fin or ''}
+                        </td>
+                        <td colspan="4" style="border-right: 1px solid black;border-bottom: 1px solid black;font-size:8px;">
+                        &nbsp;
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align:center;font-weight:bold;background-color: #D8D8D8;border-bottom: 1px solid black;font-size:11px;">
+                        El único documento que certifica el pago de la presente factura es nuestro recibo oficial de caja.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align:center;border-bottom: 1px solid black;font-size:11px;">
+                        Esta Factura contribuye al desarrollo del país, el uso ilícito de esta será sancionado de acuerdo a Ley.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align:center;font-size:11px;">
+                        ${leyenda or 'S/L'}
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </td>
+    </table>
+%endfor
+    </body>
+</html>
+
+]]></field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+
+<html>
+    <head>
+     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+         <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css"> ${css} </style>
+    </head>
+    <body style="margin-top: 0px; margin-bottom: 0px" onload="subst()">
+%for order in objects:
+<table width="100%" style="border-spacing: 0px; WIDTH: 200mm;margin-top: 0px; margin-bottom: 0px">
+
+            <tr>
+                <td style="text-align:left; font-size:14px;font-family: arial; border-top-left-radius: 20px; border-top: 1px solid black;border-left: 1px solid black; HEIGHT: 7mm" width="28%" ><br>&nbsp; &nbsp;<img src="data:image/png;base64,${logo}"  width="140" height="60" /></td>
+                <td style="text-align:left; font-size:14px;font-family: arial; border-top: 1px solid black;border-right: 1px solid black; bold;" width="29%" rowspan="" >
+
+                   <table  height="100%" width="100%" border-vertical="1">
+                       <tr>
+                           <td style="text-align:left;font-size:32px;font-weight:bold;HEIGHT: 11mm" valign="bottom" rowspan="">
+                                FACTURA
+                           </td>
+                       </tr>
+
+                   </table>
+
+                </td>
+                <td style="text-align:left; font-size:14px;font-family: arial; border-top-right-radius: 20px; border-top: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;" width="43%" valign="top" rowspan="2">
+                    <table  height="100%" width="100%">
+                        <tr>
+                            <td style="text-align:center;font-size:16px;HEIGHT: 11mm" valign="bottom">
+                                NIT:&nbsp;${nit or 0}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;font-size:22px;HEIGHT: 11mm" valign="bottom">
+                                Factura N&#176 &nbsp; &nbsp;${order.cc_nro or ''}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;font-size:16px;">
+                                Autorizaci&#243n N&#176 &nbsp; &nbsp;${order.cc_aut or ''}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;font-size:14px;font-weight:bold;">
+                                COPIA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;font-size:9px;">
+                                Fabricaci&#243n de productos minerales no met&#225licos.<br>Fabricaci&#243n de sustancias qu&#237micas b&#225sicas.<br>Venta al por mayor de materiales de construcci&#243n.
+                            </td>
+                        </tr>
+                      </table>
+
+                  </td>
+
+            </tr>
+            <tr>
+                <td style="text-align:center; font-size:14px;font-family: arial; border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;HEIGHT: 7mm; float:right;" width="45%" valign="center" colspan="2" >
+                    <div style="text-align:center;">
+                        <table width="100%" >
+
+                            <tr>
+                                <td style="text-align:center;font-size:7px;HEIGHT: 3mm" width="40%">
+                                   CASA MATRIZ
+                                </td>
+                                <td style="text-align:center;font-size:7px;HEIGHT: 3mm" width="60%">
+                                  ${nombre_sucursal or ''}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;font-size:7px;" width="40%">
+                                    ${direccion_compania1 or ''}<br>${direccion_compania2 or ''}
+                                </td>
+                                <td style="text-align:center;font-size:7px;" width="60%">
+                                    ${direccion_compania12 or ''}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="text-align:center;font-size:7px;" width="40%">
+                                    TELEFONO&nbsp;&nbsp;${telefono_compania or ''}
+                                </td>
+                                <td style="text-align:center;font-size:7px;" width="60%">
+                                    TELEFONO&nbsp;&nbsp;${telefono_compania2 or ''}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;font-size:7px;" width="40%">
+                                   ${ciudad_compania or ''}&nbsp;-&nbsp;${pais_compania or ''}
+                                </td>
+                                <td style="text-align:center;font-size:7px;" width="60%">
+                                    ${order.user_id.city or ''}&nbsp;-&nbsp;${order.user_id.country_id.name or ''}
+                                </td>
+                            </tr>
+                            <tr >
+                                <td style="text-align:right;font-size:12;" width="75%">Pag <span class="page"/>
+                                </td>
+                                <td style="text-align:left;font-size:12;"> de <span class="topage"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-size:14px;font-family: arial; border-left: 1px solid black;border-right: 1px solid black; border-bottom: 1px solid black;HEIGHT: 7mm" colspan="3"  width="100%"  >
+
+                    <table width="100%" >
+                        <tr>
+                            <td width="10%" style="" colspan="2">${order.user_id.city or ''}, ${dia}&nbsp;de&nbsp;${mes}&nbsp;de&nbsp;${ano}</td>
+                            <td width="20%">&nbsp;</td>
+                            <td width="15%" style="font-weight:bold;">&nbsp;</td>
+                            <td width="15%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                             <td width="10%" style="font-weight:bold;font-size:10px;">Se&#241or(es):</td>
+                             <td width="40%"style="font-size:10px;">${order.razon or ''}</td>
+                             <td width="20%">&nbsp;</td>
+                             <td width="15%" style="font-weight:bold;font-size:10px;">NIT/C.I.:</td>
+                             <td width="15%" style="font-size:10px;">${order.nit or ''}</td>
+                        </tr>
+                        <tr>
+                            <td width="10%" style="font-weight:bold;font-size:10px;">Direcci&#243n:</td>
+                            <td width="40%" style="font-size:10px;">${order.partner_id.street or ''}</td>
+                            <td width="20%">&nbsp;</td>
+                            <td width="15%" style="font-weight:bold;font-size:10px;">Pedido de Venta:</td>
+                            <td width="15%" style="font-size:10px;">${order.origin or ''}</td>
+                        </tr>
+                        <tr>
+                            <td width="10%">&nbsp;</td>
+                            <td width="40%">&nbsp;</td>
+                            <td width="20%">&nbsp;</td>
+                            <td width="15%" style="font-weight:bold;font-size:10px;">Orden de Entrega:</td>
+                            <td width="15%" style="font-size:10px;">${order.picking_id.name or ''}</td>
+                        </tr>
+                     </table>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; font-size:14px;font-family: arial; border-left: 1px solid black;border-right: 1px solid black;" colspan="3"  width="100%">
+                    <table width="100%" cellpadding="0" cellspacing="0" border-vertical="1" height="100%" style="border-collapse: collapse" >
+                        <tr>
+                            <td width="15%" style="background-color: #D8D8D8;border-right: 1px solid black;border-bottom: 1px solid black;font-weight:bold;HEIGHT: 7mm;font-size:10px;">C&#243digo
+                            </td>
+                            <td width="55%" style="background-color: #D8D8D8;border-right: 1px solid black;border-bottom: 1px solid black;font-weight:bold;font-size:10px;">Descripci&#243n
+                            </td>
+                            <td width="10%" style="text-align:center;background-color: #D8D8D8;border-right: 1px solid black;border-bottom: 1px solid black;font-weight:bold;font-size:10px;">Cantidad
+                            </td>
+                            <td width="10%" style="text-align:center;background-color: #D8D8D8;border-right: 1px solid black;border-bottom: 1px solid black;font-weight:bold;font-size:10px;">Precio
+                            </td>
+
+                            <td width="15%" style="text-align:center;background-color: #D8D8D8;border-bottom: 1px solid black;font-weight:bold;font-size:10px;">Total
+                            </td>
+                        </tr>
+                   </table>
+               </td>
+           </tr>
+       </table>
+%endfor
+         </body>
+</html>
+]]>
+            </field>
+            <field eval="75.0" name="margin_top"/>
+            <field eval="60.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+.header {
+    margin-left: 0px;
+    text-align: left;
+    width: 300px;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic_table{
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+
+.basic_table th {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.basic_table td {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.list_table {
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.list_table td {
+    border-color: gray;
+    border-top: 1px solid gray;
+    text-align: left;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+
+.list_table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px
+    padding-left: 3px
+}
+
+.list_table thead {
+    display: table-header-group;
+}
+
+.address table {
+    font-size: 11px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.address .shipping {
+
+}
+
+.address .invoice {
+    margin-top: 10px;
+}
+
+.address .recipient {
+    margin-right: 120px;
+    float: right;
+}
+
+table .address_title {
+    font-weight: bold;
+}
+
+.address td.name {
+    font-weight: bold;
+}
+
+td.amount, th.amount {
+    text-align: right;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tr.line .note {
+    border-style: none;
+    font-size: 9px;
+    padding-left: 10px;
+}
+
+tr.line {
+    margin-bottom: 10px;
+}
+
+]]>
+            </field>
+            <field name="name">Base cabecera y pie Impresion Factura Copia</field>
+        </record>
+
+        <!-- ...................................BASE RECIBO PRETENSA.......................................... -->
+
+        <record id="base_reports_recibo_pretensa_header" model="ir.header_webkit">
+            <field name="footer_html"><![CDATA[
+
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+
+    </head>
+    <body style="border:0; margin: 0;">
+
+
+    </body>
+</html>
+
+]]></field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="html"><![CDATA[
+
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+
+
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+         </body>
+</html>
+]]>
+            </field>
+            <field eval="5.0" name="margin_top"/>
+            <field eval="20.0" name="margin_bottom"/>
+            <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+
+.header {
+    margin-left: 0px;
+    text-align: left;
+    width: 300px;
+    font-size: 12px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basic_table{
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+
+.basic_table th {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.basic_table td {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+
+.list_table {
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.list_table td {
+    border-color: gray;
+    border-top: 1px solid gray;
+    text-align: left;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+
+.list_table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px
+    padding-left: 3px
+}
+
+.list_table thead {
+    display: table-header-group;
+}
+
+.address table {
+    font-size: 11px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.address .shipping {
+
+}
+
+.address .invoice {
+    margin-top: 10px;
+}
+
+.address .recipient {
+    margin-right: 120px;
+    float: right;
+}
+
+table .address_title {
+    font-weight: bold;
+}
+
+.address td.name {
+    font-weight: bold;
+}
+
+td.amount, th.amount {
+    text-align: right;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tr.line .note {
+    border-style: none;
+    font-size: 9px;
+    padding-left: 10px;
+}
+
+tr.line {
+    margin-bottom: 10px;
+}
+
+]]>
+            </field>
+            <field name="name">Base Reports Recibo Pretensa</field>
+        </record>
+    </data>
+</openerp>

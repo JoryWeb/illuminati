@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--<menuitem
+            action="poi_stock_request.action_stock_request"
+            id="menu_action_request_toyosa"
+            parent="stock.menu_stock_inventory_control" sequence="2"
+            name="Solicitud de Stock"/>
+
+        <menuitem
+            action="poi_stock_request.action_sending_stock"
+            id="menu_action_sending_stock_toyosa"
+            parent="stock.menu_stock_inventory_control" sequence="3"
+            name="Envío de Stock"
+        />-->
+    </data>
+</odoo>

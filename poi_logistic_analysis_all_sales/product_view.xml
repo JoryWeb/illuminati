@@ -1,0 +1,16 @@
+<openerp>
+    <data>
+        <record id="logistic_products_all_sales_kanban" model="ir.ui.view">
+            <field name="name">product.product.logistic.all.sales.kanban</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="poi_logistic.logistic_products_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_items_list oe_kanban_ellipsis oe_logistic_product_options']" position="inside">
+                    <div>
+                        <a name="%(all_sales_analysis_wizard_form_product_action)d" type="action">Sales Analysis</a>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

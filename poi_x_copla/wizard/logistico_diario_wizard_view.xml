@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="logistico_diario_form_wizard" model="ir.ui.view">
+            <field name="name">logistico.diario.form.wizard</field>
+            <field name="model">logistico.diario.wizard</field>
+            <field name="arch" type="xml">
+            </field>
+        </record>
+        <record id="logistico_diario_form_action" model="ir.actions.act_window">
+            <field name="name">Logístico Diário</field>
+            <field name="res_model">logistico.diario.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="logistico_diario_form_action" id="logistico_diario_form_action_menu"
+                  parent="sale.menu_sale_report"
+                  sequence="100"/>
+    </data>
+</odoo>

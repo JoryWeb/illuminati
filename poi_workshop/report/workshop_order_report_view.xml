@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_workshop_order_report_pivot">
+            <field name="name">workshop.order.pivot</field>
+            <field name="model">workshop.order.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Workshop Estadisticas" disable_linking="True">
+                    <field name="n_chasis" type="row"/>
+                    <field name="lot_id" type="row"/>
+                    <field name="partner_id" type="row"/>
+                    <field name="cost" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_workshop_order_report_graph">
+            <field name="name">workshop.order.graph</field>
+            <field name="model">workshop.order.report</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase Orders Statistics">
+                    <field name="asset_id" type="row"/>
+                    <field name="cost" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+
+        <record id="view_workshop_order_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">workshop.order.report</field>
+            <field name="arch" type="xml">
+                <search string="Purchase Orders">
+                    <field name="maintenance_id"/>
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Orden de Trabajo" context="{'group_by':'maintenance_id'}"/>
+                        <filter string="Cliente" context="{'group_by':'partner_id'}"/>
+                        <filter string="Vehículo" context="{'group_by':'asset_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_workshop_order_report_tree">
+            <field name="name">workshop.order.report.tree</field>
+            <field name="model">workshop.order.report</field>
+            <field name="arch" type="xml">
+                <tree string="Inventario de Chasis">
+                    <field name="maintenance_id"/>
+                    <field name="partner_id"/>
+                    <field name="n_chasis"/>
+                    <field name="asset_id"/>
+                    <field name="lot_id"/>
+                    <field name="product_id"/>
+                    <field name="cost" sum="Total"/>
+                    <field name="date_scheduled"/>
+                    <field name="date_planned"/>
+                    <field name="date_execution"/>
+                    <field name="estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_workshop_order_report_all" model="ir.actions.act_window">
+            <field name="name">Análisis de Trabajos</field>
+            <field name="res_model">workshop.order.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Informe Analisis de trabajos por OT y trabajos realizados</field>
+        </record>
+
+        <menuitem id="menu_workshop_order_report" parent="poi_workshop.menu_maintenance_informes" sequence="1" action="action_workshop_order_report_all"/>
+
+    </data>
+</odoo>

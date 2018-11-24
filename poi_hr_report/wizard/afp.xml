@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="report_afp_wiz">
+			<field name="name">report_afp_wiz</field>
+			<field name="model">report.afp.wiz</field>
+			<field name="arch" type="xml">
+				<form string="Fecha de Busqueda">
+					<group>
+						<field name='date_from'/>
+						<field name="date_to"/>
+						<field name="payslip_run"/>
+					</group>
+					<group col="4">
+						<field name="employee_ids" colspan="1"  nolabel="1">
+							<tree>
+								<field name="name" string="Empleados"/>
+								<field name="identification_id"/>
+							</tree>
+
+						</field>
+
+						<field name="analytic_id" colspan="1"  nolabel="1">
+							<tree>
+								<field name="name" string="Cuentas Analíticas"/>
+							</tree>
+						</field>
+					</group>
+					<footer>
+						<button name="open_table" type="object" string="Imprimir" class="oe_highlight"/>
+						<button string="Cancel" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_report_afp_wiz">
+			<field name="name">Aportes Laborales y Patronales</field>
+			<field name="res_model">report.afp.wiz</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="report_afp_wiz"/>
+			<field name="target">new</field>
+		</record>
+
+        <menuitem action="action_report_afp_wiz" id="menu_hr_report_afp_wiz" parent="menu_hr_payslip"/>
+    </data>
+</odoo>

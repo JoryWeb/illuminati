@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem parent="account.menu_finance_reports" name="Reportes Impositivos" id="menu_bol_rep_imp" sequence="9"
+                  groups="account.group_account_user"/>
+
+        <record id="invoice_form_lcv" model="ir.ui.view">
+            <field name="name">bol.invoice.lcv.form</field>
+            <field name="model">poi_bol.lcv.report</field>
+            <field name="type">form</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <form string="Libro CV">
+                    <field name="tipo_com"/>
+                    <field name="nit"/>
+                    <field name="razon"/>
+                    <field name="cc_nro"/>
+                    <field name="imp_pol"/>
+                    <field name="cc_aut"/>
+                    <field name="cc_fecha"/>
+                    <field name="date_invoice" invisible="1"/>
+                    <field name="monto" sum="Monto total"/>
+                    <field name="ice" sum="ICE total"/>
+                    <field name="exento" sum="Exento total"/>
+                    <field name="monto_neto" sum="Neto Sujeto"/>
+                    <field name="monto_iva" sum="IVA total"/>
+                    <field name="estado_fac_val"/>
+                    <field name="cc_cod"/>
+                    <button name="open_doc" type="object" string="Abrir documento" icon="STOCK_FIND"/>
+                    <field name="cc_dos" invisible="0"/>
+                    <field name="state" invisible="0"/>
+                    <field name="case" invisible="0"/>
+                    <field name="res_id" invisible="0"/>
+                    <field name="res_obj" invisible="0"/>
+                    <field name="user_id"/>
+                </form>
+            </field>
+        </record>
+        <!-- LIBRO DE COMPRAS -->
+        <record id="invoice_tree_lc" model="ir.ui.view">
+            <field name="name">bol.invoice.lc.tree</field>
+            <field name="model">poi_bol.lcv.report</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree string="Libro de Compras" create="0" edit="0" default_order="date_invoice">
+                    <field name="cc_fecha" string="FECHA DE LA FACTURA O DUI"/>
+                    <field name="nit" string="NIT PROVEEDOR"/>
+                    <field name="razon" string="NOMBRE O RAZÓN SOCIAL"/>
+                    <field name="cc_nro" string="N° DE LA FACTURA"/>
+                    <field name="imp_pol" string="N° DE DUI"/>
+                    <field name="cc_aut" string="N° DE AUTORIZACIÓN"/>
+                    <field name="date_invoice" invisible="1"/>
+                    <field name="importe" sum="Monto total" string="IMPORTE TOTAL DE LA COMPRA"/>
+                    <field name="ice" sum="ICE total" invisible="1"/>
+                    <field name="exento" sum="Exento total" invisible="1"/>
+                    <field name="monto_nosujeto" sum="No sujeto total" string="IMPORTE NO SUJETO A CRÉDITO FISCAL"/>
+                    <field name="subtotal_c" sum="Exento total" string="SUBTOTAL"/>
+                    <field name="descuento" sum="Descuentos" string="DESCUENTOS, BONIFICACIONES Y REBAJAS OBTENIDAS"/>
+                    <field name="monto_neto" sum="Neto Sujeto" string="IMPORTE BASE PARA CRÉDITO FISCAL"/>
+                    <field name="monto_iva" sum="IVA total" string="CRÉDITO FISCAL"/>
+                    <field name="estado_fac_val" invisible="1"/>
+                    <field name="cc_cod" string="CÓDIGO DE CONTROL"/>
+                    <field name="tipo_com" string="TIPO DE COMPRA"/>
+                    <button name="open_doc" type="object" string="Abrir documento" icon="fa-pencil-square-o"/>
+                    <field name="res_type"/>
+                    <field name="res_name"/>
+                    <field name="state" invisible="1"/>
+                    <field name="case" invisible="1"/>
+                    <field name="res_id" invisible="1"/>
+                    <field name="res_obj" invisible="1"/>
+                    <field name="user_id"/>
+                    <field name="user_shop"/>
+                    <button name="open_move" type="object" string="Abrir Asiento contable" icon="fa-pencil-square-o"/>
+                    <field name="move_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="invoice_tree_lv" model="ir.ui.view">
+            <field name="name">bol.invoice.lv.tree</field>
+            <field name="model">poi_bol.lcv.report</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree string="Libro de Ventas" create="0" edit="0" default_order="date_invoice,cc_nro_int,id">
+                    <field name="id" invisible="1"/>
+                    <field name="cc_fecha" string="FECHA DE LA FACTURA"/>
+                    <field name="cc_nro" string="N° DE LA FACTURA"/>
+                    <field name="cc_aut" string="N° DE AUTORIZACIÓN"/>
+                    <field name="estado_fac_val" string="ESTADO"/>
+                    <field name="nit" string="NIT / CI CLIENTE"/>
+                    <field name="razon" string="NOMBRE O RAZÓN SOCIAL"/>
+                    <field name="importe" sum="Importe total" string="IMPORTE TOTAL DE LA VENTA"/>
+                    <field name="cc_nro_int" invisible="1"/>
+                    <field name="date_invoice" invisible="1"/>
+                    <field name="ice" sum="ICE total" string="IMPORTE ICE / IEHD / TASAS"/>
+                    <field name="exporta" sum="Exporta total" string="EXPORTACIONES Y OPERACIONES EXENTAS"/>
+                    <field name="exento" sum="Exento total" string="VENTAS GRAVADAS A TASA CERO"/>
+                    <field name="subtotal_v" sum="sum_v" string="SUBTOTAL"/>
+                    <field name="descuento" sum="Descuentos" string="DESCUENTOS OTORGADOS"/>
+                    <field name="monto_neto" sum="Neto Sujeto" string="NETO"/>
+                    <field name="monto_iva" sum="IVA total" string="DEBITO FISCAL"/>
+                    <field name="cc_cod" string="CÓDIGO DE CONTROL"/>
+                    <field name="shop_id" invisible="1"/>
+                    <button name="open_doc" type="object" string="Abrir documento" icon="STOCK_FIND"/>
+                    <field name="res_type"/>
+                    <field name="res_name"/>
+                    <field name="cc_dos_name" invisible="0"/>
+                    <field name="state" invisible="1"/>
+                    <field name="case" invisible="1"/>
+                    <field name="res_id" invisible="1"/>
+                    <field name="res_obj" invisible="1"/>
+                    <field name="user_id"/>
+                    <field name="user_shop"/>
+                    <button name="open_move" type="object" string="Abrir Asiento contable" icon="STOCK_FIND"/>
+                    <field name="move_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_account_lc_filter" model="ir.ui.view">
+            <field name="name">poi_bol.lcv.report.select</field>
+            <field name="model">poi_bol.lcv.report</field>
+            <field name="arch" type="xml">
+                <search string="Filtrar Libro">
+                    <group col="10" colspan="4">
+                        <field name="date_invoice" select="1" string="Fecha Factura"/>
+                        <field name="company_id" widget="selection" select='1'/>
+                        <field name="cc_dos_name"/>
+                        <field name="cc_nro"/>
+                        <field name="cc_aut"/>
+                        <field name="shop_id"/>
+                        <field name="estado_fac"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Dosificación" icon="terp-go-month" domain="[]"
+                                context="{'group_by':'cc_dos_name'}"/>
+                        <filter string="Sucursal" icon="terp-go-month" domain="[]" context="{'group_by':'shop_id'}"/>
+                        <filter string="Invoice Date" icon="terp-go-month" domain="[]"
+                                context="{'group_by':'date_invoice'}"/>
+                        <filter string="Estado" icon="terp-go-month" domain="[]" context="{'group_by':'estado_fac'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="view_account_lcom_filter" model="ir.ui.view">
+            <field name="name">poi_bol.lc.report.select</field>
+            <field name="model">poi_bol.lcv.report</field>
+            <field name="arch" type="xml">
+                <search string="Filtrar Libro de compras">
+                    <group col="10" colspan="4">
+                        <field name="date_invoice" select="1" string="Fecha Factura"/>
+                        <field name="company_id" widget="selection" select='1'/>
+                        <field name="cc_nro"/>
+                        <field name="cc_aut"/>
+                        <field name="estado_fac"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Invoice Date" icon="terp-go-month" domain="[]"
+                                context="{'group_by':'date_invoice'}"/>
+                        <filter string="Estado" icon="terp-go-month" domain="[]" context="{'group_by':'estado_fac'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_invoice_lc" model="ir.actions.act_window">
+            <field name="name">Libro de Compras</field>
+            <field name="res_model">poi_bol.lcv.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="invoice_tree_lc"/>
+            <field name="search_view_id" ref="view_account_lcom_filter"/>
+            <field name="domain">[('case','=','in')]</field>
+            <field name="context">{'case':'in'}</field>
+            <field name="help">Esta vista muestra todas las facturas de compra con impuestos. Asegúrese de aplicar los
+                filtros de fechas que apliquen, seleccionar las casillas de las facturas deseadas (o todas) y proceda a
+                generar uno de los reportes de la selección de Impresión superior.
+            </field>
+        </record>
+        <record id="action_invoice_lv" model="ir.actions.act_window">
+            <field name="name">Libro de Ventas</field>
+            <field name="res_model">poi_bol.lcv.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="invoice_tree_lv"/>
+            <field name="search_view_id" ref="view_account_lc_filter"/>
+            <field name="domain">[('case','=','out')]</field>
+            <field name="context">{'case':'out'}</field>
+            <field name="help">Esta vista muestra todas las facturas de venta con impuestos. Asegúrese de aplicar los
+                filtros de fechas que apliquen, seleccionar las casillas de las facturas deseadas (o todas) y proceda a
+                generar uno de los reportes de la selección de Impresión superior.
+            </field>
+        </record>
+
+        <!--
+        RML no soportado!
+        <report menu="False" auto="False" header="False" id="report_lcv_1" model="poi_bol.lcv.report"
+                name="report.lcv.1" rml="poi_bol_base/report/lcv_1_pdf.rml" string="Libro de Compras" multi="True"/>
+        <report menu="False" auto="False" header="False" id="report_lcv_3" model="poi_bol.lcv.report"
+                name="report.lcv.3" rml="poi_bol_base/report/lcv_3_pdf.rml" string="Libro de Ventas" multi="True"/>
+
+        ya no aplica: <report auto="False" header="False" id="export_invoice_lc" model="poi_bol.lcv.report" name="invoice.lcx" rml="poi_bol_base/report/invoice_lc_x.rml" string="Exportar Libro Excel" multi="True" report_type="raw"/>
+        <report auto="False" header="False" id="txt_invoice_lv2" model="poi_bol.lcv.report" name="invoice.lct1" rml="poi_bol_base/report/invoice_lv_t.rml" string="Exportar Libro DaVinci" multi="True" report_type="txt"/>
+         -->
+
+        <!-- Registrar la Vista SQL en la tabla de Indices, a partir de la cual se construira el query total mediante UNION de Vistas de diferetes modulos -->
+        <record id="poi_bol_lcv_report_base" model="poi_bol.lcv.report.index">
+            <field name="name">poi_bol_lcv_report_base</field>
+            <field name="module">poi_bol_base</field>
+            <field name="notes">Parte de Libro de compras/ventas correspondiente a las Facturas de compra y venta del
+                modulo Account
+            </field>
+        </record>
+
+        <!-- Llamada a la funcion para reconstruir el reporte LCV en base a cualquier cambio introducido en la instalacion/actualizacion de este modulo-->
+        <function
+                id="function_rebuild_view_union"
+                model="poi_bol.lcv.report"
+                name="rebuild_view_union"
+                eval="[]"/>
+
+    </data>
+</odoo>

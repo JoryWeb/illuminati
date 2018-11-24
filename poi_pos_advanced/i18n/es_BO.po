@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_pos_advanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-17 18:37+0000\n"
+"PO-Revision-Date: 2017-11-17 18:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_pos_advanced
+#. openerp-web
+#: code:addons/poi_pos_advanced/static/src/xml/poi_pos_advanced.xml:17
+#, python-format
+msgid "Categoria de Cliente"
+msgstr "Categoria de Cliente"
+
+#. module: poi_pos_advanced
+#: model:ir.model.fields,field_description:poi_pos_advanced.field_res_partner_client_category
+msgid "Client Category"
+msgstr "Categoría de Clientes"
+
+#. module: poi_pos_advanced
+#: model:ir.model.fields,field_description:poi_pos_advanced.field_res_partner_last_payment_method
+msgid "Last Payment Method"
+msgstr "Último Método de Pago"
+
+#. module: poi_pos_advanced
+#: model:ir.model.fields,field_description:poi_pos_advanced.field_res_partner_last_purchase
+msgid "Last Purchase"
+msgstr "Última Compra"
+
+#. module: poi_pos_advanced
+#. openerp-web
+#: code:addons/poi_pos_advanced/static/src/xml/poi_pos_advanced.xml:25
+#, python-format
+msgid "Monto Acumulado de Compras"
+msgstr "Monto Acumulado de Compras"
+
+#. module: poi_pos_advanced
+#: model:ir.model.fields,field_description:poi_pos_advanced.field_res_partner_number_of_purchases
+msgid "Number of Purchases"
+msgstr "Número de Compras"
+
+#. module: poi_pos_advanced
+#. openerp-web
+#: code:addons/poi_pos_advanced/static/src/xml/poi_pos_advanced.xml:7
+#, python-format
+msgid "Numero de Compras"
+msgstr "Número de Compras"
+
+#. module: poi_pos_advanced
+#: model:ir.model,name:poi_pos_advanced.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_pos_advanced
+#: model:ir.model.fields,field_description:poi_pos_advanced.field_res_partner_total_purchases_amount
+msgid "Total Purchases Amount"
+msgstr "Total Comprado"
+
+#. module: poi_pos_advanced
+#. openerp-web
+#: code:addons/poi_pos_advanced/static/src/xml/poi_pos_advanced.xml:11
+#, python-format
+msgid "Ultima Compra"
+msgstr "Última Compra"
+
+#. module: poi_pos_advanced
+#. openerp-web
+#: code:addons/poi_pos_advanced/static/src/xml/poi_pos_advanced.xml:21
+#, python-format
+msgid "Ultimo Metodo de Pago"
+msgstr "Último Metodo de Pago"
+

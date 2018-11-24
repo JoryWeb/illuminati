@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_asset_depreciation_ufv_wizard" model="ir.ui.view">
+        <field name="name">asset.depreciation.ufv.wizard</field>
+        <field name="model">asset.depreciation.ufv.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Compute Asset">
+                <div>
+                    <p>
+                        Por defecto se pone el mes anterior el año actual.<br/>
+                        Cambie los valores si esta realizando depreciación histórica
+                    </p> 
+                </div>
+                <group>
+                    <field name="date_transaction"/>
+                    <separator string="Periodo Actualizacion:"/>
+                    <field name="month"/>
+                    <field name="year" widget="char"/>
+                    <field name="journal_id" required="1"/>
+                </group>
+                <footer>
+                    <button string="Generar Depreciación" name="asset_compute" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+    </record>
+
+    <record id="action_asset_depreciation_ufv_wizard" model="ir.actions.act_window">
+        <field name="name">Actualización UFV Activos</field>
+        <field name="res_model">asset.depreciation.ufv.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_asset_depreciation_ufv_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="action_asset_depreciation_ufv_wizard"
+        id="menu_asset_depreciation_ufv_wizard"
+        parent="poi_bol_asset.menu_action_bol_asset" sequence="1" groups="account.group_account_manager"/>
+
+</odoo>

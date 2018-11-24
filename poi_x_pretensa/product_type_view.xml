@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!--
+            # Product Type
+        -->	
+    	<!-- Product Type -->
+    	<record id="view_producttype_tree" model="ir.ui.view">
+            <field name="name">product.type.tree</field>
+            <field name="model">pret.product.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de Producto">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+       
+       <!--FORM -->
+       
+       <record id="data_producttype" model="ir.ui.view">
+            <field name="name">product.type.form</field>
+            <field name="model">pret.product.type</field>
+            <field name="arch" type="xml">
+            <form string="Tipo de Producto" version="7.0">
+                <group>
+                    <field name="name" string="Tipo de Producto"/>
+                </group>
+                <notebook>
+                    <page string="Datos técnicos">
+                        <field name="fields" string="Campos">
+                            <tree>
+                                <field name="name"/>
+                                <field name="field_description"/>
+                                <field name="ttype"/>
+                                <field name="selection"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Formato">
+                        <group>
+                            <field name="ref" string="Ref.:" />
+                        </group>
+                        <group>
+                            <field name="consideracion" string="Consideracion" />
+                        </group>
+                        <group>
+                            <field name="img_consideracion" widget="image" class="oe_leftt"/>
+                        </group>
+                        <group>
+                            <field name="punto_uno"/>
+                        </group>
+                        <group>
+                            <field name="impuestos_ley"  />
+                        </group>
+                        <group>
+                            <field name="consideraciones_propuesta"  />
+                        </group>
+                        <group>
+                            <field name="punto_dos"  />
+                        </group>
+                        <group>
+                            <field name="especificaciones"  />
+                        </group>
+                        <group>
+                            <field name="punto_tres"  />
+                        </group>
+                        <group>
+                            <field name="carpeta"  />
+                        </group>
+                        <group>
+                            <field name="plazo_entrega"  />
+                        </group>
+                        <group>
+                            <field name="firma" />
+                        </group>
+                        <group>
+                            <field name="img_footer" widget="image" class="oe_leftt"/>
+                        </group>
+                        <group>
+                            <field name="img_sociales" widget="image" class="oe_leftt"/>
+                        </group>
+                    </page>
+                </notebook>
+            </form>       
+            </field>              
+       </record>
+       
+       <!-- End FORM -->
+                                                            
+        <record id="action_producttype_tree" model="ir.actions.act_window">
+            <field name="name">Tipo de Producto</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pret.product.type</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_producttype_tree"/>
+            
+        </record>
+
+        <menuitem action="action_producttype_tree" id="menu_pret_producttype" parent="product.prod_config_main" sequence="45" groups="base.group_no_one"/>
+        
+<!-- CAMPOS SALE ORDER -->
+
+        <record model="ir.ui.view" id="view_sale_detallestecnicos_form">
+	        <field name="name">sale.order.detallestecnicos.form</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_form" />
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//form/sheet/notebook/page[2]" position="after">
+                    <page string="Detalles Técnicos">
+                        <group>
+                            <field name="product_type" widget="selection"/>
+                        </group>
+                    </page>
+	        	</xpath>
+	        </field>
+        </record>
+        <record id="sale_order_pret_tree" model="ir.ui.view">
+            <field name="name">sale.order.pret.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="product_type"/>
+                </xpath>
+                <field name="name" position="attributes">
+                    <attribute name="string">Cotización</attribute>
+                </field>
+                <field name="date_order" position="attributes">
+                    <attribute name="string">Fecha de Pedido</attribute>
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Cliente</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_product_pret_form">
+	        <field name="name">product.template.pret.form</field>
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="poi_product_dimensions.product_template_metric_form" />
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+                <!-- Peso nativo reemplazado por ser parte de toda la funcionalidad de Packaging -->
+                <xpath expr="//field[@name='weight']" position="replace"/>
+	        	<xpath expr="//field[@name='dimension_ids']" position="after">
+	        		<field name="weight" string="Peso por métrica" attrs="{'readonly':[('type','=','service')]}"/>
+	        	</xpath>
+	        </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_category_pret_form">
+	        <field name="name">product.category.pret.form</field>
+	        <field name="model">product.category</field>
+	        <field name="inherit_id" ref="product.product_category_form_view" />
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='type']" position="after">
+                    <group>
+                        <field name="in_rep_ventas"/>
+                        <field name="udm_rep_ventas" attrs="{'invisible': [('in_rep_ventas','=',False)]}"/>
+                        <newline/>
+                        <field name="in_rep_cubiertas"/>
+                        <field name="udm_rep_cubiertas" attrs="{'invisible': [('in_rep_cubiertas','=',False)]}"/>
+                        <newline/>
+                    </group>
+
+	        	</xpath>
+	        </field>
+        </record>
+
+<!-- END CAMPOS SALE ORDER -->        
+    </data>
+</openerp>

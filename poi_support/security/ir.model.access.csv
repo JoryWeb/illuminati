@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_ir_module_module_group_suuport,access_ir_module_module_group_suuport,base.model_ir_module_module,group_soporte_interno,1,0,0,0
+access_ir_module_module_group_erp,access_ir_module_module_group_erp,base.model_ir_module_module,base.group_erp_manager,1,0,0,0
+access_ticket_user,access_ticket_user,model_poi_support_ticket,base.group_user,1,1,1,0

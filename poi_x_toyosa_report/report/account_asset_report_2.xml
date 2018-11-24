@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <report
+        id="report_account_asset_2"
+        string="Comprobante de Egreso"
+        model="account.move"
+        report_type="qweb-pdf"
+        file="poi_x_toyosa_report.account_asset_report_2"
+        name="poi_x_toyosa_report.account_asset_report_document_2"
+      />
+
+        <template id="account_asset_report_document_2">
+            <t t-call="web.html_container">
+                
+                <div class="article">
+
+                    <table width="100%">
+                        <tr>
+                            <th style="border-left: 1px solid black;border-top: 1px solid black;border-right: 1px solid black;padding-right:300px;">
+                                <H4 style="text-align:left;">
+                                    <b>
+                                        <span t-field="doc.company_id.name"/>
+                                    </b>
+                                </H4>
+                            </th>
+                        </tr>
+                    </table>
+
+                    <table width="100%">
+                        <tr>
+                            <th style="border-left: 1px solid black;border-right: 1px solid black;">
+                                <H4 style="text-align:center;">
+                                    <b>COMPROBANTE N°:
+                                        <ins>
+                                            <span t-field="doc.name"/>
+                                        </ins>
+                                    </b>
+                                </H4>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="border-left: 1px solid black;border-right: 1px solid black;">
+                                <H4 style="text-align:center;">
+                                    <b>FOLIO N°:
+                                        <ins>
+                                            <span t-field="doc.folio"/>
+                                        </ins>
+                                    </b>
+                                </H4>
+                            </th>
+                        </tr>
+                    </table>
+
+                    <table width="100%">
+                        <tr>
+                            <th style="border-left: 1px solid black;padding-left:90px;">
+                                <!--<H5>GESTION <span t-field="doc.period_id.fiscalyear_id.name"/></H5>-->
+                            </th>
+                            <th style="font-size:12;padding-left:160px;">
+                                <H6>(Expresado en Bs)</H6>
+                            </th>
+                            <th style="font-size:12;padding-left:90px;border-right: 1px solid black;">
+                                <H6/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="border-left: 1px solid black;"/>
+                            <th style="font-size:12;text-align:center;border-right: 1px solid black;"/>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="font-size:12;text-align:left;border-left: 1px solid black;">
+                                <H5>
+                                    <i>Fecha :
+                                        <span t-esc="fecha_a_texto(doc.date)"/>
+                                    </i>
+                                </H5>
+                            </th>
+                            <th style="font-size:12;text-align:right;border-right: 1px solid black;">
+                                <H5>
+                                    <i>Tipo de Cambio :</i>
+                                    <span t-esc="rate"/>
+                                    <i>Bs.</i>
+                                </H5>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="font-size:12;text-align:left;border-left: 1px solid black">
+                                <H5>
+                                    <i>Referencia :
+                                        <span t-field="doc.ref"/>
+                                    </i>
+                                    <br/>
+                                    <i>Empresa :
+                                        <span t-field="doc.partner_id.name"/>
+                                    </i>
+                                </H5>
+                            </th>
+                            <th style="font-size:12;text-align:right;border-right: 1px solid black">
+                                <H5>
+                                    <i>Hoja : 1</i>
+                                </H5>
+                            </th>
+                        </tr>
+                    </table>
+
+                    <table style="width:100%;">
+                        <tr>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                C u e n t a _______________________
+                            </th>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                Etiqueta
+                            </th>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                Debe
+                            </th>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                Haber
+                            </th>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                Debe USD
+                            </th>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                Haber USD
+                            </th>
+                            <th style="text-align:center;font-size:18;bold;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black;">
+                                Analítica
+                            </th>
+                        </tr>
+                        <tr t-foreach="get_lines_total(doc.id)" t-as="line_t">
+                            <th style="text-align:left;font-size:12;padding-left:0px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="line_t['code']"/>
+                                <span t-esc="line_t['name']"/>
+                            </th>
+                            <th style="text-align:left;height:0px;font-size:12;padding-left:0px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="line_t['label']"/>
+                            </th>
+                            <th style="text-align:right;height:0px;font-size:12;font-weight: normal;padding-left:80px;padding-right:0;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(line_t['debit'])"/>
+                            </th>
+                            <th style="text-align:right;height:0px;font-size:12;font-weight: normal;padding-left:60px;padding-right:0;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(line_t['credit'])"/>
+                            </th>
+                            <th style="text-align:right;height:0px;font-size:12;font-weight: normal;padding-left:80px;padding-right:0;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(line_t['debit']/rate)"/>
+                            </th>
+                            <th style="text-align:right;height:0px;font-size:12;font-weight: normal;padding-left:60px;padding-right:0;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(line_t['credit']/rate)"/>
+                            </th>
+                            <th style="text-align:right;height:0px;font-size:10;font-weight: normal;padding-left:60px;padding-right:0;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="line_t['analytic_account']"/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="height :100;text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th style="font-size:12;border-top: 1px solid black;border-left: 1px solid black;">SON :
+                                <span t-esc="amount_to_text(sum_debit(doc.id),'nl')"/>
+                            </th>
+                            <th style="font-size:12;text-align:right;border-top: 1px solid black;border-right: 1px solid black;">
+                                TOTALES:
+                            </th>
+                            <th style="font-size:12;font-weight: normal;text-align:right;border-top: 1px solid black;border-left: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(round(sum_debit(doc.id),2))"/>
+                            </th>
+                            <th style="font-size:12;font-weight: normal;text-align:right;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(round(sum_credit(doc.id),2))"/>
+                            </th>
+                            <th style="font-size:12;font-weight: normal;text-align:right;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(round(sum_debit(doc.id)/rate,2))"/>
+                            </th>
+                            <th style="font-size:12;font-weight: normal;text-align:right;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <span t-esc="'{0:,.2f}'.format(round(sum_credit(doc.id)/rate,2))"/>
+                            </th>
+                            <th style="font-size:12;text-align:right;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;"/>
+                        </tr>
+
+                        <tr>
+                            <th colspan="7"
+                                style="font-size:12;text-align:left;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <p>
+                                    <span t-esc="doc.narration"/>
+                                </p>
+                            </th>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <th style="text-align:left;font-size:12;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="text-align:left;font-size:12;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="text-align:left;font-size:12;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="text-align:left;font-size:12;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="text-align:left;font-size:12;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="text-align:left;font-size:12;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="text-align:center;font-size:18;height:80px;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="text-align:center;font-size:18;height:80px;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+                            <th style="text-align:center;font-size:18;height:80px;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                <br/>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <th style="text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                _______________
+                                <br/>
+                            </th>
+                            <th style="text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                _______________
+                                <br/>
+                            </th>
+                            <th style="text-align:center;font-size:18;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;">
+                                _______________
+                                <br/>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <th style="text-align:center;font-size:13;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;">
+                                ELABORADO POR
+                            </th>
+                            <th style="text-align:center;font-size:13;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;">
+                                REVISADO POR
+                            </th>
+                            <th style="text-align:center;font-size:13;padding-left:40px;padding-right:40px;border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;">
+                                RECIBI CONFORME
+                            </th>
+                        </tr>
+                    </table>
+                    <h5>Fecha realizada:
+                        <t t-usertime="%d/%m/%Y %H:%M:%S" />
+                    </h5>
+
+                </div>
+            </t>
+            <t t-raw="0"/>
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+
+                    <ul class="list-inline">
+                        <li>Page:</li>
+                        <li>
+                            <span class="article"/>
+                        </li>
+                        <li>/</li>
+                        <li>
+                            <span class="topage"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+
+       <!--  <template id="account_asset_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="poi_account_reports.account_asset_report_document"
+                       t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template> -->
+
+    </data>
+</odoo>

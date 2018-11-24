@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <report id="report_payslip_summary"
+        string="Planilla de Sueldos"
+        model="hr.payslip"
+        report_type="qweb-pdf"
+        name="poi_hr_report.report_payslip_bol"
+        file="poi_hr_report.report_payslip_bol"
+        auto="False"
+        menu="False"
+        print_report_name="Panilla de Sueldos"/>
+
+    <record id="paperformat_hr_payroll" model="report.paperformat">
+        <field name="name">Planilla de Sueldos</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">30</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">25</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="report_payslip_summary" model="ir.actions.report">
+        <field name="paperformat_id" ref="poi_hr_report.paperformat_hr_payroll"/>
+    </record>
+
+<template id="report_payslip_bol">
+    <t t-call="web.html_container">
+
+    	<div class="header" style="font-size:11px;">
+    		<div class="row">
+    			<div class="col-xs-3">
+    				<img t-if="company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(company_id.logo)" style="max-height: 45px;"/>
+
+            		<div style="font-size:10px;">
+            			<span t-field="company_id.street" /><br/>
+            			<span t-field="company_id.street2" /> - <span t-field="company_id.phone" />
+            		</div>
+            		<div style="font-size:10px;">
+            			<span t-field="company_id.city"/> - <span t-field="company_id.country_id"/>
+            		</div>
+    			</div>
+    			<div class="col-xs-6 text-center">
+    				<h4><strong>PLANILLA DE SUELDOS Y SALARIOS</strong></h4>
+                    <h5>Correspondiente al Mes de <span t-esc="month" /></h5>
+                    <p>Expresado en Bolivianos</p>
+				</div>
+                <div class="col-xs-3 text-right">
+                    <t t-usertime="%d/%m/%Y %H:%M:%S" /> <br />
+                    <span>Hoja:<span class="page"/> de <span class="topage"/></span>
+                </div>
+
+    		</div>
+    	</div>
+
+    	<div class="article" t-attf-style="font-size:10px;">
+    		<div class="row">
+    			<div class="col-xs-12">
+    				<table class="table table-condensed table-bordered">
+    					<thead>
+    						<tr>
+    							<th>CI</th>
+    							<th>Apellidos y Nombres</th>
+    							<th>Fecha de Nacimento</th>
+    							<th>Sexo</th>
+    							<th>Cargo</th>
+    							<th>Fecha de Ingreso</th>
+    							<t t-foreach="rules.sorted(key=lambda r: r.sequence_report_1)" t-as="r">
+    								<th class="text-right"><span t-field="r.name_1"/></th>
+    							</t>
+    							<th>Firma</th>
+    						</tr>
+    					</thead>
+    					<tbody>
+    						<t t-foreach="payslips" t-as="p">
+    						<tr>
+    							<td>
+    								<span t-esc="p.employee_id.identification_id" />
+    							</td>
+    							<td>
+    								<span t-esc="p.employee_id.name" />
+    							</td>
+    							<td>
+    								<span t-esc="p.employee_id.birthday" />
+    							</td>
+    							<td>
+    								<t t-if="p.employee_id.gender == 'male'">
+    									<span>Hombre</span>
+    								</t>
+    								<t t-if="p.employee_id.gender == 'female'">
+    									<span>Mujer</span>
+    								</t>
+    							</td>
+    							<td>
+    								<span t-esc="p.employee_id.job_id.name" />
+    							</td>
+    							<td>
+    								<span t-esc="p.contract_id.date_start" />
+    							</td>
+    							<t t-foreach="p.details_by_salary_rule_category.filtered(lambda x: x.salary_rule_id.on_report_1 == True and x.salary_rule_id.report_id_1 and x.salary_rule_id.report_id_1.report_name == 'poi_hr_report.report_payslip_bol').sorted(key=lambda r: r.salary_rule_id.sequence_report_1)" t-as="r">
+
+    								<td class="text-right"><span t-field="r.total" /></td>
+    							</t>
+    							<td></td>
+    						</tr>
+    						</t>
+    						<td colspan="6" class="text-right"><strong>TOTALES</strong></td>
+							<t t-foreach="rules_t" t-as="r">
+								<td class="text-right"> <strong><span t-esc="('%.2f' % (rules_t[r] or 0.00))"/></strong></td>
+							</t>
+
+    					</tbody>
+    				</table>
+
+    			 </div>
+			</div>
+		</div>
+
+    </t>
+</template>
+</data>
+</odoo>

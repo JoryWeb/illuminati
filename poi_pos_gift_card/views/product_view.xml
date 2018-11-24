@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="product_template_form_view_gc" model="ir.ui.view">
+            <field name="name">product.template.common.form.gc</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_gift_card"/>
+                        <label for="is_gift_card"/>
+                    </div>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Gift Cards" attrs="{'invisible': [('is_gift_card','=',False)]}">
+                        <group>
+                            <group>
+                                <field name="gc_amount"/>
+                                <field name="gc_expiry_type"/>
+                            </group>
+                            <group>
+                                <field name="gc_days_expiry"/>
+                                <field name="gc_expiry_date"/>
+                            </group>
+                        </group>
+                        <field name="gift_card_ids">
+                            <tree editable="bottom" readonly="1">
+                                <field name="code"/>
+                                <field name="partner_id"/>
+                                <field name="amount"/>
+                                <field name="remaining_amount"/>
+                                <field name="expiry_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

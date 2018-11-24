@@ -1,0 +1,533 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* poi_pos_bol
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-14 07:47+0000\n"
+"PO-Revision-Date: 2018-02-14 03:49-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_BO\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#. module: poi_pos_bol
+#. odoo-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:245
+#, python-format
+msgid "\"ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS.EL USO ILÍCITO DE ESTA SERA SANCIONADO DE ACUERDO A LEY\""
+msgstr "\"ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS.EL USO ILÍCITO DE ESTA SERA SANCIONADO DE ACUERDO A LEY\""
+
+#. module: poi_pos_bol
+#. odoo-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:60
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:82
+#, python-format
+msgid "- Telef."
+msgstr "- Telef."
+
+#. module: poi_pos_bol
+#. odoo-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:111
+#, python-format
+msgid "AUTORIZACIÓN N°"
+msgstr "AUTORIZACIÓN N°"
+
+#. module: poi_pos_bol
+#. odoo-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:114
+#, python-format
+msgid "Actividad Económica:"
+msgstr "Actividad Económica:"
+
+#. module: poi_pos_bol
+#: selection:pos.order,estado_fac:0
+msgid "Anulada"
+msgstr "Anulada"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:337
+#, python-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: poi_pos_bol
+#: model:ir.model,name:poi_pos_bol.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:51
+#, python-format
+msgid "CASA MATRIZ"
+msgstr "CASA MATRIZ"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:340
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_account_bank_statement_line_card_code
+msgid "Card Code"
+msgstr "Últimos Digitos de Tarjeta"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:332
+#, python-format
+msgid "Card Code:"
+msgstr "Código de Tarjeta"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_account_bank_statement_line_card_bank_owner
+msgid "Card Owner"
+msgstr "Emisor de Tarjeta"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:334
+#, python-format
+msgid "Card Owner:"
+msgstr "Emisor de Tarjeta:"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:330
+#, python-format
+msgid "Card Payment"
+msgstr "Pago con Tarjeta"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:228
+#, python-format
+msgid "Change:"
+msgstr "Cambio:"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:236
+#, python-format
+msgid "Control Code:"
+msgstr "Código de Control:"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_country_id
+msgid "Country"
+msgstr "País"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_qr_img
+#: model:ir.ui.view,arch_db:poi_pos_bol.pos_order_qr_view
+msgid "Código QR"
+msgstr "Código QR"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_qr_img
+msgid "Código QR generado automáticamente en base a los datos específicos de la Factura."
+msgstr "Código QR generado automáticamente en base a los datos específicos de la Factura."
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_cc_cod
+msgid "Código de control"
+msgstr "Código de control"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_cc_cod
+msgid "Código de representación única para el SIN. Generación automática para Ventas (versión 7). Introducción manual para Compras."
+msgstr "Código de representación única para el SIN. Generación automática para Ventas (versión 7). Introducción manual para Compras."
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_date_fac
+msgid "Date Invoice"
+msgstr "Fecha de Factura"
+
+#. module: poi_pos_bol
+#: model:ir.ui.view,arch_db:poi_pos_bol.pos_order_bol_form_view
+msgid "Datos SIN"
+msgstr "Datos SIN"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:197
+#, python-format
+msgid "Discount:"
+msgstr "Descuento:"
+
+#. module: poi_pos_bol
+#: model:ir.ui.view,arch_db:poi_pos_bol.view_pos_order_bol_filter
+msgid "Dosif"
+msgstr "Dosif"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_config_dosif_id
+#: model:ir.ui.view,arch_db:poi_pos_bol.view_pos_bol_config_form
+msgid "Dosificacion"
+msgstr "Dosificacion"
+
+#. module: poi_pos_bol
+#: model:ir.model,name:poi_pos_bol.model_poi_bol_base_cc_dosif
+msgid "Dosificacion Facturas"
+msgstr "Dosificacion Facturas"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/js/models.js:44
+#, python-format
+msgid "Dosification error. Date invalid."
+msgstr "Error de Dosificación. Fecha inválida."
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/js/models.js:70
+#, python-format
+msgid "Error: Last number of dosification was reached. Please select other dosification and restart the POS"
+msgstr "Error: El último número para la dosificación fue alcanzado. Por favor seleccione otra dosificación y reinicie el PdV"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_estado_fac
+msgid "Estado SIN"
+msgstr "Estado SIN"
+
+#. module: poi_pos_bol
+#: selection:pos.order,estado_fac:0
+msgid "Extraviada"
+msgstr "Extraviada"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:95
+#, python-format
+msgid "FACTURA"
+msgstr "FACTURA"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:107
+#, python-format
+msgid "FACTURA N°"
+msgstr "FACTURA N°"
+
+#. module: poi_pos_bol
+#: model:ir.ui.view,arch_db:poi_pos_bol.pos_order_qr_view
+msgid "Factura"
+msgstr "Factura"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:120
+#, python-format
+msgid "Fecha:"
+msgstr "Fecha:"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:248
+#, python-format
+msgid "GRACIAS POR SU COMPRA"
+msgstr "GRACIAS POR SU COMPRA"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:123
+#, python-format
+msgid "Hora:"
+msgstr "Hora:"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_exento
+msgid "Importe Exentos"
+msgstr "Importe Exentos"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_ice
+msgid "Importe ICE"
+msgstr "Importe ICE"
+
+#. module: poi_pos_bol
+#: code:addons/poi_pos_bol/models/point_of_sale.py:261
+#, python-format
+msgid "Invoice Number must be UNIQUE for a valid order."
+msgstr "El número de factura debe ser UNICO para una orden válida."
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_leyenda
+msgid "La leyenda impresa en el PdV"
+msgstr "La leyenda impresa en el PdV"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_last_pos_cc_nro
+msgid "Last CC Nro"
+msgstr "Último número de factura"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_leyenda
+msgid "Leyenda"
+msgstr "Leyenda"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:239
+#, python-format
+msgid "Limit date:"
+msgstr "Fecha límite de emisión:"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:17
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:278
+#, python-format
+msgid "NIT"
+msgstr "NIT"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_nit
+msgid "NIT o CI del cliente"
+msgstr "NIT o CI del cliente"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:298
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:299
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:320
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_nit
+#, python-format
+msgid "NIT/CI"
+msgstr "NIT/CI"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:104
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:130
+#, python-format
+msgid "NIT:"
+msgstr "NIT:"
+
+#. module: poi_pos_bol
+#: selection:pos.order,estado_fac:0
+msgid "No Aplica"
+msgstr "No Aplica"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/js/models.js:185
+#, python-format
+msgid "No Name"
+msgstr "Sin Nombre"
+
+#. module: poi_pos_bol
+#: selection:pos.order,estado_fac:0
+msgid "No Utilizada"
+msgstr "No Utilizada"
+
+#. module: poi_pos_bol
+#: code:addons/poi_pos_bol/models/point_of_sale.py:157
+#, python-format
+msgid "No name"
+msgstr "Sin Nombre"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_cc_aut
+msgid "Nro. Autorizacion"
+msgstr "Nro. Autorizacion"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_cc_nro
+msgid "Nro. Factura"
+msgstr "Nro. Factura"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_cc_nro_int
+msgid "Nro. Factura (Num)"
+msgstr "Nro. Factura (Num)"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_cc_aut
+msgid "Numero de Autorizacion"
+msgstr "Numero de Autorizacion"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_cc_nro
+msgid "Numero de Factura"
+msgstr "Numero de Factura"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:331
+#, python-format
+msgid "Please add the following data to card payment."
+msgstr "Agregue la siguiente información al pago con tarjeta."
+
+#. module: poi_pos_bol
+#: model:ir.model,name:poi_pos_bol.model_pos_order
+msgid "Point of Sale"
+msgstr "Punto de Venta"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:143
+#, python-format
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:144
+#, python-format
+msgid "Quant."
+msgstr "Cant."
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_razon
+msgid "Razon Social"
+msgstr "Razón Social"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_razon
+msgid "Razon Social o Nombre para la factura"
+msgstr "Razón Social o Nombre para la factura"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:19
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:279
+#, python-format
+msgid "Razón Social"
+msgstr "Razón Social"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:181
+#, python-format
+msgid "SON:"
+msgstr "SON:"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:71
+#, python-format
+msgid "SUCURSAL:"
+msgstr "SUCURSAL:"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_cc_dos
+msgid "Serie Dosificacion"
+msgstr "Serie Dosificacion"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,help:poi_pos_bol.field_pos_order_cc_dos
+msgid "Serie de dosificacion segun parametrizacion. Asocia Numero de autorizacion y Llave de dosificacion."
+msgstr "Serie de dosificacion segun parametrizacion. Asocia Numero de autorizacion y Llave de dosificacion."
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:126
+#, python-format
+msgid "Sr(es):"
+msgstr "Sr(es):"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_street
+msgid "Street"
+msgstr "Calle"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_street2
+msgid "Street2"
+msgstr "Calle2"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:183
+#, python-format
+msgid "Subtotal:"
+msgstr "Subtotal:"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_poi_bol_base_cc_dosif_branch
+msgid "Sucursal"
+msgstr "Sucursal"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_tax_bs
+msgid "Tax (Bs.)"
+msgstr "Impuesto (Bs.)"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/js/models.js:94
+#, python-format
+msgid "The dosification was not loaded properly. Please refresh the page"
+msgstr "La dosificación no fue cargada. Por favor reinicie el PdV."
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_time_fac
+msgid "Time Invoice"
+msgstr "Hora de Factura"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:146
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_pos_bol
+#: model:ir.model.fields,field_description:poi_pos_bol.field_pos_order_total_bs
+msgid "Total (Bs.)"
+msgstr "Total (Bs.)"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:203
+#, python-format
+msgid "Total:"
+msgstr "Total:"
+
+#. module: poi_pos_bol
+#. openerp-web
+#: code:addons/poi_pos_bol/static/src/xml/poi_pos_bol.xml:145
+#, python-format
+msgid "Unit P."
+msgstr "Precio Unit."
+
+#. module: poi_pos_bol
+#: model:ir.ui.view,arch_db:poi_pos_bol.pos_order_bol_form_view
+msgid "Ver QR"
+msgstr "Ver QR"
+
+#. module: poi_pos_bol
+#: selection:pos.order,estado_fac:0
+msgid "Válida"
+msgstr "Válida"
+
+#. module: poi_pos_bol
+#: model:ir.model,name:poi_pos_bol.model_pos_config
+msgid "pos.config"
+msgstr "Configuración del TPV"

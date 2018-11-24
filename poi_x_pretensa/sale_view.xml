@@ -1,0 +1,271 @@
+<openerp>
+    <data>
+        <record id="sale_order_pret_form" model="ir.ui.view">
+            <field name="name">sale.order.pret.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <field name="project_id" position="attributes">
+                    <attribute name="groups">analytic.group_analytic_accounting,base.group_sale_manager</attribute>
+                    <attribute name="string">Cuenta Analítica</attribute>
+                </field>
+
+                <!-- Traduccion Botones -->
+                <button name="action_quotation_send" position="attributes">
+                    <attribute name="string">Enviar por E-mail</attribute>
+                </button>
+
+                <button name="print_quotation" position="attributes">
+                    <attribute name="string">Imprimir</attribute>
+                </button>
+
+                <button name="action_confirm" position="attributes">
+                    <attribute name="string">Confirmar Pedido</attribute>
+                </button>
+
+                <button name="action_cancel" position="attributes">
+                    <attribute name="string">Cancelar</attribute>
+                </button>
+
+                <button name="action_draft" position="attributes">
+                    <attribute name="string">Establecer a Cotización</attribute>
+                </button>
+
+                <button name="action_done" position="attributes">
+                    <attribute name="string">Establecer a hecho</attribute>
+                </button>
+
+                <!-- Traduccion de campos de pedido de venta -->
+
+                <field name="partner_invoice_id" position="attributes">
+                    <attribute name="string">Dirección de factura</attribute>
+                </field>
+
+                <field name="team_id" position="attributes">
+                    <attribute name="string">Grupo de Ventas</attribute>
+                </field>
+
+                <field name="fiscal_position_id" position="attributes">
+                    <attribute name="string">Posición Fiscal</attribute>
+                </field>
+
+                <field name="origin" position="attributes">
+                    <attribute name="string">Documento Origen</attribute>
+                </field>
+
+                <field name="client_order_ref" position="attributes">
+                    <attribute name="string">Referencia Cliente</attribute>
+                </field>
+
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Cliente</attribute>
+                </field>
+
+                <field name="pricelist_id" position="attributes">
+                    <attribute name="groups">base.group_sale_manager</attribute>
+                    <attribute name="string">Tarifa</attribute>
+                </field>
+
+                <button name="action_confirm" position="attributes">
+                    <attribute name="groups">base.group_sale_manager,poi_warehouse_sale.group_sale_salesman_shop_leads</attribute>
+                    <attribute name="string">Confirmar Pedido</attribute>
+                </button>
+
+                <field name="partner_shipping_id" position="attributes">
+                    <attribute name="string">Dirección de entrega</attribute>
+                </field>
+
+                <field name="partner_shipping_id" position="attributes">
+                    <attribute name="string">Dirección de entrega</attribute>
+                </field>
+
+                <field name="validity_date" position="attributes">
+                    <attribute name="string">Fecha de Vencimiento</attribute>
+                </field>
+                <field name="invoice_count" position="attributes">
+                    <attribute name="string">Facturas</attribute>
+                </field>
+                <field name="payment_term_id" position="attributes">
+                    <attribute name="groups">base.group_sale_manager</attribute>
+                    <attribute name="string">Terminos de Entrega</attribute>
+                </field>
+
+                <xpath expr="//field[@name='note']" position="replace">
+                    <group col="3">
+                        <group>
+                            <field name="note" colspan="2" nolabel="1" placeholder="Terms and conditions..."/>
+                        </group>
+                        <group>
+                            <field name="total_metric"/>
+                            <field name="total_metric_m2"/>
+                            <field name="total_metric_m3"/>
+                            <field name="total_weight"/>
+                            <field name="vendedor" on_change="onchange_vendedor(vendedor)" widget="selection"/>
+                            <field name="tipo_entrega"/>
+                            <field name="socio_ref"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="replace">
+                    <field name="user_id" on_change="onchange_user(user_id)" widget="selection"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='partner_shipping_id']" position="replace">
+                    <field name="partner_shipping_id"  context="{'default_type':'delivery'}"/>
+                    <!--<field name="warehouse_alt_id" groups="base.group_sale_manager,poi_warehouse_sale.group_sale_salesman_shop_leads" domain="[]"/>-->
+                </xpath>
+
+                <!-- LINEAS -->
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">
+                    <field name="despuntes"/>
+                    <field name="desp_total" readonly="1"/>
+                </xpath>
+
+                <!-- Traduccion de Lineas -->
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="string">Producto</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="attributes">
+                    <attribute name="string">Descripción</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="attributes">
+                    <attribute name="string">Cantidad</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="attributes">
+                    <attribute name="string">UdM</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='total_dimension_display']" position="attributes">
+                    <attribute name="string">Total Métrica</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
+                    <attribute name="string">Impuestos</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="string">Precio Unidad</attribute>
+                </xpath>
+                    <!--form-->
+                <xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="after">
+                    <field name="despuntes"/>
+                    <field name="desp_total" readonly="1"/>
+                </xpath>
+                <!--
+                <xpath expr="//form/header/button[@name='action_confirm' and @states='draft']" position="replace">
+                    <button name="action_button_confirm" states="draft" string="Confirm Sale" type="object" groups="poi_shop_data.group_sale_salesman_shop_leads"/>
+                </xpath>
+                <xpath expr="//form/header/button[@name='action_confirm' and @states='sent']" position="replace">
+                    <button name="action_button_confirm" states="sent" string="Confirm Sale" class="oe_highlight" type="object" groups="poi_shop_data.group_sale_salesman_shop_leads"/>
+                </xpath>
+                -->
+                <xpath expr="//form/header/button[@name='print_quotation']" position="replace">
+                    <button name="view_oferta" type="object" string="Imprimir Cotización" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//group[@name='technical']" position="inside">
+                    <group col="2">
+                        <separator string="Datos Exportación" colspan="4"/>
+                        <newline/>
+                        <field name="flete_origen" colspan="1"/>
+                        <field name="flete_destino" colspan="1"/>
+                        <field name="seguro" colspan="1"/>
+                        <field name="nandina" colspan="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <!-- Correción de traducciones lista pedidos de venta -->
+        <record id="view_order_tree_traduccion" model="ir.ui.view">
+            <field name="name">sale.order.traduccion</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="string">N° de Orden</attribute>
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Cliente</attribute>
+                </field>
+                <field name="date_order" position="attributes">
+                    <attribute name="string">Fecha de Pedido</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="res_partner_pret_form" model="ir.ui.view">
+            <field name="name">res.partner.pret.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='child_ids']/form//field[@name='mobile']" position="after">
+                    <field name="user_id"/>
+                </xpath>
+            </field>
+        </record>
+        <!--
+        <record id="view_shop_city_form" model="ir.ui.view">
+            <field name="name">res.shop.city.info</field>
+            <field name="model">res.shop</field>
+            <field name="inherit_id" ref="poi_shop.view_shop_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <newline/>
+                    <separator string="Almacenes alternativos autorizados"/>
+                    <newline/>
+                    <field name="warehouse_ids" nolabel="1"/>
+                </xpath>
+           </field>
+        </record>
+        -->
+        <!-- Traducciones filtros usuario -->
+        <record id="view_traducciones_sales_order_filter" model="ir.ui.view">
+            <field name="name">sale.order.traducciones.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="string">Pedido</attribute>
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Cliente</attribute>
+                </field>
+                <field name="user_id" position="attributes">
+                    <attribute name="string">Responsable</attribute>
+                </field>
+                <field name="team_id" position="attributes">
+                    <attribute name="string">Grupo de Ventas</attribute>
+                </field>
+                <field name="project_id" position="attributes">
+                    <attribute name="string">Proyecto</attribute>
+                </field>
+                <field name="product_id" position="attributes">
+                    <attribute name="string">Producto</attribute>
+                </field>
+                <filter name="my_sale_orders_filter" position="attributes">
+                    <attribute name="string">Mis Pedidos</attribute>
+                </filter>
+                <filter name="draft" position="attributes">
+                    <attribute name="string">Cotización</attribute>
+                </filter>
+                <filter name="sales" position="attributes">
+                    <attribute name="string">Pedido de Ventas</attribute>
+                </filter>
+                <filter name="sales" position="attributes">
+                    <attribute name="string">Pedido de Ventas</attribute>
+                </filter>
+                <filter name="sales" position="attributes">
+                    <attribute name="string">Pedido de Ventas</attribute>
+                </filter>
+                <filter name="customer" position="attributes">
+                    <attribute name="string">Cliente</attribute>
+                </filter>
+            </field>
+        </record>
+
+        <!-- Accesos de menu reportes de ventas -->
+        <menuitem name="Reportes de Venta"
+                  id="base.menu_sale_report"
+                  groups="base.group_sale_manager,poi_warehouse_sale.group_sale_salesman_shop_leads"
+                  parent="base.menu_base_partner"
+                  sequence="60"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,533 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_essential_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-09 19:52+0000\n"
+"PO-Revision-Date: 2015-11-09 19:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,state:0
+msgid "Abierto"
+msgstr "Abierto"
+
+#. module: poi_essential_reports
+#: code:addons/poi_essential_reports/report/actual_stock_report.py:165
+#: model:ir.actions.act_window,name:poi_essential_reports.action_poi_actual_stock_report
+#: model:ir.actions.act_window,name:poi_essential_reports.action_stock_report_tree
+#: model:ir.model,name:poi_essential_reports.model_poi_actual_stock_report
+#: model:ir.ui.menu,name:poi_essential_reports.menu_action_poi_actual_stock_report
+#: model:ir.ui.menu,name:poi_essential_reports.menu_action_poi_actual_stock_sales_report
+#: view:poi.actual.stock.report:poi_essential_reports.view_poi_actual_stock_report_graph
+#: view:poi.actual.stock.report:poi_essential_reports.view_poi_actual_stock_report_search
+#: view:poi.actual.stock.report:poi_essential_reports.view_poi_actual_stock_report_tree
+#, python-format
+msgid "Actual Stock Report"
+msgstr "Reporte de Stock Actual"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,agencia_id:0
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,agencia_id:0
+msgid "Agencia"
+msgstr "Agencia"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+msgid "Agrupadores"
+msgstr "Agrupadores"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,estado_fac:0
+msgid "Anulada"
+msgstr "Anulada"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,state:0
+msgid "Anulado"
+msgstr "Anulado"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,state:0
+msgid "Borrador"
+msgstr "Borrador"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,partner_type:0
+msgid "Canal"
+msgstr "Canal"
+
+#. module: poi_essential_reports
+#: view:mventa.wizard_v:poi_essential_reports.data_mventa_reporte_prod_v
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,state:0
+msgid "Cancelado"
+msgstr "Cancelado"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,quantity:0
+msgid "Cantidad"
+msgstr "Cantidad"
+
+#. module: poi_essential_reports
+#: field:poi.product.prices.report,category_id:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: poi_essential_reports
+#: view:product.product:poi_essential_reports.product_stock_product_view
+msgid "Check Actual Stock"
+msgstr "Stock Actual"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,state_id:0
+msgid "Ciudad"
+msgstr "Ciudad"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,cliente:0
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,partner_id:0
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+msgid "Cod. Cliente"
+msgstr "Cod. Cliente"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+msgid "Cod. Producto"
+msgstr "Cod. Producto"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,ean13:0
+msgid "Codigo"
+msgstr "Codigo"
+
+#. module: poi_essential_reports
+#: field:report.maestro.venta2,codigo_cliente:0
+msgid "Codigo Cliente"
+msgstr "Codigo Cliente"
+
+#. module: poi_essential_reports
+#: field:report.maestro.venta2,codigo_producto:0
+msgid "Codigo Producto"
+msgstr "Codigo Producto"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,discount_bs:0
+msgid "Descuento Bs."
+msgstr "Descuento Bs."
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,discount_porcent:0
+msgid "Descuento Porcent."
+msgstr "Descuento Porcent."
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,date_from1:0
+msgid "Desde:"
+msgstr "Desde:"
+
+#. module: poi_essential_reports
+#: view:poi.actual.stock.report:poi_essential_reports.view_poi_actual_stock_report_search
+msgid "Display All"
+msgstr "Mostrar Todo"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,origin:0
+msgid "Doc. Origen"
+msgstr "Doc. Origen"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,state:0
+msgid "Estado"
+msgstr "Estado"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,estado_fac:0
+msgid "Estado Factura"
+msgstr "Estado Factura"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,estado_fac:0
+msgid "Extraviada"
+msgstr "Extraviada"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,date_invoice:0
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: poi_essential_reports
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_search
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,date_to1:0
+msgid "Hasta"
+msgstr "Hasta"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,id:0
+#: field:poi.actual.stock.report,id:0
+#: field:poi.product.prices.report,id:0
+#: field:report.maestro.venta2,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_essential_reports
+#: code:addons/poi_essential_reports/report/report_maestro_venta.py:298
+#, python-format
+msgid "Invalid group_by"
+msgstr "Invalid group_by"
+
+#. module: poi_essential_reports
+#: code:addons/poi_essential_reports/report/report_maestro_venta.py:299
+#, python-format
+msgid "Invalid group_by specification: \"%s\".\n"
+"A group_by specification must be a list of valid fields."
+msgstr "Invalid group_by specification: \"%s\".\n"
+"A group_by specification must be a list of valid fields."
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: poi_essential_reports
+#: field:report.maestro.venta2,libro:0
+msgid "Libro"
+msgstr "Libro"
+
+#. module: poi_essential_reports
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_search
+msgid "Lista de precio"
+msgstr "Lista de precio"
+
+#. module: poi_essential_reports
+#: field:poi.actual.stock.report,location_id:0
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.view_maestro_venta_graph_aj
+msgid "Maestro Venta"
+msgstr "Maestro Venta"
+
+#. module: poi_essential_reports
+#: model:ir.model,name:poi_essential_reports.model_mventa_wizard_v
+msgid "Maestro Venta wizard"
+msgstr "Maestro Venta wizard"
+
+#. module: poi_essential_reports
+#: view:mventa.wizard_v:poi_essential_reports.data_mventa_reporte_prod_v
+msgid "Maestro de Venta Wizard"
+msgstr "Maestro de Venta Wizard"
+
+#. module: poi_essential_reports
+#: view:mventa.wizard_v:poi_essential_reports.data_mventa_reporte_prod_v
+msgid "Maestro de Ventas"
+msgstr "Maestro de Ventas"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,brand:0
+msgid "Marca"
+msgstr "Marca"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,margen_porcentual:0
+msgid "Margen Porcentual"
+msgstr "Margen Porcentual"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,margen_valorado:0
+msgid "Margen Valorado"
+msgstr "Margen Valorado"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,nit:0
+msgid "NIT"
+msgstr "NIT"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,estado_fac:0
+msgid "No Utilizada"
+msgstr "No Utilizada"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,estado_fac:0
+msgid "No aplica"
+msgstr "No aplica"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+msgid "Nro. Fact Fisica"
+msgstr "Nro. Fact Fisica"
+
+#. module: poi_essential_reports
+#: field:report.maestro.venta2,cc_nro:0
+msgid "Nro. Fact. Fisica"
+msgstr "Nro. Fact. Fisica"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,number:0
+msgid "Nro. Factura"
+msgstr "Nro. Factura"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+msgid "Numero Factura"
+msgstr "Numero Factura"
+
+#. module: poi_essential_reports
+#: view:poi.actual.stock.report:poi_essential_reports.view_poi_actual_stock_report_search
+msgid "Only with Movements"
+msgstr "Solo con Stock"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,state:0
+msgid "Pagado"
+msgstr "Pagado"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,periodo:0
+msgid "Periodo"
+msgstr "Periodo"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,price_unit:0
+msgid "Precio Unitario"
+msgstr "Precio Unitario"
+
+#. module: poi_essential_reports
+#: field:poi.product.prices.report,price:0
+msgid "Price"
+msgstr "Precio"
+
+#. module: poi_essential_reports
+#: field:poi.actual.stock.report,product_id:0
+#: field:poi.product.prices.report,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_essential_reports
+#: field:poi.actual.stock.report,categ_id:0
+msgid "Product Category"
+msgstr "Categoría del Producto"
+
+#. module: poi_essential_reports
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_search
+msgid "Product Prices"
+msgstr "Precios de Producto"
+
+#. module: poi_essential_reports
+#: model:ir.model,name:poi_essential_reports.model_poi_product_prices_report
+msgid "Product Prices Report"
+msgstr "Reporte de Precios de Producto"
+
+#. module: poi_essential_reports
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_search
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,product_id:0
+msgid "Producto"
+msgstr "Producto"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+msgid "Productos"
+msgstr "Productos"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,state:0
+msgid "Proforma"
+msgstr "Proforma"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: selection:report.maestro.venta2,tipo_venta:0
+msgid "Punto de Venta"
+msgstr "Punto de Venta"
+
+#. module: poi_essential_reports
+#: field:poi.actual.stock.report,qty:0
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,razon:0
+msgid "Razon Social"
+msgstr "Razon Social"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+msgid "Reporte"
+msgstr "Reporte"
+
+#. module: poi_essential_reports
+#: model:ir.actions.act_window,name:poi_essential_reports.action_poi_reporte_mventa_tree_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+msgid "Reporte Maestro Venta"
+msgstr "Reporte Maestro Venta"
+
+#. module: poi_essential_reports
+#: model:ir.model,name:poi_essential_reports.model_report_maestro_venta2
+msgid "Reporte Maestro Venta de Productos"
+msgstr "Reporte Maestro Venta de Productos"
+
+#. module: poi_essential_reports
+#: model:ir.actions.act_window,name:poi_essential_reports.action_poi_reporte_mventa_report_aj
+#: model:ir.ui.menu,name:poi_essential_reports.menu_poi_mventa_report_aj
+msgid "Reporte Maestro Ventas"
+msgstr "Reporte Maestro Ventas"
+
+#. module: poi_essential_reports
+#: model:ir.ui.menu,name:poi_essential_reports.menu_stock_reports_init
+#: model:ir.ui.menu,name:poi_essential_reports.menu_stock_reports_sales
+msgid "Reports"
+msgstr "Informes"
+
+#. module: poi_essential_reports
+#: field:poi.actual.stock.report,reserved_qty:0
+msgid "Reserved Quantity"
+msgstr "Cantidad Reservada"
+
+#. module: poi_essential_reports
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_search
+msgid "Sin Precio"
+msgstr "Sin Precio"
+
+#. module: poi_essential_reports
+#: field:poi.product.prices.report,pricelist_id:0
+msgid "Tarifario"
+msgstr "Tarifario"
+
+#. module: poi_essential_reports
+#: model:ir.actions.act_window,name:poi_essential_reports.action_poi_product_prices_report
+#: model:ir.ui.menu,name:poi_essential_reports.menu_action_poi_product_prices_report
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_graph
+#: view:poi.product.prices.report:poi_essential_reports.view_poi_product_prices_report_tree
+msgid "Tarifarios de Venta"
+msgstr "Tarifarios de Venta"
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,tienda:0
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,tienda:0
+msgid "Tienda"
+msgstr "Tienda"
+
+#. module: poi_essential_reports
+#: field:report.maestro.venta2,tipo_venta:0
+msgid "Tipo de Venta"
+msgstr "Tipo de Venta"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,total:0
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,total_impuestos:0
+msgid "Total Impuestos"
+msgstr "Total Impuestos"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,total_neto:0
+msgid "Total Neto"
+msgstr "Total Neto"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: field:report.maestro.venta2,total_adesc:0
+msgid "Total antes de Desc."
+msgstr "Total antes de Desc."
+
+#. module: poi_essential_reports
+#: field:mventa.wizard_v,user_id:0
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: field:report.maestro.venta2,user_id:0
+msgid "Vendedor"
+msgstr "Vendedor"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_mventa_filter_product_aj
+#: selection:report.maestro.venta2,tipo_venta:0
+msgid "Venta"
+msgstr "Venta"
+
+#. module: poi_essential_reports
+#: selection:report.maestro.venta2,estado_fac:0
+msgid "Válida"
+msgstr "Válida"
+
+#. module: poi_essential_reports
+#: view:mventa.wizard_v:poi_essential_reports.data_mventa_reporte_prod_v
+msgid "or"
+msgstr "or"
+
+#. module: poi_essential_reports
+#: view:report.maestro.venta2:poi_essential_reports.poi_report_maestro_venta2_aj
+msgid "total"
+msgstr "total"
+

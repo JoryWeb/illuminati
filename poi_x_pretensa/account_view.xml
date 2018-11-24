@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_account_list_inh" model="ir.ui.view">
+            <field name="name">account.account.list.inh</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list" />
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="debito" />
+                    <field name="credito" />
+                    <field name="balance" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

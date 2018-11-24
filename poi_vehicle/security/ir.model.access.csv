@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vehicle_vehicle_manager,vehicle.vehicle manager,model_poi_vehicle,poi_vehicle.group_mro_manager,1,1,1,1
+access_vehicle_state_manager,vehicle.state manager,model_vehicle_state,poi_vehicle.group_mro_manager,1,1,1,1
+access_vehicle_category_manager,vehicle.category manager,model_vehicle_category,poi_vehicle.group_mro_manager,1,1,1,1
+access_vehicle_history_manager,vehicle.history manager,model_poi_vehicle_history,poi_vehicle.group_mro_manager,1,1,1,1
+access_vehicle_vehicle_user,vehicle.vehicle user,model_poi_vehicle,poi_vehicle.group_mro_user,1,1,1,0
+access_vehicle_state_user,vehicle.state user,model_vehicle_state,poi_vehicle.group_mro_user,1,1,1,0
+access_vehicle_category_user,vehicle.category user,model_vehicle_category,poi_vehicle.group_mro_user,1,1,1,1
+access_vehicle_history_user,vehicle.history user,model_poi_vehicle_history,poi_vehicle.group_mro_user,1,1,1,0
+access_vehicle_vehicle_customer,vehicle.vehicle customer,model_poi_vehicle,poi_vehicle.group_mro_customer,1,0,0,0
+access_vehicle_state_customer,vehicle.state customer,model_vehicle_state,poi_vehicle.group_mro_customer,1,0,0,0
+access_vehicle_category_customer,vehicle.category customer,model_vehicle_category,poi_vehicle.group_mro_customer,1,0,0,0
+access_vehicle_history,vehicle.history,model_poi_vehicle_history,poi_vehicle.group_mro_customer,1,1,1,0

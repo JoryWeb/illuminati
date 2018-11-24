@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="rendition_expenses_report"
+    string="Rendicion Gastos"
+    model="account.move"
+    report_type="qweb-pdf"
+    file="poi_payment_request.rendition_expenses"
+    name="poi_payment_request.rendition_expenses_report_t"
+    menu='True'
+  />
+
+  <record id="paperformat_rendition_expenses" model="report.paperformat">
+    <field name="name">Rendicion de Gastos</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">10</field>
+    <field name="margin_bottom">10</field>
+    <field name="margin_left">5</field>
+    <field name="margin_right">5</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">5</field>
+    <field name="dpi">90</field>
+  </record>
+
+  <record id="rendition_expenses_report" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="poi_x_alina_report.paperformat_rendition_expenses"/>
+  </record>
+</data>
+
+<template id="rendition_expenses_report_t">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+<div class="header">
+<div class="row">
+    <div class="col-xs-12 text-right">
+        Hoja: <span class="page"/>
+    </div>
+</div>
+</div>
+<div class="page" style="font-size:11;font-weight: normal;">
+<div class="row">
+<div class="col-xs-12">
+<div class="panel panel-default">
+<div class="panel-body" style="padding-bottom:0px;">
+    <div class="row">
+        <div class="col-xs-3">
+            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 130px;"/>
+        </div>
+        <div class="col-xs-6 text-center">
+            <h5 style="padding-top:30px;"><strong>Rendicion de Gastos N°:</strong> <ins><strong> <span t-field="o.name"/> </strong> </ins></h5>
+        </div>
+        <div class="col-xs-3">
+
+        </div>
+        <div class="col-xs-6" style="padding-left:0px;padding-right:0px;">
+            <p><strong>Solicitante: </strong><span t-field="o.user_id.name"/> </p>
+            <p><strong>Solicitud de Pago: </strong><span t-field="o.payment_request_id.name"/> </p>
+            <p><strong>Referencia: </strong><span t-field="o.ref"/> </p>
+            <p><strong>Diario: </strong><span t-field="o.journal_id.name"/> </p>
+            <p><strong>Cuenta: </strong><span t-field="o.account_id.code"/> <span t-field="o.account_id.name"/> </p>
+        </div>
+        <div class="col-xs-6" style="padding-left:0px;padding-right:0px;">
+            <p><strong>Fecha: </strong><span t-field="o.rendition_date"/> </p>
+            <p><strong>Divisa: </strong><span t-field="o.currency_id.name"/> </p>
+            <p><strong>Monto Solicitado: </strong><span t-field="o.amount_requested"/> </p>
+            <p><strong>Total Factura: </strong><span t-field="o.invoice_total"/> </p>
+            <p><strong>Monto Adeudado: </strong><span t-field="o.amount_debt"/> </p>
+            <p><strong>Monto Excedido: </strong><span t-field="o.amount_exceeded"/> </p>
+        </div>
+        <div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
+            <h4 class="text-center">DOCUMENTOS</h4>
+            <table class="table table-bordered table-condensed" style="margin-bottom:0px;">
+                <thead>
+                    <tr style="font-size:15;">
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Tipo de Factura</th>
+                        <th class="text-center">Fecha de Factura</th>
+                        <th class="text-center">Impuestos</th>
+                        <th class="text-center">Importe</th>
+                        <th class="text-center">Cuenta</th>
+                        <th class="text-center">Numero de Factura</th>
+                        <th class="text-center">Proveedor</th>
+                        <th class="text-center">NIT</th>
+                        <th class="text-center">Razon Social</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-set="sum_debit" t-value="0"/>
+                    <t t-set="sum_credit" t-value="0"/>
+                    <t t-set="sum_debit_sec" t-value="0"/>
+                    <t t-set="sum_credit_sec" t-value="0"/>
+                <t t-if="o.automove">
+                    <t t-as="l" t-foreach="line_obj.search([('move_id', '=', o.id)], order='date desc, move_id desc, is_debit desc, id')">
+                        <t t-set="sum_debit" t-value="sum_debit + l.debit"/>
+                        <t t-set="sum_credit" t-value="sum_credit + l.credit"/>
+                        <t t-set="sum_debit_sec" t-value="sum_debit_sec + l.debit_sec"/>
+                        <t t-set="sum_credit_sec" t-value="sum_credit_sec + l.credit_sec"/>
+                    <tr>
+                        <td style="padding:0px;">
+                            <span t-field="l.account_id.code"/>                             <span t-field="l.account_id.name"/>
+                        </td>
+                        <td style="padding:0px;">
+                            <span><span t-field="l.name"/> <br/> <t t-if="l.bank_account_id">Numero de Cuenta:<span t-field="l.bank_account_id.account_number"/> Divisa:<span t-field="l.bank_account_id.currency_id.symbol"/></t>
+                        </span>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.debit)"/>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.credit)"/>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.debit_sec)"/>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.credit_sec)"/>
+                        </td>
+                        <td style="padding:0px;">
+                            <span t-field="l.analytic_account_id.name"/>
+                        </td>
+                    </tr>
+                        <t t-if="l_last">
+                        <tr>
+                            <td style="padding:0px;">
+                                SON: <strong t-esc="to_word(sum_debit).upper()"/>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <strong>TOTALES:</strong>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_debit)"/>
+
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_credit)"/>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_debit_sec)"/>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_credit_sec)"/>
+                            </td>
+                            <td style="padding:0px;">
+
+                            </td>
+                        </tr>
+                        </t>
+                    </t>
+                </t>
+                <t t-if="not o.automove">
+                    <t t-as="l" t-foreach="o.line_ids">
+                        <t t-set="sum_debit" t-value="sum_debit + l.debit"/>
+                        <t t-set="sum_credit" t-value="sum_credit + l.credit"/>
+                        <t t-set="sum_debit_sec" t-value="sum_debit_sec + l.debit_sec"/>
+                        <t t-set="sum_credit_sec" t-value="sum_credit_sec + l.credit_sec"/>
+                    <tr>
+                        <td style="padding:0px;">
+                            <span t-field="l.account_id.code"/>                             <span t-field="l.account_id.name"/>
+                        </td>
+                        <td style="padding:0px;">
+                            <span><span t-field="l.name"/> <br/> <t t-if="l.bank_account_id">Numero de Cuenta:<span t-field="l.bank_account_id.account_number"/> Divisa:<span t-field="l.bank_account_id.currency_id.symbol"/></t>
+                        </span>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.debit)"/>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.credit)"/>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.debit_sec)"/>
+                        </td>
+                        <td class="text-right" style="padding:0px;">
+                            <span t-esc="'{0:,.2f}'.format(l.credit_sec)"/>
+                        </td>
+                        <td style="padding:0px;">
+                            <span t-field="l.analytic_account_id.name"/>
+                        </td>
+                    </tr>
+                        <t t-if="l_last">
+                        <tr>
+                            <td style="padding:0px;">
+                                SON: <strong t-esc="to_word(sum_debit).upper()"/>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <strong>TOTALES:</strong>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_debit)"/>
+
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_credit)"/>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_debit_sec)"/>
+                            </td>
+                            <td class="text-right" style="padding:0px;">
+                                <span t-esc="'{0:,.2f}'.format(sum_credit_sec)"/>
+                            </td>
+                            <td style="padding:0px;">
+
+                            </td>
+                        </tr>
+                        </t>
+                    </t>
+                </t>
+
+                </tbody>
+            </table>
+            <table class="table table-bordered" style="margin-bottom:0px;">
+                <tbody>
+                    <tr>
+                        <td class="text-center" style="padding-top:65px;">
+                            <p>_________________________ <br/><strong>ELABORADO POR</strong></p>
+                        </td>
+                        <td class="text-center" style="padding-top:65px;"><p>_________________________ <br/><strong>REVISADO POR</strong></p></td>
+                        <td class="text-center" style="padding-top:65px;"><p>_________________________ <br/><strong>APROBADO POR</strong></p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</t>
+</t>
+</template>
+
+</odoo>

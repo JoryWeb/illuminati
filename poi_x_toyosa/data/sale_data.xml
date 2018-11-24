@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+    
+    <record id="sequence_plate" model="ir.sequence">
+      <field name="name">Plate Processing</field>
+      <field name="code">plate.plate</field >
+      <field name="prefix">TP/%(year)s/</field>
+      <field name="padding">3</field>
+    </record>
+
+    <record id="stage_1" model="plate.stage.stage">
+        <field name="name">Recepción de Carpeta</field>
+        <field name="sequence">0</field>
+        <field name="load_on_create" eval="True"/>
+    </record>
+    <record id="stage_2" model="plate.stage.stage">
+        <field name="name">Inscripción en GAM</field>
+        <field name="sequence">1</field>
+        <field name="load_on_create" eval="True"/>
+    </record>
+    <record id="stage_3" model="plate.stage.stage">
+        <field name="name">Pago</field>
+        <field name="sequence">2</field>
+        <field name="load_on_create" eval="True"/>
+    </record>
+    <record id="stage_4" model="plate.stage.stage">
+        <field name="name">Kardex a Ejecutivo de Ventas</field>
+        <field name="sequence">3</field>
+        <field name="load_on_create" eval="True"/>
+    </record>
+    <record id="stage_5" model="plate.stage.stage">
+        <field name="name">Kardex firmado a tránsito</field>
+        <field name="sequence">4</field>
+        <field name="load_on_create" eval="True"/>
+    </record>
+    <record id="stage_6" model="plate.stage.stage">
+        <field name="name">Entrega de Placas</field>
+        <field name="sequence">5</field>
+        <field name="load_on_create" eval="True"/>
+    </record>
+
+
+    <record id="type_1" model="sale.type">
+        <field name="name">Venta Al Contado</field>
+    </record>
+    <record id="type_2" model="sale.type">
+        <field name="name">Venta CIF</field>
+    </record>
+    <record id="type_3" model="sale.type">
+        <field name="name">Venta A Credito Directo</field>
+    </record>
+    <record id="type_4" model="sale.type">
+        <field name="name">Venta a Prestamo (Empleados)</field>
+    </record>
+    <record id="type_5" model="sale.type">
+        <field name="name">Venta con Credito Bancario</field>
+    </record>
+    <record id="type_6" model="sale.type">
+        <field name="name">Venta por Re-Expedicion</field>
+    </record>
+    <record id="type_7" model="sale.type">
+        <field name="name">Venta por Licitacion</field>
+    </record>
+    <record id="type_8" model="sale.type">
+        <field name="name">Venta en Feria</field>
+    </record>
+    <record id="type_9" model="sale.type">
+        <field name="name">Venta Coorporativa</field>
+    </record>
+    <record id="type_10" model="sale.type">
+        <field name="name">Venta con Pago de Vehiculo</field>
+    </record>
+    <record id="type_11" model="sale.type">
+        <field name="name">Venta Leasing</field>
+    </record>
+    <record id="type_12" model="sale.type">
+        <field name="name">Venta Backordero</field>
+    </record>
+    <record id="type_13" model="sale.type">
+        <field name="name">Tractores Agrícolas(CUBOTA)</field>
+    </record>
+
+  </data>
+</odoo>

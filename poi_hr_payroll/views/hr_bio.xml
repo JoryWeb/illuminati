@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="view_hr_bio_form" model="ir.ui.view">
+        <field name="name">hr_bio_form</field>
+        <field name="model">hr.bio</field>
+        <field name="arch" type="xml">
+            <form string="Bio" version="7.0">
+                <header>
+                    <button name="hr_done_bio" states="draft" string="Cerrar" class="oe_highlight"/>
+                    <button name="hr_process_bio" states="draft" string="Ejecutar Revision" type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet string="Bio">
+                    <group col="4">
+                        <field name="name"/>                        
+                    </group>
+                    <group col="4">
+                        <label for="date_start" string="Periodo"/>
+                         <div>
+                               <field name="date_start" class="oe_inline"/> - <field name="date_end" class="oe_inline"/>
+                         </div>
+                    </group>
+                    <group>
+                        <field name="line_ids" widget="one2many">
+                            <tree editable="bottom">
+                                <field name="employee_id"/>
+                                <field name="date"/>
+                                <field name="date_in"/>
+                                <field name="date_out"/>
+                                <field name="working_hours"/>
+                                <field name="note"></field>
+                                <field name="state"></field>
+                                <field name="edit"></field>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>    
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_bio_tree" model="ir.ui.view">
+        <field name="name">hr_bio_tree</field>
+        <field name="model">hr.bio</field>
+        <field name="arch" type="xml">
+            <tree string="Bio">
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_bio" model="ir.actions.act_window">
+        <field name="name">Biometrico</field>
+        <field name="res_model">hr.bio</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_hr_bio" parent="hr_payroll.menu_hr_payroll_root" name="Biometrico"/>
+    <menuitem action="action_bio" id="menu_hr_bio_base" parent="menu_hr_bio"/>
+
+    
+    <record id="view_hr_bio_line_form" model="ir.ui.view">
+        <field name="name">hr_bio_line_form</field>
+        <field name="model">hr.bio.line</field>
+        <field name="arch" type="xml">
+            <form string="Bio" version="7.0">
+                <sheet string="Bio">
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="date"/>
+                                <field name="date_in" widget="float_time"/>
+                                <field name="date_out" widget="float_time"/>
+                            </group>
+                            <group>
+                                <field name="state"></field>
+                                <field name="edit"></field>
+                            </group>
+                        </group>
+                        <div class="oe_clear">
+                            <label for="note"/>
+                        </div>
+                        <field name="note"/>
+                </sheet>    
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_bio_line_tree" model="ir.ui.view">
+        <field name="name">hr_bio_line_tree</field>
+        <field name="model">hr.bio.line</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Lines" colors="red:state == 'm';blue:state == 's' ">
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="date_in"/>
+                <field name="date_out"/>
+                <field name="working_hours"/>
+                <field name="note"></field>
+                <field name="state"></field>
+                <field name="edit"></field>
+            </tree>
+        </field>
+    </record>
+    
+
+    <record id="action_bio_line" model="ir.actions.act_window">
+        <field name="name">Lineas de Biometrico</field>
+        <field name="res_model">hr.bio.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="action_bio_line"  parent="menu_hr_bio" id="menu_hr_bio_line"/>
+
+    <!-- Biometrico configuracion -->
+    
+    <record id="view_hr_bio_config_form" model="ir.ui.view">
+        <field name="name">hr_bio_config_form</field>
+        <field name="model">hr.bio.config</field>
+        <field name="arch" type="xml">
+            <form string="Bio" version="7.0">
+                <sheet string="Bio Config">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                            <field name="delay_time" widget="float_time"/>
+                        </group>
+                    </group>
+                </sheet>    
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_bio_config_tree" model="ir.ui.view">
+        <field name="name">hr_bio_config_tree</field>
+        <field name="model">hr.bio.config</field>
+        <field name="arch" type="xml">
+            <tree string="Bio Lines">
+                <field name="name"/>
+                <field name="active"/>
+                <field name="delay_time"/>
+            </tree>
+        </field>
+    </record>
+    
+
+    <record id="action_bio_config" model="ir.actions.act_window">
+        <field name="name">Configuracion Biometrico</field>
+        <field name="res_model">hr.bio.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_bio_config" id="menu_hr_bio_config" parent="hr_payroll.menu_hr_payroll_configuration"/>
+
+</data>
+</odoo>

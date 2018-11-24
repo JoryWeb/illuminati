@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="op_course_form_view_inherit" model="ir.ui.view">
+            <field name="name">op.course.form.view.inherit</field>
+            <field name="model">op.course</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_course_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form/sheet" position="replace">
+                        <header>
+                            <button name="change_status" string="Activar/Inactivar Clase" states="activo,inactivo"
+                                    class="oe_highlight" type="object"/>
+                            <field name="state" widget="statusbar" statusbar_visible="activo,inactivo,historico"/>
+                        </header>
+                        <sheet>
+                            <div class="oe_title oe_button_box" name="button_box">
+                                <button string="Alumnos" name="action_view_all_students" type="object" icon="fa-user"/>
+                            </div>
+                            <group colspan="4" col="4">
+                                <field name="course_id" col="4"/>
+                                <field name="course_responsable_1"/>
+                                <field name="school_year" col="4"/>
+                                <field name="course_responsable_2"/>
+                            </group>
+                            <group string="Subjects" name="subject">
+                                <field name="subject_ids" nolabel="1"/>
+                            </group>
+                        </sheet>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="op_course_tree_view_inherit" model="ir.ui.view">
+            <field name="name">op.course.tree.view.inherit</field>
+            <field name="model">op.course</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_course_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree" position="replace">
+                        <tree>
+                            <field name="course_id"/>
+                            <field name="school_year"/>
+                            <field name="course_responsable_1"/>
+                            <field name="course_responsable_2"/>
+                        </tree>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

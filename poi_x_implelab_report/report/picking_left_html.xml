@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+  <report
+    id="report_stock_picking_imp_html"
+    string="Nota de Remision (DOC)"
+    model="stock.picking"
+    report_type="aeroo"
+    name="poi_x_implelab_report.stock_picking_imp_html"
+    menu="True"
+  />
+
+  <record id="report_stock_picking_imp_html" model="ir.actions.report.xml">
+      <field name="tml_source">file</field>
+      <field name="parser_state">loc</field>
+      <field name="parser_loc">poi_x_implelab_report/report/picking.py</field>
+      <field name="out_format" ref="report_aeroo.report_mimetypes_doc_odt"></field>
+      <field name="report_name">poi_x_implelab_report.stock_picking_imp_html</field>
+      <field name="report_rml">poi_x_implelab_report/docs/entrega.odt</field>
+  </record>
+
+</data>
+
+<!--
+<template id="stock_picking_imp_html">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+
+  <div class="page" style="font-size:14px;">
+      <div class="row">
+          <div class="col-xs-12 text-center">
+              <h3>NOTA DE REMISION</h3>
+          </div>
+          <div class="col-xs-2 text-center">
+              <table class="table table-condensed">
+                  <tr>
+                      <th class="text-center">No.</th>
+
+                  </tr>
+                  <tbody>
+                      <tr>
+                        <td class="text-center">
+                            <span t-field="o.name"/>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="col-xs-2 col-xs-offset-8">
+              <table class="table table-condensed">
+                  <tr>
+                      <th class="text-center">Numero de Proforma</th>
+
+                  </tr>
+                  <tbody>
+                      <tr>
+                        <td class="text-center">
+                            <span t-field="order_id.name"/>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+             <strong>Cliente</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.partner_id.name"/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+              <strong>Forma de Pago</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="order_id.pay_type_id.html"/>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+        <br/>
+          <table class="table table-condensed table-bordered" style="margin-bottom:0px;">
+            <thead>
+              <tr style="background-color:#D8D8D8;">
+                <th><strong>Item</strong></th>
+                <th><strong>Codigo</strong></th>
+                <th><strong>Producto</strong></th>
+                <th><strong>Descripcion</strong></th>
+                <th><strong>Cantidad</strong></th>
+                <th><strong>P.U.</strong></th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-set="test_variable" t-value="0"/>
+              <t t-foreach="docs.move_lines" t-as="l">
+                <tr>
+                  <td>
+                    <span t-esc="l_index+1"/>
+                  </td>
+                  <td>
+                    <span t-field="l.product_id.default_code"/>
+                  </td>
+                  <td>
+                    <span t-field="l.name"/>
+                  </td>
+                  <td>
+                    <span t-field="l.product_id.description_sale"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-field="l.product_uom_qty"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="get_price(l.product_id.id, order_id)"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-esc="get_price(l.product_id.id, order_id) * l.product_uom_qty"/>
+                  </td>
+                </tr>
+                <t t-set="test_variable" t-value="(get_price(l.product_id.id, order_id) * l.product_uom_qty)+test_variable"/>
+              </t>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-7">
+            </div>
+            <div class="col-xs-5 text-right">
+              <table class="table table-condensed" style="margin-bottom:0px;">
+                <tbody>
+                    <tr>
+                      <td class="text-right">
+                        <strong>TOTAL:</strong>
+                      </td>
+                      <td class="text-right">
+                        <strog><span t-esc="test_variable"/></strog>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding-top:50px;">
+          <div class="col-xs-4 col-xs-offset-1 text-center">
+                _______________________________ <br/>
+                <strong>Entregado por</strong><br/>
+                <strong>Firma</strong>
+          </div>
+          <div class="col-xs-4 col-xs-offset-2 text-center">
+              _______________________________ <br/>
+              <strong>Recibido por</strong><br/>
+              <strong>Firma</strong>
+          </div>
+          <div class="col-xs-1">
+
+          </div>
+      </div>
+      <div class="row" style="padding-top:50px;">
+          <div class="col-xs-4 col-xs-offset-1">
+                <strong>Nombre:_______________________</strong><br/>
+                <strong>Fecha:________________________</strong>
+          </div>
+          <div class="col-xs-4 col-xs-offset-2">
+              <strong>Nombre:_______________________</strong><br/>
+              <strong>Fecha:________________________</strong>
+          </div>
+          <div class="col-xs-1">
+
+          </div>
+      </div>
+  </div>
+
+</t>
+</t>
+</template> -->
+
+</openerp>

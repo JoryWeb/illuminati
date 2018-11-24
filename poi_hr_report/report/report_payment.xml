@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_payment_report_tree" model="ir.ui.view">
+            <field name="name">Leave Request</field>
+            <field name="model">payment.report</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="employee_id"/>
+                    <field name="amount" sum="Total"/>
+                    <field name="acc_number"/>
+                    <field name="bank_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_payment_report_filter" model="ir.ui.view">
+            <field name="name">payment.report.filter</field>
+            <field name="model">payment.report</field>
+            <field name="arch" type="xml">
+                <search string="Search Leave">
+                    <filter string="Realizado" name="done" domain="[('state', '=', 'done')]"/>
+                    <separator></separator>
+
+                    <filter string="Periodo" name="period" context="{'group_by': 'date_from'}"/>
+                    <filter string="Empleado" name="employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Entidad Financiera" name="bank" context="{'group_by': 'bank_name'}"/>
+                    <field name="date_from"/>
+                    <field name="employee_id"/>
+                    <field name="bank_name"/>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="action_payment_report" model="ir.actions.act_window">
+            <field name="name">Planilla de Abono</field>
+            <field name="res_model">payment.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'search_default_period': 1, 'search_default_done':1}</field>
+            <field name="search_view_id" ref="view_payment_report_filter"/>
+        </record>
+
+        <menuitem action="action_payment_report" id="menu_payment_report" parent="menu_hr_payslip"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<template id="invoice_header_toy">
+	<div class="header">
+    <div class="row">
+      <div class="col-xs-4 text-center">
+          <!-- <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 130px;"/> -->
+
+          <p style="font-size:9px;padding:0;margin:0px;padding-top:78px;">CASA MATRIZ<br/><span t-field="o.company_id.street"/><br/><span t-field="o.company_id.street2"/><br/><span t-field="o.company_id.zip"/> <br/><span t-field="o.company_id.state_id.name"/> - <span t-field="o.company_id.country_id.name"/>
+          <t t-if="o.cc_dos.warehouse_id.branch != '0'">
+          <br/><span t-field="o.cc_dos.warehouse_id.branch"/> <br/><span t-field="o.cc_dos.warehouse_id.street"/><t t-if="o.cc_dos.warehouse_id.street2"> <br/><span t-field="o.cc_dos.warehouse_id.street2"/></t><br/><span t-field="o.cc_dos.warehouse_id.zip"/> <br/>Telefonos <span t-field="o.cc_dos.warehouse_id.phone"/> <br/><span t-field="o.cc_dos.warehouse_id.state_id.name"/> - <span t-field="o.cc_dos.warehouse_id.country_id.name"/>
+          </t>
+          </p>
+      </div>
+      <div class="col-xs-4 text-center">
+
+        <p style="padding-top:80px;" t-esc="page_title" t-att-data-menutitle="page_menutitle or page_title" t-att-class="'hidden' if hide_title else ''"/>
+        <p t-esc="page_sub_title" t-att-data-menutitle="page_menutitle or page_title" t-att-class="'hidden' if hide_title else ''"/>
+        <t t-raw="0"/>
+        <!-- <p>ZONA FRANCA - SIN DERECHO A <BR/>CREDITO FISCAL</p> -->
+      </div>
+      <div class="col-xs-4">
+        <!--p style="font-size:18px;padding-top:40px;"><strong>NIT: <span t-field="o.company_id.partner_id.nit"></span></strong></p-->
+        <p style="font-size:17px;padding-top:60px;"><strong>N° FACTURA: <span t-field="o.cc_nro"></span></strong></p>
+        <p style="font-size:14px;"><strong>N° AUTORIZACION: <span t-field="o.cc_aut"></span></strong></p>
+        <p style="font-size:9px;padding-top:58px;"><span t-field="o.cc_dos.activity_id.name"/></p>
+        <span style="font-size:10px;">Hoja:<span class="article"/> de <span class="topage"/></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" style="font-size:12px;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-8">
+              <p><strong>Fecha: </strong><span t-field="o.date_invoice" t-field-options='{"format": "d"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "MMMM"}'/> de <span t-field="o.date_invoice" t-field-options='{"format": "y"}'/></p>
+              <p><strong>Señor(a)(es): </strong><span t-field="o.razon"></span></p>
+              <p><strong>DIRECCION: </strong><span t-field="o.partner_id.street"></span> <span t-field="o.partner_id.street2"></span></p>
+              <p t-att-class="'hidden' if other else ''">
+                <strong>Nro OT:</strong>
+                <!-- <span t-field="o.origin"></span>
+                Chasis: <span t-field="o.asset_id.n_chasis"></span> Marca: <span
+                    t-field="o.asset_id.marca.name"></span> Placa: <span
+                    t-field="o.asset_id.name"></span> -->
+              </p>
+            </div>
+            <div class="col-xs-4">
+              <p><strong>NIT/C.I.: </strong><span t-field="o.nit"/></p>
+              <p><strong>TELEFONO: </strong><span t-field="o.partner_id.phone"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="invoice_footer_toy">
+<div class="footer" style="font-size:12px;">
+    <div class="last-page">
+      <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="col-xs-10">
+                      Son:  <span t-esc="to_word(o.amount_total_exchange).upper()"/>
+                    </div>
+                    <div class="col-xs-2 text-right">
+                      <span t-field="o.amount_total_exchange"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-8">
+                      <p><strong>Codigo De Control:</strong>  <span t-field="o.cc_cod"/></p>
+                      <p><strong>Fecha Limite de emision:</strong><span t-field="o.cc_dos.fecha_fin"/></p>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <span t-if="((o.type == 'out_invoice' or o.type == 'out_refund') and (o.state == 'open' or o.state == 'paid'))" ><img t-att-src="'data:image/png;base64,%s' % o.qr_img" style="height: 4.2cm;"/></span>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <p>
+                      <strong>ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS. EL USO ILÍCITO DE ÉSTA SERÁ SANCIONADO DE ACUERDO A LA LEY.</strong><br/><span t-field="o.cc_dos.leyenda_id.name" style="font-size:10px;"/></p>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</template>
+</data>
+</odoo>

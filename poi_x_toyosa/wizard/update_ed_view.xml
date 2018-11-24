@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_poi_purchase_line_update_wizard" model="ir.ui.view">
+            <field name="name">Actualizar dato Serie</field>
+            <field name="model">poi.purchase.line.update.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Actualizar dato Serie">
+                    <group col="1">
+                        <field name="order_line_id" invisible="1"/>
+                        <field name="edicion" />
+                        <field name="partida" />
+                    </group>
+                    <footer>
+                        <button name="update_line" string="Actualizar" type="object" class="btn-primary"/>
+                        or
+                        <button string="Salir" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_poi_purchase_line_update_wizard" model="ir.actions.act_window">
+            <field name="name">Actualizar dato Serie</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.purchase.line.update.wizard</field>
+            <field name="view_id" ref="view_poi_purchase_line_update_wizard"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

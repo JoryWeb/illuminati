@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+	<record id="res_config_settings_view_form_cash_exchange" model="ir.ui.view">
+	    <field name="name">res.config.cash.exchange</field>
+	    <field name="model">res.config.settings</field>
+	    <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+	    <field name="arch" type="xml">
+				<xpath expr="//div[@id='recommended_apps']" position="after">
+					<h2 groups="account.group_account_user">Cambio de Moneda(Valores Por Defecto)</h2>
+					<div class="row mt16 o_settings_container" id="money_exchange_apps" groups="account.group_account_user">
+							<div class="col-xs-12 col-md-6 o_setting_box" id="asset_types" title="">
+									<div class="o_setting_left_pane">
+
+									</div>
+									<div class="o_setting_right_pane">
+											<label string="Diario por defeco"/>
+											<div class="text-muted">
+													El diario que toma por defecto en el Modulo Cambio de Moneda
+											</div>
+											<div class="content-group">
+													<div class="row mt16">
+															<label for="default_journal_id" class="col-md-3 o_light_label"/>
+															<field name="default_journal_id" options="{'no_create_edit': True, 'no_open': True}"/>
+													</div>
+											</div>
+									</div>
+							</div>
+							<div class="col-xs-12 col-md-6 o_setting_box" title="This allows you to manage the revenue recognition on selling products. It keeps track of the installments occurred on those revenue recognitions, and creates account moves for those installment lines.">
+									<div class="o_setting_left_pane">
+
+									</div>
+									<div class="o_setting_right_pane">
+											<label string="Cuenta por defeco"/>
+											<div class="text-muted">
+													El Cuenta Contable que toma por defecto en el Modulo Cambio de Moneda.
+											</div>
+											<div class="content-group">
+													<div class="row mt16">
+															<label for="default_account_tc_id" class="col-md-3 o_light_label"/>
+															<field name="default_account_tc_id" options="{'no_create_edit': True, 'no_open': True}"/>
+													</div>
+											</div>
+									</div>
+							</div>
+							<div class="col-xs-12 col-md-6 o_setting_box" title="This allows you to manage the revenue recognition on selling products. It keeps track of the installments occurred on those revenue recognitions, and creates account moves for those installment lines.">
+									<div class="o_setting_left_pane">
+
+									</div>
+									<div class="o_setting_right_pane">
+											<label string="Moneda por defeco"/>
+											<div class="text-muted">
+													Moneda que toma por defecto en el Modulo Cambio de Moneda.
+											</div>
+											<div class="content-group">
+													<div class="row mt16">
+															<label for="default_tc_id" class="col-md-3 o_light_label"/>
+															<field name="default_tc_id" options="{'no_create_edit': True, 'no_open': True}"/>
+													</div>
+											</div>
+									</div>
+							</div>
+					</div>
+				</xpath>
+
+						<!-- <group name="analytic_account_purchase" position="after">
+                <group string="Cajas y Tipo de Cambio" name="config_cash_exchange">
+                    <label for="id" string="Cajas y Tipo de Cambio"/>
+                   <div>
+                        <div>
+                            <label for="default_journal_id"/>
+                            <field name="default_journal_id" class="oe_inline"/>
+
+                        </div>
+                        <div>
+                            <label for="default_account_tc_id"/>
+                            <field name="default_account_tc_id" class="oe_inline"/>
+                        </div>
+                        <div>
+                            <label for="default_tc_id"/>
+                            <field name="default_tc_id" class="oe_inline"/>
+                        </div>
+                    </div>
+                </group>
+            </group> -->
+	    </field>
+	</record>
+</data>
+</odoo>

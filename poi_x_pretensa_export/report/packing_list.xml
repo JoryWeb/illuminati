@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <record id="poi_sale_export.paperformat_packing_list" model="report.paperformat">
+    <field name="name">Lista de Empaque</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">45</field>
+    <field name="margin_bottom">5</field>
+    <field name="margin_left">5</field>
+    <field name="margin_right">5</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">40</field>
+    <field name="dpi">90</field>
+  </record>
+</data>
+
+
+<template id="poi_sale_export.packing_list_template">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+
+<div class="header">
+<div class="row">
+    <div class="col-xs-4 text-center" id="first_column_header">
+        <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-width: 180px;"/><strong>    LTDA.</strong>
+        <div style="font-size:12px;">
+            <p style="font-size:11px;padding:0;margin:0px;">CASA MATRIZ<br/><span t-field="o.company_id.street"/> <span t-field="o.company_id.street2"/><br/>TELEFONO <span t-field="o.company_id.phone"/> <br/><span t-field="o.company_id.state_id.name"/> - <span t-field="o.company_id.country_id.name"/>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="col-xs-4 text-center" style="margin-top:20px;" id="second_column_header">
+            <h3><strong>Lista de Empaque</strong></h3>
+    </div>
+    <div class="col-xs-4 text-center" id="third_column_header" style="padding-top:20px;">
+        <p>
+            Referida a la Factura N°: <strong><span t-field="inv_id.cc_nro"/></strong>
+        </p>
+    </div>
+     <div class="row zero_min_height" id="header_line">
+        <div class="col-xs-12">
+            <div style="border-bottom: 1px solid black;"/>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="page" style="font-size:14px;">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-12">
+                      <p><strong>Lugar y Fecha: </strong>  <span t-field="o.company_id.state_id.name"/>, <span t-field="o.date_order" t-field-options='{"format": "d"}'/> de <span t-field="o.date_order" t-field-options='{"format": "MMMM"}'/> de <span t-field="o.date_order" t-field-options='{"format": "y"}'/></p>
+                      <p><strong>Nombre: </strong><span t-field="o.partner_id.name"/></p>
+                      <p><strong>Dirección del Importador: </strong><span t-field="o.partner_id.street"/> <span t-field="o.partner_id.street2"/> Telef. <span t-field="o.partner_id.phone"/> <span t-field="o.partner_id.state_id.name"/>, <span t-field="o.partner_id.country_id.name"/></p>
+                      <p><strong><span t-field="o.partner_id.country_id.name_code_export"/>: </strong><span t-field="o.partner_id.code_export"/></p>
+                  </div>
+                </div>
+            </div>
+            <div class="panel-body" style="min-height:450px;">
+                <table class="table table-condensed" >
+                    <thead>
+                        <tr>
+                            <th>CANTIDAD</th>
+                            <!-- <th>Nro. DE BULTOS</th> -->
+                            <th>CONTENIDO</th>
+                            <th class="text-right">DIMENSIONES UNITARIAS</th>
+                            <th class="text-right">PESO (Kg.)</th>
+                            <th class="text-right">PESO TOTAL (Kg.)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <tr t-foreach="o.order_line" t-as="l">
+                            <td><span t-field="l.product_uom_qty"/></td>
+                            <!-- <td>
+                                <span t-field="l.product_id.default_code"></span>
+                            </td> -->
+                            <td>
+                              <p><span t-field="l.name"></span></p>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="l.product_dimension[0].name_get()[0][1]"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="l.weight" t-field-options='{"widget": "monetary", "display_currency": "currency_rep"}'/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="l.total_weight" t-field-options='{"widget": "monetary", "display_currency": "currency_rep"}'/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+      <div class="panel panel-default">
+          <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-4">
+                    <p><strong>Naturaleza del Producto:</strong></p>
+                </div>
+                <t t-set="tags" t-value="o.tag_ids.mapped('name')"/>
+                <div class="col-xs-4">
+                    <p>Liquido <t t-if="'Liquido' in tags"> <strong>X</strong> </t></p>
+                    <p>Fragil <t t-if="'Fragil' in tags"> <strong>X</strong> </t></p>
+                    <p>Otro: <strong><span t-field="o.other_tag" /></strong></p>
+                </div>
+                <div class="col-xs-4">
+                    <p>Solido <t t-if="'Solido' in tags"> <strong>X</strong> </t></p>
+                    <p>Peligroso <t t-if="'Peligroso' in tags"> <strong>X</strong> </t></p>
+                </div>
+                <!-- <div class="col-xs-12">
+                    <p><strong>Recomendaciones de Manejo...</strong> <span t-field="o.note"/></p>
+                </div> -->
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8">
+                    <p><strong>Peso Neto Total (Kg.): </strong><span t-field="o.total_weight" t-field-options='{"widget": "monetary", "display_currency": "currency_rep"}'/> </p>
+                    <p><strong>Peso Bruto Total (Kg.): </strong><span t-field="o.total_weight" t-field-options='{"widget": "monetary", "display_currency": "currency_rep"}'/></p>
+                    <p><strong>PRODUCTO DE ORIGEN BOLIVIANO</strong></p>
+                </div>
+                <div class="col-xs-4">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+
+                </div>
+                <div class="col-xs-4">
+                    <strong>Firma y Sello</strong>
+                </div>
+            </div>
+
+
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+</t>
+</t>
+</template>
+
+</odoo>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="act_account_payment_request" model="ir.actions.act_window">
+            <field name="name">Payments</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('payment_request_id','=',active_id)]</field>
+            <!--<field name="context">{'search_default_payment_request_id': active_id}</field>-->
+        </record>
+
+
+        <record id="act_account_cash_movement_payment_request" model="ir.actions.act_window">
+            <field name="name">Cash Movements</field>
+            <field name="res_model">account.cash.movement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('payment_request_id','=',active_id)]</field>
+            <field name="context">{'default_payment_request_id': active_id}</field>
+            <!--<field name="context">{'search_default_payment_request_id': active_id}</field>-->
+        </record>
+
+        <!-- Create Payment -->
+        <record id="action_account_payment_create" model="ir.actions.act_window">
+            <field name="name">Register Payment</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="context">{'default_payment_type': 'inbound', 'default_payment_request_id': active_id}</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- OUTBOUND REQUESTS -->
+
+        <record id="account_payment_request_tree" model="ir.ui.view">
+            <field name="name">account.payment.request.tree</field>
+            <field name="model">account.payment.request</field>
+            <field name="arch" type="xml">
+                <tree string="Outbound Payment Requests">
+                    <field name="name"/>
+                    <field name="amount_total"/>
+                    <field name="amount_currency_id" />
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <!--<field name="project_id"/>-->
+                    <field name="user_id"/>
+                    <field name="type_request"/>
+                    <field name="partner_id"/>
+                    <field name="date_request"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="account_payment_request_form" model="ir.ui.view">
+            <field name="name">account.payment.request.form</field>
+            <field name="model">account.payment.request</field>
+            <field name="arch" type="xml">
+                <form string="Outbound Payment Requests">
+                    <header>
+                        <button name="action_request" type="object" states="draft" string="Confirm"
+                                groups="account.group_account_invoice"/>
+                        <button name="action_approve" type="object" states="requested" string="Approve"
+                                groups="account.group_account_manager"/>
+                        <button name="action_reject" type="object" states="requested" string="Reject"
+                                groups="account.group_account_manager"/>
+                        <button name="do_create" type="object" states="partial" string="Create additional payment"
+                                groups="account.group_account_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,requested,confirmed,closed"/>
+                    </header>
+                    <sheet string="Outbound Payment Requests">
+                        <div class="oe_title oe_left">
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                            <button class="oe_inline oe_stat_button" type="action"
+                                    name="%(poi_payment_request.act_account_payment_request)d"
+                                    icon="fa-usd">
+                                <field string="Payments" name="payment_count" widget="statinfo"/>
+                            </button>
+                            <button class="oe_inline oe_stat_button" type="action"
+                                    name="%(poi_payment_request.act_account_cash_movement_payment_request)d"
+                                    context="{}"
+                                    icon="fa-bars">
+                                <field string="Cash Movements" name="movement_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="payment_type" invisible="1"/>
+                                <field name="hide_payment_method" invisible="1"/>
+                                <field name="type_request"
+                                       on_change="onchange_payment_request(partner_id, type_request)" required="1" attrs="{'readonly': [('state','!=','draft')]}" domain="[('payment_type','=','outbound')]"/>
+                                <field name="default_mode" invisible="1"/>
+                                <field name="partner_id" on_change="onchange_payment_request(partner_id, type_request)"
+                                       attrs="{'required': [('default_mode','=','document')], 'readonly': [('state','!=','draft')]}"  string="Supplier"/>
+                                <field name="journal_id" attrs="{'readonly': [('state','in',('confirmed','closed','cancel','rejected'))]}" domain="[('type','in',['bank', 'cash'])]"/>
+                                <field name="account_analytic_id" attrs="{'readonly': [('state','in',('confirmed','closed','cancel','rejected'))]}"/>
+                                <field name="amount_requested"
+                                       attrs="{'invisible': [('default_mode','=','document')], 'required': [('default_mode','=','new')], 'readonly': [('state','!=','draft')]}"/>
+                                <field name="amount_currency_id"
+                                       attrs="{'required': [('default_mode','=','new')], 'readonly': [('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="date_request" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="user_id" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="issued_to_requestor" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="one_pay_only" attrs="{'readonly': [('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Documents" attrs="{'invisible': [('default_mode','=','new')]}">
+                                <field name="document_ids" attrs="{'readonly': [('state','!=','draft')]}">
+                                    <tree editable="bottom" create="0">
+                                        <field name="pay"/>
+                                        <field name="type" readonly="1"/>
+                                        <field name="document" readonly="1"/>
+                                        <field name="balance" readonly="1"/>
+                                        <field name="currency_id" readonly="1"/>
+                                        <field name="fee_number"/>
+                                        <field name="amount_applied"/>
+                                        <field name="source_document" invisible="1"/>
+                                        <button name="open_document" type="object" string="View Document"/>
+                                        <field name="res_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Detalles de pago" attrs="{'invisible': [('hide_payment_method', '=', True)]}">
+                                <field name="check_rendition" invisible="1"/>
+                                <field name="payment_method_id" widget="radio" attrs="{'readonly': [('state','!=','requested')]}"/>
+                                <field name="payment_method_code" invisible="1"/>
+                                <br/>
+                                <group>
+                                    <group>
+                                        <field name="bank_id" attrs="{'readonly': [('state','!=','requested')]}"/>
+                                        <field name="bank_account_id"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['check_inbound','check_outbound','transfer_inbound','transfer_outbound'])]}"/>
+                                        <field name="checkbook_id"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                                        <field name="check_id" readonly="1"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="transaction_date"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['transfer_inbound','transfer_outbound'])]}"/>
+                                        <field name="transaction_number"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['transfer_inbound','transfer_outbound'])]}"/>
+                                        <field name="bank_card_issuer"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['card_inbound','card_outbound'])]}"/>
+                                        <field name="bank_card_type"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['card_inbound','card_outbound'])]}"/>
+                                        <field name="check_number"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['check_inbound'])]}"/>
+                                        <field name="bank_card_id"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['card_outbound'])]}"/>
+                                        <field name="bank_card_code"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('payment_method_code','not in',['card_inbound'])]}"/>
+                                        <field name="other_payment_data"
+                                               attrs="{'readonly': [('state','!=','requested')],'invisible': [('hide_payment_method', '=', True)]}"/>
+                                    </group>
+                                </group>
+
+                            </page>
+                            <page string="Rendition">
+                                <button name="%(payment_request_expenses_wiz_action_form)d" string="Agregar Rendiciones" class="btn btn-xs btn-primary" type="action" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                                <field name="rendition_ids"/>
+                            </page>
+                        </notebook>
+                        <group class="oe_subtotal_footer oe_right">
+                            <field name="amount_total" widget="monetary" class="oe_form_field oe_form_field_float oe_form_field_monetary"
+                                   options="{'currency_field': 'amount_currency_id'}"/>
+                            <field name="amount_paid" widget="monetary" class="oe_form_field oe_form_field_float oe_form_field_monetary"
+                                   options="{'currency_field': 'amount_currency_id'}"/>
+                            <field name="amount_open" widget="monetary" class="oe_subtotal_footer_separator"
+                                   options="{'currency_field': 'amount_currency_id'}"/>
+                        </group>
+                        <group>
+                            <field name="notes" attrs="{'readonly': [('state','in',('confirmed','closed','cancel','rejected'))]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_payment_request_search" model="ir.ui.view">
+            <field name="name">account.payment.request.search</field>
+            <field name="model">account.payment.request</field>
+            <field name="arch" type="xml">
+                <search string="Outbound Payment Requests">
+                    <field name="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="type_request"/>
+                    <field name="date_request"/>
+                    <field name="state"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Type Request" name="type_request" context="{'group_by':'type_request'}"/>
+                        <filter name="state" string="State" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Partner" context="{'group_by':'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_payment_request" model="ir.actions.act_window">
+            <field name="name">Outbound Payment Requests</field>
+            <field name="res_model">account.payment.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('payment_type','=','outbound')]</field>
+            <field name="context">{'default_payment_type': 'outbound'}</field>
+            <field name="search_view_id" ref="account_payment_request_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create outbound payment requests
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_payment_request_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account_payment_request_tree"/>
+            <field name="act_window_id" ref="action_payment_request"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_payment_request_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account_payment_request_form"/>
+            <field name="act_window_id" ref="action_payment_request"/>
+        </record>
+
+        <menuitem action="action_payment_request" id="menu_action_payment_request" sequence="15"
+                  parent="account.menu_finance_payables"/>
+        <!--<menuitem action="action_payment_request" id="menu_action_payment_request2" sequence="1" parent="purchase.menu_procurement_management_invoice"/>-->
+
+        <!-- INBOUND REQUESTS -->
+        <!-- NOTE: Some fields will be hidden because we're working with a specific design, but they will be enabled soon -->
+
+        <record id="account_inbound_payment_request_tree" model="ir.ui.view">
+            <field name="name">account.payment.request.tree</field>
+            <field name="model">account.payment.request</field>
+            <field name="arch" type="xml">
+                <tree string="Inbound Payment Requests">
+                    <field name="partner_id" string="Customer"/>
+                    <field name="amount_total"/>
+                    <field name="amount_currency_id" />
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <!--<field name="project_id"/>-->
+                    <field name="user_id"/>
+                    <!--<field name="type_request"/>-->
+                    <field name="date_request"/>
+                    <field name="journal_id" />
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="account_inbound_payment_request_form" model="ir.ui.view">
+            <field name="name">account.payment.request.form</field>
+            <field name="model">account.payment.request</field>
+            <field name="arch" type="xml">
+                <form string="Inbound Payment Requests">
+                    <header>
+                        <button name="action_request" type="object" states="draft" string="Confirm"
+                                groups="account.group_account_invoice"/>
+                        <button name="%(action_account_payment_create)d" type="action" states="confirmed,partial" string="Register Payment"
+                                groups="account.group_account_invoice"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,requested,confirmed,closed"/>
+                    </header>
+                    <sheet string="Inbound Payment Requests">
+                        <div class="oe_title oe_left">
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                            <button class="oe_inline oe_stat_button" type="action"
+                                    name="%(poi_payment_request.act_account_payment_request)d"
+                                    icon="fa-usd">
+                                <field string="Payments" name="payment_count" widget="statinfo"/>
+                            </button>
+                            <!--<button class="oe_inline oe_stat_button" type="action"
+                                    name="%(poi_payment_request.act_account_cash_movement_payment_request)d"
+                                    icon="fa-bars">
+                                <field string="Cash Movements" name="movement_count" widget="statinfo"/>
+                            </button>-->
+                        </div>
+                        <group>
+                            <group>
+                                <field name="payment_type" invisible="1"/>
+                                <field name="default_mode" invisible="1"/>
+                                <field name="partner_id" on_change="onchange_payment_request(partner_id, type_request)"
+                                       required="1" string="Customer" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="journal_id" attrs="{'readonly': [('state','!=','draft')]}" domain="[('type','in',['bank', 'cash'])]"/>
+                                <field name="account_analytic_id"/>
+                                <field name="amount_requested"
+                                       attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="amount_currency_id"
+                                       attrs="{'readonly': [('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="date_request" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="user_id" attrs="{'readonly': [('state','!=','draft')]}"/>
+
+                                <!--<field name="issued_to_requestor" attrs="{'readonly': [('state','!=','draft')]}"/>-->
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Datos del Deposito">
+                                <group>
+                                    <group>
+                                        <field name="no_voucher" attrs="{'readonly': [('state','in',['closed','cancel','rejected'])]}"/>
+                                        <field name="bank_id" attrs="{'readonly': [('state','in',['closed','cancel','rejected'])]}"/>
+                                        <field name="payment_date" attrs="{'readonly': [('state','in',['closed','cancel','rejected'])]}"/>
+                                        <field name="payment_code" attrs="{'readonly': [('state','in',['closed','cancel','rejected'])]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!-- <page string="Documents" attrs="{'invisible': [('default_mode','=','new')]}">
+                                <field name="document_ids" attrs="{'readonly': [('state','!=','draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="pay"/>
+                                        <field name="type"/>
+                                        <field name="document"/>
+                                        <field name="balance"/>
+                                        <field name="currency_id"/>
+                                        <field name="fee_number"/>
+                                        <field name="amount_applied"/>
+                                        <field name="source_document" widget="link"/>
+                                        <field name="res_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page> -->
+                        </notebook>
+                        <group class="oe_subtotal_footer oe_right">
+                            <field name="amount_total" widget="monetary" class="oe_subtotal_footer_separator"
+                                   options="{'currency_field': 'amount_currency_id'}"/>
+                        </group>
+                        <group>
+                            <field name="notes" attrs="{'readonly': [('state','!=','draft')]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_inbound_payment_request_search" model="ir.ui.view">
+            <field name="name">account.inbound.payment.request.search</field>
+            <field name="model">account.payment.request</field>
+            <field name="arch" type="xml">
+                <search string="Inbound Payment Requests">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="partner_id" string="Customer"/>
+                    <field name="user_id"/>
+                    <field name="type_request"/>
+                    <field name="date_request"/>
+                    <field name="state"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Type Request" name="type_request" context="{'group_by':'type_request'}"/>
+                        <filter name="state" string="State" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Partner" context="{'group_by':'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_inbound_payment_request" model="ir.actions.act_window">
+            <field name="name">Inbound Payment Requests</field>
+            <field name="res_model">account.payment.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('payment_type','=','inbound')]</field>
+            <field name="context">{'default_payment_type': 'inbound'}</field>
+            <field name="search_view_id" ref="account_inbound_payment_request_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create inbound payment requests
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_inbound_payment_request_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account_inbound_payment_request_tree"/>
+            <field name="act_window_id" ref="action_inbound_payment_request"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_inbound_payment_request_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account_inbound_payment_request_form"/>
+            <field name="act_window_id" ref="action_inbound_payment_request"/>
+        </record>
+
+        <menuitem action="action_inbound_payment_request" id="menu_action_inbound_payment_request" sequence="15"
+                  parent="account.menu_finance_receivables"/>
+
+
+
+
+
+        <!-- REQUEST TYPE -->
+
+        <menuitem id="poi_account_payment_request_configuration_menu" name="Payments Request" parent="account.menu_finance_configuration"
+                  sequence="16" groups="account.group_account_manager"/>
+
+        <record id="account_payment_request_type_tree" model="ir.ui.view">
+            <field name="name">account.payment.request.type.tree</field>
+            <field name="model">account.payment.request.type</field>
+            <field name="arch" type="xml">
+                <tree string="Payment Request Types">
+                    <field name="name"/>
+                    <field name="force_po_inv"/>
+                    <!--<field name="force_pr"/>--><!-- we do not have anymore comprobantes de compra -->
+                    <!--<field name="project_id"/>-->
+                    <field name="force_notes"/>
+                    <field name="default_function"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="account_payment_request_type_form" model="ir.ui.view">
+            <field name="name">account.payment.request.type.form</field>
+            <field name="model">account.payment.request.type</field>
+            <field name="arch" type="xml">
+                <form string="Payment Request Types">
+                    <sheet string="Payment Request Types">
+                        <div class="oe_title">
+                            <label string="Name" for="name"/>
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="default_mode"/>
+                            <field name="payment_type"/>
+                        </group>
+                        <div class="oe_right" name="options">
+                            <field name="default_function" widget="radio"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </div>
+                        <group attrs="{'invisible': [('default_mode','=','new')]}">
+                            <field name="force_po_inv"/>
+                            <!--<field name="force_pr"/>--><!-- we do not have anymore comprobantes de compra -->
+
+                        </group>
+                        <group>
+                            <field name="force_notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_inbound_payment_request_type" model="ir.actions.act_window">
+            <field name="name">Inbound Payment Request Types</field>
+            <field name="res_model">account.payment.request.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('payment_type','=','inbound')]</field>
+            <field name="context">{'default_payment_type': 'inbound'}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Please make click to create a new type of inbound payment request.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_outbound_payment_request_type" model="ir.actions.act_window">
+            <field name="name">Outbound Payment Request Types</field>
+            <field name="res_model">account.payment.request.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('payment_type','=','outbound')]</field>
+            <field name="context">{'default_payment_type': 'outbound'}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Please make click to create a new type of outbound payment request.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_inbound_payment_request_type" id="menu_action_inbound_payment_request_type" sequence="1" parent="poi_account_payment_request_configuration_menu"/>
+        <menuitem action="action_outbound_payment_request_type" id="menu_action_outbound_payment_request_type" sequence="2" parent="poi_account_payment_request_configuration_menu"/>
+
+    </data>
+</odoo>

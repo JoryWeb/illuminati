@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record id="product_template_related_form_view" model="ir.ui.view">
+            <field name="name">product.template.related.common.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Products Related">
+                        <field name="product_related_ids" widget="many2many_kanban">
+                            <kanban quick_create="false" create="true" delete="true">
+                                <field name="image_small"/>
+                                <field name="lst_price"/>
+                                <field name="is_product_variant"/>
+                                <field name="product_variant_count"/>
+                                <field name="product_variant_ids"/>
+                                <field name="currency_id"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div class="oe_kanban_global_click">
+                                            <a t-if="! read_only_mode" type="delete"
+                                               style="position: absolute; right: 0; padding: 4px; diplay: inline-block">
+                                                X
+                                            </a>
+                                            <div class="o_kanban_image">
+                                                <img t-att-src="kanban_image('product.template', 'image_small', record.id.value)"/>
+                                            </div>
+                                            <div class="oe_kanban_details">
+                                                <strong>
+                                                    <span t-if="record.default_code.value">[<field name="default_code"/>
+                                                        ]
+                                                    </span>
+                                                    <field name="name"/>
+                                                </strong>
+                                                <div t-if="record.product_variant_count.value &gt; 1">
+                                                    <strong>
+                                                        <t t-esc="record.product_variant_count.value"/>
+                                                        Variants
+                                                    </strong>
+                                                </div>
+                                                <div name="tags"/>
+                                                <ul>
+                                                    <li>Price:
+                                                        <field name="lst_price" widget="monetary"></field>
+                                                    </li>
+                                                </ul>
+                                                <div name="tags"/>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

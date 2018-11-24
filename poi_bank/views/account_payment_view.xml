@@ -1,0 +1,184 @@
+<odoo>
+
+    <record id="view_account_payment_bank_form" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="poi_bol_base.view_account_payment_form_inh"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_account_number']" position="replace">
+                <field name="bank_account_id" attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','bank_transfer'))]}"/>
+            </xpath>
+            <xpath expr="//field[@name='bank']" position="replace">
+                <field name="bank_id" attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','check','bank_transfer'))]}"/>
+            </xpath>
+            <xpath expr="//field[@name='check_number']" position="replace">
+                <field name="checkbook_id" attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                <field name="check_number" attrs="{'readonly': [('checkbook_id','!=',False)]}"/>
+                <div class="oe_inline">
+                    <field name="check_id" readonly="1" attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}" class="oe_inline"/>
+                    <button name="generate_check_wizard" context="{'checkbook_id':checkbook_id}"
+                        type="object"
+                        string="Generate Check" class="oe_inline"
+                        attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                </div>
+            </xpath>
+            <xpath expr="//page" position="inside">
+                <group string="Datos destino" attrs="{'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}">
+                    <field name="destination_journal_type" invisible="1"/>
+                    <field name="destination_bank_id"
+                           attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                    <field name="destination_bank_account_id"
+                           attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_payment_invoice_bank_form" model="ir.ui.view">
+        <field name="name">account.payment.invoice.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="poi_bol_base.view_account_payment_invoice_form_inh"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_account_number']" position="replace">
+                <field name="bank_account_id" attrs="{'invisible': [('payment_model','not in',('other','check','bank_transfer'))], 'required': [('payment_model','in',('other','bank_transfer'))]}"/>
+            </xpath>
+            <xpath expr="//field[@name='check_number']" position="replace">
+                <field name="checkbook_id" attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                <field name="check_number" attrs="{'readonly': [('checkbook_id','!=',False)]}"/>
+                <div class="oe_inline">
+                    <field name="check_id" readonly="1" attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}" class="oe_inline"/>
+                    <!--<button name="generate_check_wizard" context="{'checkbook_id':checkbook_id}"
+                        type="object"
+                        string="Generate Check" class="oe_inline"
+                        attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>-->
+                </div>
+            </xpath>
+            <xpath expr="//page" position="inside">
+                <group string="Datos destino" attrs="{'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}">
+                    <field name="destination_journal_type" invisible="1"/>
+                    <field name="destination_bank_id"
+                           attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                    <field name="destination_bank_account_id"
+                           attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!--<record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="after">
+                <notebook>
+                    <page string="Payment Details" attrs="{'invisible': [('hide_payment_method', '=', True)]}">
+                        <group>
+                            <group>
+                                <field name="journal_type" invisible="1"/>
+                                <field name="bank_id"/>
+                                <field name="bank_account_id"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_inbound','check_outbound','transfer_inbound','transfer_outbound'])]}"/>
+                                <field name="checkbook_id"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                                <field name="check_id" readonly="1"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                                <button name="generate_check_wizard" context="{'checkbook_id':checkbook_id}"
+                                        type="object"
+                                        string="Generate Check" class="oe_highlight"
+                                        attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                            </group>
+                            <group>
+                                <field name="transaction_date"
+                                       attrs="{'invisible': [('payment_method_code','not in',['transfer_inbound','transfer_outbound'])]}"/>
+                                <field name="transaction_number"
+                                       attrs="{'invisible': [('payment_method_code','not in',['transfer_inbound','transfer_outbound'])]}"/>
+                                <field name="bank_card_issuer"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_inbound','card_outbound'])]}"/>
+                                <field name="bank_card_type"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_inbound','card_outbound'])]}"/>
+                                <field name="check_number"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_inbound'])]}"/>
+                                <field name="bank_card_id"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_outbound'])]}"/>
+                                <field name="bank_card_code"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_inbound'])]}"/>
+                                <field name="other_payment_data"
+                                       attrs="{'invisible': [('hide_payment_method', '=', True)]}"/>
+                            </group>
+                        </group>
+                        <separator string="Destination Data"
+                                   attrs="{'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                        <group>
+                            <field name="destination_journal_type" invisible="1"/>
+                            <field name="destination_bank_id"
+                                   attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                            <field name="destination_bank_account_id"
+                                   attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                        </group>
+
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_bank_payment_invoice_form" model="ir.ui.view">
+            <field name="name">account.payment.invoice.form</field>
+            <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="after">
+                <notebook>
+                    <page string="Payment Details" attrs="{'invisible': [('hide_payment_method', '=', True)]}">
+                        <group>
+                            <group>
+                                <field name="journal_type" invisible="1"/>
+                                <field name="bank_id"/>
+                                <field name="bank_account_id"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_inbound','check_outbound','transfer_inbound','transfer_outbound'])]}"/>
+                                <field name="checkbook_id"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                                <field name="check_id" readonly="1"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                                <button name="generate_check_wizard" context="{'checkbook_id':checkbook_id}"
+                                        type="object"
+                                        string="Generate Check" class="oe_highlight"
+                                        attrs="{'invisible': [('payment_method_code','not in',['check_outbound'])]}"/>
+                            </group>
+                            <group>
+                                <field name="transaction_date"
+                                       attrs="{'invisible': [('payment_method_code','not in',['transfer_inbound','transfer_outbound'])]}"/>
+                                <field name="transaction_number"
+                                       attrs="{'invisible': [('payment_method_code','not in',['transfer_inbound','transfer_outbound'])]}"/>
+                                <field name="bank_card_issuer"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_inbound','card_outbound'])]}"/>
+                                <field name="bank_card_type"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_inbound','card_outbound'])]}"/>
+                                <field name="check_number"
+                                       attrs="{'invisible': [('payment_method_code','not in',['check_inbound'])]}"/>
+                                <field name="bank_card_id"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_outbound'])]}"/>
+                                <field name="bank_card_code"
+                                       attrs="{'invisible': [('payment_method_code','not in',['card_inbound'])]}"/>
+                                <field name="other_payment_data"
+                                       attrs="{'invisible': [('hide_payment_method', '=', True)]}"/>
+                            </group>
+                        </group>
+                        <separator string="Destination Data"
+                                   attrs="{'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                        <group>
+                            <field name="destination_journal_type" invisible="1"/>
+                            <field name="destination_bank_id"
+                                   attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                            <field name="destination_bank_account_id"
+                                   attrs="{'required': [('payment_type', '=', 'transfer'),('destination_journal_type','=','bank')], 'invisible': [('payment_type', '!=', 'transfer'),('destination_journal_type','!=','bank')]}"/>
+                        </group>
+
+                    </page>
+                </notebook>
+            </xpath>
+            </field>
+    </record>-->
+
+</odoo>

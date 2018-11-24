@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="procurement_rule_ea6" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">EA6: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">13</field>
+            <field name="location_src_id">17</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">7</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">6</field>
+        </record>
+
+        <record id="procurement_rule_cba" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">CBA: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">8</field>
+            <field name="location_src_id">20</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">12</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">9</field>
+        </record>
+
+        <record id="procurement_rule_scz" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">SCZ: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">10</field>
+            <field name="location_src_id">23</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">22</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">15</field>
+        </record>
+
+        <record id="procurement_rule_pts" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">PTS: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">11</field>
+            <field name="location_src_id">30</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">27</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">18</field>
+        </record>
+
+        <record id="procurement_rule_mll" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">MLL: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">6</field>
+            <field name="location_src_id">14</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">2</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">3</field>
+        </record>
+
+        <record id="procurement_rule_plastotec_scz" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">PLATOTEC SCZ: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">9</field>
+            <field name="location_src_id">23</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">17</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">12</field>
+        </record>
+        <!-- Registro GER utiliza MLL para las ventas -->
+
+        <record id="procurement_rule_ger_mll" model="procurement.rule">
+            <field name="active">1</field>
+            <field name="name">GER-MLL: Existencias -> Customers</field>
+            <field name="action">move</field>
+            <field name="sequence">1</field>
+            <field name="location_id">9</field>
+            <field name="warehouse_id">20</field>
+            <field name="location_src_id">14</field>
+            <field name="procure_method">make_to_stock</field>
+            <field name="picking_type_id">manual</field>
+            <field name="picking_type_id">2</field>
+            <field name="group_propagation_option">propagate</field>
+            <field name="propagate">1</field>
+            <field name="delay">1</field>
+            <field name="route_id">3</field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_poi_account_asset_ufv_report_tree">
+        <field name="name">poi.account.asset.ufv.report.tree</field>
+        <field name="model">poi.account.asset.ufv.report</field>
+        <field name="arch" type="xml">
+            <tree string="Activos Depreciación">
+                <field name="category_id"/>
+                <field name="code"/>
+                <field name="name" invisible="1"/>
+                <field name="asset_id"/>
+                <field name="fecha_compra"/>
+                <field name="valor_compra"/>
+                <field name="date_accounting"/>
+                <field name="month" invisible="1"/>
+                <field name="valor_fecha"/>
+                <field name="ufv_final"/>
+                <field name="ufv_inicial"/>
+                <field name="amount_inc_act"/>
+                <field name="valor_actualizado"/>
+                <field name="amount_dep_per"/>
+                <field name="dep_acum_mes_anterior"/>
+                <field name="amount_dep_act"/>
+                <field name="dep_acum_actualizado"/>
+                <field name="total_dep"/>
+                <field name="valor_neto"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_poi_account_asset_ufv_report_search" model="ir.ui.view">
+        <field name="name">poi.account.asset.ufv.report.search</field>
+        <field name="model">poi.account.asset.ufv.report</field>
+        <field name="arch" type="xml">
+            <search string="Assets Analysis">
+                <field name="code"/>
+                <field name="name"/>
+                <filter string="Mes Anterior" name="prev_month" domain="[('date_accounting','&gt;=',(context_today()-relativedelta(months=1)).strftime('%Y-%m-01')),('date_accounting','&lt;',time.strftime('%Y-%m-01'))]"/>
+                <filter string="Enero" domain="[[u'month', u'=', u'01']]"/>
+                <filter string="Febrero" domain="[[u'month', u'=', u'02']]"/>
+                <filter string="Marzo" domain="[[u'month', u'=', u'03']]"/>
+                <filter string="Abril" domain="[[u'month', u'=', u'04']]"/>
+                <filter string="Mayo" domain="[[u'month', u'=', u'05']]"/>
+                <filter string="Junio" domain="[[u'month', u'=', u'06']]"/>
+                <filter string="Julio" domain="[[u'month', u'=', u'07']]"/>
+                <filter string="Agosto" domain="[[u'month', u'=', u'08']]"/>
+                <filter string="Septiembre" domain="[[u'month', u'=', u'09']]"/>
+                <filter string="Octubre" domain="[[u'month', u'=', u'10']]"/>
+                <filter string="Noviembre" domain="[[u'month', u'=', u'11']]"/>
+                <filter string="Diciembre" domain="[[u'month', u'=', u'12']]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Categoría" context="{'group_by':'category_id'}"/>
+                    <filter string="Activos" context="{'group_by':'asset_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_poi_account_asset_ufv_report">
+        <field name="name">Depreciación UFV</field>
+        <field name="res_model">poi.account.asset.ufv.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="view_poi_account_asset_ufv_report_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>
+                Cuadro Depreciacion UFV
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="action_poi_account_asset_ufv_report"
+              id="menu_poi_account_asset_ufv_report"
+              parent="poi_bol_asset.menu_action_bol_asset" sequence="6"/>
+</odoo>

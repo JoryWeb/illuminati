@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="report_notae"
+    string="Nota de Entrega"
+    model="stock.picking"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.notae_report"
+    name="poi_x_toyosa_report.notae_report_template"
+  />
+
+  <record id="paperformat_notae_toy" model="report.paperformat">
+    <field name="name">Nota Entrega</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">25</field>
+    <field name="margin_bottom">10</field>
+    <field name="margin_left">6</field>
+    <field name="margin_right">6</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">20</field>
+    <field name="dpi">90</field>
+  </record>
+
+  <record id="report_notae" model="ir.actions.report">
+      <field name="paperformat_id" ref="poi_x_toyosa_report.paperformat_notae_toy"/>
+  </record>
+</data>
+
+<template id="notae_report_template">
+<t t-call="web.html_container">
+
+<t t-foreach="docs" t-as="o">
+  <t t-foreach="['ORIGINAL', 'Copia', 'Copia', 'Copia', 'Para Comisionar']" t-as="i">
+  <div class="header">
+
+  </div>
+
+  <div class="article" style="font-size:13px;">
+    <div class="row">
+      <div class="col-xs-8 text-right">
+        <h3><strong>Nota de entrega de Vehículos y Automotores  </strong></h3>
+      </div>
+      <div class="col-xs-4">
+        <p>No. <strong><span t-field="order_id.name"/></strong></p>
+        <p>File: <strong><span t-field="order_id.client_order_ref"/></strong></p>
+        <p>Estado: <strong><span t-field="o.state"/></strong></p>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-2">
+            <p>Ciudad: </p>
+          </div>
+          <div class="col-xs-3">
+            <p><span t-esc="(order_id.user_id.partner_id.state_id and order_id.user_id.partner_id.state_id.name.upper()) or '------'"/></p>
+          </div>
+          <div class="col-xs-1">
+            <p>CUCE: </p>
+          </div>
+          <div class="col-xs-2">
+            <p><strong><span t-esc="order_id.cuce or '-------'"/></strong></p>
+          </div>
+          <div class="col-xs-4">
+            <p>Fecha: <span t-field="o.date_done" t-field-options='{"format": "d/M/Y"}'/></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <p style="padding:0px;margin:0px;">Cliente: </p>
+      </div>
+      <div class="col-xs-10">
+        <p><span t-field="order_id.partner_id.name"></span></p>
+      </div>
+      <div class="col-xs-2">
+        <p style="padding:0px;margin:0px;">Direccion: </p>
+      </div>
+      <div class="col-xs-6">
+        <p><span t-field="order_id.partner_id.street"/> <span t-field="order_id.partner_id.street2"/>
+        </p>
+      </div>
+      <div class="col-xs-4">
+        <p>Telefono: <span t-field="order_id.partner_id.phone"/></p>
+      </div>
+      <div class="col-xs-12" style="border-top: 3px solid #9D0000;">
+        <p>Hacemos entrega del vehículo adquirido por Usted (es) con las siguientes características:</p>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-4">
+            <p>Modelo:  <span t-field="lot_id.product_id.katashiki.name"/></p>
+            <p>Master:  <span t-field="lot_id.product_id.default_code"/></p>
+            <p>Chasis:  <span t-field="lot_id.name"/></p>
+            <p>Nro. de Motor: <span t-field="lot_id.n_motor"/></p>
+          </div>
+          <div class="col-xs-5">
+            <p><span t-field="lot_id.product_id.modelo.name"/></p>
+            <p><span t-field="lot_id.product_id.name"/></p>
+            <p>Color: <span t-field="lot_id.colorexterno.name"/></p>
+            <p>Poliza: <span t-esc="(lot_id.imp_pol or lot_id.imp_pol_manual or '')"/></p>
+          </div>
+          <div class="col-xs-3">
+            <p>Marca: <span t-field="lot_id.marca.name"/></p>
+            <p>Año: <span t-esc="(lot_id.anio_modelo and int(lot_id.anio_modelo.name)) or ' '"/></p>
+            <p>.</p>
+            <p>Factura: <span t-field="invoice_id.cc_nro"/></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12" style="border-top: 3px solid #9D0000;">
+        <p>Con el siguiente equipamiento y otras características:</p>
+      </div>
+
+      <div class="col-xs-11 col-xs-offset-1">
+        <ul>
+        <t t-as="l" t-foreach="checklist">
+          <t t-if="l.activo">
+            <li><span t-field="l.item_id.name"/></li>
+          </t>
+        </t>
+        <t t-as="line" t-foreach="order_id.order_line_a">
+          <t t-if="line.product_id.accessory">
+            <li><span t-field="line.name"/></li>
+          </t>
+        </t>
+        </ul>
+      </div>
+      <div class="col-xs-12" style="border-top: 3px solid #9D0000;">
+        <div class="row">
+          <div class="col-xs-6">Yo: <span t-esc="order_id.partner_id.name.upper()"/></div>
+          <div class="col-xs-4 col-xs-offset-2">Con C.I./NIT: <span t-esc="order_id.partner_id.ci or order_id.partner_id.nit"/></div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <p>Dejo constancia de haber recibido el mencionado vehículo en perfectas condiciones de funcionamiento y a mi entera
+satisfacción sin lugar a reclamo alguno. Salvo las observaciones (si las hubiere) detalladas en la presente Nota.</p>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <p>Entregado Conforme: ________________________</p>
+            <p><span style="padding-left:185px;">P. TOYOSA S.A.</span></p>
+          </div>
+          <div class="col-xs-6">
+            <p>Recibi Conforme: ________________________</p>
+            <p><span style="padding-left:165px;">COMPRADOR</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-3 text-center">
+            <p>_______________________</p>
+            <p>PREPARADO POR</p>
+          </div>
+          <div class="col-xs-3 text-center">
+            <p>_______________________</p>
+            <p>AUTORIZADO POR</p>
+          </div>
+          <div class="col-xs-3 text-center">
+            <p>_______________________</p>
+            <p>CONTABILIDAD</p>
+          </div>
+          <div class="col-xs-3 text-center">
+            <p>_______________________</p>
+            <p>REGISTRO</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <p><span t-field="order_id.user_id"/></p>
+        <p><strong>ASESOR COMERCIAL</strong></p>
+      </div>
+      <div class="col-xs-12 text-right" style="border-top: 3px solid #9D0000;">
+          <p t-esc="i"></p>
+      </div>
+      <t t-if="insurance != False">
+      <div class="col-xs-12" style="font-size:11px;">
+        <p style="padding:0px;margin:0px;">GARANTÍA</p>
+        <p style="padding:0px;margin:0px;">1.- Para mantener vigente la garantía de su vehículo, es condición indispensable y obligatoria que se realicen los mantenimientos periódicos acorde
+a lo expresado en el Libro de Garantía y en el Certificado de Garantía en alguno de los Talleres de Servicio de la red de TOYOSA S.A.</p>
+        <p style="padding:0px;margin:0px;">2.- El alcance de la garantía es de <span t-esc="insurance"/> años o <span t-field="lot_id.product_id.garantia_km"/> km (lo primero que ocurra) a partir de la fecha de la Nota de entrega, debidamente sellada y
+firmada.</p>
+        <p style="padding:0px;margin:0px;">
+          3.- Cada caso que afecte a la garantía es reportado a FABRICA la cual se reserva el derecho de juzgar en última instancia si la pieza defectuosa
+es el resultado de fallas en la fabricación o de mal uso dado por el cliente. (Para ampliar informacion sirvase leer el libro de garantía y el Certificado
+de Garantía entregado con su vehículo, en él encontrará mayor explicación sobre la cobertura de la Garantía y las condiciones para aplicarla.)
+        </p>
+        <p style="padding:0px;margin:0px;">4.- Bajo estas normas de garantía, la red de Talleres de Servicio de TOYOSA S.A. a lo largo del país repararán o cambiarán únicamente la(s) pieza(s)
+defectuosas sin cargo alguno para el cliente. La garantía del vehículo cubre el cambio o sustitución de piezas defectuosas y esto no implica cambio o
+sustitución de otro vehículo.</p>
+      </div>
+      </t>
+    </div>
+  </div>
+  <div style="page-break-before: always;"></div>
+  </t>
+</t>
+</t>
+</template>
+
+</odoo>

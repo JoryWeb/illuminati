@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <report
+    id="diary_book"
+    string="Libro Dairio"
+    model="account.move"
+    report_type="qweb-pdf"
+    file="poi_x_toyosa_report.diary_book"
+    name="poi_x_toyosa_report.diary_book_template"
+    menu='False'
+  />
+</data>
+
+<template id="diary_book_template">
+<t t-call="web.html_container">
+  <div class="header">
+    <div class="col-xs-6">
+      <p><strong>TOYOSA S.A.</strong></p>
+      <p><strong><span t-usertime="%d/%m/%Y" /></strong></p>
+    </div>
+    <div class="col-xs-6 text-right">
+      <p><strong>Pagina: <span class="article"/></strong></p>
+      <p><strong><span t-usertime="%H:%M:%S" /></strong></p>
+    </div>
+    <div class="col-xs-12 text-center">
+      <h4>DIARIO</h4>
+    </div>
+    
+  </div>
+
+  <div class="article" style="font-size:14px;">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Documento</th>
+          <th>Glosa</th>
+          <th>Debe Bs</th>
+          <th>Haber Bs</th>
+          <th>Debe $us</th>
+          <th>Haber $us</th>
+        </tr>
+      </thead>
+      <tbody>
+      <t t-foreach="docs" t-as="move_id">
+        <tr>
+          <td><span t-field="move_id.date"/></td>
+          <td><span t-field="move_id.name"/></td>
+          <td><span t-field="move_id.ref"/></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <t t-foreach="move_id.line_ids" t-as="line">
+          <tr>
+            <td></td>
+            <td><span t-field="line.account_id.code"/></td>
+            <td><span t-field="line.account_id.name"/></td>
+            <td><span t-field="line.debit"/></td>
+            <td><span t-field="line.credit"/></td>
+            <td><span t-field="line.debit_sec"/></td>
+            <td><span t-field="line.credit_sec"/></td>
+          </tr>
+        </t>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span t-field="move_id.total_debit"/></td>
+          <td><span t-field="move_id.total_credit"/></td>
+          <td><span t-field="move_id.total_debit_sec"/></td>
+          <td><span t-field="move_id.total_credit_sec"/></td>
+        </tr>
+        </t>
+      </tbody>
+    </table>
+
+  </div>
+</t>
+</template>
+
+</odoo>

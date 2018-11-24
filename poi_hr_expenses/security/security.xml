@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<record id="group_hr_expenses" model="res.groups">
+    <field name="name">Rendicion de Gastos(RRHH)</field>
+    <field name="category_id" ref="base.module_category_hidden"/>
+</record>
+</data>
+</odoo>

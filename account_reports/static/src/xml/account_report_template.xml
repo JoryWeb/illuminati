@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-name="accountReports.footnote_dialog">
+        <form role="form">
+            <textarea name="note" rows='4' class="js_account_reports_footnote_note" t-att-data-line="id" placeholder="Insert foot note here"><t t-raw="text"/></textarea>
+        </form>
+    </t>
+
+    <t t-name="accountReports.buttons">
+        <t t-foreach="buttons" t-as="button">
+            <button type="button" class="btn btn-primary btn-sm" t-att-action="button.action"><t t-esc="button.name"/></button>
+        </t>
+    </t>
+
+    <t t-name="emailSent">
+        <div class="alert alert-info alert-dismissible" role="alert" >
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&amp;times;</span></button>
+            The followup report was successfully emailed !
+        </div>
+    </t>
+
+    <div t-name='paymentDateForm'>
+        <form role="form">
+            <label for="expectedDate">Expected Payment Date</label>
+            <div class='o_account_reports_payment_date_picker' />
+            <label for='internalNote'>Note</label>
+            <textarea name="internalNote" id="internalNote" rows='4' placeholder="Insert note here"></textarea>
+            <input type='hidden' id='target_id' t-att-value='target_id' />
+        </form>
+    </div>
+    
+    <div t-name='nextActionForm'>
+        <div class='btn-group'>
+            <a type="button" data-time='one-week' class="btn btn-default o_account_reports_followup_next_action_date_button">One week</a>
+            <a type="button" data-time='two-weeks' class="btn btn-default o_account_reports_followup_next_action_date_button">Two weeks</a>
+            <a type="button" data-time='one-month' class="btn btn-default o_account_reports_followup_next_action_date_button">One month</a>
+            <a type="button" data-time='two-months' class="btn btn-default o_account_reports_followup_next_action_date_button">Two months</a>
+        </div>
+        <form role="form">
+            <label for="nextActionDate">Don't follow-up before :</label>
+            <div class='o_account_reports_next_action_date_picker' />
+            <label for='o_account_reports_next_action_note'>Note</label>
+            <textarea name="o_account_reports_next_action_note" rows='4' class="o_account_reports_next_action_note" placeholder="Insert note here"></textarea>
+            <input type='hidden' id='target_id' t-att-value='target_id' />
+        </form>
+    </div>
+    <div class="progress o_account-progress" t-name="accountReports.followupProgressbar" data-toggle="tooltip" title="Follow-ups Done / Total Follow-ups">
+        <span class="show text-center o_account-progress-bar-content"><t t-esc="options.progressbar[0] + '/' + options.progressbar[1]" /></span>
+        <div class="progress-bar" role="context" t-att-aria-valuenow="options.progressbar[1]" aria-valuemin="0" t-att-aria-valuemax="options.progressbar[1]" t-att-style="'width: ' + options.progressbar[2] + '%;'">
+        </div>
+    </div>
+
+</templates>

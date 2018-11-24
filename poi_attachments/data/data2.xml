@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record id="currency_rep" model="res.currency">
+        <field name="name">REP</field>
+        <field name="active" eval="True"></field>
+        <field name="rounding">0.010000</field>
+        <field name="decimal_places">2</field>
+        <field name="symbol"></field>
+        <field name="rate">0</field>
+    </record>
+</data>
+</odoo>

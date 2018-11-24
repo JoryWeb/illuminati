@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="invoice_supplier_form_inh2" model="ir.ui.view">
+            <field name="name">invoice.supplier.form.inh.2</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <!--<field name="reference" position="after">
+
+
+                </field>-->
+                <field name="type" position="after">
+                    <div class="oe_button_box" name="button_box">
+                        <button string="Series"
+                                type="object"
+                                name="action_view_quant"
+                                class="oe_stat_button"
+                                icon="fa-barcode"
+                                invisible="not context.get('importaciones', False)"/>
+                        <button type="object"
+                                name="action_view_invoice"
+                                class="oe_stat_button"
+                                string="Polizas de Importación"
+                                icon="fa-certificate"
+                                invisible="not context.get('importaciones', False)"/>
+                    </div>
+                </field>
+                <notebook position="inside">
+                    <page string="Costos en Destino" invisible="not context.get('importaciones', True)">
+                        <group>
+                            <field name="picking_ids" widget="many2many_tags"
+                                   domain="[('state', '=', 'done'), ('picking_type_code', '!=', 'internal')]"/>
+                            <field name="move_line_ids" widget="many2many_tags"
+                                   domain="[('lot_name','!=',''),('state','=','done')]"/>
+                        </group>
+                        <group>
+                            <button name="apply_landed_cost"
+                                    string="Costear"
+                                    type="object"
+                                    attrs="{'invisible':[('state','not in',['open','paid'])]}"
+                                    class="btn btn-sm oe_button oe_highlight"
+                            />
+                        </group>
+                    </page>
+                </notebook>
+                <xpath expr="//form/sheet/notebook/page[2]/group" position="after">
+                    <field name="tipo_fac" invisible="1"/>
+                    <group attrs="{'invisible': [('tipo_fac','!=','3')]}">
+                        <group>
+                            <field name="n_embarque"/>
+                            <field name="nombre_embarque"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <!--
+        <record id="invoice_supplier_form_inh3" model="ir.ui.view">
+            <field name="name">invoice.supplier.form.inh3</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="poi_bol_base.account_invoice_supplier_bo"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='iva']" position="replace">
+                    <field name="imp_pol" attrs="{'invisible':[('tipo_fac','!=','12')]}"/>
+                    <field name="iva" attrs="{'invisible':[('tipo_fac','!=','12')]}"/>
+                </xpath>
+            </field>
+        </record>
+        -->
+
+        <record id="view_invoice_poliza_tree" model="ir.ui.view">
+            <field name="name">invoice.poliza.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+                <tree string="Polizas de Importaciones">
+                    <field name="number"/>
+                    <field name="date"/>
+                    <!-- <field name="imp_pol"/>
+                     <field name="iva"/>
+                     <field name="ice"/>-->
+                    <field name="lot_dui_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_invoice_poliza" model="ir.actions.act_window">
+            <field name="name">Polizas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_invoice_poliza_tree"/>
+        </record>
+
+        <!-- Facturas de DUI -->
+        <record id="poi_invoice_imports_dui" model="ir.actions.act_window">
+            <field name="name">Póliza de importación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.invoice</field>
+            <field name="context">{'default_tipo_fac':'12', 'default_cc_aut':3, 'default_cc_nro':0, 'default_cc_cod':0,
+                'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase'}
+            </field>
+            <field name="domain">[('tipo_fac','=','12')]</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para Crear una Polizas de importaciones y asignación a las importaciones
+                </p>
+                <p>
+                    Puede generar pólizas de importaciín registrando los GA y excentos
+                </p>
+                <p>
+                    Puede registrar las facturas DUI asignando el proveedor de Agencia despachante definido en la DUI
+                </p>
+            </field>
+        </record>
+
+        <!-- Facturas de Importaciones -->
+        <record id="poi_invoice_imports_importaciones" model="ir.actions.act_window">
+            <field name="name">Facturas de Importación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.invoice</field>
+            <field name="context">{'default_tipo_fac':'3', 'default_type': 'in_invoice', 'type': 'in_invoice',
+                'journal_type': 'purchase', 'importaciones': True}
+            </field>
+            <field name="domain">[('tipo_fac','=','3')]</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para Crear una Facturas de Importaciones
+                </p>
+                <p>
+                    Puede generar facturas de importación seleccionando una pedido de compras importaciones
+                </p>
+                <p>
+                    Los registros de Tipo de Importacion generan carpetas de importación
+                    o en otra forma pueden ser adjuntadas desde crear carpeta de importaciones
+                </p>
+            </field>
+        </record>
+
+        <record id="account.action_invoice_tree2" model="ir.actions.act_window">
+            <field name="domain">[('type','in',('in_invoice', 'in_refund')),('tipo_fac','not in',['3','12'])]</field>
+        </record>
+
+        <menuitem action="poi_invoice_imports_importaciones" id="menu_invoice_imports_importaciones"
+                  parent="account.menu_finance_payables_documents" sequence="2"/>
+
+        <menuitem action="poi_invoice_imports_dui" id="menu_invoice_imports_dui"
+                  parent="account.menu_finance_payables_documents" sequence="3"/>
+
+    </data>
+</odoo>

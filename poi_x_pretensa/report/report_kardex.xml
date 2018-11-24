@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_report_kardex_wiz" model="ir.ui.view">
+            <field name="name">report_kardex_wiz</field>
+            <field name="model">report.kardex_wiz</field>
+            <field name="arch" type="xml">
+                <form string="Tarjeta de Existencias Valorado" version="7.0">
+                    <group>
+                        <field name="warehouse_id"/>
+                        <field name="lote_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="saldo"/>
+                    </group>
+                    <footer>
+                        <button name="open_table" type="object" string="Generar" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_report_kardex_wiz">
+            <field name="name">Tarjeta de Existencias Valorado </field>
+            <field name="res_model">report.kardex_wiz</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_report_kardex_wiz"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_kardex_report" parent="stock.menu_warehouse_report" name="Reporte de Kardex" sequence="24" groups="stock.group_stock_manager,poi_warehouse_sale.group_sale_salesman_shop_leads,base.group_sale_manager,stock.group_stock_user"/>
+
+        <menuitem action="action_report_kardex_wiz" id="menu_kardex_report_wiz" parent="menu_report_kardex_report" sequence="0" groups="stock.group_stock_manager"/>
+
+        <record id="view_report_kardex_wiz3" model="ir.ui.view">
+            <field name="name">report_kardex_wiz3</field>
+            <field name="model">report.kardex_wiz3</field>
+            <field name="arch" type="xml">
+                <form string="Tarjeta de Existencias" version="7.0">
+                    <group>
+                        <field name="warehouse_id"/>
+                        <field name="lote_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="saldo"/>
+                    </group>
+                    <footer>
+                        <button name="open_table" type="object" string="Generar" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_report_kardex_wiz3">
+            <field name="name">Tarjeta de Existencias </field>
+            <field name="res_model">report.kardex_wiz3</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_report_kardex_wiz3"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_report_kardex_wiz3" id="menu_kardex_report_wiz3" parent="menu_report_kardex_report" sequence="2" groups="poi_warehouse_sale.group_sale_salesman_shop_leads,base.group_sale_manager,stock.group_stock_manager,stock.group_stock_user"/>
+    </data>
+</openerp>

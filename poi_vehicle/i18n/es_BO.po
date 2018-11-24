@@ -1,0 +1,593 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_vehicle
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-21 15:28+0000\n"
+"PO-Revision-Date: 2017-09-21 15:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,team:0
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: poi_vehicle
+#: model:ir.model,name:poi_vehicle.model_poi_vehicle
+msgid "Asset"
+msgstr "Vehículo"
+
+#. module: poi_vehicle
+#: model:stock.location,name:poi_vehicle.stock_location_locations_vehicle
+msgid "Asset Locations"
+msgstr "Ubicación de vehículo"
+
+#. module: poi_vehicle
+#: model:ir.model,name:poi_vehicle.model_asset_category
+#: model:ir.model,name:poi_vehicle.model_vehicle_category
+msgid "Asset Tags"
+msgstr "Etiquetas"
+
+#. module: poi_vehicle
+#: model:stock.location,name:poi_vehicle.stock_location_vehicles
+msgid "Assets"
+msgstr "Vehículos"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_user_id
+msgid "Assigned to"
+msgstr "Asignado a"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_anio_fabricacion
+msgid "Año Fabricación"
+msgstr "Año Fabricación"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_anio_modelo
+msgid "Año Modelo"
+msgstr "Año Modelo"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Black"
+msgstr "Negro"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Blue"
+msgstr "Azul"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_cant_llaves
+msgid "Cant. Llaves"
+msgstr "Cant. Llaves"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.vehicle_state_kanban_view
+msgid "Change color"
+msgstr "Cambiar color"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_chasis_id
+msgid "Chasis"
+msgstr "Chasis"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_kanban_view
+msgid "Chasis:"
+msgstr "Chasis:"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_maintenance_state_color
+msgid "Color"
+msgstr "Color"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_colorexterno
+msgid "Color Externo"
+msgstr "Color Externo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_colorinterno
+msgid "Color Interno"
+msgstr "Color Interno"
+
+#. module: poi_vehicle
+#: model:ir.ui.menu,name:poi_vehicle.menu_maintenance_config
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_create_uid
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_create_uid
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_create_date
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_create_date
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_vehicle
+#: selection:poi.vehicle,criticality:0
+msgid "Critical"
+msgstr "Crítico"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_criticality
+msgid "Criticality"
+msgstr "Criticidad"
+
+#. module: poi_vehicle
+#: model:res.groups,name:poi_vehicle.group_mro_customer
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Cyan"
+msgstr "Cian"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_poi_vehicle_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el registro."
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_form_view
+msgid "Datos de Vehículo"
+msgstr "Datos de Vehículo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_display_name
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_display_name
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_vendor_id
+msgid "Dueño Actual"
+msgstr "Dueño Actual"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_kanban_view
+msgid "Dueño Actual:"
+msgstr "Dueño Actual:"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_edicion
+msgid "ED"
+msgstr "ED"
+
+#. module: poi_vehicle
+#: model:ir.module.category,name:poi_vehicle.module_category_eam
+msgid "Enterprise Asset Management"
+msgstr "Gestión de vehículos"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,team:0
+msgid "Finance"
+msgstr "Financiar"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: poi_vehicle
+#: selection:poi.vehicle,criticality:0
+msgid "General"
+msgstr "General"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Green"
+msgstr "Verde"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_vehicle
+#: model:ir.module.category,description:poi_vehicle.module_category_eam
+msgid "Helps you manage your assets."
+msgstr "Le ayuda a administrar su vehículos."
+
+#. module: poi_vehicle
+#: model:ir.module.category,description:poi_vehicle.module_category_maintenance
+msgid "Helps you manage your maintenance processes."
+msgstr "Le ayuda a administrar sus procesos de mantenimiento."
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_id
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_id
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_poi_vehicle_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_poi_vehicle_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_image
+msgid "Image"
+msgstr "Imagen"
+
+#. module: poi_vehicle
+#: selection:poi.vehicle,criticality:0
+msgid "Important"
+msgstr "Importante"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_form_view
+msgid "Info"
+msgstr "Información"
+
+#. module: poi_vehicle
+#: model:ir.model,name:poi_vehicle.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_last_post
+msgid "Last Message Date"
+msgstr "Fecha del último mensaje"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle___last_update
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category___last_update
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_write_uid
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_write_uid
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_write_date
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_write_date
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Magenta"
+msgstr "Magenta"
+
+#. module: poi_vehicle
+#: model:ir.module.category,name:poi_vehicle.module_category_maintenance
+#: selection:vehicle.state,team:0
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#. module: poi_vehicle
+#: model:ir.actions.act_window,name:poi_vehicle.action_management_vehicles
+#: model:ir.ui.menu,name:poi_vehicle.menu_maintenance_poi_vehicle_management
+msgid "Manage states"
+msgstr "Administrar Estados"
+
+#. module: poi_vehicle
+#: model:res.groups,name:poi_vehicle.group_mro_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,team:0
+msgid "Manufacture"
+msgstr "Fabricar"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_manufacturer_id
+#: model:ir.ui.view,arch_db:poi_vehicle.management_poi_vehicle_kanban_view
+msgid "Manufacturer"
+msgstr "Fabricante"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_marca
+msgid "Marca"
+msgstr "Marca"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_image_medium
+msgid "Medium-sized image"
+msgstr "Imagen de tamaño mediano"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_model
+#: model:ir.ui.view,arch_db:poi_vehicle.management_poi_vehicle_kanban_view
+msgid "Model"
+msgstr "Modelo"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_kanban_view
+msgid "Model:"
+msgstr "Modelo:"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_modelo
+msgid "Modelo"
+msgstr "Modelo"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_search
+msgid "Name"
+msgstr "Nombre"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_poi_vehicle_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_poi_vehicle_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_n_llaves
+msgid "N° Llave"
+msgstr "N° Llave"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_n_motor
+msgid "N° Motor"
+msgstr "N° Motor"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Orange"
+msgstr "Naranja"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_search
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_purchase_date
+msgid "Purchase Date"
+msgstr "Fecha de Compra"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Red"
+msgstr "Rojo"
+
+#. module: poi_vehicle
+#: model:ir.ui.menu,name:poi_vehicle.menu_maintenance_vehicles
+msgid "Registros"
+msgstr "Registros"
+
+#. module: poi_vehicle
+#: model:ir.ui.menu,name:poi_vehicle.menu_maintenance_report
+msgid "Reports"
+msgstr "Informes"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_team
+msgid "Scope Team"
+msgstr "Equipo de Alcance"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_serial
+msgid "Serial no."
+msgstr "N° de Serie"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "SkyBlue"
+msgstr "Azul cielo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_image_small
+msgid "Small-sized image"
+msgstr "Imagen de tamaño pequeño"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_start_date
+msgid "Start Date"
+msgstr "Fecha inicial"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_finance_state_id
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_maintenance_state_id
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_manufacture_state_id
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_warehouse_state_id
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_name
+#: model:ir.ui.view,arch_db:poi_vehicle.vehicle_state_form_view
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_state_state_color
+msgid "State Color"
+msgstr "Estado del color"
+
+#. module: poi_vehicle
+#: model:ir.model,name:poi_vehicle.model_asset_state
+#: model:ir.model,name:poi_vehicle.model_vehicle_state
+msgid "State of Asset"
+msgstr "Estado del vehículo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_name
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_category_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_form_view
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_texto
+msgid "Texto"
+msgstr "Texto"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_poi_vehicle_property_stock_vehicle
+msgid "This location will be used as the destination location for installed parts during asset life."
+msgstr "Esta ubicación se utilizará como la ubicación de destino de las piezas instaladas durante la vida del activo."
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,help:poi_vehicle.field_vehicle_state_sequence
+msgid "Used to order states."
+msgstr "Se utiliza para ordenar estados."
+
+#. module: poi_vehicle
+#: model:res.groups,name:poi_vehicle.group_mro_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: poi_vehicle
+#: model:ir.actions.act_window,name:poi_vehicle.action_vehicles
+#: model:ir.model.fields,field_description:poi_vehicle.field_vehicle_category_vehicle_ids
+#: model:ir.ui.menu,name:poi_vehicle.menu_maintenance_poi_vehicle_vehicles
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_form_view
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_tree_view
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_property_stock_vehicle
+msgid "Vehicle Location"
+msgstr "Ubicación de vehículo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_vehicle_number
+msgid "Vehicle Number"
+msgstr "Número de Vehículo"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_name
+msgid "Vehicle Placa"
+msgstr "Placa de vehículo"
+
+#. module: poi_vehicle
+#: model:ir.ui.view,arch_db:poi_vehicle.poi_vehicle_search
+msgid "Vehicle Search"
+msgstr "Buscar vehículo"
+
+#. module: poi_vehicle
+#: model:ir.actions.act_window,name:poi_vehicle.action_vehicle_state
+#: model:ir.ui.menu,name:poi_vehicle.menu_vehicle_state
+msgid "Vehicle States"
+msgstr "Estados de vehículo"
+
+#. module: poi_vehicle
+#: model:ir.actions.act_window,name:poi_vehicle.action_vehicle_category
+#: model:ir.ui.menu,name:poi_vehicle.menu_vehicle_category
+#: model:ir.ui.view,arch_db:poi_vehicle.vehicle_category_tree_view
+msgid "Vehicle Tags"
+msgstr "Etiqueta de vehículos"
+
+#. module: poi_vehicle
+#: selection:poi.vehicle,criticality:0
+msgid "Very important"
+msgstr "Muy importante"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,team:0
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_warranty_end_date
+msgid "Warranty End"
+msgstr "Fin de garantía"
+
+#. module: poi_vehicle
+#: model:ir.model.fields,field_description:poi_vehicle.field_poi_vehicle_warranty_start_date
+msgid "Warranty Start"
+msgstr "Garantía de inicio"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "White"
+msgstr "Blanco"
+
+#. module: poi_vehicle
+#: selection:vehicle.state,state_color:0
+msgid "Yellow"
+msgstr "Amarillo"

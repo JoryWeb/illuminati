@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <record id="product_template_atributos" model="ir.ui.view">
+            <field name="name">product.template.atributos</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page name="automotor" string="Atributos">
+                        <group>
+                            <field name="atributo_line">
+                                <tree string="Atributos" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="valor"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Imagenes">
+                        <field name="images" mode="kanban" context="{'default_name': name}">
+                            <kanban>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="image_alt"/>
+                                <field name="image"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div style="position: relative">
+                                            <div class="oe_module_vignette">
+                                                <a type="open">
+                                                    <img t-att-src="kanban_image('res.partner', 'image', record.id.value, {'preview_image': 'image_small'})" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                </a>
+                                                <div class="oe_module_desc">
+                                                    <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
+                                                        <table class="oe_kanban_table">
+                                                            <tr>
+                                                                <td class="oe_kanban_title1" align="left" valign="middle">
+                                                                    <h4>
+                                                                        <a type="open">
+                                                                            <field name="name"/>
+                                                                        </a>
+                                                                    </h4>
+                                                                    <i>
+                                                                        <div t-if="record.description.raw_value">
+                                                                            <field name="description"/>
+                                                                        </div>
+                                                                    </i>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                            <form string="Variant Image">
+                                <sheet>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="image" widget="image"/>
+                                        <field name="image_url"/>
+                                        <field name="image_alt"/>
+                                        <field name="product_variant_id" domain="[('product_tmpl_id','=', parent.id)]"/>
+                                        <field name="description"/>
+                                    </group>
+                                </sheet>
+                            </form>
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="image_alt"/>
+                                <field name="image"/>
+                                <field name="image_url"/>
+                                <field name="product_variant_id" domain="[('product_tmpl_id','=', parent.id)]"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="product_template_advanced" model="ir.ui.view">
+            <field name="name">product.template.advanced</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_standard_price']" position="inside">
+                    <field name="link_fabricator" widget="url"/>
+                    <field name="link_video" widget="url"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="atributo_search_form_view" model="ir.ui.view">
+            <field name="name">product.template.search.atributo</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="atributo_line" string="Atributos Avanzados"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

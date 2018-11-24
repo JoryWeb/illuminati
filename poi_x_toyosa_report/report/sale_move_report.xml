@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="sale_move_report_view_tree" model="ir.ui.view">
+      <field name="name">sale.move.report.tree</field>
+      <field name="model">sale.move.report</field>
+      <field name="arch" type="xml">
+        <tree string="Movimiento de Ventas" create="0">
+          <!-- <field name="agency_id"/>
+          <field name="warehouse_id"/> -->
+          <field name="payment_date"/>
+          <field name="partner_id"/>
+          <field name="lot_id"/>
+          <field name="model_id"/>
+          <field name="amount_pay" sum="total"/>
+          <field name="amount_total" sum="total"/>
+          <field name="amount_pay_before" sum="total"/>
+          <field name="amount_total_before" sum="total"/>
+          <field name="journal_id"/>
+          <!-- <field name="state"/> -->
+          <field name="warrant"/>
+          <field name="seller_id"/>
+          <field name="partner_type"/>
+          <field name="sale_type_id"/>
+          <field name="warehouse_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="sale_move_report_view_search" model="ir.ui.view">
+      <field name="name">sale.move.report.search</field>
+      <field name="model">sale.move.report</field>
+      <field name="arch" type="xml">
+        <search string="Movimiento de Ventas">
+          <field name="warehouse_id"/>
+          <field name="agency_id"/>
+          <field name="partner_id"/>
+          <field name="sale_type_id"/>
+         <!--  <field name="state"/> -->
+          <field name="warrant"/>
+          <field name="seller_id"/>
+          <group expand="0" string="Group By">
+            <filter string="Almacen/Sucursal" domain="[]" context="{'group_by':'warehouse_id'}"/>
+            <filter string="Regional/Agencia" domain="[]" context="{'group_by':'agency_id'}"/>
+            <filter string="Cliente" domain="[]" context="{'group_by':'partner_id'}"/>
+            <filter string="Vendendor" domain="[]" context="{'group_by':'seller_id'}"/>
+            <filter string="Tipo de OV" domain="[]" context="{'group_by':'sale_type_id'}"/>
+            <filter string="Dia" domain="[]" context="{'group_by':'payment_date:day'}"/>
+
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="sale_move_report_action_tree" model="ir.actions.act_window">
+      <field name="name">Movimiento de Ventas</field>
+      <field name="res_model">sale.move.report</field>
+      <field name="view_mode">tree</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Movimiento de Ventas
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

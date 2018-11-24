@@ -1,0 +1,8 @@
+-
+  Create sequence for traffic procesing
+-
+  !record {model: ir.sequence, id: sequence_traffic}:
+    name: Trafico de Clientes
+    code: crm.traffic
+    prefix: TRAF/%(year)s/
+    padding: 3

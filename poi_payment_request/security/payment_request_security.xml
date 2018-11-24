@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="0">
+        <record id="group_payment_request" model="res.groups">
+            <field name="name">Account Payment Requests</field>
+            <field name="category_id" ref="base.module_category_extra"/>
+            <field name="comment">Usuario puede solicitar Pagos.</field>
+        </record>
+    </data>
+
+</odoo>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wkf_return" model="workflow">
+            <field name="name">product.return.basic</field>
+            <field name="osv">product.return</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <record id="act_draft_return" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_return"/>
+            <field name="name">draft_return</field>
+            <field name="flow_start">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state': 'draft'})</field>
+            <field name="split_mode">OR</field>
+        </record>
+
+        <record id="act_request_return" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_return"/>
+            <field name="name">request_return</field>
+            <field name="action">request_return()</field>
+            <field name="kind">function</field>
+        </record>
+
+        <record id="act_approve_request" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_return"/>
+            <field name="name">approve_request</field>
+            <field name="action">approve_request()</field>
+            <field name="kind">function</field>
+        </record>
+
+        <record id="act_process_return" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_return"/>
+            <field name="name">process_return</field>
+            <field name="action">process_return()</field>
+            <field name="kind">function</field>
+            <field name="flow_stop">True</field>
+        </record>
+
+        <record id="act_cancel_return" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_return"/>
+            <field name="name">cancel_return</field>
+            <field name="action">cancel_return()</field>
+            <field name="kind">function</field>
+            <field name="flow_stop">True</field>
+        </record>
+
+        <record id="treturn1" model="workflow.transition">
+            <field name="act_from" ref="act_draft_return"/>
+            <field name="act_to" ref="act_request_return"/>
+            <field name="signal">request_return</field>
+        </record>
+
+        <record id="treturn2" model="workflow.transition">
+            <field name="act_from" ref="act_request_return"/>
+            <field name="act_to" ref="act_approve_request"/>
+            <field name="signal">approve_request</field>
+        </record>
+
+        <record id="treturn3" model="workflow.transition">
+            <field name="act_from" ref="act_request_return"/>
+            <field name="act_to" ref="act_cancel_return"/>
+            <field name="signal">cancel_return</field>
+        </record>
+
+        <record id="treturn4" model="workflow.transition">
+            <field name="act_from" ref="act_approve_request"/>
+            <field name="act_to" ref="act_process_return"/>
+            <field name="signal">process_return</field>
+        </record>
+
+        <record id="treturn5" model="workflow.transition">
+            <field name="act_from" ref="act_approve_request"/>
+            <field name="act_to" ref="act_cancel_return"/>
+            <field name="signal">cancel_return</field>
+        </record>
+        
+        <!-- <record id="t5" model="workflow.transition">
+            <field name="act_from" ref="act_verify"/>
+            <field name="act_to" ref="act_done"/>
+            <field name="condition">check_done()</field>
+        </record> -->
+        
+    </data>
+</openerp>

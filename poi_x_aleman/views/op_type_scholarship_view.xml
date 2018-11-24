@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--Form View-->
+        <record id="op_type_scholarship_form_view" model="ir.ui.view">
+            <field name="name">op.type.scholarship.form.view</field>
+            <field name="model">op.type.scholarship</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="discount"/>
+                            <field name="total_discount"/>
+                            <field name="first_pension_applies"/>
+                            <field name="regular_pension_applies"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="op_type_scholarship_tree_view" model="ir.ui.view">
+            <field name="name">op.type.scholarship.tree.view</field>
+            <field name="model">op.type.scholarship</field>
+            <field name="arch" type="xml">
+                <tree string="op Type Scholarship">
+                    <field name="name"/>
+                    <field name="discount"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <!--Actions-->
+        <record id="action_op_type_scholarship" model="ir.actions.act_window">
+            <field name="name">Tipo de Beca</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.type.scholarship</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menu-->
+        <menuitem id="action_op_type_scholarship_menu_configuration" name="Tipo de Beca" sequence="1" parent="op_family_submenu_configuration" action="action_op_type_scholarship"/>
+    </data>
+</odoo>

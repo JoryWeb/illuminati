@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_product_date_sold_returned_invoices_tree">
+            <field name="name">product.date.sold.returned.invoices.tree</field>
+            <field name="model">product.date.sold.returned.invoices</field>
+            <field name="arch" type="xml">
+                <tree string="Sale Invoices Analysis">
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_product_date_sold_returned_invoices_graph">
+            <field name="name">product.date.sold.returned.invoices.graph</field>
+            <field name="model">product.date.sold.returned.invoices</field>
+            <field name="arch" type="xml">
+                <graph string="Sale Invoices Analysis" type="line">
+                    <field name="product_id" type="row"/>
+                    <field name="date_invoice" type="col" interval="month"/>
+                    <field name="inv_qty_sold" type="measure"/>
+                    <field name="inv_qty_returned" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+
+    <record id="view_product_date_sold_returned_invoices_search" model="ir.ui.view">
+        <field name="name">product.date.sold.returned.invoices.search</field>
+        <field name="model">product.date.sold.returned.invoices</field>
+        <field name="arch" type="xml">
+            <search string="Sale Invoices Analysis">
+                <field name="product_id"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="shop_id"/>
+                <field name="categ_id" filter_domain="[('categ_id', 'child_of', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_product_date_sold_returned_invoices" model="ir.actions.act_window">
+        <field name="name">Sale Invoices Analysis</field>
+        <field name="res_model">product.date.sold.returned.invoices</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">chart</field>
+        <field name="view_id" ref="view_product_date_sold_returned_invoices_tree"/>
+        <field name="help"></field>
+    </record>
+
+
+
+
+    </data>
+</openerp>

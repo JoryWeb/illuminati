@@ -1,0 +1,53 @@
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="view_sale_order_disc_form">
+	        <field name="name">sale.order.disc.form</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_form" />
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="discount_global"/>
+                    <group colspan="2">
+                        <button name="launch_discount_wizard" string="" type="object" icon="terp-stock_format-default" class="oe_inline"/>
+                    </group>
+                    <!--</div>-->
+	        	</xpath>
+	        </field>
+        </record>
+        <record model="ir.ui.view" id="view_sale_order_disc_tree">
+	        <field name="name">sale.order.disc.tree</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_tree" />
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='amount_total']" position="before">
+	        		<field name="discount_global" string="Desc."/>
+	        	</xpath>
+	        </field>
+        </record>
+        <record model="ir.ui.view" id="view_sale_quot_disc_tree">
+	        <field name="name">sale.quot.disc.tree</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_quotation_tree" />
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='amount_total']" position="before">
+	        		<field name="discount_global" string="Desc."/>
+	        	</xpath>
+	        </field>
+        </record>
+
+		<record model="ir.ui.view" id="view_max_desc_form">
+	        <field name="name">max.discount.form</field>
+	        <field name="model">product.pricelist.item</field>
+	        <field name="inherit_id" ref="product.product_pricelist_item_form_view" />
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='price_max_margin']" position="after">
+                    	<field name="desc_max"/>
+	        	</xpath>
+	        </field>
+        </record>
+
+    </data>
+</openerp>

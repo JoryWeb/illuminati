@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+  <template pageSize="(842.0,595.0)" title="Test" author="Nicolas Bustillos" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="15.0" y1="42.0" width="786" height="511"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <paraStyle name="terp_default" fontName="Helvetica" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+  </stylesheet>
+  <story>
+    <para>[[ setLang(o.partner_id.lang) ]]</para>
+    <blockTable>
+      <tr>
+        <td>
+          <para>[[ data['context']['type']=='out_invoice' and 'LIBRO DE VENTAS' or 'LIBRO DE COMPRAS'  ]] </para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable repeatRows="1">
+      <tr>
+        <td>
+          <para>Tipo de Factura</para>
+        </td>
+        <td>
+          <para>NIT</para>
+        </td>
+        <td>
+          <para>Razón social</para>
+        </td>
+        <td>
+          <para>Nro. Factura</para>
+        </td>
+        <td>
+          <para>Póliza de Importación</para>
+        </td>
+        <td>
+          <para>Nro. Autorización</para>
+        </td>
+        <td>
+          <para>Fecha</para>
+        </td>
+        <td>
+          <para>Importe Total</para>
+        </td>
+        <td>
+          <para>Importe del ICE</para>
+        </td>
+        <td>
+          <para>Importe de montos exentos</para>
+        </td>
+        <td>
+          <para>Importe Neto sujeto a crédito fiscal</para>
+        </td>
+        <td>
+          <para>Crédito fiscal IVA</para>
+        </td>
+        <td>
+          <para>Código de Control</para>
+        </td>
+      </tr>
+    </blockTable>
+    <section>
+      <para>[[repeatIn(objects,'o')]]</para>
+      <blockTable>
+        <tr>
+          <td>
+            <para>[[ o.tipo_fac ]]</para>
+          </td>
+          <td>
+            <para>[[ o.nit ]]</para>
+          </td>
+          <td>
+            <para>[[ o.razon ]]</para>
+          </td>
+          <td>
+            <para>[[ o.cc_nro ]] </para>
+          </td>
+          <td>
+            <para>[[ o.imp_pol ]]</para>
+          </td>
+          <td>
+            <para>[[ o.cc_aut ]]</para>
+          </td>
+          <td>
+            <para>[[ formatLang(o.date_invoice,date = True) ]]</para>
+          </td>
+          <td>
+            <para>[[formatLang(o.amount_total , digits=2)]]</para>
+          </td>
+          <td>
+            <para>[[formatLang(o.ice , digits=2)]]</para>
+          </td>
+          <td>
+            <para>[[formatLang(o.exento , digits=2)]]</para>
+          </td>
+          <td>
+            <para>[[formatLang(o.amount_untaxed , digits=2)]]</para>
+          </td>
+          <td>
+            <para>[[formatLang(o.amount_tax , digits=2)]]</para>
+          </td>
+          <td>
+            <para>[[ o.cc_cod ]]</para>
+          </td>
+        </tr>
+      </blockTable>
+    </section>
+  </story>
+</document>
+

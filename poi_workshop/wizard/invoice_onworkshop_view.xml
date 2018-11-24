@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_invoice_onworkshop_wizard" model="ir.ui.view">
+            <field name="name">Invoice Workshop</field>
+            <field name="model">invoice.onworkshop</field>
+            <field name="arch" type="xml">
+                <form string="Reject Request">
+                    <group>
+                        <field name="journal_id"/>
+                        <field name="date_invoice"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <footer>
+                        <button name="invoice_create" string="Create Invoice" type="object"  class="oe_highlight"  />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_invoice_onworkshop" model="ir.actions.act_window">
+            <field name="name">Invoice Onworkshop</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">invoice.onworkshop</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</odoo>

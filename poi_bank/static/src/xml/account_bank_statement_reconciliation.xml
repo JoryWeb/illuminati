@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="poi_bank_statement_nothing_to_reconcile">
+        <div class="oe_form_sheetbg"><div class="oe_form_sheet oe_form_sheet_width">
+            <div class="oe_view_nocontent"><p>
+                <b>Good Job!</b> Bank statements are fully reconciled.</p>
+                <p>This page displays all the bank transactions that are to be reconciled and provides with a neat interface to do so.</p>
+            </div>
+        </div></div>
+    </t>
+
+    <t t-name="poi_bank_statement_reconciliation">
+        <div class="unreconciled_lines_total">
+            <div class="row">
+                <div class="col-xs-6">
+                    <span>Bank Statement Line Total: </span><span id="bsl_total"></span>
+                </div>
+                <div class="col-xs-6">
+                    <span>Account Move Line Total: </span><span id="aml_total"></span>
+                </div>
+            </div>
+        </div>
+        <div class="oe_form_bank_statement_reconcile"><div class="oe_bank_statement_sheet">
+            <div class="row">
+                <h1><t t-esc="title"/></h1>
+            </div>
+            <div class="oe_clear"></div>
+            <!-- NON PAIRED TABLES -->
+            <div class="row unreconciled_lines_container">
+                <div class="col-xs-6">
+                    <div class="row oe_subtitle_table">
+                        <b>Bank Statement Lines</b>
+                    </div>
+                    <div class="row unreconciled_bank_statements oe_half_table">
+
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row oe_subtitle_table">
+                        <b>Account Move Lines</b>
+                    </div>
+                    <div class="row unreconciled_move_lines oe_half_table">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUTTON TO MOVE EVERYTHING TO PRE-RECONCILE -->
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
+                    <a class="btn btn-primary" href="#" role="button" id="add_to_conciliate_area">Add to Conciliate Area</a>
+                </div>
+            </div>
+            <!-- AREA TO PRE-RECONCILE -->
+
+
+            <!-- PAIRED TABLES -->
+            <div class="reconciliation_lines_container"></div>
+            <div class="show_more_container"><button class="show_more">Show more... (<span class="num_items_remaining"></span> remaining)</button></div>
+            <p class='protip'>Tip : Hit ctrl-enter to reconcile all balanced items.</p>
+        </div></div>
+    </t>
+
+
+    <t t-name="poi_bank_unreconciled_statement_lines">
+        <table class="table table-striped table-hover">
+            <tbody class="tbody_initial_line">
+                <tr>
+                    <td>Ref.</td>
+                    <td>Date</td>
+                    <td>Desc.</td>
+                    <td>Account</td>
+                    <td>Amount</td>
+                    <td>Comment</td>
+                </tr>
+                <tr t-foreach="lines" t-as="line" t-att-id="line.id">
+                    <td class="cell_action">
+                        <input name="unreconciled_statement_line" class="unreconciled_statement_line" type="checkbox" t-att-id="line.id"/>
+                    </td>
+                    <td class="cell_due_date"><t t-esc="line.date"/></td>
+                    <td class="cell_account_code"><t t-esc="line.account_code"/></td>
+
+                    <td class="cell_label">
+                        <t t-if="line.name" t-esc="line.name"/>
+                        <t t-if="line.ref"> : <t t-esc="line.ref" /></t>
+                        <t t-if="line.amount_currency_str"> (<t t-esc="line.amount_currency_str"/>)</t></td>
+                    <td class="cell_amount"><t t-if="line.amount">
+                          <t t-esc="line.amount_str"/></t></td>
+                    <td class="cell_comment">
+                        <input type="text" class="form-control" placeholder="comment" t-att-id="line.id"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </t>
+
+    <t t-name="poi_bank_unreconciled_move_lines">
+        <table class="table table-striped table-hover">
+            <tbody class="tbody_initial_line">
+                <tr>
+                    <td>Ref.</td>
+                    <td>Date</td>
+                    <td>Desc.</td>
+                    <td>Account</td>
+                    <td>Amount</td>
+                    <td>Comment</td>
+                </tr>
+                <tr t-foreach="lines" t-as="line" t-att-id="line.id">
+                    <td class="cell_action">
+                        <input name="unreconciled_move_line" class="unreconciled_move_line" type="checkbox" t-att-id="line.id"/>
+                    </td>
+                    <td class="cell_due_date"><t t-esc="line.date"/></td>
+                    <td class="cell_account_code"><t t-esc="line.account_code"/></td>
+
+                    <td class="cell_label">
+                        <t t-if="line.name" t-esc="line.name"/>
+                        <t t-if="line.ref"> : <t t-esc="line.ref" /></t>
+                        <t t-if="line.amount_currency_str"> (<t t-esc="line.amount_currency_str"/>)</t></td>
+                    <td class="cell_amount"><t t-if="line.amount">
+                          <t t-esc="line.amount_str"/></t></td>
+                    <td class="cell_comment">
+                        <input type="text" class="form-control" placeholder="comment" t-att-id="line.id"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </t>
+
+
+
+
+
+
+
+
+
+
+
+    <t t-name="poi_bank_unreconciled_statement_line">
+        <tr>
+            <td class="cell_action">
+                <input name="unreconciled_statement_line" type="checkbox" t-att-id="line.id"/>
+            </td>
+            <td class="cell_due_date"><t t-esc="line.date"/></td>
+            <td class="cell_account_code"><t t-esc="line.account_code"/></td>
+
+            <td class="cell_label">
+                <t t-if="line.name" t-esc="line.name"/>
+                <t t-if="line.ref"> : <t t-esc="line.ref" /></t>
+                <t t-if="line.amount_currency_str"> (<t t-esc="line.amount_currency_str"/>)</t></td>
+            <td class="cell_amount"><t t-if="line.amount">
+                  <t t-esc="line.amount_str"/></t></td>
+            <td class="cell_comment">
+                <input type="text" class="form-control" placeholder="comment" t-att-id="line.id"/>
+            </td>
+        </tr>
+    </t>
+
+</templates>

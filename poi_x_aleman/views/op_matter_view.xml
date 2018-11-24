@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="op_subject_form_view_inherit" model="ir.ui.view">
+            <field name="name">op.subject.form.view.inherit</field>
+            <field name="model">op.subject</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_subject_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form/sheet/group[1]" position="replace">
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="german_name"/>
+                            <field name="matter_type"/>
+                            <field name="type"/>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        <record id="op_subject_tree_view_inherit" model="ir.ui.view">
+            <field name="name">op.subject.form.view.inherit</field>
+            <field name="model">op.subject</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_subject_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='code']" position="replace">
+                        <field name="german_name"/>
+                    </xpath>
+                    <xpath expr="//field[@name='type']" position="replace">
+                        <field name="code"/>
+                    </xpath>
+                    <xpath expr="//field[@name='subject_type']" position="replace">
+                        <field name="matter_type"/>
+                    </xpath>
+                    <xpath expr="//field[@name='grade_weightage']" position="replace">
+                        <field name="type"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

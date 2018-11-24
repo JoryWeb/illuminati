@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        
+        <report
+            auto="False"
+            id="kardex_pdf_pre2"
+            model="report.kardex"
+            name="kardex_pdf_pre2"
+            file="poi_x_pretensa/report/report_kardex_pdf.mako"
+            string="Imprimir Kardex"
+            header="False" 
+            report_type="webkit"
+            webkit_header="kardex_header"
+            />
+    </data>
+
+    <data>
+        
+        <report
+            auto="False"
+            id="kardex_pdf_pre3"
+            model="report.kardex"
+            name="kardex_pdf_pre3"
+            file="poi_x_pretensa/report/report_kardex_pdf3.mako"
+            string="Imprimir Kardex"
+            header="False" 
+            report_type="webkit"
+            webkit_header="kardex_header"
+            />
+    </data>
+</openerp>

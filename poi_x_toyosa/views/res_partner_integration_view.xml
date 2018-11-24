@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_inh" model="ir.ui.view">
+            <field name="name">res.partner.form.inf</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <group name="purchase" position="after">
+                    <group string="Integración" name="integration" attrs="{'invisible': ['|', ('customer','!=',False), ('supplier','!=',False)]}">
+                        <field name="user_cod_barras"/>
+                        <field name="user_cod_localidad"/>
+                        <field name="user_cod_cargo"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

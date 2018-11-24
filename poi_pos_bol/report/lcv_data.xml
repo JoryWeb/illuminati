@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+
+        <!-- Registrar la Vista SQL en la tabla de Indices, a partir de la cual se construira el query total mediante UNION de Vistas de diferetes modulos -->
+        <record id="poi_bol_lcv_report_pos" model="poi_bol.lcv.report.index">
+            <field name="name">poi_bol_lcv_report_pos</field>
+            <field name="module">poi_pos_bol</field>
+            <field name="notes">Parte de Libro de compras correspondiente a las Facturas de importacion ingresadas desde modulo de PdV</field>
+        </record>
+
+         <!-- Llamada a la funcion para reconstruir el reporte LCV en base a cualquier cambio introducido en la instalacion/actualizacion de este modulo
+         <function
+              id="function_rebuild_view_union"
+              model="poi_bol.lcv.report"
+              name="rebuild_view_union"/>
+-->
+    </data>
+</odoo>

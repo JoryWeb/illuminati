@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequences for purchase cost distribution -->
+        <record id="seq_poi_original_annual_plan" model="ir.sequence">
+            <field name="name">Actualizaciones UFV</field>
+            <field name="code">poi.ufv.inventory</field>
+            <field name="prefix">UFV</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

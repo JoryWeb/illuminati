@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_attachment_editable_tree" model="ir.ui.view">
+        <field name="model">ir.attachment</field>
+        <field name="arch" type="xml">
+            <tree string="Attachments" editable="top" decoration-danger="expiration_date &lt; current_date">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="datas_fname" invisible="1"/>
+                <field name="datas" filename="datas_fname" attrs="{'invisible':[('type','=','url')]}"/>
+                <field name="entregado"/>
+                <field name="expiration_date"/>
+                <field name="number_code"/>
+                <field name="fisico_enviado"/>
+                <field name="fisico_recibido"/>
+                <field name="res_model" invisible="1"/>
+                <field name="res_field" invisible="1"/>
+                <field name="res_id" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="create_uid" invisible="1"/>
+                <field name="create_date" invisible=""/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='poi_attachments_action' model='ir.actions.act_window'>
+        <field name="name">Registrar adjuntos</field>
+        <field name="res_model">ir.attachment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Registrar de forma rapida los adjuntos
+            </p>
+            <p>
+                Registrar de forma rapida los adjuntos
+            </p>
+        </field>
+    </record>
+    <record id="poi_attachments_action_tree" model="ir.actions.act_window.view">
+        <field eval="10" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_attachment_editable_tree"/>
+        <field name="act_window_id" ref="poi_attachments_action"/>
+    </record>
+</odoo>

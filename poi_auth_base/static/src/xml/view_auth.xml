@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+
+    <div t-name="AuthBase.area" class="oe_auth_area">
+      <div class="row oe_auth_areaa">
+      <div class="o_form_auth col-xs-10">
+              <div class="alert alert-warning" id="alert_auth">
+                <strong>Atencion, Circuito de Autorizacion!</strong> <span t-raw="widget.message" />
+              </div>
+      </div>
+      <div class="o_form_auth col-xs-2">
+
+          <button type="button" class="btn btn-primary btn-sm o_form_button_auth_log" id="auth_log" >
+          Estado de Autorizacion</button>
+
+      </div>
+      </div>
+
+      <t t-if="widget.to_approve">
+          <div class="row oe_auth_areaa">
+          <div class="col-xs-10 ">
+              <div class="auth-textbox-area">
+                  <input id="auth_message" class="form-control auth-message" placeholder="Please type your message of approval"/>
+              </div>
+              <!--<div class="col-sm-8"><![CDATA[&nbsp;]]></div>-->
+          </div>
+          <div class="col-xs-2">
+              <div class="auth-buttons-area text-right">
+                  <button id="auth_approve" type="button" class="btn btn-sm btn-success auth_approve_button"><i class="fa fa-check"></i> Approve</button>
+                  <button id="auth_deny" type="button" class="btn btn-sm btn-danger auth_deny_button"><i class="fa fa-times"></i> Reject</button>
+              </div>
+          </div>
+          </div>
+      </t>
+
+    </div>
+
+    <div t-name="AuthBase.options" class="oe_auth_options">
+        <t t-if="widget.require_auth">
+            <div class="o_form_auth">
+                    <div class="row">
+                        <ol class="breadcrumb bread-primary ">
+                            <button id="auth_log" href="#" class="btn btn-danger"><i class="fa fa-bars"></i> Waiting for Authorization</button>
+                            <li><t t-raw="widget.message"/></li>
+                        </ol>
+                    </div>
+                    <t t-if="widget.to_approve">
+                        <div class="row">
+                            <div class="col-xs-12 auth-textbox-area">
+                                <textarea id="auth_message" class="auth-textbox" placeholder="Please type your message of approval"/>
+                            </div>
+                            <!--<div class="col-sm-8"><![CDATA[&nbsp;]]></div>-->
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 auth-buttons-area text-right">
+                                <button id="auth_approve" type="button" class="btn btn-sm btn-success"><i class="fa fa-check"></i> Approve</button>
+                                <button id="auth_deny" type="button" class="btn btn-sm btn-danger"><i class="fa fa-times"></i> Reject</button>
+                            </div>
+                        </div>
+                    </t>
+                    <div class="row">
+                        <hr class="hr-primary" />
+                    </div>
+            </div>
+        </t>
+        <t t-if="!widget.require_auth">
+            <div class="o_form_auth">
+                NO REQUIERE
+            </div>
+        </t>
+    </div>
+
+
+    <t t-extend="WebClient.DebugDropdown">
+        <t t-jquery="li.oe_print_workflow" t-operation="after">
+            <li>
+                <a href="#" data-action="view_authorization_status">View Authorization Status</a>
+            </li>
+        </t>
+    </t>
+</template>

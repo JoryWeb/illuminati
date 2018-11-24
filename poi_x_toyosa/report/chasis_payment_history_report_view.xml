@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_chasis_payment_history_report_search" model="ir.ui.view">
+            <field name="name">report.purchase.order.search</field>
+            <field name="model">chasis.payment.history.report</field>
+            <field name="arch" type="xml">
+                <search string="Purchase Orders">
+                    <field name="lot_id"/>
+                    <field name="partner_id"/>
+                    <field name="sale_id"/>
+                    <field name="invoice_id"/>
+                    <group expand="1" string="Agrupar por">
+                        <filter string="Moneda" name="group_moneda" context="{'group_by':'currency_id'}"/>
+                        <filter string="Cliente" name="group_partner_id" context="{'group_by':'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_chasis_payment_history_report_tree">
+            <field name="name">chasis.payment.history.report.tree</field>
+            <field name="model">chasis.payment.history.report</field>
+            <field name="arch" type="xml">
+                <tree string="Reporte de Pagos Chasis">
+                    <field name="lot_id"/>
+                    <field name="partner_id"/>
+                    <field name="sale_id" invisible="1"/>
+                    <field name="invoice_id" invisible="1"/>
+                    <field name="date"/>
+                    <field name="payment_request_id"/>
+                    <field name="payment_id"/>
+                    <field name="amount_bs" sum="Total"/>
+                    <field name="amount_usd" sum="Total"/>
+                    <field name="currency_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_chasis_payment_history_report_all" model="ir.actions.act_window">
+            <field name="name">Reporte Chasis</field>
+            <field name="res_model">chasis.payment.history.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id"></field>  <!-- force empty -->
+            <field name="help">Reporte de Pagos por Chasis</field>
+        </record>
+        <!--
+        <menuitem id="menu_chasis_payment_history_report" parent="stock.menu_warehouse_report" sequence="99"
+            groups="purchase.group_purchase_manager" action="action_chasis_payment_history_report_all"/>
+            -->
+
+    </data>
+</odoo>

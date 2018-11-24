@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<report id="report_afp_bol"
+	string="Aportes Laborales Y Patronales"
+	model="hr.payslip"
+	name="poi_hr_report.report_afp"
+	report_type="qweb-pdf"
+	file="poi_hr_report.report_afp"
+	auto="False"
+	menu="False"/>
+
+<record id="paperformat_hr_apf_report" model="report.paperformat">
+	<field name="name">Aportes Laborales Y Patronales</field>
+	<field name="default" eval="True"/>
+	<field name="format">A4</field>
+	<field name="page_height">0</field>
+	<field name="page_width">0</field>
+	<field name="orientation">Portrait</field>
+	<field name="margin_top">35</field>
+	<field name="margin_bottom">20</field>
+	<field name="margin_left">7</field>
+	<field name="margin_right">7</field>
+	<field name="header_line" eval="False" />
+	<field name="header_spacing">30</field>
+	<field name="dpi">90</field>
+</record>
+<record id="report_afp_bol" model="ir.actions.report">
+	<field name="paperformat_id" ref="poi_hr_report.paperformat_hr_apf_report"/>
+</record>
+
+<template id="report_afp">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+        	<div class="header" style="font-size:11px;">
+        		<div class="row">
+        			<div class="col-xs-4">
+        				<img t-if="o.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.logo)" style="max-height: 45px;"/>
+
+	            		<div style="font-size:10px;">
+	            			<span t-field="o.street" /><br/>
+	            			<span t-field="o.street2" /> - <span t-field="o.phone" />
+	            		</div>
+	            		<div style="font-size:10px;">
+	            			<span t-field="o.city"/> - <span t-field="o.country_id"/>
+	            		</div>
+        			</div>
+        			<div class="col-xs-4">
+        				<h4 class="text-center">APORTES LABORALES Y PATRONALES</h4>
+						<h5>Correspondiente al Mes de <span t-esc="month" /></h5>
+	                    <p>Expresado en Bolivianos</p>
+					</div>
+					<div class="col-xs-4 text-right">
+						<t t-usertime="%d/%m/%Y %H:%M:%S" /> <br />
+						<span>Hoja:<span class="page"/> de <span class="topage"/></span>
+					</div>
+
+        		</div>
+        	</div>
+
+        	<div class="article"  t-attf-style="font-size:{{ 11 }}px;">
+        		<div class="row">
+        			<div class="col-xs-12">
+        				<table class="table table-condensed table-bordered">
+        					<thead>
+        						<tr>
+        							<th>DETALLE</th>
+        							<th></th>
+        							<th class="text-center">Total Ganado</th>
+        							<TH class="text-center">Sub-Total</TH>
+        							<th class="text-center">Total General</th>
+        							<th class="text-center">Entidad Beficiaria del Pago</th>
+        						</tr>
+        					</thead>
+        					<tbody>
+								<t t-set="t" t-value="0"/>
+								<t t-foreach="afp" t-as="a">
+									<tr>
+										<td>
+											<strong><p class="text-left"><span t-field="a.name"/></p></strong>
+										</td>
+										<td></td>
+										<td class="text-right"><strong><span t-field="a.amount_total"/></strong></td>
+										<td></td>
+										<td class="text-right"><strong><span t-field="a.amount_total"/></strong></td>
+										<td class="text-right"><span t-field="a.bank_account_id.bank_id.name"/> <span t-field="a.bank_account_id.acc_number"/></td>
+									</tr>
+									<t t-foreach="a.line_ids" t-as="l">
+									<tr>
+										<td>
+											<span t-field="l.name"/>
+										</td>
+
+										<td class="text-right">
+											<span t-field="l.note"/>
+										</td>
+										<td></td>
+										<td class="text-right">
+											<span t-field="l.total"/>
+										</td>
+										<td></td>
+										<td></td>
+										</tr>
+									</t>
+									<t t-set="t" t-value="a.amount_total + t"/>
+									<t t-if="a_last">
+										<tr>
+											<td colspan="3">
+												<strong>Total Aportes a Pagar</strong>
+											</td>
+											<td class="text-right">
+
+											</td>
+											<td class="text-right">
+												<strong>
+													<t t-esc="('%.2f' % (t or 0.00))"/>
+												</strong>
+											</td>
+										</tr>
+									</t>
+								</t>
+        					</tbody>
+        				</table>
+        			</div>
+				</div>
+			</div>
+        </t>
+    </t>
+</template>
+</data>
+</odoo>

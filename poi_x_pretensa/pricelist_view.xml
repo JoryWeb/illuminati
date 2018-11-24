@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    	<!-- Maximo descuento Global -->
+		<record model="ir.ui.view" id="pricelist_pret_form">
+	        <field name="name">pricelist.pret.form</field>
+	        <field name="model">product.pricelist</field>
+	        <field name="inherit_id" ref="product.product_pricelist_view" />
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='company_id']" position="after">
+                    <field name="max_discount"/>                    
+	        	</xpath>
+	        </field>
+        </record>
+
+    </data>
+</openerp>

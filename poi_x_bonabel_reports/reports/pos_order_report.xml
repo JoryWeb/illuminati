@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="view_report_pos_order_search_bona" model="ir.ui.view">
+        <field name="name">report.pos.order.search.bonabel</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search"/>
+        <field name="arch" type="xml">
+            <data>
+            <xpath expr="//field[@name='product_categ_id']" position="after">
+                <field name="name1"/>
+                <field name="name2"/>
+                <field name="name3"/>
+                <field name="name4"/>
+                <field name="name5"/>
+                <field name="name6"/>
+                <field name="name7"/>
+                <field name="name8"/>
+            </xpath>
+            <xpath expr="//filter[@name='User']" position="after">
+                <filter string="Division" context="{'group_by':'name1'}"/>
+                <filter string="Fabrica" context="{'group_by':'name2'}"/>
+                <filter string="Mundo" context="{'group_by':'name3'}"/>
+                <filter string="Tipo" context="{'group_by':'name4'}"/>
+                <filter string="Sub-Tipo" context="{'group_by':'name5'}"/>
+                <filter string="Linea" context="{'group_by':'name6'}"/>
+                <filter string="Modelo" context="{'group_by':'name7'}"/>
+                <filter string="Descripcion" context="{'group_by':'name8'}"/>
+            </xpath>
+            </data>
+        </field>
+    </record>
+</data>
+</odoo>

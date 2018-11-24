@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <!-- Leyendas -->
+        <record model="poi_bol_base.cc_dosif.sector" id="poi_bol_sec_1">
+                        <field name="name">Genéricas</field>
+        </record>
+        <record model="poi_bol_base.cc_dosif.sector" id="poi_bol_sec_2">
+                        <field name="name">Prestación de Servicios
+        </field>
+        </record>
+        <record model="poi_bol_base.cc_dosif.sector" id="poi_bol_sec_3">
+                        <field name="name">Venta de Productos
+        </field>
+        </record>
+        <record model="poi_bol_base.cc_dosif.sector" id="poi_bol_sec_4">
+                        <field name="name">Salud</field>
+        </record>
+        <record model="poi_bol_base.cc_dosif.sector" id="poi_bol_sec_5">
+                        <field name="name">Servicios Bancarios y Financieros</field>
+        </record>
+        <record model="poi_bol_base.cc_dosif.sector" id="poi_bol_sec_6">
+                        <field name="name">Medios de Comunicación</field>
+        </record>
+
+
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_1">
+                        <field name="name">Ley N° 453: Si se te ha vulnerado algún derecho puedes exigir la reposición o restauración.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_2">
+            <field name="name">Ley N° 453: El proveedor deberá dar cumplimiento a las condiciones ofertadas.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_3">
+            <field name="name">Ley N° 453: Están prohibidas las prácticas comerciales abusivas, tienes derecho a denunciarlas.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_4">
+            <field name="name">Ley N° 453: Tienes derecho a recibir información que te proteja de la publicidad engañosa.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_5">
+            <field name="name">Ley N° 453: Puedes acceder a la reclamación cuando tus derechos han sido vulnerados.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_6">
+            <field name="name">Ley N° 453: Los contratos de adhesión deben redactarse en términos claros, comprensibles, legibles y deben informar todas las facilidades y limitaciones.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_7">
+            <field name="name">Ley N° 453: Se debe promover el consumo solidario, justo, en armonía con la Madre Tierra y precautelando el hábitat, en el marco del Vivir Bien.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_8">
+            <field name="name">Ley N° 453: El proveedor de productos debe habilitar medios e instrumentos para efectuar consultas y reclamaciones.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+         <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_9">
+            <field name="name">Ley N° 453: El proveedor debe brindar atención sin discriminación, con respeto, calidez y cordialidad a los usuarios y consumidores.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_1"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_10">
+            <field name="name">Ley N° 453: Los servicios deben suministrarse en condiciones de inocuidad, calidad y seguridad.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_11">
+            <field name="name">Ley N° 453: Tienes derecho a un trato equitativo sin discriminación en la oferta de servicios.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_12">
+            <field name="name">Ley N° 453: El proveedor deberá suministrar el servicio en las modalidades y términos ofertados o convenidos.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_13">
+            <field name="name">Ley N° 453: En caso de incumplimiento a lo ofertado o convenido, el proveedor debe reparar o sustituir el servicio.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_14">
+            <field name="name">Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los servicios que utilices.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_15">
+            <field name="name">Ley N° 453: La interrupción del servicio debe comunicarse con anterioridad a las Autoridades que correspondan y a los usuarios afectados.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_16">
+            <field name="name">Ley N° 453: El proveedor de servicios debe habilitar medios e instrumentos para efectuar consultas y reclamaciones.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_17">
+            <field name="name">Ley N° 453: El proveedor debe exhibir certificaciones de habilitación o documentos que acrediten las capacidades u ofertas de servicios especializados.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_2"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_18">
+            <field name="name">Ley N° 453: Los productos deben suministrarse en condiciones de inocuidad, calidad y seguridad.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_19">
+            <field name="name">Ley N° 453: Está prohibido importar, distribuir o comercializar productos expirados o prontos a expirar.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_20">
+            <field name="name">Ley N° 453: Está prohibido importar, distribuir o comercializar productos prohibidos o retirados en el país de origen por atentar a la integridad física y a la salud.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_21">
+            <field name="name">Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los productos que consumes.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_22">
+            <field name="name">Ley N° 453: Tienes derecho a un trato equitativo sin discriminación en la oferta de productos.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_23">
+            <field name="name">Ley N° 453: El proveedor deberá entregar el producto en las modalidades y términos ofertados o convenidos.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_24">
+            <field name="name">Ley N° 453: En caso de incumplimiento a lo ofertado o convenido, el proveedor debe reparar o sustituir el producto.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_25">
+            <field name="name">Ley N° 453: Los alimentos declarados de primera necesidad deben ser suministrados de manera adecuada, oportuna, continua y a precio justo.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_3"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_26">
+            <field name="name">Ley N° 453: El prestador de servicio médico debe brindar atención de calidad al paciente.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_4"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_27">
+            <field name="name">Ley N° 453: Cuando lo solicite el paciente, se debe informar los resultados de exámenes, diagnósticos y estudios de laboratorio.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_4"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_28">
+            <field name="name">Ley N° 453: El prestador de servicio médico debe prescribir medicamentos debidamente autorizados por el Ministerio de Salud.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_4"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_29">
+            <field name="name">Ley N° 453: Se debe otorgar el auxilio y atención necesarios en casos de urgencia o emergencia hospitalaria, sin aducir excusa alguna.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_4"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_30">
+            <field name="name">Ley N° 453: Se debe brindar alternativas de pago por servicios utilizados en emergencia médica u hospitalaria, no pudiendo retenerse al usuario por deuda.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_4"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_31">
+            <field name="name">Ley N° 453: Tienes derecho a denunciar la existencia de productos y servicios que pongan en riesgo tu salud o integridad física.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_4"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_32">
+            <field name="name">Ley N° 453: La entidad financiera tiene la obligación de promover la educación financiera.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_5"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_33">
+            <field name="name">Ley N° 453: La entidad financiera debe facilitar en cualquier momento y gratuitamente, toda información de los movimientos bancarios, financieros o de crédito.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_5"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_34">
+            <field name="name">Ley N° 453: La entidad financiera debe informar por escrito los motivos por los cuales se denegó un crédito.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_5"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_35">
+            <field name="name">Ley N° 453: Los medios de comunicación deben difundir mensajes o programas de educación de consumo responsable y sustentable.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_6"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_36">
+            <field name="name">Ley N° 453: Los medios de comunicación deben promover el respeto de los derechos de los usuarios y consumidores.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_6"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_37">
+            <field name="name">Ley N° 453: Las publicaciones, mensajes e imágenes no deben promover la sumisión o explotación de las mujeres.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_6"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_38">
+            <field name="name">Ley N° 453: Las publicaciones, mensajes e imágenes no deben deshonrar y atentar contra la dignidad e imagen de la mujer.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_6"/>
+        </record>
+        <record model="poi_bol_base.cc_dosif.leyenda" id="poi_bol_ley_39">
+            <field name="name">Ley N° 453: Los medios de comunicación deben evitar contenidos inapropiados que vulneren la protección de niñas, niños y adolescentes.
+                </field>
+            <field name="sector_id" ref="poi_bol_sec_6"/>
+        </record>
+
+    </data>
+</odoo>

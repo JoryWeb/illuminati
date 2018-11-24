@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_picking_form_landed_cost_inh">
+        <field name="name">stock.picking.form.landed.cost.inh</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <field name="scheduled_date" position="attributes">
+                <attribute name="string">Fecha estimada de arribo</attribute>
+            </field>
+            <field name="location_dest_id" position="after">
+                <field name="n_produccion"/>
+            </field>
+            <field name="origin" position="after">
+                <field name="embarque"
+                       attrs="{'invisible': ['|', '|', ('tipo', '=', 'internal'), ('tipo', '=', 'transit'), ('tipo', '=', 'outgoing')]}"/>
+                <field name="barco"
+                       attrs="{'invisible': ['|', '|', ('tipo', '=', 'internal'), ('tipo', '=', 'transit'), ('tipo', '=', 'outgoing')]}"/>
+                <field name="tipo" invisible="1"/>
+                <field name="n_guia" attrs="{'invisible': [('tipo', '!=', 'internal')]}"/>
+            </field>
+            <!--<field name="picking_type_id" position="after">
+                <field name="transportista"/>
+            </field>-->
+            <field name="priority" position="after">
+                <field name="placa"/>
+            </field>
+            <div class="oe_button_box" position="inside">
+                <button class="oe_stat_button"
+                        name="action_view_quant"
+                        icon="fa-truck"
+                        type="object"
+                        string="Series"
+                        >
+                </button>
+                <button class="oe_stat_button"
+                        name="action_view_incidence"
+                        icon="fa-info-circle"
+                        type="object"
+                        string="Incidencias"
+                        >
+                </button>
+                <!--<button class="oe_stat_button"
+                        name="action_view_chasis"
+                        icon="fa-truck"
+                        type="object"
+                        string="Chasis"
+                        >
+                </button>-->
+            </div>
+        </field>
+    </record>
+</odoo>

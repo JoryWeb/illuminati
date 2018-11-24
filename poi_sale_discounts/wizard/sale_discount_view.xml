@@ -1,0 +1,37 @@
+<odoo>
+	<data>
+		<record id="sale_discount_wizard_view" model="ir.ui.view">
+			<field name="name">sale.discount.wizard.view</field>
+			<field name="model">sale.discount.wizard</field>
+			<field name="arch" type="xml">
+			<form string="Discounts">
+                    <group colspan="2">
+						<label string="The discount amount is going to be distributed between each product" colspan="2"/>
+                        <newline/>
+						<field name="discount_amount"/>
+                    </group>
+                    <group colspan="2">
+						<label string="THe discount percentage is going to be applied to all the products" colspan="2"/>
+                        <newline/>
+						<field name="discount"/>
+                    </group>
+						<label string="Note: you can't fill both discounts, only discount amount is going to be applied"/>
+				<footer>
+					<button name="apply_discounts" type="object" string="Apply Discounts" class="oe_highlight" confirm="Apply Discounts?"/>
+				</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="sale_discount_wizard_action" model="ir.actions.act_window">
+            <field name="name">Set Discounts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.discount.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sale_discount_wizard_view"/>
+            <field name="target">new</field>
+        </record>        
+        
+	</data>
+</odoo>

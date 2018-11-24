@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+  <record id="sale_report_config_view_form" model="ir.ui.view">
+    <field name="name">sale.report.config.form</field>
+    <field name="model">sale.report.config</field>
+    <field name="arch" type="xml">
+      <form string="Configuracion de Reportes">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="report_id"/>
+          </group>
+          <group>
+            <field name="item_ids" widget="one2many_list" nolabel="1">
+              <tree string="Items" editable="bottom">
+                <field name="name"/>
+                <field name="item_id"/>
+                <field name="default"/>
+                <field name="group_id"/>
+                <field name="sequence"/>
+              </tree>
+            </field>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_report_config_view_tree" model="ir.ui.view">
+    <field name="name">sale.report.config.tree</field>
+    <field name="model">sale.report.config</field>
+    <field name="arch" type="xml">
+      <tree string="Configuracion de Reportes">
+        <field name="name"/>
+        <field name="report_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_report_config_action_form" model="ir.actions.act_window">
+    <field name="name">Configuracion de Reportes</field>
+    <field name="res_model">sale.report.config</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear configuracion
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_sale_report_config" name="Reportes" parent="sale.menu_sale_config" sequence="24"/>
+  <menuitem id="menu_report_config_sale"  parent="menu_sale_report_config" action="sale_report_config_action_form" sequence="1"/>
+
+
+</data>
+</odoo>

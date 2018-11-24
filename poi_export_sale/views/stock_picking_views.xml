@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_picking_form_export">
+        <field name="name">stock.picking.form.export</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <page name="extra" position="before">
+                    <page string="Registro Pesos" name="other_info">
+                        <group>
+                            <group string="Registro de Pesos" name="register_weight">
+                                <label for="weight_exp" string="Peso Neto/Realizado"/>
+                                <div>
+                                    <field name="weight_exp" class="oe_inline"/>
+                                    <field name="weight_uom_id" nolabel="1" class="oe_inline" style="margin-left:5px"/>
+                                </div>
+                                <field name="weight_tara"/>
+                                <field name="weight_bruto"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+        </field>
+    </record>
+</odoo>

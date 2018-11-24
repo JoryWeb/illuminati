@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+       <!-- Vista Arbol Tesoreria -->
+        <record model="ir.ui.view" id="pret_tesoreria">
+            <field name="name">pret.tesoreria.report</field>
+            <field name="model">pret.tesoreria</field>
+            <field name="arch" type="xml">
+                <tree string="Reporte Tesorería">
+					<field name="date"/>
+					<field name="period_id"/>
+					<field name="journal_id"/>
+                    <field name="account_id"/>
+					<field name="analytic_id"/>
+                    <field name="shop_id" invisible="1"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="state" invisible="1"/>
+                    <field name="nro_check"/>
+					<field name="debit" sum="debit_total" />
+                    <field name="credit" sum="credit_total" />
+                    <field name="saldo"/>
+                    <field name="debit_usd" sum="debit_usd_total" invisible="not context.get('usd',False)" />
+                    <field name="credit_usd" sum="credit_usd_total" invisible="not context.get('usd',False)" />
+                    <field name="saldo_usd" invisible="not context.get('usd',False)"/>
+                    <field name="move_id"/>
+                    <field name="contra_accounts" invisible="not context.get('contra',False)"/>
+                    <button name="launch_form" type="object" string="Ver Apunte contable" icon="STOCK_FIND"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pret_tesoreria_search" model="ir.ui.view">
+            <field name="name">pret.tesoreria.search</field>
+            <field name="model">pret.tesoreria</field>
+            <field name="arch" type="xml">
+                <search string="Reporte Tesorería">
+
+                    <group string="Filtros">
+                        <filter string="Ver USD" name="ver_usd"
+			                context="{'usd': True}" help="Ver montos también en dólares"/>
+                        <filter string="Ver Contra Cuentas" name="ver_contra"
+			                context="{'contra': True}" help="Ver columna Contra Cuentas"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter name="group_account" string="Cuenta" domain="[]" context="{'group_by':'account_id'}"/>
+                        <filter name="group_analytic" string="Analítica" domain="[]" context="{'group_by':'analytic_id'}"/>
+                        <filter name="group_partner" string="Socio de negocio" domain="[]" context="{'group_by':'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_prte_tesoreria">
+            <field name="name">Reporte Tesorería</field>
+            <field name="res_model">pret.tesoreria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="view_id"  ref="pret_tesoreria"/>
+            <field name="search_view_id"  ref="pret_tesoreria_search"/>
+        </record>
+
+
+        <!-- Asistente Tesoreria -->
+        <record model="ir.ui.view" id="view_pret_tesoreria_wizard">
+            <field name="name">pret.tesoreria.wizard.form</field>
+            <field name="model">pret.tesoreria.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Asistente Reporte Tesorería" version="7.0">
+                    <group>
+                        <field name="grouping"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <!-- <field name="period_id"/> -->
+                        <field name="partner_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Cuentas">
+                            <group col="4">
+                                <field name="account_ids" colspan="1" nolabel="1">
+                                    <tree>
+                                        <field name="name" string="Cuentas Contables"/>
+                                        <field name="balance" />
+                                        <!--<field name="balance"/>-->
+                                    </tree>
+                                </field>
+                                <field name="analytic_ids" colspan="1"  nolabel="1">
+                                    <tree>
+                                        <field name="name" string="Cuentas Analíticas"/>
+                                        <!--<field name="balance"/>-->
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Diarios">
+                            <field name="journal_ids"/>
+                        </page>
+                    </notebook>
+                    <group>
+                        <field name="posted"/>
+                        <field name="usd"/>
+                        <field name="contra"/>
+                    </group>
+
+
+                    <newline/>
+                    <separator colspan="4" />
+                    <footer>
+                        <button name="launch_report" type="object" string="Ver Reporte" class="oe_highlight"/>
+                        o
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_pret_tesoreria_wizard">
+            <field name="name">Reporte Tesorería</field>
+            <field name="res_model">pret.tesoreria.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id"  ref="view_pret_tesoreria_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <!--<menuitem id="menu_pret_tesoreria" parent="account.menu_finance_reports" action="action_pret_tesoreria_wizard" string="Reporte Tesorería" sequence="1" groups="account.group_account_invoice"/>-->
+        <menuitem id="menu_pret_tesoreria" parent="account.menu_finance_reports" action="action_pret_tesoreria_wizard" string="Reporte Tesorería" sequence="1"/>
+
+    </data>
+</openerp>

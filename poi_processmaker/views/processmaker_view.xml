@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+        <menuitem id="module_pm" parent="" sequence="1" action="" name="BPM"/>
+
+        <menuitem id="module_pm_ops" parent="module_pm" sequence="1" action="" name="Processmaker"/>
+
+
+        <record model="ir.actions.client" id="action_pm_home">
+            <field name="name">Cases</field>
+            <field name="tag">pm_home</field>
+            <field name="params">{'suffix': '/cases/main'}</field>
+        </record>
+        <menuitem id="menu_pm_home" parent="module_pm_ops" sequence="2" action="action_pm_home"/>
+
+        <record model="ir.actions.client" id="action_pm_designer">
+            <field name="name">Designer</field>
+            <field name="tag">pm_designer</field>
+            <field name="params">{'suffix': '/processes/main'}</field>
+        </record>
+        <menuitem id="menu_pm_designer" parent="module_pm_ops" sequence="3" action="action_pm_designer"/>
+
+         <!-- Llamada a la funcion
+         <function
+              id="function_rebuild_view_union"
+              model="poi_bol.lcv.report"
+              name="rebuild_view_union"/>
+        -->
+
+        <template id="assets_backend" name="pm_client_js" inherit_id="web.assets_backend">
+            <xpath expr="."  position="inside">
+
+                <script type="text/javascript" src="/poi_processmaker/static/src/js/processmaker.js"></script>
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

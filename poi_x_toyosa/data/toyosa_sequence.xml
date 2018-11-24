@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequences for purchase cost distribution -->
+        <record id="seq_poi_purchase_imports_fabricacion" model="ir.sequence">
+            <field name="name">Secuencia Producción Toyosa</field>
+            <field name="code">production.lot</field>
+            <field name="prefix"></field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

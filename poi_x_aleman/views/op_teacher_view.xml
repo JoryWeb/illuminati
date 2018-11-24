@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--Form View-->
+        <record id="op_teacher_form_view" model="ir.ui.view">
+            <field name="name">op.teacher.form.view</field>
+            <field name="model">op.teacher</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <field name="image" widget="image" class="oe_left oe_avatar"/>
+                            <div class="oe_title">
+                                <group col="4">
+                                    <field name="title_id"/>
+                                    <field name="initials"/>
+                                </group>
+                                <h3>
+                                    <table>
+                                        <tr>
+                                            <td style="padding-right:10px;">
+                                                <field name="last_name" placeholder="Apellido Paterno"/>
+                                            </td>
+                                            <td style="padding-right:10px;">
+                                                <field name="last_name2" placeholder="Apellido Materno"/>
+                                            </td>
+                                            <td style="padding-right:10px;">
+                                                <field name="name" placeholder="Nombres"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </h3>
+                            </div>
+                        </div>
+                        <group col="3">
+                            <group>
+                                <field name="gender"/>
+                                <field name="email"/>
+                                <field name="classification_id"/>
+                            </group>
+                            <group>
+                                <field name="phone"/>
+                            </group>
+                            <group>
+                                <field name="cellphone"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Informacion personal" name="op_general_information">
+                                <group>
+                                    <group string="Datos Generales">
+                                        <field name="birth_date"/>
+                                        <field name="nationality"/>
+                                        <field name="lang"/>
+                                        <field name="blood_group_id"/>
+                                        <field name="emergency_contact"/>
+                                    </group>
+                                    <group string="Datos de Identificacion">
+                                        <label for="street" string="CI"/>
+                                        <div class="o_row">
+                                            <field name="ci" placeholder="CI"/>
+                                            <field name="issued_ci" placeholder="Exp"/>
+                                            <field name="extension_ci" placeholder="Ext"/>
+                                        </div>
+                                        <field name="passport"/>
+                                        <field name="due_date_visa"/>
+                                        <field name="foreign_id"/>
+                                        <field name="due_date_foreign_id"/>
+                                    </group>
+                                </group>
+                                <group string="Detalle de Direccion">
+                                    <label for="street" string="Direccion"/>
+                                    <div class="o_address_format">
+                                        <field name="street" placeholder="Calle 1" class="o_address_street"/>
+                                        <field name="street2" placeholder="Calle 2" class="o_address_street"/>
+                                        <div class="o_row">
+                                            <field name="city" placeholder="Ciudad"/>
+                                            <field name="department" placeholder="Departamento"/>
+                                            <field name="zone" placeholder="Zona"/>
+                                        </div>
+                                        <field name="country_id" placeholder="Pais" class="o_address_country"/>
+                                    </div>
+                                </group>
+                            </page>
+                            <page string="Materias" name="op_matters">
+                                <group>
+                                    <div>
+                                        <field name="matter_ids"/>
+                                    </div>
+                                </group>
+                            </page>
+                            <page string="Biblioteca">
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="op_teacher_tree_view" model="ir.ui.view">
+            <field name="name">op.teacher.tree.view</field>
+            <field name="model">op.teacher</field>
+            <field name="arch" type="xml">
+                <tree string="op Teacher">
+                    <field name="name"/>
+                    <field name="last_name"/>
+                    <field name="last_name2"/>
+
+                </tree>
+            </field>
+        </record>
+        <!--Actions-->
+        <record id="action_op_teacher" model="ir.actions.act_window">
+            <field name="name">Profesor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">op.teacher</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menu-->
+        <menuitem id="action_op_teacher_menu_family" name="Profesor" sequence="1" parent="op_family_submenu_family"
+                  action="action_op_teacher"/>
+    </data>
+</odoo>

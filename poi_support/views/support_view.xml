@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="assets_backend" inherit_id="web.assets_backend" name="Support Base">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/poi_support/static/src/css/support.css"/>
+            <script type="text/javascript" src="/poi_support/static/src/js/support.js"></script>
+        </xpath>
+    </template>
+    <!--
+    <template id="menu_secondary" inherit_id="web.menu_secondary" priority="32">
+        <xpath expr="//div[@class='oe_footer']" position="replace">
+            <div class="oe_footer">
+                Powered by
+                <br/>
+                <a href="http://www.odoo.com" target="_blank"><span>Odoo</span></a>
+                <span> &amp; <a target="_new" href="http://www.poiesisconsulting.com" style="color:green">Poiesis Consulting</a></span>
+            </div>
+        </xpath>
+    </template>
+    -->
+
+    <!-- VISTAS ODOO  -->
+    <record id="poi_support_ticket_tree" model="ir.ui.view">
+        <field name="model">poi.support.ticket</field>
+        <field name="arch" type="xml">
+            <tree string="Tickets Internos" create="false" edit="false">
+                <field name="type_int"/>
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+    <record id="poi_support_ticket_form" model="ir.ui.view">
+        <field name="model">poi.support.ticket</field>
+        <field name="arch" type="xml">
+            <form string="Ticket Interno" create="false" edit="false">
+                <group>
+                    <field name="type_int"/>
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <field name="description"/>
+                    <field name="debug_error"/>
+                    <field name="debug_url" widget="url"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="poi_support_ticket_action" model="ir.actions.act_window">
+        <field name="name">Tickets internos</field>
+        <field name="res_model">poi.support.ticket</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="poi_support_ticket_tree"/>
+    </record>
+
+    <menuitem id="menu_poi_support" name="Soporte"
+              parent="base.menu_administration"
+              sequence="0" groups="base.group_system"/>
+    <menuitem id="menu_poi_support_ticket" action="poi_support_ticket_action"
+              parent="menu_poi_support"
+              sequence="1"/>
+
+    </data>
+</odoo>

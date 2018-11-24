@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+    <record id="invoice_cif" model="sale.report.config">
+        <field name="name">Factura CIF</field>
+        <field name="report_id" ref="report_invoice_cif"/>
+    </record>
+    <!-- <record id="invoice_cif6" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif6" model="sale.report.items">
+        <field name="name">CILINDRADA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif7" model="sale.report.items">
+        <field name="name">Numero de Ruedas</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">7</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif8" model="sale.report.items">
+        <field name="name">Capacidad de Carga</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">8</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif9" model="sale.report.items">
+        <field name="name">Año de Fabricacion</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">9</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif10" model="sale.report.items">
+        <field name="name">Traccion</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">10</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif11" model="sale.report.items">
+        <field name="name">Transmicion</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">11</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif12" model="sale.report.items">
+        <field name="name">Numero de Puertas</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">12</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record>
+    <record id="invoice_cif13" model="sale.report.items">
+        <field name="name">Numero de Plazas</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">13</field>
+        <field name="config_id" ref="invoice_cif"/>
+    </record> -->
+
+    <record id="invoice_maq" model="sale.report.config">
+        <field name="name">Factura MAQ</field>
+        <field name="report_id" ref="report_invoice_maq"/>
+    </record>
+    <!-- <record id="invoice_maq1" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="config_id" ref="invoice_maq"/>
+    </record> -->
+
+    <record id="invoice_toy" model="sale.report.config">
+        <field name="name">Vehiculos</field>
+        <field name="report_id" ref="report_invoice_toyo"/>
+    </record>
+    <!-- <record id="invoice_toy1" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="config_id" ref="invoice_toy"/>
+    </record>
+    <record id="invoice_mot" model="sale.report.config">
+        <field name="name">Motocicletas</field>
+        <field name="report_id" ref="report_invoice_mot"/>
+    </record>
+    <record id="invoice_mot1" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="config_id" ref="invoice_mot"/>
+    </record> -->
+
+
+    <record id="sale_order_toy_report" model="sale.report.config">
+        <field name="name">Factura MAQ</field>
+        <field name="report_id" ref="report_invoice_maq"/>
+    </record>
+   <!--  <record id="invoice_maq1" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="config_id" ref="invoice_maq"/>
+    </record> -->
+
+<!-- COTIZACIONES -->
+    <record id="sale_order_group0" model="sale.report.group">
+        <field name="name">Caracteristicas</field>
+        <field name="sequence">0</field>
+    </record>
+
+    <record id="sale_order_group1" model="sale.report.group">
+        <field name="name">Chasis y Suspencion</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="sale_order_group2" model="sale.report.group">
+        <field name="name">Seguridad</field>
+        <field name="sequence">2</field>
+    </record>
+
+    <record id="sale_order_group3" model="sale.report.group">
+        <field name="name">Equipamiento</field>
+        <field name="sequence">3</field>
+    </record>
+
+    <record id="sale_order_group4" model="sale.report.group">
+        <field name="name">Dimension Peso y Capacidades</field>
+        <field name="sequence">4</field>
+    </record>
+
+    <record id="sale_order_rep" model="sale.report.config">
+        <field name="name">Cotizacion Vehiculos</field>
+        <field name="report_id" ref="report_sale_order_toyo"/>
+    </record>
+    <record id="sale_order_rep0" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">0</field>
+        <field name="group_id" ref="sale_order_group0"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep1" model="sale.report.items">
+        <field name="name">CILINDRADA (cm3)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="group_id" ref="sale_order_group0"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep2" model="sale.report.items">
+        <field name="name">NUMERO DE CILINDROS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="group_id" ref="sale_order_group0"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep3" model="sale.report.items">
+        <field name="name">POTENCIA MAXIMA (HP/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">3</field>
+        <field name="group_id" ref="sale_order_group0"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep4" model="sale.report.items">
+        <field name="name">TORQUE MAXIMO (Nm/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">4</field>
+        <field name="group_id" ref="sale_order_group0"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+
+    <record id="sale_order_rep5" model="sale.report.items">
+        <field name="name">TRANSMISION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">5</field>
+        <field name="group_id" ref="sale_order_group0"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep6" model="sale.report.items">
+        <field name="name">TIPO TRACCION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="group_id" ref="sale_order_group1"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep7" model="sale.report.items">
+        <field name="name">TRACCION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">7</field>
+        <field name="group_id" ref="sale_order_group1"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+
+    <record id="sale_order_rep8" model="sale.report.items">
+        <field name="name">CANTIDAD DE PUERTAS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">8</field>
+        <field name="group_id" ref="sale_order_group1"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep9" model="sale.report.items">
+        <field name="name">SISTEMA DE FRENOS ABS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">9</field>
+        <field name="group_id" ref="sale_order_group2"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+
+    <record id="sale_order_rep10" model="sale.report.items">
+        <field name="name">AIRBAGS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">10</field>
+        <field name="group_id" ref="sale_order_group2"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep11" model="sale.report.items">
+        <field name="name">TECHO SOLAR</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">11</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep12" model="sale.report.items">
+        <field name="name">AROS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">12</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep13" model="sale.report.items">
+        <field name="name">AIRE ACONDICIONADO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">13</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep14" model="sale.report.items">
+        <field name="name">MATERIAL DE ASIENTOS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">14</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep15" model="sale.report.items">
+        <field name="name">FAROS ANTINIEBLA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">15</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep16" model="sale.report.items">
+        <field name="name">DVD</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">16</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep17" model="sale.report.items">
+        <field name="name">RADIO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">17</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+
+    <record id="sale_order_rep18" model="sale.report.items">
+        <field name="name">PISOS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">18</field>
+        <field name="group_id" ref="sale_order_group3"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep19" model="sale.report.items">
+        <field name="name">LARGO TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">19</field>
+        <field name="group_id" ref="sale_order_group4"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep20" model="sale.report.items">
+        <field name="name">ANCHO TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">20</field>
+        <field name="group_id" ref="sale_order_group4"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep21" model="sale.report.items">
+        <field name="name">ALTURA TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">21</field>
+        <field name="group_id" ref="sale_order_group4"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep22" model="sale.report.items">
+        <field name="name">CAPACIDAD DE CARGA (kg)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">22</field>
+        <field name="group_id" ref="sale_order_group4"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep23" model="sale.report.items">
+        <field name="name">CAPACIDAD DE TANQUE DE COMBUSTIBLE (L)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">23</field>
+        <field name="group_id" ref="sale_order_group4"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+    <record id="sale_order_rep24" model="sale.report.items">
+        <field name="name">CAPACIDAD DE ASIENTOS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">24</field>
+        <field name="group_id" ref="sale_order_group4"/>
+        <field name="config_id" ref="sale_order_rep"/>
+    </record>
+
+    <!-- COTIZACION HINO -->
+
+    <record id="sale_order_group_hino0" model="sale.report.group">
+        <field name="name">Capacidades</field>
+        <field name="sequence">0</field>
+    </record>
+    <record id="sale_order_group_hino1" model="sale.report.group">
+        <field name="name">Motor</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="sale_order_group_hino2" model="sale.report.group">
+        <field name="name">Ejes y Frenos</field>
+        <field name="sequence">2</field>
+    </record>
+    <record id="sale_order_group_hino3" model="sale.report.group">
+        <field name="name">Transmision</field>
+        <field name="sequence">3</field>
+    </record>
+    <record id="sale_order_group_hino4" model="sale.report.group">
+        <field name="name">Suspesion</field>
+        <field name="sequence">4</field>
+    </record>
+
+    <record id="sale_order_hino" model="sale.report.config">
+        <field name="name">Cotizacion HINO</field>
+        <field name="report_id" ref="report_sale_order_toyo_hino"/>
+    </record>
+    <record id="sale_order_hino0" model="sale.report.items">
+        <field name="name">TIPO TRACCIÓN</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">0</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino1" model="sale.report.items">
+        <field name="name">PESO BRUTO (kg)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino2" model="sale.report.items">
+        <field name="name">CAPACIDAD DE CARGA EJE DELANTERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino3" model="sale.report.items">
+        <field name="name">CAPACIDAD DE CARGA EJE TRASERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">3</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino4" model="sale.report.items">
+        <field name="name">CAPACIDAD DE CARGA UTIL (kg)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">4</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino5" model="sale.report.items">
+        <field name="name">CAPACIDAD DE ASCENSIÓN</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">5</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino6" model="sale.report.items">
+        <field name="name">ANCHO TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino7" model="sale.report.items">
+        <field name="name">ALTURA TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">7</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino8" model="sale.report.items">
+        <field name="name">LARGO TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">8</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino9" model="sale.report.items">
+        <field name="name">LARGO CARROZABLE (MM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">9</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino10" model="sale.report.items">
+        <field name="name">CAPACIDAD DE TANQUE DE COMBUSTIBLE (L)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">10</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino11" model="sale.report.items">
+        <field name="name">NEUMATICOS VERSION ESTANDAR</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">11</field>
+        <field name="group_id" ref="sale_order_group_hino0"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+
+    <record id="sale_order_hino12" model="sale.report.items">
+        <field name="name">TIPO DE MOTOR</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">12</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino13" model="sale.report.items">
+        <field name="name">SISTEMA DE INYECCION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">13</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino14" model="sale.report.items">
+        <field name="name">CONTROL DE EMISION DE GASES</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">14</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino15" model="sale.report.items">
+        <field name="name">POTENCIA MÁXIMA (HP/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">15</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino16" model="sale.report.items">
+        <field name="name">TORQUE MÁXIMO (Nm/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">16</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino17" model="sale.report.items">
+        <field name="name">CILINDRADA (cm3)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">17</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino18" model="sale.report.items">
+        <field name="name">CONTROL DE EMBRAGUE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">18</field>
+        <field name="group_id" ref="sale_order_group_hino1"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino19" model="sale.report.items">
+        <field name="name">EJE DELANTERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">19</field>
+        <field name="group_id" ref="sale_order_group_hino2"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino20" model="sale.report.items">
+        <field name="name">EJE TRASERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">20</field>
+        <field name="group_id" ref="sale_order_group_hino2"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino21" model="sale.report.items">
+        <field name="name">FRENOS DE SERVICIO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">21</field>
+        <field name="group_id" ref="sale_order_group_hino2"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino22" model="sale.report.items">
+        <field name="name">FRENO DE ESTACIONAMIENTO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">22</field>
+        <field name="group_id" ref="sale_order_group_hino2"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino23" model="sale.report.items">
+        <field name="name">FRENOS DE MOTOR</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">23</field>
+        <field name="group_id" ref="sale_order_group_hino2"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino24" model="sale.report.items">
+        <field name="name">TIPO DE TRANSMISION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">24</field>
+        <field name="group_id" ref="sale_order_group_hino3"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino25" model="sale.report.items">
+        <field name="name">TIPO DE EMBRAGUE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">25</field>
+        <field name="group_id" ref="sale_order_group_hino3"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino26" model="sale.report.items">
+        <field name="name">NUMERO DE VELOCIDADES</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2627</field>
+        <field name="group_id" ref="sale_order_group_hino3"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino27" model="sale.report.items">
+        <field name="name">RELACION EJE TRASERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">27</field>
+        <field name="group_id" ref="sale_order_group_hino3"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino28" model="sale.report.items">
+        <field name="name">DIRECCION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">28</field>
+        <field name="group_id" ref="sale_order_group_hino3"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+
+    <record id="sale_order_hino29" model="sale.report.items">
+        <field name="name">SUSPENSION DELANTERA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">29</field>
+        <field name="group_id" ref="sale_order_group_hino4"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+    <record id="sale_order_hino30" model="sale.report.items">
+        <field name="name">SUSPENSION TRASERA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">30</field>
+        <field name="group_id" ref="sale_order_group_hino4"/>
+        <field name="config_id" ref="sale_order_hino"/>
+    </record>
+
+    <!-- COTIZACION KUBOTA -->
+
+    <record id="sale_order_group_kub0" model="sale.report.group">
+        <field name="name">1. MOTOR</field>
+        <field name="sequence">0</field>
+    </record>
+    <record id="sale_order_group_kub1" model="sale.report.group">
+        <field name="name">2. PTO</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="sale_order_group_kub2" model="sale.report.group">
+        <field name="name">3. SISTEMA DE DESPLAZAMIENTO</field>
+        <field name="sequence">2</field>
+    </record>
+    <record id="sale_order_kub" model="sale.report.config">
+        <field name="name">Cotizacion Kubota</field>
+        <field name="report_id" ref="report_sale_order_toyo_kub"/>
+    </record>
+    <record id="sale_order_kub0" model="sale.report.items">
+        <field name="name">TIPO DE MOTOR</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">0</field>
+        <field name="group_id" ref="sale_order_group_kub0"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+    <record id="sale_order_kub1" model="sale.report.items">
+        <field name="name">CILINDRADA (cm3)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="group_id" ref="sale_order_group_kub0"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+    <record id="sale_order_kub2" model="sale.report.items">
+        <field name="name">NUMERO DE CILINDROS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="group_id" ref="sale_order_group_kub0"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+    <record id="sale_order_kub3" model="sale.report.items">
+        <field name="name">POTENCIA (HP/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">3</field>
+        <field name="group_id" ref="sale_order_group_kub0"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+    <record id="sale_order_kub4" model="sale.report.items">
+        <field name="name">VELOCIDAD NOMINAL</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">4</field>
+        <field name="group_id" ref="sale_order_group_kub0"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+
+    <record id="sale_order_kub5" model="sale.report.items">
+        <field name="name">POTENCIA (HP/RPM) PTO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">5</field>
+        <field name="group_id" ref="sale_order_group_kub1"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+
+    <record id="sale_order_kub6" model="sale.report.items">
+        <field name="name">NEUMATICO DELANTERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="group_id" ref="sale_order_group_kub2"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+
+    <record id="sale_order_kub7" model="sale.report.items">
+        <field name="name">NEUMATICO TRASERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">7</field>
+        <field name="group_id" ref="sale_order_group_kub2"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+    <record id="sale_order_kub8" model="sale.report.items">
+        <field name="name">RADIO MINIMO DE GIRO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">8</field>
+        <field name="group_id" ref="sale_order_group_kub2"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+    <record id="sale_order_kub9" model="sale.report.items">
+        <field name="name">TIPO DE TRANSMISION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">9</field>
+        <field name="group_id" ref="sale_order_group_kub2"/>
+        <field name="config_id" ref="sale_order_kub"/>
+    </record>
+
+    <!-- COTIZACION UNIC -->
+    <record id="sale_order_group_uni0" model="sale.report.group">
+        <field name="name">1. MOTOR</field>
+        <field name="sequence">0</field>
+    </record>
+
+    <record id="sale_order_uni" model="sale.report.config">
+        <field name="name">Cotizacion UNIC</field>
+        <field name="report_id" ref="report_sale_order_toyo_unic"/>
+    </record>
+    <record id="sale_order_uni0" model="sale.report.items">
+        <field name="name">ALTURA MAXIMA BAJO GANCHO (m)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">0</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+    <record id="sale_order_uni1" model="sale.report.items">
+        <field name="name">CAPACIDAD MAXIMA DE ELEVACION (kg)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+    <record id="sale_order_uni2" model="sale.report.items">
+        <field name="name">ANCHO ENTRE ESTABILIZADORES (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+    <record id="sale_order_uni3" model="sale.report.items">
+        <field name="name">RADIO DE TRABAJO (m)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">3</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+    <record id="sale_order_uni4" model="sale.report.items">
+        <field name="name">LONGITUD PLUMA (m)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">4</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+    <record id="sale_order_uni5" model="sale.report.items">
+        <field name="name">ROTACION (°)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">5</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+    <record id="sale_order_uni6" model="sale.report.items">
+        <field name="name">DIMENSIONES DE LA GRUA (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="group_id" ref="sale_order_group_uni0"/>
+        <field name="config_id" ref="sale_order_uni"/>
+    </record>
+
+    <!-- COTIZACION YAMAHA -->
+
+    <record id="sale_order_group_yam0" model="sale.report.group">
+        <field name="name">MOTOR</field>
+        <field name="sequence">0</field>
+    </record>
+    <record id="sale_order_group_yam1" model="sale.report.group">
+        <field name="name">CHASIS</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="sale_order_group_yam2" model="sale.report.group">
+        <field name="name">ACCESORIOS</field>
+        <field name="sequence">2</field>
+    </record>
+    <record id="sale_order_yam" model="sale.report.config">
+        <field name="name">Cotizacion YAMAHA</field>
+        <field name="report_id" ref="report_sale_order_toyo_yam"/>
+    </record>
+    <record id="sale_order_yam0" model="sale.report.items">
+        <field name="name">TIPO DE MOTOR</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">0</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam1" model="sale.report.items">
+        <field name="name">DIAMETRO Y CARRERA (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">1</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam2" model="sale.report.items">
+        <field name="name">CILINDRADA (cm3)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">2</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam3" model="sale.report.items">
+        <field name="name">RELACION DE COMPRESION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">3</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam4" model="sale.report.items">
+        <field name="name">POTENCIA MAXIMA (HP/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">4</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam5" model="sale.report.items">
+        <field name="name">TORQUE MAXIMO (Nm/RPM)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">5</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam6" model="sale.report.items">
+        <field name="name">SISTEMA DE ARRANQUE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">6</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam7" model="sale.report.items">
+        <field name="name">DISTRIBUCION DE COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">7</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam8" model="sale.report.items">
+        <field name="name">TIPO DE LUBRICACION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">8</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam9" model="sale.report.items">
+        <field name="name">CAPACIDAD DE TANQUE DE COMBUSTIBLE (L)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">9</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam10" model="sale.report.items">
+        <field name="name">IGNICION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">10</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam11" model="sale.report.items">
+        <field name="name">SISTEMA DE ENCENDIDO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">11</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam12" model="sale.report.items">
+        <field name="name">TIPO DE TRANSMISION</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">12</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam13" model="sale.report.items">
+        <field name="name">COMBUSTIBLE</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">13</field>
+        <field name="group_id" ref="sale_order_group_yam0"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+
+
+    <record id="sale_order_yam14" model="sale.report.items">
+        <field name="name">CABALLOS DE FUERZA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">14</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam15" model="sale.report.items">
+        <field name="name">TIPO DE FRENOS DELANTEROS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">15</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam16" model="sale.report.items">
+        <field name="name">TIPO DE FRENOS TRASEROS</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">16</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam17" model="sale.report.items">
+        <field name="name">NEUMATICO DELANTERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">17</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam18" model="sale.report.items">
+        <field name="name">NEUMATICO TRASERO</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">18</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam19" model="sale.report.items">
+        <field name="name">SUSPENSION DELANTERA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">19</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam20" model="sale.report.items">
+        <field name="name">SUSPENSION TRASERA</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">20</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam21" model="sale.report.items">
+        <field name="name">LARGO TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">21</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam22" model="sale.report.items">
+        <field name="name">ANCHO TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">22</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam23" model="sale.report.items">
+        <field name="name">ALTURA TOTAL (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">23</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam24" model="sale.report.items">
+        <field name="name">ALTURA DEL ASIENTO (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">24</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam25" model="sale.report.items">
+        <field name="name">DISTANCIA ENTRE EJES (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">25</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam26" model="sale.report.items">
+        <field name="name">DISTANCIA MINIMA AL SUELO (mm)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">26</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam27" model="sale.report.items">
+        <field name="name">PESO BRUTO (kg)</field>
+        <field name="default">Sin Dato</field>
+        <field name="sequence">27</field>
+        <field name="group_id" ref="sale_order_group_yam1"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+
+    <record id="sale_order_yam28" model="sale.report.items">
+        <field name="name">PLACAS</field>
+        <field name="default"></field>
+        <field name="sequence">28</field>
+        <field name="group_id" ref="sale_order_group_yam2"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+    <record id="sale_order_yam29" model="sale.report.items">
+        <field name="name">SOAT</field>
+        <field name="default"></field>
+        <field name="sequence">29</field>
+        <field name="group_id" ref="sale_order_group_yam2"/>
+        <field name="config_id" ref="sale_order_yam"/>
+    </record>
+  </data>
+</odoo>

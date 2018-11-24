@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_hr_loan_form" model="ir.ui.view">
+			<field name="name">hr_loan_form</field>
+			<field name="model">hr.loan</field>
+			<field name="arch" type="xml">
+				<form string="discount" version="7.0">
+					<header>
+                        <button name="calcular_loan" states="draft" string="Generar Plan de Pagos" type="object"/>
+                        <button name="hr_process_loan" states="draft" string="En Cola de Procesos" class="oe_highlight" type="object"/>
+                        <button name="cancel_loan" states="process" string="Cancel" type="object"/>
+	                    <field name="state" widget="statusbar"/>
+	                </header>
+					<sheet string="Prestamos">
+					 	<group>
+					 		<group>
+					 			<field name='name'/>
+								<field name="employee_id"/>
+								<field name="contract_id" domain="[('employee_id','=',employee_id),('state','=','vigente')]"/>
+
+								<field name="date"/>
+								<field name="add_nomina"/>
+								<field name='assess'/>
+							</group>
+							<group>
+								<field name="date_start"/>
+								<field name="amount"/>
+								<field name='rate'/>
+								<field name="time_pay"/>
+								<field name="company_id"/>
+							</group>
+						</group>
+						<notebook colspan="4">
+                    		<page string="Plan de Pagos">
+								<field name="line_ids"  nolabel="1" widget="one2many_list">
+									<tree string="Plan de Pagos" editable="bottom">
+	                                    <field name="code"/>
+	                                    <field name="name"/>
+	                                    <field name="date"/>
+	                                    <field name="amount" sum="total"/>
+	                                    <field name="interest" sum="total"/>
+	                                    <field name="state"/>
+	                                    <field name='payslip_id'/>
+	                                </tree>
+	                            </field>
+	                            <div class="oe_clear">
+		                            <label for="note"/>
+		                        </div>
+		                        <field name="note"/>
+							</page>
+							<page string="Contabilidad">
+								<group>
+	                    			<group>
+	                    				<field name='account_debit'/>
+		                    			<field name='account_credit'/>
+
+	                    			</group>
+	                    			<group>
+	                    				<field name='journal_id'/>
+	                    				<field name='analytic_account_id'/>
+	                    			</group>
+	                    		</group>
+							</page>
+							<page string="Informacion">
+								<group>
+                    				<group>
+                    					<field name='move_id'/>
+                    					<field name='force_date'/>
+                    				</group>
+                    			</group>
+							</page>
+						</notebook>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_hr_loan_tree" model="ir.ui.view">
+			<field name="name">hr_loan_tree</field>
+			<field name="model">hr.loan</field>
+
+			<field name="arch" type="xml">
+				<tree string="discount">
+					<field name="employee_id"/>
+					<field name="date"/>
+					<field name="note"/>
+					<field name="amount"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="filter_hr_loan">
+            <field name="name">hr_loan.filter</field>
+            <field name="model">hr.loan</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                	<field name='employee_id'/>
+                	<field name='company_id'/>
+                    <group string="Agrupadores....">
+                        <field name="employee_id"/>
+                        <filter string="Empleado" name="group_employee" context="{'group_by': 'employee_id'}"/>
+                        <filter string="Estado" name="group_state" context="{'group_by': 'state'}"/>
+                        <filter string="Compañia" name="group_state" context="{'group_by': 'company_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<record id="action_loan" model="ir.actions.act_window">
+			<field name="name">Prestamos</field>
+			<field name="res_model">hr.loan</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="filter_hr_loan"/>
+            <field name="context">{'search_default_group_employee': 1}</field>
+		</record>
+
+
+		<record id="view_hr_loan_config_form" model="ir.ui.view">
+			<field name="name">hr_loan_config_form</field>
+			<field name="model">hr.loan.config</field>
+			<field name="arch" type="xml">
+				<form string="Benefits" version="7.0">
+					<sheet>
+                    	<group>
+                    		<group>
+                    			<field name='date'/>
+                    			<field name='active'/>
+                    		</group>
+                    	</group>
+                    	<notebook>
+                    		<page string="Valores Defecto">
+                    			<group>
+                    				<field name='journal_id'/>
+                    				<field name='account_debit'/>
+                    				<field name='account_credit'/>
+                    			</group>
+                    		</page>
+                    	</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_hr_loan_config_tree" model="ir.ui.view">
+			<field name="name">hr_loan_config_tree</field>
+			<field name="model">hr.loan.config</field>
+
+			<field name="arch" type="xml">
+				<tree string="benefits">
+					<field name="date"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_loan_config" model="ir.actions.act_window">
+			<field name="name">Prestamos</field>
+			<field name="res_model">hr.loan.config</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+	</data>
+</odoo>

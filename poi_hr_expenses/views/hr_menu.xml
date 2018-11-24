@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+	<record id="action_hr_expenses_rendition" model="ir.actions.act_window">
+		<field name="name">Rendicion de Gastos</field>
+		<field name="res_model">account.expenses.rendition</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field eval="False" name="view_id"/>
+		<field name="domain">[('hr', '=', True)]</field>
+		<field name="context">{'default_hr': True}</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				Haga clic para crear rendiciones de fondos
+			</p>
+		</field>
+	</record>
+
+	<menuitem action="action_hr_expenses_rendition" id="menu_action_hr_expenses_rendition" sequence="8"
+				parent="hr.menu_hr_root" groups="group_hr_expenses"/>
+</data>
+</odoo>

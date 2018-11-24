@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Sequences for purchase cost distribution -->
+        <record id="seq_poi_original_annual_plan" model="ir.sequence">
+            <field name="name">Plan Anual Ventas</field>
+            <field name="code">poi.original.annual.plan</field>
+            <field name="prefix">PA</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+  <record id="sale_type_view_tree" model="ir.ui.view">
+    <field name="name">sale.type.tree</field>
+    <field name="model">sale.type</field>
+    <field name="arch" type="xml">
+      <tree string="Tipos de Venta">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_type_view_form" model="ir.ui.view">
+    <field name="name">sale.type.form</field>
+    <field name="model">sale.type</field>
+    <field name="arch" type="xml">
+      <form string="Tipos de Venta">
+        <sheet>
+        <group>
+          <field name="name"/>
+          <field name="active"/>
+        </group>
+        <notebook>
+          <page string="Cotizacion y Reserva" name="booking">
+            <group>
+              <group string="Acciones inmediatas y Bloqueos">
+                <field name="chasis_flag"/>
+                <field name="edit_discount"/>
+                <field name="check_chasis_pre"/>
+                <field name="edit_price"/>
+                <field name="sale_cif"/>
+              </group>
+              <group string="Valores por defecto">
+                <field name="partner_id"/>
+                <field name="pricelist_id"/>
+                <field name="pricelist_insurance_id"/>
+                <field name="paymemt_term_ids" widget="many2many_tags" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+                <field name="contract_type_id"/>
+                <field name="print_order"/>
+              </group>
+              <group string="Autorizaciones">
+                <field name="discount_flag"/>
+                <field name="auth_id" attrs="{'required':[('discount_flag', '=', True)]}"/>
+              </group>
+              <group string="Reserva">
+                <field name="booking" widget="radio"/>
+                <field name="booking_type_id"/>
+                <!-- <field name="amount_min"/> -->
+              </group>
+              <group string="Dealsheet">
+                <field name="dealsheet_flag"/>
+              </group>
+              <group string="Licitacion">
+                <field name="bidding_sale"/>
+              </group>
+
+            </group>
+          </page>
+          <page string="Facturacion">
+            <group>
+              <group string="Reglas De Facturacion">
+                <field name="check_chasis"/>
+                <field name="nationalized_car"/>
+                <field name="car_released"/>
+                <field name="percent_min"/>
+                <field name="invoice_type"/>
+              </group>
+              <group string="Bloqueo de Campos">
+                <field name="edit_nit"/>
+                <field name="edit_razon"/>
+              </group>
+              <group string="Otros">
+                <field name="print_invoice"/>
+                <field name="plate_procesing" widget="radio"/>
+              </group>
+            </group>
+          </page>
+          <page string="Entrega">
+            <group>
+              <group>
+                <field name="pay_invoice"/>
+              </group>
+            </group>
+          </page>
+        </notebook>
+
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_type_view_search" model="ir.ui.view">
+    <field name="name">sale.type.search</field>
+    <field name="model">sale.type</field>
+    <field name="arch" type="xml">
+      <tree string="Tipos de Venta">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_type_action_form" model="ir.actions.act_window">
+    <field name="name">Tipos de Venta</field>
+    <field name="res_model">sale.type</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="sale_type_view_search"/>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Creacion de Tipos de Venta
+      </p>
+      <p>
+        Al crear un tipo de Venta se puede definir una serie atributos los cuales seran tomados en cuenta en el momento de la validacion del documento ya sea la cotizacion o factura o reserva del chasis.
+      </p>
+    </field>
+  </record>
+
+  <record id="sale_order_type_view_form" model="ir.ui.view">
+    <field name="name">sale.order.type.form</field>
+    <field name="model">sale.order.type</field>
+    <field name="arch" type="xml">
+      <form string="Tipos de Cotizacion">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="sale_type_ids" widget="many2many_tags"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_order_type_view_tree" model="ir.ui.view">
+    <field name="name">sale.order.type.tree</field>
+    <field name="model">sale.order.type</field>
+    <field name="arch" type="xml">
+      <tree string="Tipos de Cotizacion">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_order_type_view_search" model="ir.ui.view">
+    <field name="name">sale.order.type.search</field>
+    <field name="model">sale.order.type</field>
+    <field name="arch" type="xml">
+      <tree string="Tipos de Cotizacion">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_order_type_action_form" model="ir.actions.act_window">
+    <field name="name">Tipos de Cotizacion</field>
+    <field name="res_model">sale.order.type</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Crear un nuevo tipo de cotizacion.
+      </p>
+      <p>
+        Los tipos de Cotizacion son agrupadores de Tipos de Venta.
+      </p>
+    </field>
+  </record>
+
+
+
+  <menuitem id="menu_sale_type" parent="sale.menu_sale_config" action="sale_type_action_form" sequence="21"/>
+
+  <menuitem id="menu_sale_order_type" parent="sale.menu_sale_config" action="sale_order_type_action_form" sequence="20"/>
+</data>
+</odoo>

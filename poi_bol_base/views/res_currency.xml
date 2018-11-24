@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_currency_form_poi_base">
+            <field name="name">res.currency.form.poi.base</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="model">res.currency</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='position']" position="after">
+                    <field name="name_on_report"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

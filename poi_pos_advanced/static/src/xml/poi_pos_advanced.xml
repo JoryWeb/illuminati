@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ClientDetails">
+        <t t-jquery="div.client-details-left" t-operation="append">
+            <div class='client-detail'>
+                <span class='label'>Numero de Compras</span>
+                <span class='detail client-nit'><t t-esc='partner.number_of_purchases' /></span>
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Ultima Compra</span>
+                <span class='detail client-nit'><t t-esc='partner.last_purchase' /></span>
+            </div>
+        </t>
+        <t t-jquery="div.client-details-right" t-operation="append">
+            <div class='client-detail'>
+                <span class='label'>Categoria de Cliente</span>
+                <span class='detail client-razon'><t t-esc='partner.client_category' /></span>
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Ultimo Metodo de Pago</span>
+                <span class='detail client-razon'><t t-esc='partner.last_payment_method' /></span>
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Monto Acumulado de Compras</span>
+                <span class='detail client-razon'><t t-esc='partner.total_purchases_amount' /></span>
+            </div>
+        </t>
+    </t>
+
+</templates>

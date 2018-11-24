@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+     <!-- Efectivo cheque en accont.journal-->
+
+        <record id="account_journal_pret_form" model="ir.ui.view">
+            <field name="name">account.journal.pret.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/notebook/page/group/group/field[@name='sequence_id']" position="after">
+                    <field name="efectivo_cheque" string="Recaudación"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_voucherjournal_pret_form" model="ir.ui.view">
+            <field name="name">account.voucherjournal.pret.form</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/field[@name='journal_id']" position="after">
+                    <field name="efectivo" string="Efectivo" attrs="{'invisible': [('txt_validate','=','0')]}" on_change="onchange_check_efectivo( cheque, efectivo, context)"/>
+                    <field name="cheque"  string="Cheque" attrs="{'invisible': [('txt_validate','=','0')]}" on_change="onchange_check(journal_id, cheque, efectivo, txt_validate, context)"/>
+                    <field name="txt_validate" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_voucherjournalbase_pret_form" model="ir.ui.view">
+            <field name="name">account.voucherjournalbase.pret.form</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="poi_bol_base.view_payment_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/group/field[@name='transaction_number']" position="replace">
+                    <field name="transaction_number" invisible="1"/>
+                </xpath>
+                <xpath expr="//notebook/page/group/field[@name='bank_account_number']" position="replace">
+                   <field name="bank_account_number" string="Numero de Cheque"/>
+                </xpath>
+            </field>
+        </record>
+<!--
+        <record model="ir.ui.view" id="view_payment_voucher_pret_form">
+            <field name="name">account.payment.voucher.pret.form</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='journal_id']" position="after">
+            		<field name="payment_type" invisible="1"/>
+            		<field name="payment_model" invisible="1"/>
+            		<label for="check_number" attrs="{'invisible': [('payment_model','not in',('check',))]}"/>
+            		<field name="check_number" nolabel="1" attrs="{'invisible': [('payment_model','not in',('check',))]}"/>
+					<field name="bank" attrs="{'invisible': [('payment_model','=',False)]}"/>
+					<field name="bank_account_number" attrs="{'invisible': [('payment_model','=',False)]}"/>
+					<field name="transaction_number" attrs="{'invisible': [('payment_model','=',False)]}"/>
+					<field name="transaction_date" attrs="{'invisible': [('payment_model','=',False)]}"/>
+					<label for="card_code" attrs="{'invisible': [('payment_model','not in',('bank_card'))]}"/>
+					<field name="card_code" nolabel="1" attrs="{'invisible': [('payment_model','not in',('bank_card'))]}"/>
+					<label for="card_bank_owner" attrs="{'invisible': [('payment_model','not in',('bank_card','bank_transfer'))]}"/>
+					<field name="card_bank_owner" nolabel="1" attrs="{'invisible': [('payment_model','not in',('bank_card','bank_transfer'))]}"/>
+					<label for="client_code" attrs="{'invisible': [('payment_model','not in',('sigma',))]}"/>
+					<field name="client_code" nolabel="1" attrs="{'invisible': [('payment_model','not in',('sigma',))]}"/>
+					<label for="other_description" attrs="{'invisible': [('payment_model','not in',('other',))]}"/>
+					<field name="other_description" nolabel="1" attrs="{'invisible': [('payment_model','not in',('other',))]}"/>
+            	</xpath>
+            </field>
+        </record>
+-->
+    <!-- FIN Efectivo cheque en accont.journal-->
+
+        <record id="account_voucher_pret_form" model="ir.ui.view">
+            <field name="name">account.voucher.pret.form</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="project_id" string="Cuenta Analitica" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>
+                </xpath>
+                <xpath expr="//page[@string='Payment Information']/field[@name='line_cr_ids']/tree/field[@name='account_id']" position="before">
+                    <field name="project_id"/>
+                </xpath>
+                <xpath expr="//page[@string='Payment Information']/field[@name='line_dr_ids']/tree/field[@name='account_id']" position="before">
+                    <field name="project_id"/>
+                </xpath>
+                <xpath expr="//page[@string='Payment Information']/group/group/field[@name='narration']" position="before">
+                    <field name="user_id" attrs="{'readonly':[('state','not in',['draft','sent'])]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <!--Reporte Libro Mayor. Temp hasta habilitarlo -->
+        <menuitem id="poi_account_report.menu_libro_mayor" parent="account.menu_finance_reporting" action="poi_account_report.action_poi_libro_mayor_wizard" string="Libro Mayor" sequence="1" groups="account.group_account_user"/>
+    </data>
+</openerp>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="paperformat_kardex_pre" model="report.paperformat">
+            <field name="name">Kardex A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">23</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+            id="action_report_kardex_pre"
+            string="Reporte Impreso Kardex"
+            model="poi.report.kardex.valorado.dos"
+            report_type="qweb-pdf"
+            name="poi_x_pretensa.report_kardex_pre"
+            file="poi_x_pretensa.report_kardex_pre"
+            menu="False"/>
+
+        <record id="action_report_kardex_pre" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="poi_x_pretensa.paperformat_kardex_pre"/>
+        </record>
+
+        <report
+            id="action_report_kardex_valorado_pre"
+            string="Reporte Impreso Kardex Valorado"
+            model="poi.report.kardex.valorado.dos.pre"
+            report_type="qweb-pdf"
+            name="poi_x_pretensa.report_kardex_valorado_pre"
+            file="poi_x_pretensa.report_kardex_valorado_pre"
+            menu="False"/>
+
+        <record id="action_report_kardex_valorado_pre" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="poi_x_pretensa.paperformat_kardex_pre"/>
+        </record>
+    </data>
+</openerp>

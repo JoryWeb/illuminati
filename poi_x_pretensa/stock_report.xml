@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	<report id="report_picking_list_pretensa" 
+    			model="stock.picking" 
+    			name="stock.picking.pretensa" 
+    			multi = "True"
+    			string="Imprimir Vale de entrega Pretensa" 
+    			rml="poi_x_pretensa/report/picking.rml"/>
+
+    <report id="report_picking_list_pretensa_int"
+    			model="stock.picking"
+    			name="stock.picking.pretensa.int"
+    			multi = "True"
+    			string="Imprimir Vale de entrega Pretensa"
+    			rml="poi_x_pretensa/report/picking_int.rml"/>
+   	</data>
+
+	<report id="print_print_recu"
+            name="recu.pretensa.webkit"
+            auto="False"
+            model="stock.picking"
+            file="poi_x_pretensa/report/print_recu_pret.mako"
+			webkit_header="poi_webkit.base_reports_print_invoice_header"
+            string="Imprimir Recuperados"
+            report_type="webkit"/>
+ 
+</openerp>

@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Top menu item -->
+        <!--<menuitem name="Maintenance"
+            id="base.menu_workshop_root"
+            groups="asset.group_workshop_customer"
+            sequence="80"/>-->
+
+        <!-- Maintenance menu -->
+        <menuitem name="Maintenance"
+                  id="menu_workshop_maintenance"
+                  parent="base.menu_vehicle_root"
+                  sequence="1"/>
+
+        <!-- Maintenance request menu -->
+        <record id="workshop_request_tree_view" model="ir.ui.view">
+            <field name="name">workshop.request.tree</field>
+            <field name="model">workshop.request</field>
+            <field name="arch" type="xml">
+                <tree fonts="bold:message_unread==True" string="Maintenance Requests">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="execution_date" string="Date"/>
+                    <field name="asset_id"/>
+                    <field name="cause"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="workshop_request_form_view" model="ir.ui.view">
+            <field name="name">workshop.request.form</field>
+            <field name="model">workshop.request</field>
+            <field name="arch" type="xml">
+                <form string="Maintenance Request" version="7.0">
+                    <header>
+                        <button name="button_send_request" states="draft" string="Send Request" class="oe_highlight"/>
+                        <button name="button_confirm_request" states="claim" string="Confirm Request"
+                                class="oe_highlight" groups="poi_vehicle.group_mro_user"/>
+                        <button name="%(action_request_reject)d" states="claim" string="Reject Request" type="action"
+                                groups="poi_vehicle.group_mro_user"/>
+                        <button name="button_cancel" states="draft" string="Cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,claim,run,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label string="Maintenance Request"/>
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="asset_id"/>
+                                <field name="cause"/>
+                                <field name="breakdown"/>
+                            </group>
+                            <group>
+                                <field name="requested_date"
+                                       attrs="{'invisible':[('breakdown','=',True),('state','=','draft')],'readonly':[('state','!=','draft')]}"/>
+                                <field name="execution_date"/>
+                            </group>
+                        </group>
+                        <group string="Reject Reason" states="reject">
+                            <field name="reject_reason" colspan="4" nolabel="1"/>
+                        </group>
+                        <group string="Description">
+                            <field name="description" colspan="4" nolabel="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="workshop_request_search" model="ir.ui.view">
+            <field name="name">workshop.request.search</field>
+            <field name="model">workshop.request</field>
+            <field name="arch" type="xml">
+                <search string="Search Maintenance Request">
+                    <field name="state"/>
+                    <field name="name"/>
+                    <field name="asset_id"/>
+                    <filter icon="terp-mail-message-new" string="Unread Messages" name="message_unread"
+                            domain="[('message_unread','=',True)]"/>
+                    <separator/>
+                    <filter icon="terp-document-new" name="open" string="Open"
+                            domain="['|',('state','in',('draft','claim')),('message_unread','=',True)]"
+                            help="Undecided maintenance request"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_state"
+                                string="State"
+                                context="{'group_by': 'state'}"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_requests" model="ir.actions.act_window">
+            <field name="name">Maintenance Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">workshop.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_open': 1}</field>
+        </record>
+
+        <!--<menuitem name="Maintenance Requests"
+                  action="action_requests"
+                  id="menu_workshop_request"
+                  parent="menu_workshop_maintenance"
+                  sequence="1"/>-->
+
+        <!-- Maintenance order menu -->
+        <record id="workshop_order_tree_view" model="ir.ui.view">
+            <field name="name">workshop.order.tree</field>
+            <field name="model">workshop.order</field>
+            <field name="arch" type="xml">
+                <tree fonts="bold:message_unread==True" string="Maintenance Orders">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="partner_id"/>
+                    <field name="name"/>
+                    <field name="date_execution" string="Order Date" widget="date"/>
+                    <field name="asset_id"/>
+                    <field name="maintenance_type"/>
+                    <field name="description"/>
+                    <field name="origin"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="workshop_kilometraje_order_tree_view" model="ir.ui.view">
+            <field name="name">workshop.order.tree</field>
+            <field name="model">workshop.order</field>
+            <field name="arch" type="xml">
+                <tree fonts="bold:message_unread==True" string="Maintenance Orders">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name"/>
+                    <field name="date_execution" string="Order Date" widget="date"/>
+                    <field name="asset_id"/>
+                    <field name="kilometraje" sum="Total"/>
+                    <field name="n_gasolina" sum="Total"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="workshop_order_calendar_view" model="ir.ui.view">
+            <field name="name">workshop.order.calendar</field>
+            <field name="model">workshop.order</field>
+            <field name="arch" type="xml">
+                <calendar color="asset_id" date_start="date_execution" string="Maintenance Orders">
+                    <field name="name"/>
+                    <field name="description"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="workshop_order_form_view" model="ir.ui.view">
+            <field name="name">workshop.order.form</field>
+            <field name="model">workshop.order</field>
+            <field name="arch" type="xml">
+                <form string="Maintenance Orders">
+                    <header>
+                        <!--<button name="action_confirm" states="draft" string="Confirm Maintenance"
+                                class="oe_highlight" type="object"/>-->
+
+                        <button name="action_confirm" id="action_confirm"
+                        string="Confirm Maintenance" class="btn-primary" type="object"
+                        attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+
+                        <button name="%(action_workshop_stop)d" states="released,ready" string="Stop Workshop"
+                                type="action"
+                                groups="poi_vehicle.group_mro_user"/>
+                        <button name="%(action_invoice_onworkshop)d" attrs="{'invisible': ['|',('state', 'not in', ['done','invoiced']), ('invoice_porcentaje','&gt;=',100)]}" string="Crate Invoice"
+                                type="action"
+                                groups="poi_vehicle.group_mro_user"
+                                confirm="Recuerde que solo los servicios he items de cargo 'Externo', seran facturados\n Desea continuar?"/>
+                        <button name="button_done" states="ready" string="Done" class="oe_highlight"/>
+                        <button name="force_done" states="released" string="Done" class="oe_highlight" type="object"/>
+                        <button name="calculate_parts_line" type="object" states="released,ready" string="Crear Abastecimientos Adicional"
+                                        class="oe_highlight"/>
+                        <!--<button name="force_parts_reservation" states="released" string="Force Reservation"
+                                type="object"/>-->
+                        <button name="button_recreate_picking_parts" states="parts_except" string="Recreate Picking"
+                                class="oe_highlight"/>
+                        <button name="button_cancel" states="draft,ready,parts_except" string="Cancel"/>
+                        <button name="action_cancel" type="object" states="released" string="Cancel"/>
+                        <button name="action_released" type="object" states="stop" string="Resume"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,released,stop,ready"
+                               statusbar_colors='{"stop":"red","released":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label string="Maintenance Order"/>
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object"
+                                    name="action_view_items"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('picking_count', '=', 0)]}" groups="base.group_user">
+                                <field name="picking_count" widget="statinfo" string="Bajas Items"/>
+                            </button>
+                            <button type="object"  name="action_view_invoice"
+                                class="oe_stat_button"
+                                icon="fa-pencil-square-o">
+                                <field name="invoice_count" widget="statinfo" string="Facturas"/>
+                            </button>
+                            <button type="object"  name="action_view_invoice"
+                                class="oe_stat_button"
+                                icon="fa-dashboard">
+                                <field name="invoice_porcentaje" widget="statinfo" string="% Cierre"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="workshop_type" required="1" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="partner_id"/>
+                                <field name="recosteo"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="user_id" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="category_ids" invisible="1"/>
+                                <field name="maintenance_type"/>
+                                <!--<label for="task_id" attrs="{'invisible':[('maintenance_type','=','bm')]}"/>
+                                <div attrs="{'invisible':[('maintenance_type','=','bm')]}">
+                                    <field name="task_id" attrs="{'required':[('maintenance_type','!=','bm')]}"/>
+                                </div>-->
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="asset_id"/>
+                                <field name="chasis_id" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="marca" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="modelo" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="n_chasis"/>
+                                <field name="kilometraje"/>
+                                <!--<field name="n_gasolina"  widget="progressbar"/>-->
+                                <field name="n_gasolina"/>
+                                <field name="warehouse_id" required="1" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                <field name="invoice_id"/>
+                                <field name="pricelist_id" groups="product.group_sale_pricelist"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Services and Parts">
+                                <group string="Agrupador Servicios" colspan="2">
+                                    <group>
+                                        <field name="group_services" widget="many2many_tags"/>
+                                    </group>
+                                    <group>
+                                        <button name="calculate_parts" type="object" states="draft,released,ready" string="Calcular Servicios/Repuestos"
+                                        class="oe_highlight"/>
+                                    </group>
+                                </group>
+
+                                <group string="Planned Services">
+                                    <field name="services_lines" nolabel="1"
+                                           context="{'default_categ_id': context.get('default_categ_id')}">
+                                        <tree string="Planned Parts" editable="bottom">
+                                            <field name="task_id" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                            <field name="service_id" domain="[('isParts','=',True)]"
+                                                   context="{'default_categ_id': context.get('default_categ_id')}" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                            <field name="name"/>
+                                            <field name="parts_qty"/>
+                                            <field name="parts_uom" groups="product.group_uom"/>
+                                            <field name="price_unit"/>
+                                            <field name="cargo"/>
+                                            <field name="time_prev"/>
+                                            <field name="time_real"/>
+                                            <field name="total_cost_valuation"/>
+                                            <field name="mecanico"/>
+                                            <field name="partner_id" invisible="1"/>
+                                            <field name="return_parts"/>
+                                        </tree>
+                                    </field>
+                                </group>
+
+                                <group string="Planned Parts">
+                                    <field name="parts_lines" nolabel="1"
+                                           context="{'default_categ_id': context.get('default_categ_id')}">
+                                        <tree string="Planned Parts" editable="bottom">
+                                            <field name="parts_id" domain="[('isParts','=',True)]"
+                                                   context="{'default_categ_id': context.get('default_categ_id')}" options="{'limit': 10, 'create': false, 'create_edit': false, 'no_open': true}"/>
+                                            <field name="name"/>
+                                            <field name="partner_id" invisible="1"/>
+                                            <field name="parts_qty"/>
+                                            <field name="parts_uom" groups="product.group_uom"/>
+                                            <field name="price_unit"/>
+                                            <field name="cargo"/>
+                                            <field name="mecanico"/>
+                                            <field name="service_line" domain="[('maintenance_id', '=', parent.id)]"/>
+                                            <field name="origin"/>
+                                            <field name="return_parts"/>
+                                            <!--<field name="route_id"/>-->
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Available Parts" states="released,parts_except">
+                                    <field name="parts_ready_lines" nolabel="1" readonly="1">
+                                        <tree string="Available Parts">
+                                            <field name="product_id" string="Parts"/>
+                                            <field name="product_qty"/>
+                                            <field name="product_uom" groups="product.group_uom"/>
+                                            <field name="location_id"/>
+                                            <field name="location_dest_id"/>
+                                            <field name="price_unit" string="Costo"/>
+                                            <field name="state" invisible="0"/>
+                                            <!--<field name="route_id" invisible="0"/>-->
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Parts to Consume" attrs="{'invisible':['|',('parts_lines','=',[]),('state','not in',('ready'))]}">
+                                    <field name="parts_move_lines" nolabel="1" readonly="1">
+                                        <tree string="Parts to Consume">
+                                            <field name="product_id" string="Parts"/>
+                                            <field name="product_qty" string="Quantity"/>
+                                            <field name="product_uom" string="Unit of Measure"
+                                                   groups="product.group_uom"/>
+                                            <field name="location_id"/>
+                                            <field name="location_dest_id"/>
+                                            <field name="price_unit" string="Costo"/>
+                                            <field name="state" invisible="1"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Consumed Parts" attrs="{'invisible':['|',('parts_lines','=',[]),('state','not in',('ready', 'invoiced', 'done'))]}">
+                                    <field name="parts_moved_lines" nolabel="1" readonly="1">
+                                        <tree string="Consumed Parts">
+                                            <field name="product_id" readonly="1" string="Parts"/>
+                                            <field name="product_qty" readonly="1"/>
+                                            <field name="product_uom" readonly="1" string="Unit of Measure"
+                                                   groups="product.group_uom"/>
+                                            <field name="location_id"/>
+                                            <field name="location_dest_id"/>
+                                            <field name="price_unit" string="Costo"/>
+                                            <field name="state" invisible="1"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Information">
+                                <separator string="Information"/>
+                                <group>
+                                    <group>
+                                        <field name="create_date"/>
+                                        <field name="date_planned"/>
+                                        <field name="user_tec_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="date_scheduled"/>
+                                    </group>
+                                </group>
+                                <group string="Fechas tentativas de entrega">
+                                    <field name="dates_lines" nolabel="1">
+                                        <tree string="Dates" editable="bottom">
+                                            <field name="date_planned"/>
+                                            <field name="reason"/>
+                                            <field name="observations"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                    <field name="date_execution"/>
+                                </group>
+                            </page>
+
+                            <page string="Tools">
+                                <separator string="Description for Tools"/>
+                                <field name="tools_description"
+                                       placeholder="Specify the tools and mechanisms needed for execute this order..."/>
+                            </page>
+                            <page string="Labor">
+                                <separator string="Description for Labor"/>
+                                <field name="labor_description"
+                                       placeholder="Specify the specialists needed for execute this order..."/>
+                            </page>
+                            <page string="Operations">
+                                <separator string="Description for Operations"/>
+                                <field name="operations_description"
+                                       placeholder="Specify the jobs that need execute..."/>
+                            </page>
+                            <page name="documentation_name" string="Documentation">
+                                <separator string="Description for Documentation"/>
+                                <field name="documentation_description"
+                                       placeholder="Specify the documentation useful when execute this order..."/>
+                            </page>
+                            <page name="inventario_rec" string="Inventario de Recepción">
+                                <group>
+                                    <field name="inventory_test_line">
+                                        <tree string="Valores" editable="bottom">
+                                            <field name="inventory_id"/>
+                                            <field name="valido"/>
+                                            <field name="valor"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                        </notebook>
+                        <group>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="total_services"/>
+                                <field name="total_items"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total"/>
+                                </div>
+                                <field name="amount_total"
+                                       nolabel="1" class="oe_subtotal_footer_separator"/>
+                            </group>
+                        </group>
+                        <group string="Problem Description">
+                            <field name="problem_description" colspan="4" nolabel="1"/>
+                        </group>
+                        <group string="Stop Reason" states="stop">
+                            <field name="stop_reason" colspan="4" nolabel="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="workshop_order_search" model="ir.ui.view">
+            <field name="name">workshop.order.search</field>
+            <field name="model">workshop.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Maintenance Order">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="maintenance_type"/>
+                    <field name="asset_id"/>
+                    <field name="category_ids"/>
+                    <filter icon="terp-mail-message-new" string="Unread Messages" name="message_unread"
+                            domain="[('message_unread','=',True)]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_state"
+                                string="State"
+                                context="{'group_by': 'state'}"
+                        />
+                        <filter name="group_type"
+                                string="Maintenance Type"
+                                context="{'group_by': 'maintenance_type'}"
+                        />
+                        <filter name="group_asset"
+                                string="Asset"
+                                context="{'group_by': 'asset_id'}"
+                        />
+                        <filter name="group_date_scheduled"
+                                string="Scheduled Date"
+                                context="{'group_by': 'date_scheduled'}"
+                        />
+                        <filter name="group_date_execution"
+                                string="Execution Date"
+                                context="{'group_by': 'date_execution'}"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_orders" model="ir.actions.act_window">
+            <field name="name">Maintenance Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">workshop.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="workshop_order_tree_view"/>
+            <field name="context" eval="{'default_categ_id': ref('poi_workshop.product_category_workshop')}"/>
+        </record>
+
+        <menuitem name="Maintenance Orders"
+                  action="action_orders"
+                  id="menu_workshop_order"
+                  parent="menu_workshop_maintenance"
+                  sequence="10"/>
+
+        <!-- Parts menu -->
+        <menuitem name="Parts"
+                  id="menu_maintenance_parts"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_vehicle.group_mro_user"
+                  sequence="9"/>
+
+        <!-- Parts Informes -->
+        <menuitem name="Informes"
+                  id="menu_maintenance_informes"
+                  parent="base.menu_vehicle_root"
+                  groups="poi_vehicle.group_mro_user"
+                  sequence="10"/>
+
+        <record id="part_search_form_view" model="ir.ui.view">
+            <field name="name">product.template.search.workshop</field>
+            <field name="model">product.template</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <filter name="services" position="before">
+                    <filter string="Parts" name="parts" domain="[('isParts','=',True)]"
+                            help="Parts your store in the inventory"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="part_action" model="ir.actions.act_window">
+            <field name="name">Part</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="part_search_form_view"/>
+            <field name="context"
+                   eval="{'default_categ_id': ref('poi_workshop.product_category_workshop'), 'default_isParts': True, 'search_default_parts':1}"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new spare part.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Parts"
+                  action="part_action"
+                  id="menu_maintenance_parts_parts"
+                  parent="menu_maintenance_parts"
+                  sequence="100"/>
+
+        <!-- Tasks menu -->
+        <record id="workshop_task_tree_view" model="ir.ui.view">
+            <field name="name">workshop.task.tree</field>
+            <field name="model">workshop.task</field>
+            <field name="arch" type="xml">
+                <tree string="Maintenance Tasks">
+                    <field name="category_id"/>
+                    <field name="name"/>
+                    <!--<field name="kilometraje"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="workshop_task_form_view" model="ir.ui.view">
+            <field name="name">workshop.task.form</field>
+            <field name="model">workshop.task</field>
+            <field name="arch" type="xml">
+                <form string="Tasks" version="7.0">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label string="Task Name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="category_id"/>
+                            <field name="product_id"/>
+                            <field name="maintenance_type"/>
+                            <!--<field name="time_prev"/>
+                            <field name="kilometraje"/>
+                            <field name="time"/>-->
+                            <field name="garantia"/>
+                        </group>
+                        <notebook>
+                            <page string="Parts">
+                                <field name="parts_lines" nolabel="1"
+                                       context="{'default_categ_id': context.get('default_categ_id')}">
+                                    <tree string="Parts" editable="bottom">
+                                        <field name="parts_id" domain="[('isParts','=','True')]"
+                                               context="{'default_categ_id': context.get('default_categ_id')}"/>
+                                        <field name="parts_qty"/>
+                                        <field name="parts_uom" groups="product.group_uom"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Tools">
+                                <separator string="Description for Tools"/>
+                                <field name="tools_description"
+                                       placeholder="Specify the tools and mechanisms needed for execute this order..."/>
+                            </page>
+                            <page string="Labor">
+                                <separator string="Description for Labor"/>
+                                <field name="labor_description"
+                                       placeholder="Specify the specialists needed for execute this order..."/>
+                            </page>
+                            <page string="Operations">
+                                <separator string="Description for Operations"/>
+                                <field name="operations_description"
+                                       placeholder="Specify the jobs that need execute..."/>
+                            </page>
+                            <page string="Documentation">
+                                <separator string="Description for Documentation"/>
+                                <field name="documentation_description"
+                                       placeholder="Specify the documentation useful when execute this order..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_tasks" model="ir.actions.act_window">
+            <field name="name">Maintenance Tasks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">workshop.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'default_categ_id': ref('poi_workshop.product_category_workshop')}"/>
+        </record>
+
+        <menuitem name="Repuestos asociados"
+                  id="menu_maintenance_tasks"
+                  parent="base.menu_vehicle_root"
+                  sequence="9"/>
+
+        <menuitem name="Tasks Service"
+                  action="action_tasks"
+                  id="menu_maintenance_tasks_tasks"
+                  parent="menu_maintenance_tasks"
+                  sequence="100"/>
+        <!-- Ahrupador de Tareas -->
+        <record id="workshop_task_group_form_view" model="ir.ui.view">
+            <field name="name">workshop.task.group.form</field>
+            <field name="model">workshop.task.group</field>
+            <field name="arch" type="xml">
+                <form string="Grupos" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                        <notebook>
+                            <page string="Servicios">
+                                <field name="group_lines" nolabel="1">
+                                    <tree string="Servicios" editable="bottom">
+                                        <field name="task_id"/>
+                                        <field name="service_id"/>
+                                        <field name="name" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_tasks_group" model="ir.actions.act_window">
+            <field name="name">Agrupador Servicios</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">workshop.task.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'default_categ_id': ref('poi_workshop.product_category_workshop')}"/>
+        </record>
+
+        <menuitem action="action_tasks_group"
+                  id="menu_maintenance_tasks_group"
+                  parent="menu_maintenance_tasks"
+                  sequence="101"/>
+
+        <!-- Type Workshop menu -->
+        <record id="workshop_type_tree_view" model="ir.ui.view">
+            <field name="name">workshop.type.tree</field>
+            <field name="model">workshop.type</field>
+            <field name="arch" type="xml">
+                <tree string="Maintenance Type">
+                    <field name="name"/>
+                    <field name="property_account_expense_categ_id"/>
+                    <field name="location_int_id"/>
+                    <field name="location_ext_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="workshop_type_form_view" model="ir.ui.view">
+            <field name="name">workshop.type.form</field>
+            <field name="model">workshop.type</field>
+            <field name="arch" type="xml">
+                <form string="Tasks" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>Type:
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="property_account_expense_categ_id"/>
+                            <field name="location_int_id"/>
+                            <field name="location_ext_id"/>
+                            <field name="recosteo"/>
+                            <field name="journal_id"/>
+                            <field name="cargo"/>
+                            <field name="sale_type_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_types" model="ir.actions.act_window">
+            <field name="name">Maintenance Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">workshop.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Types"
+                  id="menu_maintenance_types"
+                  parent="base.menu_vehicle_root"
+                  sequence="9"/>
+
+        <menuitem name="Types"
+                  action="action_types"
+                  id="menu_maintenance_types_types"
+                  parent="menu_maintenance_types"
+                  sequence="100"/>
+
+        <act_window
+                id="action_workshop_from_invoices"
+                name="Registrar Factura"
+                res_model="invoice.onworkshop"
+                src_model="workshop.order"
+                view_mode="form"
+                multi="True"
+                target="new"
+                key2="client_action_multi"
+        />
+
+        <!-- Type Workshop menu -->
+        <record id="workshop_stop_reason_tree_view" model="ir.ui.view">
+            <field name="name">workshop.stop.reason.tree</field>
+            <field name="model">workshop.stop.reason</field>
+            <field name="arch" type="xml">
+                <tree string="Razones de stop">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_workshop_stop_reason" model="ir.actions.act_window">
+            <field name="name">Motivo de detención OT</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">workshop.stop.reason</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_workshop_stop_reason"
+                  id="menu_workshop_stop_reason"
+                  parent="poi_vehicle.menu_maintenance_config"
+                  sequence="100"/>
+
+        <record id="poi_workshop_inventory_tree" model="ir.ui.view">
+            <field name="name">poi.workshop.inventory.tree</field>
+            <field name="model">poi.workshop.inventory</field>
+            <field name="arch" type="xml">
+                <tree string="Accesorios Adicionales" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="poi_workshop_inventory_action" model="ir.actions.act_window">
+            <field name="name">Accesorios Adicionales</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poi.workshop.inventory</field>
+            <field name="view_mode">tree</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Definir Accesorios adicionales de vehiculo
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="poi_workshop_inventory_action"
+                  id="menu_poi_workshop_inventory_action"
+                  parent="poi_vehicle.menu_maintenance_config" sequence="50"/>
+
+    </data>
+</odoo>

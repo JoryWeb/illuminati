@@ -1,0 +1,285 @@
+<openerp>
+    <data>
+        <!-- PARENT MENU -->
+        <menuitem id="menu_bank_account" name="Bank" parent="account.menu_finance" sequence="3"
+                  groups="account.group_account_user,account.group_account_manager"/>
+
+        <!-- res.bank -->
+        <record id="view_poi_res_bank_form" model="ir.ui.view">
+            <field name="name">poi.res.bank.form</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bic']" position="replace">
+                    <field name="code"/>
+                    <field name="bic" string="Código Swift"/>
+                </xpath>
+                <xpath expr="//field[@name='bic']" position="after">
+                    <field name="iban"/>
+                </xpath>
+                <xpath expr="//field[@name='active']/../.." position="after">
+                    <notebook>
+                        <page string="Bank Accounts">
+                            <field name="bank_account_ids">
+                                <tree>
+                                    <field name="account_type"/>
+                                    <field name="account_number"/>
+                                    <field name="account_id"/>
+                                    <field name="currency_id"/>
+                                    <field name="balance"/>
+                                    <field name="balance_reconciled"/>
+                                    <field name="company_id"/>
+                                    <field name="analytic_account_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="action_poi_bank_form" model="ir.actions.act_window">
+            <field name="name">Banks</field>
+            <field name="res_model">res.bank</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new bank.
+                </p>
+                <p>
+                    Manage bank records you want to be used in the system.
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_poi_bank_form" id="menu_action_poi_bank_form" parent="menu_bank_account" sequence="1"
+                  groups="account.group_account_user,account.group_account_manager"/>
+
+
+        <!-- res.bank.account.check -->
+
+        <record id="res_bank_account_check_tree" model="ir.ui.view">
+            <field name="name">res.bank.account.check.tree</field>
+            <field name="model">res.bank.account.check</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="checkbook_id"/>
+                    <field name="check_number"/>
+                    <field name="date"/>
+                    <field name="amount"/>
+                    <field name="state"/>
+                    <field name="payee"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="res_bank_account_check_form" model="ir.ui.view">
+            <field name="name">res.bank.account.check.form</field>
+            <field name="model">res.bank.account.check</field>
+            <field name="arch" type="xml">
+                <form string="Bank Account Check">
+                    <header>
+                        <button string="Validate Check" name="validate_check" type="object" states="draft"/>
+                        <button string="Print Check" name="print_check" type="object" states="validated"/>
+                        <button string="Mark as Signed" name="mark_as_signed" type="object" states="printed"/>
+                        <button string="Mark as Delivered" name="mark_as_delivered" type="object" states="signed"/>
+                        <button string="Annul Check" name="annul_check" type="object" states="validated"/>
+                        <button string="Annul Check" name="annul_check_printed" type="object"
+                                states="printed,signed,delivered"/>
+                        <!--<button name="force_assign" states="confirmed" string="Force Availability" type="object" groups="base.group_user"/>
+                        <button name="action_confirm" states="draft" string="Confirm" type="object" groups="base.group_user"/>
+                        <button name="do_unreserve" states="assigned" string="Cancel Availability" type="object" groups="base.group_user"/>-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                    </header>
+                    <div class="oe_right">
+                        <label string="Check Number" for="check_number"/>
+                        <h1>
+                            <field name="check_number" readonly="1" nolabel="1"/>
+                        </h1>
+                    </div>
+                    <group name="bank_account_check">
+                        <group>
+                            <field name="bank_id" readonly="1"/>
+                            <field name="bank_account_id" readonly="1"/>
+                            <field name="date" readonly="1"/>
+                            <field name="amount" readonly="1"/>
+                            <field name="payee"/>
+                            <field name="memo"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="res_bank_account_check_search">
+            <field name="name">res.bank.account.check.search</field>
+            <field name="model">res.bank.account.check</field>
+            <field name="arch" type="xml">
+                <search string="Bank Account Check">
+                    <field name="check_number"/>
+                    <filter string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter string="Validated" domain="[('state', '=', 'validated')]"/>
+                    <filter string="Annulled" domain="[('state', '=', 'annulled')]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="State" icon="terp-personal" domain="[]" context="{'group_by' : 'state'}"/>
+                        <filter string="Checkbook" name="group_checkbook" icon="terp-personal" domain="[]"
+                                context="{'group_by' : 'checkbook_id'}"/>
+                        <filter string="Printed" domain="[('state', '=', 'printed')]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_res_bank_account_check_form" model="ir.actions.act_window">
+            <field name="name">Bank Checks</field>
+            <field name="res_model">res.bank.account.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="res_bank_account_check_search"/>
+            <field name="context">{ "search_default_group_checkbook":1}</field>
+        </record>
+
+
+        <menuitem action="action_res_bank_account_check_form" id="menu_action_res_bank_account_check_form"
+                  parent="menu_bank_account" sequence="5" groups="account.group_account_manager"/>
+
+
+        <!-- res.bank.account -->
+        <record id="view_res_bank_account_form" model="ir.ui.view">
+            <field name="name">res.bank.account.form</field>
+            <field name="model">res.bank.account</field>
+            <field name="arch" type="xml">
+                <form string="Bank Account">
+                    <sheet>
+                        <group col="4">
+                            <field name="bank_id"/>
+                            <field name="account_type"/>
+                            <field name="active"/>
+                        </group>
+                        <notebook>
+                            <page string="Account Data">
+                                <group>
+                                    <group string="Account Data">
+                                        <field name="account_number"/>
+                                        <field name="currency_id"/>
+                                        <field name="journal_id"/>
+                                        <field name="company_id"/>
+                                        <field name="partner_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="account_id"/>
+                                        <field name="analytic_account_id"/>
+                                        <field name="balance_reconciled" readonly="1"/>
+                                        <field name="balance" readonly="1"/>
+                                        <field name="credit" readonly="1"/>
+                                        <field name="debit" readonly="1"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="description"/>
+                                </group>
+                            </page>
+                            <page string="Checkbooks">
+                                <field name="account_checkbook_ids" create="0">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="ref"/>
+                                        <field name="start_num"/>
+                                        <field name="end_num"/>
+                                        <field name="next_num"/>
+                                        <field name="check_ids"/>
+                                        <field name="active"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="ref"/>
+                                                <field name="start_num"/>
+                                                <field name="end_num"/>
+                                                <field name="next_num"/>
+                                                <field name="check_ids"
+                                                       context="{'form_view_ref':'poi_bank.res_bank_account_check_form', 'tree_view_ref':'poi_bank.res_bank_account_check_tree','default_check_id': active_id}"/>
+                                                <field name="active"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_res_bank_account_tree" model="ir.ui.view">
+            <field name="name">res.bank.account.tree</field>
+            <field name="model">res.bank.account</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Accounts">
+                    <field name="bank_id"/>
+                    <field name="account_type"/>
+                    <field name="account_number"/>
+                    <field name="currency_id"/>
+                    <field name="journal_id"/>
+                    <field name="company_id"/>
+                    <field name="partner_id"/>
+                    <field name="debit" readonly="1"/>
+                    <field name="credit" readonly="1"/>
+                    <field name="balance" readonly="1"/>
+                    <field name="balance_reconciled" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_res_bank_account_search" model="ir.ui.view">
+            <field name="name">res.bank.account.search</field>
+            <field name="model">res.bank.account</field>
+            <field name="arch" type="xml">
+                <search string="Bank Accounts">
+                    <field name="account_number"/>
+                    <field name="currency_id"/>
+                    <field name="company_id"/>
+                    <field name="partner_id"/>
+                    <filter icon="terp-gtk-jump-to-ltr" name="no_balance" string="No Balance" domain="[('balance','&lt;=',0.0)]"/>
+                    <filter icon="terp-gtk-jump-to-ltr" name="with_balance" string="With Balance" domain="[('balance','&gt;',0.0)]"/>
+                    <newline/>
+                    <group string="Group By" expand="0">
+                        <filter string="Bank" context="{'group_by':'bank_id'}" icon="terp-folder-green"/>
+                        <filter string="Account Type" context="{'group_by':'account_type'}" icon="terp-folder-orange"/>
+                        <filter string="Company" context="{'group_by':'company_id'}" icon="terp-folder-orange"/>
+                        <filter string="Project" context="{'group_by':'analytic_account_id'}" icon="terp-folder-green"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_res_bank_account_form" model="ir.actions.act_window">
+            <field name="name">Bank Accounts</field>
+            <field name="res_model">res.bank.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_res_bank_account_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new bank account.
+                </p>
+                <p>
+                    Manage bank account records you want to be used in the system.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_res_bank_account_form" id="menu_action_res_bank_account_form"
+                  parent="menu_bank_account" sequence="2" groups="account.group_account_manager"/>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Datos Transportista -->
+        <!--
+		<record model="ir.ui.view" id="view_pret_albaran_form">
+	        <field name="name">picking.pret.form</field>
+	        <field name="model">stock.picking.out</field>
+	        <field name="inherit_id" ref="stock.view_picking_out_form" />
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='origin']" position="after">
+                    <field name="transportista" attrs="{'required':[('state','=','assigned')],'readonly':[('state','=','done')]}" domain="[('supplier','=',True)]"/>
+                    <field name="placa" attrs="{'required':[('state','=','assigned')],'readonly':[('state','=','done')]}"/>
+
+	        	</xpath>
+                <xpath expr="//field[@name='note']" position="replace">
+                    <group col="3">
+                        <group>
+                            <field name="note" placeholder="Add an internal note..." class="oe_inline" colspan="2" nolabel="1" />
+                        </group>
+                        <group>
+                           <field name="total_metric"/>
+                            <field name="total_metric_m2"/>
+                            <field name="total_metric_m3"/>
+                            <field name="total_weight"/>
+                        
+                            <field name="vendedor" widget="selection"/>
+                            <field name="tipo_entrega"/>
+                            <field name="socio_ref"/>
+                        </group>
+                    </group>
+	        	</xpath>
+	        </field>
+        </record>
+        -->
+        <!--
+        <record model="ir.ui.view" id="view_pret_recuperacion_form">
+	        <field name="name">picking.pretrecu.form</field>
+	        <field name="model">stock.picking.in</field>
+	        <field name="inherit_id" ref="stock.view_picking_form" />
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='origin']" position="after">
+                    <field name="picking_id" domain="[('type','=','internal'),('check_recu','=',True)]" on_change="onchange_picking_id(picking_id)"/>
+                    <button name="recu_print_pret" string="Hoja de Productos Recuperados" type="object"  class="oe_highlight"  groups="base.group_user"/>
+	        	</xpath>
+
+	        </field>
+        </record>
+        -->
+        <record model="ir.ui.view" id="view_pret_albaran2_form">
+            <field name="name">picking.pret2.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <button name="force_assign" position="attributes">
+                    <attribute name="groups">base.group_sale_manager,stock.group_stock_user</attribute>
+                </button>
+                <button name="action_cancel" position="attributes">
+                    <attribute name="groups">base.group_sale_manager</attribute>
+                </button>
+                <!--<button name="act_stock_return_picking" position="attributes">
+                    <attribute name="groups">base.group_sale_manager</attribute>
+                </button>-->
+                <xpath expr="//button[@name='do_print_picking']" position="after">
+                    <button name="%(act_stock_recovered_picking)d" string="Recuperados" states="done" type="action"
+                            groups="poi_warehouse_sale.group_sale_salesman_shop_leads,base.group_sale_salesman,stock.group_stock_user"
+                            attrs="{'invisible': [('check_recu','=',False)]}"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="transportista"
+                           attrs="{'required':[('state','=','assigned')],'readonly':[('state','=','done')]}"
+                           domain="[('supplier','=',True)]"
+                           context="{'default_supplier':True, 'default_customer':False}"/>
+                    <field name="placa"
+                           attrs="{'required':[('state','=','assigned')],'readonly':[('state','=','done')]}"/>
+                    <field name="check_recu"/>
+                </xpath>
+                <xpath expr="//field[@name='min_date']" position="attributes">
+                    <attribute name='readonly'>1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='priority']" position="after">
+                    <field name="date_done" readonly="0"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook" position="after">
+                    <group col="3">
+                        <group>
+                            <field name="note" placeholder="Add an internal note..." class="oe_inline" colspan="2"
+                                   nolabel="1"/>
+                        </group>
+                        <group>
+                            <field name="total_metric"/>
+                            <field name="total_metric_m2"/>
+                            <field name="total_metric_m3"/>
+                            <field name="total_weight"/>
+                            <field name="vendedor" widget="selection" invisible="0"/>
+                            <field name="tipo_entrega"/>
+                            <field name="socio_ref"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--
+        <record id="stock_move_dimension_form" model="ir.ui.view">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='picking_type_id']" position="before">
+                    <field name="product_recu" invisible="1"/>
+                    <field name="serial_recu"/>
+                    <field name="obs_recu"/>
+                </xpath>
+            </field>
+        </record>
+        -->
+        <record id="stock_move_dimension_form2" model="ir.ui.view">
+            <field name="name">stock.move.form2</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form"/>
+            <field name="arch" type="xml">
+                <!--
+                <xpath expr="//group/group[@string='Traceability']/div/field[@name='tracking_id']" position="replace">
+                    <field name="tracking_id" class="oe_inline" invisible="1"/>
+                </xpath>
+                -->
+                <xpath expr="//group[@name='origin_grp']" position="inside">
+                    <field name="obs_recu"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!--
+        <record id="product_recu_form" model="ir.ui.view">
+            <field name="name">product.recu.form</field>
+            <field name="model">poi_stock.product_add.wizard</field>
+            <field name="inherit_id" ref="poi_stock_quickmove.poi_stock_product_add_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='product_id']" position="before">
+                    <field name="picking_id_recu" domain="[('type','=','internal')]" on_change="onchange_picking_id(picking_id_recu, context)" invisible="1"/>
+                </xpath>
+
+
+
+                <xpath expr="//group/field[@name='product_add_lines']/tree/field[@name='prodlot_id']" position="after">
+                    <field name="product_recu" invisible="1" />
+                    <field name="serial_recu" groups="stock.group_production_lot" invisible="1"/>
+                    <field name="obs_recu" domain="[('type','=','internal')]"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_split_in_lots_control_recu" model="ir.ui.view">
+            <field name="name">Partir Lotes Recuperados</field>
+            <field name="model">stock.move.split</field>
+            <field name="inherit_id" ref="stock.view_split_in_lots"/>
+            <field name="arch" type="xml">
+            <xpath expr="/form//field[@name='line_exist_ids']/tree/field[@name='prodlot_id']" position="replace">
+            		<field name="prodlot_id" string="N Lote" quick_create="false"
+                           on_change="onchange_lot_id(prodlot_id, quantity, parent.location_id, parent.product_id, parent.product_uom, context)"
+                           context="{'product_id': parent.product_id, 'location_id': parent.location_id}"/>
+            </xpath>
+            </field>
+        </record>
+        -->
+        <!--
+        <report id="print_recu_pret"
+            name="recu.pretensa.webkit"
+            auto="False"
+            model="stock.picking"
+            file="poi_x_pretensa/report/print_recu_pret.mako"
+            webkit_header="poi_webkit.base_reports_print_invoice_header"
+            string="Imprimir Productos Recuperados"
+            report_type="webkit"/>
+        -->
+
+        <record model="ir.ui.view" id="view_stock_pack_operation_toyosa">
+            <field name="name">stock.pack.operation.toyosa</field>
+            <field name="model">stock.pack.operation</field>
+            <field name="inherit_id" ref="stock.view_pack_operation_lot_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form//field[@name='pack_lot_ids']/tree/field[@name='plus_visible']" position="before">
+                    <field name="origen" invisible="1"/>
+                    <field name="return_pack_lot" invisible="context.get('only_create', False)"
+                           context="{'lot_id': lot_id, 'qty': qty}"
+                           domain="[('name', '!=', ''), ('return_pack_lot', '=', False), ('name', 'ilike', origen)]"/>
+                    <field name="causa" invisible="context.get('only_create', False)"/>
+                </xpath>
+                <xpath expr="/form//field[@name='pack_lot_ids']/tree/field[@name='lot_id']" position="before">
+                    <field name="secuencia" invisible="context.get('only_create', False)"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_pack_operation_lot_lot_form_inh" model="ir.ui.view">
+            <field name="name">stock.pack.operation.lots.form.inh</field>
+            <field name="model">stock.pack.operation.lot</field>
+            <field name="inherit_id" ref="stock.view_pack_operation_lot_lot_form"/>
+            <field eval="20" name="priority"/>
+            <field name="arch" type="xml">
+                <field name="qty" position="after">
+                    <!--<field name="origen"/>-->
+                    <field name="return_pack_lot"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_operation_recu" model="ir.ui.view">
+            <field name="name">recuperados.lot</field>
+            <field name="model">stock.pack.operation.lot.recu</field>
+            <field name="arch" type="xml">
+                <form string="Detalle de recepciones">
+                    <group>
+                        <field name="lot_id" invisible="1"/>
+                        <field name="name"/>
+                        <field name="qty"/>
+                    </group>
+                    <group col="1">
+                        <field name="operation_recu_line" nolabel="1">
+                            <tree string="Detalle Recuperacion" editable="bottom">
+                                <field name="qty"/>
+                                <field name="return_pack_lot"/>
+                                <field name="causa"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="pretensa_vpicktree" model="ir.ui.view">
+            <field name="name">pretensa.stock.picking.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="default_order">min_date desc</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

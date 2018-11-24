@@ -1,0 +1,69 @@
+/*
+ * Component: Info Box
+ * -------------------
+ */
+.info-box {
+  display: block;
+  min-height: 30px;
+  background: #fff;
+  width: 150px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+.info-box small {
+  font-size: 14px;
+}
+.info-box .progress {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 5px -10px 5px -10px;
+  height: 2px;
+}
+.info-box .progress,
+.info-box .progress .progress-bar {
+  border-radius: 0;
+}
+.info-box .progress .progress-bar {
+  background: #fff;
+}
+.info-box-icon {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  display: block;
+  float: left;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  color: #fff;
+}
+.info-box-content {
+  padding: 5px 10px;
+  margin-left: 40px;
+    color: #fff;
+}
+.info-box-number {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+.progress-description,
+.info-box-text {
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info-box-text {
+  text-transform: uppercase;
+}
+.info-box-more {
+  display: block;
+}
+.progress-description {
+  margin: 0;
+}

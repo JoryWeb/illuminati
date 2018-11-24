@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.rule" id="poi_libro_mayor_rule">
+	        <field name="name">Libro Mayor multi-company</field>
+	        <field name="model_id" ref="model_poi_libro_mayor"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    	</record>
+    	<record model="ir.rule" id="poi_estado_resultados_rule">
+	        <field name="name">Estado de Resultados multi-company</field>
+	        <field name="model_id" ref="model_poi_estado_resultados"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    	</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data noupdate="1">
+    <record id="export_journal" model="account.journal">
+        <field name="name">Exportación</field>
+        <field name="code">EXPOR</field>
+        <field name="type">general</field>
+        <field name="show_on_dashboard" eval="False"/>
+    </record>
+</data>
+</odoo>

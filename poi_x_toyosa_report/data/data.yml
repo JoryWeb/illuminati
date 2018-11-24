@@ -1,0 +1,123 @@
+-
+  Rerport config Cif
+-
+  !record {model: sale.report.config, id: invoice_cif}:
+    name: Factura CIF
+    report_id: report_invoice_cif
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_fa}:
+    config_id: invoice_cif
+    name: FACTURA ORIGEN
+    default: no hay dato
+    sequence: 1
+-
+    Line report Config RE
+-
+  !record {model: sale.report.items, id: line_re}:
+    config_id: invoice_cif
+    name: PARTE DE RECEPCION
+    default: no hay dato
+    sequence: 2
+-
+    Line report Config CORE
+-
+  !record {model: sale.report.items, id: line_core}:
+    config_id: invoice_cif
+    name: CODIGO DE RECINTO
+    default: no hay dato
+    sequence: 3
+-
+    Line report Config si
+-
+  !record {model: sale.report.items, id: line_si}:
+    config_id: invoice_cif
+    name: SIDUNEA
+    default: no hay dato
+    sequence: 4
+-
+    Line report Config esp
+-
+  !record {model: sale.report.items, id: line_esp}:
+    config_id: invoice_cif
+    name: Uso Especial
+    default: no hay dato
+    sequence: 5
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_cil}:
+    config_id: invoice_cif
+    name: CILINDRADA
+    sequence: 6
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_rue}:
+    config_id: invoice_cif
+    name: Numero de Ruedas
+    sequence: 7
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_car}:
+    config_id: invoice_cif
+    name: Capacidad de Carga
+    sequence: 8
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_fa}:
+    config_id: invoice_cif
+    name: Año de Fabricacion
+    sequence: 9
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_tra}:
+    config_id: invoice_cif
+    name: Traccion
+    sequence: 10
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_trans}:
+    config_id: invoice_cif
+    name: Transmicion
+    sequence: 11
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_puer}:
+    config_id: invoice_cif
+    name: Numero de Puertas
+    sequence: 12
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_pla}:
+    config_id: invoice_cif
+    name: Numero de Plazas
+    sequence: 13
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_cla}:
+    config_id: invoice_cif
+    name: Clase
+    sequence: 14
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_dui}:
+    config_id: invoice_cif
+    default: no hay dui
+    sequence: 15
+-
+    Line report Config CIF
+-
+  !record {model: sale.report.items, id: line_dvr}:
+    config_id: invoice_cif
+    default: codigo dvr
+    sequence: 15

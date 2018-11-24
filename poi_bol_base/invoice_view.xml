@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Factura de Venta -->
+        <record id="view_account_invoice_bol_filter" model="ir.ui.view">
+            <field name="name">account.invoice.bol.select</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='number']" position="after">
+                    <field name="cc_nro"/>
+                    <field name="nit"/>
+                    <field name="razon"/>
+                </xpath>
+                <xpath expr="//filter[@name='status']" position="before">
+                    <filter string="Estado SIN" context="{'group_by':'estado_fac'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="invoice_bol_tree" model="ir.ui.view">
+            <field name="name">account.invoice.bol.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total_signed']" position="after">
+                    <field name="total_bs" sum="Total BOB"/>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="estado_fac"/>
+                    <field name="cc_nro"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="account_invoice_bo">
+            <field name="name">account.invoice.form.bo</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='invoice_print']" position="after">
+
+                    <button name="nuevos_datos" type="object" string="Nuevos Datos Factura Original"  groups="base.group_user" attrs="{'invisible': [('type','!=', 'out_refund')]}"/>
+
+                </xpath>
+                <xpath expr="//button[@name='action_invoice_open']" position="after">
+                    <button name="action_nota" type="object" string="Nota de Crédito" states="open,proforma2,paid" groups="base.group_user" attrs="{'invisible': ['|','|',('note_from_id','!=',False),('type','!=','out_invoice'),('state','in',('draft','cancel','proforma'))]}"/>
+                </xpath>
+                <xpath expr="//h1" position="after">
+                    <div class="oe_right oe_button_box" style="width: 150px;" name="buttons">
+                        <div class="oe_inline info-box oe_invoice_state" icon="fa-list-alt">
+                            <span class="info-box-icon bg-aqua"><i class="fa fa-check"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text"><field string="Estado Factura" name="estado_fac_display"/></span>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="nit" required="1" attrs="{'readonly': [('state','in',['open','paid'])]}" widget="mask" data-inputmask-alias="integer"/>
+                    <field name="razon" attrs="{'readonly': [('state','in',['open','paid'])], 'required': [('amount_total', '>=', 300)]}"/>
+                    <newline/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="replace">
+                    <field name="price_subtotal" invisible="1"/>
+                    <field name="price_subtotal_with_tax"/>
+                </xpath>
+                <xpath expr="//notebook" position="after">
+                        <hr/>
+                        <group>
+                            <separator string="Control SIN" colspan="4"/>
+                            <group name="group_sin">
+                                <field name="cc_dos"/>
+                                <field name="cc_nro" attrs="{'readonly': [('state','in',['open','paid'])]}"/>
+                                <field name="cc_aut" readonly="1" attrs="{'readonly': [('state','in',['open','paid'])]}" widget="mask" data-inputmask-alias="integer"/>
+                                <field name="estado_fac" groups="account.group_account_user"/>
+                                <field name="note_from_id" attrs="{'invisible': [('note_from_id','=',False)]}"/>
+                            </group>
+                        </group>
+                        <hr/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!-- Factura de Compra -->
+        <record model="ir.ui.view" id="account_invoice_supplier_bo">
+            <field name="name">account.invoice.supplier.form.bo</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="replace">
+                    <button name="action_inverse_tax" type="object" string="Cálculo de monto inverso" attrs="{'invisible': [('invoice_line_tax_ids','=',False)]}" icon="fa-calculator"/>
+                    <field name="price_subtotal" invisible="0"/>
+                    <field name="price_subtotal_with_tax"/>
+                </xpath>
+                <xpath expr="//notebook" position="after">
+                        <!--<field name="tipo_fac" invisible="1"/>-->
+                        <hr/>
+                        <group>
+                            <separator string="Control SIN" colspan="4"/>
+                            <group>
+                                <field name="cc_nro" attrs="{'readonly': [('state','in',['paid'])]}"/>
+                                <field name="cc_aut" attrs="{'readonly': [('state','in',['paid'])]}" widget="mask" data-inputmask-alias="integer"/>
+                                <field name="cc_cod" widget="mask" data-inputmask-mask="##-##-##-##"/>
+                                <field name="nit" string="NIT Proveedor" attrs="{'readonly': [('state','in',['paid'])]}" widget="mask" data-inputmask-alias="integer"/>
+                                <field name="razon" attrs="{'readonly': [('state','in',['paid'])]}"/>
+                            </group>
+                            <group>
+                                <field name="cc_date" attrs="{'readonly': [('state','in',['paid'])]}"/>
+                                <field name="iva" readonly="1"/>
+                                <field name="exento" readonly="0"/>
+                                <field name="ice" readonly="0"/>
+                                <field name="tipo_com" groups="account.group_account_user"/>
+                                <field name="estado_fac" groups="account.group_account_user"/>
+                            </group>
+                            <!--<group attrs="{'invisible':[('tipo_fac','!=','3')]}">
+                                <separator string="Importación" colspan="4"/>
+                                <field name="tipo_com"/>
+                            </group>-->
+                        </group>
+                        <hr/>
+                </xpath>
+                <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']" position="replace">
+                    <field name="amount" attrs="{'readonly':[('manual','=',False)]}"/>
+                    <field name="price_include" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Notas de Credito -->
+        <record id="action_invoice_nota_out" model="ir.actions.act_window">
+            <field name="name">Notas de crédito</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_refund'),('tipo_fac','=','6')]</field>
+            <field name="context">{'default_type': 'out_refund', 'type': 'out_refund', 'tipo_fac': '6', 'journal_type': 'sale_refund'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para crear una Nota de crédito.
+                </p><p>
+                Idealmente las Notas de crédito deberían crearse desde la Factura original que la origina.
+            </p>
+            </field>
+        </record>
+        <record id="action_invoice_nota_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="act_window_id" ref="action_invoice_nota_out"/>
+        </record>
+
+        <record id="action_invoice_nota_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.invoice_form"/>
+            <field name="act_window_id" ref="action_invoice_nota_out"/>
+        </record>
+        <menuitem action="action_invoice_nota_out" id="menu_action_invoice_nota_out" sequence="11" parent="account.menu_finance_receivables_documents"/>
+
+    </data>
+</openerp>

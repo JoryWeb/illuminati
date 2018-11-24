@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="asset_label_report"
+            model="account.asset.asset"
+            name="account.asset.asset"
+            string="Etiquetas"
+            xml="poi_bol_asset/report/asset_label_report.xml"
+            xsl="poi_bol_asset/report/asset_label_report.xsl"
+            groups="base.group_no_one"/>
+    </data>
+</odoo>

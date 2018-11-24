@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="wallet_report_view_tree" model="ir.ui.view">
+      <field name="name">wallet.report.tree</field>
+      <field name="model">wallet.report</field>
+      <field name="arch" type="xml">
+        <tree string="Reporte de Cartera" create="0">
+          <field name="agency_id"/>
+          <field name="warehouse_id"/>
+          <field name="date_invoice"/>
+          <field name="invoice_id"/>
+          <field name="cc_nro"/>
+          <field name="partner_id"/>
+          <field name="order_type_id"/>
+          <field name="residual_before" sum="total"/>
+          <field name="residual" sum="total"/>
+          <field name="last_date_pay" sum="total"/>
+          <!-- <field name="amount_total" sum="total"/> -->
+          <!-- <field name="amount_pay" sum="total"/> -->
+          <field name="days"/>
+          <field name="days30" sum="total"/>
+          <field name="days90" sum="total"/>
+          <field name="days180" sum="total"/>
+          <field name="days270" sum="total"/>
+          <field name="days360" sum="total"/>
+          <field name="days720" sum="total"/>
+          <field name="days1080" sum="total"/>
+          <field name="days1080more" sum="total"/>
+          <field name="amount_total_m" sum="total"/>
+          <field name="days90p" sum="total"/>
+          <field name="days180p" sum="total"/>
+          <field name="days270p" sum="total"/>
+          <field name="days360p" sum="total"/>
+          <field name="days720p" sum="total"/>
+          <field name="days1080p" sum="total"/>
+          <field name="days1080morep" sum="total"/>
+          <field name="amount_total_p" sum="total"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="wallet_report_view_search" model="ir.ui.view">
+      <field name="name">wallet.report.search</field>
+      <field name="model">wallet.report</field>
+      <field name="arch" type="xml">
+        <search string="Reporte de Cartera">
+          <field name="warehouse_id"/>
+          <field name="agency_id"/>
+          <field name="partner_id"/>
+          <field name="invoice_id"/>
+          <field name="order_type_id"/>
+          <group expand="0" string="Group By">
+            <filter string="Almacen/Sucursal" domain="[]" context="{'group_by':'warehouse_id'}"/>
+            <filter string="Regional/Agencia" domain="[]" context="{'group_by':'agency_id'}"/>
+            <filter string="Cliente" domain="[]" context="{'group_by':'partner_id'}"/>
+            <filter string="Tipo de OV" domain="[]" context="{'group_by':'order_type_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="wallet_report_action_tree" model="ir.actions.act_window">
+      <field name="name">Reporte de Cartera</field>
+      <field name="res_model">wallet.report</field>
+      <field name="view_mode">tree</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Reporte de Cartera
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

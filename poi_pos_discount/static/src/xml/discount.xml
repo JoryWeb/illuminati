@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="DiscountButton">
+        <div class='control-button js_discount'>
+            <i class='fa fa-tag' /> Discount
+        </div>
+    </t>
+
+
+    <t t-name="DiscountPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput">
+                <p class="title">Discounts</p>
+                <p>Fill the discount amount or percentage to apply to order.</p>
+                <p>Discount Amount</p>
+                <input class="discount_amount" type='text'/>
+                <p>Discount Percentage (%)</p>
+                <input class="discount_percentage" type='text'/>
+                <div class="footer">
+                    <div class="button clear-discount">
+                        Clear
+                    </div>
+                    <div class="button apply-discount">
+                        Apply
+                    </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

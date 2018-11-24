@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_users_shop_form" model="ir.ui.view">
+            <field name="name">res.users.shop.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Shops">
+                        <field name="shop_assigned" domain="[('enabled_for_sale','=', True)]" context="{'display_all': True}"/>
+                        <field name="shop_ids" context="{'display_all': True}"/>
+                        <field name="multi_shop"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_users_shop_form_simple_modif" model="ir.ui.view">
+            <field name="name">res.users.shop.preferences.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='preferences']" position="inside">
+                    <field name="shop_assigned" readonly="0"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

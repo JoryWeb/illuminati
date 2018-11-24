@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_stock_control_all_users,logistic_user_all,model_product_stock_control,base.group_user,1,0,0,0
+product_stock_control_all,logistic_user,model_product_stock_control,poi_logistic.group_logistic_user,1,0,0,0
+product_stock_control_manager,logistic_manager,model_product_stock_control,poi_logistic.group_logistic_manager,1,1,1,1

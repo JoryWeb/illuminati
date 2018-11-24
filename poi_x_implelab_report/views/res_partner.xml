@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<!-- Inherit Form view -->
+<record id="view_partner_form_imp" model="ir.ui.view">
+    <field name="name">firma del cliente</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[@name='internal_notes']" position="inside">
+                <separator string="Firma"/>
+                <field name="firm" widget='image' class="oe_avatar" />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</odoo>

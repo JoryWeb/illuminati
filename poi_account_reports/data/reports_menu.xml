@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="account_reports_legal_statements_menu" name="Legal Statements" parent="account.menu_finance_reports" sequence="1" groups="account.group_account_user"/>
+        <menuitem id="account_reports_business_statements_menu" name="Business Statements" parent="account.menu_finance_reports" sequence="2" groups="account.group_account_user"/>
+    </data>
+</odoo>

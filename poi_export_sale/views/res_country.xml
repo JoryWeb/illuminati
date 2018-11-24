@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+    <record model="ir.ui.view" id="view_country_form_xport">
+        <field name="name">res.country.form.export</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="name_code_export"/>
+            </field>
+        </field>
+    </record>
+</data>
+</odoo>

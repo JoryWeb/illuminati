@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_attachment,hr.attachment,model_hr_attachment,hr.group_hr_manager,1,1,1,1
+access_hr_attachment_type,hr.attachment.type,model_hr_attachment_type,hr.group_hr_manager,1,1,1,1
+access_hr_learning,hr.learning,model_hr_learning,hr.group_hr_manager,1,1,1,1
+access_hr_learning_place,hr.learning.place,model_hr_learning_place,hr.group_hr_manager,1,1,1,1
+access_hr_learning_type,hr.learning.type,model_hr_learning_type,hr.group_hr_manager,1,1,1,1
+access_hr_employee_reason,hr.employee.reason,model_hr_employee_reason,hr.group_hr_manager,1,1,1,1
+access_hr_accident,hr.accident,model_hr_accident,hr.group_hr_manager,1,1,1,1
+access_hr_accident_category,hr.accident.category,model_hr_accident_category,hr.group_hr_manager,1,1,1,1
+access_hr_memo,hr.memo,model_hr_memo,hr.group_hr_manager,1,1,1,1
+access_hr_memo_template,hr.memo.template,model_hr_memo_template,hr.group_hr_manager,1,1,1,1
+access_hr_memo_type,hr.memo.type,model_hr_memo_type,hr.group_hr_manager,1,1,1,1
+access_hr_afps,hr.afps,model_hr_afps,hr.group_hr_manager,1,1,1,1
+access_hr_employee_family,hr.employee.family,model_hr_employee_family,hr.group_hr_manager,1,1,1,1
+access_hr_family_occupation,hr.family.occupation,model_hr_family_occupation,hr.group_hr_manager,1,1,1,1

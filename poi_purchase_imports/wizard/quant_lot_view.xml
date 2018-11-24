@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_quant_lot_wizard" model="ir.ui.view">
+        <field name="name">Detalle Chasis Coche</field>
+        <field name="model">quant.lot.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Detalle de recepciones">
+                <group col="1">
+                    <field name="base_date" />
+                    <field name="item_ids" nolabel="1">
+                        <tree string="Inventory Details" editable="bottom">
+                            <field name="quantlot_id" invisible="1"/>
+                            <field name="move_id" />
+                            <field name="quant_id" />
+                            <field name="lot_id" />
+                            <field name="location_id" />
+                            <field name="qty" sum="Total"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                or
+                <button string="Salir" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+        </record>
+
+        <record id="act_quant_lot_wizard" model="ir.actions.act_window">
+            <field name="name">Lotes Valorizar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">quant.lot.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

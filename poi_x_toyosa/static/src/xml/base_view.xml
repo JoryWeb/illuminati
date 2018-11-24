@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="website_login_toyosa" inherit_id="website.login_layout" name="Toyosa Login">
+			<xpath expr="//div[@class='oe_website_login_container']" position="before">
+				<style type="text/css">
+					main {
+					background:url(/poi_x_toyosa/static/src/img/background.jpg)
+					no-repeat}
+					main > div { min-height:650px; }
+					main > div > form {
+					background-color:rgba(111,111,111,.2);
+					padding:20px; width:450px;
+					border-radius:5px; }
+					main button { height:62px;}
+				</style>
+
+			</xpath>
+		</template>
+
+    </data>
+</odoo>

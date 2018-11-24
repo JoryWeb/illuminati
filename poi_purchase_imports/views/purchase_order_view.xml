@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        <menuitem id="menu_purchase_imports"
+                  name="Importaciones"
+                  parent="purchase.menu_purchase_root"
+                  sequence="9"/>
+
+        <record model="ir.ui.view" id="purchase_order_imports">
+            <field name="name">purchase.order.imports</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <field name="partner_ref" position="after">
+                    <field name="tipo_fac" invisible="1"/>
+                    <field name="pais_lugar" attrs="{'invisible':[('tipo_fac', '!=', '3')]}"/>
+                    <field name="stage_id" attrs="{'invisible':[('tipo_fac', '!=', '3')]}"/>
+                </field>
+                <field name="date_order" position="after">
+                    <field name="embalaje" attrs="{'invisible':[('tipo_fac', '!=', '3')]}"/>
+                </field>
+                <button name="button_confirm" position="after">
+                    <button name="purchase_threading" type="object" states="draft" string="Confirmar Compra Notificada"
+                        confirm="Usted recibira una notificación en su bandeja de entrada al confirmar la compra"/>
+                </button>
+                <notebook position="inside">
+                    <page string="Situaciones Importación" invisible="not context.get('importaciones', False)">
+                        <group>
+                            <field name="stage_date" nolabel="1">
+                                <tree string="Situaciones de importación">
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="poi_purchase_imports_importaciones" model="ir.actions.act_window">
+            <field name="name">Orden de Importación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="context">{'default_tipo_fac':'3', 'importaciones': True}</field>
+            <field name="domain">[('tipo_fac','=','3')]</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="view_id" ref="purchase_order_imports"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click para Crear una Orden de Importaciones Generica
+              </p><p>
+                Importatnte verificar que el proveedor tenga definido el campo
+                'Tipo de Compra'-> Importaciones
+              </p><p>
+                Los registros de Tipo de Importacion generan carpetas de importación
+                o en otra forma pueden ser adjuntadas desde crear carpeta de importaciones
+              </p>
+            </field>
+        </record>
+
+        <record id="poi_purchase_imports_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="act_window_id" ref="poi_purchase_imports_importaciones"/>
+        </record>
+
+        <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+            <field name="domain">[('state','in',('draft','sent','bid','cancel', 'confirmed')),('tipo_fac','!=','3')]</field>
+        </record>
+
+        <record id="poi_purchase_imports_tree_rfq" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="act_window_id" ref="purchase.purchase_rfq"/>
+        </record>
+
+        <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+            <field name="domain">[('state','not in',('draft','sent','bid', 'confirmed')),('tipo_fac','!=','3')]</field>
+        </record>
+
+        <record id="poi_purchase_imports_tree_purchase" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase.purchase_order_tree"/>
+            <field name="act_window_id" ref="purchase.purchase_form_action"/>
+        </record>
+
+        <menuitem action="poi_purchase_imports_importaciones" id="menu_purchase_imports_importaciones"
+            parent="menu_purchase_imports"
+            sequence="0"/>
+
+	</data>
+</odoo>

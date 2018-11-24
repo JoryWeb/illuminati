@@ -1,0 +1,1460 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_workshop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-21 15:44+0000\n"
+"PO-Revision-Date: 2017-09-21 15:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_poi_vehicle_workshop_count
+msgid "# Maintenance"
+msgstr "# Mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "(Breakdown)"
+msgstr "(Descompostura)"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "<strong>Asset:</strong><br/>"
+msgstr "<strong>Vehículo:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "<strong>Cause:</strong><br/>"
+msgstr "<strong>Causa:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Description:</strong><br/>"
+msgstr "<strong>Descripción:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descripción</strong>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "<strong>Execution Date:</strong><br/>"
+msgstr "<strong>Fecha de ejecución:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Maintenance Type:</strong><br/>"
+msgstr "<strong>Tipo de Trabajo:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Planned Date:</strong><br/>"
+msgstr "<strong>Fecha Planificada:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Planned Parts</strong>"
+msgstr "<strong>Items planificados</strong>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "<strong>Printing date:</strong><br/>"
+msgstr "<strong>Fecha de Impresión:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Product</strong>"
+msgstr "<strong>Producto</strong>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "<strong>Requested Date:</strong><br/>"
+msgstr "<strong>Fecha Solicitada:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Scheduled Date:</strong><br/>"
+msgstr "<strong>Fecha Programada:</strong><br/>"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "<strong>Source Document:</strong><br/>"
+msgstr "<strong>Documento Fuente:</strong><br/>"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "APPROVED"
+msgstr "APROBADO"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_needaction
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_needaction
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_warehouse_id
+msgid "Almacén"
+msgstr "Almacén"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_recosteo
+msgid "Aplica recosteo"
+msgstr "Aplica recosteo"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_poi_vehicle
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_asset_id
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+msgid "Asset"
+msgstr "Vehículo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_category_ids
+msgid "Asset Category"
+msgstr "Categoría de Vehículo"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Available Parts"
+msgstr "Items Disponibles"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "Bill Of Material"
+msgstr "Lista de Materiales"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_breakdown
+#: selection:workshop.order,maintenance_type:0
+msgid "Breakdown"
+msgstr "Descompostura"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "CANCELED"
+msgstr "CANCELADO"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Calcular Items"
+msgstr "Calcular Items"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_product_template_isParts
+msgid "Can be Part"
+msgstr "Puede ser repuesto(Talleres)"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_convert_order
+#: model:ir.ui.view,arch_db:poi_workshop.view_invoice_onworkshop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_picking_workshop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_request_reject_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_workshop_stop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: poi_workshop
+#: selection:workshop.request,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_cargo
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_cargo
+msgid "Cargo"
+msgstr "Cargo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_cause
+msgid "Cause"
+msgstr "Causa"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_cita_origin
+msgid "Cita Origen"
+msgstr "Cita Origen"
+
+#. module: poi_workshop
+#: selection:workshop.request,state:0
+msgid "Claim"
+msgstr "Reclamación"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,help:poi_workshop.part_action
+msgid "Click to define a new spare part."
+msgstr "Haga clic para definir un nuevo recambio."
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_partner_id
+msgid "Client"
+msgstr "Cliente"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_company_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:mail.message.subtype,name:poi_workshop.mt_order_confirmed
+msgid "Confirm Maintenance"
+msgstr "Confirmar Mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+#: model:mail.message.subtype,name:poi_workshop.mt_asset_request_confirmed
+#: model:mail.message.subtype,name:poi_workshop.mt_request_confirmed
+msgid "Confirm Request"
+msgstr "Confirmar Solicitud"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_warehouse_id
+msgid "Considere Crear una regla de abastecimiento en el almacén para especificar los abastecimientos"
+msgstr "Considere Crear una regla de abastecimiento en el almacén para especificar los abastecimientos"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Consumed Parts"
+msgstr "Items Consumidos"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_convert_order
+msgid "Convert Order to Task"
+msgstr "Convertir Orden a Tarea"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_view_convert_order
+#: model:ir.ui.view,arch_db:poi_workshop.view_convert_order
+msgid "Convert to Task"
+msgstr "Convertir a Tarea"
+
+#. module: poi_workshop
+#: selection:workshop.order,maintenance_type:0
+#: selection:workshop.task,maintenance_type:0
+msgid "Corrective"
+msgstr "Correctivo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_total_cost_valuation
+msgid "Costo + Items"
+msgstr "Costo + Items"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_service_line_total_cost_valuation
+msgid "Costo de Servicio + repuestos utilizados"
+msgstr "Costo de Servicio + repuestos utilizados"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Crate Invoice"
+msgstr "Crear Factura"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_invoice_onworkshop_wizard
+msgid "Create Invoice"
+msgstr "Crear factura"
+
+#. module: poi_workshop
+#: model:res.groups,name:poi_workshop.group_create_maintenance_request
+msgid "Create Maintenance Request"
+msgstr "Crear solicitud de mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_picking_workshop_wizard
+msgid "Create Picking Workshop"
+msgstr "Crear Abastecimiento para orden"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_create_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "DONE"
+msgstr "REALIZADO"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "DRAFT"
+msgstr "BORRADOR"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_tree_view
+msgid "Date"
+msgstr "Fecha"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_date_invoice
+msgid "Date Invoice"
+msgstr "Fecha de Factura"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_date_execution
+msgid "Date of delivery"
+msgstr "Fecha de Entrega"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_message_last_post
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_message_last_post
+#: model:ir.model.fields,help:poi_workshop.field_workshop_workorder_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el registro."
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_requested_date
+msgid "Date requested by the customer for maintenance."
+msgstr "Fecha solicitada por el cliente para el mantenimiento."
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Dates"
+msgstr "Fechas"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_lines
+msgid "Dates planned"
+msgstr "Fecha Previstas"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_description
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_description
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_name
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+msgid "Description"
+msgstr "Descripción"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Description for Documentation"
+msgstr "Descripción de Documentación"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Description for Labor"
+msgstr "Descripción de Labor"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Description for Operations"
+msgstr "Descripción de Operaciones"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Description for Tools"
+msgstr "Descripción de Herramientas"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_journal_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_journal_id
+msgid "Diario Contable"
+msgstr "Diario Contable"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_display_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_convert_order
+msgid "Do you really want convert Maintenance Order to Task?"
+msgstr "¿Realmente quieres convertir Orden de mantenimiento a tarea?"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Documentation"
+msgstr "Documentación"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_documentation_description
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_documentation_description
+msgid "Documentation Description"
+msgstr "Descripción de Documentación"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: selection:workshop.request,state:0
+#: selection:workshop.workorder,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: poi_workshop
+#: selection:workshop.request,state:0
+#: selection:workshop.workorder,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_parts_line_cargo
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_service_line_cargo
+msgid "El 'Interno' usado para facturar\n"
+" El uso 'Externo' no genera linea de factura "
+msgstr "El 'Interno' usado para facturar\n"
+" El uso 'Externo' no genera linea de factura "
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_email
+msgid "Email"
+msgstr "Email"
+
+#. module: poi_workshop
+#: selection:workshop.request,state:0
+msgid "Execution"
+msgstr "Ejecución"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_execution_date
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+msgid "Execution Date"
+msgstr "Fecha de Ejecución"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_property_account_expense_categ_id
+msgid "Expense Account"
+msgstr "Cuenta de gastos"
+
+#. module: poi_workshop
+#: selection:workshop.order.parts.line,cargo:0
+#: selection:workshop.order.service.line,cargo:0
+msgid "Externo"
+msgstr "Externo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_date_planned
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_date_planned
+msgid "Fecha/hora Prevista"
+msgstr "Fecha/hora Prevista"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_date_scheduled
+msgid "Fecha/hora de recepción"
+msgstr "Fecha/hora de recepción"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Fechas tentativas de entrega"
+msgstr "Fechas tentativas de entrega"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_follower_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_follower_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_channel_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_channel_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_partner_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_partner_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Force Reservation"
+msgstr "Forzar reservas"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_stock_picking_group_maintenance
+msgid "Group Maintenance"
+msgstr "Grupo de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_vehicle_asset_workshop_buttons_from
+msgid "Historial Dueños"
+msgstr "Historial Dueños"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_time_prev
+msgid "Horas Previstas"
+msgstr "Minutos Previstas"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_time_real
+msgid "Horas Reales"
+msgstr "Minutos Reales"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_service_line_time_prev
+msgid "Horas previstas para el servicio"
+msgstr "Minutos previstas para el servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_service_line_time_real
+msgid "Horas reales por el servicio"
+msgstr "Minutos reales por el servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_id
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "INVOICED"
+msgstr "FACTURADO"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_message_unread
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_message_unread
+#: model:ir.model.fields,help:poi_workshop.field_workshop_workorder_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_message_needaction
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_message_needaction
+#: model:ir.model.fields,help:poi_workshop.field_workshop_workorder_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: poi_workshop
+#: selection:workshop.workorder,state:0
+msgid "In Process"
+msgstr "En Proceso"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Information"
+msgstr "Información"
+
+#. module: poi_workshop
+#: selection:workshop.order.parts.line,cargo:0
+#: selection:workshop.order.service.line,cargo:0
+msgid "Interno"
+msgstr "Interno"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_invoice_onworkshop
+msgid "Invoice Onworkshop"
+msgstr "Facturar Orden de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_invoice_onworkshop
+msgid "Invoice Workshop"
+msgstr "Facturar Mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_is_follower
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_is_follower
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_product_id
+msgid "Item Service"
+msgstr "Servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_kilometraje
+#: model:ir.ui.view,arch_db:poi_workshop.view_vehicle_asset_workshop_buttons_from
+msgid "Kilometraje"
+msgstr "Kilometraje"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Labor"
+msgstr "Labor"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_labor_description
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_labor_description
+msgid "Labor Description"
+msgstr "Descripción de Labor"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_last_post
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_last_post
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_last_post
+msgid "Last Message Date"
+msgstr "Fecha del último mensaje"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type___last_update
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_write_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_convert_order_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_write_date
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_service_line
+msgid "Line Service"
+msgstr "Linea de Servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_procurement_order_restrict_lot_id
+msgid "Lot"
+msgstr "Lote"
+
+#. module: poi_workshop
+#: model:ir.ui.menu,name:poi_workshop.menu_workshop_maintenance
+#: model:stock.location.route,name:poi_workshop.route_maintenance
+msgid "Maintenance"
+msgstr "Mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_poi_vehicle_maintenance_date
+msgid "Maintenance Date"
+msgstr "Fecha próximo mant."
+
+#. module: poi_workshop
+#: model:ir.actions.report.xml,name:poi_workshop.action_report_maintenance_order
+#: model:ir.model,name:poi_workshop.model_workshop_order
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_maintenance_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_maintenance_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_maintenance_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_mo_ids
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Maintenance Order"
+msgstr "Orden de Trabajo"
+
+#. module: poi_workshop
+#: model:mail.message.subtype,description:poi_workshop.mt_order_confirmed
+msgid "Maintenance Order confirmed"
+msgstr "Orden de Trabajo Confirmado"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+msgid "Maintenance Order № :"
+msgstr "Orden de Trabajo № :"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_orders
+#: model:ir.ui.menu,name:poi_workshop.menu_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_calendar_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_tree_view
+msgid "Maintenance Orders"
+msgstr "Ordenes de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_order_dates
+msgid "Maintenance Planned Dates"
+msgstr "Fechas planificadas de mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_order_parts_line
+#: model:ir.model,name:poi_workshop.model_workshop_task_parts_line
+msgid "Maintenance Planned Parts"
+msgstr "Items planificados para el mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_order_service_line
+msgid "Maintenance Planned Service"
+msgstr "Servicios planificados para el mantenimiento"
+
+#. module: poi_workshop
+#: model:ir.actions.report.xml,name:poi_workshop.action_report_maintenance_request
+#: model:ir.model,name:poi_workshop.model_workshop_request
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+msgid "Maintenance Request"
+msgstr "Solicitud de Trabajo"
+
+#. module: poi_workshop
+#: model:mail.message.subtype,description:poi_workshop.mt_request_confirmed
+msgid "Maintenance Request confirmed"
+msgstr "Solicitud de mantenimiento confirmado"
+
+#. module: poi_workshop
+#: model:mail.message.subtype,description:poi_workshop.mt_request_rejected
+msgid "Maintenance Request rejected"
+msgstr "Solicitud de mantenimiento rechazados"
+
+#. module: poi_workshop
+#: model:mail.message.subtype,description:poi_workshop.mt_request_sent
+msgid "Maintenance Request sent"
+msgstr "Solicitud de mantenimiento enviados"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+msgid "Maintenance Request № :"
+msgstr "Solicitud de Trabajo № :"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_requests
+#: model:ir.ui.menu,name:poi_workshop.menu_workshop_request
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_tree_view
+msgid "Maintenance Requests"
+msgstr "Solicitudes de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_task
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_task_id
+msgid "Maintenance Task"
+msgstr "Tarea de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_tasks
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_tree_view
+msgid "Maintenance Tasks"
+msgstr "Tareas de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_types
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_maintenance_type
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_maintenance_type
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_type_tree_view
+msgid "Maintenance Type"
+msgstr "Tipo de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_marca
+msgid "Marca"
+msgstr "Marca"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_mecanico
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_mecanico
+msgid "Mecanico"
+msgstr "Mecánico"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_parts_line_mecanico
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_service_line_mecanico
+msgid "Mecánico"
+msgstr "Mecánico"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_ids
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_modelo
+msgid "Modelo"
+msgstr "Modelo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_reason
+msgid "Motivo"
+msgstr "Motivo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_n_gasolina
+msgid "Nivel de Gasolina"
+msgstr "Nivel de Gasolina"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_needaction_counter
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_needaction_counter
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_message_needaction_counter
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_message_needaction_counter
+#: model:ir.model.fields,help:poi_workshop.field_workshop_workorder_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_message_unread_counter
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_message_unread_counter
+#: model:ir.model.fields,help:poi_workshop.field_workshop_workorder_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_n_chasis
+msgid "N° Chasis"
+msgstr "N° Chasis"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_no_fir
+msgid "N° FIR"
+msgstr "N° FIR"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_ot_antecedente
+msgid "OT Antecedente"
+msgstr "OT Antecedente"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_dates_observations
+msgid "Observaciones"
+msgstr "Observaciones"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_search
+msgid "Open"
+msgstr "Abierto"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Operations"
+msgstr "Operaciones"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_operations_description
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_operations_description
+msgid "Operations Description"
+msgstr "Descripción de Operaciones"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_vehicle_asset_workshop_buttons_from
+msgid "Ordenes de Trabajo"
+msgstr "Ordenes de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_date_order
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_tree_view
+msgid "Order Date"
+msgstr "Fecha orden"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_workorder_form_view
+msgid "Orders"
+msgstr "Pedidos"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "PLANNED"
+msgstr "PLANIFICADO"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.part_action
+msgid "Part"
+msgstr "Item"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_invoice_onworkshop_partner_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_partner_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_parts_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_parts_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_lines
+#: model:ir.ui.menu,name:poi_workshop.menu_maintenance_parts
+#: model:ir.ui.menu,name:poi_workshop.menu_maintenance_parts_parts
+#: model:ir.ui.view,arch_db:poi_workshop.part_search_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+#: model:product.category,name:poi_workshop.product_category_workshop
+msgid "Parts"
+msgstr "Items"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_move_lines
+msgid "Parts move lines"
+msgstr "Lineas de Items a Mover"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_moved_lines
+msgid "Parts moved lines"
+msgstr "Lineas de Items Movidos"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_ready_lines
+msgid "Parts ready lines"
+msgstr "Lineas de Items Listas"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Parts to Consume"
+msgstr "Items a Consumir"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.part_search_form_view
+msgid "Parts your store in the inventory"
+msgstr "Items de su almacén en inventario"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_picking_workshop
+msgid "Picking Route Workshop"
+msgstr "Ruta de Abastecimiento"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_picking_workshop
+msgid "Picking Workshop Action"
+msgstr "Accion de Abastecimiento"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Planned Parts"
+msgstr "Items Planificados"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Planned Services"
+msgstr "Servicios Planificados"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_lines
+msgid "Planned parts"
+msgstr "Items Planificados"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_procurement_order_service_line
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_services_lines
+msgid "Planned services"
+msgstr "Servicios Planificados"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_problem_description
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_request
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Problem Description"
+msgstr "Observaciones"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_procurement_order
+msgid "Procurement"
+msgstr "Abastecimiento"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_procurement_group_id
+msgid "Procurement group"
+msgstr "Grupo de Abastecimiento"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_parts_qty
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_parts_qty
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_parts_qty
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Recreate Picking"
+msgstr "Recrear Albarán de Abastecimiento"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_name
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_name
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_origin
+msgid "Reference of the document that generated this maintenance order."
+msgstr "Referencia del documento que generó esta orden de mantenimiento."
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_cita_origin
+msgid "Referencia de la Cita de Origen."
+msgstr "Referencia de la Cita de Origen."
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_reason
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_reject_reject_reason
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+msgid "Reject Reason"
+msgstr "Razón de Rechazo"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_request_reject
+#: model:ir.model,name:poi_workshop.model_workshop_order_stop
+#: model:ir.model,name:poi_workshop.model_workshop_request_reject
+#: model:ir.ui.view,arch_db:poi_workshop.view_invoice_onworkshop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_request_reject_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+#: model:mail.message.subtype,name:poi_workshop.mt_asset_request_rejected
+#: model:mail.message.subtype,name:poi_workshop.mt_request_rejected
+msgid "Reject Request"
+msgstr "Solicitud de Rechazo"
+
+#. module: poi_workshop
+#: selection:workshop.request,state:0
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_picking_workshop_form
+#: model:ir.ui.view,arch_db:poi_workshop.view_picking_workshop_wizard
+msgid "Request Workshop"
+msgstr "Solicitud de Trabajo Taller"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_requested_date
+msgid "Requested Date"
+msgstr "Fecha Solicitada"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_create_uid
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_user_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Resume"
+msgstr "Resumen"
+
+#. module: poi_workshop
+#: selection:workshop.order,state:0
+msgid "STOP"
+msgstr "DETENIDA"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_origin
+msgid "Sale Source Document"
+msgstr "Documento Origen de Venta"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+msgid "Scheduled Date"
+msgstr "Fecha Programada"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+msgid "Search Maintenance Order"
+msgstr "Buscar Orden de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_search
+msgid "Search Maintenance Request"
+msgstr "Buscar Solicitud de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_form_view
+#: model:mail.message.subtype,name:poi_workshop.mt_asset_request_sent
+#: model:mail.message.subtype,name:poi_workshop.mt_request_sent
+msgid "Send Request"
+msgstr "Enviar Solicitud"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_service_id
+msgid "Service Item"
+msgstr "Servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_user_id
+msgid "Service advisor"
+msgstr "Asesor de Servicio"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Services and Parts"
+msgstr "Servicios e Items"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Specify the documentation useful when execute this order..."
+msgstr "Especifique la documentación útil cuando ejecute esta orden..."
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Specify the jobs that need execute..."
+msgstr "Especifique los trabajos que deben ejecutarse..."
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Specify the specialists needed for execute this order..."
+msgstr "Especificar los especialistas necesarios para ejecutar esta orden..."
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Specify the tools and mechanisms needed for execute this order..."
+msgstr "Especificar las herramientas y mecanismos necesarios para ejecutar este pedido..."
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_search
+msgid "State"
+msgstr "Estado"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_state
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_state
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_state
+#: model:ir.ui.view,arch_db:poi_workshop.view_vehicle_search_workshop
+msgid "Status"
+msgstr "Estado"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_reason
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_stop_stop_reason
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Stop Reason"
+msgstr "Razon de detención"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_workshop_stop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Stop Workshop"
+msgstr "Detener Orden"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_task_id
+msgid "Tarea"
+msgstr "Repuestos/Servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_task_id
+msgid "Task"
+msgstr "Repuestos/Servicio"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Task Name"
+msgstr "Nombre de Servicio"
+
+#. module: poi_workshop
+#: model:ir.ui.menu,name:poi_workshop.menu_maintenance_tasks_tasks
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_type_form_view
+msgid "Tasks Service"
+msgstr "Repuestos Asociados al Servicio"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_type_property_account_expense_categ_id
+msgid "This account will be used for invoices to value expenses."
+msgstr "Esta cuenta se utilizará en facturas para valorar gastos."
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_workshop_type
+msgid "Tipo OT"
+msgstr "Tipo OT"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.report_workshop_order
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_task_form_view
+msgid "Tools"
+msgstr "Herramientas"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_tools_description
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_tools_description
+msgid "Tools Description"
+msgstr "Descripción de Herramientas"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_vehicle_asset_workshop_buttons_from
+msgid "Trabajos Previos"
+msgstr "Trabajos Previos"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_type_form_view
+msgid "Type:"
+msgstr "Tipo:"
+
+#. module: poi_workshop
+#: model:ir.ui.menu,name:poi_workshop.menu_maintenance_types
+#: model:ir.ui.menu,name:poi_workshop.menu_maintenance_types_types
+msgid "Types"
+msgstr "Tipos"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_location_ext_id
+msgid "Ubicación Externo"
+msgstr "Ubicación Externo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_type_location_int_id
+msgid "Ubicación Interno"
+msgstr "Ubicación Interno"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_type_location_ext_id
+msgid "Ubicación de baja para los casos externos"
+msgstr "Ubicación de baja para los casos externos"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_type_location_int_id
+msgid "Ubicación de baja para los casos internos"
+msgstr "Ubicación de baja para los casos internos"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_search
+msgid "Undecided maintenance request"
+msgstr "Solicitud de mantenimiento indeciso"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_price_unit
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_price_unit
+msgid "Unit Price"
+msgstr "Precio unidad"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_parts_line_parts_uom
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_service_line_parts_uom
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_parts_line_parts_uom
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_form_view
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_unread
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_unread
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_unread
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_order_search
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_request_search
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_message_unread_counter
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_request_message_unread_counter
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_picking_workshop_route_id
+msgid "Usar Ruta"
+msgstr "Usar Ruta"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_task_category_id
+msgid "Vehicle Category"
+msgstr "Categoría de Vehículo"
+
+#. module: poi_workshop
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_asset_id
+msgid "Vehicle/Chasis"
+msgstr "Vehículo/Chasis"
+
+#. module: poi_workshop
+#: model:procurement.rule,name:poi_workshop.rule_wh_asset
+msgid "WH: Stock -> Asset"
+msgstr "AL: Stock -> Vehículos"
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_order_state
+msgid "When the maintenance order is created the status is set to 'Draft'.\n"
+"        If the order is confirmed the status is set to 'Waiting Parts'.\n"
+"        If the stock is available then the status is set to 'Ready to Maintenance'.\n"
+"        When the maintenance is over, the status is set to 'Done'."
+msgstr "Cuando se crea la orden de mantenimiento, el estado se establece en 'Borrador'.\n"
+"        Si se confirma el pedido, el estado se establece en 'En espera de Items'.\n"
+"        Si el stock está disponible, el estado se establece en 'Listo Para Mantenimiento'.\n"
+"        Cuando el mantenimiento ha terminado, el estado se establece en 'Realizado'."
+
+#. module: poi_workshop
+#: model:ir.model.fields,help:poi_workshop.field_workshop_request_state
+msgid "When the maintenance request is created the status is set to 'Draft'.\n"
+"        If the request is sent the status is set to 'Claim'.\n"
+"        If the request is confirmed the status is set to 'Execution'.\n"
+"        If the request is rejected the status is set to 'Rejected'.\n"
+"        When the maintenance is over, the status is set to 'Done'."
+msgstr "When the maintenance request is created the status is set to 'Draft'.\n"
+"        If the request is sent the status is set to 'Claim'.\n"
+"        If the request is confirmed the status is set to 'Execution'.\n"
+"        If the request is rejected the status is set to 'Rejected'.\n"
+"        When the maintenance is over, the status is set to 'Done'."
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_workorder
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_order_wo_id
+#: model:ir.model.fields,field_description:poi_workshop.field_workshop_workorder_name
+msgid "Work Order"
+msgstr "Orden de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_workorders
+#: model:ir.ui.menu,name:poi_workshop.menu_workshop_workorder
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_workorder_calendar_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_workorder_form_view
+#: model:ir.ui.view,arch_db:poi_workshop.workshop_workorder_tree_view
+msgid "Work Orders"
+msgstr "Ordenes de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.actions.act_window,name:poi_workshop.action_workshop_stop
+msgid "Workshop Stop"
+msgstr "Orden detenida"
+
+#. module: poi_workshop
+#: model:ir.model,name:poi_workshop.model_workshop_type
+msgid "Workshop Type"
+msgstr "Tipo de Trabajo"
+
+#. module: poi_workshop
+#: model:ir.ui.view,arch_db:poi_workshop.view_convert_order
+#: model:ir.ui.view,arch_db:poi_workshop.view_invoice_onworkshop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_picking_workshop_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_request_reject_wizard
+#: model:ir.ui.view,arch_db:poi_workshop.view_workshop_stop_wizard
+msgid "or"
+msgstr "o"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <report id="account_ofertaproductorejilla_ingreso"
+            name="account.ofertaproductorejilla.webkit"
+            auto="False"
+            model="sale.order"
+            file="poi_x_pretensa/report/oferta_productorejilla.mako"
+            webkit_header="poi_webkit.base_reports_cotizacion_pretensa_header"
+            string="Imprimir Oferta"
+            report_type="webkit"/>
+  
+  </data>
+</openerp>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_landi" model="ir.ui.view">
+        <field name="name">product.template.landi</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Botones adicionales de productos -->
+            <group name="group_lots_and_weight" position="after">
+                <group name="almac" string="Información Ubicaciones">
+                    <field name="almacenamiento_line" nolabel="1">
+                        <tree string="Ubicaciones" editable="bottom">
+                            <field name="location_id"/>
+                            <field name="estante"/>
+                            <field name="fila"/>
+                            <field name="caja"/>
+                        </tree>
+                    </field>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <record id="product_product_landi" model="ir.ui.view">
+        <field name="name">product.product.landi</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Botones adicionales de productos -->
+            <group name="group_lots_and_weight" position="before">
+                <group name="almac" string="Quality control">
+                    <field name="almacenamiento_line" nolabel="1">
+                        <tree string="Ubicaciones" editable="bottom">
+                            <field name="location_id"/>
+                            <field name="estante"/>
+                            <field name="fila"/>
+                            <field name="caja"/>
+                        </tree>
+                    </field>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

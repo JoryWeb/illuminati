@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="invoice_supplier_form_attachment" model="ir.ui.view">
+        <field name="name">invoice.supplier.form.attachment</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <div class="oe_button_box" name="button_box">
+                    <button string="Adjuntos"
+                            name="poi_attachments_name"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-paperclip"
+                            context="{'xml_id':'poi_attachments_action'}"
+                            help="Registrar Adjuntos en el albaran">
+                    </button>
+                </div>
+            </field>
+        </field>
+    </record>
+    <record id="invoice_form_attachment" model="ir.ui.view">
+        <field name="name">invoice.form.attachment</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <div class="oe_button_box" name="button_box">
+                    <button string="Adjuntos"
+                            name="poi_attachments_name"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-paperclip"
+                            context="{'xml_id':'poi_attachments_action'}"
+                            help="Registrar Adjuntos en el albaran">
+                    </button>
+                </div>
+            </field>
+        </field>
+    </record>
+</odoo>

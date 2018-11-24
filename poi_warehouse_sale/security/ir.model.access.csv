@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_picking_type_p,stock_stock_picking_type_p,stock.model_stock_picking_type,poi_warehouse_sale.group_sale_salesman_shop_leads,1,1,1,1
+access_sale_order_line_p,stock_sale_order_line_p,sale.model_sale_order_line,poi_warehouse_sale.group_sale_salesman_shop_leads,1,1,1,1

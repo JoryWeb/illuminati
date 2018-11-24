@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+  <report
+    id="report_sale_order_imp_html"
+    string="Cotizacion Implelab (DOC)"
+    model="sale.order"
+    report_type="aeroo"
+    name="poi_x_implelab_report.sale_order_doc"
+    menu="True"
+  />
+
+  <record id="report_sale_order_imp_html" model="ir.actions.report.xml">
+      <field name="tml_source">file</field>
+      <field name="parser_state">loc</field>
+      <field name="parser_loc">poi_x_implelab_report/report/picking.py</field>
+      <field name="out_format" ref="report_aeroo.report_mimetypes_doc_odt"></field>
+      <field name="report_name">poi_x_implelab_report.sale_order_doc</field>
+      <field name="report_rml">poi_x_implelab_report/docs/proforma.odt</field>
+  </record>
+
+
+</data>
+
+<!--
+<template id="sale_order_template_imp_html">
+<t t-call="report.html_container">
+<t t-foreach="docs" t-as="o">
+<div class="header">
+        <t t-call="poi_x_implelab_report.img_report"></t>
+</div>
+  <div class="page" style="font-size:14px;">
+      <div class="row">
+          <div class="col-xs-8">
+
+          </div>
+          <div class="col-xs-4 text-center">
+              <strong>PROFORMA</strong>
+              <table class="table table-condensed">
+                  <tr>
+                      <th class="text-center">No.</th>
+                      <th class="text-center">Fecha</th>
+                  </tr>
+                  <tbody>
+                      <tr>
+                        <td class="text-center">
+                            <span t-field="o.name"/>
+                        </td>
+                        <td class="text-center">
+                            <span t-field="o.date_order" t-field-options='{"format": "d/M/Y"}'/>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+              <p>Señores <br/> <span t-field="o.partner_id.name"/> <br/> </p>
+              <p t-field="o.destination" />
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+              <strong>Forma de Pago</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.pay_type_id.html"/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+             <strong>Valido Hasta</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.validity_date"/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3 col-xs-offset-1">
+             <strong>Tiempo de Entrega</strong>
+          </div>
+          <div class="col-xs-1">
+              :
+          </div>
+          <div class="col-xs-7">
+              <span t-field="o.delivery_time_id.name"/>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+        <br/>
+          <table class="table table-condensed" style="margin-bottom:0px;">
+            <thead>
+              <tr>
+                <th><strong>Item</strong></th>
+                <th><strong>Codigo</strong></th>
+                <th><strong>Producto</strong></th>
+                <th><strong>Descripcion</strong></th>
+                <th><strong>Cantidad</strong></th>
+                <th><strong>P.U.</strong></th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="o.order_line" t-as="l">
+                <tr>
+                  <td>
+                    <span t-esc="l_index+1"/>
+                  </td>
+                  <td>
+                    <span t-field="l.product_id.default_code"/>
+                  </td>
+                  <td>
+                    <span t-field="l.name"/>
+                  </td>
+                  <td>
+                    <span t-field="o.note"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-field="l.product_uom_qty"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-field="l.unitario_factor"/>
+                  </td>
+                  <td class="text-right">
+                    <span t-field="l.price_total"/>
+                  </td>
+                </tr>
+              </t>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-7">
+            </div>
+            <div class="col-xs-5 text-right">
+              <table class="table table-condensed" style="margin-bottom:0px;">
+                <tbody>
+                    <tr>
+                      <td class="text-right">
+                        Total Bs.:
+                      </td>
+                      <td class="text-right">
+                        <span t-field="o.amount_total"/>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+              <strong>Observaciones:</strong>
+              <p>El precio incluye Factura Fiscal y Entrega en sus Instalaciones.</p>
+
+          </div>
+          <div class="col-xs-offset-2">
+              Atentamente,
+          </div>
+      </div>
+    <div class="row">
+        <div class="col-xs-12 text-center" style="margin-top:50px;">
+            <span t-field="o.user_id.partner_id.firm"/>
+        </div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="row">
+          <div class="col-xs-12">
+              <p>
+            Tel/Fax: 00591-2-243271 <br/>
+            Av. Busch, Edificio C y CII, Mezzanine of. 2 N° 1824, Miraflores<br/>
+            <strong>E-mail:</strong> <span style="color:blue;">implelab@gmail.com</span> <strong>Página Web:</strong> <span style="color:blue;"> www.implelab.com</span><br/>
+            <strong>Facebook:</strong> IMPLELAB SRL · <span style="color:orange;">La Paz - Bolivia</span>
+            </p>
+          </div>
+      </div>
+  </div>
+
+</t>
+</t>
+</template> -->
+
+</openerp>

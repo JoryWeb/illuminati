@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_payment_order_id_form" model="ir.ui.view">
+            <field name="name">account.payment.analytic.form.order.id</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='communication']" position="after">
+                    <field name="order_id"
+                           attrs="{'invisible': [('payment_type','=','transfer')]}" domain="[('partner_id', '=', partner_id)]"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

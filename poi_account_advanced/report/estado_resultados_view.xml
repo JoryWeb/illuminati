@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="tree_x_estado_resultados">
+			<field name="name">estado_resultados.tree</field>
+			<field name="model">poi.estado.resultados</field>
+			<field name="arch" type="xml">
+				<tree string="Estado de Resultados" create="0" delete="0">
+					<field name='total'/>
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="graph_x_estado_resultados">
+			<field name="name">estado_resultados.graph</field>
+			<field name="model">poi.estado.resultados</field>
+			<field name="arch" type="xml">
+				<graph string="Estado de Resultados" type="pivot">
+					<field name='total' type="measure"/>
+					<field name='total_s' type="measure"/>
+					<field name="fiscalyear_id" type="col"/>
+					<!-- <field name="analitica1" type="col"/> -->
+					
+				</graph>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="filter_view_x_estado_resultados">
+			<field name="name">poi.estado.resultados.filter</field>
+			<field name="model">poi.estado.resultados</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Estado de Resultados">
+					
+					
+					<group expand="0" string="Jerarquia de Reportes">
+               			<filter string="nivel0" name="group_report" context="{'group_by': 'report_type0'}"/>
+						<filter string="nivel1" name="group_report" context="{'group_by': 'report_type1'}"/>
+						<filter string="nivel2" name="group_report" context="{'group_by': 'report_type2'}"/>
+						<filter string="nivel3" name="group_report3" context="{'group_by': 'report_type3'}"/>
+						<filter string="nivel4" name="group_report4" context="{'group_by': 'report_type4'}"/>
+						<filter string="nivel5" name="group_report5" context="{'group_by': 'report_type5'}"/>
+            		</group>
+					
+					<group expand="1" string="Niveles de Cuentas">
+						<filter string="cuenta1" name="group_report" context="{'group_by': 'level1'}"/>
+						<filter string="cuenta2" name="group_report" context="{'group_by': 'level2'}"/>
+						<filter string="cuenta3" name="group_state3" context="{'group_by': 'level3'}"/>
+						<filter string="cuenta4" name="group_state4" context="{'group_by': 'level4'}"/>
+						<filter string="cuenta5" name="group_state5" context="{'group_by': 'level5'}"/>
+						<filter string="cuenta6" name="group_state6" context="{'group_by': 'level6'}"/>
+						<filter string="cuenta7" name="group_state7" context="{'group_by': 'level7'}"/>
+						<filter string="cuenta8" name="group_state8" context="{'group_by': 'level8'}"/>
+						<filter string="cuenta9" name="group_state9" context="{'group_by': 'level9'}"/>
+						<filter string="cuenta10" name="group_state10" context="{'group_by': 'level10'}"/>
+					</group>
+					
+						
+					
+				</search>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="wizard_estado_resultados_view">
+			<field name="name">wizard.estado.resultados_wizzard</field>
+			<field name="model">poi.estado.resultados_wizzard</field>
+			<field name="arch" type="xml">
+				<form string="Fecha de Busqueda">
+					<group>
+						<field name="char_account_id"/>
+						
+						<field name="account_report_id"/>
+						<field name="target_move"/>
+					</group>
+					
+
+					<group string="Filtro de Fechas o Año fiscal">
+                    	<field name="filter_1"/>
+                    </group>
+
+					<group string=""  attrs="{'invisible':[('filter_1', '!=', 'fiscalyear')], 'required':[('filter_1', '=', 'fiscalyear')]}">  
+                    	<field name="fiscalyear_id"/>   
+                    </group>
+                   	<group string=""  attrs="{'invisible':[('filter_1', '!=', 'fechas')], 'required':[('filter_1', '=', 'fechas')]}">  
+                    	<field name="date_from"/>
+                    	<field name="date_until"/>   
+                    </group>                  
+
+					<group string="Cuentas Analiticas">
+                    	<field name="filter2"/>
+                    </group>
+                       
+                    <group string=""  attrs="{'invisible':[('filter2', '!=', 'nivel1')], 'required':[('filter2', '=', 'nivel1')]}">  
+                      
+                    	<field name="nivel1"  domain="[('parent_id','=',None)]" attrs="{'required':[('filter2', '=', 'nivel1')]}"/>   
+                    </group>
+                   	<group string=""  attrs="{'invisible':[('filter2', '!=', 'nivel2')], 'required':[('filter2', '=', 'nivel2')]}">  
+                    	<field name="nivel2" domain="[('parent_id','!=',None)]" attrs="{'required':[('filter2', '=', 'nivel2')]}"/>   
+                    </group> 
+					<footer>
+						<button name="open_table" type="object" string="Generar" class="oe_highlight"/>
+						<button string="Cancel" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_wizard_report_estado_resultados">
+			<field name="name">Estado de Resultados</field>
+			<field name="res_model">poi.estado.resultados_wizzard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="wizard_estado_resultados_view"/>
+			<field name="target">new</field>
+			<field name="context" eval="{'default_account_report_id':ref('account.account_financial_report_profitandloss0')}"/>
+		</record>
+
+		<menuitem id="menu_action_wizard_estado_resultados" action="action_wizard_report_estado_resultados" parent="account.menu_finance_reporting"/>
+		
+
+		<record model="ir.actions.act_window" id="action_wizard_report_balance_general">
+			<field name="name">Balance General</field>
+			<field name="res_model">poi.estado.resultados_wizzard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="wizard_estado_resultados_view"/>
+			<field name="target">new</field>
+			<field name="context" eval="{'default_account_report_id':ref('account.account_financial_report_balancesheet0')}"/>
+		</record>
+
+		<menuitem id="menu_action_wizard_balance_general" action="action_wizard_report_balance_general" parent="account.menu_finance_reporting"/>
+
+
+		
+		<template id="assets_backend" name="x_estado_resultados assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/poi_account_advanced/static/src/js/e_resultados.js"></script>
+            </xpath>
+        </template>
+	</data>
+</openerp>

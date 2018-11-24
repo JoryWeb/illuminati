@@ -1,0 +1,331 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* poi_product_dimensions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-13 20:32+0000\n"
+"PO-Revision-Date: 2017-06-13 20:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/sale.py:307
+#: code:addons/poi_product_dimensions/sale.py:316
+#, python-format
+msgid "Advertencia"
+msgstr "Advertencia"
+
+#. module: poi_product_dimensions
+#: selection:product.dimension,metric_type:0
+#: selection:product.template,metric_type:0
+msgid "Area"
+msgstr "Área"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/product.py:279
+#, python-format
+msgid "At least one pricelist has no active version !\n"
+"Please create or activate one."
+msgstr "Al menos una lista de precios no tiene versión activa !\n"
+"porfavor crear o activar una."
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/sale.py:189
+#, python-format
+msgid "Cannot find a pricelist line matching this product and quantity.\n"
+"You have to change either the product, the quantity or the pricelist."
+msgstr "No se puede encontrar una línea de lista de precios que coincida con este producto y cantidad.\n"
+"Usted tiene que cambiar el producto, la cantidad o la lista de precios."
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_move_causa
+msgid "Causa no conformidad"
+msgstr "Causa no conformidad"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_account_invoice_line_product_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_purchase_order_line_product_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_sale_order_line_product_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_move_product_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_production_lot_dimension_id
+msgid "Dimension"
+msgstr "Dimensión"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/account_invoice.py:100
+#: code:addons/poi_product_dimensions/sale.py:235
+#: code:addons/poi_product_dimensions/stock.py:382
+#, python-format
+msgid "Dimension removed"
+msgstr "Dimensión removida"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/account_invoice.py:101
+#, python-format
+msgid "Dimension selected is not valid for this product, please select another dimension"
+msgstr "La dimensión seleccionada no es válida para este producto, seleccione otra dimensión"
+
+#. module: poi_product_dimensions
+#: model:ir.actions.act_window,name:poi_product_dimensions.product_dimension_action
+#: model:ir.ui.menu,name:poi_product_dimensions.product_dimension_menu
+msgid "Dimensiones de Productos"
+msgstr "Dimensiones de Productos"
+
+#. module: poi_product_dimensions
+#: model:ir.ui.view,arch_db:poi_product_dimensions.product_template_metric_form
+msgid "Dimensions"
+msgstr "Dimensiones"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_product_dimension_ids
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_template_dimension_ids
+msgid "Dimensions Allowed"
+msgstr "Dimensiones Permitidas"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_pricelist_item_fixed_amount
+msgid "Fixed Amount"
+msgstr "Cantidad Fija"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_pricelist_item_fixed_per
+msgid "Fixed Per"
+msgstr "Arreglado por"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_id
+msgid "ID"
+msgstr "ID"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/sale.py:236
+#: code:addons/poi_product_dimensions/sale.py:308
+#: code:addons/poi_product_dimensions/sale.py:317
+#: code:addons/poi_product_dimensions/stock.py:383
+#, python-format
+msgid "La dimensión seleccionada no es valida para este producto, por favor seleccione otra dimensión"
+msgstr "La dimensión seleccionada no es valida para este producto, por favor seleccione otra dimensión"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: poi_product_dimensions
+#: selection:product.dimension,metric_type:0
+#: selection:product.template,metric_type:0
+msgid "Lineal"
+msgstr "Lineal"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_move_lot_creation_pack
+msgid "Lote"
+msgstr "Lote"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_pricelist_item_max_metric
+msgid "Max Metric"
+msgstr "Metrica Maxima"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_metric_type
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_product_metric_type
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_template_metric_type
+msgid "Metric Type"
+msgstr "Tipo de Metrica"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_pricelist_item_min_metric
+msgid "Min Metric"
+msgstr "Mínima Metrica"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/sale.py:180
+#, python-format
+msgid "No Pricelist ! : "
+msgstr "No Hay lista de precios ! : "
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/sale.py:192
+#, python-format
+msgid "No valid pricelist line found ! :"
+msgstr "No se ha encontrado ninguna línea de precios válida ! :"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_pack_operation_lot_secuencia
+msgid "N° Pack"
+msgstr "N° Paquete"
+
+#. module: poi_product_dimensions
+#: selection:product.pricelist.item,fixed_per:0
+msgid "Per Metric"
+msgstr "Por Métrica"
+
+#. module: poi_product_dimensions
+#: selection:product.pricelist.item,fixed_per:0
+msgid "Per UoM"
+msgstr "Por UdM"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_stock_picking
+msgid "Picking List"
+msgstr "Lista de entregas"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_product_pricelist
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Elemento de la tarifa"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: poi_product_dimensions
+#: model:ir.ui.view,arch_db:poi_product_dimensions.product_dimension_form_tree
+#: model:ir.ui.view,arch_db:poi_product_dimensions.product_dimension_form_view
+msgid "Product Dimensions"
+msgstr "Dimensiones de producto"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea pedido de compra"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de Venta"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_stock_production_lot
+msgid "Serial Number"
+msgstr "Número de Lote"
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_stock_pack_operation_lot
+msgid "Specifies lot/serial number for pack operations that need it"
+msgstr "Especifica número de lote/serie para operaciones de empaquetado que lo necesiten"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,help:poi_product_dimensions.field_product_pricelist_item_fixed_per
+msgid "Specifies whether the fixed priced is based on the quantified UoM or on the dimension metric."
+msgstr "Especifica si el precio fijo se basa en la UdM cuantificada o en la métrica de dimensión."
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_total_computed
+msgid "Total"
+msgstr "Total"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_account_invoice_line_total_dimension_display
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_purchase_order_line_total_dimension_display
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_sale_order_line_total_dimension_display
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_move_total_dimension_display
+msgid "Total Metric"
+msgstr "Métrica Total"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_account_invoice_line_total_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_purchase_order_line_total_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_sale_order_line_total_dimension
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_stock_move_total_dimension
+msgid "Total Metric w/o unit"
+msgstr "Mérica Total y/o unidad"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_uom_total
+msgid "Total UOM"
+msgstr "Total UdM"
+
+#. module: poi_product_dimensions
+#: model:ir.model.fields,field_description:poi_product_dimensions.field_product_dimension_uom_id
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: poi_product_dimensions
+#: selection:product.dimension,metric_type:0
+#: selection:product.template,metric_type:0
+msgid "Volume"
+msgstr "Volumen"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/product.py:279
+#, python-format
+msgid "Warning!"
+msgstr "Advertencia!"
+
+#. module: poi_product_dimensions
+#: code:addons/poi_product_dimensions/sale.py:178
+#, python-format
+msgid "You have to select a pricelist or a customer in the sales form !\n"
+"Please set one before choosing a product."
+msgstr "Tienes que seleccionar una lista de precios o un cliente en el formulario de venta !\n"
+"Por favor, establezca uno antes de elegir un producto."
+
+#. module: poi_product_dimensions
+#: model:ir.model,name:poi_product_dimensions.model_product_dimension
+msgid "product.dimension"
+msgstr "Dimensiones de producto"
