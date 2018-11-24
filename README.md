@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 |Poiesis Addons
 ==============
 
@@ -135,3 +136,6 @@ addon | version | summary
 [poi_x_poiesis](poi_x_poiesis/) | 9.0.1.0 | Gestión Poiesis
 [poi_x_pretensa](poi_x_pretensa/) | 9.0.1.0 | Pretensa V9 - Adecuaciones
 [poi_x_yachay](poi_x_yachay/) | 9.0.0.1 | Yachaywasi Addon
+=======
+# illuminati
+>>>>>>> origin/master
